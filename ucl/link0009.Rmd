@@ -1,0 +1,68 @@
+---
+title: Stochastic systems course outline
+author: Terry Soo
+date:  Fall 2020
+output: html_document
+---
+
+
+#  Prerequisites
+
+This module will assume some experience with the basics of probability and statistics, and Markov chains from UCL Stat 0007.   We will also make use of the software program R.
+
+
+# Aims for the course
+
+
+OUr module follows up our study of random process from Stat 0007.   We will study various flavours of Markov processes and point processes and their applications to queueing theory and modelling.   We also study other random processes from the perspective of disordered systems, such as random graphs and networks. 
+
+
+# Objectives 
+
+By the end of this module students should have a firm foundation and understanding of various stochastic processes for further study and application.  Students will be able to use toy models to explain and understanding various random behvaviour in the world.
+
+
+# Course content
+
+* Quick review of probability and statistics from the perspective of R.
+
+* Markov chains:  convergence to stationarity, Doeblin coupling, coupling from the past, Markov chain Monte Carlo.
+
+* Point process:  Poisson processes, spatial Poisson point processes, Continuous-time Markov chains, semi-Markov processes.
+
+* Renewel theory:  renewal theorems, Little's theorem.
+
+* Queues: stationary distributions, blow-up, waiting times.
+
+* Disordered systems:  Erdos-Renyi random graphs, percolation.
+
+
+# Formal assessments
+
+We will have 3 ICAs.  
+
+The first ICA will be a regular assignment given around the middle of the term to make sure we have learned the basics.
+
+The second ICA will be centered around more involved problems that will require a synthesis of ideas from throughout the module.  This may be done in groups.  Due in 2021
+
+The third ICA will be a group project based using the knowledge learned throughout the course.  Due in 2021.  Some examples include:
+
+* construct toy models to explain and model random behaviour in our world;
+* critically examine evaluate theoretical and practical models that have been proposed;
+* other suitable student proposed projects are also possible.
+
+#  Informal assessments and feedback
+
+
+Throughout the module students will have the chance to work on various exercises that will test and build their understanding of the material
+
+
+#  Module delivery
+
+* Pre-recorded lectures, made available online.
+* Lecture notes and slides made available online
+* Live workshops that go over material in more detail.
+
+# Additional resources
+
+
