@@ -1,0 +1,41 @@
+---
+title: Stochastic systems course schedule and diary
+author: Terry Soo
+date:  Fall 2020
+output: html_document
+---
+
+
+
+# By UCL week
+
+* Week 4 (21 Sept - 27 Sept):  First email
+* Week 5 (28 Sept - 4 Oct):
+* Week 6 (5 Oct - 11 Oct):
+* Week 7 (12 Oct - 18 Oct):
+* Week 8 (19 Oct - 25 Oct):
+* Week 9 (26 Oct - 1 Nov):
+* Week 10 (2 Nov - 8 Nov): ICA 1 assigned   
+* Week 11 (9 Nov - 15 Nov):
+* Week 12 (16 Nov - 22 Nov): ICA 1 due 
+* Week 13 (23 Nov - 29 Nov):
+* Week 14 (30 Nov - 6 Dec): ICA 2 (projects chosen and assigned), ICA 3 assigned
+* Week 15 (7 Dec - 13 Dec):
+* week 16 (14 Dec - 20 Dec):
+
+* week 21: (2021):  ICA 3 due
+* weak 27: (2021):  ICA 2 due
+# Other notes
+
+*First term Monday (28 September 2020 -- Friday 18 December 2020)
+
+
+
+<br>
+<br>
+
+# Version 24 September 2020
+
+<br>
+<br>
+<br>

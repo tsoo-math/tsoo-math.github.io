@@ -1,0 +1,48 @@
+---
+title: "Some review of Markov chains"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Finite State Markov chains
+
+We will review some basics of Markov chains, focusing on the case where there are a finite number of states, and where the transition matrix is irreducible and aperiodic.  We also approach the Doeblin coupling from a computational perspective and offer a probabilistic analysis of the convergence to the stationary distribution.    
+
+
+##Introduction
+
+Markov chains are simplest extensions of i.i.d. sequences of random variables, where we allow the next random variable to depend on the values of the previous one in a predetermined way, according to a transition matrix.  A quick google search of applications of Markov chains, gave for me, the first link an article on [modelling migraine attacks](https://www.nature.com/articles/s41598-020-60505-5).   
+
+
+
+
+
+
+<br>
+
+# Summary
+
+We reviewed the law of large numbers and gave some proofs of some basic results.  We showed how the law of large numbers can be used in conjugation with R to compute or estimate various probabilities arising from elementary probability theory.    
+
+<br>
+
+Version:  24 September 2020
+
+
+
+<br>
+<br>
+<br>
+
+
