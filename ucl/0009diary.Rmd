@@ -25,9 +25,10 @@ output: html_document
 
 * week 21: (2021):  ICA 3 due
 * weak 27: (2021):  ICA 2 due
+
 # Other notes
 
-*First term Monday (28 September 2020 -- Friday 18 December 2020)
+* First term Monday (28 September 2020 -- Friday 18 December 2020)
 
 
 
