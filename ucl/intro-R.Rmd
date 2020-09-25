@@ -1,0 +1,198 @@
+---
+title: "Introduction to R"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# What is R?
+
+
+R is a free open-source program that is used to do statistics in both academia and industry.   There are many online resources for R, for both beginners and experts.    For example, [Venables, Smith, and the R Core Team](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+
+## A fancy calculator
+
+R can be used as a fancy calculator
+```{r}
+2+2
+sin(3.14)
+exp(1)
+log(2.71)
+pi
+```
+Variables can be assigned in the following way
+
+```{r}
+x <- 1+2+3+4+5+6
+x*2
+```
+
+
+## Entering data by hand into R
+
+R is designed to store data as vectors $x = (x_1, x_2, \ldots, x_n)$ that is lists of numbers.  
+
+```{r}
+y <- c(1,2,3,4,5,6,7,8,9)
+y
+```
+
+## Basic operations with vectors
+
+R has many built in common operations that are useful for statistics:
+
+```{r}
+x <- c(1,2,3,4,5,6,7,8,9,10)
+x
+sum(x)
+mean(x)
+sd(x)
+var(x)
+```
+R will do certain operations component wise:
+```{r}
+ x <- c(1,2,3,4,5)
+y <- c(6,7,8,9,10)
+z=x+y
+z
+
+x*y
+
+sin(z)
+```
+It is often necessary to add or delete data from a vector:
+```{r}
+x<- c(0.1, 0.2, 0.3, 0.4, 0.5)
+x <- x[-5]
+x
+x <- c(x, 5.5)
+x
+```
+
+##  Coin-flips, dice roll, normal, and uniform random variables in R
+
+R can be used to simulate coin flips and dice roll.   R does not use true randomness, rather it generates coin clips using a deterministic algorithm that simulates true randomness.  
+```{r}
+x<- rbinom(12,1, 0.5)
+x
+z <- sample(6,12, replace =TRUE)
+z
+x<- rnorm(10, 5, 1)
+x
+z <- runif(10, min=-1, max=1)
+z
+```  
+# Histograms in R
+
+```{r}
+x <- rexp(100,1)
+hist(x, prob=TRUE)
+```
+<br>
+Here $x$ is a 100 randomly generated data points from the exponential distribution with rate $1$.
+
+
+# Functions
+
+Suppose we needed to use the quantity $\sin(x) + \cos(x)$ over and over again for different values of $x$, then it may be useful to define this as a function in the following way:
+```{r}
+sincos <- function(x){
+z <- sin(x) + cos(x);
+z
+}
+sincos(1)
+```
+<br>
+Here the function sincos takes an input  $x$.  It is sometimes useful have functions that do not take inputs, but simple perform operations:  say roll a fair dice 1o times, and take the sum.
+
+
+
+
+
+# Basic programming in R
+
+We will introduce basic programming in R with the following exercise and will illustrate how to write a *while* loop in R.
+<br>
+```{exercise}
+By running simulations in R, approximate the average number of  rolls of a fair dice it takes before you see a 6.
+```
+<br>
+```{solution}
+We make a function *numrolls* which counts how many times we need to roll a dice until we see a $6$.  Then we use the *replicate* command to repeat this function many time, and take the average.
+```
+<br>
+```{r}
+numrolls <- function(){
+n=0
+x=0
+while(x <6){
+x <- sample(6,1, replace =TRUE)
+n <- n+1
+}
+n
+}
+
+mean(replicate(1000, numrolls()) )
+```
+
+
+In the next exercise, we illustrate how to write a *for* loop.
+
+```{exercise}
+Define a function that tells you whether a positive integer is prime or not.
+```
+<br>
+```{solution}
+Let $n$ be an integer.  We first recall that $d$ is a divisor of $n$ if  there exists an integer $c$ such that $ n = cd$.  An  integer $n \geq 2$ is prime if it only divisors are $1$ and $n$.   R has a built in remainder function, which for nonnegative integers $a,b$ outputs the remainder in the sense of elementary school, when $a$ is divided by $b$.  Using the remainder function we define the *isprime* function, and use it spit out the prime numbers up to 500.
+
+```{r}
+25%%5
+26%%5
+
+isprime <- function(n){
+x=1
+for (i in 2: (n-1)){
+if (x >0) {
+x <- n%%i
+}
+}
+if (n==1) {x <-0}
+if (n==2) {x <-1}
+ x
+ }
+ isprime(1)
+ isprime(2)
+isprime(101)
+
+x=2
+ for(i in 3:500){
+if( isprime(i)==1){
+x <- c(x, i)}
+ x
+}
+x
+```
+
+
+<br>
+<br>
+
+# Version:  24 September 2020
+
+
+
+<br>
+<br>
+<br>
+
+
