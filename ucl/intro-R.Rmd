@@ -183,11 +183,14 @@ x <- c(x, i)}
 x
 ```
 
+# Summary
+
+We introduced some basics of R, and we gave examples programming basics including defining functions, while loops, for loops, and using the replicate function.
 
 <br>
 <br>
 
-# Version:  24 September 2020
+# Version:  25 September 2020
 
 
 
