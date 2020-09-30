@@ -1,0 +1,33 @@
+---
+title: Stochastic systems live sesssion diary
+author: Terry Soo
+date:  Fall 2020
+output: html_document
+---
+
+
+
+# By UCL week
+
+
+* Week 6 (5 Oct - 11 Oct): [First meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+* Week 7 (12 Oct - 18 Oct):
+* Week 8 (19 Oct - 25 Oct):
+* Week 9 (26 Oct - 1 Nov):
+* Week 10 (2 Nov - 8 Nov):   
+* Week 11 (9 Nov - 15 Nov):
+* Week 12 (16 Nov - 22 Nov): 
+* Week 13 (23 Nov - 29 Nov):
+* Week 14 (30 Nov - 6 Dec): 
+* Week 15 (7 Dec - 13 Dec):
+* week 16 (14 Dec - 20 Dec):
+
+
+<br>
+<br>
+
+# Version 30 September 2020
+
+<br>
+<br>
+<br>

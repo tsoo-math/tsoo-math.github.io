@@ -17,19 +17,171 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Finite State Markov chains
 
-We will review some basics of Markov chains, focusing on the case where there are a finite number of states, and where the transition matrix is irreducible and aperiodic.  We also approach the Doeblin coupling from a computational perspective and offer a probabilistic analysis of the convergence to the stationary distribution.    
+We will review some basics of the limiting behaviour of Markov chains, focusing on the case where there are a finite number of states, and where the transition matrix is irreducible and aperiodic.  We also approach the Doeblin coupling from a computational perspective and offer a probabilistic analysis of the convergence to the stationary distribution.    
 
 
-##Introduction
+## Introduction
 
-Markov chains are simplest extensions of i.i.d. sequences of random variables, where we allow the next random variable to depend on the values of the previous one in a predetermined way, according to a transition matrix.  A quick google search of applications of Markov chains, gave for me, the first link an article on [modelling migraine attacks](https://www.nature.com/articles/s41598-020-60505-5).   
-
-
+Markov chains are simplest extensions of i.i.d. sequences of random variables, where we allow the next random variable to depend on the values of the previous one in a predetermined way, according to a transition matrix.  A quick google search of applications of Markov chains, gave for me, the first link an article on [modelling migraine attacks](https://www.nature.com/articles/s41598-020-60505-5).   Here, a simple toy model is introduced to model the occurrences of migraines.  Specifically, the probability of getting a migraine is say $p$, then once someone has a migraine, whether it last another day is probability $p_1$, and then whether this continues for the $n$th day occurs with probability $p_n$.  Such a model accounts more accurately for the occurrence of migraine clusters.
 
 
 
+## Definitons
+
+Let $X=(X_0, X_1, \ldots)$ be random variables taking values in a finite or countable set $S$; which we call the **state space**.  Sometimes we will take $S = \mathbb{Z}$ or $S=\mathbb{N}$ or $S= \{1, \ldots, N\}$, or $S=\{s_1, \ldots, s_N\}$.    We say that $X$ is a (homogeneous) **Markov chain** if for all $n \geq 0$, we have
+\begin{eqnarray*}
+\mathbb{P}(X_{n+1}  =j \ | \ X_n=i, X_{n-1}=a_{n-1}, \ldots, X_0 = a_{0}) &=& \mathbb{P}(X_{n+1} = j \  | \ X_n = i) \\
+&=& \mathbb{P} (X_1 = j \ | \  X_0 =i), 
+\end{eqnarray*}
+for all $i,j, a_{n-1}, \ldots, a_{0} \in S$; which we sometimes refer to as the **Markov property**.
+We call the matrix $P$ given by entries $P_{ij} = p_{ij} =  \mathbb{P} (X_1 = j \ | \  X_0 =i)$ the **transition matrix** for the chain $X$.  Conversely, we also call $P$ a **transition matrix** on $S$ if for all $i \in S$, we have  $\sum_{j \in S} p_{ij} =1$.  The law of $X_0$ is sometimes called the **initial** distribution.   Notice that if the law of $X_0$ is expressed as a row vector $\lambda = [\lambda_1, \lambda_2, \ldots]$, then $\lambda P$ gives the law of $X_1$ expressed as a row vector, which we also call a **probability vector**.  If $\mathbb{P} (X_0 = i) = 1$, then we say that the chain $X$ is **started** at  the state $i$. 
+
+
+### Working with tranisition matrices 
+
+If $P$ is a transition matrix, one may think of $P^n$ as the matrix with entries $p_{ij}(n)$ which gives the number of *weighted* paths of length $n$ from $i$ to $j$.  To help us understand this, we consider the following exercise. 
+<br>
+
+```{exercise, Name="Matrix multiplication"}
+Let $G=(V,E)$ be a   finite directed graph with vertices $V$ and edges $E$, here we allow the possibility of multiple edges and loops.    Let $A$ be the adjacency matrix for $G$ so that $$A_{ij}=\text{`the number of edges from $i$ to $j$'},$$   for each $i,j \in V$.   Recall that a path of length $n$ from $i$ to $j$ is given by a sequence of vertices $i=v_1, v_2, \ldots, v_{n-1},v_{n+1}=j$ such that $(v_i, v_{i+1}) \in E$.    Show that the number for paths of length $n$ from $i$ to $j$ is given by $A^n_{ij}$ that is the $(i,j)$ entry in the matrix $A^n$.  
+```
+<br>
+```{solution}
+Let $$\rho_{ij}(n) =   \text{`the number of paths of length $n$ from $i$ to $j$'}.$$
+Clearly the result holds the case $n=1$.  For induction, assume the result the case general $n \geq 1$.  Observe that any path of length  $n+1$ from $i$ to $j$, must consists of a path of length $n$ which from $i$ to $k$ and a path of length $1$ from $k$ to $j$, for some $k \in V$.   Thus 
+\begin{eqnarray*}
+ \rho_{ij}(n+1) &=& \sum_{k \in V} \rho_{ik}(n)\rho_{jk}(1) \\
+&=&\sum_{k \in V} A^n_{ik}A_{kj} = A^{n+1}_{ij}.
+\end{eqnarray*}
+```
+<br>
+```{lemma, Name="Some more matrix multiplication"}
+Let $P$ be the transition matrix for a Markox chain $X$.  Consider the matrix $P^n$, where we denote its entries via $P^n_{ij} = p_{ij}(n).$
+  
+* We have that  $p_{ij}(n) = \mathbb{P} (X_n=j \ | \ X_0=i)$.
+* If $\lambda$ is the initial distribution of $X$, then $\lambda P^n$ gives the law of $X_n$. 
+```
+<br>
+```{proof}
+It is easy to verify that
+$$ \mathbb{P} (A \cap B | C) = \mathbb{P} (A | B \cap C) \mathbb{P} (B |C)$$
+The case where $n=1$ follows by definition.  Assume for induction that 
+$$\mathbb{P} (X_{n-1} =j | X_0=i) = p_{ij}(n-1).$$  
+  Then 
+  \begin{eqnarray*}
+ \mathbb{P} (X_{n} =j | X_0=i) &=& \sum_k  \mathbb{P} (X_{n} =j, X_{n-1} = k |  X_0=i) \\
+&=&   \sum_k \mathbb{P} (X_{n} =j  | X_{n-1} = k,  X_0=i) \mathbb{P} (X_{n-1} = k| X_0=i)
+\end{eqnarray*}
+The Markov property gives that 
+$$  \mathbb{P} (X_{n} =j  | X_{n-1} = k,  X_0=i) =  \mathbb{P} (X_{n} =j  | X_{n-1} = k) = p_{kj}$$
+  and the inductive hypothesis gives that
+$$ \mathbb{P} (X_{n-1} = k| X_0=i) = p_{ik}(n-1).$$
+  Thus from the definition of matrix multiplication, we have
+$$  \mathbb{P} (X_{n} =j | X_0=i)= p_{ij}(n) = \sum_k p_{ik} p_{kj}(n-1)$$
+  as desired.
+
+Finally if $X_0$ has law $\lambda$ given as a row vector, then   
+\begin{eqnarray*}
+\mathbb{P} (X_n = j)  &=& \sum_k \mathbb{P} (X_n = j | X_0 = k) \mathbb{P} (X_0 = k) \\
+&=&  \sum_k \lambda_k p_{kj}(n)  \\
+&=&  (\lambda P^n)_j
+\end{eqnarray*}
+```
+<br>
+```{exercise}
+Let $P$ be the transition matrix on three states $\{1,2,3\}$ given by
+\begin{equation*}
+P = 
+\begin{pmatrix}
+1/3 & 1/3 & 1/3 \\
+1/4 & 1/4 & 1/2 \\
+1/8 & 1/4 & 5/8
+\end{pmatrix}
+\end{equation*}
+
+Suppose that $X$ is a Markov chain, and suppose $X_0$ has law $(1/3, 1/3, 1/3)$.
+
+  * Find $\mathbb{P} (X_8 = 3)$
+  * Compute $P^n$ for large $n$
+  * If you change the initial distribution for $X_0$, for large $n$, what effect does this have on the distribution $X_n$
+```  
 
 <br>
+```{solution}
+We use R of course.  The computations are easy to do in R.  From the form of $P^n$, for large $n$ it will be obvious that the initial distribution is forgotten.
+```
+
+```{r}
+ P <- matrix(c(1/3, 1/3, 1/3, 1/4, 1/4,1/2, 1/8, 1/4, 5/8), nrow =3)
+ P <- t(P)
+ lambda = c(1/3, 1/3, 1/3)
+ Q = P %*% P %*% P %*% P %*% P
+ x=lambda * Q
+ x
+ x[3]
+  M = Q
+ for (i in 1:100){
+ M <-M %*% Q
+ }
+ M
+```
+ 
+## Stationary distributions
+ 
+  Given a transition matrix $P$, we say that a probability vector $\lambda$ is a **stationary** distribution if it is a left eigenvector of $P$ with eigenvalue $1$, so that  
+ $$ \lambda P = \lambda.$$
+   Hence if a Markov chain is started at stationarity, then the distribution of the next step $X_1$ remains the same, and also all future steps.  Depending on the transition matrix, there may by more than one stationary distribution, or there may not be a stationary distribution at all.
+ <br>
+ 
+```{exercise}
+ Again, let $P$ be the transition matrix on three states $\{1,2,3\}$ given by
+\begin{equation*}
+P = 
+\begin{pmatrix}
+1/3 & 1/3 & 1/3 \\
+1/4 & 1/4 & 1/2 \\
+1/8 & 1/4 & 5/8
+\end{pmatrix}
+\end{equation*}
+Find any stationary distributions for $P$.  What do you see?
+
+  <br>
+  
+```{solution}
+Again we use R.   We need to do some normalizing, as linear algebra does not know we are doing statistics.  We will see the same repeated vector that appeared in $P^n$ from the previous part.
+ ```{r}
+ P <- matrix(c(1/3, 1/3, 1/3, 1/4, 1/4,1/2, 1/8, 1/4, 5/8), nrow =3)
+ P <- t(P)
+ lambda = c(1/3, 1/3, 1/3)
+ tP = t(P)
+E=eigen(tP)
+E
+EE = E$vectors[,1]
+EE
+F= EE /sum(EE)
+F
+```
+<br>
+
+One obstruction to the existence of a stationary distribution is periodicity; think of a Markov chain that can only enter a state $i$ at even times. Another obstruction occurs if the Markov chain has countably many states and it drifts away with positive probability.   A Markov chain can also have multiple stationary distributions if it has absorbing states, that is states from which it cannot leave once it enters, or if it has a subset of states from which it enters it cannot leave.  
+
+## Playing with examples
+
+The following exercise gives us an easy class of examples to experiment with.
+
+```{exercise, name="Random walk on a graph"}
+Let $G= (V, E)$ be a simple undirected graph:  no loops, no multiple edges.  Consider the random walk $S_n$ with transition matrix given by:
+$$\mathbb{P} (S_{n+1} = j \  | \ S_i = i) = \frac{1}{\deg(i)}\mathbf{1}[(i,j) \in E] = p_{ij}$$
+for $i, j \in V$.  Here recall that $\deg(i) = \sum_{j \in V} \mathbf{1}[(i,j) \in E].$  Show that if $|E| < \infty$, then $\pi_i = \deg(i) / 2|E|$ is a probability measure on $V$, and $\pi = \pi P$.
+```
+
+```{solution}
+Recall by the handshaking lemma, $\sum_{i \in V} \deg(i) = 2|E|,$ since each edge contributes value two to the sum.  Hence $\pi$ is a probability measure on $V$.  Since $(i,j) \in E$ if and only if $(j, i) \in E$,an easy calculation gives that 
+$$ (\pi P)_j = \sum_{i \in V} \pi_i p_{ij} = \frac{1}{2|E|} \sum_{i \in V} \mathbf{1}[(i,j) \in E] = \frac{\deg(j)}{2 |E|} = \pi_j$$ 
+```   
+
+
+
 
 # Summary
 
@@ -38,6 +190,7 @@ We reviewed the law of large numbers and gave some proofs of some basic results.
 <br>
 
 Version:  24 September 2020
+
 
 
 
