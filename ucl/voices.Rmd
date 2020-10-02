@@ -1,0 +1,33 @@
+---
+title: Voices of UCL Statistical Sciences
+author: Codina Cotar, Sam Livingstone, and Terry Soo
+date:  Fall 2020
+output: html_document
+---
+
+# Abstract
+
+These clips were recorded as a part of a Foundation Fortnight quiz challenge and were presented in this order for our MSc students to recognize.
+
+
+
+* [Clip 1](https://www.dropbox.com/s/zelybwxmol13d2f/a1.m4a?dl=0)
+* [Clip 2](https://www.dropbox.com/s/14eqjo1ovwpzmfc/a2.m4a?dl=0)
+* [Clip 3](https://www.dropbox.com/s/4qv3plutrui8ukb/a3.mp3?dl=0)
+* [Clip 4](https://www.dropbox.com/s/15h6d09xmirzzgh/a4.m4a?dl=0)
+* [Clip 5](https://www.dropbox.com/s/m5l4f7xdahmf0hv/a5.m4a?dl=0)
+* [Clip 6](https://www.dropbox.com/s/89r0pw1yeiqy42h/a6.m4a?dl=0)
+* [Clip 7](https://www.dropbox.com/s/8etsc9pj79mbxn0/a7.m4a?dl=0)
+*  [Clip 8](https://www.dropbox.com/s/5p3k69fua9isy9h/a8.mp3?dl=0)
+* [Clip 9](https://www.dropbox.com/s/vgnbsrsi3horbfe/a9.m4a?dl=0)
+* [Clip 10](https://www.dropbox.com/s/xa0s2a5buh0sg1w/a10.m4a?dl=0)
+* [Clip 11](https://www.dropbox.com/s/plsqjh1i82hf7hp/a11.m4a?dl=0)
+
+
+
+
+
+
+<br>
+<br>
+<br>
