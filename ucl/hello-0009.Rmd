@@ -30,7 +30,7 @@ Not only can you type run R code, you can produce html and pdf files with math a
 
 #  Getting to know you
 
-Please send me an *html* file generated using R markdown with the following information.  It might be helpful to use the [hello-0009.Rmd](https://tsoo-math.github.io/uc/hello-0009.rmd) as a template.
+Please send me an *html* file generated using R markdown with the following information.  It might be helpful to use the [hello-0009.Rmd](https://tsoo-math.github.io/ucl/hello-0009.Rmd) as a template.
 
 *  Name
 *  What programme/course are you in? BSc/Msc?
