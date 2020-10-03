@@ -186,11 +186,11 @@ $$ (\pi P)_j = \sum_{i \in V} \pi_i p_{ij} = \frac{1}{2|E|} \sum_{i \in V} \math
 
 # Summary
 
-We reviewed the law of large numbers and gave some proofs of some basic results.  We showed how the law of large numbers can be used in conjugation with R to compute or estimate various probabilities arising from elementary probability theory.    
+We reviewed the basics of the Markov property and transition matrices.  We saw how to compute stationary distributions as a problem of linear algebra.   We also introduced the class of examples given by random walk on a finite graph.      
 
 <br>
 
-Version:  24 September 2020
+Version:  3 October 2020
 
 
 
