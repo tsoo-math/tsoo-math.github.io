@@ -43,7 +43,8 @@ If $P$ is a transition matrix, one may think of $P^n$ as the matrix with entries
 <br>
 
 ```{exercise, Name="Matrix multiplication"}
-Let $G=(V,E)$ be a   finite directed graph with vertices $V$ and edges $E$, here we allow the possibility of multiple edges and loops.    Let $A$ be the adjacency matrix for $G$ so that $$A_{ij}=\text{`the number of edges from $i$ to $j$'},$$   for each $i,j \in V$.   Recall that a path of length $n$ from $i$ to $j$ is given by a sequence of vertices $i=v_1, v_2, \ldots, v_{n-1},v_{n+1}=j$ such that $(v_i, v_{i+1}) \in E$.    Show that the number for paths of length $n$ from $i$ to $j$ is given by $A^n_{ij}$ that is the $(i,j)$ entry in the matrix $A^n$.  
+Let $G=(V,E)$ be a   finite directed graph with vertices $V$ and edges $E$, here we allow the possibility of multiple edges and loops.    Let $A$ be the adjacency matrix for $G$ so that $$A_{ij}=\text{`the number of edges from $i$ to $j$'},$$   
+for each $i,j \in V$.   Recall that a path of length $n$ from $i$ to $j$ is given by a sequence of vertices $i=v_1, v_2, \ldots, v_{n-1},v_{n}=j$ such that $(v_i, v_{i+1}) \in E$.    Show that the number for paths of length $n$ from $i$ to $j$ is given by $A^n_{ij}$ that is the $(i,j)$ entry in the matrix $A^n$.  
 ```
 <br>
 ```{solution}
