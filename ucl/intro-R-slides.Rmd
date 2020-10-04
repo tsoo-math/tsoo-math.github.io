@@ -22,9 +22,13 @@ R can be used as a fancy calculator
 2+2
 sin(3.14)
 exp(1)
+```
+##
+```{r}
 log(2.71)
 pi
 ```
+##
 Variables can be assigned in the following way
 
 ```{r}
@@ -50,6 +54,9 @@ R has many built in common operations that are useful for statistics:
 x <- c(1,2,3,4,5,6,7,8,9,10)
 x
 sum(x)
+```
+##
+```{r}
 mean(x)
 sd(x)
 var(x)
@@ -88,12 +95,17 @@ x<- rbinom(12,1, 0.5)
 x
 z <- sample(6,12, replace =TRUE)
 z
-x<- rnorm(10, 5, 1)
 ```
 ##
 ```{r}
+x<- rnorm(10, 5, 1)
+x
+
 z <- runif(10, min=-1, max=1)
 z
+```
+##
+```{r}
 z <- rexp(10, 2)
 z
 z<- rpois(7, 1)
@@ -202,7 +214,7 @@ if (n==2) {x <-1}
  }
 isprime(101)
 ```
----
+##
 ```{r, R.options = list(width = 50)}
 x=2
  for(i in 3:500){

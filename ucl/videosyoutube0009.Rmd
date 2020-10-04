@@ -1,0 +1,35 @@
+---
+title: YouTube videos
+author: 
+date:  Fall 2020
+output: html_document
+---
+
+# Abstract
+
+The videos made for Stat 0009 will be available on YouTube as well as Moodle.
+
+# Introduction to R
+
+* [1/4](https://youtu.be/Wca7VHwQ_cE)
+* [2/4](https://youtu.be/v0MNnDjDMrM)
+* [3/4](https://youtu.be/So3qZfFavU8)
+* [4/4](https://youtu.be/16N5ZmMyuyM)
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+#  Version: 4 October 2020
+
+
+<br>
+<br>
