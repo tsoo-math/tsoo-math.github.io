@@ -1,0 +1,72 @@
+---
+title: "In class exercises"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#  Exponential random variables
+
+Suppose I have two types of light bulbs, type-ex and type-wye, whose lifetimes in years are given by  exponential random variables $X$ and $Y$, such that $\mathbb{P}(X >x) = e^{-x/2}$ for all $x \geq 0$,  and $\mathbb{P}(Y >y) = e^{-y/3}$ for all $y \geq 0$.    
+
+
+ Suppose I install one type-ex light bulb and one type-wye light bulb, and the light bulbs function independently of one another.   What is the probability that the ex light bulb dies before the wye light bulb? 
+ 
+ 
+# Grouping coins
+ 
+ Suppose I flip a fair coin 20 times.  Assume that the coin flips are independent.  Show that the probability that I get a consecutive run of at least four heads is greater than $0.27$.  Hint: group the coins into 5 blocks.  
+
+ 
+## Coupon collectors
+
+Suppose that when Tessa buys a Kinder surprise candy egg to get the Kinder surprise toy.     Each egg contains one of $n$ toys uniformly at random, independently of each other.      She wishes to collect all $n$ toys.  Let $T$ be the number of toys her father has to buy in order for her to collect all $n$ toys.  Compute $\mathbb{E} T$.  You should obtain a nice formula that will allow you to compute easily $\mathbb{E} T$ if $n=7$.  Hint: let $T_i$ be the number of toys that need to be purchased, after collecting $i-1$ distinct toys, then 
+$$ T = T_1 + \cdots +T_n.$$
+
+
+# Solutions
+
+
+## Exponential random variables
+
+Since $X$ and $Y$ are independent and their pdfs are given by $f_X(x) = 1/2e^{-x/2}$ and $f_Y(y) = 1/3e^{-y/3}$, when $x,y \geq 0$, then the joint pdf is simply given by the product $f_Xf_Y$; all the probabilities to do with $(X,Y)$ can be found by integration.     Let $R = \{(x,y): 0\leq x <y\}$.   We compute
+
+\begin{eqnarray*}
+\mathbb{P}(X <Y) &=& \int\int_R (\frac{1}{2})e^{-x/2}(\frac{1}{3})e^{-y/3}dxdy \\
+&=&  \int_0 ^{\infty} \frac{1}{2}e^{-x/2}\Big( \int_x^{\infty}\frac{1}{3}e^{-y/3}dy \Big) dx  \\
+&=&  \int_0 ^{\infty} \frac{1}{2}e^{-x/2} \Big[ -e^{-y/3} \Big]_x^{\infty} dx \\
+&=&  \int_0 ^{\infty} \frac{1}{2}e^{-x/2}e^{-x/3} dx \\
+%&=& \int_0 ^{\infty} \frac{1}{2}e^{-x/2}e^{-x/3} dx  \\
+&=&  \int_0 ^{\infty} \frac{1}{2}e^{-5x/6} dx  \\
+&=& \Big[ -\frac{3}{5}  e^{-5x/6} \Big]_0 ^{\infty} \\
+&=& 3/5.
+\end{eqnarray*}
+
+## Grouping coins
+
+Let $F$ be the event that there is a run of at least four heads.  Partition the coin-flips into 5 blocks of 4.  Consider the event $E$ of getting four consecutive heads within at least one of the blocks.  Clearly, $E \subseteq F$.    The probability of not getting four heads in a block is  $1-(1/2)^4$.  So $\mathbb{P}(E^c) =(1-(1/2)^4)^5$ and $\mathbb{P}(E) = 1- \mathbb{P}(E^c) \approx 0.275803.$
+
+## Coupon collector
+
+Note that $T_1=1$, since at the start, any toy is new.  For the next toy, any of the $n-1$ remaining ones will do; if we get the one we first got, we have to try again.  Thus the probability of success is $(n-1)/n$ and failure $1/n$, and $T_2$ is geometric with mean $n/(n-1)$.  Similarly, $T_i$ is geometric is mean  $n/(n-i +1)$, and hence the linearity of expectation gives
+\begin{eqnarray*}
+\mathbb{E} T &=& \sum_{i=1} ^n \frac{n}{n-i+1}  \\ 
+&=&  n \sum_{i=1}^n \frac{1}{n-i+1} \\
+&=& n \sum_{i=1}^n \frac{1}{i}.
+\end{eqnarray*}
+
+# Version: 4 October 2020
+<br>
+<br>
+<br>

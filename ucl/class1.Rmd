@@ -1,0 +1,43 @@
+---
+title: "In class exercises"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#  Exponential random variables
+
+Suppose I have two types of light bulbs, type-ex and type-wye, whose lifetimes in years are given by  exponential random variables $X$ and $Y$, such that $\mathbb{P}(X >x) = e^{-x/2}$ for all $x \geq 0$,  and $\mathbb{P}(Y >y) = e^{-y/3}$ for all $y \geq 0$.    
+
+
+ Suppose I install one type-ex light bulb and one type-wye light bulb, and the light bulbs function independently of one another.   What is the probability that the ex light bulb dies before the wye light bulb? 
+ 
+ 
+# Grouping coins
+ 
+ Suppose I flip a fair coin 20 times.  Assume that the coin flips are independent.  Show that the probability that I get a consecutive run of at least four heads is greater than $0.27$.  Hint: group the coins into 5 blocks.  
+
+ 
+## Coupon collectors
+
+Suppose that when Tessa buys a Kinder surprise candy egg to get the Kinder surprise toy.     Each egg contains one of $n$ toys uniformly at random, independently of each other.      She wishes to collect all $n$ toys.  Let $T$ be the number of toys her father has to buy in order for her to collect all $n$ toys.  Compute $\mathbb{E} T$.  You should obtain a nice formula that will allow you to compute easily $\mathbb{E} T$ if $n=7$.  Hint: let $T_i$ be the number of toys that need to be purchased, after collecting $i-1$ distinct toys, then 
+$$ T = T_1 + \cdots +T_n.$$
+
+
+
+
+# Version: 4 October 2020
+<br>
+<br>
+<br>
