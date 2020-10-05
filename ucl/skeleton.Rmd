@@ -1,0 +1,39 @@
+---
+title: A subset of links for Stat 0009
+author: 
+date:  Fall 2020
+output: html_document
+---
+
+# Abstract
+
+These are a subset of the links that are available on the main Moodle page for our module.   This is *not* meant to be a replacement for Moodle, but may be useful if you are having trouble accessing Moodle.   In addition, most of html files were generated in R Markdown, and if you are interested in the source file, you can probably access it by changing the extension to *Rmd*.
+
+
+* [Module Outline](https://tsoo-math.github.io/ucl/link0009.html)
+
+* [Schedule](https://tsoo-math.github.io/ucl/0009diary.html)
+
+* [Live session information](https://tsoo-math.github.io/ucl/live.html)
+
+* [Homework](https://tsoo-math.github.io/ucl/homework.html)
+
+* [Recorded Lectures on Youtube](https://tsoo-math.github.io/ucl/videosyoutube0009.html)
+
+* [Introduction to R](https://tsoo-math.github.io/ucl/intro-R.html)
+
+* [Law of Large numbers and R](https://tsoo-math.github.io/ucl/prob-viaR.html)
+
+
+
+*  [Brief review of MC](https://tsoo-math.github.io/ucl/reviewMC.html)
+
+
+<br>
+
+
+
+
+<br>
+<br>
+<br>
