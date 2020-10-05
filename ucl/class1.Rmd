@@ -29,7 +29,7 @@ Suppose I have two types of light bulbs, type-ex and type-wye, whose lifetimes i
  Suppose I flip a fair coin 20 times.  Assume that the coin flips are independent.  Show that the probability that I get a consecutive run of at least four heads is greater than $0.27$.  Hint: group the coins into 5 blocks.  
 
  
-## Coupon collectors
+# Coupon collectors
 
 Suppose that when Tessa buys a Kinder surprise candy egg to get the Kinder surprise toy.     Each egg contains one of $n$ toys uniformly at random, independently of each other.      She wishes to collect all $n$ toys.  Let $T$ be the number of toys her father has to buy in order for her to collect all $n$ toys.  Compute $\mathbb{E} T$.  You should obtain a nice formula that will allow you to compute easily $\mathbb{E} T$ if $n=7$.  Hint: let $T_i$ be the number of toys that need to be purchased, after collecting $i-1$ distinct toys, then 
 $$ T = T_1 + \cdots +T_n.$$
@@ -37,7 +37,7 @@ $$ T = T_1 + \cdots +T_n.$$
 
 
 
-# Version: 4 October 2020
+# Version: 5 October 2020
 <br>
 <br>
 <br>
