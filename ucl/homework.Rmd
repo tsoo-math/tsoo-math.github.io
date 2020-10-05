@@ -12,7 +12,9 @@ Please do the homework as posted weekly!
 
 * Week 4 (21 Sept - 27 Sept): 
 * Week 5 (28 Sept - 4 Oct):
-* Week 6 (5 Oct - 11 Oct):  [HW 1](https://tsoo-math.github.io/ucl/hello-0009.html)
+* Week 6 (5 Oct - 11 Oct):  
+     - [HW 1](https://tsoo-math.github.io/ucl/hello-0009.html)
+     -  [HW 1.1](https://tsoo-math.github.io/ucl/QHW1.html)
 * Week 7 (12 Oct - 18 Oct):
 * Week 8 (19 Oct - 25 Oct):
 * Week 9 (26 Oct - 1 Nov):

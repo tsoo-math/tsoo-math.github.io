@@ -5,6 +5,17 @@ date:  Fall 2020
 output: html_document
 ---
 
+#  Abstract
+
+* We will meet for a live session once a week in the slot Monday 2-4 PM that would have been normally our lecture time.   
+* We may not use all two hours.    
+* These live sessions will not be lectures, but rather a combination of office hours, tutorials, and workshops.   
+* The pre-recorded lectures are meant to replace the lectures that *would* have took place at this time.   
+*  These sessions are meant to reinforce and supplement the material covered in the pre-recorded lectures. 
+* In order to encourage everyone to speak freely and interact, we will *not* usually be recording these sessions.
+* These live sessions will be conducted over Zoom. 
+
+
 
 
 # By UCL week
@@ -14,6 +25,8 @@ output: html_document
 
     + [First meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     + [Exercise sheet](https://tsoo-math.github.io/ucl/class1.html)
+    +  [Solutions](https://tsoo-math.github.io/ucl/class1sol.html)
+    +  We discussed some module logistics.  We went into breakout rooms to do the exercises, and returned to the main Zoom room to briefly discuss the solutions.  This meeting was not recorded.   
 * Week 7 (12 Oct - 18 Oct):
 * Week 8 (19 Oct - 25 Oct):
 * Week 9 (26 Oct - 1 Nov):
@@ -29,7 +42,7 @@ output: html_document
 <br>
 <br>
 
-# Version 30 September 2020
+# Version:  5 October 2020
 
 <br>
 <br>
