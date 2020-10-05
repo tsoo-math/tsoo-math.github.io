@@ -17,8 +17,12 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 * [4/4](https://youtu.be/16N5ZmMyuyM)
 
 
+#  Probability via R 
 
-
+* [1/4](https://youtu.be/am_TzZu9Dp0)
+* [2/4](https://youtu.be/8lPWEGHjCHw)
+* [3/4](https://youtu.be/8Ql7twLM5bE)
+* [4/4](https://youtu.be/lNl6rayqQ_A)
 
 
 
@@ -28,7 +32,7 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 <br>
 
 
-#  Version: 4 October 2020
+#  Version: 5 October 2020
 
 
 <br>
