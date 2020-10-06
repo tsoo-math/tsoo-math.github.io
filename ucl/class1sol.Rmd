@@ -59,14 +59,15 @@ Let $F$ be the event that there is a run of at least four heads.  Partition the 
 
 ## Coupon collector
 
-Note that $T_1=1$, since at the start, any toy is new.  For the next toy, any of the $n-1$ remaining ones will do; if we get the one we first got, we have to try again.  Thus the probability of success is $(n-1)/n$ and failure $1/n$, and $T_2$ is geometric with mean $n/(n-1)$.  Similarly, $T_i$ is geometric is mean  $n/(n-i +1)$, and hence the linearity of expectation gives
+Note that $T_1=1$, since at the start, any toy is new.  For the next toy, any of the $n-1$ remaining ones will do; if we get the one we first got, we have to try again.  Thus the probability of success is $(n-1)/n$ and failure $1/n$, and $T_2$ is geometric with mean $n/(n-1)$.  Similarly, $T_i$ is geometric with mean  $n/(n-i +1)$, and hence the linearity of expectation gives
 \begin{eqnarray*}
 \mathbb{E} T &=& \sum_{i=1} ^n \frac{n}{n-i+1}  \\ 
 &=&  n \sum_{i=1}^n \frac{1}{n-i+1} \\
 &=& n \sum_{i=1}^n \frac{1}{i}.
 \end{eqnarray*}
 
-# Version: 4 October 2020
+# Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/class1sol.Rmd)
 <br>
 <br>
 <br>
