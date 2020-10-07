@@ -5,7 +5,7 @@ date:  Fall 2020
 output: html_document
 ---
 
-Please do the homework as posted weekly!
+Please do the homework as posted weekly!  Only the ICAs will be formally assessed and officially recorded.  However, it is important to do the homework.  I will post solutions or go over some aspects in the live sessions.  
 
 
 # By UCL week
@@ -35,7 +35,9 @@ Please do the homework as posted weekly!
 <br>
 <br>
 
-# Version 3 October 2020
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+  
 
 <br>
 <br>
