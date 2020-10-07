@@ -21,7 +21,7 @@ We will give a quick review of the law of large numbers and illustrate applicati
 
 
 ## Theory
-You may recall that in probability theory, we are given the distribution of a non-negative  integer-valued random variable $X$ and we *define* its mean **mean** to be 
+You may recall that in probability theory, we are given the distribution of a non-negative  integer-valued random variable $X$ and we *define* its **mean** to be 
 
 $$ \mathbb{E} X = \sum_{x\in \mathbb{N}} x \mathbb{P}(X=x).$$
 The justification of  the use of the word *mean* or *average* is given by the following theorem.  Recall that a countable collection of random variables are **independent** if every finite subset of them is independent, and they are **identical** if they have the same distribution.   We say that a sequence of random variables $(X_n)_{n \in \mathbb{Z}^+}$ converges **almost-surely** to a random variable $X$ if there exists an event $\Omega'$ with $\mathbb{P}(\Omega') =1$ such that for every $\omega \in \Omega'$, we have convergence in the usual pointwise sense: $X_n(\omega) \to X(\omega)$, as $n \to \infty$.  
@@ -175,8 +175,8 @@ We reviewed the law of large numbers and gave some proofs of some basic results.
 <br>
 <br>
 
-# Version:  24 September 2020
-
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/prob-viaR.Rmd)
 
 
 <br>

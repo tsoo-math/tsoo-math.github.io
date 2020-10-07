@@ -371,7 +371,7 @@ summary {
 <p>We will give a quick review of the law of large numbers and illustrate applications of this theorem via R.</p>
 <div id="theory" class="section level2">
 <h2><span class="header-section-number">1.1</span> Theory</h2>
-<p>You may recall that in probability theory, we are given the distribution of a non-negative integer-valued random variable <span class="math inline">\(X\)</span> and we <em>define</em> its mean <strong>mean</strong> to be</p>
+<p>You may recall that in probability theory, we are given the distribution of a non-negative integer-valued random variable <span class="math inline">\(X\)</span> and we <em>define</em> its <strong>mean</strong> to be</p>
 <p><span class="math display">\[ \mathbb{E} X = \sum_{x\in \mathbb{N}} x \mathbb{P}(X=x).\]</span>
 The justification of the use of the word <em>mean</em> or <em>average</em> is given by the following theorem. Recall that a countable collection of random variables are <strong>independent</strong> if every finite subset of them is independent, and they are <strong>identical</strong> if they have the same distribution. We say that a sequence of random variables <span class="math inline">\((X_n)_{n \in \mathbb{Z}^+}\)</span> converges <strong>almost-surely</strong> to a random variable <span class="math inline">\(X\)</span> if there exists an event <span class="math inline">\(\Omega&#39;\)</span> with <span class="math inline">\(\mathbb{P}(\Omega&#39;) =1\)</span> such that for every <span class="math inline">\(\omega \in \Omega&#39;\)</span>, we have convergence in the usual pointwise sense: <span class="math inline">\(X_n(\omega) \to X(\omega)\)</span>, as <span class="math inline">\(n \to \infty\)</span>.</p>
 
@@ -464,7 +464,7 @@ is.element(TRUE, x==inorder)
 }
 r &lt;-replicate(10000, Hand())
 sum(r==FALSE)/10000</code></pre>
-<pre><code>## [1] 0.3603</code></pre>
+<pre><code>## [1] 0.3807</code></pre>
 <pre class="r"><code>1/exp(1)</code></pre>
 <pre><code>## [1] 0.3678794</code></pre>
 
@@ -496,12 +496,12 @@ for (i in 1:10000)
 if (S[i]==1 &amp;&amp; F[i]==0)
 br &lt;- br+1
 br</code></pre>
-<pre><code>## [1] 2061</code></pre>
+<pre><code>## [1] 2034</code></pre>
 <pre class="r"><code>r=sum(S==1)
 r</code></pre>
-<pre><code>## [1] 2704</code></pre>
+<pre><code>## [1] 2700</code></pre>
 <pre class="r"><code>br/r</code></pre>
-<pre><code>## [1] 0.7622041</code></pre>
+<pre><code>## [1] 0.7533333</code></pre>
 
 <div class="exercise">
 <p><span id="exr:unnamed-chunk-15" class="exercise"><strong>Exercise 1.5  (Uniform random variables)  </strong></span>Let <span class="math inline">\((U_i)_{i \in \mathbb{Z} ^+}\)</span> be a sequence of independent random variables that are uniformly distributed in <span class="math inline">\([0,1]\)</span>. Let
@@ -532,8 +532,11 @@ by appealing to the law of large numbers and running R simulations.
 <p><br>
 <br></p>
 </div>
-<div id="version-24-september-2020" class="section level1">
-<h1><span class="header-section-number">3</span> Version: 24 September 2020</h1>
+<div id="version-07-october-2020" class="section level1">
+<h1><span class="header-section-number">3</span> Version: 07 October 2020</h1>
+<ul>
+<li><a href="https://tsoo-math.github.io/ucl/prob-viaR.Rmd">Rmd Source</a></li>
+</ul>
 <p><br>
 <br>
 <br></p>
