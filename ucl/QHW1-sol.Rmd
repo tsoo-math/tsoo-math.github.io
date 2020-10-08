@@ -1,0 +1,125 @@
+---
+title: "Homework 1.1"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Integration
+
+Approximate the integral 
+$$ \int_0 ^{\infty} \sin(x) x^2 e^{-x} dx$$ by appealing the law of large numbers and using R.  Hint:  Consider an i.i.d.\ sequence of exponential random variables all with rate $1$.
+
+## Solution
+
+Let $X_i$ be i.i.d.\ exponential random varaibles with rate $1$.  By the change of variables formula, we have
+$$\mathbb{E} g(X_1) = \int_0 ^{\infty} g(x) e^{-x}dx;$$
+take $$g(x) = \sin(x) x^2.$$
+Since $g(X_i)$ are independent are also i.i.d.\ the law of of large numbers gives
+$$ n^{-1}[g(X_1) + \cdots+ g(X_n) ] \to \mathbb{E} X_1.$$
+This is easily simulated in R.
+```{r}
+g <- function(x){
+y=  (x^2) * (sin(x))
+y
+}
+x <- rexp(10000,1)
+mean(g(x))
+```
+
+
+
+
+
+
+
+#  Grouping coins
+
+Again, consider a sequence of 20 fair coin flips, as discussed in our first live session.    using $R$, estimate the probability that we will see a run of at least four heads.  Hopefully, we get a number bigger than $0.27$.
+
+
+## Solution
+
+The *isFour* function checks if a sequence of bits contains a run of four heads.
+```{r}
+isFour <- function(x){
+  ans=0
+  for (i in 1:(length(x)+1-4))
+    {
+  if ( x[i]==1 && x[i+1]==1 && x[i+2]==1 && x[i+3]==1 ){ans<- 1}
+  }
+  ans
+  }
+```  
+Next, we generate many sequences of fair coin flips, and compute the average number of times a run of four heads occurs.
+```{r}
+num=replicate(1000, isFour(rbinom(20,1,0.5))  )
+mean(num)
+```
+
+    
+  
+
+
+
+#  Pen and paper?
+
+Let $(U_i)_{i \in \mathbb{Z} ^+}$ be a sequence of independent random variables that are uniformly distributed in $[0,1]$.  Let 
+$$S_n = X_1 + \cdots + X_n.$$
+  Let $$T = \inf\{n \geq 1:  S_n >1\}$$
+  so that $T$ is the first time the sum is greater than $1$.  Use R or pen and paper  to compute $\mathbb{E} T$.
+
+
+## Solution by pen and paper
+
+Let $a \in [0,1]$.  We first show that $$\mathbb{P}(U_1 + \cdots +U_n \leq a ) = \frac{a^n}{n!}.$$
+We proceed by induction.  The result is obvious in the case $n=1$.  Assume the result for $n \geq 1$.    Set $Z = U_1 + \cdots +U_n$.  Note that $Z$ is independent of $U_{n+1}$.  
+By the induction hypothesis we know the density of $Z$ (at least up to value $a=1$).  Hence we have that 
+$$P(Z + U_{n+1} \leq a  ) = \int_0^a\int_0 ^{a-z}  \frac{z^{n-1}}{(n-1)!} du dz,$$
+and the inductive step follows from an easily calculation.
+
+Next, we show that for any integer-valued random variable $X \geq 0$, we have
+$$\mathbb{E} X = \sum_{n=1} ^{\infty} \mathbb{P}(X \geq n).$$
+ Note that 
+ $$X = \sum_{i=1} ^{\infty} \mathbf{1}[X \geq i],$$
+ so that
+ $$
+ \begin{eqnarray*}
+ \mathbb{E} X &=& \sum_{i=1} ^{\infty} \mathbb{E}  \mathbf{1}[X \geq i] \\
+ &=& \sum_{i=1} ^{\infty} \mathbb{P} (X \geq i)
+ \end{eqnarray*}
+$$
+Finally, we note that
+$$\{T \geq n\} = \{ U_1 + \cdots +U_{n-1} < 1\}.$$
+So, we can now compute $\mathbb{E} T = e$. 	
+
+## Solution by R
+
+In R it is easy!
+```{r}
+T <-function() {
+n=0; s=0
+while (s <1) {s <- s + runif(1); n <- n+1}
+n
+}
+z=replicate(1000, T())
+mean(z)
+```
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/prob-viaR-sol.Rmd)
+
+<br>
+<br>
+<br>

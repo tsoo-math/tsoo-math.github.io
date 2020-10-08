@@ -1,0 +1,104 @@
+---
+title: "Random variables: theory and practice"
+output: ioslides_presentation
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Defining and generating randomness
+
+* You may recall that random variables live on sample space, but has anyone told you the address of this sample space?
+* You have generated random variables on R, how does it do that?
+
+
+##  Theory
+
+*  Recall that a **probability space** is $(\Omega, \mathcal{F}, \mathbb{P})$, where $\Omega$ is the **sample space** and $\mathcal{F}$ is the set subsets of $\Omega$ whose elements are called **events**, and $\mathbb{P}$ is a countably additive **probability measure** which assigns each event  a number in $[0,1]$
+*  A (real-valued) **random variable** is map $X : \Omega \to \mathbb{R}$, such that $X^{-1}(I) = \{\omega \in \Omega:  X(\omega) \in I\} \in \mathcal{F}$ for all open intervals $I \subset \mathbb{R}$.  
+*  It's **law** or **distribution** is given the **cumulative distribution function** given by 
+$$F(x) = \mathbb{P}(X \leq x) = \mathbb{P}( \{ \omega \in \Omega:  X(\omega) \leq x\}).$$
+* Many properties about $X$ just depend on its law, so in elementary modules on probability it is easy to forget that random variables live on sample space.
+
+## Can we forget about sample space?  
+
+*  One reason why you haven't heard much about sample spaces is because it is not easy to prove the existence of a sample space that can support a random variable that is uniformly distribution on the unit interval.
+*   However, if you are ready to assume that existence of even one such random variable, on some sample space, this is enough to do most of probability theory.
+
+##  The inverse transform method
+
+*  Let $F$ is the cdf of a continuous real-valued random variable.  For simplicity, assume that $F$ is increasing, so that $F^{-1}$ exists.
+*  Notice that the random variable $X=F^{-1}(U)$ has cdf $F$: 
+$$ 
+\begin{eqnarray*}
+\mathbb{P}( F^{-1}(U) \leq x) &=&  \mathbb{P}(U \leq F(x)) \\
+&=&  F(x)
+\end{eqnarray*}
+$$
+*  If we need to generate say a Bernoulli $p$ random variable, then we can set $\phi(U) = 1$ if $U \in [0,p]$ and $\phi(U)=0$ if $U \in [p, 1]$.  
+*  Other discrete distributions can be dealt with similarly.
+
+##  Independent random variables
+
+*  Independent random variables are again independent.
+
+*  It suffices to have independent uniform random variables.
+
+*   If $U$ is uniformly distributed on $[0,1]$, express $U$ as a 
+$$ U= X_1 X_2 X_3 X_4 \cdots$$
+be the usual base-$10$ expansion of $U$, so that $X_i$ are random variables that take integer-values $1,2, \ldots, 9$.
+*  It is not hard to show that $X_i$ are independent and uniformly distributed.
+*  By rearranging and recombining these digits $X_i$, from one $U$ uniform random variables, you can produce as many independent ones as you like.
+
+## What does R do?
+
+*  We already saw that the key is uniform random variables, which can be thought as a sequence of independent digits.
+*  R simulates a uniform random variable
+*   This is an active area of research
+*  Lehmer random number generator:  take $m$ to be prime,  set $0 < X_0 < m$: 
+   $$X_{k+1} = a \cdot X_k \bmod m$$
+      + $a$ is chosen to be a primitive root.
+* The $X_k$ behave like independent random variables that are uniformly distributed in $0, 1, \ldots, m-1$.
+
+
+## Special methods
+
+*  The inverse transform method is often too slow
+
+*  The Box-Muller method for generating normal random variables.  Ann.\ Math. Stat.\  1958
+*  Let $U$ and $V$ be independent random variables that uniformly distributed on the unit interval.   Set
+	$$X = \sqrt{ -2 \log U} \cos (2 \pi V)$$ and
+	$$Y =     \sqrt{ -2 \log U} \sin (2 \pi V).$$
+	Then $X$ and $Y$ are independent standard normals.  
+
+## Proof
+
+We solve for $(U,V)$ to obtain that
+	$$U = \exp[  -(X^2 + Y^2)/2]$$
+	and
+	$$V =  \frac{1}{2\pi} \arctan(Y /X).$$
+	Thus the map $$(u, v) \mapsto  \big (\sqrt{ -2 \log u} \cos (2 \pi v),  \sqrt{ -2 \log u} \sin (2 \pi v)  \big)$$
+	is a bijection from $(0,1) \times (0,1)$ to $\mathbb{R}^2 \setminus \{ (0,0)\}.$ 
+	
+## Continued
+
+It has Jacobian is  given by
+$$J(x,y) = -\frac{1}{2\pi } e^{-(x^2 + y^2)/2}$$
+Hence the (joint) pdf for $(X,Y)$ is given by
+$$(x,y) \mapsto  \Big( \frac{1}{\sqrt{2 \pi} } e^{-x^2/2}  \cdot    \frac{1}{\sqrt{2 \pi}}  e^{-y^2/2} \Big),$$
+	as desired.
+
+
+
+
+
+##   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/randomTP-slides.Rmd)
+
+
+
+
+
+
