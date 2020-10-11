@@ -24,6 +24,10 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 * [3/4](https://youtu.be/8Ql7twLM5bE)
 * [4/4](https://youtu.be/lNl6rayqQ_A)
 
+#  Random variables: theory and practice
+
+* [1/2](https://youtu.be/P_q-673VUQE)
+* [2/2](https://youtu.be/NoJi2rqJI4k)
 
 
 
@@ -32,7 +36,7 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 <br>
 
 
-#  Version: 5 October 2020
+# Version: `r format(Sys.time(), '%d %B %Y')`
 
 
 <br>

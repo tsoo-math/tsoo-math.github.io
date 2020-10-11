@@ -42,13 +42,13 @@ $$
 
 ##  Independent random variables
 
-*  Independent random variables are again independent.
+* Functions of  independent random variables are again independent.
 
 *  It suffices to have independent uniform random variables.
 
 *   If $U$ is uniformly distributed on $[0,1]$, express $U$ as a 
 $$ U= X_1 X_2 X_3 X_4 \cdots$$
-be the usual base-$10$ expansion of $U$, so that $X_i$ are random variables that take integer-values $1,2, \ldots, 9$.
+be the usual base-$10$ expansion of $U$, so that $X_i$ are random variables that take integer-values $0,1,2, \ldots, 9$.
 *  It is not hard to show that $X_i$ are independent and uniformly distributed.
 *  By rearranging and recombining these digits $X_i$, from one $U$ uniform random variables, you can produce as many independent ones as you like.
 
@@ -63,7 +63,7 @@ be the usual base-$10$ expansion of $U$, so that $X_i$ are random variables that
 * The $X_k$ behave like independent random variables that are uniformly distributed in $0, 1, \ldots, m-1$.
 
 
-## Special methods
+## Box-Mueller for normal random variables
 
 *  The inverse transform method is often too slow
 
@@ -91,8 +91,104 @@ $$(x,y) \mapsto  \Big( \frac{1}{\sqrt{2 \pi} } e^{-x^2/2}  \cdot    \frac{1}{\sq
 	as desired.
 
 
+##  Acceptance/Rejection methods: Sampling on a disc
 
 
+We simulate a single uniformly distributed point on the disc, by simulating a uniform point on a square, and *accept* it if lands inside an inscribed disc, or *reject* otherwise, and repeat until we have acceptance.  
+
+```{r}
+point <- function(){
+  z=2
+  while(length(z)==1){
+  x = 2*runif(1) -1
+  y = 2*runif(1) -1
+if (x^2 + y^2 <1) { z<-c(x,y)}
+  }
+  z
+}
+```
+##
+```{r}
+ re=replicate(500, point())
+ plot(re[1,], re[2,], xlim=c(-1.1,1.1), ylim=c(-1.1,1.1), asp=1)
+```
+
+
+
+## Acceptence/Rejection: Sampling from a pdf
+
+*  Suppose we want to generate a random variable $X$ with pdf $f$.
+
+*  Suppose $f$ is a complicated pdf with an inverse that is difficult to compute.
+*  Suppose we can easily generate $Y$ which has pdf $g$.
+*  Suppose there exists $M$ so that $f(x) \leq M g(x)$.
+*  Then you are in good shape!
+
+##  Procedure
+
+*  Let $U$ be uniformly distirbuted on $[0,1]$ and independent of $Y$
+*  Sample from $(U, Y) = (u, y)$
+*  Check if 
+$$ u \leq  \frac{f(y)}{M \cdot g(y)}$$
+*  If the inequality holds, accept the value of $y$, and report $X=y$; reject otherwise, and repeat.
+
+## Why!
+
+Observe that by the change of variables formula and Fubini, we have
+$$
+\begin{eqnarray*}
+&& \mathbb{P}(Y \leq x, MU g(Y) \leq f(Y)) \\
+&=& \int_{-\infty} ^x \int_0 ^1 \mathbf{1}[Mu g(y) \leq f(y)]g(y)dudy \\
+&=&  \int_{-\infty} ^x  \mathbb{P}[U \leq f(y)/Mg(y)] \cdot g(y) dy \\
+&=&  \int_{-\infty} ^x f(y)/M dy \\
+&=&  F(x)/M.
+\end{eqnarray*}
+$$
+
+
+
+## Why (continued)
+
+Thus 
+$$ \mathbb{P}(Y \leq x | MU g(Y) \leq f(Y)) = F(x).$$ 
+So, given that we accepted the distribution of $Y$, is the distribution of $X$, that random variable we want to sample/simulate.
+
+
+## A simple example
+
+*  Consider the pdf $f(x) = 3x^2$ on the unit interval $[0,1]$.
+*  Consider the pdf $g(x) = 1$ on the unit interval.
+*  Of course, $f(x) \leq 3 g(x)$.
+
+## Code
+
+```{r}
+samplef <- function(){
+x=-1
+while(x==-1){
+y = runif(1)
+u = runif(1)
+if( u*3 < 3*(y^2)){ x<- y}
+}
+x
+}
+```
+
+## Histogram
+
+```{r}
+accepted=replicate(100000, samplef())
+B = seq(0, 1, by=0.01)
+hist(accepted, prob=TRUE, B)
+```
+
+
+
+## Summary
+
+* We rediscovered probability spaces
+* The central role of uniform random variables in theory and practice
+* Sampling methods such as acceptance/rejection
 
 ##   Version: `r format(Sys.time(), '%d %B %Y')`
   * [Rmd Source](https://tsoo-math.github.io/ucl/randomTP-slides.Rmd)
