@@ -423,7 +423,7 @@ Then
  \mathbb{P} (X_{n} =j | X_0=i) &amp;=&amp; \sum_k  \mathbb{P} (X_{n} =j, X_{n-1} = k |  X_0=i) \\
 &amp;=&amp;   \sum_k \mathbb{P} (X_{n} =j  | X_{n-1} = k,  X_0=i) \mathbb{P} (X_{n-1} = k| X_0=i)
 \end{eqnarray*}\]</span>
-The Markov property gives that
+It follows from the Markov property that
 <span class="math display">\[  \mathbb{P} (X_{n} =j  | X_{n-1} = k,  X_0=i) =  \mathbb{P} (X_{n} =j  | X_{n-1} = k) = p_{kj}\]</span>
 and the inductive hypothesis gives that
 <span class="math display">\[ \mathbb{P} (X_{n-1} = k| X_0=i) = p_{ik}(n-1).\]</span>
@@ -468,14 +468,12 @@ P =
  P &lt;- t(P)
  lambda = c(1/3, 1/3, 1/3)
  Q = P %*% P %*% P %*% P %*% P
- x=lambda * Q
+ x=lambda %*% Q
  x</code></pre>
-<pre><code>##            [,1]       [,2]      [,3]
-## [1,] 0.06685267 0.08895091 0.1775298
-## [2,] 0.06671318 0.08890436 0.1777158
-## [3,] 0.06657366 0.08885789 0.1779018</code></pre>
+<pre><code>##           [,1]      [,2]      [,3]
+## [1,] 0.2001395 0.2667132 0.5331473</code></pre>
 <pre class="r"><code> x[3]</code></pre>
-<pre><code>## [1] 0.06657366</code></pre>
+<pre><code>## [1] 0.5331473</code></pre>
 <pre class="r"><code>  M = Q
  for (i in 1:100){
  M &lt;-M %*% Q
@@ -559,7 +557,10 @@ for <span class="math inline">\(i, j \in V\)</span>. Here recall that <span clas
 <h1><span class="header-section-number">2</span> Summary</h1>
 <p>We reviewed the basics of the Markov property and transition matrices. We saw how to compute stationary distributions as a problem of linear algebra. We also introduced the class of examples given by random walk on a finite graph.</p>
 <p><br></p>
-<p>Version: 3 October 2020</p>
+<ul>
+<li>Version: 11 October 2020</li>
+<li><a href="https://tsoo-math.github.io/ucl/reviewMC.Rmd">Rmd Source</a></li>
+</ul>
 <p><br>
 <br>
 <br></p>
