@@ -3166,11 +3166,11 @@ c(j,t)
 S=replicate(10000, coupled())
 mean(S[1,])</pre>
 
-<pre >## [1] 0.6704</pre>
+<pre >## [1] 0.6678</pre>
 
 <pre class = 'prettyprint lang-r'>mean(S[2,])</pre>
 
-<pre >## [1] 0.5079</pre>
+<pre >## [1] 0.5039</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-1">
 
@@ -3186,11 +3186,11 @@ mean(S[1,])</pre>
 
 mean(replicate(1000, exit(2/3)))</pre>
 
-<pre >## [1] 15.326</pre>
+<pre >## [1] 13.936</pre>
 
 <pre class = 'prettyprint lang-r'>mean(replicate(25, exit(1/2)))</pre>
 
-<pre >## [1] 311.56</pre>
+<pre >## [1] 50137.4</pre>
 
 </article></slide><slide class=""><hgroup><h2></h2></hgroup><article  id="section-2">
 
@@ -3217,17 +3217,17 @@ c(njune, ntessa)
 <pre class = 'prettyprint lang-r'>replicate(25, exitcoupled())</pre>
 
 <pre >##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
-## [1,]   43    7   53   17   15   13   21   11   11
-## [2,]   43    7   53   17   15   13   21   14   11
+## [1,]    5    7   17    7    7   21   15    9    7
+## [2,]    6   10   17    7    8   21   15    9    8
 ##      [,10] [,11] [,12] [,13] [,14] [,15] [,16]
-## [1,]     5    13    21    13    11    11     9
-## [2,]     6    13    22    13    11    11    10
+## [1,]    13     7    15    17     7     5    15
+## [2,]    20     7    15    17    10     5    15
 ##      [,17] [,18] [,19] [,20] [,21] [,22] [,23]
-## [1,]    25     5    11     9     9     5    23
-## [2,]   346     5    11     9     9     5    23
+## [1,]     7    13     7    17     7     5    27
+## [2,]     8    13    12    17     7     5    32
 ##      [,24] [,25]
-## [1,]     5     7
-## [2,]     5    12</pre>
+## [1,]     9    29
+## [2,]     9    29</pre>
 
 </article></slide><slide class=""><hgroup><h2>Total variational distance</h2></hgroup><article  id="total-variational-distance">
 
@@ -3320,7 +3320,7 @@ d_{TV}(S_n, S_{n+1}) &amp;\leq&amp; 2\mathbb{P}(S_n \not = S_{n+1}) \\
 
 <p>We saw some basics of how coupling can be used as a tool in probability theory and in particular, how it can be used the bound the total variational distance between two random variables.</p>
 
-</article></slide><slide class=""><hgroup><h2>Version: 10 October 2020</h2></hgroup><article  id="version-10-october-2020">
+</article></slide><slide class=""><hgroup><h2>Version: 11 October 2020</h2></hgroup><article  id="version-11-october-2020">
 
 <ul>
 <li><a href='https://tsoo-math.github.io/ucl/TV.Rmd' title=''>Rmd Source</a></li>

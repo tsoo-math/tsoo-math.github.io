@@ -12,7 +12,7 @@ output: html_document
 * Week 4 (21 Sept - 27 Sept):  First email
 * Week 5 (28 Sept - 4 Oct):
 * Week 6 (5 Oct - 11 Oct):  Introductions:  Introduction to R and Law of Large Numbers and R
-* Week 7 (12 Oct - 18 Oct):
+* Week 7 (12 Oct - 18 Oct): Random variables: theory and practice, Coupling and total variational distance, Review of Markov chains
 * Week 8 (19 Oct - 25 Oct):
 * Week 9 (26 Oct - 1 Nov):
 * Week 10 (2 Nov - 8 Nov): ICA 1 assigned   
@@ -35,7 +35,7 @@ output: html_document
 <br>
 <br>
 
-# Version: 5 October 2020
+# Version:  `r format(Sys.time(), '%d %B %Y')`
 
 <br>
 <br>
