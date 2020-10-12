@@ -1,0 +1,68 @@
+---
+title: "Homework 2"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+#  Coding a Poisson random variable
+
+Suppose R can only generate uniform random variables.  How can you take advantage of this and generate Poisson random variables?  
+
+
+#  Inverse transform method
+
+Use the inverse tranform method to generate an exponential random variable
+
+#  The value of Pi    
+
+Inscribe a circle in a square.   Estimate the value of $\pi$ by computing the ratio of the number of times a uniformly chosen point on the square ends up in the circle.
+
+#  Acceptance/Rejection
+
+Using an exponential random variable, generate a normal random variable that is conditioned to be be positive; from here, adjust this result to get a normal random variable.
+
+#  Total variatonal distance
+ 
+Let $X$ and $Y$ be Poisson random variables with means $\lambda > \mu$.  Show that 
+$$d_{TV}(X, Y) \leq 2 (1-\exp(\lambda - \mu))$$
+
+#  Reversibility
+
+Let $P$ be transition matrix on a state space $S$, and $\pi$ be a probability measure on $S$.  We say that $\pi$ is **reversible** for $P$ if $\pi_i p_{ij} = \pi_j p_{ji}$.
+
+*  Check that the stationary distribution from a random walk on a finite graph is reversible.
+
+*  Let $P$ be a transition matrix on a state space $S$.  Check that if $\pi$ is reversible, then it is stationary.
+
+*   Let $\pi$ be a reversible distribution for the transition matrix $P$ on a state space $S$.  Let $X$ be Markov chain with transition matrix $P$, that is  started at $\pi$.  Let $a, b,c,d \in S$.  Show that
+$$ \mathbb{P}(X_0=a,X_1=b, X_2=c, X_3=d) = \mathbb{P}(X_0=d,X_1=c,X_2=b, X_3=a).$$
+
+
+#  Simple card shuffling
+
+Suppose that I have $n=52$ cards, arranged in some initial order.   Consider the following procedure:  I choose two cards with probability $1/ {n \choose 2}$, and then change their position; repeat.  
+
+*  Describe this procedure as a Markov chain.  Can you code it?
+
+*  With this procedure, can you get from an initial ordering to *any* other ordering?  Why?
+
+*  Do you think it has a stationary distribution?  If, so, what is it?
+
+
+
+
+
+
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/QHW2.Rmd)
+<br>
+<br>
+<br>
