@@ -1,0 +1,123 @@
+---
+title: "Gambler's ruin"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{exercise, name ="Simple gambler's ruin"}
+Suppose someone plays the following gambling game.   They bet $1$ pound on a fair flip of a coin and win $1$ pound if it comes up heads, and lose if come up tails.
+  They start with $1$ pound, and stop playing once they have reached $5$ pounds or have  no money left.    Use R to run simulations to estimate the probability of ending the game with no money left.  
+```
+<br>
+
+
+```{solution}
+First, we define a function that gives the result of one iteration when you have $x$ dollars.   Then we run this *game* function in a while-loop until we are bankrupt or get to win a five pound note.   We want to run the *game* function with the starting amount of $1$, many times and then take an average.  We use the replicate function.
+```
+
+```{r}
+play <- function(x){
+x <- 2*(rbinom(1,1,0.5)) -1 +x;
+x
+}
+game <- function(x){
+while( x >0 && x <5){
+x <- play(x);
+}
+x
+}
+y = replicate(1000, game(1))
+backrupt=sum(y==0)/1000
+win=sum(y==5)/1000
+
+
+backrupt
+win
+```
+
+The following version of the gambler's ruin problem was Huygen's formulation of a problem discussed in a correspondence between Pascal and Fermat: 
+*Each player starts with 12 points, and a successful roll of the three dice for a player (getting an 11 for the first player or a 14 for the second) adds one to that player's score and subtracts one from the other player's score; the loser of the game is the first to reach zero points. What is the probability of victory for each player?*
+See [A note on the history of the gambler ruin problem](http://koreascience.or.kr/article/JAKO201311637859390.pdf).
+
+
+```{exercise}
+Using R, estimate the probability that first player is victorious.   
+```
+Of course you can compute the probabilities of getting $11$ and $14$, but you can electronically roll dice:
+```{r}
+sample(6, 10, replace=TRUE)
+```
+<br>
+
+```{solution}
+```{r}
+
+playdice <- function(x){
+dice= sum(sample(6, 3, replace=TRUE))
+  if (dice==11){x <- x+1}
+if (dice==14){x<-x-1}
+x
+}
+gameH <- function(x){
+while( x >0 && x <24){
+x <- playdice(x);
+}
+x
+}
+y = replicate(1000, gameH(12))
+backrupt=sum(y==0)/1000
+win=sum(y==24)/1000
+
+backrupt
+win
+
+```
+
+
+```{exercise, name="Three players"}
+Suppose three players each of which start with $5$ points, play a game where they have equal probability of winning. The winner takes $1$ point from each of  the two *losers*.    They stop playing when any at least one player has no more money left.  On average, how long do they play?
+```
+
+```{r}
+threeplay <- function(x){
+dice= sample(3, 1, replace=TRUE)
+  if (dice==1){x <-c(x[1]+2, x[2]-1, x[3]-1  )}
+if (dice==2){x<-c(x[1]-1, x[2]+2, x[3]-1  )}
+if (dice==3){x<-c(x[1]-1, x[2]-1, x[3]+2 )}
+x
+}
+gametrack <- function(x){
+n=0
+  while( x[1] >0 && x[2] >0 && x[3] >0){
+x <- threeplay(x)
+n <- n+1
+}
+n
+}
+y = replicate(10000, gametrack(c(5,5,5)))
+mean(y)
+```
+<br>
+For more information on the general case of $n$ players see  [The asymmetric n-player gambler's ruin problem with equal initial fortunes](https://doi.org/10.1016/j.aam.2003.07.005).
+<br>
+<br>
+
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>

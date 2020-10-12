@@ -30,6 +30,8 @@ output: html_document
 * Week 7 (12 Oct - 18 Oct):
     +  [Second meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     +  [R exercise sheet](https://tsoo-math.github.io/ucl/gambler.html)
+    +  [Solutions](https://tsoo-math.github.io/ucl/gambler-sol.html)
+    +  We discussed more about the logisitics of of the module and went over the first homework.  Afterwards, we went into breakout rooms to work on the R exercises, we returned to the main room to discuss solutions.  This meeting was not recorded.
 * Week 8 (19 Oct - 25 Oct):
 * Week 9 (26 Oct - 1 Nov):
 * Week 10 (2 Nov - 8 Nov):   
