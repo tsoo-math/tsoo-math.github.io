@@ -18,6 +18,7 @@ Please do the homework as posted weekly!  Only the ICAs will be formally assesse
      -  [Sol 1.1](https://tsoo-math.github.io/ucl/QHW1-sol.html)
 * Week 7 (12 Oct - 18 Oct):
      -  [HW 2](https://tsoo-math.github.io/ucl/QHW2.html)
+     -  [HW 2](https://tsoo-math.github.io/ucl/QHW2-sol.html)
 
 * Week 8 (19 Oct - 25 Oct):
 * Week 9 (26 Oct - 1 Nov):
