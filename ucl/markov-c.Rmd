@@ -268,7 +268,7 @@ Let $P$ be an aperiodic irreducible transition matrix on a finite state space $S
 
 
 ```{proof}
-If both $\lambda$ and $\mu$ are stationary, then $\mu P^n = \mu$ and $\lambda P^n = \lambda$ for all $n$, and by Doeblin's theorem, we can conclude that if $X$ and $Y$ are Markov chains with transition matrix $P$ and initial distributions $\lambda$ and $\mu$, respectively, we have $X_n$ has the same law as X_0$ and $Y_n$ has the same law as $Y_0$, and   
+If both $\lambda$ and $\mu$ are stationary, then $\mu P^n = \mu$ and $\lambda P^n = \lambda$ for all $n$, and by Doeblin's theorem, we can conclude that if $X$ and $Y$ are Markov chains with transition matrix $P$ and initial distributions $\lambda$ and $\mu$, respectively, we have $X_n$ has the same law as $X_0$ and $Y_n$ has the same law as $Y_0$, and   
 $$ d_{TV}(X_0, Y_0) = d_{TV}(X_n, Y_n) \to 0.$$  Hence $X_0$ has the same law as  $Y_0$ and $\lambda = \mu$.  
 
  By the max/min lemma we may define 

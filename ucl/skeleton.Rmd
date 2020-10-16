@@ -7,7 +7,7 @@ output: html_document
 
 # Abstract
 
-These are a subset of the links that are available on the main Moodle page for our module.   This is *not* meant to be a replacement for Moodle, but may be useful if you are having trouble accessing Moodle.   In addition, most of html files were generated in R Markdown, and if you are interested in the source file, you can probably access it by changing the extension to *Rmd*.
+These are a subset of the links that are available on the main Moodle page for our module.   This is *not* meant to be a replacement for [Moodle](https://moodle.ucl.ac.uk/), but may be useful if you are having trouble accessing Moodle.   In addition, most of html files were generated in R Markdown, and if you are interested in the source file, you can probably access it by changing the extension to *Rmd*.
 
 
 * [Module Outline](https://tsoo-math.github.io/ucl/link0009.html)
@@ -35,6 +35,9 @@ These are a subset of the links that are available on the main Moodle page for o
 
 
 *  [Brief review of MC](https://tsoo-math.github.io/ucl/reviewMC.html)
+
+
+*  [Making MC converge](https://tsoo-math.github.io/ucl/markov-c.html)
 
 
 <br>
