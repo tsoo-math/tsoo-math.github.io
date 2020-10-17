@@ -1,0 +1,457 @@
+---
+title: "Making Markov chains converge"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+## Constructing Markov chains
+
+*  Theory:  We have at our disposal an infinite  sequence of independent random variables  uniformly distributed on $[0,1]$.  
+
+*  R:  We can simulate as many independent uniform random variables as we please.  
+
+*  Any random variable can be thought of as a function of uniform random variable.
+
+## Continued
+
+*  Let $X$ be the Markov chain on the state space $S$ with transition matrix $P$.
+
+* First we construct $X_0 = f(U_{-1})$  
+
+* Next, let $\phi:S \times [0,1] \to S$ be a function such that if $U$ is uniformly distributed in $[0,1]$ and independent of $X_0$, then  $$\mathbb{P}(\phi(X_0, U) =j \ | \ X_0=i) = p_{ij}.$$  
+
+* The function $\phi$ is noting abstract at all, in R, it is simply the procedure you would define so that given $i$, it outputs $j$ with probability $p_{ij}$; here the $U$ represents the randomization that R uses.  
+
+
+## continued
+
+Then the Markov chain $X$ can be constructed as 
+
+* $X_0 = f(U_{-1})$ 
+* $X_1 = \phi(X_0, U_0)$
+* $X_2 =  \phi(X_1, U_1)$
+* $X_{n+1} = \phi(X_{n}, U_n)$
+
+
+
+## Example code
+
+
+```{r,  R.options = list(width = 50)}
+P <- matrix(c(0, 1/2, 1/2, 0, 0, 1/2, 0,0,0,1/2, 1/2,0,
+    0, 1/2, 0, 0,0,0,1/2, 1/2, 1/3, 1/3, 0, 0, 1/3), nrow =5)
+P <-t(P)
+P
+```
+
+## continued
+
+
+```{r}
+initial <- function(){
+u = runif(1)
+x=-1
+k=0
+while(x==-1){
+k<-k+1
+  if( u <=0.2*k){x<-k}
+}  
+x
+}
+```
+
+
+## continued
+
+```{r}
+step <- function(i){
+  q = P[i,]
+  x=-1
+  u = runif(1)
+  j=0
+  cumq = cumsum(q)
+  while(x==-1){
+    j<-j+1
+    if(u <= cumq[j]){x <-j}
+  }
+  x
+}
+```
+
+## continued
+
+
+```{r,  R.options = list(width = 50)}
+steps <- function(n){
+  x = initial()
+  for (i in 1:n){
+    x <- c(x, step(x[i]))
+  }
+  x
+}
+
+steps(100)
+
+```
+
+
+
+
+
+
+## Aperiodic and irreducible Markov chains
+
+* Let $P$ be a transition matrix on the state space $S$.   
+* The **period** of a state $i\in S$ is defined to be $$per(i) = \gcd\{n \geq 1:  p_{ii}(n) >0\}.$$ 
+* We say that $P$ is **aperiodic** if every state $i$ is such that $per(i) = 1$.  
+
+## Lemma on aperiodic transition matrices
+
+
+ If $P$ is aperiodic transition matrix on a finite state space $S$, then there exists $M>0$ such that $p_{ii}(n) >0$ for all $i\in S$ and all $n \geq M$.  
+
+
+## Number theory lemma
+
+Let $a_i$ be positive integers.  Let $d = \gcd\{a_1, a_2, \ldots\}$.  
+
+* There exists a finite $n$ such that $d= \gcd\{a_1, \ldots, a_n\}$.   
+
+* Recall that if $\gcd\{a_1, \ldots, a_n\}=1$, then there exist integers $x_1, \ldots, x_n$ (possibly negative) such that
+$a_1x_1 + \cdots +a_nx_n   = 1.$  
+
+* See [Die Hard 3, Water riddle](https://www.youtube.com/watch?v=BVtQNK_ZUJg)
+
+* In fact, there exists $M$ such that for all $m \geq M$, there exist nonnegative integers $x_1, \ldots, x_n$ such that
+$a_1x_1 + \cdots +a_nx_n   = m.$
+
+
+## Proof of Lemma about aperiodic transition matrices
+
+
+* Assume $S = \{1, \ldots, N\}$.    
+* Let $A^i = \{n \geq 1: p_{ii}(n) >0\}$.    
+* Observe that if $a, b \in A^i$, then $a+b \in A^i$.  Why?  
+* Thus by elementary number theory, there exists $M^i$ such that $p_{ii}(m) >0$ for all $m \geq M^i$.  
+* Choose  $$M= \max\{M^1, \ldots, M^N\}.$$   
+
+
+
+## Irreducibility and aperiodicity
+
+* We say that $P$ is **irreducible** if for every $i,j \in S$ there exists $n$ such that $p_{ij}(n)>0$. 
+
+
+* Let $P$ be a transition matrix  on a finite state space $S$. 
+* If $P$ is aperiodic and irreducible, then there exists $N$ such that for all $n \geq N$, we have $p_{ij}(n) >0$ for all $i,j \in S$. 
+
+
+## Proof
+
+
+* Since $P$ is aperiodic, we know that for $M$ sufficiently large, we can be sure that for all $i \in S$ we have $p_{ii}(n) >0$ for all $n \geq M$. 
+* Observe that
+$$ p_{ij}(n+k) \geq p_{ii}(n)p_{ij}(k).$$
+
+* The irreducibility assumptions assures us that for every pair $(i,j)$ we can find $k=k_{ij}$ such that $p_{ij}(k) >0$.
+
+## continued
+
+ Thus 
+$$p_{ij}(n) >0 \text{ for all } n \geq M + k_{ij};$$
+  take $$K =\max \{ k_{ij}: i,j \in S\}$$
+  then for all $i,j \in S$, we have 
+  $$p_{ij}(n) >0$$ 
+  for all $n \geq M+K$.
+
+## Doeblin's coupling 
+
+* Let $P$ be an aperiodic irreducible transition matrix on a finite state space $S$.  
+
+* Let $X$ and $Y$ be Markov chains with the same  transition matrix $P$, but with different initial distributions.  
+
+* We are interested in long term behaviour of 
+$d_{TV}(X_n, Y_n).$   
+
+* By the coupling inequality, we know that $$d_{TV}(X_n, Y_n) \leq 2 \mathbb{P}(X_n' \not = 'Y_n)$$ for any coupling for $X_n$ and $Y_n$.   
+
+* Thus we should look for a coupling $(X', Y')$ of $X$ and $Y$, where $X_n'$ is eventually equal to $Y_n'$.   
+
+
+## DC continued
+
+* Let $X'$ and $Z'$ be independent Markov chains with starting distributions of $X$ and $Y$ respectively.      
+
+* Let $T$ be the first time such that $X'_T = Z'_T$.   
+
+* For all $n \leq  T$, set $Y'_n = Z'_n$.  
+
+* For $n > T$, set $Y'_n = X'_n$. 
+
+*Thus 
+$$d_{TV}(X_n, Y_n) = d_{TV}(X'_n, Y'_n) \leq 2\mathbb{P}(T >n).$$
+* Sometimes $(X_n', Y_n')$ is called **Doeblin's coupling** or the **classical coupling**; the coupling is said to be **successful** at the random  time $T$.
+
+
+## DC Constructed
+
+Another way to understand Doeblin's coupling is to actually construct the Markov chains.   
+
+* Let $\phi:S \times [0,1] \to S$ be a function such that if $U$ is uniformly distributed in $[0,1]$ and independent of $X_0$, then  $$\mathbb{P}(\phi(X_0, U) =j \ | \ X_0=i) = p_{ij}.$$  
+* Let $U_{-1}, U_0, U_1, \ldots, V_{-1}, V_0, V_1, \ldots$ be independent random variables that are uniformly distributed in $[0,1]$.
+
+
+## continued
+
+* Let  $X'_0 = f(U_{-1})$ have the same  law  as $X_0$ and  $X_n' = \phi(X_{n-1}', U_{n-1})$.  
+* Let $Z_0' = g(V_{-1})$ have the same law as $Y_0$ and $Z_n' = \phi(Z_{n-1}', V_{n-1})$ 
+
+* Thus $$ X'=\big(X_0', X_1', X_2', \dots\big)$$
+and
+ $$Z'=\big(Z_0', Z_1', Z_2',  \dots\big)$$
+have the same laws as $X$ and $Y$, respectively
+
+## continued
+
+* Notice that 
+$$
+\begin{eqnarray*}
+&& \big(Z_0', \phi(Z_0', V_0), \phi(Z_1', V_1), \phi\big(\phi(Z_1', V_1), U_2\big)\big) \\ 
+&& \text{ has the same law as } (Y_0, Y_1, Y_2, Y_3).
+\end{eqnarray*}
+$$
+
+* Let $T$ be the first time that $X'_T = Z'_T$.    We have that
+
+$$
+\begin{eqnarray*}
+&& Y'= \\ 
+&& \Big(Z_0', \phi(Z_0',V_0), \phi(Z_1', V_1), \phi(Z_2', V_2),  \\ 
+&& \dots, \phi(Z_T', V_T) = \phi(X_T', U_T),  \phi(X'_{T+1}, U_{T+1}), \ldots \Big)
+\end{eqnarray*}
+$$
+has the same law as $Y$.
+
+## Simulations
+
+* The following simulation considers the transition matrix considered earlier. We will consider the Doeblin coupling of two chains started at $1$ and $5$.
+
+```{r}
+P <- matrix(c(0, 1/2, 1/2, 0, 0, 1/2, 0,0,0,1/2, 1/2,0,0, 1/2, 
+              0, 0,0,0,1/2, 1/2, 1/3, 1/3, 0, 0, 1/3), nrow =5)
+P <-t(P)
+```
+
+## continued
+
+
+```{r}
+step <- function(i){
+  q = P[i,]
+  x=-1
+  u = runif(1)
+  j=0
+  cumq = cumsum(q)
+  while(x==-1){
+    j<-j+1
+    if(u <= cumq[j]){x <-j}
+  }
+  x
+}
+```
+
+## continued
+
+
+```{r}
+stepsind<- function(){
+  x=1
+  y=5
+  while(x[length(x)] != y[length(y)] ){
+    x<- c(x, step(x[length(x)])) 
+    y<- c(y, step(y[length(y)]))
+  }
+ rbind(x,y)
+}
+```
+
+## continued
+
+```{r}    
+coupled <- function(z){
+  tog = z[1,]
+  tog <- tog[length(tog)]
+  for (i in 1:5){
+    tog <- c(tog, step(tog[length(tog)]))
+  }
+  x = c(z[1,], tog)
+  y = c(z[2,], tog)
+  rbind(x,y)
+}    
+coupled(stepsind())
+```    
+    
+
+## Bounds
+
+* We need to show that $\mathbb{P}( T >n) \to 0$ as $n \to \infty$.     
+* Let $M$ be so that $P^M >0$.   
+* Let $\varepsilon = \min_{i,j \in S} p_{ij}(M)>0$.  Since $X'$ and $Z'$ are independent,  we have  
+$$
+\begin{eqnarray*}
+\mathbb{P}(X'_M  = Z'_M) &=& \sum_{j} \mathbb{P}(X_M' = j)\mathbb{P}(Z_M' = j) \\
+&\geq& \varepsilon \sum_{j} \mathbb{P}(X_M' = j)= \varepsilon.
+\end{eqnarray*}
+$$
+
+
+* Let $k$ be an integer.  Then we have that  
+$$\mathbb{P}(T > kM) \leq (1- \varepsilon)^k.$$ 
+
+
+## Doeblin's classical coupling
+
+
+If $X$ and $Y$ are Markov chains with the same aperiodic irreducible transition matrix on a finite state space $S$, then there exists $M >0$ and $\varepsilon >0$ such that
+$$d_{TV}(X_n,Y_n) \leq 2 (1- \varepsilon)^{ \lfloor n/M \rfloor}.$$
+Here $M$ and $\epsilon$ depends only on $P$.  
+
+##  Max/min lemma
+
+The following simple fact will allows us to harness Doeblin's coupling further. 
+
+ Let $P$ be transition matrix on a finite state space $S$.  The sequence given by $$a_j(n) = \min_{i \in S} p_{ij}(n)$$ is nondecreasing, and the sequence given by $$b_j(n) = \max_{i \in S} p_{ij}(n)$$ is nonincreasing.  
+
+
+## Proof
+
+We give the proof for the nondecreasing case.  Observe that
+$$
+\begin{eqnarray*}
+a_j(n+1) &=& \min_{i \in S}  \sum_k p_{ik}(1) p_{kj}(n) \\
+&\geq& \min_{i \in S}  \sum_k p_{ik}(1) a_j(n)  \\
+&=& a_j(n).
+\end{eqnarray*}
+$$
+
+
+## Stationary distribution
+
+Let $P$  be a transition matrix on a state space $S$.  Recall an initial distribution $\lambda$ is stationary if  $\lambda P = \lambda$.    
+
+Let $P$ be an aperiodic irreducible transition matrix on a finite state space $S$.  Then there exists a unique stationary distribution $\lambda$ for $P$; in particular:
+
+* $\lambda_j = \lim_{n \to \infty} \min_{i \in S} p_{ij}(n)$
+
+*  If $X$ is any Markov chain with transition matrix $P$, then $\mathbb{P}(X_n=j) \to \lambda_j$.
+
+*  For all $i,j \in S$, we have $p_{ij}(n) \to \lambda_j$.
+
+
+## Proof (uniquness)
+
+* Let  $\lambda$ and $\mu$ be stationary.
+* Then $\mu P^n = \mu$ and $\lambda P^n = \lambda$ for all $n$.
+* By Doeblin's theorem, we can conclude that if $X$ and $Y$ are Markov chains with transition matrix $P$ and initial distributions $\lambda$ and $\mu$, respectively, we have $X_n$ has the same law as $X_0$ and $Y_n$ has the same law as $Y_0$, and   
+$$ d_{TV}(X_0, Y_0) = d_{TV}(X_n, Y_n) \to 0.$$  Hence $X_0$ has the same law as  $Y_0$ and $\lambda = \mu$.  
+
+## Proof (limits)
+
+* By the max/min lemma we may define 
+ $$\lambda_j  =\lim_{n \to \infty} a_j(n).$$  
+ 
+ * We will show that 
+ 
+ $$\mathbb{P}(X_n=j) \to \lambda_j.$$
+ 
+* Let $\varepsilon >0$.   By Doeblin's theorem, there exists $N_1>0$, so that for *any* Markov chains $X$ and $Y$ with transition matrix $P$, we have  
+$$d_{TV}(X_n,Y_n)< \varepsilon/2$$ 
+  for $n \geq N_1$.        
+
+## continued
+
+* Choose $N_2$ so that 
+$$|\lambda_j -a_j(n)|  < \varepsilon/2$$ 
+  for all $n \geq N_2$.   
+* Let $m \geq \max\{N_1, N_2\}$.   
+* Let $i \in S$ be chosen so  that $p_{ij}(m)=a_j(m) = \min_{i \in S} p_{ij}(m)$.  
+
+## continued
+
+
+* Let $Y$ be a Markov chain with transition matrix $P$ that is started at $i$.   
+* Then 
+$$|\mathbb{P}(X_m=j) - \mathbb{P}(Y_m=j)| = |\mathbb{P}(X_m=j) - a_j(m)|,$$ so that 
+$$|\mathbb{P}(X_m=j) - \lambda_j| < \varepsilon.$$  
+  
+
+ 
+*  The last claims  follows by considering a Markov chain started at $i$.  
+
+## Proof (stationarity)
+
+* It remains to verify that $\lambda$ is a stationary measure.  
+* We have $$\sum_{j \in S} \lambda_j = \lim_{n \to \infty} \sum_{j \in S} \mathbb{P}(X_n=j) =1.$$  
+* To verify stationarity, we note that $p_{ji}(n) \to \lambda_i$.  
+* Hence, 
+$$
+\begin{eqnarray*}
+(\lambda P)_j = \sum_{i \in S} \lambda_i p_{ij} &=& \lim_{n \to \infty} \sum_{i \in S} p_{ji}(n)p_{ij} \\
+&=& \lim_{n \to \infty} p_{jj}(n+1) = \lambda_j
+\end{eqnarray*}
+$$
+
+
+## Baby ergodic theorem
+
+
+Let $P$ be an aperiodic irreducible transition matrix on a finite state space $S$ so that it has a stationary distribution $\pi$.   Let $X$ be a Markov chain with transition matrix $P$.   Fix a state $s\in S$, and  set 
+
+$$Y_n = \frac{1}{n}  \sum_{k=0}^{n-1} \mathbf{1}[X_k = s].$$
+ Then $Y_n$ converges to $\pi(s)$ in $L^2$.  
+
+This  version of the law of large numbers is slightly harder to prove than the weak one that we proved for the i.i.d. case.  
+
+
+
+
+
+
+
+
+## Summary
+
+* Constructed Markov chains   
+* Defined irreducibity and aperiodicity
+* Defined Doeblin's coupling
+*  Used Doeblin's coupling to proof many basic facts for these Markov chains:
+    - Existence and uniqueness of the stationary distribution
+    - convergence in total variation
+  
+
+
+
+
+
+
+
+
+
+
+
+##  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/markov-c-slides.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+

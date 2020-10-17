@@ -36,7 +36,7 @@ Then the Markov chain $X$ can be constructed as
 
 We consider the following example of this theory in R.  We will code everything in terms of uniform random variable, even though it is not necessary in R.
 
-```{r}
+```{r,  R.options = list(width = 50)}
 initial <- function(){
 u = runif(1)
 x=-1
@@ -155,7 +155,7 @@ $$d_{TV}(X_n, Y_n) = d_{TV}(X'_n, Y'_n) \leq 2\mathbb{P}(T >n).$$  Sometimes $(X
 
 Another way to understand Doeblin's coupling is to actually construct the Markov chains.   
 Let $\phi:S \times [0,1] \to S$ be a function such that if $U$ is uniformly distributed in $[0,1]$ and independent of $X_0$, then  $$\mathbb{P}(\phi(X_0, U) =j \ | \ X_0=i) = p_{ij}.$$  
-Let $U_0, U_1, \ldots, V_0, V_1, \ldots$ be independent random variables that are uniformly distributed in $[0,1]$ and independent of $X_0$ and $Y_0$.   Set $X'_0 = X_0$ and  $X_n' = \phi(X_{n-1}', U_{n-1})$.  Similarly,  set  $Z_0' = Y_0$ and $Z_n' = \phi(Z_{n-1}', V_{n-1})$ Thus 
+Let $U_{-1}, U_0, U_1, \ldots, V_{-1}, V_0, V_1, \ldots$ be independent random variables that are uniformly distributed in $[0,1]$.  Let $X'_0 = f(U_{-1})$ have the same law as $X_0$ and  $X_n' = \phi(X_{n-1}', U_{n-1})$.  Similarly,  let  $Z_0'= g(V_{-1})$ have the same law as $Y_0$ and $Z_n' = \phi(Z_{n-1}', V_{n-1})$ Thus 
 $$ X'=\big(X_0', X_1', X_2', \dots\big)$$
 and
 $$Z'=\big(Z_0', Z_1', Z_2',  \dots\big)$$
@@ -165,7 +165,7 @@ $$\big(Z_0', \phi(Z_0', V_0), \phi(Z_1', V_1), \phi\big(\phi(Z_1', V_1), U_2\big
 it does not matter if we choose to use the $V_i$'s or the $U_i$'s.  Let $s \in S$.  We can say choose to use the $U_i'$ whenever we see that $Y_i'=s$, and use the $V_i$'s otherwise.  
 
 Let $T$ be the first time that $X'_T = Z'_T$.    We have that
-$$Y'= \Big(Z_0', \phi(Z_0',V_0), \phi(Z_1', V_1), \phi(Z_2', V_2), \dots, \phi(Z_T', U_T) = \phi(X_T', U_T),  \phi(X'_{T+1}, U_{T+1}), \ldots \Big)$$
+$$Y'= \Big(Z_0', \phi(Z_0',V_0), \phi(Z_1', V_1), \phi(Z_2', V_2), \dots, \phi(Z_T', V_T) = \phi(X_T', U_T),  \phi(X'_{T+1}, U_{T+1}), \ldots \Big)$$
 has the same law as $Y$.
 
 
@@ -304,7 +304,7 @@ $$(\lambda P)_j = \sum_{i \in S} \lambda_i p_{ij} = \lim_{n \to \infty} \sum_{i 
 
 ```{theorem}  
 
-Let $P$ be an aperiodic irreducible transition matrix on a finite state space $S$.   Let $X$ be a Markov chain with transition matrix $P$.   Fix a state $s\in S$, and  set 
+Let $P$ be an aperiodic irreducible transition matrix on a finite state space $S$ so that it has a stationary distribution $\pi$.   Let $X$ be a Markov chain with transition matrix $P$.   Fix a state $s\in S$, and  set 
 
 $$Y_n = \frac{1}{n}  \sum_{k=0}^{n-1} \mathbf{1}[X_k = s].$$
  Then $Y_n$ converges to $\pi(s)$ in $L^2$.  
@@ -345,6 +345,15 @@ Hence the result follows from our first assertion.
 
 
 
+# Summary
+
+* Constructed Markov chains   
+* Defined irreducibity and aperiodicity
+* Defined Doeblin's coupling
+*  Used Doeblin's coupling to proof many basic facts for these Markov chains:
+    - Existence and uniqueness of the stationary distribution
+    - convergence in total variation
+  
 
 
 
