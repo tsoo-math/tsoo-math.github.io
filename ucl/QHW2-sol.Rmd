@@ -201,8 +201,17 @@ We have the following calculation:
 \end{eqnarray*}
 
 
+*  We have by reversibility that
 
-
+\begin{eqnarray*}
+ \mathbb{P}(X_0=a,X_1=b, X_2=c, X_3=d) &=& [\pi(a)p_{ab}] p_{bc} p_{cd} \\
+ &=&  p_{ba} [ \pi(b)p_{bc} ] p_{cd} \\
+ &=&  p_{ba} p_{cb} [\pi(c) p_{cd} ] \\
+ &=&  p_{ba} p_{cb} p_{dc} \pi(d)  \\
+ &=& \pi(d) p_{dc} p_{cb} p_{ba} \\
+&=&  \mathbb{P}(X_0=d,X_1=c,X_2=b, X_3=a),
+\end{eqnarray*}
+as desired.
 
 #  Simple card shuffling
 
