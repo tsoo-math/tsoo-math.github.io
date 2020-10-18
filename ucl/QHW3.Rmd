@@ -54,7 +54,7 @@ P
 
 
 
-# Gibbs sampler (Baby Markov chain Monto Carlo)
+# Gibbs sampler (Baby Markov chain Monte Carlo)
 
 Often in Bayesian statistics one needs to able to sample from the joint density 
 $j$ of two random variables $(W,Z)$ but only has access to their conditional densities 
