@@ -1,0 +1,156 @@
+---
+title: "Coupling from the past"
+output: ioslides_presentation
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+##  Sampling from the stationary distribution of a Markov chain
+
+*  Sometimes in order to sample/simulate from a distribution $\pi$
+we cook up a Markov chain $X$ so that $\pi$ is the stationary distribution.
+
+*  Then we run the Markov chain, and for large times $n$, we know that the $X_n$ will have law close to $\pi$.
+
+*  We saw this with the Gibbs sampler in
+[Homework 3, Question 4](https://tsoo-math.github.io/ucl/QHW3.html)
+
+*  [Coupling from the past](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O) is an *exact* method of sampling $\pi$ introduced by Propp and [Wilson](http://www.dbwilson.com/exact/) 
+
+
+## All trains go to London?
+
+*  Consider a transition matrix $P$ on a state space $S=\{1, \ldots, N\}$.
+
+*  Consider the Markov chain as constructed in [Making Markov chains converge, Section 2](https://tsoo-math.github.io/ucl/markov-c.html).
+
+*  Thus we have a function $\phi:S \times [0,1] \to S$ such that if $U$ is uniformly distributed in $[0,1]$ then
+ $$\mathbb{P}(\phi(i, U) =j) = p_{ij}$$
+
+
+## continued
+
+*  We simulate the Markov chain started at $i\in S$, for $m$ steps, by taking $m$ independent uniforms $U_0, \ldots, U_{m-1}$ to obtain:
+
+$$ 
+\begin{eqnarray*}
+&& G_m(i)= \Big( X_0=i, X_1=\phi(1,U_0), X_2= \phi(X_1, U_1)  \\
+&&, \ldots X_m= \phi(X_{m-1}, U_{m-1}) \Big)
+\end{eqnarray*}
+$$
+
+*  In fact, using the *same* randomization $U_0, \ldots, U_m$ we can see what *path* each $i \in S$ takes.
+
+*  Thus, this gives a coupling of all these random paths.  Let $g_m(i) = X_m = G_m(i)[m]$ be the last value. 
+
+## continued
+
+* Let $T$ be the first time such that there exists $K \in S$ such that $g_T(1) = g_T(i)= K$ for all $i \in S$. 
+
+*  If we are so lucky that $T < \infty$, then $g_m$ will be a constant function for each $m \geq T$.
+
+*  With this coupling, at this time $T$ and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same value values $g_m(1)$ for $m \geq T$.
+
+*  We take $K$ be the realized value for $\pi$.  
+
+*  Does this work? Answer **no**.
+
+
+## Code
+
+Consider the transition matrix $P$ given by
+
+```{r}
+P <- matrix(c(1/4, 1/4, 1/2, 0,0, 
+              1/4, 1/4,0,0,1/2, 
+              1/4,0,0, 1/2, 1/4, 
+              0,0,0,1/2, 1/2, 1/5, 1/5, 1/5, 1/5, 1/5), nrow =5)
+P <-t(P)
+P
+```
+
+## continued
+
+  We want to advance the chain one step, using the *same* randomness.  We modify the step function that appeared in
+  [Making Markov chains converage, Section 2](https://tsoo-math.github.io/ucl/markov-c.html):
+  
+  
+```{r}  
+stepcoupled <- function(zinput){
+  xoutput=c(-1, -1, -1, -1, -1)
+  sameu = runif(1)
+  for(i in 1:5){
+    j=0
+  cumq = cumsum(P[zinput[i],])
+  while(xoutput[i] ==-1){
+    j<-j+1
+    if(sameu <= cumq[j]){xoutput[i] <-j}
+  }
+  }
+  xoutput
+}
+```
+
+## continued
+
+Now we want to repeat this until the paths meet.  First, we define a method to check whether 
+all the entries of a vector are equal.
+```{r}
+
+check <- function(x){
+output= 1
+a = x[1]
+for (i in 2: length(x)){
+  if (x[i] != a){output <-0}
+}
+output
+}
+```
+
+## continued
+
+```{r}
+london <- function(){
+  x = c(1,2,3,4,5)
+  while(check(x)==0){
+  x <- stepcoupled(x)
+}
+x
+}
+```
+
+
+*  It is not hard to verify that the output $K$ will not in general have the stationary distribution.
+*  In fact, one can cook up Markov chains where $K$ even omits values $k$, where $\pi(k) >0$.  
+
+
+## continued
+
+```{r}
+Q <- P
+for(i in 1:10000){
+  Q <- Q %*% P
+}
+Q
+x = replicate(1000, london()[1])
+mean(x==5)
+
+```
+
+
+## What about going backwards!
+
+
+
+##   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/randomTP-slides.Rmd)
+
+
+
+
+
+
