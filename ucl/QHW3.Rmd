@@ -1,0 +1,88 @@
+---
+title: "Homework 3"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+# Simple card shuffling
+
+Consider again the a Markov chain corresponding to the  card shuffling procedure given at the end of the [previous homework](https://tsoo-math.github.io/ucl/QHW2.html).  
+Consider the case $n=4$, so that there are four cards labeled: $1,2,3,4$.
+
+*  How many elements are in the state space?
+*  What is the probability of going from the order $(1,2,3,4)$ to the order $(1,2,4,3)$, in one step?
+*  What is the probability of going from the order $(1,2,3,4)$ to the order $(2,1, 4,3)$, in one step?
+*  Is the corresponding transition matrix irreducible?
+*  Is the corresponding transition matrix aperiodic?  Hint: the answer is no.  
+*  Augment the procedure, and consider the *lazy shuffle* by allowing with probability $1/2$ that we simply leave the deck alone.
+*  Start the Markov chain $X$ with the cards in order $X_0 = (1,2,3,4)$ and simulate the lazy shuffling. 
+*  Consider the Markov chain $Y$ started with in one of the $24$ orders, uniformly at random.   Simulate the Doeblin coupling of $X$ and $Y$.
+*  How long on average does it take for the coupling to succeed?  
+
+
+#  Transition matrices
+
+Let $P$ be a transition matrix.  Show that if $P^n$ has all positive entries for
+some $n$, then $P^m$ has positive entries for all $m \geq n$.  
+
+
+#  A Markov chain
+
+Consider the Markov chain started on five states $\{1,2,3,4,5\}$ started at $1$ 
+with transition matrix given by
+```{r}  
+P <- matrix(c(1/4, 1/4, 1/2, 0,0, 
+              1/4, 1/4,0,0,1/2, 
+              1/4,0,0, 1/2, 1/4, 
+              0,0,0,1/2, 1/2, 1/3, 1/3, 0, 0, 1/3), nrow =5)
+P <-t(P)
+P
+```
+* Show that $P$ is irreducible and aperiodic. 
+* Simulate this Markov chain $X_0, X_1, \ldots, X_n$ for large values of $n$
+* Find the average number of times the Markov chain is in state $3$.
+*  Is your answer consistent with theory?  Discuss.
+*  Find the average number of times the chain goes for state $1$ state $3$.
+*  Guess a version of the large of numbers based on your previous observation.
+
+
+
+# Gibbs sampler (Baby Markov chain Monto Carlo)
+
+Often in Bayesian statistics one needs to able to sample from the joint density 
+$j$ of two random variables $(W,Z)$ but only has access to their conditional densities 
+$f(w|z)$ and $g(z|w)$.    One then considers the Markov chain defined in the following way.
+We start with an initial value $X_0 = x_0$ and *pretend* that we have sampled from $W$.
+Now we define $Y_0=y_0$ to be a random variable with density $g(\cdot|w)$ which we can simulate in R. 
+ Next, we simulate $X_1$ using the density $f(\cdot|y_0)$, and repeat.
+ We obtain a Markov chain of pairs
+ 
+ $$ \Bigg( (X_0, Y_0), (X_1, Y_1), \ldots, (X_n, Y_n) \Bigg).$$
+A stationary distribution is $j$, and we hope that when $n$ is large $(X_n, Y_n)$ has a joint distribution that is close to $j$.
+
+In what follows we will play with a toy example.  Suppose $W$ and $Z$ are given in the following way:  we flip a fair coin $W$, and if we get a heads, we flip a fair coin for $Z$, otherwise, we flip a $1/4$ coin for $Z$.  
+
+ *  Compute the joint distribution $(W, Z)$
+ *  Compute the conditional distribution of $W$ given $Z$
+ *  Compute the conditional distribution of $Z$ given $W$
+ *  Try the Gibbs sampler.
+ *  Check the joint distribution of the output from the Gibbs sampler.
+
+
+<br>
+<br>
+<br>
+
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/QHW3.Rmd)
+<br>
+<br>
+<br>
