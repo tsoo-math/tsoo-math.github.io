@@ -19,7 +19,7 @@ we cook up a Markov chain $X$ so that $\pi$ is the stationary distribution.
 *  We saw this with the Gibbs sampler in
 [Homework 3, Question 4](https://tsoo-math.github.io/ucl/QHW3.html)
 
-*  [Coupling from the past](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O) is an *exact* method of sampling $\pi$ introduced by Propp and [Wilson](http://www.dbwilson.com/exact/) 
+*  [Coupling from the past](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O) is an *exact* method of sampling $\pi$ introduced by Propp and [Wilson](http://www.dbwilson.com/exact/). 
 
 
 ## All trains go to London?
@@ -38,12 +38,12 @@ we cook up a Markov chain $X$ so that $\pi$ is the stationary distribution.
 
 $$ 
 \begin{eqnarray*}
-&& G_m(i)= \Big( X_0=i, X_1=\phi(1,U_0), X_2= \phi(X_1, U_1)  \\
+&& G_m(i)= \Big( X_0=i, X_1=\phi(i,U_0), X_2= \phi(X_1, U_1)  \\
 &&, \ldots X_m= \phi(X_{m-1}, U_{m-1}) \Big)
 \end{eqnarray*}
 $$
 
-*  In fact, using the *same* randomization $U_0, \ldots, U_m$ we can see what *path* each $i \in S$ takes.
+*  In fact, using the *same* randomization $U_0, \ldots, U_{m-1}$ we can see what *path* each $i \in S$ takes.
 
 *  Thus, this gives a coupling of all these random paths.  Let $g_m(i) = X_m = G_m(i)[m]$ be the last value. 
 
@@ -51,9 +51,9 @@ $$
 
 * Let $T$ be the first time such that there exists $K \in S$ such that $g_T(1) = g_T(i)= K$ for all $i \in S$. 
 
-*  If we are so lucky that $T < \infty$, then $g_m$ will be a constant function for each $m \geq T$.
+*  If we are so lucky that $T < \infty$, then $g_m$ will be a constant function for *each* $m \geq T$.
 
-*  With this coupling, at this time $T$ and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same value values $g_m(1)$ for $m \geq T$.
+*  With this coupling, at this time $T$ and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same value values $g_m(1)$ for $m \geq T$.  Although, in general $g_T \not = g_{T+1}$.
 
 *  We take $K$ be the realized value for $\pi$.  
 
@@ -142,9 +142,87 @@ mean(x==5)
 ```
 
 
-## What about going backwards!
+## What about going backwards!   All roads lead to Rome
+
+*  General idea is if we run an Markov chain from time $-\infty$ to time $0$, then 
+if it is aperiodic and irreducible, by time $0$ it will have reached the stationary distribution.
+
+* Consider now
+$$ 
+\begin{eqnarray*}
+&& G_m(i)= \Big( X_{-m}=i, X_{-m+1}=\phi(i,U_{-m}),  \\
+&& X_{-m+2}= \phi(X_{-m+1}, U_{-m+1})\\
+&&, \ldots X_0= \phi(X_{-1}, U_{-1}) \Big)
+\end{eqnarray*}
+$$
+
+*  Let $g_m(i) = G_m(i)(m)= X_0$.  We want to find the smallest $M$ (hopefully finite) such that $g_M$ is a constant function.
+
+## continued 
+
+*  The subtle difference between the forward case and backward case is that $g_{m} =g_M$ for all $m \geq M$.
+
+* Take $K = g_M(1)=X_0$ to be realized value for the stationary distribution $\pi$.
+
+*  Again in order to simulate this, we must keep in mind this is a coupling, and we must use the same randomness each time.  This is again a somewhat subtle matter, compared to other MCMC methods.
+
+* This is the [price](https://www.youtube.com/watch?v=oYE_EibkEkg) we pay for the magic of  *exact* sampling.
 
 
+## Code
+
+We will consider the same transition $P$ and we modify the previous *stepcoupled* function to have greater 
+control over the randomization.
+
+```{r}
+stepcoupleu<- function(zinputu){
+  sameu = zinputu[6]
+  zinput = zinputu[-6]
+  xoutput=c(-1, -1, -1, -1, -1)
+  for(i in 1:5){
+    j=0
+  cumq = cumsum(P[zinput[i],])
+  while(xoutput[i] ==-1){
+    j<-j+1
+    if(sameu <= cumq[j]){xoutput[i] <-j}
+  }
+  }
+  xoutput
+}
+```
+
+## continuted
+
+Here the *rome* function replaces the *london* function.  Notice we need to keep track and re-use 
+the uniform random variables generated.
+
+```{r}
+rome <- function(){
+x=c(1,2,3,4,5)
+m=1
+uhis=-99
+while(check(x)==0){
+  x<-c(1,2,3,4,5)
+  m <- m+1
+  uhis <- c(uhis, runif(1))
+  for (i in 0:(m-2) ){
+    x <- stepcoupleu(c(x,uhis[m-i]))
+  }
+}
+x
+}
+```
+## continued
+
+```{r}
+rome()
+italy=( replicate(10000, rome()[1]) )
+
+z=c(mean(italy==1),mean(italy==2),
+    mean(italy==3),mean(italy==4),mean(italy==5))
+z
+```
+Compare with page 10!
 
 ##   Version: `r format(Sys.time(), '%d %B %Y')`
   * [Rmd Source](https://tsoo-math.github.io/ucl/randomTP-slides.Rmd)

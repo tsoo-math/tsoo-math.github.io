@@ -3121,7 +3121,7 @@ slide:not(.current) .plotly.html-widget{
 <li><p>Sometimes in order to sample/simulate from a distribution \(\pi\) we cook up a Markov chain \(X\) so that \(\pi\) is the stationary distribution.</p></li>
 <li><p>Then we run the Markov chain, and for large times \(n\), we know that the \(X_n\) will have law close to \(\pi\).</p></li>
 <li><p>We saw this with the Gibbs sampler in <a href='https://tsoo-math.github.io/ucl/QHW3.html' title=''>Homework 3, Question 4</a></p></li>
-<li><p><a href='https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O' title=''>Coupling from the past</a> is an <em>exact</em> method of sampling \(\pi\) introduced by Propp and <a href='http://www.dbwilson.com/exact/' title=''>Wilson</a></p></li>
+<li><p><a href='https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O' title=''>Coupling from the past</a> is an <em>exact</em> method of sampling \(\pi\) introduced by Propp and <a href='http://www.dbwilson.com/exact/' title=''>Wilson</a>.</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>All trains go to London?</h2></hgroup><article  id="all-trains-go-to-london">
@@ -3140,13 +3140,13 @@ slide:not(.current) .plotly.html-widget{
 
 <p>\[ 
 \begin{eqnarray*}
-&amp;&amp; G_m(i)= \Big( X_0=i, X_1=\phi(1,U_0), X_2= \phi(X_1, U_1)  \\
+&amp;&amp; G_m(i)= \Big( X_0=i, X_1=\phi(i,U_0), X_2= \phi(X_1, U_1)  \\
 &amp;&amp;, \ldots X_m= \phi(X_{m-1}, U_{m-1}) \Big)
 \end{eqnarray*}
 \]</p>
 
 <ul>
-<li><p>In fact, using the <em>same</em> randomization \(U_0, \ldots, U_m\) we can see what <em>path</em> each \(i \in S\) takes.</p></li>
+<li><p>In fact, using the <em>same</em> randomization \(U_0, \ldots, U_{m-1}\) we can see what <em>path</em> each \(i \in S\) takes.</p></li>
 <li><p>Thus, this gives a coupling of all these random paths. Let \(g_m(i) = X_m = G_m(i)[m]\) be the last value.</p></li>
 </ul>
 
@@ -3154,8 +3154,8 @@ slide:not(.current) .plotly.html-widget{
 
 <ul>
 <li><p>Let \(T\) be the first time such that there exists \(K \in S\) such that \(g_T(1) = g_T(i)= K\) for all \(i \in S\).</p></li>
-<li><p>If we are so lucky that \(T &lt; \infty\), then \(g_m\) will be a constant function for each \(m \geq T\).</p></li>
-<li><p>With this coupling, at this time \(T\) and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same value values \(g_m(1)\) for \(m \geq T\).</p></li>
+<li><p>If we are so lucky that \(T &lt; \infty\), then \(g_m\) will be a constant function for <em>each</em> \(m \geq T\).</p></li>
+<li><p>With this coupling, at this time \(T\) and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same value values \(g_m(1)\) for \(m \geq T\). Although, in general \(g_T \not = g_{T+1}\).</p></li>
 <li><p>We take \(K\) be the realized value for \(\pi\).</p></li>
 <li><p>Does this work? Answer <strong>no</strong>.</p></li>
 </ul>
@@ -3242,11 +3242,86 @@ Q</pre>
 <pre class = 'prettyprint lang-r'>x = replicate(1000, london()[1])
 mean(x==5)</pre>
 
-<pre >## [1] 0.718</pre>
+<pre >## [1] 0.706</pre>
 
-</article></slide><slide class=""><hgroup><h2>What about going backwards!</h2></hgroup><article  id="what-about-going-backwards">
+</article></slide><slide class=""><hgroup><h2>What about going backwards! All roads lead to Rome</h2></hgroup><article  id="what-about-going-backwards-all-roads-lead-to-rome">
 
-</article></slide><slide class=""><hgroup><h2>Version: 18 October 2020</h2></hgroup><article  id="version-18-october-2020">
+<ul>
+<li><p>General idea is if we run an Markov chain from time \(-\infty\) to time \(0\), then if it is aperiodic and irreducible, by time \(0\) it will have reached the stationary distribution.</p></li>
+<li><p>Consider now \[ 
+\begin{eqnarray*}
+&amp;&amp; G_m(i)= \Big( X_{-m}=i, X_{-m+1}=\phi(i,U_{-m}),  \\
+&amp;&amp; X_{-m+2}= \phi(X_{-m+1}, U_{-m+1})\\
+&amp;&amp;, \ldots X_0= \phi(X_{-1}, U_{-1}) \Big)
+\end{eqnarray*}
+\]</p></li>
+<li><p>Let \(g_m(i) = G_m(i)(m)= X_0\). We want to find the smallest \(M\) (hopefully finite) such that \(g_M\) is a constant function.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>continued</h2></hgroup><article  id="continued-6">
+
+<ul>
+<li><p>The subtle difference between the forward case and backward case is that \(g_{m} =g_M\) for all \(m \geq M\).</p></li>
+<li><p>Take \(K = g_M(1)=X_0\) to be realized value for the stationary distribution \(\pi\).</p></li>
+<li><p>Again in order to simulate this, we must keep in mind this is a coupling, and we must use the same randomness each time. This is again a somewhat subtle matter, compared to other MCMC methods.</p></li>
+<li><p>This is the <a href='https://www.youtube.com/watch?v=oYE_EibkEkg' title=''>price</a> we pay for the magic of <em>exact</em> sampling.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Code</h2></hgroup><article  id="code-1">
+
+<p>We will consider the same transition \(P\) and we modify the previous <em>stepcoupled</em> function to have greater control over the randomization.</p>
+
+<pre class = 'prettyprint lang-r'>stepcoupleu&lt;- function(zinputu){
+  sameu = zinputu[6]
+  zinput = zinputu[-6]
+  xoutput=c(-1, -1, -1, -1, -1)
+  for(i in 1:5){
+    j=0
+  cumq = cumsum(P[zinput[i],])
+  while(xoutput[i] ==-1){
+    j&lt;-j+1
+    if(sameu &lt;= cumq[j]){xoutput[i] &lt;-j}
+  }
+  }
+  xoutput
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>continuted</h2></hgroup><article  id="continuted">
+
+<p>Here the <em>rome</em> function replaces the <em>london</em> function. Notice we need to keep track and re-use the uniform random variables generated.</p>
+
+<pre class = 'prettyprint lang-r'>rome &lt;- function(){
+x=c(1,2,3,4,5)
+m=1
+uhis=-99
+while(check(x)==0){
+  x&lt;-c(1,2,3,4,5)
+  m &lt;- m+1
+  uhis &lt;- c(uhis, runif(1))
+  for (i in 0:(m-2) ){
+    x &lt;- stepcoupleu(c(x,uhis[m-i]))
+  }
+}
+x
+}</pre>
+
+</article></slide><slide class=""><hgroup><h2>continued</h2></hgroup><article  id="continued-7">
+
+<pre class = 'prettyprint lang-r'>rome()</pre>
+
+<pre >## [1] 3 3 3 3 3</pre>
+
+<pre class = 'prettyprint lang-r'>italy=( replicate(10000, rome()[1]) )
+
+z=c(mean(italy==1),mean(italy==2),
+    mean(italy==3),mean(italy==4),mean(italy==5))
+z</pre>
+
+<pre >## [1] 0.1729 0.1347 0.1398 0.2599 0.2927</pre>
+
+<p>Compare with page 10!</p>
+
+</article></slide><slide class=""><hgroup><h2>Version: 19 October 2020</h2></hgroup><article  id="version-19-october-2020">
 
 <ul>
 <li><a href='https://tsoo-math.github.io/ucl/randomTP-slides.Rmd' title=''>Rmd Source</a></li>
