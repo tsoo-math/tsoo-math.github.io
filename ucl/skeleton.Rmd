@@ -40,6 +40,9 @@ These are a subset of the links that are available on the main Moodle page for o
 *  [Making MC converge](https://tsoo-math.github.io/ucl/markov-c.html)
 
 
+*  [Coupling from the past](https://tsoo-math.github.io/ucl/coupling-from-past.html)
+
+
 <br>
 
 Version: `r format(Sys.time(), '%d %B %Y')`
