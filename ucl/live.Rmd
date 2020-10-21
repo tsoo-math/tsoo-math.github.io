@@ -31,11 +31,13 @@ output: html_document
     +  [Second meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     +  [R exercise sheet: gambler's ruin](https://tsoo-math.github.io/ucl/gambler.html)
     +  [Solutions](https://tsoo-math.github.io/ucl/gambler-sol.html)
-    +  We discussed more about the logisitics of of the module and went over the first homework.  Afterwards, we went into breakout rooms to work on the R exercises, we returned to the main room to discuss solutions.  This meeting was not recorded.
+    +  We discussed more about the logisitics of of the module and went over the first homework.  Afterwards, we went into breakout rooms to work on the R exercises; we returned to the main room to discuss solutions.  This meeting was not recorded.
 * Week 8 (19 Oct - 25 Oct):
     +  [Third meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     +  [R exercise sheet: transition matrices](https://tsoo-math.github.io/ucl/class3.html)
+    +  We discussed the [solutions to HW2](https://tsoo-math.github.io/ucl/QHW2-sol.html).  Then we went into breakout rooms to work on the R exercise sheet; we retured to the main room to briefly discuss the  R exercise sheet.  This meeting was not recorded.
 * Week 9 (26 Oct - 1 Nov):
+    +  [Fourth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
 * Week 10 (2 Nov - 8 Nov):   
 * Week 11 (9 Nov - 15 Nov):
 * Week 12 (16 Nov - 22 Nov): 
