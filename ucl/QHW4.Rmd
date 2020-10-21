@@ -1,0 +1,48 @@
+---
+title: "Homework 4"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{exercise, name="Deterministic colouring"}
+Let $\Pi$ a Poisson point process on $[0, \infty)$.  Suppose we colour the first arrival blue, and then next arrival red, and continue colouring the points in this alternating fashion.   Consider the point processes $\Gamma$  formed by considering only the blue points.  Is this a Poisson point process?  Explain.
+```
+<br>
+
+
+```{exercise, name="Shop keeper"}
+Suppose we model the number of customers that arrive at a high street shop on at particular day by a Poisson process of intensity $\lambda >0$, where $\lambda$ is measured in customers per hour.     We wish to estimate $\lambda$.    Suppose the shop is really high-end and on some days has no customers, on its $6$ hours of operations.  The shop keeper only keeps track of whether she had has any customers are not; that is, her records $x = (x_1, \ldots, x_n)$ are a binary sequence.  Find a consisent estimator for $\lambda$
+
+```
+<br>
+
+```{exercise, Name="Uniforms"}
+Suppose we $\Pi$ is a Poisson point process on $[0, \infty)$ of intensity $\lambda$.     Using the construction of $\Pi$ as exponential inter-arrival times, prove that conditioned on the event that the unit interval contains exactly one point, the distribution of the its location is uniform.    
+```
+ 
+<br>
+
+```{exercise, name="Random deletion"}
+Simulate a Poisson process of intensity $\lambda=2$, say with $10000$ arrivals.  Delete each arrival independently with probability $p=\tfrac{1}{2}$ to from a new *thinned* process.  Plot a histogram of  the inter-arrival times of the thinned process.  What should you see?  Why?
+```
+
+<br>
+
+```{exercise, name="Poisson on a disc"}
+Simulate a Poisson point process of intensity $100$ on a disc.
+```
+
+
+
+

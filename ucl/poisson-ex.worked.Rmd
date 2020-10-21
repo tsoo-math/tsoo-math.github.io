@@ -1,0 +1,187 @@
+---
+title: "Some worked out exercises for Poisson processes"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+```{exercise, name="Mean and variance of a Poisson"}
+Let $X$ be a Poisson random variable with parameter $\lambda >0$, so that
+	$$\mathbb{P}( X = k) = e^{- \lambda} \frac{\lambda^k}{k!}$$ for $k =0,1,2, \ldots$. Show that $\mathbb{E} X = \lambda = var(X)$.
+	
+```
+<br>
+
+```{solution}
+	First we show that $\mathbb{E} X = \lambda$.  
+		\begin{eqnarray*}
+		\mathbb{E} X &=&  \sum_{k=0} ^{\infty}  k \mathbb{P}(X =k) 
+		=  e^{- \lambda}\sum_{k=0} ^{\infty}  k  \frac{\lambda^k}{k!} \\
+		&=& e^{- \lambda}\lambda\sum_{k=1} ^{\infty}    k  \frac{\lambda^{k-1}}{k!}  
+		= e^{- \lambda}\lambda\sum_{k=1} ^{\infty}     \frac{\lambda^{k-1}}{(k-1)!} 
+		=  \lambda e^{- \lambda}  \sum_{k=0} ^{\infty}   \frac{\lambda^{k}}{k!}  \\
+		&=& \lambda
+	\end{eqnarray*}  
+	With the short-cut formula, it remains to compute $\mathbb{E} (X^2)$:
+	\begin{eqnarray*}
+		\mathbb{E} (X^2) &=& e^{-\lambda} \sum_{k=0} ^ {\infty} k^2  \frac{\lambda^k}{k!} = e^{-\lambda} \sum_{k=1} ^ {\infty} k^2  \frac{\lambda^k}{k!}  \\
+		&=& e^{-\lambda} \lambda \sum_{k=1} ^ {\infty} k \frac{\lambda^{k-1}}{(k-1)!} 
+		=  e^{-\lambda} \lambda \sum_{k=0} ^ {\infty} (k+1) \frac{\lambda^{k}}{k!} \\
+		&=&  e^{-\lambda} \lambda   \Big(  \sum_{k=0} ^ {\infty} k \frac{\lambda^{k}}{k!}   +   \sum_{k=0} ^ {\infty}   \frac{\lambda^{k}}{k!} \Big) \\
+		&=&  \lambda  ( \mathbb{E} X + 1) 
+		= \lambda^2 + \lambda.
+	\end{eqnarray*}
+	Thus $var(X) = \lambda^2 + \lambda - (\lambda)^2 = \lambda$.
+	```
+<br>
+
+```{exercise, name="Memoryless property"}   
+	Prove that exponential random variables have the memoryless property.
+```
+<br>
+```{solution}
+	Let $X$ be a exponential  random variable with rate $\lambda >0$.  
+The memoryless property  states that for $t,s \geq 0$, we have
+$$ 	\mathbb{P}(X >t+s \ | \ X>s) =  \mathbb{P}(X >t).$$
+
+We have
+\begin{eqnarray*}
+	\mathbb{P}(X >t+s \ | \ X>s) &=&    \frac{\mathbb{P}\big( \{X >t+s\} \cap \{X >s\} \big)}{\mathbb{P}(X >s)}\\
+	&=&  \frac{\mathbb{P}( X >t+s)}{\mathbb{P}(X >s)} \\
+	&=&  \frac{e^{-\lambda (t+s)}}{e^{-\lambda s}} \\
+	&=&  e^{-\lambda t}  \\
+	&=& \mathbb{P}(X >t).
+\end{eqnarray*}
+```
+
+<br>
+
+
+```{exercise, name="Some of independent Poissons"} 
+Show that if  $X$ and $Y$ are independent Poisson random variables with parameters $\lambda$ and $\mu$, respectively, then $Z := X+Y$ is  a Poisson random variable with parameter $\lambda + \mu$.  
+```
+
+<br>
+
+```{solution}
+	Let $p_{\lambda}$ and $p_{\mu}$ be the pmfs for $X$ and $Y$.  Since $X$ and $Y$ are independent, we know that
+	\begin{eqnarray*}
+		\mathbb{P}(Z=n) &=& (p_{\lambda} \star p_{\mu})(n) \\
+		&=& \sum_{i \in \mathbb{Z}} p_{\lambda}(i) p_{\mu}(n-i).
+	\end{eqnarray*}
+	We know that $\mathbb{P}(Z = n)=0$ if $n <0$, since $X$ and $Y$ are nonnegative.   Let $n \geq 0$.   Note that $p_{\lambda}(i)=0$ for all $i <0$, and $p_{\mu}(n-i) =0$ for all $i >n$.  Thus
+	\begin{eqnarray*}
+		\sum_{i \in \mathbb{Z}} p_{\lambda}(i) p_{\mu}(n-i) &=& \sum_{i =0}^n p_{\lambda}(i) p_{\mu}(n-i) \\
+		&=& \sum_{i =0}^n\Big(\frac{e^{-\lambda} \lambda^i}{i!} \Big)\frac{e^{-\mu} \mu^{n-i}}{(n-i)!} 
+	\end{eqnarray*}
+	Now recall that $${n \choose i} = \frac{n!}{i!(n-i)!}.$$ So 
+	\begin{eqnarray*}
+		\mathbb{P}(Z=n) &=& \frac{e^{-(\lambda + \mu)}}{n!} \sum_{i=0}^n {n \choose i}\lambda^{i} \mu ^{n-i}. 
+	\end{eqnarray*}
+	Now the binomial formula, with $x= \lambda$ and $y= \mu$ gives that 
+	$$\mathbb{P}(Z=n) = ({e^{-(\lambda + \mu)}} ) \frac{(\lambda + \mu)^n}{n!}.$$
+	So we obtain that $Z$ is a Poisson random variable with parameter $\lambda + \mu$.  
+```
+<br>
+
+```{exercise, name="Shop keeper"}
+	Suppose we model the number of customers that arrive at a high street shop on at particular day by a Poisson process of intensity $\lambda >0$, where $\lambda$ is measured in customers per hour.     We wish to estimate $\lambda$.  The shop keeper has records of how many customers arrive each day for $n$ days given by $x = (x_1, \ldots, x_n)$ and opens everyday for $6$ hours.  Find an estimate for $\lambda$.  Carefully justify why this is a reasonable estimate.
+	```
+<br>
+```{solution}
+	Let $X_1, \ldots, X_n$ be random variables representing the arrivals each day.  We will assume that they these random variables are independent.  The model gives that $X_i$ is Poisson with mean $6\lambda$.  The law of large numbers tells us that
+	$$ \frac{1}{n} \big( X_1+ \cdots + X_n\big) \to \mathbb{E} X_1 = 6 \lambda$$
+	as $n \to \infty$.  Thus the estimator 
+	$$ \frac{1}{6n} \big(X_1 + \cdots + X_n \big)$$
+	is consistent.
+	It is also easy to see that it is unbiased.
+	With this estimator and the sample data, we give the corresponding estimate 
+	$$\frac{1}{6n}( x_1 + \cdots +x_n).$$
+```
+<br>
+```{exercise, name ="Orderliness"}
+	Show that Poisson processes constructed as exponential inter-arrial times
+	satisfy orderliness.
+```
+<br>
+```{solution}
+	Let $N$ be a Poisson process of rate $\lambda$.  We will consider the case $\lambda  = 1$, as it will be become apparent that the value of $\lambda$ does not matter.  Let $X_1$ and $X_2$ be exponential random variables with rate $\lambda =1$.  Recall the sum of exponentials gives a gamma.  Let $h >0$.  We have
+	\begin{eqnarray*}
+	 \mathbb{P}( N(h) \geq 2)  &=& \mathbb{P}( X_1 + X_2 \leq h)\\
+	 &=& \int_0 ^h x e^{-x} dx \\
+	 &=&  -xe^{-x} \big|_0 ^h - e^{-x} \big|_0 ^h \\
+	 &=&  -h e^{-h} - e^h + 1.
+	 \end{eqnarray*}
+	 Hence an easy application of l'hopital's rule gives the desired result.
+```
+<br>
+
+```{exercise, name="Scaling"}
+	Prove the scaling property for Poisson point processes on $[0, \infty)$.
+	```
+<br>
+```{solution}
+Let $c >0$.  	Observe that if $X$ is an exponential random variable with rate $\lambda$, then $c X$ is an exponential random variable with rate $c^{-1} \lambda$.  
+Let $X_i$ be independent exponential random variables with rate $\lambda$.  Let $T_n = X_1 + \cdots + X_n$ be their partial sums.  We know that
+$$ \Pi = \{ T_n : n \in \mathbb{Z}^{+} \}$$
+is a Poisson point process on $[0, \infty)$ with intensity $\lambda$.  The upshot is that
+$$ c \Pi = \{ c T_n: n \in \mathbb{Z}^{+} \}$$
+and we know that $$cT_n = cX_1 + \cdots +cX_n$$
+which is the sum of exponentials with rate $c^{-1} \lambda$.   Hence we conclude that $c \Pi$ is a Poisson point process of intensity $c^{-1} \lambda$ as desired.  
+```
+<br>
+```{exercise, name="Markov Chains"}
+Can you guess what $mean(y)$ will roughly be without implementing the code?
+```
+<br>
+```{solution}
+	Yes!  It is easy to see that the give transition matrix is aperiodic and irreducible	and thus has a stationary distribution $\pi = \pi p$, which we can compute by finding the left eigenvalue of the matrix $p$ and normalizing.   We know that regardless of the initial distribution the chain will tend towards stationary distribution and by a version of the law of large numbers for Markov chains the long term average of ones is just given by $\pi(1)$. 
+```
+<br>
+```{exercise, name="A simple queue"}
+Suppose customers arrive according to a Poisson process of intensity $\lambda$, and then are served by a single person at an exponential rate of $\mu$ (service time).  Only person can be served at a each time, and customers are served in order, and may have to wait in a queue (waiting time).  Explore such queues by simulation of various intensities.  In particular, plot a histogram of the total time  a customer spends in the system (response time = service time + waiting time).
+```
+<br>
+```{solution}
+We will simulate in the case $\lambda = 1$ and $\mu = 1.5$, and plot a histogram of the response time.  The histogram approximates the density of the exponential distribution at rate $\mu - \lambda$. 
+```
+
+```{r}
+inter=rexp(100000, 1)
+arr=cumsum(inter)
+service = rexp(100000,1.5)
+
+output <- arr[1] + service[1]
+for (i in 1:99999){
+if (arr[i+1] < output[i]){output <- c(output, output[i] + service[i+1])}
+if (arr[i+1] > output[i]){output <- c(output, arr[i+1] + service[i+1])}
+output
+}
+time = output - arr
+x = seq(0,max(time)+1, by=0.01)
+b = seq(0,max(time)+1, by=0.1)
+hist(time, prob=T, breaks=b)
+curve(dexp(x,0.5), add=T)
+```
+
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/poisson-ex-worked.Rmd)
+
+
+<br>
+<br>
+<br>

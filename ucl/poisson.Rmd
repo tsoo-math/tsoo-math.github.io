@@ -1,0 +1,297 @@
+---
+title: Poisson processes
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Introduction
+
+
+Point processes are random scattering of points, randomly scattered with respect to some law of distribution.  Poisson processes are a fundamental example of a point process that are used to model a variety of different phenomena and serve as the basis of more complicated processes.  For example we may be interested in a model for the arrival times or total of number of customers $N(t)$ that have visited a high street shop up to an arbitrary time $t$.  Poisson processes are often used to develop probabilistic models for $N(t)$; in this context, the actual arrival times of the customers form a Poisson point process.  
+
+We will consider a few different ways of defining and constructing Poisson processes, all of which give a process with the same law, but each description will have certain advantages over the other,
+
+
+# Some review 
+
+We say that $X$ is  **Poisson random variable** with mean $\mu$ if it has probability mass function given by
+$$ \mathbb{P}(X = n) = \frac{ e^{-\mu} \mu ^n}{n!} \  \text{ for $n = 0,1, 2, \ldots$}.$$ 
+We say that $Z$ is an **exponential random variable** with mean $\mu$ (rate $\lambda = 1/\mu$) if it is continuous random variable with probability density function given by
+$$ z \mapsto  \tfrac{1}{\mu} e^{-\tfrac{ z} {\mu}} \  \text{ for  $z \geq 0$}.$$
+
+
+## Exercises: Poisson and exponential random variables
+
+* Check that the mean of a Poisson random variable with parameter $\mu$ does indeed have mean $\mu$.  Show that the variance is also $\mu$.
+
+* Show that the minimal of two independent exponential random variables is again an exponential random variable.
+
+* What is the memoryless property?  Prove that exponential random variables have this property.
+
+
+* Let $n>0$ and $\mu >0$.  Let $W$ be a Poisson random variable with mean $\mu$.      Let $(X_i)_{i=1}^n$ be independent Bernoulli random variables with parameter $p=\lambda/n$.  Let $S_n = X_1 + \cdots + X_n$.  Show for all nonnegative integers $k$, we have $\lim_{n \to \infty} \mathbb{P}(S_n =k) = \mathbb{P}(W=k)$. 
+
+
+* Let $\mu >0$, $p \in (0,1)$,   and $W$ be a Poisson random variable with mean $\mu$. Define the random variable $X$ in the following way:   if $W=n$, then we let $X$ be the sum of $n$ independent Bernoulli random variables with parameter $p$.  Show that $X$ is a Poisson random variable with mean $p\lambda$.
+
+
+* Show that the sum of independent Poisson random variables is again a Poisson random variable.
+
+
+
+# Generating a Poisson process as exponential inter-arrivals
+
+We will start with the following construction which is also useful for simulations. 
+
+
+*  Let $(X_i)_{i=1} ^{\infty}$ be a sequence of independent exponential random variables all with mean $\mu = 1/\lambda$. (Inter-arrival times)
+  
+*    Let $T_1 = X_1$. (Time of first arrival)
+  
+*    Let $T_{n+1} = X_{n+1} + T_n = \sum_{i=1} ^{n+1} X_i$ (Arrival times)
+   
+*    Set $N(t) = \sum_{n=1} ^{\infty} \mathbf{1}[ T_n \leq t]$ (Total number of arrivals by time $t$).
+  
+We say that $N$ is a **Poisson process on $[0, \infty)$ with rate $\lambda$**.  We call the set of random arrival times $\{T_n:  n \in \mathbb{Z}^{+}\}$ the corresponding **Poisson point process on $[0, \infty)$ of intensity $\lambda$**.
+
+
+With R it is easy to simulate a Poisson process:
+
+* Call $k$ independent exponential random variables of rate $\lambda >0$ (inter-arrival times).  
+
+* Compute the partial sums (arrival times).
+
+* To visualize: plot arrival times to see the resulting Poisson point process
+
+```{r}
+inter = rexp(15, 1) 
+arr = cumsum(inter)
+one = rep(1, times = length(arr))
+plot(arr, one, yaxt = 'n', ann=FALSE)
+```
+
+#  Experimenting
+
+We can make use of R and simulate many realizations of Poisson point processes.  In particular, pay attention to the following points:
+
+* Simulate Poisson processes with different intensities and number of arrivals
+  
+* Are the points clumped sometimes are evenly spaced?
+  
+* Simulate say $50$ arrivals with intensity $1$.  Does it appears as though the arrival time of the last point is always around $50$?  Explain.
+  
+* If someone gave you a (single) sample realization of a Poisson process on a large interval, how would you estimate the intensity as unknown parameter?
+    
+*  If you are using a Poisson process of intensity $\lambda$ to model the arrival of customers, what should the {\em units} be?
+
+
+I think the last point is very important in applications; everything has units in the real world, and it can be quite revealing to make sure all the units work out.
+
+
+#  What's Poisson got to do with it?
+
+It is not obvious what Poisson random variables have to do with Poisson processes from its construction as exponential inter-arrival times.  In the following more mathematical description, the word *Poisson* appears from the outset.
+
+Let $N$ be a Poisson process on $[0, \infty)$ with rate $\lambda$.  It is possible to show that:
+
+* For every $t >s>0$, $N(t) - N(s)$ is a Poisson random variable with mean $\lambda(t-s)$ (Stationary increments distributed as a Poisson)
+
+* For any finite collection of disjoint intervals $(s_1, t_1), \ldots, (s_n, t_n)$ the random variables $N(t_1) - N(s_1), \ldots, N(t_n) - N(s_n)$ are independent.
+
+These two properties also characterize a Poisson process and can be used to define spatial Poisson processes in higher dimensions.  We will prove that our construction using exponential random variables satisfies a weak version of the first property.
+
+**Lemma:**  *Let $N$ be a Poisson process constructed with exponential inter-arrival times of rate $\lambda>0$.  Then $N(t)$ is a Poisson random variable with mean $t \lambda$.*  
+
+
+*Proof*:
+
+Let $N$ be given by exponential inter-arrival times, so that $X_i$ are the inter-arrival times, and $T_k$ is the time of the $k$ arrival.     Observe that
+$$\mathbb{P}(N(t) = 0)  = \mathbb{P}( X_1 >t) = e^{-\lambda t}.$$ 
+For $k >0$, we have
+$$
+\begin{eqnarray*}
+\mathbb{P}(N(t) = k) &=&  \mathbb{P}( T_k \leq t, T_{k+1} >t)  \\
+&=& \mathbb{P}( T_k \leq t, T_{k} + X_{k+1} >t)  \\
+&=&  \int_0 ^t \int_{t-y} ^{\infty} g(y) f(x) dx dy,
+\end{eqnarray*}
+$$
+where $g$ is the pdf for $T_k$ and $f$ is the pdf for $X_{k+1}$; here we need to appeal the independence of these two random variables. Thus 
+$$\mathbb{P}(N(t) = k)  = \int_0 ^t g(y) e^{-(t-y) \lambda } dy$$
+We recall that the sum of independent exponentials has the law of a gamma distribution; specifically
+$$ g(y) =  \frac{\lambda^k}{\Gamma(k)} y^{k-1} e^{-\lambda y}.$$
+Thus 
+$$
+\begin{eqnarray*}
+ \mathbb{P}(N(t) = k) &=& \frac{\lambda^k e^{-t \lambda} }{\Gamma(k)} \int_0 ^ t y^{k-1} dy \\
+ &=&  \frac{\lambda^k e^{-t \lambda} t^k}{k\Gamma(k) } \\
+ &=&  \frac{(\lambda t)^k e^{-t \lambda} }{k! },
+\end{eqnarray*}
+$$
+as promised.
+
+
+# Exercises
+
+* Suppose we model the number of customers that arrive at a high street shop on at particular day by a Poisson process of intensity $\lambda >0$, where $\lambda$ is measured in customers per hour.     We wish to estimate $\lambda$.  The shop keeper has records of how many customers arrive each day for $n$ days given by $x = (x_1, \ldots, x_n)$ and opens everyday for $6$ hours.  Find an estimate for $\lambda$.  Carefully justify why this is a reasonable estimate.
+
+
+* Suppose the shop keeper computes the mean the variance for her data and finds that the variance is much smaller than the mean.  Would you re-evaluate whether a Poisson process is a good model?  Explain.
+
+* Suppose the shop is really high-end and on some days has no customers.  The shop keeper only keeps track of whether she had has any customers are not; that is, her records $x = (x_1, \ldots, x_n)$ are a binary sequence.  Can you still estimate $\lambda$?
+
+
+* Suppose that arrivals to a shop are modeled by a Poisson process.  Suppose that you are told that there is exactly one arrival in the time interval $[0,1]$; let $U$ be the time of this arrival.  What is distribution of $U$?
+
+
+We demonstrate the last exercise by simulations in the following way. We simulate Poisson processes, and record the position of the first arrival if it occurs in $[0,1]$ and the second arrival occurs outside this interval.   We plot a histogram of the recorded occurrences  
+
+```{r}
+    record <- function(){
+ inter = rexp(2,1)
+ arr = cumsum(inter)
+ r = 2
+ if ( (arr[1] < 1) & (arr[2] >1)){
+ r <- arr[1]
+}
+r
+}
+
+x = replicate(10000, record())
+y = setdiff(x, 2)
+hist(y, prob=T)
+```
+
+
+#  A characterization via modelling assumptions
+
+Poisson processes are good models for arrivals only if it is reasonable  to assume that one also has the memoryless property that comes with the exponential distribution.  In addition, if  an arrival process $N(t)$ satisfies the following mild conditions, then it can be shown that it is a Poisson process of intensity $\lambda$.  
+
+
+* (Stationarity)  The number of arrives in an interval of time depends only on the length of time.)  For all $t >s$ we have that  
+$N(t) - N(s)$ has the same distribution as  $N(t-s)$.
+
+* (Independent increments) For any finite collection of disjoint intervals $(s_1, t_1), \ldots, (s_n, t_n)$ the random variables $N(t_1) - N(s_1), \ldots, N(t_n) - N(s_n)$ are independent.
+
+
+* (Orderliness:  two customers do not arrive at the same time)
+$$\lim_{h \to 0} \frac{1}{h}\mathbb{P}( N(h) \geq 2) = 0.$$
+
+
+* (Rate: In a small interval time, the probability that a customer arrives is proportional to $\lambda$.)
+$$ \lim_{h \to 0} \frac{1}{h}\mathbb{P}( N(h) =1) = \lambda >0.$$
+
+We can sketch a proof of our previous lemma which connected Poisson random variables with Poisson processes.  Let $t >0$, and partition the interval $[0,t]$ into $n$ intervals of size $t/n$, where $n$ is large.  By orderliness condition with stationarity,  we can  assume that in each interval there is at most one arrival.   Let $p = \mathbb{P}( N(t/n) =1))$.   By the independent increments and  rate conditions, we have that probability that there are $k$ arrives is  given by 
+$$\mathbb{P}(N(t) = k) = {n \choose k }p^k (1-p)^{n-k} = \frac{n!}{(n-k)! k!}\frac{(\lambda t)^k}{n^k}\Big(1- \frac{\lambda t}{n}\Big)^{n-k} + g(n),$$
+where $g(n) \to 0$ as $n \to \infty$.  Thus the desired limit follows. 
+
+#  Exercises
+    
+* Would a Poisson process be a good model for the number of arrivals to a sandwich shop for an entire day of business?   Discuss.
+  
+* How reasonable is the orderliness assumption for arrivals to a restaurant?  Discuss.
+    
+* Show that Poisson processes constructed as exponential inter-arrial times satisfy orderliness.
+
+
+
+#  Poisson processes as uniform random variables
+
+Another way to simulate Poisson point processes is given by the following characterization on finite volumes.  To simulate a Poisson point process of intensity $\lambda$ on an interval $[s,t]$:
+  
+* Call a Poisson random variable  $M$ with mean $\lambda(t-s)$.
+
+* If $M=m$, then place $m$ independent random variables in $[s,t]$ that are uniformly distributed.  
+
+* If a Poisson point process is desired on $[0, \infty)$, then repeat this procedure independently on each interval $[n, n+1)$, for every nonnegative integer $n$. 
+
+
+This characterization is my favourite and also has the advantage that it can easily be generalized to higher dimensions and other spaces.  
+
+
+The following code outputs the a sequence of arrivals of a Poisson process of intensity $2$ in the interval $[0,1]$
+
+```{r}
+M = rpois(1, 2) 
+P = runif(M) 
+sort(P, decreasing=F)
+```
+
+# Exercises
+
+* Using the characterization of Poisson point processes as a Poisson number of uniform random variables, show by simulations that the first arrival is distributed as an exponential random variable.
+
+
+# Other spaces and spatial Poisson point processes
+
+
+In more general spaces, it is more natural to consider the point process (the location of the arrivals) rather than the counting process (the  total number  arrivals).   Here we think of the point process $\Pi$  as a random subset of $\mathbb{R}^d$, and we let $\Pi(A)$ to be the number of $\Pi$-point in $A \subset \mathbb{R}^d$.       We say that $\Pi$ is a **Poisson point process on $\mathbb{R}^d$ with intensity $\lambda$** if: 
+* For every subset $A \subset \mathbb{R}^d$ of finite volume $|A|$, the random variable is $\Pi(A)$ is a Poisson random variable with mean $\lambda |A|$.
+
+* For any finite collection of disjoint sets  $A_1, \ldots, A_n$ with finite volume the random variables $\Pi(A_1), \ldots, \Pi(A_n)$ are independent.
+
+
+This characterization is also lends itself to easy simulations.  To simulate a Poisson point process $\Pi$ of intensity $\lambda$ on a set $A \subset \mathbb{R}^d$:
+    
+* Call a Poisson random variable  $M$ with mean $\lambda |A|$.
+
+* If $M=m$, then place $m$ independent random variables in $A$ that are uniformly distributed.  
+
+* If a Poisson point process is desired on $\mathbb{R}^d$, then consider a partition of $\mathbb{R}^d = \bigcup_{i=1} ^{\infty} A_i$ into sets of finite volume and   repeat this procedure independently on each set $A_i$, for every $i \in \mathbb{Z}^{+}$.  
+
+
+The following R code gives a Poisson point process on a square.
+
+```{r}
+M= rpois(1,10)
+x = runif(M)
+y = runif(M)
+plot(x,y, xlim=c(0,1), ylim=c(0,1))
+```
+
+# Some other nice properties
+
+
+* (Superposition) The sum of two independent Poisson point processes is again a Poisson point process.
+
+* (Colouring)  Given a Poisson point process if we colour the points red or blue independently with probability $p \in (0,1)$, the resulting blue and red point processes are Poisson and independent.
+
+
+* (Scaling)  Given a Poisson point process $\Pi$ on $\mathbb{R}^d$ of intensity $\lambda$, the scaled point process $c \Pi$ formed by multiplying each $\Pi$-point by $c >0$, is a Poisson point process of intensity $c^{-1} \lambda$.
+\end{theorem}
+
+# Exercises
+    
+    
+* Simulate a Poisson point process on a disc.   
+  
+   
+*   Show that the law of a Poisson point process is invariant under rotations; that is, if $\Pi$ is a Poisson point process on a disc, and $\theta$ is a rotation, the point process $\theta \Pi$ formed by rotating all the point by $\theta$ is still a Poisson point process on the disc.
+   
+    
+* Show that the addition of two independent Poisson point on a disc is a Poisson point process on a disc. 
+
+* Prove the scaling property for Poisson point processes on $[0, \infty)$
+
+
+
+# Summary
+
+* We reviewed the basics of Poisson point processes from the persepective of: inter-arrival times, modelling, and uniform random variables.  
+* We saw how to simulate Poisson point processes on an interval and higher dimensions   
+* We thought about how about how all these characterizations are equivalent, and the suitability of the Poisson process for modelling.   
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/poisson.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
