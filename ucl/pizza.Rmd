@@ -1,0 +1,34 @@
+---
+title: "Pizza"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Random variables on a disc
+
+Let $U$ be uniformly on a disc of radius $\ell$ centered at the origin.  Express in polar coordinates $U = (R, \theta)$.  To compute the distribution of  $R$, observe that
+
+$$
+\begin{eqnarray*}
+\mathbb{P}(R \leq r) &=& \frac{\pi r^2}{\pi \ell^r} \\
+&=& (r/\ell)^2
+\end{eqnarray*}
+$$
+
+In particular, we see that $R$ is *not*  uniformly distributed.  Specifically,  
+
+$$ \mathbb{P}(R > \ell/2) = 1 - (1/2)^2 = 3/4,$$
+
+so we see that $3/4$ is the *area* is accounted for by the region of the disc where the radius exceeds a $1/2$.
