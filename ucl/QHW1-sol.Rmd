@@ -27,7 +27,7 @@ Let $X_i$ be i.i.d.\ exponential random varaibles with rate $1$.  By the change 
 $$\mathbb{E} g(X_1) = \int_0 ^{\infty} g(x) e^{-x}dx;$$
 take $$g(x) = \sin(x) x^2.$$
 Since $g(X_i)$ are independent are also i.i.d.\ the law of of large numbers gives
-$$ n^{-1}[g(X_1) + \cdots+ g(X_n) ] \to \mathbb{E} X_1.$$
+$$ n^{-1}[g(X_1) + \cdots+ g(X_n) ] \to \mathbb{E} g(X_1).$$
 This is easily simulated in R.
 ```{r}
 g <- function(x){
