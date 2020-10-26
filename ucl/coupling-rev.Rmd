@@ -1,0 +1,72 @@
+---
+title: "You always knew and did coupling"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#  Introduction
+
+Let $X$ and $Y$ be random varaibles not necessarily defined on the same probability space, thus they may not even have a joint distribution, and we can not make sense of an expression like $X+Y$.    Let $X'$ and $Y'$ be random variables defined on the same probability space.   We say that $(X', Y')$ is **coupling** of $X$ and $Y$ if $X$ and $X'$ have the same law and $Y$ and $Y'$ have the same law.  There is always at least one coupling given by the case where we take $X'$ to be independent of $Y'$; usually, this is not the coupling we are interested in.  Let $U$ be uniformly distributed in $[0,1]$.   In the case where $X$ and $Y$ are real-valued random variables, with (increasing) cdfs $F_X$ and $F_Y$, the **quantile** coupling is given by taking $X'=F_X^{-1}(U)$ and $Y'=F_X^{-1}(U)$.  Notice that $X'$ and $Y'$ are *coupled* since they were generated with the same randomization $U$.   We will have more to say about this coupling in a bit.  First, I want to convince you that you already know how to do coupling:  any procedure you have for generating a random variable from a uniform, or a sequence of uniforms, is a coupling of the random variable you generated and the uniforms!  Let's go back to the beginning.
+
+
+# Bernoulli's and Binomials
+
+Let $n \geq 1$ be an integer and $p \in (0,1)$. Recall that we say that $X \sim Bin(n,p)$ if 
+
+$$\mathbb{P}(X=k) = { n \choose k} p^k (1-p)^{n-k}$$
+and $X$ is integer-valued on $\{0,1,\ldots, n\}$.  If I told you to compute the mean and variance of $X$ from the definition, then what happens?  It is quite brutal, even the mean:  most of the proof is applying the definition, and manipulating the sigma notation.  We have
+$$
+\begin{eqnarray*}
+\mathbb{E} X &=& \sum_{k=0}^n k {n \choose k}p^k(1-p)^{n-k} \\
+&=&  \sum_{k=1}^n k {n \choose k}p^k(1-p)^{n-k}  \\
+&=&  p\sum_{k=1}^n k {n \choose k}p^{k-1}(1-p)^{n-k}  \\
+&=& p\sum_{k=1}^n k \frac{n!}{k!(n-k)!}p^{k-1}(1-p)^{n-k} \\
+&=&  pn\sum_{k=1}^n  \frac{(n-1)!}{(k-1)!(n-k)!}p^{k-1}(1-p)^{n-k} \\
+&=&  pn\sum_{k=0}^{n-1}  \frac{(n-1)!}{k!(n-k-1)!}p^{k}(1-p)^{n-k-1} \\
+&=&  pn\sum_{k=0}^{n-1}  \frac{(n-1)!}{k!(n-1 - k)!}p^{k}(1-p)^{n-1-k} \\
+&=& pn \sum_{k=0}^{n-1}  {n-1 \choose k}  p^{k}(1-p)^{n-1-k}  \\
+&=&  pn(1) = pn;
+\end{eqnarray*}
+$$
+the most interesting part of this proof is the in the second to last line, where we recognize that the sum is the sum of the pmf of a binomial random variable with parameter $(n-1, p)$.  
+
+It is possible you never even saw this proof.  A much easier proof is given by the fact that, if $Y_1, \ldots, Y_n$ are independent Bernoulli random variables with paramter $p$, then 
+$$X ' = Y_1 + \cdots + Y_n'$$
+has the same law as $X$, and thus the same expectation and variance!
+The upshot is the linearity of expecation comes to the rescue.
+$$\mathbb{E} X = \mathbb{E} X' = \sum_{i=1} ^n \mathbb{E} Y_i = np.$$
+Moreover, the independence of the Bernoulli random variables give
+$$ var(X) = var(X') = \sum_{i=1} ^n var(Y_i) = n(1-p)p.$$
+
+Thus by *finding* this coupling of a binomial random variable with a (sequence) of Bernoulli random variables, the computation becomes much easier.  This coupling did not need to be found of course, since this is how the binomial random variable arises naturally!
+
+
+Next, we consider another standard application of coupling.
+
+#  Stochastic domination
+
+Let  $X$ and $Y$ are real-valued random variables.  We say that $X$ **stochastically dominates** $Y$ if for all $z \in \mathbb{R}$, we have $$F_X(z)= \mathbb{P}(X \leq z) \leq F_Y(z) =\mathbb{P}(Y \leq z).$$  Let us say that a coupling $(X', Y')$ of $X$ and $Y$ is **monotone** if $\mathbb{P}(X' \geq Y') =1$.
+
+Notice that if $X$ stochastically dominates $Y$, then the quantile coupling produces a monotone coupling! We have
+
+$$ X'= F_X^{-1}(U) \geq F_{Y}^{-1}(U) = Y'.$$
+In particular, if $X$ stochastically dominates $Y$, we have
+$$ \mathbb{E} X = \mathbb{E} X' \geq \mathbb{E} Y' = \mathbb{E} Y.$$
+
+
+
+
+
+
+
+
+
+
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/coupling-rev.Rmd)
+

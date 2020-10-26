@@ -198,7 +198,7 @@ $$\mathbb{P}(W =0, Z=0) = \mathbb{P}(W =0, C_0=0) = 3/8$$
 *  We have
 
 $$\mathbb{P}(W =1|Z=1) = \frac{\mathbb{P}(W =1, C_1=1)}{\mathbb{P}(Z=1)} = 2/3$$
-$$\mathbb{P}(W =1, Z=0) = \frac{\mathbb{P}(W =1, C_1=0)}{\mathbb{P}(Z=0)} = 2/5$$
+$$\mathbb{P}(W =1| Z=0) = \frac{\mathbb{P}(W =1, C_1=0)}{\mathbb{P}(Z=0)} = 2/5$$
 $$\mathbb{P}(W =0|Z=1) = 1/3$$
 $$\mathbb{P}(W =0| Z=0) = 3/5$$
 *  These conditional probabilites are given to us by the set-up:

@@ -38,6 +38,7 @@ output: html_document
     +  We discussed the [solutions to HW2](https://tsoo-math.github.io/ucl/QHW2-sol.html).  Then we went into breakout rooms to work on the R exercise sheet; we retured to the main room to briefly discuss the  R exercise sheet.  This meeting was not recorded.
 * Week 9 (26 Oct - 1 Nov):
     +  [Fourth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+    +  We discussed the [solutions to HW3](https://tsoo-math.github.io/ucl/QHW3-sol.html), maths, stats, code, and typesetting.  We also discussed the Doeblin coupling.
 * Week 10 (2 Nov - 8 Nov):   
 * Week 11 (9 Nov - 15 Nov):
 * Week 12 (16 Nov - 22 Nov): 

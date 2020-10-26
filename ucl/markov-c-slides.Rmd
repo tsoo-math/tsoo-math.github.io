@@ -414,7 +414,7 @@ $$
 Let $P$ be an aperiodic irreducible transition matrix on a finite state space $S$ so that it has a stationary distribution $\pi$.   Let $X$ be a Markov chain with transition matrix $P$.   Fix a state $s\in S$, and  set 
 
 $$Y_n = \frac{1}{n}  \sum_{k=0}^{n-1} \mathbf{1}[X_k = s].$$
- Then $Y_n$ converges to $\pi(s)$ in $L^2$.  
+ Then $Y_n$ converges to $\pi(s)$ in the mean-squared, and consequently in probability. 
 
 This  version of the law of large numbers is slightly harder to prove than the weak one that we proved for the i.i.d. case.  
 

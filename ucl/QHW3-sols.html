@@ -480,44 +480,30 @@ coupled(c(1,2,3,4))</code></pre>
 ##       [,1] [,2] [,3] [,4]
 ## hisx     1    2    3    4
 ## deckx    1    2    3    4
-## deckx    1    2    3    4
-## deckx    1    2    4    3
-## deckx    1    2    4    3
-## deckx    4    2    1    3
-## deckx    4    2    1    3
-## deckx    2    4    1    3
-## deckx    3    4    1    2
-## deckx    1    4    3    2
-## deckx    1    3    4    2
+## deckx    3    2    1    4
+## deckx    3    2    4    1
 ## deckx    1    2    4    3
 ## deckx    1    2    4    3
 ## deckx    1    2    4    3
-## deckx    1    4    2    3
-## deckx    2    4    1    3
+## deckx    3    2    4    1
+## deckx    2    3    4    1
 ## 
 ## $y
 ##       [,1] [,2] [,3] [,4]
-## hisy     3    1    4    2
-## decky    3    1    4    2
+## hisy     3    2    1    4
+## decky    3    4    1    2
 ## decky    3    4    1    2
 ## decky    1    4    3    2
-## decky    1    4    3    2
-## decky    1    4    3    2
-## decky    1    4    3    2
-## decky    2    4    3    1
-## decky    2    4    3    1
-## decky    2    4    3    1
-## decky    2    4    1    3
-## decky    2    4    1    3
-## decky    2    4    1    3
-## decky    2    4    1    3
-## decky    2    4    1    3
-## decky    2    4    1    3
+## decky    4    1    3    2
+## decky    4    2    3    1
+## decky    4    2    3    1
+## decky    4    3    2    1
+## decky    2    3    4    1
 ## 
 ## $n
-## [1] 15</code></pre>
+## [1] 8</code></pre>
 <pre class="r"><code>mean(replicate(1000, coupled(c(1,2,3,4))$n))</code></pre>
-<pre><code>## [1] 33.425</code></pre>
+<pre><code>## [1] 32.5</code></pre>
 </div>
 <div id="transition-matrices-1" class="section level2">
 <h2><span class="header-section-number">5.2</span> Transition matrices</h2>
@@ -570,10 +556,10 @@ steps &lt;- function(n){
 mc=steps(10000)
 stat = c(mean(mc==1), mean(mc ==2),mean(mc ==3), mean(mc ==4), mean(mc ==5)  )
 stat</code></pre>
-<pre><code>## [1] 0.2396760 0.2163784 0.1203880 0.1259874 0.2975702</code></pre>
+<pre><code>## [1] 0.2419758 0.2124788 0.1210879 0.1188881 0.3055694</code></pre>
 <pre class="r"><code>stat %*% P</code></pre>
-<pre><code>##           [,1]      [,2]     [,3]      [,4]    [,5]
-## [1,] 0.2433007 0.2132037 0.119838 0.1231877 0.30047</code></pre>
+<pre><code>##           [,1]      [,2]      [,3]     [,4]      [,5]
+## [1,] 0.2457421 0.2154701 0.1209879 0.119988 0.2978119</code></pre>
 <pre class="r"><code>onethree=0
 for(i in 1:9999){
 if (mc[i]==1 &amp;&amp; mc[i+1]==3 ){
@@ -582,7 +568,7 @@ if (mc[i]==1 &amp;&amp; mc[i+1]==3 ){
 }
 
 onethree/10000</code></pre>
-<pre><code>## [1] 0.1204</code></pre>
+<pre><code>## [1] 0.121</code></pre>
 </div>
 <div id="gibbs-sampler" class="section level2">
 <h2><span class="header-section-number">5.4</span> Gibbs Sampler</h2>
@@ -596,7 +582,7 @@ onethree/10000</code></pre>
 <li><p>We have</p></li>
 </ul>
 <p><span class="math display">\[\mathbb{P}(W =1|Z=1) = \frac{\mathbb{P}(W =1, C_1=1)}{\mathbb{P}(Z=1)} = 2/3\]</span>
-<span class="math display">\[\mathbb{P}(W =1, Z=0) = \frac{\mathbb{P}(W =1, C_1=0)}{\mathbb{P}(Z=0)} = 2/5\]</span>
+<span class="math display">\[\mathbb{P}(W =1| Z=0) = \frac{\mathbb{P}(W =1, C_1=0)}{\mathbb{P}(Z=0)} = 2/5\]</span>
 <span class="math display">\[\mathbb{P}(W =0|Z=1) = 1/3\]</span>
 <span class="math display">\[\mathbb{P}(W =0| Z=0) = 3/5\]</span>
 * These conditional probabilites are given to us by the set-up:
@@ -643,18 +629,18 @@ for(i in 1:10000){
     {num00 &lt;- num00 +1}
 }
 num00/10000</code></pre>
-<pre><code>## [1] 0.3739</code></pre>
+<pre><code>## [1] 0.3747</code></pre>
 <pre class="r"><code>num10=0
 for(i in 1:10000){
   if( a[i]==1 &amp;&amp; b[i]==0)
     {num10 &lt;- num10 +1}
 }
 num10/10000</code></pre>
-<pre><code>## [1] 0.2533</code></pre>
+<pre><code>## [1] 0.2491</code></pre>
 </div>
 </div>
-<div id="version-18-october-2020" class="section level1">
-<h1><span class="header-section-number">6</span> Version: 18 October 2020</h1>
+<div id="version-26-october-2020" class="section level1">
+<h1><span class="header-section-number">6</span> Version: 26 October 2020</h1>
 <ul>
 <li><a href="https://tsoo-math.github.io/ucl/QHW3.Rmd">Rmd Source</a>
 <br>
