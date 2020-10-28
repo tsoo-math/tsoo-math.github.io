@@ -1,0 +1,29 @@
+---
+title: "Homework 4.1"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Abstract
+
+The purpose of this exercise is as follows.
+
+* To see if you can use R markdown.
+* To work out any kinks with regards to on-line Moodle submission.
+
+Thus  in submitting answers to this homework, submit both the final generated html file and the Rmd source.
+
+
+#  Mixing
+
+Let $X$ be an aperiodic irreducible Markov chain on a finite state space $S$.   Let $\pi$ be its stationary measure, and assume that $X$ is started at $\pi$.    Let $a, b \in S$.   
+
+*  Show that $$\lim_{n \to \infty} \mathbb{P}(X_0=a, X_n=b) = \pi(a)\pi(b).$$
+*  Illustrate this fact in R, for a particular Markov chain of your choice, by running simulations.
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/QHW4.1.Rmd)
