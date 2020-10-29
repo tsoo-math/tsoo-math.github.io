@@ -29,6 +29,12 @@ By ticking the submission declaration box in Moodle you are agreeing to the foll
 
 
 
+# Anonymous Marking 
+
+Please do **not** write your name anywhere on the submission. Please include only your **student number** as the proxy identifier.
+
+
+
 #  Mixing
 
 Let $X$ be an aperiodic irreducible Markov chain on a finite state space $S$.   Let $\pi$ be its stationary measure, and assume that $X$ is started at $\pi$.    Let $a, b \in S$.   
