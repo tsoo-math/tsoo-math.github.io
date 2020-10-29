@@ -14,8 +14,19 @@ The purpose of this exercise is as follows.
 
 * To see if you can use R markdown.
 * To work out any kinks with regards to on-line Moodle submission.
+* In submitting answers to this homework, submit both the final generated html file and the Rmd source.
 
-Thus  in submitting answers to this homework, submit both the final generated html file and the Rmd source.
+#  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I am aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. I have read the guidelines in the student handbook and understand what constitutes plagiarism. I hereby affirm that the work I am submitting for this in-course assessment is entirely my own.
+
 
 
 #  Mixing
