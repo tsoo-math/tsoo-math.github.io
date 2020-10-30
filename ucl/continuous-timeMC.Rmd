@@ -1,0 +1,186 @@
+---
+title: Continuous-time Markov chains 
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# The Markov property
+
+Suppose we want to generalize finite state discrete-time Markov chains to allow the possibility of switching states at a random time rather than at unit times.  It turns out that if we want to preserve the Markov property, due to the memoryless property of the exponential distribution, the jump times have to be exponential.  
+
+
+Let $S$ be a finite or countable set.  We say that a random process $X \in S^{ [0, \infty)}$ a **continuous-time** process taking values in $S$ and we say it satisfies the **Markov property** if 
+
+$$ \mathbb{P} (X(t_n) = j | X(t_0) = a_0, \ldots X(t_{n-2}) = a_{n-2}, X(t_{n-1}) = i)  )  =  \mathbb{P} (X(t_n) = j | X(t_{n-1}) = i)$$
+
+for all choices of $a_0, \ldots, a_{n-2}, i,j \in S$ and any sequence of times $0 \leq t_0 < t_1 < \cdots t_{n-1} < t_n < \infty.$
+
+
+The Poisson counting process $N$ with i.i.d.\ exponential inter-arrvial times satisfies the Markov property as a consequence of the memoryless property of exponential random variables.  Notice that if we appeal to the independent increment property for $N$, we have for example
+
+$$\mathbb{P}( [N(101) - N(100) =0], N(100) =0 ) = \mathbb{P}(N(101) - N(100) = 0)\mathbb{P}(N(100)=0),$$
+
+which says that the Poisson process does not care if it has not seen arrivals for a long time, it is still business as usual, it is not tempted to give you an arrival; a lightbulb that has a exponential lifetime distribution is not more likely to die, if it has survived for a long time.  
+
+It turns out that the only continuous random variables with the memoryless property are the exponentials, thus if we defined a related arrival process using inter-arrival times that are say uniformly distributed in the unit interval, we will lose many independence type properties:  for example, if an arrvial has not arrived by by $0.75$ units of time, you know you are going to get one for sure within $0.25$ units of time. 
+
+
+# Continuous-time Markov chains via exponential holding times
+
+
+We will now define a continuous-time Markov chains via a characterization that is useful for simulations.  Let $A$ be a finite set of states.  Let $\lambda$ be an initial probability distribution on $A$.  Let $M$ be a transition matrix for $A$ with all zeros in the diagonal so that $m(a,a) = 0$.  For each state $a \in A$, we associate a positive number $h_a >0$ which is referred to the **exponential holding time** at $a$.   
+    
+  
+We simulate  $X \in A^{ [0, \infty) }$ a **continuous-time Markov chain**  on $A$ with **jump transition matrix** $M$, holding time $h$, and initial distribution $\lambda$ in the following way:
+
+* Choose an element of $a\in A$ with probability $\lambda$.
+
+* Call an exponential random variable $Y_1$ with mean $h_a$.
+
+* Set $X(t) = a$ for all $t \in [0, Y_1)$.
+
+* Choose another state $b \in A$ with probability $m_{ab}$.
+
+* Call an exponential random variable $Y_2$ with mean $h_b$.
+
+* Set $X(t) = b$ for all $t\in [Y_1, Y_1+Y_2)$
+
+* Choose another state $c \in A$ with probability $m_{bc}$.
+
+* Call an exponential  random variable  $Y_3$ with mean $h_c$.
+
+* Repeat
+
+
+The times $T_n = Y_1 + \cdots +Y_n$ are referred to as the **jump times**.  Thus a continuous-time Markov chain can be visualized as a  point process of jump times, where jump times are marked according to the new state that is reached in $A$ at the time of the jump.  The discrete-time Markov chain given by $Z_n = X(T_n)$ is sometimes called the **jump chain**, and many of the properties of $X$ are obtained by understanding $Z$.    Notice that one can simulate the jump chain first, then the required jump times.  So the first step in simulating a continuous-time Markov chain is simulating a regular discrete-time Markov chain.
+
+
+# R code
+
+Consider transition matrix $M$  on the  three states $\{1,2,3\}$ given by
+\begin{equation*}
+M = 
+\begin{pmatrix}
+0 & 1/3 & 2/3 \\
+1/2 & 0 & 1/2 \\
+1/8 & 7/8 & 0
+\end{pmatrix}.
+\end{equation*}
+
+Consider the holding times $h = (1,1,3)$.  Let $X$ be a continuous-time Markov chain started at state $1$, with transition matrix $M$ and holding times $h$.  We recall that we already know how to code a step of the jump chain.     
+
+```{r}
+M=matrix(c(0,1/3, 2/3,1/2, 0, 1/2,1/8, 7/8, 0), nrow=3)
+M <- t(M)
+M
+```
+
+```{r}
+step <- function(i){
+  q = M[i,]
+  x=-1
+  u = runif(1)
+  j=0
+  cumq = cumsum(q)
+  while(x==-1){
+    j<-j+1
+    if(u <= cumq[j]){x <-j}
+  }
+  x
+}
+```
+
+
+```{r}
+state=1
+for(i in 1: 14){
+  state <- c(state, step(state[length(state)]))
+}
+state
+```
+
+```{r}
+h = c(1,1,3)
+hold = rexp(1, 1)
+for(i in 2: 14){
+  rate <- 1
+  if (state[i]==3){rate <-1/3}
+  hold <- c(hold, rexp(1,rate))
+}
+hold
+```
+  
+```{r}
+time = cumsum(hold)
+time <- c(0, time)
+time
+plot(time, state)
+```
+
+
+
+#  Q matrices
+
+Here, we give an equivalent characterization of continuous Markov-chains taking values on a state space $S=\{1,2,3, \ldots, n\}$.  Given that we are
+in a state $i$, it suffices to specify the mechanism for which we jump to state $j$.  Let $Q$ be a $n \times n$  matrix such that $q_{ij} \geq 0$ for all $i \not =j$, and for convenience set
+$$ q_{ii} := -\sum_{j} q_{ij},$$
+so that each row sums to *zero*.  Sometimes $Q$ is called a **transition rate matrix** or simply the $Q$ matrix.  If we are at state $i$, then we generate independent exponential random variables $(E_{ij})_{j=1} ^n$ with *rate* $q_{ij}$; the one that happens first, the minimum is the state we go to; that is, if $E_{ij}= E_i:= \min\{ E_{i1}, \ldots, E_{in}\}$ then, we jump to state $j$ after time $E_{ij}$; we take the convention that $E_{ii} =\infty$, an exponential of rate $0$.   Recall that the minimum of exponentials is again and exponential, $E_i$ has rate $-q_{ii}$.  Notice that the probability of going from state $i$ to $j$ is precisely, 
+$$ m_{ij} = \mathbb{P}(E_{ij} = E_i).$$
+
+You might recall an exercise that you did in a previous module.  If $W$ and  $Z$ are independent exponential random variables with rates $\lambda$ and $\mu$ then
+$$
+	\begin{eqnarray*} 
+	\mathbb{P}(W <Z )  
+	&=& \int_0 ^{\infty } \mu e^{-\mu y} \Bigg(  \int_0 ^y  \lambda e^{-\lambda x} dx \Bigg) dy \\
+	&=&   \int_0 ^{\infty } \mu e^{-\mu y}  [1- e^{-\lambda y}  ] dy \\
+	&=&  1- \frac{\mu}{\mu+ \lambda} \\
+	&=&  \frac{\lambda}{\mu + \lambda}.
+	\end{eqnarray*}
+$$
+
+Hence it is not hard to believe that 
+$$ m_{ij} = \frac{q_{ij}}{-q_{ii}}.$$
+Thus we see that the $Q$ matrix description is equivalent to the mean holding time description, where we have the relation $-q_{ii} = 1/h_i$.  
+
+
+# Transition semigroups
+
+Let $X$ be a continuous-time Markov chain.  The **transition matrix semigroup** is given  by 
+$$P_{ij}(t) = \mathbb{P}(X(t)=j| X(0) = i).$$ 
+The maths is a bit more technical than the case of discrete time Markov chains.  The key observation is that the following **forward equation** is satisfied
+$$ P'(t) = P(t)Q.$$
+
+To see why, observe that when $h$ is small, we assume there is at most one jump, and  
+$$p_{kj}(h) \approx \mathbb{P}(E_{kj} \leq h) = 1-e^{q_{kj}h} \approx q_{kj}h.$$
+Thus
+$$
+\begin{eqnarray*}
+\frac{p_{ij}(t+h) - p_{ij}(t)}{h} &=& \frac{1}{h}\sum_{k} p_{ik}(t)p_{kj}(h) \\
+&\approx&  \sum_{k} p_{ik}(t)q_{kj}  \\
+&=&  [P(t)Q]{ij}
+\end{eqnarray*}
+$$
+
+The first order theory of differential equations tells us that 
+$$P(t) = e^{tQ} := \sum_{k=0} ^{\infty} \frac{t^k Q^k}{k!}.$$
+Note  that the Markov property 
+$$P(t+s) = P(t) P(s)$$ 
+is the semigroup property of solutions to differential equations.  Sometimes the $Q$ matrix is called the *generator* of the semigroup.
+
+
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/continuous-timeMC.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
