@@ -15,7 +15,7 @@ output: html_document
 * Week 7 (12 Oct - 18 Oct): Random variables: theory and practice, Coupling and total variational distance, Review of Markov chains
 * Week 8 (19 Oct - 25 Oct):  Making Markov chains converge
 * Week 9 (26 Oct - 1 Nov):  Coupling from the past, Poisson processes
-* Week 10 (2 Nov - 8 Nov): ICA 1 assigned   
+* Week 10 (2 Nov - 8 Nov):  Continuous-time Markov chains; ICA 1 assigned   
 * Week 11 (9 Nov - 15 Nov):
 * Week 12 (16 Nov - 22 Nov): ICA 1 due 
 * Week 13 (23 Nov - 29 Nov):

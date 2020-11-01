@@ -130,9 +130,9 @@ Here, we give an equivalent characterization of continuous Markov-chains taking 
 in a state $i$, it suffices to specify the mechanism for which we jump to state $j$.  Let $Q$ be a $n \times n$  matrix such that $q_{ij} \geq 0$ for all $i \not =j$, and for convenience set
 $$ q_{ii} := -\sum_{j} q_{ij},$$
 so that each row sums to *zero*.  Sometimes $Q$ is called a **transition rate matrix** or simply the $Q$ matrix.  If we are at state $i$, then we generate independent exponential random variables $(E_{ij})_{j=1} ^n$ with *rate* $q_{ij}$; the one that happens first, the minimum is the state we go to; that is, if $E_{ij}= E_i:= \min\{ E_{i1}, \ldots, E_{in}\}$ then, we jump to state $j$ after time $E_{ij}$; we take the convention that $E_{ii} =\infty$, an exponential of rate $0$.   Recall that the minimum of exponentials is again and exponential, $E_i$ has rate $-q_{ii}$.  Notice that the probability of going from state $i$ to $j$ is precisely, 
-$$ m_{ij} = \mathbb{P}(E_{ij} = E_i).$$
+$$ m_{ij} = \mathbb{P}(E_{ij} = E_i),$$
 
-You might recall an exercise that you did in a previous module.  If $W$ and  $Z$ are independent exponential random variables with rates $\lambda$ and $\mu$ then
+where $m_{ii} =0$.  You might recall an exercise that you did in a previous module.  If $W$ and  $Z$ are independent exponential random variables with rates $\lambda$ and $\mu$ then
 $$
 	\begin{eqnarray*} 
 	\mathbb{P}(W <Z )  
@@ -143,7 +143,7 @@ $$
 	\end{eqnarray*}
 $$
 
-Hence it is not hard to believe that 
+Hence it is not hard to believe that for $i\not = j$ we have,
 $$ m_{ij} = \frac{q_{ij}}{-q_{ii}}.$$
 Thus we see that the $Q$ matrix description is equivalent to the mean holding time description, where we have the relation $-q_{ii} = 1/h_i$.  
 
@@ -162,15 +162,68 @@ $$
 \begin{eqnarray*}
 \frac{p_{ij}(t+h) - p_{ij}(t)}{h} &=& \frac{1}{h}\sum_{k} p_{ik}(t)p_{kj}(h) \\
 &\approx&  \sum_{k} p_{ik}(t)q_{kj}  \\
-&=&  [P(t)Q]{ij}
+&=&  [P(t)Q]_{ij}
 \end{eqnarray*}
 $$
 
 The first order theory of differential equations tells us that 
 $$P(t) = e^{tQ} := \sum_{k=0} ^{\infty} \frac{t^k Q^k}{k!}.$$
+
 Note  that the Markov property 
+
 $$P(t+s) = P(t) P(s)$$ 
-is the semigroup property of solutions to differential equations.  Sometimes the $Q$ matrix is called the *generator* of the semigroup.
+
+is the semigroup property of solutions to differential equations.  Sometimes the $Q$ matrix is called the **generator** of the semigroup.
+
+
+# Stationarity
+
+Let $P$ be a transition matrix semigroup for a continuous-time Markov chain on a finite number of states $A$ with generator $Q$.      We say that a probability measure $\pi$ on $A$  is a **stationary** distribution for $P$ if for all $t \geq 0$ we have
+
+$$ \pi P(t) = \pi;$$
+
+It turns out that this condition equivalent to requiring that
+
+$$ \pi Q = \mathbf{0},$$
+where $\mathbf{0}$ is the vector of all zeroes with $|A|$ components.  It is easy to see that the condition on $Q$ implies the condition on $P$, but other direction is harder.
+
+We say that $P$ is **irreducible** if for all $i, j \in A$ there exists $t >0$ such that $P_{ij}(t) >0$; note that this condition is equivalent to the corresponding jump chain having an irreducible transition matrix.  Notice that the notion of periodicity does not really exist for continuous-time Markov chains, since the chain can jump at any time with nonzero probability.   In particular, even if the corresponding transition matrix of the jump chain is periodic this does not transfer over to its continuous counterpart.  
+
+**Theorem:** Let $P$ be a transition matrix semigroup for an irreducible continuous-time Markov chain on a finite number of states $A$, then it has a unique stationary distribution $\pi$ and  $P_{ij}(t) \to \pi(j)$  as $t \to \infty$ for all $i,j \in A$.   
+
+To identify the stationary distribution, we follow a corresponding discrete time Markov chain at times $(nr)_{n \in \mathbb{Z}^{+}}$ for some positive rational $r>0$, which has transition matrix given by $B= P(r)$.  Notice that $B$ is irreducible and also aperiodic.  Thus our convergence theory for discrete-time Markov chains tells us that it has the stationary distribution $\pi^r$ and 
+$$b_{ij}(n) = P_{ij}(rn) \to \pi^r_j.$$
+Now, if we considered a different rational number $s >0$, we obtain that 
+
+$$P_{ij}(sn) \to \pi^s$$
+
+for a possibly different measure $\pi^s$.  However, since $s$ and $r$ are rational, $rn = sm$ for infinitely many positive integers $n,m$, thus we $\pi^r = \pi$ is the same measure for all positive rationals $r$.  A standard *uniform* continuity argument gives that the desired limit holds.  
+
+**Exercise**  Argue the uniqueness part of the convergence theorem. 
+
+
+
+
+**Theorem:**    Let $P$ be a transition matrix semigroup for an irreducible continuous-time Markov chain on a finite number of states $A$ with the stationary measure $\pi$.  Let $Q$ be the generator.   Let $M$ be transition matrix for the corresponding jump chain  with the corresponding stationary measure $\hat{\pi}$, then 
+
+$$\pi_i = \frac{ \hat{\pi_i} q_{ii}^{-1} }  {\sum_{j} \hat{\pi}_j (q_{jj})^{-1}}$$
+
+and
+
+$$\hat{\pi}_i = \frac{q_{ii} \pi_i}{\sum_j q_{jj} \pi_j }.$$
+
+*Proof:*  These relations are readily verified using the facts that $\pi Q = \mathbf{0}$ and $m_{ij} = -\frac{q_{ij}}{q_ii}$ for $i \not = j$ and $m_{ii} = 0$  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
