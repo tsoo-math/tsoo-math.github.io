@@ -49,7 +49,7 @@ These are a subset of the links that are available on the main Moodle page for o
 *  [Poisson processes, worked out exercises](https://tsoo-math.github.io/ucl/poisson-ex.worked.html)
 
 
-*  [Continuous-time Markov chains](https://tsoo-math.github.io/ucl/continous-timeMC.html)
+*  [Continuous-time Markov chains](https://tsoo-math.github.io/ucl/continuous-timeMC.html)
 
 
 <br>
