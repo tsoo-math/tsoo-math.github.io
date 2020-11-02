@@ -1,0 +1,139 @@
+---
+title: "Stat0009 (2020) ICA 1"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Introduction
+
+* Made available 2 November 2020
+* Due 18 November 2020, 13:00 London Time.
+* This ICA consists of five questions.  
+* This ICA is worth 30 percent of your grade for this module.
+* Most questions will require you to write and run R code.
+* The ICA must be completed in R and typeset using R Markdown with Latex code, just like the way our module content is generated.
+* Please hand in the html file and the Rmd source file.
+* As usual, part of the grading will depend on the clarity and presentation of your solutions.
+*  You are to do this assignment by yourselves, without any help from others.
+*  You are allowed to use any materials and code that was presented so far.
+*  Do not search the internet for answers to the ICA.
+*  Do not use any fancy code or packages imported from elsewhere.
+
+
+
+#  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I am aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. I have read the guidelines in the student handbook and understand what constitutes plagiarism. I hereby affirm that the work I am submitting for this in-course assessment is entirely my own.
+
+
+
+# Anonymous Marking 
+
+Please do **not** write your name anywhere on the submission. Please include only your **student number** as the proxy identifier.
+
+
+
+
+
+
+
+
+
+
+# 1.)  Central limit theorem [10 points]
+
+Recall that if $X_1, X_2, \ldots$ are i.i.d. random variables with finite nonzero variance then if $S_n = X_1 + \cdots + X_n$, we have 
+that the normalized sum
+
+$$Z_n = \frac{S_n - \mathbb{E} S_n} {\sqrt{ var(S_n) }  } =  \frac{S_n - n\mathbb{E}X_1} {\sqrt{ n \cdot var(X_1) }  }$$
+converges in distribution to a standard normal.    
+
+Illustrate this fact in R by running simulations.  Specifically, consider the case where $X_i$ are i.i.d. exponential random variables with mean $1$, and for large values of $n$, simulate $k$ instances of $Z_n$, where $k$ is also large.  
+
+* Plot the  histogram of these values. [5 points]
+* Discuss how these simulations relate to the theory. [5 points]  
+
+
+
+# 2.) Transition matrices [20 points]
+
+Consider the transition matrix $P$  on three states $\{1,2,3\}$ given by
+$$
+\begin{equation*}
+P = 
+\begin{pmatrix}
+1/4 & 1/4 & 1/2 \\
+1/4 & 1/4 & 1/2 \\
+1/8 & 1/4 & 5/8
+\end{pmatrix}
+\end{equation*}
+$$
+
+*  Why does $P$ have a unique stationary distribution? [2 points]
+*  Compute via linear algebra, using R, the stationary distribution for $P$.   [2 points] 
+*  Compute $Q=P^n$ for large $n$.  Why do you see the stationary distribution in  $Q$?  [4 points]
+*  Let $X = (X_0, X_1, \ldots, X_n, \ldots)$ be a Markov chain with transition matrix $P$.   Using R, simulate $X$ for large values of $n$ starting at $1$ and $2$  [4 points]
+*  For both simulations, find the average number of times the chain is in state $3$.  Explain why the averages are similar.  [4 points]
+*  Using R, estimate the expected time it takes a Markov chain started at $3$ to return to $3$. [4 points]
+
+# 3.) Experimenting with R [10 points]
+
+Let $X$ be a Markov chain with transition matrix $P$ as in the previous question.  Let $\pi$ be the stationary distribution and assume that $X$ is started at stationarity, so that $X_i$ has law $\pi$ for all $i$.  Consider the normalized sum given by
+
+$$Z_n = \frac{S_n - \mathbb{E} S_n} {\sqrt{ n}} = \frac{S_n - n\mathbb{E} X_1} {\sqrt{ n}}$$
+where $S_n = X_1 + \cdots + X_n.$   
+
+*  Is the $var(S_n) = n \cdot var(X_1)$?   Explain. [2 points]
+*  What do you think $Z_n$ converges to?  [4 points]
+*  Use R to run simulations to support your guess. [4 points]
+
+
+# 4.)  Estimating transition matrices [10 points]
+
+Suppose that $X$ is an aperiodic and irreducible Markov chain on a finite number of states that is started at the stationary distribution.   Suppose that all you see is the realization $(x_0,x_1, \ldots, x_n)$, where $n$ is large.  How can you estimate the values transition matrix $P$?   Carefully explain your answer and why your estimates are reasonable.  
+
+
+
+# 5.)  Poisson processes [10 points]
+
+Suppose someone hands you the data for arrival times (in seconds) of visits to some website.   It is given by
+$$ 
+\begin{eqnarray*}
+&& arr = (0.16, 0.28, 0.42, 0.66, 0.75, \\
+&& 1.27, 2.25, 2.33, 2.83, 4.09, \\
+&& 4.30, 4.80, 5.20,
+5.68, 7.05)
+\end{eqnarray*}
+$$
+Suppose that a Poisson process is a good model for these arrival times.  Use this data and the assumption that it is a Poisson process to find estimates for the following.  Justify your answers.
+
+* Estimate the expected time between arrivals. [3 points]
+* Estimate the expected number of arrrivals in one minute. [2 points]
+*  Estimate the variance of the number of arrivals in one minute. [2 points]
+* Estimate the probability that there are five arrivals in two seconds. [3 points]
+
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ica-stat9-test.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
