@@ -27,7 +27,7 @@ $$\mathbb{P}( [N(101) - N(100) =0], N(100) =0 ) = \mathbb{P}(N(101) - N(100) = 0
 
 which says that the Poisson process does not care if it has not seen arrivals for a long time, it is still business as usual, it is not tempted to give you an arrival; a lightbulb that has a exponential lifetime distribution is not more likely to die, if it has survived for a long time.  
 
-It turns out that the only continuous random variables with the memoryless property are the exponentials, thus if we defined a related arrival process using inter-arrival times that are say uniformly distributed in the unit interval, we will lose many independence type properties:  for example, if an arrvial has not arrived by by $0.75$ units of time, you know you are going to get one for sure within $0.25$ units of time. 
+It turns out that the only continuous random variables with the memoryless property are the exponentials, thus if we defined a related arrival process using inter-arrival times that are say uniformly distributed in the unit interval, we will lose many independence type properties:  for example, if an arrival has not arrived by by $0.75$ units of time, you know you are going to get one for sure within $0.25$ units of time. 
 
 
 # Continuous-time Markov chains via exponential holding times
@@ -156,12 +156,17 @@ The maths is a bit more technical than the case of discrete time Markov chains. 
 $$ P'(t) = P(t)Q.$$
 
 To see why, observe that when $h$ is small, we assume there is at most one jump, and  
-$$p_{kj}(h) \approx \mathbb{P}(E_{kj} \leq h) = 1-e^{q_{kj}h} \approx q_{kj}h.$$
+$$p_{kj}(h) \approx \mathbb{P}(E_{kj} \leq h) = 1-e^{-q_{kj}h} \approx q_{kj}h$$
+for $k \not = j$.  And for $k = j$, we assume that there are no jumps, so that
+
+$$p_{jj}(h) \approx \mathbb{P}(E_j >h) = e^{q_{jj}h} \approx 1 + q_{jj}h.$$
+
 Thus
 $$
 \begin{eqnarray*}
-\frac{p_{ij}(t+h) - p_{ij}(t)}{h} &=& \frac{1}{h}\sum_{k} p_{ik}(t)p_{kj}(h) \\
-&\approx&  \sum_{k} p_{ik}(t)q_{kj}  \\
+\frac{p_{ij}(t+h) - p_{ij}(t)}{h} &=& \frac{1}{h} \big( \sum_{k} p_{ik}(t)p_{kj}(h) -p_{ij}(t)\big) \\
+&=& \frac{1}{h} \big(\sum_{k \not = j} p_{ik}(t)p_{kj}(h) + p_{ij}(t)p_{jj}(h) - p_{ij}(t) \big) \\
+&\approx&  \sum_{k\not =j} p_{ik}(t)q_{kj} + p_{ij}(t)q_{jj}  \\
 &=&  [P(t)Q]_{ij}
 \end{eqnarray*}
 $$
@@ -212,7 +217,8 @@ and
 
 $$\hat{\pi}_i = \frac{q_{ii} \pi_i}{\sum_j q_{jj} \pi_j }.$$
 
-*Proof:*  These relations are readily verified using the facts that $\pi Q = \mathbf{0}$ and $m_{ij} = -\frac{q_{ij}}{q_ii}$ for $i \not = j$ and $m_{ii} = 0$  
+*Proof:*  These relations are readily verified using the facts that $\pi Q = \mathbf{0}$ and 
+$m_{ij} = -\frac{q_{ij}}{q_{ii}}$ for $i \not = j$ and $m_{ii} = 0$  
 
 
 
@@ -221,6 +227,15 @@ $$\hat{\pi}_i = \frac{q_{ii} \pi_i}{\sum_j q_{jj} \pi_j }.$$
 
 
 
+# Summary
+
+*  We defined continuous-time Markov chains on a finite number of states using two approaches: from the jump chain and from the $Q$ matrix. 
+
+*  We introduced some code that let us visualize this processes.
+
+*  We briefly discussed the $Q$ matrix as a generator for the transition matrix semigroup $P$
+
+*  We discussed convergence theorems for $P$, by using convergence theroems for discrete-time Markov chains.
 
 
 
