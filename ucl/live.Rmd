@@ -40,6 +40,8 @@ output: html_document
     +  [Fourth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     +  We discussed the [solutions to HW3](https://tsoo-math.github.io/ucl/QHW3-sol.html), maths, stats, code, and typesetting.  We also discussed the Doeblin coupling.
 * Week 10 (2 Nov - 8 Nov):   
+    +  [Fifth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+    
 * Week 11 (9 Nov - 15 Nov):
 * Week 12 (16 Nov - 22 Nov): 
 * Week 13 (23 Nov - 29 Nov):
