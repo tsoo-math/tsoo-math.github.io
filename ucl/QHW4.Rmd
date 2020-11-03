@@ -43,6 +43,9 @@ Simulate a Poisson process of intensity $\lambda=2$, say with $10000$ arrivals. 
 Simulate a Poisson point process of intensity $100$ on a disc.
 ```
 
+<br>
+<br>
 
-
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW4.Rmd)
 

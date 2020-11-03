@@ -1,0 +1,157 @@
+---
+title: "Homework 5"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+
+```{exercise, name="Exponential random random variables"}
+Let $E_1, \ldots, E_n$ be independent exponential random variables with rates $\lambda_1, \ldots, \lambda_n$  Show that $$\mathbb{P} ( E_1 = \min (E_1, \ldots, E_n)) = \frac{\lambda_1}{ \lambda_1 + \cdots + \lambda_n}.$$
+```
+<hr>
+
+```{solution}
+Let $E = \min(E_2, \ldots, E_n)$. Observe that $E_1$ is the mininum of them all if and only if $E_1$ is the mininum of $E_1$ and $E$.  However, since the $E_i$ are independent, $E$ is an exponential random variable with rate $\lambda_2 + \cdots + \lambda_n$.    Since $E_1$ is independent of $E$, we already know how to handle this case of two exponentials  from the [lecture notes](https://tsoo-math.github.io/ucl/continuous-timeMC.html); we have that
+$$\mathbb{P}( E_1 = \min(E_1, E)) = \frac{\lambda_1}{ \lambda_1 + (\lambda_2 + \cdots + \lambda_n )},$$
+  as desired.
+```
+
+<hr>
+<hr>
+
+
+```{exercise, name="Q matrices"}
+Consider the continuous-time Markov chain $X$ with three state $\{1,2,3\}$ with $Q$ matrix given by
+```
+
+```{r}
+Q <- matrix(c(-6,3,3, 2,-3,1, 2,7,-9), nrow =3)
+Q = t(Q)
+Q
+```
+
+*  Find the stationary distribution $\pi$.
+*  Start the Markov chain at state $i$, and write code so that you obtain the state of the chain at time $t$.
+*  Starting at state $1$, see what state the chain is in after a large time $t$; repeat for a large number of times.
+*   On average, how often is $X(t) =3$ for large $t$?  
+*  Discuss this experiment in relation to the theory we [discussed](https://tsoo-math.github.io/ucl/continuous-timeMC.html).
+
+
+```{solution}
+
+
+*  We solve for $\pi Q = 0$, and normalize to ensure that $\pi$ is probability measure.  To do this, we need to find the nullspace of a matrix; it appears we may need to install a package to do this: install.packages("pracma") and load the package in a R chunk.
+```
+
+
+```{r}
+library("pracma")
+Y = t(Q)
+stat=nullspace(Y)
+stat = stat/ sum(stat)
+stat
+```
+
+First we code one jump of the chain keeping track of how much time it takes.  Since we are handed a Q matrix, we code a competing clocks version. We will replace the diagonal values of $Q$ with positive numbers that we will not use in order to facilitate that competing clocks.  We also introduce *Inf*, which R takes to be infinity.
+```{r}
+Q[1,1] <-99
+Q[2,2] <-99
+Q[3,3] <-99
+Q
+```
+
+```{r}
+
+jump <- function(i){
+  q = Q[i,]
+  clocks = c( rexp(1,q[1]), rexp(1,q[2]), rexp(1,q[3])  )
+clocks[i] = Inf
+j=which.min(clocks)
+time = clocks[j]
+
+c(j,time)
+}
+```
+
+*  Now we iterate the jump function keeping track of the time.  The following function tells you that state of the sampled Markov chain at time $t$ starting at state $i$.  We need to run the Markov chain until at least time $t$.  
+
+```{r}
+runMC <- function(x){
+  i = x[1]
+  t = x[2]
+  totaltime=0
+  while(totaltime < t){
+    new = jump(i)
+  totaltime = new[2] + totaltime
+  if(totaltime < t ){ i <- new[1] }
+  }
+i
+}
+```
+
+*  We can find an average with $t=123$, and $n =500$.
+
+```{r}
+y = replicate(500, runMC(c(1,123)))
+av= c( sum(y==1)/500, sum(y==2)/500, sum(y==3)/500)
+av
+```
+
+
+* Our convergence theory tells us that averge number of times the chain is at $3$ should be close to $\pi(3)$.  Indeed, 
+
+```{r}
+av[3] - stat[3]
+av-stat
+```
+
+```{exercise, name = "Stationary measures"}
+ Let $P$ be a transition matrix semigroup for an irreducible continuous-time Markov chain on a finite number of states $A$ with the stationary measure $\pi$.  Let $Q$ be the generator.   Let $M$ be transition matrix for the corresponding jump chain  with the corresponding stationary measure $\hat{\pi}$.  Show that 
+
+$$\hat{\pi}_i = \frac{q_{ii} \pi_i}{\sum_j q_{jj} \pi_j }.$$
+
+```
+
+
+```{solution}
+Recall that
+$$ m_{ij} = \frac{q_{ij}}{-q_{ii}}$$
+for $i \not = j$ and $m_{ii}=0$ on the diagonal.    Thus we have
+
+\begin{eqnarray*}
+(\hat{\pi} M)_j &=&    \frac{1}{\sum_k q_{kk} \pi_k} \sum_i q_{ii} \pi_i m_{ij} \\
+&=&  \frac{1}{\sum_k q_{kk} \pi_k} \sum_{i\not = j}  -\pi_i q_{ij}.      
+\end{eqnarray*}
+
+Since  $\pi$ is stationary, we know that $\pi Q = 0$ and
+$$\sum_{i}  \pi_i q_{ij} = 0.$$
+Hence
+$$ \frac{1}{\sum_k q_{kk} \pi_k} \sum_{i\not = j}  -\pi_i q_{ij} =  \frac{q_{jj} \pi_j}{\sum_k q_{kk} \pi_k} = \hat{\pi}_j,$$
+
+as desired.
+
+
+```
+
+<br>
+<br>
+<br>
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW5-sols.Rmd)
+

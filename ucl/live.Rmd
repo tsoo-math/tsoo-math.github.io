@@ -35,15 +35,22 @@ output: html_document
 * Week 8 (19 Oct - 25 Oct):
     +  [Third meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     +  [R exercise sheet: transition matrices](https://tsoo-math.github.io/ucl/class3.html)
-    +  We discussed the [solutions to HW2](https://tsoo-math.github.io/ucl/QHW2-sol.html).  Then we went into breakout rooms to work on the R exercise sheet; we retured to the main room to briefly discuss the  R exercise sheet.  This meeting was not recorded.
+    +  We discussed the [solutions to HW2](https://tsoo-math.github.io/ucl/QHW2-sol.html).  Then we went into breakout rooms to work on the R exercise sheet; we returned to the main room to briefly discuss the  R exercise sheet.  This meeting was not recorded.
 * Week 9 (26 Oct - 1 Nov):
     +  [Fourth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
-    +  We discussed the [solutions to HW3](https://tsoo-math.github.io/ucl/QHW3-sol.html), maths, stats, code, and typesetting.  We also discussed the Doeblin coupling.
+    +  We discussed the [solutions to HW3](https://tsoo-math.github.io/ucl/QHW3-sol.html), maths, stats, code, and typesetting.  We also discussed the Doeblin coupling.  This meeting was not recorded.
 * Week 10 (2 Nov - 8 Nov):   
     +  [Fifth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+    +  We discussed the [solutions to HW4](https://tsoo-math.github.io/ucl/QHW4-sol.html).   
+    +  We discussed the ICA; in particular,  plagiarism and collusion, and R Markdown coding and typesetting expectations.    This meeting was not recorded.
     
-* Week 11 (9 Nov - 15 Nov):
+* Week 11 (9 Nov - 15 Nov):  [Reading break](https://www.youtube.com/watch?v=kI6MWZrl8v8)
+
+
 * Week 12 (16 Nov - 22 Nov): 
+    +  [Sxith meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+
+
 * Week 13 (23 Nov - 29 Nov):
 * Week 14 (30 Nov - 6 Dec): 
 * Week 15 (7 Dec - 13 Dec):

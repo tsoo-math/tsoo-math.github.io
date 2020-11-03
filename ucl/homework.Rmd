@@ -29,11 +29,12 @@ Please do the homework as posted weekly!  Only the ICAs will be formally assesse
 * Week 9 (26 Oct - 1 Nov):
      -  [HW 4](https://tsoo-math.github.io/ucl/QHW4.html)
      -  [HW 4 sols](https://tsoo-math.github.io/ucl/QHW4-sol.html)
-     
-     
      -  [HW 4.1](https://tsoo-math.github.io/ucl/QHW4.1.html)
 
-* Week 10 (2 Nov - 8 Nov): [ICA 1 assigned](https://tsoo-math.github.io/ucl/ica-stat9-test.html)   
+* Week 10 (2 Nov - 8 Nov): 
+     -  [ICA 1 assigned](https://tsoo-math.github.io/ucl/ica-stat9-test.html)   
+     -  [HW 5](https://tsoo-math.github.io/ucl/QHW5.html)
+     -  [HW 5 sols](https://tsoo-math.github.io/ucl/QHW5-sols.html)
 * Week 11 (9 Nov - 15 Nov):
 * Week 12 (16 Nov - 22 Nov): ICA 1 due 
 * Week 13 (23 Nov - 29 Nov):

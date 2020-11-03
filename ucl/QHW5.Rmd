@@ -1,0 +1,64 @@
+---
+title: "Homework 5"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+
+```{exercise, name="Exponential random random variables"}
+Let $E_1, \ldots, E_n$ be independent exponential random variables with rates $\lambda_1, \ldots, \lambda_n$  Show that $$\mathbb{P} ( E_1 = \min (E_1, \ldots, E_n)) = \frac{\lambda_1}{ \lambda_1 + \cdots + \lambda_n}.$$
+```
+<hr>
+
+
+<hr>
+
+
+```{exercise, name="Q matrices"}
+Consider the continuous-time Markov chain $X$ with three state $\{1,2,3\}$ with $Q$ matrix given by
+```
+
+```{r}
+Q <- matrix(c(-6,3,3, 2,-3,1, 2,7,-9), nrow =3)
+Q = t(Q)
+Q
+```
+
+*  Find the stationary distribution $\pi$.
+*  Start the Markov chain at state $i$, and write code so that you obtain the state of the chain at time $t$.
+*  Starting at state $1$, see what state the chain is in after a large time $t$; repeat for a large number of times.
+*   On average, how often is $X(t) =3$ for large $t$?  
+*  Discuss this experiment in relation to the theory we [discussed](https://tsoo-math.github.io/ucl/continuous-timeMC.html).
+
+
+<hr>
+
+```{exercise, name = "Stationary measures"}
+ Let $P$ be a transition matrix semigroup for an irreducible continuous-time Markov chain on a finite number of states $A$ with the stationary measure $\pi$.  Let $Q$ be the generator.   Let $M$ be transition matrix for the corresponding jump chain  with the corresponding stationary measure $\hat{\pi}$.  Show that 
+
+$$\hat{\pi}_i = \frac{q_{ii} \pi_i}{\sum_j q_{jj} \pi_j }.$$
+
+```
+
+
+<br>
+<br>
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW5.Rmd)
+
