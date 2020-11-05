@@ -1,0 +1,68 @@
+---
+title: Introduction to renewal processes 
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# A generalization of the Poisson counting process
+
+Recall that if $N$ is a Poisson counting process, then it has exponential inter-arrival times all with the same rate; specifically, we may think of 
+$$ N(t) = \sum_{k=1} ^{\infty} \mathbf{1}[T_k \leq t],$$
+where $T_0= 0$ and 
+$$T_k = \sum_{i=1} ^{k} X_i,$$
+where $X_i$ are i.i.d.\ exponential random variables.   
+
+We now allow for the possibility that the *positive* inter-arrival times $X_i$ are i.i.d.\ random variables that are necessary exponential, and we refer to $N$ as a **renewal proceess**.   We will always assume that $\mathbb{P}(X_1 = 0) =0$ and $\mathbb{E} X_1= \mu <\infty$.    
+
+
+# Basic limit theorems
+
+Just from our basic knowledge of the law of large numbers and the central limit theorem, we have the following results.
+
+**Theorem (Law of large numbers):** If $N$ is a renewal process with mean inter-arrival time $\mu$ then, $$N(t)/ t \to \mu^{-1}$$ almost surely, as $n \to \infty$.  
+
+**Theorem (Central limit theorem):**   If $N$ is a renewal process with inter-arrival times with finite  mean $\mu$ and variance $\sigma^2$,  then
+
+$$ \frac{ N(t) - t/\mu}{ \sqrt{t \sigma^2 / \mu^3}}$$
+converges in distribution to a standard normal, as $t \to \infty$.  
+
+
+*Proof  (Law of large number):*  We make use of the observation that
+$$ T_{N(t)} \leq t < T_{N(t) +1}.$$
+Hence
+
+$$ \frac{N(t)}{T_{N(t) +1}} \leq \frac{N(t)}{ t} \leq \frac{N(t)}{ T_{N(t)}}.$$
+We also know that if $X_i$ are inter-arrival times, then 
+$$T_{N(t)} = \sum_{i=1} ^{N(t)} X_i$$
+
+so that the regular strong law of large numbers gives that 
+$$T_{N(t)} /N(t) \to \mu$$
+almost-surely, as $t \to \infty$, since $N(t) \to \infty$, as $t \to \infty$.  Hence the desired result follows.
+
+
+
+*Proof  (Central limit theorem):*
+
+
+
+In addition, in the case that $X_1$ is discrete, we will usually assume that it is **non-arithmetic**, so that its support is not integer mutiplies of some fixed real number.  
+
+
+
+
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewal.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
