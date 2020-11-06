@@ -35,7 +35,7 @@ some $n$, then $P^m$ has positive entries for all $m \geq n$.
 
 #  A Markov chain
 
-Consider the Markov chain started on five states $\{1,2,3,4,5\}$ started at $1$ 
+Consider the Markov chain  on five states $\{1,2,3,4,5\}$ started at $1$ 
 with transition matrix given by
 ```{r}  
 P <- matrix(c(1/4, 1/4, 1/2, 0,0, 
