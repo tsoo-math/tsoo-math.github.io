@@ -128,7 +128,7 @@ Suppose that a Poisson process is a good model for these arrival times.  Use thi
 
 
 #  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ica-stat9-test.Rmd)
+  * [Rmd Source](https://tsoo-math.github.io/ucl/ica-stat9-test.Rmd)
 
 
 
