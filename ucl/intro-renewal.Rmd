@@ -17,7 +17,7 @@ where $T_0= 0$ and
 $$T_k = \sum_{i=1} ^{k} X_i,$$
 where $X_i$ are i.i.d.\ exponential random variables.   
 
-We now allow for the possibility that the *positive* inter-arrival times $X_i$ are i.i.d.\ random variables that are necessary exponential, and we refer to $N$ as a **renewal proceess**.   We will always assume that $\mathbb{P}(X_1 = 0) =0$ and $\mathbb{E} X_1= \mu <\infty$.    
+We now allow for the possibility that the *positive* inter-arrival times $X_i$ are i.i.d.\ random variables that are *not* necessary exponential, and we refer to $N$ as a **renewal proceess**.   We will always assume that $\mathbb{P}(X_1 = 0) =0$ and $\mathbb{E} X_1= \mu <\infty$.    
 
 
 # Basic limit theorems
@@ -32,7 +32,7 @@ $$ \frac{ N(t) - t/\mu}{ \sqrt{t \sigma^2 / \mu^3}}$$
 converges in distribution to a standard normal, as $t \to \infty$.  
 
 
-*Proof  (Law of large number):*  We make use of the observation that
+*Proof  (Law of large numbers):*  We make use of the observation that
 $$ T_{N(t)} \leq t < T_{N(t) +1}.$$
 Hence
 
@@ -46,13 +46,72 @@ almost-surely, as $t \to \infty$, since $N(t) \to \infty$, as $t \to \infty$.  H
 
 
 
-*Proof  (Central limit theorem):*
+We will not give a proof the central limit theorem for renewal processes, but we can see why $var(N(t)) \approx     t \sigma^2 / \mu^3$.   The law of large numbers tells us that
+$$ N(t) \approx \frac{ T_{N(t)}}{\mu}$$ so that
+$$ N(t) \approx \frac{1}{\mu} \sum_{i=1} ^{T_{N(t)}} X_i$$
+where the $X_i$ are the inter-arrival times.  We also have by the law of large numbers for renewal processes that 
+$$T_{N(t)} \approx  \frac{t}{\mu}$$
+thus 
+
+$$ var(N(t)) \approx var\big( \frac{1}{\mu} \sum_{i=1} ^{ \frac{t}{\mu}} X_i \big) \approx  t \sigma^2 / \mu^3,$$
+where $var(X_1) = \sigma$.  
+
+
+# Renewal type arguemnts for Markov chains and the strong Markov property
+
+
+In this section,  we will prove a version of the ergodic theorem for Markov chains by breaking the chain up into independent parts.  Let $X$ be a Markov chain on a state space $S$.  Recall that we say that a state $s \in S$ is **recurrent** if 
+$$\mathbb{P}( \text{there exists } n\geq 1 \text{ such that }  X_n=s \ | \  X_0=s)=1.$$  Furthermore, let $X$ be a Markov chain started at $s$ and  $T = \inf \{n \geq 1 : X_n=s\}$;  we say that a recurrent  state $s$ is **positive-recurrent** if $\mathbb{E} T < \infty$ and **null-recurrent** if $\mathbb{E} T = \infty$.  
 
 
 
-In addition, in the case that $X_1$ is discrete, we will usually assume that it is **non-arithmetic**, so that its support is not integer mutiplies of some fixed real number.  
 
 
+**Theorem (Law of large numbers):** Let $X$ be an irreducible Markov chain on a countable state space $S$.  Let $P$ be the transition matrix for $S$, and assume all the states are positive-recurrent.  Fix $s \in S$.    Start the chain $X$ at $s$.   Let  $T_1 = \inf \{n \geq 1 : X_n=s\}$ and
+let $$V_n = \sum_{k=0} ^{n} \mathbf{1}[X_k=s].$$
+Then 
+ $$V_n/n \to (\mathbb{E} T_1)^{-1}$$
+ almost surely.  
+
+
+The starting point of the proof of this version of the law of large numbers is the following observation.  Let $T_1 = \inf\{n >0:  X_n =s\}$.  Set $$T_{n} = \inf\{n >T_{n-1}:  X_n=s\}.$$
+Then  $T_n =  \sum_{k=1} ^{n-1} (T_{k+1} - T_k) + T_1$ and  $Y_k = T_{k+1} - T_k$ are i.i.d.\ random variables.  This may appear obvious from the Markov property, but it is a  seemingly stronger claim (that turns out is implied by the regular Markov property), since we need to argue that Markov chain *renews* itself each time it reaches the state $s$, which is a *random* time, rather than a deterministic time.   
+
+
+
+Let $X = (X_i)_{i \in \mathbb{N}}$ be a random process taking values in $S$.  If  $T$ is a nonnegative  integer-valued random variable with the property that for all $n \in \mathbb{N}$ there exists a deterministic function $\phi_n: S^n \to \{0,1\}$ such that  $\mathbf{1}[T=n] = \phi_n(X_0, X_1, \ldots, X_n)$, then we say that $T$ is a **stopping time**.  Thus $T$ does not look into the future, to determine whether to *stop* or not.   We will usually assume that $\mathbb{P}(T < \infty) = 1$.  
+
+
+**Theorem (Strong Markov property:**  Let $X$ be a Markov chain taking values in a state space $S$ with a transition matrix $P$.   If $T$ is a stopping time, then conditional on the event $\{X_T=s\}$ we have that $Y=(X_{T+k})_{k=0} ^{\infty}$ is  a Markov chain started at $s$ with transition matrix $P$ that is independent of $Z=(X_k)_{k=0}^{T}$. 
+
+
+
+*Proof:*  We will show that 
+$$\mathbb{P}(Y \in A, Z \in C \ | \ X_T=s) = \mathbb{P}(X \in A \ | \ X_0 =s)\mathbb{P}(Z \in C \ | \ X_T=s),$$   
+for  sets $A$ of the form $$A= \{a \in S^{\mathbb{N}}: a_0=z_0, \ldots, a_k=z_k\}.$$
+The event $\{Z \in C\}$ that we need to check are given by the disjoint union of 
+$$\{Z \in C\} \cap \{T=n\}.$$ 
+
+Thus we will check events of the form $B_n \cap \{T=n\}$, where
+$$B_n =\{ X_0 = b_0, X_1=b_1, \ldots, X_{n-1}=b_{n-1}, X_n=b_n\}.$$
+Recall that the event $\{T=n\}$ depends on only on the the Markov chain up to time $n$.  The (regular) Markov property gives that
+$$\mathbb{P}(X_T=z_0, \ldots, X_{T+k} = z_{k}, \ B_n, T=n, X_T=s) =$$
+$$\mathbb{P}(X_0=z_0, \ldots, X_k = z_k \ | X_0=s)\mathbb{P}(B_n, T=n, X_T=s).$$
+Summing over all $n\geq 0$, we have 
+$$\mathbb{P}(X_T=z_0, \ldots, X_{T+k} = z_{k}, Z \in C, X_T=s) =$$
+$$\mathbb{P}(X_0=z_0, \ldots, X_k = z_k \ | X_0=s)\mathbb{P}(Z \in C,  X_T=s),$$
+and dividing by $\mathbb{P}({X_T=s})$, we obtain the required result.   
+
+
+*Proof of law of large numbers:*
+
+
+By the Strong Markov property the random variables $Y_k = T_{k+1} - T_k$ are i.i.d.\ random variables. The law of large numbers gives that  $T_n/ n \to \mathbb{E} T_1$ almost surely.   Observe that $V_{T_n} = n+1$, and thus $V_{T_n} /T_n \to  (\mathbb{E} T_1)^{-1}$.   Hence $V_n / n \to (\mathbb{E} T_1)^{-1}$, since $T_n \to \infty$.  
+
+
+**Corollary** Let $\pi$ is the stationary distribution and $T^s = \inf \{ n \geq 1: X_n =s | X_0 =s\}$.  Then   $$(\mathbb{E} T^s)^{-1} = \pi(s).$$
+
+*Proof (aperiodic irreducible finite state space)*  We proved that $V_n/ n \to \pi(s)$ in probability.  We also proved that $V_n/ n \to   (\mathbb{E} T^s)^{-1}$ almost surely, and thus also in probability.  thus $(\mathbb{E} T^s)^{-1} = \pi(s)$.
 
 
 
