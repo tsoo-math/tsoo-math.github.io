@@ -1,0 +1,56 @@
+---
+title: "In class exercise:   get to know your classmates more"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#  Exercises on sampling
+
+```{exercise, name="A disc"}
+Let $U$ be uniformly on a disc of radius $\ell$ centered at the origin.  Express in polar coordinates $U = (R, \theta)$.  Show that the distribution of $R$ is not uniform.
+```
+
+<br>
+
+
+```{exercise, name="Uniform random variable on a sphere"}
+Discuss how you would generate a random variable that is uniformly distributed on the sphere.  Can you code it.
+```
+
+
+# Exercises on coupling
+
+```{exercise, name="Positive correlations"}
+  	Let $X$ be a real-valued random variable, and $f$ and $g$ be increasing functions.  Show that 
+  	$$\mathrm{cov}(f(X), g(X)) \geq 0,$$
+  	by computing   $\mathrm{cov}(f(X)-f(Y), g(X)-g(Y))$, where $Y$ is independent of $X$ and has the same law as $X$.
+```
+
+<br>
+
+```{exercise, name="Maximal coupling"}  
+Let $X$ and $Y$ be discrete random variables with probability mass functions given by $p$ and $q$, respectively.  Show that there exists a coupling of $X$ and $Y$ given by $(X', Y')$ such that the coupling inequality is obtained:
+$$ d_{TV}(X,Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y').$$ Hint: you want to specify a suitable joint distribution $r$.   Let $s_i = \min\{p_i, q_i\}$.     Take $\theta:= \sum_i s_i$.  Set $r_{i,i} = s_i$;  if $\theta \not =1$, *spread any remaining around*, by requiring that  for $i \not = j$, we set 
+$$ r_{i,j} = \frac{1}{1- \theta}(p_i-s_i)(q_j - s_j).$$
+```
+
+*  Check that $r$ is indeed a suitable joint distribution.  
+*  Check that if $X'$ and $Y'$ have $r$ as its joint distribution, then the coupling inequality is obtained.
+
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/class6.Rmd)
+<br>
+<br>
+<br>

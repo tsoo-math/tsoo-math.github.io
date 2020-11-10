@@ -1,0 +1,168 @@
+---
+title: Introduction to renewal processes II
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# More advanced renewal theorems
+
+We will discuss some more advanced renewal theorems that will be useful for applications later.  We call the  function $m(t):= \mathbb{E} N(t)$ the **renewal function**.   
+
+
+
+
+**Theorem (Elementary renewal theorem):**  The renewal function satisfies $m(t)/ t \to (\mu)^{-1}$, where $\mu$ is the mean inter-arrival time.  
+
+The elemenary renewal theorem can be thought of as a version of the law of large numbers.  We already know that if $N$ is the renewal process, then $N(t)/t \to (\mu)^{-1}$; hence the proof of the theorem is the justification of the following interchange of limits:
+$$ \lim_{t \to \infty} \frac{ \mathbb{E} N(t)}{t} =  \mathbb{E} \Big( \lim_{t \to \infty} \frac{ N(t)}{t} \Big).$$
+
+We say that the law of a real-valued random variable is of **lattice-type** if for some $a >0$ the random variables takes values in the set $$a\mathbb{Z} = \{az: z \in  \mathbb{Z}\}$$ with probability one.  The next theorem holds only for non-lattice type inter-arrival times.  Note that continuous random variables are of non-lattice type.
+
+
+
+
+**Theorem (Blackwell's renewal theorem):**  A renewal process with inter-arrival times that are of non-lattice type has a renewal function $m$ that satisfies
+$$\frac{m(t+h) - m(t)}{h} \to \frac{1}{\mu},$$
+as $t \to \infty$, for all $h >0$.  
+
+A consequence of this theorem is the following version which is often used in applications.  Recall that it is possible to define Stieltjes' extension of the Riemann integral where we have
+$$ \int_a ^b f(x) d\phi(x) = \int_a^b f(x) \phi'(x) dx$$
+if $\phi$ is continuously differentiable; the key is that we can make sense of the left-hand side even if $\phi$ is just monotone and right continuous.    Going back to the definition of Riemann sums, we replace expressions of the sort:
+$$ f(x_i^{*})(x_{i+1} - x_i)$$ with 
+$$ f(x_i^{*})(\phi(x_{i+1}) - \phi(x_i)).$$
+Thus the length of an interval $(x_i, x_{i+1}]$ is weighted by the function $\phi$.  
+
+Much of the theory is similar, but it also allows us to have a more unified treatment of sums and integrals.   We need to be a bit careful about endpoints in the integration as jumps are possible.  We will take the convention that an integrals are taken over intervals of the form.  $(a, b]$.  Working from the definitions it is possible to show that if $\phi$ is step function with jumps at points $a <  s_1<  \cdots <s_n <  b$, then 
+$$\int_a ^b f(x) d\phi(x) = \sum_{i=1} ^n f(s_j)[\phi(s_j+)- \phi(s_j-)].$$
+This extension of the integral is useful for probability and statistics, since the cumulative distribution  function $F$ of  a random variable $X$, is monotone and right-continuous, we have can take:
+
+$$ \mathbb{E}(X) = \int xdF(x),$$ 
+where this formula gives the correct expressions whether $X$ is a continuous random variable or a discrete random variable or of *mixed type*.    In what follows, it may be easier to pretend that the renewal function $m$ is differentiable and continuous so that 
+$$ dm(x) = m'(x) dx$$
+
+**Theorem (Key renewal theorem):**  Let $g:[0, \infty) \to [0, \infty)$ be non-increasing with $\int_0 ^{\infty} g(x)dx < \infty$.   A renewal process with inter-arrival times that are of non-lattice type has a renewal function $m$ that satisfies
+$$\int_0 ^t g(t-x) dm(x) \to \frac{1}{\mu} \int_0 ^{\infty} g(x)dx$$
+as $t \to \infty$.  
+
+Notice that if we choose $g(t) = \mathbf{1}_{[0, h]}(t)$, we have that
+$$\int_0 ^{t+h} g(t+h-x) dm(x) = \int_{t} ^ {t+h} dm(x) = m(t+h)-m(t)$$
+and
+$$ \frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^h dx = \frac{h}{\mu}.$$
+
+Thus we can recover Blackwell's renewal theorem.  However, the proof of key renewal theorem is obtained from Blackwell's renewal theorem by considering limits of step functions; moreover, the assumption that $g$ is non-increasing can be relaxed for $g$ that are *directly Riemann integrable* which roughly means one can take a uniform mesh over *all* of $[0, \infty)$ in computing the integral of $g$. 
+
+
+We will sketch a coupling proof of Blackwell's renewal theorem.  Other proofs involve an analytic study of the renewal function, which we will not pursue in detail.  We mention the following.
+
+**Theorem (Renewal equation):**   If $m$ is a renewal function, then it satisfies
+$$ m(t) = F(t) + \int_0^t m(t-x)dF(x),$$
+where $F$ is the cumulative distribution function of the inter-arrival times.
+
+*Proof:*  Let $X_1, X_2, \ldots$ be the inter-arrival times  We condition on the time of first arrival $X_1$.   Observe that if we set 
+
+$$\phi(x) = \mathbb{E}(N(t) | X_1 = x )$$
+
+we have $\phi(x) = 0$ for all $x > t$, since are no arrivals,  and for $x \leq t$, we know that $N(t)$ is at least one, arriving at time $x$, so that the distribution of $N(t)$ is given by $1$ + the number of arrivals that have come by time $t-x$, which depends on $X_2, X_3, \ldots$ and thus as the same distribution as $N(t-x)$ so that 
+$$ \phi(x) = 1 + \mathbb{E}(N(t-x)).$$
+Hence 
+$$
+\begin{eqnarray*}
+m(t) &=& \mathbb{E} (N(t)) \\
+&=& \mathbb{E} \phi(X_1)  \\
+&=& \int_0 ^{\infty} \phi(x) dF(x) \\
+&=& \int_0^t \big[ 1+ \mathbb{E}( N(t-x))\big]dF(x) \\
+&=&  F(t) + \int_0^t m(t-x)dF(x),
+\end{eqnarray*}
+$$
+as desired. 
+
+
+
+#  Excessive life and stationary increments
+
+Let $N$ be a renewal process, with i.i.d.\ inter-arrival times given by $X_1, X_2, \ldots$.  Let $T_1, T_2, \ldots$ be the arrival times.    We start with the question of when the distribution $N(t+s) - N(t)$ only depends on $s$, like in a Poisson process.  In general this will not be true, just by virtue of how we defined renewal processes: the first arrival is special, $X_1$ is the time from the origin (where there is no arrival) to the first arrival, whereas $X_2$ is the time between the first arrival the second.  Another way to put it, if we pick a time $t$, and wait until the next arrival after $t$, this quantity is known as the **excess lifetime** given by 
+$$E(t) = T_{N(t) +1} -t$$ 
+we have no reason to believe that it should be distributed as $X_1$.    It turns out that if we are allowed to have a different distribution for $X_1$,  while maintaining the same i.i.d.\ distribution for $X_2, X_3, \ldots$, we can define a **modified** or **delayed** renewal process $N^d$ that has stationary increments, and it is much easier to verify that this process satisfies Blackwell's renewal theorem; in particular one has that if $m^d(t) = \mathbb{E} N^d(t)$, then 
+
+$$ m^d(t+h) - m^d(t) = \frac{h}{\mu}.$$
+
+
+It turns out that limiting distribution of $E(t)$ is what we should choose for $X_1$ if we want stationary increments, since as $t \to \infty$, we can imagine that the renewal process would have forgotten its non-stationary choice of $X_1$.    It is possible to show (using the key renewal theorem and some more renewal equations) that 
+
+$$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx=: F^d(y)$$
+
+
+where $F$ is the cdf of $X_1$ which is non-lattice type.  However, once we know the answer, we can simply use $F^d$ as the modifed distribution for $X_1$ and check that it does lead to stationary increments.  There are some technical calculations involved.       
+
+Let us simulate $E(t)$ for large $t$ in the case where the inter-arrival times are uniformly distributed on $[0,1]$ and we see that it agrees with the stated theory.
+
+
+```{r}
+excess <- function(t){
+  arr  = runif(1)
+  inter = arr
+  while(arr[length(arr)] <t){
+    inter <- c(inter, runif(1))
+    arr <- c(arr, arr[length(arr)] + inter[length(inter)])
+}
+arr[length(arr)] -t
+}
+
+E = replicate(10000, excess(151))
+hist(E, prob=TRUE, breaks=50)
+curve(2 - 2*x, add=TRUE)
+
+```
+
+While we have the code, fresh in our heads, let us examine a case of the so-called *inspection paradox*.   Let us look at the size of the interval $[T_{N(t)}, T_{N(t)+1}]$  containing some $t$; it turns out it is *not* uniformly distributed, and in general this interval is general has average size *larger* than $\mathbb{E} X_1$; this is because larger intervals will tend to contain $t$, so there is selection bias.   
+
+
+```{r}
+inspect <- function(t){
+  arr  = runif(1)
+  inter = arr
+  while(arr[length(arr)] <t){
+    inter <- c(inter, runif(1))
+    arr <- c(arr, arr[length(arr)] + inter[length(inter)])
+}
+inter[length(inter)]
+}
+
+Size = replicate(10000, inspect(15))
+hist(Size, prob=TRUE, breaks=50)
+```
+
+Notice we are more likely to have chose a large uniform random variable for the last time we call runif(1), since if it was small the last arrival probably would not be bigger than $t$.
+
+
+
+
+
+
+
+# Summary
+
+*  We stated Blackwell's renewal theorem and the key renewal theorem.  
+
+*  We discussed the connection between the limited distribution for the excess lifetime and how this distribution can be chosen to be the delayed distribution which results in stationary increments for the associated delayed process.
+
+*  We discussed the inspection paradox and its explanation via size-biasing
+
+*  We sketched a coupling arguement for Blackwell's renewal theorem.
+
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewal.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
