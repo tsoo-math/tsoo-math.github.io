@@ -21,14 +21,17 @@ We will discuss some more advanced renewal theorems that will be useful for appl
 The elemenary renewal theorem can be thought of as a version of the law of large numbers.  We already know that if $N$ is the renewal process, then $N(t)/t \to (\mu)^{-1}$; hence the proof of the theorem is the justification of the following interchange of limits:
 $$ \lim_{t \to \infty} \frac{ \mathbb{E} N(t)}{t} =  \mathbb{E} \Big( \lim_{t \to \infty} \frac{ N(t)}{t} \Big).$$
 
-We say that the law of a real-valued random variable is of **lattice-type** if for some $a >0$ the random variables takes values in the set $$a\mathbb{Z} = \{az: z \in  \mathbb{Z}\}$$ with probability one.  The next theorem holds only for non-lattice type inter-arrival times.  Note that continuous random variables are of non-lattice type.
+We say that the law of a real-valued random variable is of **lattice-type** if for some $a >0$ the random variables takes values in the set $$a\mathbb{Z} = \{az: z \in  \mathbb{Z}\}$$ with probability one; the largest such possible $a$ is called the **span** of the lattice.    Note that continuous random variables are of non-lattice type.
 
 
 
 
 **Theorem (Blackwell's renewal theorem):**  A renewal process with inter-arrival times that are of non-lattice type has a renewal function $m$ that satisfies
 $$\frac{m(t+h) - m(t)}{h} \to \frac{1}{\mu},$$
-as $t \to \infty$, for all $h >0$.  
+as $t \to \infty$, for all $h >0$.  Furthermore, in the case of a lattice-type inter-arrival time with span $a$,  the limit holds if we choose $h$ to be integer multiples of $a$.    
+
+The lattice type cases were previously proved by others, and Blackwell proved the more difficult non-lattice case.  We will see in our coupling sketch proof that the non-lattice case is indeed more tricky.  
+
 
 A consequence of this theorem is the following version which is often used in applications.  Recall that it is possible to define Stieltjes' extension of the Riemann integral where we have
 $$ \int_a ^b f(x) d\phi(x) = \int_a^b f(x) \phi'(x) dx$$
@@ -57,7 +60,7 @@ $$ \frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^{\infty} g(x)dx
 Thus we can recover Blackwell's renewal theorem.  However, the proof of key renewal theorem is obtained from Blackwell's renewal theorem by considering limits of step functions; moreover, the assumption that $g$ is non-increasing can be relaxed for $g$ that are *directly Riemann integrable* which roughly means one can take a uniform mesh over *all* of $[0, \infty)$ in computing the integral of $g$. 
 
 
-We will sketch a coupling proof of Blackwell's renewal theorem.  Other proofs involve an analytic study of the renewal function, which we will not pursue in detail.  We mention the following.
+We will sketch a coupling proof of Blackwell's renewal theorem.  Other proofs involve an analytic study of the renewal function, which we will not pursue in detail.  However, we will make use of some facts surrounding renewal equations. 
 
 **Theorem (Renewal equation):**   If $m$ is a renewal function, then it satisfies
 $$ m(t) = F(t) + \int_0^t m(t-x)dF(x),$$
@@ -81,6 +84,19 @@ m(t) &=& \mathbb{E} (N(t)) \\
 $$
 as desired. 
 
+It will be nice to adopt some notation, and express the renewal equation as
+$$ m = F + m*F;$$
+here we set (whenever they can be well-defined)
+
+$$  (\phi * \psi)(t) = \int_0 ^t \phi(t-u) d \psi(u),$$ 
+
+where $\phi(t) = \psi(t) = 0$ if $t <0$.  A version of integration by parts (think of $d\psi(u) = \psi'(u)du$) gives that
+
+$$ \phi* \psi = \psi * \phi.$$
+The star operation behaves like a convolution and is associative so that
+$$ (\phi * \phi) * \zeta = \phi * (\phi * \zeta).$$
+
+
 
 
 #  Excessive life and stationary increments
@@ -92,7 +108,7 @@ we have no reason to believe that it should be distributed as $X_1$.    It turns
 $$ m^d(t+h) - m^d(t) = \frac{h}{\mu}.$$
 
 
-It turns out that limiting distribution of $E(t)$ is what we should choose for $X_1$ if we want stationary increments, since as $t \to \infty$, we can imagine that the renewal process would have forgotten its non-stationary choice of $X_1$.    It is possible to show (using the key renewal theorem and some more renewal equations) that 
+It turns out that limiting distribution of $E(t)$ is what we should choose for $X_1$ if we want stationary increments, since as $t \to \infty$, we can imagine that the renewal process would have forgotten its non-stationary choice of $X_1$.  It is possible to show (using the key renewal theorem and some more renewal equations) that 
 
 $$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx=: F^d(y)$$
 
@@ -119,7 +135,7 @@ curve(2 - 2*x, add=TRUE)
 
 ```
 
-While we have the code, fresh in our heads, let us examine a case of the so-called *inspection paradox*.   Let us look at the size of the interval $[T_{N(t)}, T_{N(t)+1}]$  containing some $t$; it turns out it is *not* uniformly distributed, and in general this interval is general has average size *larger* than $\mathbb{E} X_1$; this is because larger intervals will tend to contain $t$, so there is selection bias.   
+While we have the code, fresh in our heads, let us examine a closely related issue that is sometimes referred to as the  *inspection paradox*.   Let us look at the size of the interval $[T_{N(t)}, T_{N(t)+1}]$  containing some $t$; it turns out it is *not* uniformly distributed, and in general this interval is general has average size *larger* than $\mathbb{E} X_1$; this is because larger intervals will tend to contain $t$, so there is selection bias.   
 
 
 ```{r}
@@ -141,9 +157,86 @@ Notice we are more likely to have chose a large uniform random variable for the 
 
 
 
+**Theorem (Stationary delay)** The delayed renewal process has stationary increments if and only if the delay distribution has cumulative distribution given by
+$$F^d(y):=\frac{1}{\mu} \int_0 ^y [1-F(x)]dx,$$
+
+where $F$ is the cumulative distribution of original inter-arrival times, and $\mu$ is the average.
+
+We will only prove the necessity portion of the theorem.   Before we begin, it is easy to verify, by condition on $X_1$ (with law $F^d$) that  $m^d(t) = \mathbb{E} N^d(t)$ satisfies a renewal equation of the form
+$$m^d(t) = F^d(t) + \int_0 ^t m(t-x) dF^d(x).$$
+Thus $$m^d = F^d + m* F^d.$$
+
+We already know that
+
+$$ m = F + m* F.$$
+
+Hence by basic properties of the star-operation, we have
+$$
+\begin{eqnarray*}
+m*F^d &=& F*F^d + m * F * F^d \\
+&=&  F *( F^d + m*F) \\
+&=& F*m^d \\
+&=& m^d*F.
+\end{eqnarray*}
+$$
+
+Hence
+
+$$ m^d = F^d + m^d* F.$$
+*Proof of Stationary delay (necessity):*  If $N^d$ has stationary increments, then $$N^d(t+s) - N^d(t)$$ has the same law as $N^d(s)$.  Hence for all $s, t \geq 0$, we have
+
+$$m^d(s+t)= m^d(s) +m^d(t).$$
+Since $m^d$ satisfies Cauchy's functional equation, it follows that 
+$$m^d(t) = ct$$
+for some $c >0$; it is easy to verify this fact for all positive rationals, and standard analysis arguments allow us to extend this result to all positive reals.  
 
 
+A similar renewal theorem holds for $m^d$, from which we know that $c = \mu^{-1}$.  In addition, we subsitute $m^d$ into one of our renewal equations to obtain that
 
+$$ cy = F^d(y) + c\int_0 ^y F(y-x)dx= F^d(y) + c\int_0^y F(x)dx$$
+Thus
+
+$$ F^d(y) = c\int_0 ^y [1- F(x)]dx.$$
+Taking the limit at $y \to \infty$, we have
+
+$$1= c \int_0 ^{\infty} [1-F(x)]dx = c\mu,$$
+as desired.
+
+# Sketch proof of Blackwell's renewal theorem
+
+
+* Consider independent renewal processes $N$ and $N^d$, where $N^d$ is the stationary delayed version.    
+
+* Thus $N$ is constructed via $X_1, X_2, \ldots$ inter-arrival times, whereas, $N^d$ is constructed as $X_1', X_2', \ldots, X_3, \ldots$ inter-arrival times, and the sequences $X$ and $X'$ are independent.   
+
+*  Let $\epsilon >0$.  
+
+* Various arguments can be used to deduce that with probability $1$, there exists some $i,j$ such that
+$$|T_i - T^d_j| < \epsilon$$
+
+* Redefine $N$ and $N'$ so that, from $i$ and $j$ onwards,  we use the same (new) i.i.d.\ random variables $Z_1, Z_2, \ldots$ that have the same inter-arrival distribution as $X_1$.  Specifically, $T_{i+1} = T_i + Z_1$ and $T^d_{j+1} = Z_1$.
+
+*  Now the redefined $N$ and $N^d$ will forever be $\epsilon$ close.
+
+*  Hence the limiting behaviour of $N$ is the same as $N^d$.
+
+*  The Blackwell renewal theorem is obvious for $N^d$, since $m^d(t)= \mu^{-1} t$.
+
+*  We remark that the analagous Blackwell renewl theorem also holds for *any* delayed renewal process.
+
+#  Some more remarks on renewal equations
+
+Recall we started with $m^d = F^d + m* F^d$ and obtained $m^d = F^d + m^d * F$, the key being that $m^d * F= m * F^d$.  
+
+Similar considerations give the following.
+
+**Theorem (Uniquess of solutions):**  
+Let $m$ be a renewal function.  Let 
+$$ \phi = H + H*m.$$
+Then $\phi$ satisfies the renewal-type equation
+
+$$ \phi = H + \phi*F;$$
+moreover $\phi$ is the unique solution to the renewal-type equation, provided that $H$ is bounded on finite intervals, which also implies that $\phi$ is bounded on finite intervals. 
 
 # Summary
 
@@ -154,6 +247,8 @@ Notice we are more likely to have chose a large uniform random variable for the 
 *  We discussed the inspection paradox and its explanation via size-biasing
 
 *  We sketched a coupling arguement for Blackwell's renewal theorem.
+
+*  We worked with the basic mechanics of renewal equations.  
 
 
 #  Version: `r format(Sys.time(), '%d %B %Y')`
