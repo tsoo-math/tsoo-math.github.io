@@ -30,7 +30,7 @@ We say that the law of a real-valued random variable is of **lattice-type** if f
 $$\frac{m(t+h) - m(t)}{h} \to \frac{1}{\mu},$$
 as $t \to \infty$, for all $h >0$.  Furthermore, in the case of a lattice-type inter-arrival time with span $a$,  the limit holds if we choose $h$ to be integer multiples of $a$.    
 
-The lattice type cases were previously proved by others, and Blackwell proved the more difficult non-lattice case.  We will see in our coupling sketch proof that the non-lattice case is indeed more tricky.  
+The lattice type cases were previously proved by [others](https://projecteuclid.org/download/pdf_1/euclid.pjm/1103051394), and [Blackwell](https://projecteuclid.org/download/imagefirstpage_1/euclid.dmj/1077474668) proved the more difficult non-lattice case.  We will see in our coupling sketch proof that the non-lattice case is indeed more tricky.  
 
 
 A consequence of this theorem is the following version which is often used in applications.  Recall that it is possible to define Stieltjes' extension of the Riemann integral where we have
@@ -46,7 +46,7 @@ This extension of the integral is useful for probability and statistics, since t
 
 $$ \mathbb{E}(X) = \int xdF(x),$$ 
 where this formula gives the correct expressions whether $X$ is a continuous random variable or a discrete random variable or of *mixed type*.    In what follows, it may be easier to pretend that the renewal function $m$ is differentiable and continuous so that 
-$$ dm(x) = m'(x) dx$$
+$$ dm(x) = m'(x) dx.$$
 
 **Theorem (Key renewal theorem):**  Let $g:[0, \infty) \to [0, \infty)$ be non-increasing with $\int_0 ^{\infty} g(x)dx < \infty$.   A renewal process with inter-arrival times that are of non-lattice type has a renewal function $m$ that satisfies
 $$\int_0 ^t g(t-x) dm(x) \to \frac{1}{\mu} \int_0 ^{\infty} g(x)dx$$
@@ -57,16 +57,16 @@ $$\int_0 ^{t+h} g(t+h-x) dm(x) = \int_{t} ^ {t+h} dm(x) = m(t+h)-m(t)$$
 and
 $$ \frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^h dx = \frac{h}{\mu}.$$
 
-Thus we can recover Blackwell's renewal theorem.  However, the proof of key renewal theorem is obtained from Blackwell's renewal theorem by considering limits of step functions; moreover, the assumption that $g$ is non-increasing can be relaxed for $g$ that are *directly Riemann integrable* which roughly means one can take a uniform mesh over *all* of $[0, \infty)$ in computing the integral of $g$. 
+Thus we can recover Blackwell's renewal theorem.  However, the proof of key renewal theorem is obtained from Blackwell's renewal theorem by considering limits of step functions; moreover, the assumption that $g$ is non-increasing can be relaxed for $g$ that are *directly Riemann integrable* which roughly means one can take a uniform mesh over *all* of $[0, \infty)$ in computing the Riemann-type integral of $g$. 
 
 
-We will sketch a coupling proof of Blackwell's renewal theorem.  Other proofs involve an analytic study of the renewal function, which we will not pursue in detail.  However, we will make use of some facts surrounding renewal equations. 
+We will sketch a coupling proof of Blackwell's renewal theorem due to [Lindvall](https://projecteuclid.org/download/pdf_1/euclid.aop/1176995810).    Other proofs involve an analytic study of the renewal function, which we will not pursue in detail.  However, we will make use of some facts surrounding renewal equations. 
 
 **Theorem (Renewal equation):**   If $m$ is a renewal function, then it satisfies
 $$ m(t) = F(t) + \int_0^t m(t-x)dF(x),$$
 where $F$ is the cumulative distribution function of the inter-arrival times.
 
-*Proof:*  Let $X_1, X_2, \ldots$ be the inter-arrival times  We condition on the time of first arrival $X_1$.   Observe that if we set 
+*Proof:*  Let $X_1, X_2, \ldots$ be the inter-arrival times.  We condition on the time of first arrival $X_1$.   Observe that if we set 
 
 $$\phi(x) = \mathbb{E}(N(t) | X_1 = x )$$
 
@@ -93,7 +93,7 @@ $$  (\phi * \psi)(t) = \int_0 ^t \phi(t-u) d \psi(u),$$
 where $\phi(t) = \psi(t) = 0$ if $t <0$.  A version of integration by parts (think of $d\psi(u) = \psi'(u)du$) gives that
 
 $$ \phi* \psi = \psi * \phi.$$
-The star operation behaves like a convolution and is associative so that
+The star-operation behaves like a convolution and is associative so that
 $$ (\phi * \phi) * \zeta = \phi * (\phi * \zeta).$$
 
 
@@ -102,7 +102,9 @@ $$ (\phi * \phi) * \zeta = \phi * (\phi * \zeta).$$
 #  Excessive life and stationary increments
 
 Let $N$ be a renewal process, with i.i.d.\ inter-arrival times given by $X_1, X_2, \ldots$.  Let $T_1, T_2, \ldots$ be the arrival times.    We start with the question of when the distribution $N(t+s) - N(t)$ only depends on $s$, like in a Poisson process.  In general this will not be true, just by virtue of how we defined renewal processes: the first arrival is special, $X_1$ is the time from the origin (where there is no arrival) to the first arrival, whereas $X_2$ is the time between the first arrival the second.  Another way to put it, if we pick a time $t$, and wait until the next arrival after $t$, this quantity is known as the **excess lifetime** given by 
-$$E(t) = T_{N(t) +1} -t$$ 
+
+$$E(t) = T_{N(t) +1} -t;$$ 
+
 we have no reason to believe that it should be distributed as $X_1$.    It turns out that if we are allowed to have a different distribution for $X_1$,  while maintaining the same i.i.d.\ distribution for $X_2, X_3, \ldots$, we can define a **modified** or **delayed** renewal process $N^d$ that has stationary increments, and it is much easier to verify that this process satisfies Blackwell's renewal theorem; in particular one has that if $m^d(t) = \mathbb{E} N^d(t)$, then 
 
 $$ m^d(t+h) - m^d(t) = \frac{h}{\mu}.$$
@@ -110,7 +112,7 @@ $$ m^d(t+h) - m^d(t) = \frac{h}{\mu}.$$
 
 It turns out that limiting distribution of $E(t)$ is what we should choose for $X_1$ if we want stationary increments, since as $t \to \infty$, we can imagine that the renewal process would have forgotten its non-stationary choice of $X_1$.  It is possible to show (using the key renewal theorem and some more renewal equations) that 
 
-$$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx=: F^d(y)$$
+$$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx=: F^d(y),$$
 
 
 where $F$ is the cdf of $X_1$ which is non-lattice type.  However, once we know the answer, we can simply use $F^d$ as the modifed distribution for $X_1$ and check that it does lead to stationary increments.  There are some technical calculations involved.       
@@ -222,7 +224,7 @@ $$|T_i - T^d_j| < \epsilon$$
 
 *  The Blackwell renewal theorem is obvious for $N^d$, since $m^d(t)= \mu^{-1} t$.
 
-*  We remark that the analagous Blackwell renewl theorem also holds for *any* delayed renewal process.
+*  We remark that the analogous Blackwell renewal theorem also holds for *any* delayed renewal process.
 
 #  Some more remarks on renewal equations
 
@@ -230,19 +232,26 @@ Recall we started with $m^d = F^d + m* F^d$ and obtained $m^d = F^d + m^d * F$, 
 
 Similar considerations give the following.
 
-**Theorem (Uniquess of solutions):**  
-Let $m$ be a renewal function.  Let 
+**Theorem (Uniqueness of solutions):**  
+Let $m$ be a renewal function and $F$ be cumulative distribution function for the inter-arrival times.  Let 
 $$ \phi = H + H*m.$$
 Then $\phi$ satisfies the renewal-type equation
 
 $$ \phi = H + \phi*F;$$
 moreover $\phi$ is the unique solution to the renewal-type equation, provided that $H$ is bounded on finite intervals, which also implies that $\phi$ is bounded on finite intervals. 
 
+If we are interesting in $\lim_{t \to \infty} \phi(t)$, we can use the form $\phi = H + H*m$ and possible apply the key renewal theorem:
+
+
+$$\lim_{t \to \infty} \phi(t) = \lim_{t \to \infty} H(t) + \frac{1}{\mu} \int_0 ^{\infty} H(x)dx.$$
+
+
+
 # Summary
 
 *  We stated Blackwell's renewal theorem and the key renewal theorem.  
 
-*  We discussed the connection between the limited distribution for the excess lifetime and how this distribution can be chosen to be the delayed distribution which results in stationary increments for the associated delayed process.
+*  We discussed the connection between the limiting distribution for the excess lifetime and how this distribution can be chosen to be the delayed distribution which results in stationary increments for the associated delayed process.
 
 *  We discussed the inspection paradox and its explanation via size-biasing
 
@@ -252,7 +261,7 @@ moreover $\phi$ is the unique solution to the renewal-type equation, provided th
 
 
 #  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewal.Rmd)
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewaltwo.Rmd)
 
 
 

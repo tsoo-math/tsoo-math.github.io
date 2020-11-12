@@ -1,0 +1,78 @@
+---
+title: "Homework 6.1"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{exercise, name="Integrals"}
+
+
+*   Let $X \geq  0$ be a continuous random variable with finite first moment.     Prove that
+$$\mathbb{E} X = \int_0 ^{\infty} \mathbb{P}(X >t) dt = \int_0 ^{\infty}[ 1- F_X(t)]dt$$
+Hint:  use a double integral.  
+
+*  Let $X$ and $Y$ be nonnegative independent continuous random variables.   Prove that for $t >0$, we have
+$$ \mathbb{P}(XY > t) = \int_0 ^{\infty} \mathbb{P}(X >\tfrac{t}{y}) f_Y(y) dy,$$
+where $f_Y$ is the probability density function for $Y$.   
+
+* Using the previous results prove that
+$$ \mathbb{E}( X Y)  = (\mathbb{E} X )(\mathbb{E} Y),$$
+assuming all the expectations are finite.  
+```
+
+<br>
+
+```{exercise, name="Renewal equations"}
+Refering the general theorem on renewal equations, show that if  $m$ be a renewal function with $F$ as the cumulative distribution for the inter-arrival times,  and 
+$$ \phi = H + H*m,$$
+then $\phi$ satisfies the renewal-type equation
+$$ \phi = H + \phi*F;$$
+```
+
+<br>
+
+```{exercise, name="Excess life"}  
+With the usual notation, let $E$ be the excess life of a renewal process with renewal function $m$ and $F$ for the cumulative distribution of the inter-arrival times.
+
+*  By conditioning on the first arrival, show that
+$$\mathbb{P}(E(t) >y) = \int_0 ^t \mathbb{P}(E (t-x) >y)dF(x) + \int_{t+y} ^{\infty} dF(x)$$
+
+*  Apply the general theorem on renewal equations to obtain that
+
+$$ \mathbb{P}(E(t) \leq y) = F(t+y) - \int_0 ^t [1 - F(t+y -x)] dm(x).$$
+  
+*  Assuming the inter-arrivals are non-lattice type, apply the key  
+renewal theorem to obtain that 
+
+$$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx.$$
+  
+```
+<br>
+
+```{exercise, name="Random tiles"}
+I have two types of tiles, one of length $\pi$ and another of length $\sqrt{2}$. Suppose that I tile the half line $[0, \infty)$, via the following procedure, I pick one of two types of tiles with equal probability, then I can place it, starting at the origin.  I continue this procedure indefinitly, and independently.
+
+*  Suppose that I pick a large $t$, is it equally likely that it would be covered the tile types?
+  
+*  Run a simulation to estimate the probability that $t$ is covered by tile of length $\pi$.  
+```
+
+
+
+<br>
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW6.Rmd)
+

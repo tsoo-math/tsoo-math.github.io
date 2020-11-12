@@ -1,0 +1,70 @@
+---
+title: Introduction to renewal processes III
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+We now have enough theory and tools to discuss some of interesting applications of renewal theory.
+
+# Alternating renewal process
+
+We imagine a machine works, but  the breaks down after time $W_i$ and then needs to be serviced taking time $S_i$.  We assume that the sequences $W=(W_i)_{i \in \mathbb{N}}$ and $S = (S_i)_{i \in \mathbb{Z}^{+}}$ are independent, and that the sequences themselves are i.i.d.\ with common distributions given by $F_W$ and $F_S$.   If we let $N(t)$ be the number of *repairs completed* by time $t$, then $N$ a renewal process, with inter-arrival times given by $X_i= W_{i-1} + S_i$, where with law given by $F_X = F_W * F_S$.  We are interesting in 
+$$p(t) = \mathbb{P}(O_t)= \mathbb{P}( \text{the probability that the machine is working at time $t$}),$$
+and the limiting behaviour of $p$.  
+
+By considering on the event $\{W_0 \leq t\}$, and conditioning on $X_1$  we have
+$$
+\begin{eqnarray*}
+p(t)  &=& \mathbb{P}(O_t, W_0 >t) + \mathbb{P}(O_t, W_0 \leq t)\\
+&=& 1- F_W(t) + \mathbb{E}(\mathbb{P}(O_t , W_0 \leq t | X_1)).
+\end{eqnarray*}
+$$
+
+Let $\phi(x) = \mathbb{P}(O_t, W_0 \leq t|X_1 =x).$  Then $\phi(x) = p(t-x) \mathbf{1}[t \geq x]$.  Thus
+$$
+\begin{eqnarray*}
+p(t) &=&  1- F_W(t) + \mathbb{E}\phi(X_1) \\
+&=& 1- F_W(t) + \int_0^t p(t-x) dF_X(x).
+\end{eqnarray*}
+$$
+Thus
+$$ p =  (1- F_W) + p*F_X$$
+
+and from the uniqueness of solutions of  renewal equations
+$$ p =  (1- F_W) + (1-F_W)*m,$$
+
+where $m(t) = \mathbb{E}(N(t))$ is the renewal function.  
+
+Thus the key renewal theorem for non-lattice type $F_X$,  gives that
+
+$$p(t) \to \frac{1}{\mathbb{E}(X_1)}\int_0^{\infty} [1-F_w(x)]dx = \frac{\mathbb{E}(W_0)}{\mathbb{E}(W_0) + \mathbb{E}(S_1)},$$
+as $t \to \infty$.  
+
+
+
+# Summary
+
+*  We analyzed  alternating renewal processes
+
+*  
+
+* 
+
+*  
+
+*  
+
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewalthree.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
