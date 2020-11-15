@@ -52,6 +52,13 @@ These are a subset of the links that are available on the main Moodle page for o
 *  [Continuous-time Markov chains](https://tsoo-math.github.io/ucl/continuous-timeMC.html)
 
 
+
+*  [Introduction to renewal theory I](https://tsoo-math.github.io/ucl/intro-renewal.html)
+
+*  [Introduction to renewal theory II](https://tsoo-math.github.io/ucl/intro-renewaltwo.html)
+
+*  [Introduction to renewal theory III](https://tsoo-math.github.io/ucl/introrenewalthree.html)
+
 <br>
 
 Version: `r format(Sys.time(), '%d %B %Y')`

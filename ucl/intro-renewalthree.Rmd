@@ -7,7 +7,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-We now have enough theory and tools to discuss some of interesting applications of renewal theory.
+We now discuss some variations of the renewal theory that often occur in applications.
+
 
 # Alternating renewal process
 
@@ -44,18 +45,63 @@ $$p(t) \to \frac{1}{\mathbb{E}(X_1)}\int_0^{\infty} [1-F_w(x)]dx = \frac{\mathbb
 as $t \to \infty$.  
 
 
+# Renewal-reward process
+
+Given a renewal process $N$ with inter-arrival times $X=(X_i)_{i \in \mathbb{Z} ^{+}}$, we think of obtaining a random reward (or punishment) $R_i \in \mathbb{R}$; we assume that $R=(R_i)_{i \in \mathbb{Z}^+}$ is i.i.d., but often $R$ will depend on $X$.   The pair $(X, R)$ is sometimes called a **renewal reward** process.   We are interested in the culumative **reward process** given by
+$$C(t) = \sum_{i=1} ^{N(t)} R_i.$$
+The **reward function** is given by $c(t) = \mathbb{E} C(t)$. 
+
+**Theorem (Law of large numbers for renewal-reward processes):**  Let $(X, R)$ be a renewal process, where the expectations of $X_1$ and $R_1$ are well-defined and finte. Then as $t \to \infty$, we have
+
+*  $$\frac{C(t)}{t} \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)}  \text{ almost surely,}$$
+and
+*  $$\frac{c(t)}{t} \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)}.$$
+
+The proof of the first assertion follows from the law of large numbers for renewal processes, and the second assertion requires an argument to allow the interchange of limits.  Notice that this is the sort of formula that one might guess is true:  the long term average rate of rewards is the expected reward over the expected time if takes for an arrival to occur.  
+
+
+
+A typical application is as follows.  Suppose that a (used) car has a random lifetime with culmulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee $C_2$, imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average of owning a used car.  
+
+Since we replace the car at $L$ years, regardless of whether it is still running, the inter-arrival times that is *not* given by $F$; if $X_1$ is the first replacement, it has cumulative distribution given by $$\bar{F}(x) = F(x) \mathbf{1}[x <L] +\mathbf{1}[x \geq L]$$
+$$ \mathbb{E}(X_1) = \int_0 ^{\infty} [1-\bar{F}(x)]dx = \int_0 ^{L} [1-F(x)]dx.$$
+Let $Y_1$ have law $F$ be the lifetime of the first used car,  and let $R_1$ be random variable that takes the value $C_1$ if $Y_1 \geq L$, and the value $C_2$ if $Y_1 < L$.  Notice that 
+$$\mathbb{E}{R_1} = C_1(1-F(L)) + C_2F(L).$$
+
+The law of large numbers for renewal-reward processes gives that long-run average is
+$$ c(t)/t \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)} = \frac{C_1(1-F(L)) + C_2(F(L))}{ \int_0 ^{L} [1-F(x)]dx}.$$
+
+Often one can apply the renewal-reward theorem to prove other theorems by coming up with a suitable reward.
+
+**Theorem (Law of large numbers for continuous-time Markov chains):**  Let $X$ be an irreducible continuous-time Markov chain on a finite number of states with stationary distribution $\pi$$.  Let $s$ be a state.  Then 
+
+$$  \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \to \pi(s).$$
+
+*Proof:*  Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at the other states after leaving $s$, before returning to $s$.    Let us give ourselves a reward $R_i$ when the Markov chain reaches the state $s$ for the $i$t-time,  which is exactly the amount of time the chain stays at state $s$, before leaving.  Thus with the renewal-reward process $(Y, R)$ the limit 
+
+$$\lim_{t \to \infty} \frac{C(t)}{t}  = \lim_{t \to \infty} \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] = \frac{\mathbb{E}(R_1)}{\mathbb{E}(Y_1)}$$
+
+exists almost surely, since its clear relevant expectations are finite; in particular, we know that $\mathbb{E}R_1=h_s$ is the mean holding time at state $s$.     
+
+Clearly, we would get the same limit if the chain was started at the stationary distribution, and we know that 
+$$0 \leq \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \leq 1$$
+and $$\mathbb{E}(\mathbf{1}[X(t) =s]) = \mathbb{P}(X(t) = s)  = \pi(s).$$
+Hence by an interchange of limits argument (the bounded covergence theorem) and taking expectations on both sides of the limit, we identify that limit must be 
+$$\pi(s) = \frac{h_s}{\mathbb{E} Y_1}.$$
+
+Note that we obtained a similar expression for discrete time Markov chains at the end of our first discussion on renewal theory.
+
+
+
 
 # Summary
 
 *  We analyzed  alternating renewal processes
 
-*  
+*  We introduced renewal-reward processes and gave a couple of applications
 
-* 
+*   
 
-*  
-
-*  
 
 
 #  Version: `r format(Sys.time(), '%d %B %Y')`

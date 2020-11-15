@@ -366,7 +366,7 @@ summary {
 </div>
 
 
-<p>We now have enough theory and tools to discuss some of interesting applications of renewal theory.</p>
+<p>We now discuss some variations of the renewal theory that often occur in applications.</p>
 <div id="alternating-renewal-process" class="section level1">
 <h1>Alternating renewal process</h1>
 <p>We imagine a machine works, but the breaks down after time <span class="math inline">\(W_i\)</span> and then needs to be serviced taking time <span class="math inline">\(S_i\)</span>. We assume that the sequences <span class="math inline">\(W=(W_i)_{i \in \mathbb{N}}\)</span> and <span class="math inline">\(S = (S_i)_{i \in \mathbb{Z}^{+}}\)</span> are independent, and that the sequences themselves are i.i.d. with common distributions given by <span class="math inline">\(F_W\)</span> and <span class="math inline">\(F_S\)</span>. If we let <span class="math inline">\(N(t)\)</span> be the number of <em>repairs completed</em> by time <span class="math inline">\(t\)</span>, then <span class="math inline">\(N\)</span> a renewal process, with inter-arrival times given by <span class="math inline">\(X_i= W_{i-1} + S_i\)</span>, where with law given by <span class="math inline">\(F_X = F_W * F_S\)</span>. We are interesting in <span class="math display">\[p(t) = \mathbb{P}(O_t)= \mathbb{P}( \text{the probability that the machine is working at time $t$}),\]</span> and the limiting behaviour of <span class="math inline">\(p\)</span>.</p>
@@ -387,18 +387,37 @@ p(t) &amp;=&amp;  1- F_W(t) + \mathbb{E}\phi(X_1) \\
 <p>Thus the key renewal theorem for non-lattice type <span class="math inline">\(F_X\)</span>, gives that</p>
 <p><span class="math display">\[p(t) \to \frac{1}{\mathbb{E}(X_1)}\int_0^{\infty} [1-F_w(x)]dx = \frac{\mathbb{E}(W_0)}{\mathbb{E}(W_0) + \mathbb{E}(S_1)},\]</span> as <span class="math inline">\(t \to \infty\)</span>.</p>
 </div>
+<div id="renewal-reward-process" class="section level1">
+<h1>Renewal-reward process</h1>
+<p>Given a renewal process <span class="math inline">\(N\)</span> with inter-arrival times <span class="math inline">\(X=(X_i)_{i \in \mathbb{Z} ^{+}}\)</span>, we think of obtaining a random reward (or punishment) <span class="math inline">\(R_i \in \mathbb{R}\)</span>; we assume that <span class="math inline">\(R=(R_i)_{i \in \mathbb{Z}^+}\)</span> is i.i.d., but often <span class="math inline">\(R\)</span> will depend on <span class="math inline">\(X\)</span>. The pair <span class="math inline">\((X, R)\)</span> is sometimes called a <strong>renewal reward</strong> process. We are interested in the culumative <strong>reward process</strong> given by <span class="math display">\[C(t) = \sum_{i=1} ^{N(t)} R_i.\]</span> The <strong>reward function</strong> is given by <span class="math inline">\(c(t) = \mathbb{E} C(t)\)</span>.</p>
+<p><strong>Theorem (Law of large numbers for renewal-reward processes):</strong> Let <span class="math inline">\((X, R)\)</span> be a renewal process, where the expectations of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(R_1\)</span> are well-defined and finte. Then as <span class="math inline">\(t \to \infty\)</span>, we have</p>
+<ul>
+<li><span class="math display">\[\frac{C(t)}{t} \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)}  \text{ almost surely,}\]</span> and</li>
+<li><span class="math display">\[\frac{c(t)}{t} \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)}.\]</span></li>
+</ul>
+<p>The proof of the first assertion follows from the law of large numbers for renewal processes, and the second assertion requires an argument to allow the interchange of limits. Notice that this is the sort of formula that one might guess is true: the long term average rate of rewards is the expected reward over the expected time if takes for an arrival to occur.</p>
+<p>A typical application is as follows. Suppose that a (used) car has a random lifetime with culmulative distribution <span class="math inline">\(F\)</span> with density <span class="math inline">\(f\)</span> We buy a new one at cost <span class="math inline">\(C_1\)</span> if it lasts <span class="math inline">\(L\)</span> years, but if it breaks down before <span class="math inline">\(L\)</span> years, we have to pay a fee <span class="math inline">\(C_2\)</span>, imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump. It is free to get of a car that still runs. What is the long-run average of owning a used car.</p>
+<p>Since we replace the car at <span class="math inline">\(L\)</span> years, regardless of whether it is still running, the inter-arrival times that is <em>not</em> given by <span class="math inline">\(F\)</span>; if <span class="math inline">\(X_1\)</span> is the first replacement, it has cumulative distribution given by <span class="math display">\[\bar{F}(x) = F(x) \mathbf{1}[x &lt;L] +\mathbf{1}[x \geq L]\]</span> <span class="math display">\[ \mathbb{E}(X_1) = \int_0 ^{\infty} [1-\bar{F}(x)]dx = \int_0 ^{L} [1-F(x)]dx.\]</span> Let <span class="math inline">\(Y_1\)</span> have law <span class="math inline">\(F\)</span> be the lifetime of the first used car, and let <span class="math inline">\(R_1\)</span> be random variable that takes the value <span class="math inline">\(C_1\)</span> if <span class="math inline">\(Y_1 \geq L\)</span>, and the value <span class="math inline">\(C_2\)</span> if <span class="math inline">\(Y_1 &lt; L\)</span>. Notice that <span class="math display">\[\mathbb{E}{R_1} = C_1(1-F(L)) + C_2F(L).\]</span></p>
+<p>The law of large numbers for renewal-reward processes gives that long-run average is <span class="math display">\[ c(t)/t \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)} = \frac{C_1(1-F(L)) + C_2(F(L))}{ \int_0 ^{L} [1-F(x)]dx}.\]</span></p>
+<p>Often one can apply the renewal-reward theorem to prove other theorems by coming up with a suitable reward.</p>
+<p><strong>Theorem (Law of large numbers for continuous-time Markov chains):</strong> Let <span class="math inline">\(X\)</span> be an irreducible continuous-time Markov chain on a finite number of states with stationary distribution <span class="math inline">\(\pi\)</span>$. Let <span class="math inline">\(s\)</span> be a state. Then</p>
+<p><span class="math display">\[  \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \to \pi(s).\]</span></p>
+<p><em>Proof:</em> Suppose the chain starts at state <span class="math inline">\(s\)</span>, and consider the renewal process given by inter-arrival times <span class="math inline">\(Y_i\)</span> corresponding to how the long chain spends at the other states after leaving <span class="math inline">\(s\)</span>, before returning to <span class="math inline">\(s\)</span>. Let us give ourselves a reward <span class="math inline">\(R_i\)</span> when the Markov chain reaches the state <span class="math inline">\(s\)</span> for the <span class="math inline">\(i\)</span>t-time, which is exactly the amount of time the chain stays at state <span class="math inline">\(s\)</span>, before leaving. Thus with the renewal-reward process <span class="math inline">\((Y, R)\)</span> the limit</p>
+<p><span class="math display">\[\lim_{t \to \infty} \frac{C(t)}{t}  = \lim_{t \to \infty} \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] = \frac{\mathbb{E}(R_1)}{\mathbb{E}(Y_1)}\]</span></p>
+<p>exists almost surely, since its clear relevant expectations are finite; in particular, we know that <span class="math inline">\(\mathbb{E}R_1=h_s\)</span> is the mean holding time at state <span class="math inline">\(s\)</span>.</p>
+<p>Clearly, we would get the same limit if the chain was started at the stationary distribution, and we know that <span class="math display">\[0 \leq \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \leq 1\]</span> and <span class="math display">\[\mathbb{E}(\mathbf{1}[X(t) =s]) = \mathbb{P}(X(t) = s)  = \pi(s).\]</span> Hence by an interchange of limits argument (the bounded covergence theorem) and taking expectations on both sides of the limit, we identify that limit must be <span class="math display">\[\pi(s) = \frac{h_s}{\mathbb{E} Y_1}.\]</span></p>
+<p>Note that we obtained a similar expression for discrete time Markov chains at the end of our first discussion on renewal theory.</p>
+</div>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
 <ul>
 <li><p>We analyzed alternating renewal processes</p></li>
-<li></li>
-<li></li>
-<li></li>
+<li><p>We introduced renewal-reward processes and gave a couple of applications</p></li>
 <li></li>
 </ul>
 </div>
-<div id="version-12-november-2020" class="section level1">
-<h1>Version: 12 November 2020</h1>
+<div id="version-14-november-2020" class="section level1">
+<h1>Version: 14 November 2020</h1>
 <ul>
 <li><a href="https://tsoo-math.github.io/ucl/intro-renewalthree.Rmd">Rmd Source</a></li>
 </ul>

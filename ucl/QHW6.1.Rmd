@@ -38,7 +38,7 @@ assuming all the expectations are finite.
 Refering the general theorem on renewal equations, show that if  $m$ be a renewal function with $F$ as the cumulative distribution for the inter-arrival times,  and 
 $$ \phi = H + H*m,$$
 then $\phi$ satisfies the renewal-type equation
-$$ \phi = H + \phi*F;$$
+$$ \phi = H + \phi*F.$$
 ```
 
 <br>
