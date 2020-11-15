@@ -57,7 +57,7 @@ These are a subset of the links that are available on the main Moodle page for o
 
 *  [Introduction to renewal theory II](https://tsoo-math.github.io/ucl/intro-renewaltwo.html)
 
-*  [Introduction to renewal theory III](https://tsoo-math.github.io/ucl/introrenewalthree.html)
+*  [Introduction to renewal theory III](https://tsoo-math.github.io/ucl/intro-renewalthree.html)
 
 <br>
 
