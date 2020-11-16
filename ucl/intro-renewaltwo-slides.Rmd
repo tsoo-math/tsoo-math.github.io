@@ -29,7 +29,7 @@ $$ \lim_{t \to \infty} \frac{ \mathbb{E} N(t)}{t} =  \mathbb{E} \Big( \lim_{t \t
 
  We say that the law of a real-valued random variable is of **lattice-type** if for some $a >0$ the random variables takes values in the set $$a\mathbb{Z} = \{az: z \in  \mathbb{Z}\}$$ with probability one; the largest such possible $a$ is called the **span** of the lattice.    Note that continuous random variables are of non-lattice type.
 
-## Blackwell's renweal theorem
+## Blackwell's renewal theorem
 
 A renewal process with inter-arrival times that are of non-lattice type has a renewal function $m$ that satisfies
 $$\frac{m(t+h) - m(t)}{h} \to \frac{1}{\mu},$$
@@ -90,7 +90,7 @@ $$\int_0 ^{t+h} g(t+h-x) dm(x) = \int_{t} ^ {t+h} dm(x) = m(t+h)-m(t)$$
 and
 $$ \frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^h dx = \frac{h}{\mu}.$$
 
-## Basic reneal equation
+## Basic renewal equation
 
 If $m$ is a renewal function, then it satisfies
 $$ m(t) = F(t) + \int_0^t m(t-x)dF(x),$$
@@ -104,7 +104,7 @@ $$\phi(x) = \mathbb{E}(N(t) | X_1 = x )$$
 
 * we have $\phi(x) = 0$ for all $x > t$, since are no arrivals
 *  and for $x \leq t$, we know that $N(t)$ is at least one, arriving at time $x$, so that the distribution of $N(t)$ is given by $1$ + the number of arrivals that have come by time $t-x$, which depends on $X_2, X_3, \ldots$ and thus as the same distribution as $N(t-x)$.
-*  Thus
+*  Thus for $x \leq t$, we have
 $$ \phi(x) = 1 + \mathbb{E}(N(t-x)).$$
 
 ## continued
