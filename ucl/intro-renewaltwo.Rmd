@@ -240,7 +240,7 @@ Then $\phi$ satisfies the renewal-type equation
 $$ \phi = H + \phi*F;$$
 moreover $\phi$ is the unique solution to the renewal-type equation, provided that $H$ is bounded on finite intervals, which also implies that $\phi$ is bounded on finite intervals. 
 
-If we are interesting in $\lim_{t \to \infty} \phi(t)$, we can use the form $\phi = H + H*m$ and possible apply the key renewal theorem:
+If we are interested in $\lim_{t \to \infty} \phi(t)$, we can use the form $\phi = H + H*m$ and possibly apply the key renewal theorem:
 
 
 $$\lim_{t \to \infty} \phi(t) = \lim_{t \to \infty} H(t) + \frac{1}{\mu} \int_0 ^{\infty} H(x)dx.$$

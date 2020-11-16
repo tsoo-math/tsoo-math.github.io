@@ -1,0 +1,168 @@
+---
+title: Introduction to renewal processes III
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+## Alternating renewal process
+
+*  We imagine a machine works, but  the breaks down after time $W_i$ and then needs to be serviced taking time $S_i$.  
+
+*  We assume that the sequences $W=(W_i)_{i \in \mathbb{N}}$ and $S = (S_i)_{i \in \mathbb{Z}^{+}}$ are independent, and that the sequences themselves are i.i.d.\ with common distributions given by $F_W$ and $F_S$.   
+
+*  If we let $N(t)$ be the number of *repairs completed* by time $t$, then $N$ a renewal process, with inter-arrival times given by $X_i= W_{i-1} + S_i$, where with law given by $F_X = F_W * F_S$.  
+
+## continued
+
+
+*  We are interested in 
+
+$$
+\begin{eqnarray*}
+p(t) &=& \mathbb{P}(O_t)  \\
+&=& \mathbb{P}( \text{the machine is working at time $t$})
+\end{eqnarray*}
+$$
+and the limiting behaviour of $p$.  
+
+## Conditioning
+
+* By considering on the event $\{W_0 \leq t\}$, and conditioning on $X_1$  we have
+$$
+\begin{eqnarray*}
+p(t)  &=& \mathbb{P}(O_t, W_0 >t) + \mathbb{P}(O_t, W_0 \leq t)\\
+&=& 1- F_W(t) + \mathbb{E}(\mathbb{P}(O_t , W_0 \leq t | X_1)).
+\end{eqnarray*}
+$$
+
+* Let $\phi(x) = \mathbb{P}(O_t, W_0 \leq t|X_1 =x).$  
+
+*  Then $\phi(x) = p(t-x) \mathbf{1}[t \geq x]$.  
+
+* Thus
+$$
+\begin{eqnarray*}
+p(t) &=&  1- F_W(t) + \mathbb{E}\phi(X_1) \\
+&=& 1- F_W(t) + \int_0^t p(t-x) dF_X(x).
+\end{eqnarray*}
+$$
+
+## continued
+
+* So that
+$$ p =  (1- F_W) + p*F_X$$
+
+and from the uniqueness of solutions of  renewal equations
+$$ p =  (1- F_W) + (1-F_W)*m,$$
+
+where $m(t) = \mathbb{E}(N(t))$ is the renewal function.  
+
+Thus the key renewal theorem for non-lattice type $F_X$,  gives that
+
+$$p(t) \to \frac{1}{\mathbb{E}(X_1)}\int_0^{\infty} [1-F_w(x)]dx = \frac{\mathbb{E}(W_0)}{\mathbb{E}(W_0) + \mathbb{E}(S_1)},$$
+as $t \to \infty$.  
+
+
+##  Renewal-reward process
+
+*   Given a renewal process $N$ with inter-arrival times $X=(X_i)_{i \in \mathbb{Z} ^{+}}$, we think of obtaining a random reward (or punishment) $R_i \in \mathbb{R}$; 
+
+*  we assume that $R=(R_i)_{i \in \mathbb{Z}^+}$ is i.i.d., but often $R$ will depend on $X$.   The pair $(X, R)$ is sometimes called a **renewal reward** process.   
+
+*  We are interested in the cumulative **reward process** given by
+$$C(t) = \sum_{i=1} ^{N(t)} R_i.$$
+The **reward function** is given by $c(t) = \mathbb{E} C(t)$. 
+
+
+
+
+## Law of large numbers for renewal-reward processes)
+
+*  Let $(X, R)$ be a renewal process, where the expectations of $X_1$ and $R_1$ are well-defined and finte. Then as $t \to \infty$, we have
+
+*  $$\frac{C(t)}{t} \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)}  \text{ almost surely,}$$
+and
+*  $$\frac{c(t)}{t} \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)}.$$
+
+## Used cars
+
+
+
+A typical application is as follows.  Suppose that a (used) car has a random lifetime with culmulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee $C_2$, imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average cost of owning a used car?
+
+
+## continued
+
+*  Since we replace the car at $L$ years, regardless of whether it is still running, the inter-arrival times that is *not* given by $F$; 
+
+*  if $X_1$ is the first replacement, it has cumulative distribution given by $$\bar{F}(x) = F(x) \mathbf{1}[x <L] +\mathbf{1}[x \geq L]$$
+and
+$$ \mathbb{E}(X_1) = \int_0 ^{\infty} [1-\bar{F}(x)]dx = \int_0 ^{L} [1-F(x)]dx.$$
+
+* Let $Y_1$ have law $F$ be the lifetime of the first used car,  and let $R_1$ be random variable that takes the value $C_1$ if $Y_1 \geq L$, and the value $C_2$ if $Y_1 < L$.  
+
+## continued
+
+* Notice that 
+$$\mathbb{E}{R_1} = C_1(1-F(L)) + C_2F(L).$$
+
+*  The law of large numbers for renewal-reward processes gives that long-run average is
+$$ c(t)/t \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)} = \frac{C_1(1-F(L)) + C_2(F(L))}{ \int_0 ^{L} [1-F(x)]dx}.$$
+
+
+## Markov chains
+
+Often one can apply the renewal-reward theorem to prove other theorems by coming up with a suitable reward.
+
+**Theorem (Law of large numbers for continuous-time Markov chains):**  Let $X$ be an irreducible continuous-time Markov chain on a finite number of states with stationary distribution $\pi$.  Let $s$ be a state.  Then 
+
+$$  \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \to \pi(s).$$
+
+## Proof
+
+* Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at the other states after leaving $s$, before returning to $s$.    
+
+*  Let us give ourselves a reward $R_i$ when the Markov chain reaches the state $s$ for the $i$t-time,  which is exactly the amount of time the chain stays at state $s$, before leaving.  Thus with the renewal-reward process $(Y, R)$ the limit 
+
+$$\lim_{t \to \infty} \frac{C(t)}{t}  = \lim_{t \to \infty} \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] = \frac{\mathbb{E}(R_1)}{\mathbb{E}(Y_1)}$$
+
+exists almost surely, since its clear relevant expectations are finite; in particular, we know that $\mathbb{E}R_1=h_s$ is the mean holding time at state $s$.     
+
+
+## continued
+
+Clearly, we would get the same limit if the chain was started at the stationary distribution, and we know that 
+$$0 \leq \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \leq 1$$
+and $$\mathbb{E}(\mathbf{1}[X(t) =s]) = \mathbb{P}(X(t) = s)  = \pi(s).$$
+Hence by an interchange of limits argument (the bounded covergence theorem) and taking expectations on both sides of the limit, we identify that limit must be 
+$$\pi(s) = \frac{h_s}{\mathbb{E} Y_1}.$$
+
+
+
+
+
+## Summary
+
+*  We analyzed  alternating renewal processes
+
+*  We introduced renewal-reward processes and gave a couple of applications
+
+
+
+
+
+##  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewalthree-slides.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+

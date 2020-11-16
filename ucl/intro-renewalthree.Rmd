@@ -12,8 +12,8 @@ We now discuss some variations of the renewal theory that often occur in applica
 
 # Alternating renewal process
 
-We imagine a machine works, but  the breaks down after time $W_i$ and then needs to be serviced taking time $S_i$.  We assume that the sequences $W=(W_i)_{i \in \mathbb{N}}$ and $S = (S_i)_{i \in \mathbb{Z}^{+}}$ are independent, and that the sequences themselves are i.i.d.\ with common distributions given by $F_W$ and $F_S$.   If we let $N(t)$ be the number of *repairs completed* by time $t$, then $N$ a renewal process, with inter-arrival times given by $X_i= W_{i-1} + S_i$, where with law given by $F_X = F_W * F_S$.  We are interesting in 
-$$p(t) = \mathbb{P}(O_t)= \mathbb{P}( \text{the probability that the machine is working at time $t$}),$$
+We imagine a machine works, but  the breaks down after time $W_i$ and then needs to be serviced taking time $S_i$.  We assume that the sequences $W=(W_i)_{i \in \mathbb{N}}$ and $S = (S_i)_{i \in \mathbb{Z}^{+}}$ are independent, and that the sequences themselves are i.i.d.\ with common distributions given by $F_W$ and $F_S$.   If we let $N(t)$ be the number of *repairs completed* by time $t$, then $N$ a renewal process, with inter-arrival times given by $X_i= W_{i-1} + S_i$, where with law given by $F_X = F_W * F_S$.  We are interested in 
+$$p(t) = \mathbb{P}(O_t)= \mathbb{P}( \text{the machine is working at time $t$}),$$
 and the limiting behaviour of $p$.  
 
 By considering on the event $\{W_0 \leq t\}$, and conditioning on $X_1$  we have
@@ -47,7 +47,7 @@ as $t \to \infty$.
 
 # Renewal-reward process
 
-Given a renewal process $N$ with inter-arrival times $X=(X_i)_{i \in \mathbb{Z} ^{+}}$, we think of obtaining a random reward (or punishment) $R_i \in \mathbb{R}$; we assume that $R=(R_i)_{i \in \mathbb{Z}^+}$ is i.i.d., but often $R$ will depend on $X$.   The pair $(X, R)$ is sometimes called a **renewal reward** process.   We are interested in the culumative **reward process** given by
+Given a renewal process $N$ with inter-arrival times $X=(X_i)_{i \in \mathbb{Z} ^{+}}$, we think of obtaining a random reward (or punishment) $R_i \in \mathbb{R}$; we assume that $R=(R_i)_{i \in \mathbb{Z}^+}$ is i.i.d., but often $R$ will depend on $X$.   The pair $(X, R)$ is sometimes called a **renewal reward** process.   We are interested in the cumulative  **reward process** given by
 $$C(t) = \sum_{i=1} ^{N(t)} R_i.$$
 The **reward function** is given by $c(t) = \mathbb{E} C(t)$. 
 
@@ -61,7 +61,7 @@ The proof of the first assertion follows from the law of large numbers for renew
 
 
 
-A typical application is as follows.  Suppose that a (used) car has a random lifetime with culmulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee $C_2$, imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average of owning a used car.  
+A typical application is as follows.  Suppose that a (used) car has a random lifetime with culmulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee $C_2$, imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average cost of owning a used car.  
 
 Since we replace the car at $L$ years, regardless of whether it is still running, the inter-arrival times that is *not* given by $F$; if $X_1$ is the first replacement, it has cumulative distribution given by $$\bar{F}(x) = F(x) \mathbf{1}[x <L] +\mathbf{1}[x \geq L]$$
 $$ \mathbb{E}(X_1) = \int_0 ^{\infty} [1-\bar{F}(x)]dx = \int_0 ^{L} [1-F(x)]dx.$$
@@ -73,7 +73,7 @@ $$ c(t)/t \to \frac{\mathbb{E}(R_1)}{\mathbb{E}(X_1)} = \frac{C_1(1-F(L)) + C_2(
 
 Often one can apply the renewal-reward theorem to prove other theorems by coming up with a suitable reward.
 
-**Theorem (Law of large numbers for continuous-time Markov chains):**  Let $X$ be an irreducible continuous-time Markov chain on a finite number of states with stationary distribution $\pi$$.  Let $s$ be a state.  Then 
+**Theorem (Law of large numbers for continuous-time Markov chains):**  Let $X$ be an irreducible continuous-time Markov chain on a finite number of states with stationary distribution $\pi$.  Let $s$ be a state.  Then 
 
 $$  \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \to \pi(s).$$
 

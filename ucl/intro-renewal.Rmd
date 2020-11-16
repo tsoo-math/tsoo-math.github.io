@@ -117,18 +117,18 @@ By the Strong Markov property the random variables $Y_k = T_{k+1} - T_k$ are i.i
 
 #  Semi-Markov process
 
-Recall that the holding times a continuous time Markov chain were chosen to be exponential, as to preserve the Markov property.  When we allow for the possibility that the hoding times are *not* exponential, then resulting process is often referred to as a *Semi-Markov* of **Markov-renewal**  process and the jump chain a **hidden** Markov chain.
+Recall that the holding times a continuous time Markov chain were chosen to be exponential, as to preserve the Markov property.  When we allow for the possibility that the hoding times are *not* exponential, then resulting process is often referred to as a *Semi-Markov* or **Markov-renewal**  process and the jump chain a **hidden** Markov chain.
 
 
 # Summary
 
 *  We introduced varies relaxations of models that we previously studied.  
 
-* In particular, we generalized the Poisson counting processs by allowing non-exponential inter-arrival times. 
+* In particular, we generalized the Poisson counting processes by allowing non-exponential inter-arrival times. 
 
 *  We observed basic limit theorems that follow from the law of the large numbers and the central limit theorem.  
 
-*We also applied renewal type arguments to the study of Markov chains
+*   We also applied renewal type arguments to the study of Markov chains
 
 
 #  Version: `r format(Sys.time(), '%d %B %Y')`
