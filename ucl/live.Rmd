@@ -48,10 +48,13 @@ output: html_document
 
 
 * Week 12 (16 Nov - 22 Nov): 
-    +  [Sxith meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+    +  [Sixth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     +  [Exercise sheet](https://tsoo-math.github.io/ucl/class6.html)
+    +  We used the breakout rooms to get know each other better in preparation for the upcoming ICAs.  We briefly discussed the mechanics of the project based ICA.  This meeting was not recorded.   
 
 * Week 13 (23 Nov - 29 Nov):
+    +  [Seventh meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+
 * Week 14 (30 Nov - 6 Dec): 
 * Week 15 (7 Dec - 13 Dec):
 * week 16 (14 Dec - 20 Dec):
