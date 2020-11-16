@@ -383,8 +383,8 @@ summary {
 <p>We will not give a proof the central limit theorem for renewal processes, but we can see why <span class="math inline">\(var(N(t)) \approx t \sigma^2 / \mu^3\)</span>. The law of large numbers tells us that <span class="math display">\[ N(t) \approx \frac{ T_{N(t)}}{\mu}\]</span> so that <span class="math display">\[ N(t) \approx \frac{1}{\mu} \sum_{i=1} ^{T_{N(t)}} X_i\]</span> where the <span class="math inline">\(X_i\)</span> are the inter-arrival times. We also have by the law of large numbers for renewal processes that <span class="math display">\[T_{N(t)} \approx  \frac{t}{\mu}\]</span> thus</p>
 <p><span class="math display">\[ var(N(t)) \approx var\big( \frac{1}{\mu} \sum_{i=1} ^{ \frac{t}{\mu}} X_i \big) \approx  t \sigma^2 / \mu^3,\]</span> where <span class="math inline">\(var(X_1) = \sigma\)</span>.</p>
 </div>
-<div id="renewal-type-arguemnts-for-markov-chains-and-the-strong-markov-property" class="section level1">
-<h1>Renewal type arguemnts for Markov chains and the strong Markov property</h1>
+<div id="renewal-type-arguments-for-markov-chains-and-the-strong-markov-property" class="section level1">
+<h1>Renewal type arguments for Markov chains and the strong Markov property</h1>
 <p>In this section, we will prove a version of the ergodic theorem for Markov chains by breaking the chain up into independent parts. Let <span class="math inline">\(X\)</span> be a Markov chain on a state space <span class="math inline">\(S\)</span>. Recall that we say that a state <span class="math inline">\(s \in S\)</span> is <strong>recurrent</strong> if <span class="math display">\[\mathbb{P}( \text{there exists } n\geq 1 \text{ such that }  X_n=s \ | \  X_0=s)=1.\]</span> Furthermore, let <span class="math inline">\(X\)</span> be a Markov chain started at <span class="math inline">\(s\)</span> and <span class="math inline">\(T = \inf \{n \geq 1 : X_n=s\}\)</span>; we say that a recurrent state <span class="math inline">\(s\)</span> is <strong>positive-recurrent</strong> if <span class="math inline">\(\mathbb{E} T &lt; \infty\)</span> and <strong>null-recurrent</strong> if <span class="math inline">\(\mathbb{E} T = \infty\)</span>.</p>
 <p><strong>Theorem (Law of large numbers):</strong> Let <span class="math inline">\(X\)</span> be an irreducible Markov chain on a countable state space <span class="math inline">\(S\)</span>. Let <span class="math inline">\(P\)</span> be the transition matrix for <span class="math inline">\(S\)</span>, and assume all the states are positive-recurrent. Fix <span class="math inline">\(s \in S\)</span>. Start the chain <span class="math inline">\(X\)</span> at <span class="math inline">\(s\)</span>. Let <span class="math inline">\(T_1 = \inf \{n \geq 1 : X_n=s\}\)</span> and let <span class="math display">\[V_n = \sum_{k=0} ^{n} \mathbf{1}[X_k=s].\]</span> Then <span class="math display">\[V_n/n \to (\mathbb{E} T_1)^{-1}\]</span> almost surely.</p>
 <p>The starting point of the proof of this version of the law of large numbers is the following observation. Let <span class="math inline">\(T_1 = \inf\{n &gt;0: X_n =s\}\)</span>. Set <span class="math display">\[T_{n} = \inf\{n &gt;T_{n-1}:  X_n=s\}.\]</span> Then <span class="math inline">\(T_n = \sum_{k=1} ^{n-1} (T_{k+1} - T_k) + T_1\)</span> and <span class="math inline">\(Y_k = T_{k+1} - T_k\)</span> are i.i.d. random variables. This may appear obvious from the Markov property, but it is a seemingly stronger claim (that turns out is implied by the regular Markov property), since we need to argue that Markov chain <em>renews</em> itself each time it reaches the state <span class="math inline">\(s\)</span>, which is a <em>random</em> time, rather than a deterministic time.</p>
@@ -400,7 +400,7 @@ for sets <span class="math inline">\(A\)</span> of the form <span class="math di
 </div>
 <div id="semi-markov-process" class="section level1">
 <h1>Semi-Markov process</h1>
-<p>Recall that the holding times a continuous time Markov chain were chosen to be exponential, as to preserve the Markov property. When we allow for the possibility that the hoding times are <em>not</em> exponential, then resulting process is often referred to as a <em>Semi-Markov</em> or <strong>Markov-renewal</strong> process and the jump chain a <strong>hidden</strong> Markov chain.</p>
+<p>Recall that the holding times a continuous time Markov chain were chosen to be exponential, as to preserve the Markov property. When we allow for the possibility that the holding times are <em>not</em> exponential, then resulting process is often referred to as a <em>Semi-Markov</em> or <strong>Markov-renewal</strong> process and the jump chain a <strong>hidden</strong> Markov chain.</p>
 </div>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
@@ -411,8 +411,8 @@ for sets <span class="math inline">\(A\)</span> of the form <span class="math di
 <li><p>We also applied renewal type arguments to the study of Markov chains</p></li>
 </ul>
 </div>
-<div id="version-15-november-2020" class="section level1">
-<h1>Version: 15 November 2020</h1>
+<div id="version-16-november-2020" class="section level1">
+<h1>Version: 16 November 2020</h1>
 <ul>
 <li><a href="https://tsoo-math.github.io/ucl/intro-renewal.Rmd">Rmd Source</a></li>
 </ul>

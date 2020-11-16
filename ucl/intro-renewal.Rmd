@@ -57,7 +57,7 @@ $$ var(N(t)) \approx var\big( \frac{1}{\mu} \sum_{i=1} ^{ \frac{t}{\mu}} X_i \bi
 where $var(X_1) = \sigma$.  
 
 
-# Renewal type arguemnts for Markov chains and the strong Markov property
+# Renewal type arguments for Markov chains and the strong Markov property
 
 
 In this section,  we will prove a version of the ergodic theorem for Markov chains by breaking the chain up into independent parts.  Let $X$ be a Markov chain on a state space $S$.  Recall that we say that a state $s \in S$ is **recurrent** if 
@@ -117,7 +117,7 @@ By the Strong Markov property the random variables $Y_k = T_{k+1} - T_k$ are i.i
 
 #  Semi-Markov process
 
-Recall that the holding times a continuous time Markov chain were chosen to be exponential, as to preserve the Markov property.  When we allow for the possibility that the hoding times are *not* exponential, then resulting process is often referred to as a *Semi-Markov* or **Markov-renewal**  process and the jump chain a **hidden** Markov chain.
+Recall that the holding times a continuous time Markov chain were chosen to be exponential, as to preserve the Markov property.  When we allow for the possibility that the holding times are *not* exponential, then resulting process is often referred to as a *Semi-Markov* or **Markov-renewal**  process and the jump chain a **hidden** Markov chain.
 
 
 # Summary

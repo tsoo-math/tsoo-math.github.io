@@ -29,7 +29,7 @@ where $X_i$ are i.i.d.\ exponential random variables.
 
 
 
-+  **Theorem (Law of large numbers):** If $N$ is a renewal process with mean inter-arrival time $\mu$ then, $$N(t)/ t \to \mu^{-1}$$ almost surely, as $n \to \infty$.  
++  **Theorem (Law of large numbers):** If $N$ is a renewal process with mean inter-arrival time $\mu$ then, $$N(t)/ t \to \mu^{-1}$$ almost surely, as $t \to \infty$.  
 
 +  **Theorem (Central limit theorem):**   If $N$ is a renewal process with inter-arrival times with finite  mean $\mu$ and variance $\sigma^2$,  then
 
@@ -79,7 +79,7 @@ $$ var(N(t)) \approx var\big( \frac{1}{\mu} \sum_{i=1} ^{ \frac{t}{\mu}} X_i \bi
 where $var(X_1) = \sigma$.  
 
 
-## Renewal type arguemnts for Markov chains and the strong Markov property
+## Renewal type arguments for Markov chains and the strong Markov property
 
 
 *  We will prove a version of the law of large numbers (ergodic theorem) for Markov chains by breaking the chain up into independent parts.  
@@ -169,7 +169,7 @@ The starting point of the proof of this version of the law of large numbers is t
 
 * Recall that the holding times a continuous time Markov chain were chosen to be exponential, as to preserve the Markov property.  
 
-*  When we allow for the possibility that the hoding times are *not* exponential, then resulting process is often referred to as a *Semi-Markov* or **Markov-renewal**  process and the jump chain a **hidden** Markov chain.
+*  When we allow for the possibility that the holding times are *not* exponential, then resulting process is often referred to as a *Semi-Markov* or **Markov-renewal**  process and the jump chain a **hidden** Markov chain.
 
 
 ## Summary
