@@ -1,0 +1,58 @@
+---
+title: "Stat9 Project ICA Assessment form"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Candidate(s) identifier: 
+
+## Project title: 
+
+
+## Content
+
+* Amount of work done
+* Extent to which the student has demonstrated understanding
+* Quality & accuracy of reasoning, validity of interpretation, relevance of conclusions
+* Critical appraisal, discussion of limitations & further work
+* Clarity of objectives
+* Quality of the literature review
+* Quality of data organisation & collection (if applicable)
+* Quality of programming / use of software (if applicable)
+
+<br>
+
+*  Mark1 (out of 100)
+
+
+
+## Presentation
+
+* Layout of the report and care in its presentation
+* Structure of the report
+* Standard of judgement shown in selection of material
+* Clarity of expression, readability and coherence
+* Correctness of grammar and spelling
+* Adequacy of diagrams, tables and graphs (if applicable)
+* Quality of presentation of mathematical material (if applicable)
+
+<br>
+
+* Mark2 (out of 100)
+
+
+
+## Final mark  
+
+* Weighted average $0.6*M1 + 0.4*M2$
+
+## Feedback
+
+
+<br>
+<br>
+
