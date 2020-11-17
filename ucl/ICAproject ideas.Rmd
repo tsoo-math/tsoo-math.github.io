@@ -80,9 +80,10 @@ The following are some suggestions, but you are free to choose your own projects
 
 
 
+<br>
+<br>
 
-
-
+Version: `r format(Sys.time(), '%d %B %Y')`
 
 
 
