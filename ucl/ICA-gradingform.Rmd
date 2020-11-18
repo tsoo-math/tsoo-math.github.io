@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Project title: 
 
 
-## Content
+## Content of written report
 
 * Amount of work done
 * Extent to which the student has demonstrated understanding
@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-## Presentation
+## Presentation of written report
 
 * Layout of the report and care in its presentation
 * Structure of the report
