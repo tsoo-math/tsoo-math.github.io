@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Quality & accuracy of reasoning, validity of interpretation, relevance of conclusions
 * Critical appraisal, discussion of limitations & further work
 * Clarity of objectives
-* Quality of the literature review
+* Quality of the literature review and background information
 * Quality of data organisation & collection (if applicable)
 * Quality of programming / use of software (if applicable)
 
