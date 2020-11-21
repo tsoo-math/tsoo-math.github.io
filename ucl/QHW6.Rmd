@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{exercise, name="Multiplying on the right"}
-Let $P$ be a transition matrix on a finite state space $S$ of size $n$.  Let $h :S \to \mathbb{R}$ be a function on $S$, and regard $h$ as a column vector.  Call a function $h$ **harmonic** if $Ph = h$.  
+Let $P$ be an *irreducible* transition matrix on a finite state space $S$ of size $n$.  Let $h :S \to \mathbb{R}$ be a function on $S$, and regard $h$ as a column vector.  Call a function $h$ **harmonic** if $Ph = h$.  
 
 * Show that every harmonic function is a constant.  Hint:  every function achieves its maximum,  since $S$ is finite.  Let $M= \max_{s \in S} h(s) = h(s)$ for some $s \in S$.      First, show that $h(z) = M$ for every $z \in S$ for which $p_{sz} >0$.  Finally, use irreducibility, to extend the claim for all $z \in S$.   
 
