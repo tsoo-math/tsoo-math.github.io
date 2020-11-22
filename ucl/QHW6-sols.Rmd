@@ -191,12 +191,36 @@ Prove that if $s$ is a recurrent state of a Markov chain that is started at $s$,
 
 <br>
 
+```{solution}
+Let $T_i$ be the $i$th return time to $s$, so that $T_0 = 0$.  We already know that $T_1 < \infty$ with probability one.  By the Strong Markov property, the same holds for all the $T_i$; in particular, 
+
+$$\mathbb{P}(T_1 < \infty, T_2 < \infty) = (\mathbb{P}(T_1 < \infty))^2.$$
+Hence
+
+$$ \mathbb{P} \big( \bigcap _{i=0} ^{\infty}  \{ T_i < \infty \} \big) = 1.$$
+
+
+```
+
+<br>
+
 ```{exercise}
 Prove that if an irreducible Markov chain has a recurrent state,  then all the states must also be recurrent.   
 ```
+<br>
+
+```{solution}
+
+Let $s\in S$ be the given recurrent state of the Markov chain $X$,  so that we know that 
+
+$$T^s = \inf \{ n \geq 1: X_n=s | X_0 = s\}$$
+  
+is finite with probability one.  Let $t \in S$ be another state.     By irreducibility, there exists $n \geq 1$, so that $p_{st}(n) >0$ and in $n$ steps it is possible to reach $t$ from $s$, and on this event, we still must have with the chain will return to $s$.  Thus by the strong Markov property,   $T^{ts}$, the time it takes for a chain starting at $t$ to reach $s$ is finite with probability one.  
+
+*One* way to return to $t$ starting at $t$, is to go to $s$ and then from $s$ to go to $t$.  Thus it suffices to aruge that   $T^{st}$ is also finite with probability one.   Since each time the chain returns to $s$, we have an independent nonzero chance of reaching $t$ again, by the strong Markov property, this will eventually happen with probability $1$.  
 
 
-
+```
 <br>
 <br>
 

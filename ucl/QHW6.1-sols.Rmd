@@ -1,0 +1,200 @@
+---
+title: "Homework 6.1"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{exercise, name="Integrals"}
+
+
+*   Let $X \geq  0$ be a continuous random variable with finite first moment.     Prove that
+$$\mathbb{E} X = \int_0 ^{\infty} \mathbb{P}(X >t) dt = \int_0 ^{\infty}[ 1- F_X(t)]dt$$
+Hint:  use a double integral.  
+
+*  Let $X$ and $Y$ be nonnegative independent continuous random variables.   Prove that for $t >0$, we have
+$$ \mathbb{P}(XY > t) = \int_0 ^{\infty} \mathbb{P}(X >\tfrac{t}{y}) f_Y(y) dy,$$
+where $f_Y$ is the probability density function for $Y$.   
+
+* Using the previous results prove that
+$$ \mathbb{E}( X Y)  = (\mathbb{E} X )(\mathbb{E} Y),$$
+assuming all the expectations are finite.  
+```
+
+<br>
+
+```{solution}
+
+
+*  We have
+
+\begin{eqnarray*}
+ \mathbb{E} X &=& \int_0 ^{\infty} x f(x) dx   \\
+ &=&    \int_0 ^{\infty} f(x)  \Big[   \int_0 ^x 1 dt  \Big]  dx  \\
+ &=&  \int_0 ^{\infty}  \int_t ^{\infty} f(x) dx dt  \\
+ &=&  \int_0 ^ {\infty} \mathbb{P}(X > t) dt;
+\end{eqnarray*}
+here we note that the interchange in order of integration is permissible since everything is positive and $\mathbb{E} X < \infty$.  
+
+*  Since $X$ and $Y$ are independent, we have
+\begin{eqnarray*}
+\mathbb{P}(XY  > t) &=&  \int_0 ^{\infty}  \int_{t/y} ^{\infty} f_X(x) f_Y(y) dxdy  \\
+&=&  \int_0 ^{\infty}  \mathbb{P}(X > t/y) f_Y(y) dy,
+\end{eqnarray*}
+as desired.
+
+*  By the previous results, 
+\begin{eqnarray*}
+\mathbb{E} XY &=& \int_0 ^{\infty} \mathbb{P}(XY >t)  dt  \\
+&=&   \int_0 ^{\infty}  \int_0 ^{\infty}  \mathbb{P}(X > t/y) f_Y(y) dy dt  \\
+&=&   \int_0 ^{\infty}  f_Y(y)  \Big [ \int_0 ^{\infty}  \mathbb{P}(X > t/y)  dt   \Big]dy \\
+&=&  \int_0 ^{\infty} y f_Y(y) dy   \cdot  \int_0 ^{\infty}  \mathbb{P}(X >t) dt \\
+&=& \mathbb{E} Y (\mathbb{E} X).
+\end{eqnarray*}
+
+```
+<br>
+
+```{exercise, name="Renewal equations"}
+Refering the general theorem on renewal equations, show that if  $m$ be a renewal function with $F$ as the cumulative distribution for the inter-arrival times,  and 
+$$ \phi = H + H*m,$$
+then $\phi$ satisfies the renewal-type equation
+$$ \phi = H + \phi*F.$$
+```
+
+<br>
+
+
+```{solution}
+We will *star* both sides of the given equation by $F$ to obtain
+$$ \phi* F = H*F + H*m*F = H *( F + m*F).$$
+  Since we know from our first renewal equation that
+$$ m = F + m*F$$ we obtain
+$$ \phi*F = H*m$$
+  from which the desired result follows.
+
+```
+
+
+```{exercise, name="Excess life"}  
+With the usual notation, let $E$ be the excess life of a renewal process with renewal function $m$ and $F$ for the cumulative distribution of the inter-arrival times.
+
+*  By conditioning on the first arrival, show that
+$$\mathbb{P}(E(t) >y) = \int_0 ^t \mathbb{P}(E (t-x) >y)dF(x) + \int_{t+y} ^{\infty} dF(x)$$
+
+*  Apply the general theorem on renewal equations to obtain that
+
+$$ \mathbb{P}(E(t) \leq y) = F(t+y) - \int_0 ^t [1 - F(t+y -x)] dm(x).$$
+  
+*  Assuming the inter-arrivals are non-lattice type, apply the key  
+renewal theorem to obtain that 
+
+$$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx.$$
+  
+```
+<br>
+
+
+```{solution}
+
+
+*   Let $X_1, X_2, \ldots$ be the inter-arrival times.  It is not difficult to see that with
+
+$$\phi(x) = \mathbb{P}(E(t) > y | X_1 = x)$$
+  
+we have for $t < x$, we have $\phi(x)=0$ if $x-t \leq y$ and $\phi(x)=1 if $x-t >y$.  If $t \geq x = X_1$, then $E(t)$ has the same law as $E(t-x)$ and $\phi(x) = \mathbb{P}(E(t-x))$.  Thus
+
+$$\mathbb{P}(E(t) >y) = \mathbb{E}\phi(X_1) = \int_0 ^t \mathbb{P}(E(t-x))dF(x) + \int_{t+y} ^{\infty} 1\cdot dF(x),$$
+  as desired.
+
+* Thus with $\psi(t) = \mathbb{P}(E(t) >y)$, we have
+
+$$ \psi(t) = 1- F(t+y) +  (\psi*F)(t).$$
+  
+  Thus by our general theorem on renewal equations, we have
+
+$$ \psi(t) = 1- F(t+y) + \int_0 ^t [1-F(t+y-x)] dm(x)$$
+  and rearranging gives the desired result.
+
+*  Since $0 \leq 1- F \leq 1$ is non-increasing and
+
+$$ \int_0 ^{\infty} [1-F(x)] dx = \mathbb{E}X_1 = \mu < \infty,$$
+
+the key renewal theorem gives that 
+
+$$ \lim_{t \to \infty} \int_0 ^t [1-F(t+y-x)] dm(x)  = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx,$$
+  
+  
+  from which the desired conclusion follows.  
+  
+
+```
+
+```{exercise, name="Random tiles"}
+I have two types of tiles, one of length $\pi$ and another of length $\sqrt{2}$. Suppose that I tile the half line $[0, \infty)$, via the following procedure, I pick one of two types of tiles with equal probability, then I can place it, starting at the origin.  I continue this procedure indefinitly, and independently.
+
+*  Suppose that I pick a large $t$, is it equally likely that it would be covered the tile types?
+  
+*  Run a simulation to estimate the probability that $t$ is covered by tile of length $\pi$.  
+```
+
+
+
+```{solution}
+
+
+*  If we pick some large $t$, from our experience with size-biasing, we know it is more  likely that we will  land in the longer tile of length $\pi$  
+
+*  The following code, excutes the tiling procedure up to time $t$ and returns the type of tile.  We till label the $\pi$ tile as type-$1$ and the $\sqrt{2}$ tile as type-$0$. 
+```
+
+```{r}
+tile <- function(t){
+  
+  types = rbinom(1,1,0.5)
+  tlength = sqrt(2) * (1-types[1]) +  pi*types[1]
+  
+  while(t > tlength){
+    types = c(types, rbinom(1,1,0.5))
+     tlength <- tlength +  sqrt(2) * (1-types[length(types)]) +  pi*types[length(types)]
+  }
+  
+  types[length(types)]
+}
+    
+```
+Now for some large $t$, we sample from our function a large number of times, and find the average number of times that $t$ land in a tile of length $\pi$.
+
+```{r}
+y = replicate(1000, tile(111))
+
+mean(y)
+```
+
+You might of guess that this probability is:
+
+```{r}
+pi/(pi + sqrt(2))
+
+```
+
+
+
+
+
+<br>
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW6.Rmd)
+
