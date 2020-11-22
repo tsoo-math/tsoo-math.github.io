@@ -182,7 +182,7 @@ y = replicate(1000, tile(111))
 mean(y)
 ```
 
-You might of guess that this probability is:
+You might  guess that this probability is:
 
 ```{r}
 pi/(pi + sqrt(2))
@@ -196,5 +196,5 @@ pi/(pi + sqrt(2))
 <br>
 
 *  Version: `r format(Sys.time(), '%d %B %Y')`
-* [Rmd Source](https://tsoo-math.github.io/ucl/QHW6.Rmd)
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW6.1-sol.Rmd)
 
