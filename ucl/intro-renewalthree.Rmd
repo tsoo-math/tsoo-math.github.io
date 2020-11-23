@@ -61,7 +61,7 @@ The proof of the first assertion follows from the law of large numbers for renew
 
 
 
-A typical application is as follows.  Suppose that a (used) car has a random lifetime with culmulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee $C_2$, imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average cost of owning a used car.  
+A typical application is as follows.  Suppose that a (used) car has a random lifetime with cumulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee and buy a car costing $C_2$;  imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average cost of owning a used car.  
 
 Since we replace the car at $L$ years, regardless of whether it is still running, the inter-arrival times that is *not* given by $F$; if $X_1$ is the first replacement, it has cumulative distribution given by $$\bar{F}(x) = F(x) \mathbf{1}[x <L] +\mathbf{1}[x \geq L]$$
 $$ \mathbb{E}(X_1) = \int_0 ^{\infty} [1-\bar{F}(x)]dx = \int_0 ^{L} [1-F(x)]dx.$$
@@ -77,7 +77,7 @@ Often one can apply the renewal-reward theorem to prove other theorems by coming
 
 $$  \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \to \pi(s).$$
 
-*Proof:*  Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at the other states after leaving $s$, before returning to $s$.    Let us give ourselves a reward $R_i$ when the Markov chain reaches the state $s$ for the $i$t-time,  which is exactly the amount of time the chain stays at state $s$, before leaving.  Thus with the renewal-reward process $(Y, R)$ the limit 
+*Proof:*  Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at $s$, and the time it takes to return to $s$.      Let us give ourselves a reward $R_i$ when the Markov chain reaches the state $s$ for the $i$t-time,  which is exactly the amount of time the chain stays at state $s$, before leaving.  Thus with the renewal-reward process $(Y, R)$ the limit 
 
 $$\lim_{t \to \infty} \frac{C(t)}{t}  = \lim_{t \to \infty} \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] = \frac{\mathbb{E}(R_1)}{\mathbb{E}(Y_1)}$$
 

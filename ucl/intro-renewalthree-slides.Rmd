@@ -93,7 +93,7 @@ and
 
 
 
-A typical application is as follows.  Suppose that a (used) car has a random lifetime with culmulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee $C_2$, imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average cost of owning a used car?
+A typical application is as follows.  Suppose that a (used) car has a random lifetime with culmulative distribution $F$ with density $f$  We buy a new one at cost $C_1$ if it lasts $L$ years, but if it breaks down before $L$ years, we have to pay a fee and buy at new car at cost $C_2$;  imagine that it breaks down while you are driving, and you have to pay a tow fee to the dump.  It is free to get of a car that still runs.  What is the long-run average cost of owning a used car?
 
 
 ## continued
@@ -125,7 +125,7 @@ $$  \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \to \pi(s).$$
 
 ## Proof
 
-* Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at the other states after leaving $s$, before returning to $s$.    
+* Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at $s$ and  the other states after leaving $s$, before returning to $s$.    
 
 *  Let us give ourselves a reward $R_i$ when the Markov chain reaches the state $s$ for the $i$t-time,  which is exactly the amount of time the chain stays at state $s$, before leaving.  Thus with the renewal-reward process $(Y, R)$ the limit 
 
