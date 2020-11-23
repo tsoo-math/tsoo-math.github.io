@@ -113,7 +113,7 @@ $$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]
 
 $$\phi(x) = \mathbb{P}(E(t) > y | X_1 = x)$$
   
-we have for $t < x$, we have $\phi(x)=0$ if $x-t \leq y$ and $\phi(x)=1 if $x-t >y$.  If $t \geq x = X_1$, then $E(t)$ has the same law as $E(t-x)$ and $\phi(x) = \mathbb{P}(E(t-x))$.  Thus
+we have for $t < x$, we have $\phi(x)=0$ if $x-t \leq y$ and $\phi(x)=1$ if $x-t >y$.  If $t \geq x = X_1$, then $E(t)$ has the same law as $E(t-x)$ and $\phi(x) = \mathbb{P}(E(t-x))$.  Thus
 
 $$\mathbb{P}(E(t) >y) = \mathbb{E}\phi(X_1) = \int_0 ^t \mathbb{P}(E(t-x))dF(x) + \int_{t+y} ^{\infty} 1\cdot dF(x),$$
   as desired.

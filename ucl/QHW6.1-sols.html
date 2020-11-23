@@ -457,7 +457,7 @@ renewal theorem to obtain that</li>
 <li>Let <span class="math inline">\(X_1, X_2, \ldots\)</span> be the inter-arrival times. It is not difficult to see that with</li>
 </ul>
 <p><span class="math display">\[\phi(x) = \mathbb{P}(E(t) &gt; y | X_1 = x)\]</span></p>
-<p>we have for <span class="math inline">\(t &lt; x\)</span>, we have <span class="math inline">\(\phi(x)=0\)</span> if <span class="math inline">\(x-t \leq y\)</span> and $(x)=1 if <span class="math inline">\(x-t &gt;y\)</span>. If <span class="math inline">\(t \geq x = X_1\)</span>, then <span class="math inline">\(E(t)\)</span> has the same law as <span class="math inline">\(E(t-x)\)</span> and <span class="math inline">\(\phi(x) = \mathbb{P}(E(t-x))\)</span>. Thus</p>
+<p>we have for <span class="math inline">\(t &lt; x\)</span>, we have <span class="math inline">\(\phi(x)=0\)</span> if <span class="math inline">\(x-t \leq y\)</span> and <span class="math inline">\(\phi(x)=1\)</span> if <span class="math inline">\(x-t &gt;y\)</span>. If <span class="math inline">\(t \geq x = X_1\)</span>, then <span class="math inline">\(E(t)\)</span> has the same law as <span class="math inline">\(E(t-x)\)</span> and <span class="math inline">\(\phi(x) = \mathbb{P}(E(t-x))\)</span>. Thus</p>
 <p><span class="math display">\[\mathbb{P}(E(t) &gt;y) = \mathbb{E}\phi(X_1) = \int_0 ^t \mathbb{P}(E(t-x))dF(x) + \int_{t+y} ^{\infty} 1\cdot dF(x),\]</span>
 as desired.</p>
 <ul>
@@ -508,13 +508,13 @@ and rearranging gives the desired result.</p>
 <pre class="r"><code>y = replicate(1000, tile(111))
 
 mean(y)</code></pre>
-<pre><code>## [1] 0.698</code></pre>
+<pre><code>## [1] 0.686</code></pre>
 <p>You might guess that this probability is:</p>
 <pre class="r"><code>pi/(pi + sqrt(2))</code></pre>
 <pre><code>## [1] 0.68958</code></pre>
 <p><br></p>
 <ul>
-<li>Version: 22 November 2020</li>
+<li>Version: 23 November 2020</li>
 <li><a href="https://tsoo-math.github.io/ucl/QHW6.1-sol.Rmd">Rmd Source</a></li>
 </ul>
 

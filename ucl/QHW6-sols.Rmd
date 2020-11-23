@@ -95,11 +95,14 @@ It is easy to verify that $P$ is irreducible and aperiodic, since $P^3$ has all 
 Q = P  %*% P%*%P
 Q
 ```
-```
+
 Thus we know that the stationary distribution $\pi$ satisfies 
+
 $$\pi_s = (\mathbb{E} T^s)^{-1}.$$
+
   We easily compute $\pi$.  
-  ```
+
+
 ```{r}
 eigen(t(P))
 stat = eigen(t(P))$vectors[,1]
@@ -217,7 +220,7 @@ $$T^s = \inf \{ n \geq 1: X_n=s | X_0 = s\}$$
   
 is finite with probability one.  Let $t \in S$ be another state.     By irreducibility, there exists $n \geq 1$, so that $p_{st}(n) >0$ and in $n$ steps it is possible to reach $t$ from $s$, and on this event, we still must have with the chain will return to $s$.  Thus by the strong Markov property,   $T^{ts}$, the time it takes for a chain starting at $t$ to reach $s$ is finite with probability one.  
 
-*One* way to return to $t$ starting at $t$, is to go to $s$ and then from $s$ to go to $t$.  Thus it suffices to aruge that   $T^{st}$ is also finite with probability one.   Since each time the chain returns to $s$, we have an independent nonzero chance of reaching $t$ again, by the strong Markov property, this will eventually happen with probability $1$.  
+*One* way to return to $t$ starting at $t$, is to go to $s$ and then from $s$ to go to $t$.  Thus it suffices to argue that   $T^{st}$ is also finite with probability one.   Since each time the chain returns to $s$, we have an independent nonzero chance of reaching $t$ again, by the strong Markov property, this will eventually happen with probability $1$.  
 
 
 ```
