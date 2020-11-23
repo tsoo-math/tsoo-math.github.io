@@ -56,7 +56,7 @@ $$P^n h = h,$$
 
 *  By the rank-nullity theorem, the matrix $P_I$ has rank $n-1$, and thus its transpose, $P^t -I$ also has a kernel of dimension $1$.  Notice that $v = vP$ if and only $P^tv^t = v^t$; that is, $v$ is a solution to $vP = v$ if and only if $v^t$ is the nullspace of $P^t - I$. Hence the set subspace of solutions to $v P = v$ has dimension $1$.
 
-*  By definiton,   a stationary distribution $\pi$ satisfies $ \pi = \pi P$ and $\pi$ has all nonnegative entries that sum to $1$; thus if $\pi'$ is another stationary distribution, since the solution space has dimension $1$, we must that $c \pi  = \pi'$--summing both sides yields that $c=1$.       
+*  By definiton,   a stationary distribution $\pi$ satisfies $\pi = \pi P$ and $\pi$ has all nonnegative entries that sum to $1$; thus if $\pi'$ is another stationary distribution, since the solution space has dimension $1$, we must that $c \pi  = \pi'$--summing both sides yields that $c=1$.       
 
 
 ```
