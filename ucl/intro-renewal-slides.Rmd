@@ -65,14 +65,14 @@ almost-surely, as $t \to \infty$, since $N(t) \to \infty$, as $t \to \infty$.
 
 *  The law of large numbers tells us that
 $$ N(t) \approx \frac{ T_{N(t)}}{\mu}$$ so that
-$$ N(t) \approx \frac{1}{\mu} \sum_{i=1} ^{T_{N(t)}} X_i$$
+$$ N(t) \approx \frac{1}{\mu} \sum_{i=1} ^{{N(t)}} X_i$$
 where the $X_i$ are the inter-arrival times. 
 
 
 ## continued
 
 *  We also have by the law of large numbers for renewal processes that 
-$$T_{N(t)} \approx  \frac{t}{\mu}$$
+$${N(t)} \approx  \frac{t}{\mu}$$
 thus 
 
 $$ var(N(t)) \approx var\big( \frac{1}{\mu} \sum_{i=1} ^{ \frac{t}{\mu}} X_i \big) \approx  t \sigma^2 / \mu^3,$$

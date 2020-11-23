@@ -380,7 +380,7 @@ summary {
 <p><em>Proof (Law of large numbers):</em> We make use of the observation that <span class="math display">\[ T_{N(t)} \leq t &lt; T_{N(t) +1}.\]</span> Hence</p>
 <p><span class="math display">\[ \frac{N(t)}{T_{N(t) +1}} \leq \frac{N(t)}{ t} \leq \frac{N(t)}{ T_{N(t)}}.\]</span> We also know that if <span class="math inline">\(X_i\)</span> are inter-arrival times, then <span class="math display">\[T_{N(t)} = \sum_{i=1} ^{N(t)} X_i\]</span></p>
 <p>so that the regular strong law of large numbers gives that <span class="math display">\[T_{N(t)} /N(t) \to \mu\]</span> almost-surely, as <span class="math inline">\(t \to \infty\)</span>, since <span class="math inline">\(N(t) \to \infty\)</span>, as <span class="math inline">\(t \to \infty\)</span>. Hence the desired result follows.</p>
-<p>We will not give a proof the central limit theorem for renewal processes, but we can see why <span class="math inline">\(var(N(t)) \approx t \sigma^2 / \mu^3\)</span>. The law of large numbers tells us that <span class="math display">\[ N(t) \approx \frac{ T_{N(t)}}{\mu}\]</span> so that <span class="math display">\[ N(t) \approx \frac{1}{\mu} \sum_{i=1} ^{T_{N(t)}} X_i\]</span> where the <span class="math inline">\(X_i\)</span> are the inter-arrival times. We also have by the law of large numbers for renewal processes that <span class="math display">\[T_{N(t)} \approx  \frac{t}{\mu}\]</span> thus</p>
+<p>We will not give a proof the central limit theorem for renewal processes, but we can see why <span class="math inline">\(var(N(t)) \approx t \sigma^2 / \mu^3\)</span>. The law of large numbers tells us that <span class="math display">\[ N(t) \approx \frac{ T_{N(t)}}{\mu}\]</span> so that <span class="math display">\[ N(t) \approx \frac{1}{\mu} \sum_{i=1} ^{{N(t)}} X_i\]</span> where the <span class="math inline">\(X_i\)</span> are the inter-arrival times. We also have by the law of large numbers for renewal processes that <span class="math display">\[{N(t)} \approx  \frac{t}{\mu}\]</span> thus</p>
 <p><span class="math display">\[ var(N(t)) \approx var\big( \frac{1}{\mu} \sum_{i=1} ^{ \frac{t}{\mu}} X_i \big) \approx  t \sigma^2 / \mu^3,\]</span> where <span class="math inline">\(var(X_1) = \sigma\)</span>.</p>
 </div>
 <div id="renewal-type-arguments-for-markov-chains-and-the-strong-markov-property" class="section level1">
@@ -411,8 +411,8 @@ for sets <span class="math inline">\(A\)</span> of the form <span class="math di
 <li><p>We also applied renewal type arguments to the study of Markov chains</p></li>
 </ul>
 </div>
-<div id="version-16-november-2020" class="section level1">
-<h1>Version: 16 November 2020</h1>
+<div id="version-23-november-2020" class="section level1">
+<h1>Version: 23 November 2020</h1>
 <ul>
 <li><a href="https://tsoo-math.github.io/ucl/intro-renewal.Rmd">Rmd Source</a></li>
 </ul>
