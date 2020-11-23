@@ -1,0 +1,211 @@
+---
+title: Introduction to queues
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## What are queues    
+
+
+*  *Items* (customers, patients, cars) enter a system (check-out, hospital, repair shop) for service.
+
+*  They may have to *wait* in-line, in the queue, to be serviced.
+
+*   When they finally receive *service*, this also takes time.
+
+*  When they are done, they depart the system, this may also take time.
+
+*  Queuing time and service time, (and departure time) are often considered together.
+
+*   We are interested in quantities such as how many items are in a system at a time $t$, average time in the system, and the stability of the queue.
+
+
+## Some terminology and common assumptions
+
+*  The *discipline* of a queue refers to how items are serviced:  first in first out (FIFO) being a common assumption.
+
+*  Usually one or more servers.
+
+*  Arrival time to the queue are often assumed to correspond to a  renewal process.
+
+*  Service times are often assumed to be i.i.d.\
+
+*  Technical maths tools that are used in analysing queues include finding hidden Markov chains.
+
+
+## Kendall notation
+
+*  A/S/c; three parameters denoting the inter-arrival times, service times, and the number of servers.
+
+*  Inter-arrival times and service times are i.i.d. and the queue is by default FIFO.
+
+*  M stands for Markov (exponential times)
+
+*  M/M/1 or $M(\lambda)/M(\mu)/1$ refers to a queue with one server, where inter-arrival and service times are exponential (with not necessary the same rate).  The *M* stands for Markov
+
+*  G/G/1 refers to a general (and not necessarily the same) distribution for arrivals and service.
+
+
+## Code M/M/1
+
+Hidden in an early exercise, we had considered such a queue, with $\lambda = 1$ and $\mu = 1.5$.  We had code that produced a histogram of the total an item spends in such a system.
+
+
+```{r}
+inter=rexp(1000, 1)
+arr=cumsum(inter)
+service = rexp(1000,1.5)
+
+output <- arr[1] + service[1]
+for (i in 1:999){
+if (arr[i+1] < output[i]){output <- c(output, output[i] + service[i+1])}
+if (arr[i+1] > output[i]){output <- c(output, arr[i+1] + service[i+1])}
+output
+}
+```
+
+## continued
+
+
+```{r}
+time = output - arr
+x = seq(0,max(time)+1, by=0.01)
+b = seq(0,max(time)+1, by=0.1)
+hist(time, prob=T, breaks=b)
+curve(dexp(x,0.5), add=T)
+```
+
+
+## General results
+
+The ratio of the expected service time over expected inter-arrival time is the **traffic intensity**.   Let  $Q(t)$ be the number of customers in the system (waiting and being serviced) at time $t$.   We say that $Q$ is **stable** if the law of $Q(t)$ converges to a probability distribution as $t \to \infty$.   For a G/G/1 queue, we have:
+
+*  If the traffic intensity is strictly less than $1$, then $Q$ is stable
+
+*  If the traffic intensity is greater than $1$, then $Q$ is not stable
+
+*  If the traffic intensity is $1$, then $Q$ is not stable, provided one of the service time or inter-arrival time is not deterministic.  
+
+
+## Little's law;  $L = \lambda W$;  
+
+Exact version in $[0,T]$:   *For a system that is empty at $0$ and $T$*
+
+
+
+*  $Q(t)$ = number of items in the system at time $t$
+
+*   $\lambda$ = average arrival rate in $[0,T]$ 
+
+*  $N$ = the total number of items arriving  in $[0,T]$
+
+*  $L$ = average number of items in the system in $[0,T]$
+
+*  $W$ =average waiting time of an item in $[0,T]$ 
+
+*  $A = \int_0^T Q(t)dt$ area under $Q$ curve
+
+
+## Proof
+
+Here *average* is defined so that
+
+*  $L = A/T$
+
+*  $\lambda = N/T$
+
+*  $W = A/N$
+
+*  Hence 
+$$L = (A/T) = (A/N) * (N/T) = \lambda W.$$
+
+
+## Notes
+
+*  Little advocates for this version of his law.  
+
+*  Basically no assumptions required.
+
+*  The quantities $L$, $\lambda$, and $W$ are locked-in a relationship like Ohm's law.
+
+*  One quantity can be easily calculated assuming the others can be measured.  
+
+
+## Long-term average version via  renewal-reward 
+
+*  Customers arrive one at a time with the $n$th customer spending time $V_n$
+
+*  There exists a **regeneration time** $T_1$ that is finite almost surely, so that the queue is empty, and restarts a fresh at this random time, like a stopping time.
+
+*  Thus the inter-arrival times of these regeneration times $X_i = T_i - T_{i-1}$ are i.i.d. and the regeneration times form a renewal process.  Take $T_0 = 0$. 
+
+* Each time *cycle* $[T_{i-1}, T_i)$ behaves independently. That is, if $N_1$ is the number of arrivals in $[T_0, T_1)$ then it is independent of $N_2$, but identically distributed.
+
+*  We assume that $\mathbb{E} N_1 < \infty$, $\mathbb{E} T_1 < \infty$, and $\mathbb{E}(N_1 T_1) < \infty$.
+
+
+##  Continued
+
+*  Consider the reward at each cycle to be given by
+
+$$ R_i = \int_{T_{i-1}} ^ {T_{i}} Q(t)dt$$
+
+*  Clearly, the $R_i$ are i.i.d. and $\mathbb{E} R_1 \leq \mathbb{E}N_1T_1 < \infty$.
+
+*  By the law of large numbers for renewal processes it follows that if $C(t)$ is the total reward up to time $t$, we have 
+
+$$ \lim_{t \to \infty} \frac{1}{t}\int_0 ^t Q(u)du = \lim_{t \to \infty} C(t)/t  = \mathbb{E} R_1 / \mathbb{E} T_1=:L$$
+
+## continued
+
+
+*  Similarly, give ourselves the reward $N_i$ on each cycle, the total of number of items $N(t)$ satisfies
+
+$$ N(t)/t \to \mathbb{E} N_1 / \mathbb{E} T_1:= \lambda$$
+
+## continued
+
+*  Consider another inter-arrival process with inter-arrival times $N_i$ and give ourselves the reward of the total waiting time in the $i$th cycle; in particular, $S_1 = \sum_{k=1}^ {N_1} V_k$, and the $S_i$ are i.i.d. with 
+
+$$ \mathbb{E}S_1  \leq \mathbb{E} N_1 T_1 < \infty$$
+
+*  Again, by the renewal-reward theorem, we have
+
+$$\lim_{n \to \infty} \frac{1}{n}\sum_{k=1} ^n V_k \to \mathbb{E} S_1 / \mathbb{E} N=:W$$  
+
+##  Little's theorem $L = \lambda W$.
+
+Observe that 
+
+$$\mathbb{E}  S_1= \mathbb{E} \Big( \sum_{k=1} ^{N_1}  V_k  \Big) = \mathbb{E} \Big( \int_0 ^{T_1} Q(u)du \Big) = \mathbb{E} R_1$$
+Thus
+$$
+\begin{eqnarray*}
+ L &=& ( \mathbb{E} R_1 /\mathbb{E} T_1 ) \\
+ &=&  ( \mathbb{E} R_1 /\mathbb{E} N_1 )*  (\mathbb{E} N_1 / \mathbb{E} T_1) \\
+ &=&  (\mathbb{E} S_1  / \mathbb{E} N_1) * \lambda \\
+ &=&  \lambda W.
+ \end{eqnarray*}
+$$
+
+## Summary
+
+* We introduced queues and [Kendall's notation](https://projecteuclid.org/euclid.aoms/1177728975)
+
+*  We discussed [Little's theorem](https://pubsonline.informs.org/doi/abs/10.1287/opre.1110.0940).  The link requires UCL VPN.
+
+
+##  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-queues.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+

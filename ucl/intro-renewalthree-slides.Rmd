@@ -32,7 +32,7 @@ and the limiting behaviour of $p$.
 
 ## Conditioning
 
-* By considering on the event $\{W_0 \leq t\}$, and conditioning on $X_1$  we have
+* By considering  the event $\{W_0 \leq t\}$, and conditioning on $X_1$  we have
 $$
 \begin{eqnarray*}
 p(t)  &=& \mathbb{P}(O_t, W_0 >t) + \mathbb{P}(O_t, W_0 \leq t)\\
