@@ -54,6 +54,7 @@ output: html_document
 
 * Week 13 (23 Nov - 29 Nov):
     +  [Seventh meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+    +   We discussed homeworks 5, 6, and 6.1.  This meeting was not recorded.
 
 * Week 14 (30 Nov - 6 Dec): 
 * Week 15 (7 Dec - 13 Dec):

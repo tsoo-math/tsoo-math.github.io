@@ -1,0 +1,51 @@
+---
+title: "Homework 7"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{exercise}
+Use the alternating renewal theorem to show that under mild conditions, we have that the probability that the number of arrrivals for renewal process in the interval $[0,t]$ goes to $1/2$ as $t \to \infty$.  Why do we need mild conditions?  Why do we need $t \to \infty$.    
+```
+
+<br>
+
+
+<br>
+
+
+```{exercise}
+Consider a $M(3)/M(5)/1$ queue.   Let $t=323$, so the queue has had a chance to settle in.  
+
+*  By running simulations, plot the probability mass function for the random number of customers in the system.  Do you recognize it?  Any guesses?
+
+*   Start keeping track of the departures and assume they proceed into a new shop.  By simulations, produce a histogram of the inter-arrivals times of the items entering the new shop.  You might be surprised.
+```  
+
+<br>
+
+
+
+
+
+```{exercise, name="Little's law"}
+There are many simple exercises on can do with Little's law.   See [here](http://web.eng.ucsd.edu/~massimo/ECE158A/Handouts_files/Little.pdf)
+```
+
+
+<br>
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW7.Rmd)
+
