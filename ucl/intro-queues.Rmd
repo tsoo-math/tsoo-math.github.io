@@ -45,7 +45,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 *  M stands for Markov (exponential times)
 
-*  M/M/1 or $M(\lambda)/M(\mu)/1$ refers to a queue with one server, where inter-arrival and service times are exponential (with not necessary the same rate).  The *M* stands for Markov
+*  M/M/1 or $M(\lambda)/M(\mu)/1$ refers to a queue with one server, where inter-arrival and service times are exponential (with not necessary the same rate).  
 
 *  G/G/1 refers to a general (and not necessarily the same) distribution for arrivals and service.
 
