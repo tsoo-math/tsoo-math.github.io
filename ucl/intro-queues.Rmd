@@ -145,8 +145,14 @@ $$L = (A/T) = (A/N) * (N/T) = \lambda W.$$
 
 * Each time *cycle* $[T_{i-1}, T_i)$ behaves independently. That is, if $N_1$ is the number of arrivals in $[T_0, T_1)$ then it is independent of $N_2$, but identically distributed.
 
+
+## Standing assumption
+
 *  We assume that $\mathbb{E} N_1 < \infty$, $\mathbb{E} T_1 < \infty$, and $\mathbb{E}(N_1 T_1) < \infty$.
 
+
+
+*  These assumptions did not show up in the previous verison of these slides.
 
 ##  Continued
 
