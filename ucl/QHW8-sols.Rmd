@@ -15,14 +15,36 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+
 ```{exercise}
-By brute force, show that for a $M(\lambda)/M(\mu)/1$ queue that is started with at stationarity, so that the number of items in the system at time any time $t$ has distribution
+Let $X$  be an irreducible  aperiodic Markov chain on a finite number of states, started at the state $s$.  Show without using any fancy limit theorems, that $\mathbb{E} T < \infty$, where 
+
+$$T = \inf\{ n \geq 1:  X_n =s\}.$$
+  
+```
+
+
+
+
+```{exercise}
+Let $N$ be a Poisson process on $[0, \infty)$.  Fix $T >0$.  Show that $R(t) = N(T-t)$ is a Poisson process on $[0, T]$.   Hint:  appeal to appropriate construction of Poisson processes.
+
+```
+
+
+
+
+
+
+```{exercise}
+**By brute force**, show that for a $M(\lambda)/M(\mu)/1$ queue that is started with at stationarity, so that the number of items in the system at time any time $t$ has distribution
 
 $$\mathbb{P}(Q(t) = n) = \rho^n(1-\rho)$$
   
   has the property that an arrival waits time $W$ until being served, where $W$ has law
 
-$$ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}$$
+$$ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}.$$
 
 ```
 
@@ -44,6 +66,21 @@ We have for $x \geq 0$, that
 &=&  1- \rho e^{-x(\mu - x)}
 \end{eqnarray*}
 ```
+
+```{exercise}
+We say that a continuous-time Markov chain with generator-(Q matrix) $G$ is **reversible** with respect to the probability measure $\pi$ if
+
+$$ \pi_i g_{ij} = \pi_j g_{ji}$$ 
+
+for all states $i,j$.
+
+
+*  Show that $\pi$ must be stationary.
+
+*  Show the the continuous-time Markov chain corresponding to a M/M/1 queue is reversible with respect to its stationary distribution.
+```
+
+
 
 
 

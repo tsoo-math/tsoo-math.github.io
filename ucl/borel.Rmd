@@ -1,0 +1,216 @@
+---
+title: "The strong law of large numbers and the Borel-Cantelli lemma"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+\newcommand{\e}{\varepsilon}
+\newcommand\ns[1]{ \left\{ {#1} \right\} }
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\F}{{\mathcal F}}
+\renewcommand{\P}{{\mathbb P}}  
+\newcommand{\E}{{\mathbb E}} 
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The mail goal of this session is to prove a version of the strong law of large numbers, assuming an *extra* finite fourth moment condition.
+
+
+
+
+#  Convergence
+
+Let $X_1, X_2, \ldots$ be random variables on a probability space $(\Omega, \F, \P)$.  We say that $X_n$ converges to a random variable $X$ if for all $\omega \in \Omega$, we have that $X_n(\omega) \to X(\omega)$.  We say that $X_n$ **converges almost surely**  to $X$ if there exists an event $\Omega' \in \F$ with $\P(\Omega') =1$ such that for all $\omega \in \Omega'$, we have $X_n(\omega') \to X(\omega)$.  We say that $X_n$ **converges in probability** to $X$ if for all $\e >0$, we have  $$\lim_{n \to \infty} \P( \ns{\omega \in \Omega:  |X_n(\omega) - X(\omega)| >\e}) = 0.$$  If $\E|X_n|^2 < \infty$ and $\E |X|^2 < \infty$, and  $\E|X_n-X|^2 \to 0$ as $n \to \infty$, we say that $X_n$ **converges in $L^2$** or the **mean-squared** to $X$.
+
+We [previously](https://tsoo-math.github.io/ucl/prob-viaR.html) proved using Markov's inequality that $L^2$ convergence implies convergence in probability.  It turns out the almost-sure convergence implies convergence in probability.  We have not yet given any proof of *any* version the strong law of large numbers:
+
+```{theorem, name="Law of large numbers (almost-sure version"}
+ Let $(X_n)_{n \in \mathbb{Z}^{+}}$ be a sequence of independent and identically distributed (i.i.d.) random variables.  If $\mathbb{E} |X_1| < \infty$, then 
+$$ n^{-1}(X_1 + \cdots + X_n) \to \mathbb{E} X_1$$
+  almost-surely.  
+```
+
+
+
+
+# The Borel-Cantelli lemma I
+
+Let $(A_n)_{n=1}^{\infty}$ be events in a probability space $(\Omega, \F, \P)$.  We say that 
+
+$$ \limsup_{n \to \infty} A_n :=  \bigcap_{n=1} ^ {\infty} \bigcup_{m=n}^{\infty} A_m.$$
+
+Note that $\limsup_{n \to \infty} A_n$ is an event also given by $$\ns{\omega \in \Omega:  \omega \text{ belongs to infinitely many of the } A_n};$$
+thus sometimes we write $\limsup_{n \to \infty} A_n = \ns{A_n \text{ i.o}}$.
+
+
+```{theorem, name="Borel-Cantelli Lemma"}
+
+Let $(A_n)_{n=1}^{\infty}$ be events in a probability space $(\Omega, \F, \P)$.    If $\sum_{n=1}^{\infty} \P(A_n) < \infty$, then $\P(A_n \text{ i.o}) = 0$.  
+```
+
+<br>
+
+
+```{proof}
+Note that for every $k$ we have that 
+$$\P(A_n \text{ i.o}) \leq \P(\bigcup_{m=k}^{\infty} A_m) \leq \sum_{m=k}^{\infty} \P(A_m).$$
+Since we know that the infinite sum is finite,  taking $k \to \infty$ gives the desired result.  
+```
+
+Notice that Borel-Cantelli lemma does not require any independence.  Later, we will discuss a partial converse  that will require independence.  
+
+The Borel-Cantelli lemma is useful for proving almost-sure convergence because of the following fact.
+
+```{exercise, name="Convergence"}
+  Show that $X_n$ converges almost surely to $X$ if and only if the events given by $A_{n, \e} = \ns{\omega \in \Omega: |X_n(\omega) - X(\omega)| > \e}$ are such that $\P(A_{n, \e} \text{ i.o.})=0$ for all $\e >0$.  
+```
+
+
+#  A version of the strong law
+
+
+We prove the following version of the strong law of large number with the *extra* assumption that we have finite fourth moments.
+
+```{theorem, name="Strong law with fourth moments"}
+
+Let $(X_i)_{i=1}^{\infty}$ be i.i.d.\ random variables with $\E X_1 =0$ and $\E X_1^4 < \infty$.  If $S_n = X_1 + \cdots + X_n$, then $S_n/n$ converges in almost surely to $0$.
+```
+
+<br>
+
+The assumption that the $\E X_1=0$ can be easily removed by considering $Y_i = X_i - \E X_i$.  We will use the Borel-Cantelli lemma and slightly more general version of Markov's inequality.
+
+
+
+```{lemma, name="Markov's inequality"}
+Let $a \geq 0$, then for any increasing function $g: [0, \infty) \to [0, \infty)$, we have
+$$g(a) \P(|X| \geq a) \leq \E g(|X|).$$
+```
+
+```{proof}
+Since $g$ is increasing,
+$$ g(a) \mathbf{1}[ |X| \geq a] \leq g(|X|).$$
+Taking expectations on both sides, we obtain the required result.  
+```
+
+<br>
+
+
+```{proof, name="The Strong law with fourth moments"}
+Observe that  
+$$\E S_n^4 = \sum_{i,j,k,\ell} \E( X_i X_j X_k X_{\ell}).$$  The only terms that are non-zero are of the from $\E(X_i^4)$ and $\E(X_i^2 X_j^2) = \E X_i^2 \E X_j^2$ where $i \not = j$.   Thus **some** counting yields
+$$ \E S_n^4 = n\E X_1^4  +3n(n-1) \E X_1^2 \E X_2 ^2.$$
+
+  Markov's inequality gives that 
+
+$$ \e^4 n^4 \P(|S_n|/n >\e ) \leq \E S_n^4;$$
+thus Borel-Cantelli and fact about convergence yields the desired result.  
+```
+
+
+## Borel-Cantelli II
+
+The Borel-Cantelli lemmma has the following converse in the case where we *do* assume independence of the sets.
+
+
+```{theorem, name="Borel-Cantelli (second form)"}
+
+Let $A_1, A_2, \ldots$ be a sequence of independent events with
+\begin{equation}
+ \sum_{i=1} ^{\infty} \P(A_i) = \infty.
+ \end{equation}
+ Then $\P(A_n \  i.o.) = 1$.  
+ ```
+ 
+ <br>
+
+```{proof}
+By De Morgan's laws, it suffices to show that 
+\begin{equation}
+\P \big( \bigcup_{m=1} ^{\infty}  \bigcap _{n=m} ^{\infty}  A_n^c \big) =0.
+\end{equation}
+We will show that for each $m \geq 1$, we have 
+$$ \lim_{N \to \infty}  \P \big(  \bigcap_{n=m} ^{N} A_n^c \big) = 0,$$
+from which the desired result follows from the continuity of probability measure.
+
+The independence assumption gives
+\begin{eqnarray*}
+  \P \big(  \bigcap_{n=m} ^{N} A_n^c \big)  &=& \prod_{n=m} ^N  \P(A_n^c) \\
+  &=&   \prod_{n=m} ^N  (1- \P(A_n))  \\
+  &\leq&   \prod_{n=m} ^N  e^{-\P(A_n)}  \\
+  &=&  \exp \big( \sum_{n=m} ^N  \P(A_n)  \big),
+  \end{eqnarray*}
+  here we also used the inequality $1 - x \leq e^{-x}$ for all $x \geq0$.  By the divergence assumption,  the last expression goes to $0$ as $N \to \infty$.    
+```
+
+
+<br>
+
+We already saw how powerful the first Borel-Cantelli lemma is--it let us prove an almost-sure strong law!  Typical maths textbook practice-type applications of the Borel-Cantelli include exercises like following.  
+
+```{exercise}
+
+Let $(X_i)_{i=3} ^{\infty}$ be an i.i.d.\ sequence of standard normal variables.  Prove that almost surely $$\limsup_{n \to \infty}  \frac{X_n}{\sqrt{2 \log n}} =1.$$  Hint:  recall that for $t >0$, we have
+$$   \frac{1}{\sqrt{2\pi}} \big(\frac{1}{t} - \frac{1}{t^3}\big)  e^{-\tfrac{t^2}{2}} \leq \P(X_3 >t)\leq  \frac{1}{t\sqrt{2\pi}} e^{-\tfrac{t^2}{2}}.$$
+
+```
+
+
+<br>
+
+
+```{solution}
+We will apply the Borel-Cantelli lemma in its first form to show that
+$$\limsup_{n \to \infty}  \frac{X_n}{\sqrt{2 \log n}} \leq 1$$
+and use its  second form (where we will use the assumed independence) to show that 
+$$ \limsup_{n \to \infty}  \frac{X_n}{\sqrt{2 \log n}} \geq 1.$$  We will also employ the upper and lower bounds on the tail of a standard normal given by the hint.
+ 
+
+Let $\e >0$.    We have
+\begin{eqnarray*}
+\P \Big (   \frac{X_n}{\sqrt{2 \log n}} > 1 + \e \Big ) &=&  \P \Big (   X_n > (1 + \e) \sqrt{2\log n}   \Big )   \\
+&\leq  &  \frac{1}{ (1+\e) \sqrt{2 \log n}  \sqrt{2\pi}} e^{-(1+\e)^2 \log n}  \\
+&\leq &  \frac{1}{n^{(1+ \e)^2 } }  \\
+&=:& a_n.
+\end{eqnarray*}
+Clearly, $a_n$ is summable, so  the upper bound follows from the first form of the Borel-Cantelli lemma.
+
+For the lower bound, note that $\frac{1}{t} - \frac{1}{t^3} > \frac{1}{2t}$ for $t \geq 2$.   Observe that (even without an $\e$), 
+$$\P \Big (   \frac{X_n}{\sqrt{2 \log n}} > 1\Big)  \geq   \frac{1}{2\sqrt{2\pi} \sqrt{2 \log n}}e^{- \log n} > \frac{c}{n \log n}=:b_n$$
+for some $c >0$.     We know from calculus that the partial sums of $b_n$ diverges to $\infty$, so the lower bound follows from the second form of the Borel-Cantelli lemma.
+```
+
+
+
+
+# Summary
+
++  We stated and proved the Borel-Cantelli lemma.
++  We used the Borel-Cantelli lemma to prove the strong law of large numbers with a fourth moment condition
++  We also have a partial converse to the Borel-Cantelli lemma.
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/borel.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
