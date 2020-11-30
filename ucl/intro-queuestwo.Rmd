@@ -1,0 +1,133 @@
+---
+title: "Introduction to queues II:  M/M/1"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## A little more on $M(\lambda)/M(\mu)/1$ 
+
+*  $Q(t)$ the number of items in the system at time $t$
+
+*   $\rho = \lambda/\mu$ is the traffic intensity
+
+
+
+*  $Q$ is a continuous-time Markov chain, with generator $G$ given by 
+$$G(n, n-1) = \mu   \text{ for all $n \geq 1$} $$
+and
+$$G(n, n+1) - \lambda  \text{ for all $n \geq 0$ }$$
+
+
+## Theorem: stationary distribution
+
+
+If $\rho <0$, then as $t \to \infty$
+$$ \mathbb{P}(Q(t) = n) \to  (1- \rho)\rho^n = \pi_n,$$
+were $\pi$ is the stationary distribution.
+
+*  Solving $\pi G = \mathbf{0}$, we obtain for $n \geq 1$
+
+$$
+\begin{eqnarray*}
+0 &=&(\pi G)_n \\
+&=& \pi_{n-1}G(n-1,n) + \pi_{n+1}G(n+1,n )+ \pi_nG(n,n)
+\end{eqnarray*}
+$$
+
+and
+
+$$ 0=(\pi G)_0 = \pi_1 G(1, 0) + \pi_0 G(0,0)$$
+
+
+## continued
+
+*  Thus
+
+$$ \pi_{n+1} = \pi_n(\rho +1) - \pi_{n-1} \rho$$
+and
+
+$$ \pi_1= \rho \pi_0$$
+
+*  It is easy to see that
+
+$$ \pi_n = \rho^n \pi_0.$$
+
+*  Summing over all $n$, using the fact that $\pi$ is probability measure, we obtain 
+$$ \pi_0 = 1- \rho$$
+
+
+## Burke's theorem
+
+*  **Theorem:** The departures $D(t)$ of a stationary $M(\lambda)/M(\mu)/1$ queue are a Poisson process of rate $\lambda$.   Furthermore, $Q(t)$ is independent of the $(D(s), s \leq t)$.
+
+
+*  We sketch a proof using reversibility. See [Reich's proof of Burke's theorem](https://www.jstor.org/stable/2237237?seq=1)
+
+*  It is easy to check that $Q$ is reversible.
+
+*  Given $T>0$, the process $R(t)= Q(T-t)$ has the same law as $(Q(s), s\leq T)$.
+
+*  The process $R$ adds an arrival at time $t$, when $Q$ has a departure at time $T-t$.  
+
+##  continued
+
+
+*  The arrivals of $R$ and $Q$ are both Poisson
+
+*  The time-reversal of a Poisson is again a Poisson.
+
+*  Thus the departure process is also Poisson.
+
+*   $Q(0)$ is independent from the arrivals in $[0, T]$
+
+*   Reversing time, $Q(T)$ is independent from the departures in $[0, T]$.
+  
+
+## Two M/M/1 queues in series
+
+*  It is a general question, given a item has to pass through two queues in series, one after another, which order should the queues to placed in?  
+
+*  This is in general a [hard question](https://www.tandfonline.com/doi/pdf/10.1080/00207728708967170?needAccess=true)
+
+*  However, using Burke's theorem, we can show the order does not matter in the case of two M/M/1 queues in equilibrium.  
+
+**Theorem** Suppose items enter a $M(\lambda)/M(\mu_1)/1$ queue, then upon exiting report to another queues with exponential service rate $\mu_2$.  If $\lambda < \min(\mu_1, \mu_2)$, then the continuous-time Markov chain $(Q_1, Q_2)$ has stationary distribution given by
+
+$$(m,n) \mapsto \rho_1^m(1-\rho_1) *   \rho_2^n(1-\rho_2)$$
+where $\rho_1 = \mu_1 /\lambda$ and $\rho_2 = \mu_2/\lambda$.  
+
+
+## Proof
+
+*  We already know that if the first queue is stationary, then by Burke's theorem, the departures are again a Poisson process with rate $\lambda$
+
+*  Thus what feeds into the second queue is still a Poisson.
+
+*  We already know that the individual expressions correspond to the the stationary distributions of the individual queues
+
+*  Independence follows from the independence assertion is Burke's theorem.
+
+
+
+## Summary
+
+* We found the stationary distribution for a M/M/1 queue.
+
+* We used reversibility to prove Burke's theorem.
+
+*   We applied Burke's theorem to two M/M/1 queues in series.
+
+
+##  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-queuestwo.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+

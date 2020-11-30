@@ -63,6 +63,9 @@ These are a subset of the links that are available on the main Moodle page for o
 
 *  [Introduction to queueing theory](https://tsoo-math.github.io/ucl/intro-queues.html)
 
+*  [Introduction to queueing theory II](https://tsoo-math.github.io/ucl/intro-queuestwo.html)
+
+
 
 <br>
 

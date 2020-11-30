@@ -1,0 +1,52 @@
+---
+title: "Homework 8"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{exercise}
+By brute force, show that for a $M(\lambda)/M(\mu)/1$ queue that is started with at stationarity, so that the number of items in the system at time any time $t$ has distribution
+
+$$\mathbb{P}(Q(t) = n) = \rho^n(1-\rho)$$
+  
+  has the property that an arrival waits time $W$ until being served, where $W$ has law
+
+$$ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}$$
+
+```
+
+<br>
+
+
+```{solution}
+An arrival arrives at time $t$ to a queue with $n$ items in front with probability   $\rho^n(1-\rho)$, will have to wait for these $n$ items to clear, taking time which  is a sum of exponentials, giving a gamma distribution.  
+
+We have for $x \geq 0$, that 
+
+\begin{eqnarray*}
+\mathbb{P}(W \leq x) &=& 1-\rho +  \sum_{n=1} ^{\infty} \mathbb{P}(W \leq x | N(t)= n) \mathbb{P}(N(t) =n) \\
+&=&  1-\rho +   \sum_{n=0} ^{\infty}  \int_0 ^x \Big( \frac{\mu^n t^{n-1} }{\Gamma(n)} e^{-\mu t} dt \Big)  \rho^n(1-\rho)   \\
+&=&   1-\rho +    (1- \rho)\int_0 ^x  e^{-\mu t}   \sum_{n=1} ^{\infty}  \frac{\lambda^n t^{n-1}  }{(n-1)!} dt \\
+&=&  1-\rho +    (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  \sum_{n=0} ^{\infty}  \frac{ (\lambda t)^n  }{n!} dt \\
+&=&    1-\rho +  (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  e^{\lambda t}  dt  \\
+&=&  1-\rho +  \rho (1- e^{-(\mu - \lambda)x}  )  \\
+&=&  1- \rho e^{-x(\mu - x)}
+\end{eqnarray*}
+```
+
+
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW8-sols.Rmd)
+
