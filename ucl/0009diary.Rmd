@@ -22,11 +22,12 @@ output: html_document
 * Week 14 (30 Nov - 6 Dec):  
   + Introduction to queuing theory II 
   + Return of the law of large numbers
-  + ICA 2 (projects chosen and assigned), ICA 3 assigned
+  + ICA 2 (projects chosen and assigned)
 * Week 15 (7 Dec - 13 Dec):
 * week 16 (14 Dec - 20 Dec):
+  +  ICA 3 assigned
 
-* week 21: (2021):  ICA 3 due
+* week 23: (2021):  ICA 3 due
 * weak 27: (2021):  ICA 2 due
 
 # Other notes

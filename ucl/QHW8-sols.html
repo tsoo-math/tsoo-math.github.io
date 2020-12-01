@@ -368,18 +368,58 @@ summary {
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-1" class="exercise"><strong>Exercise 1  </strong></span>Let <span class="math inline">\(X\)</span> be an irreducible aperiodic Markov chain on a finite number of states, started at the state <span class="math inline">\(s\)</span>. Show without using any fancy limit theorems, that <span class="math inline">\(\mathbb{E} T &lt; \infty\)</span>, where</p>
+<p><span id="exr:unnamed-chunk-1" class="exercise"><strong>Exercise 1  (Borel-Cantelli)  </strong></span></p>
+<ul>
+<li>Let <span class="math inline">\(P\)</span> be a transition matrix for a Markov chain. Show that if</li>
+</ul>
+<p><span class="math display">\[ \sum_{n =1} ^{\infty} p_{ss}(n) &lt; \infty\]</span>
+then the state <span class="math inline">\(s\)</span> is transient.</p>
+<ul>
+<li>Consider a sequence of coin-flips <span class="math inline">\((X_n)_{n\in \mathbb{Z}^+}\)</span> where <span class="math inline">\(p_n = \frac{1}{n^2}\)</span> and <span class="math inline">\(\mathbb{P}(X_n = 1) = p_n\)</span>. Show that there is a <em>random</em> time <span class="math inline">\(N\)</span> such that <span class="math inline">\(\mathbb{P}(N &lt; \infty) =1\)</span> and for all <span class="math inline">\(n &gt; N\)</span>, we have <span class="math inline">\(X_n =0\)</span>.<br />
+</li>
+</ul>
+</div>
+
+<p><br></p>
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> </p>
+<p>We just have to recall what infinitely often means and observe that if something does not occur infinitely often, it <strong>stops</strong> happening!</p>
+<ul>
+<li><p>Let <span class="math inline">\(X\)</span> be a Markov chain with transition matrix <span class="math inline">\(P\)</span>; assume that <span class="math inline">\(X\)</span> is started at the state <span class="math inline">\(s\)</span>. Let
+<span class="math inline">\(A_n =\{ X_n = s\}\)</span>. Then applying the first Borel-Cantelli lemma to the sequence of sets <span class="math inline">\(A_n\)</span>, we obtain the desired result.</p></li>
+<li><p>Let <span class="math inline">\(A_n = \{ X_n=1 \}\)</span>. Again, the result is immediate from the first Borel-Cantelli lemma.</p>
+</div></li>
+</ul>
+<p><br></p>
+
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 2  </strong></span>Let <span class="math inline">\(X\)</span> be an irreducible aperiodic Markov chain on a finite number of states, started at the state <span class="math inline">\(s\)</span>. Show without using any fancy limit theorems, that <span class="math inline">\(\mathbb{E} T &lt; \infty\)</span>, where</p>
 <span class="math display">\[T = \inf\{ n \geq 1:  X_n =s\}.\]</span>
 </div>
 
+<hr>
+
+<div class="solution">
+ <span class="solution"><em>Solution. </em></span> We go back to basics. If <span class="math inline">\(P\)</span> is the transition matrix, then by the assumptions of irreducibility and aperiodicity, we know that <span class="math inline">\(P^M\)</span> has all positive entries for some <span class="math inline">\(M&gt;0\)</span>; let <span class="math inline">\(\delta &gt;0\)</span> be the smallest entry. Hence every <span class="math inline">\(M\)</span> steps, we have a non-zero probability <span class="math inline">\(\delta &gt;0\)</span> of getting to the state <span class="math inline">\(s\)</span>. Thus
+<span class="math display">\[ \mathbb{P}(T &gt; kM) \leq (1- \delta)^k\]</span>
+from which we easily deduce that <span class="math inline">\(T\)</span> has finite expectation.
+</div>
+
+<p><br></p>
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-2" class="exercise"><strong>Exercise 2  </strong></span>Let <span class="math inline">\(N\)</span> be a Poisson process on <span class="math inline">\([0, \infty)\)</span>. Fix <span class="math inline">\(T &gt;0\)</span>. Show that <span class="math inline">\(R(t) = N(T-t)\)</span> is a Poisson process on <span class="math inline">\([0, T]\)</span>. Hint: appeal to appropriate construction of Poisson processes.</p>
+<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 3  </strong></span>Let <span class="math inline">\(N\)</span> be a Poisson process on <span class="math inline">\([0, \infty)\)</span>. Fix <span class="math inline">\(T &gt;0\)</span>. Show that <span class="math inline">\(R(t) = N(T-t)\)</span> is a Poisson process on <span class="math inline">\([0, T]\)</span>. Hint: appeal to appropriate construction of Poisson processes.</p>
+</div>
+
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> We use the construction of Poisson processes are uniform random variables. Suppose we are dealing with a Poisson process of intensity <span class="math inline">\(\lambda\)</span>. Specifically, we divide <span class="math inline">\([0, \infty)\)</span> into intervals of length <span class="math inline">\(T\)</span>, where we independently place a Poisson number, with mean <span class="math inline">\(T \lambda\)</span>, of independent random variables that are uniformly distributed in the interval of length <span class="math inline">\(T\)</span>. There is no real notation of direction in this construction; moreover if <span class="math inline">\(U\)</span> is uniformly distributed in <span class="math inline">\([0, T]\)</span>, then <span class="math inline">\(T-U\)</span> is still uniformly distributed in <span class="math inline">\([0,T]\)</span>. Thus the desired reversibility is obvious.</p>
 </div>
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-3" class="exercise"><strong>Exercise 3  </strong></span><strong>By brute force</strong>, show that for a <span class="math inline">\(M(\lambda)/M(\mu)/1\)</span> queue that is started with at stationarity, so that the number of items in the system at time any time <span class="math inline">\(t\)</span> has distribution</p>
+<p><span id="exr:unnamed-chunk-7" class="exercise"><strong>Exercise 4  </strong></span><strong>By brute force</strong>, show that for a <span class="math inline">\(M(\lambda)/M(\mu)/1\)</span> queue that is started with at stationarity, so that the number of items in the system at time any time <span class="math inline">\(t\)</span> has distribution</p>
 <p><span class="math display">\[\mathbb{P}(Q(t) = n) = \rho^n(1-\rho)\]</span></p>
 <p>has the property that an arrival waits time <span class="math inline">\(W\)</span> until being served, where <span class="math inline">\(W\)</span> has law</p>
 <p><span class="math display">\[ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}.\]</span></p>
@@ -403,15 +443,47 @@ summary {
 
 
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-5" class="exercise"><strong>Exercise 4  </strong></span>We say that a continuous-time Markov chain with generator-(Q matrix) <span class="math inline">\(G\)</span> is <strong>reversible</strong> with respect to the probability measure <span class="math inline">\(\pi\)</span> if</p>
+<p><span id="exr:unnamed-chunk-9" class="exercise"><strong>Exercise 5  </strong></span>We say that a continuous-time Markov chain with generator-(Q matrix) <span class="math inline">\(G\)</span> is <strong>reversible</strong> with respect to the probability measure <span class="math inline">\(\pi\)</span> if</p>
 <p><span class="math display">\[ \pi_i g_{ij} = \pi_j g_{ji}\]</span></p>
 <p>for all states <span class="math inline">\(i,j\)</span>.</p>
 <ul>
 <li><p>Show that <span class="math inline">\(\pi\)</span> must be stationary.</p></li>
-<li><p>Show the the continuous-time Markov chain corresponding to a M/M/1 queue is reversible with respect to its stationary distribution.</p>
+<li><p>Show the the continuous-time Markov chain corresponding to a <span class="math inline">\(M(\lambda)/M(\mu)/1\)</span> queue is reversible with respect to its stationary distribution.</p>
 </div></li>
-<li><p>Version: 30 November 2020</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl/QHW8-sols.Rmd">Rmd Source</a></p></li>
+</ul>
+
+<div class="solution">
+<p> <span class="solution"><em>Solution. </em></span> </p>
+<ul>
+<li><p>We recall that the rows of a <span class="math inline">\(Q\)</span> matrix are cooked up to sum to zero. Hence,
+<span class="math display">\[(\pi G)_k =  \sum_i \pi_i g_{ik} = \pi_k\sum_i  g_{ki} = \pi_k \cdot 0 = 0\]</span></p></li>
+<li><p>We recall that
+<span class="math display">\[\pi_i = \rho^i(1-\rho)\]</span>
+<span class="math display">\[ g(n, n+1) = \lambda  \text{ and }  g(n, n-1) = \mu  \text{  for } n \geq 1\]</span>
+<span class="math display">\[ g(0, 1)= \lambda.\]</span></p></li>
+</ul>
+<p>Hence we easily verify that for <span class="math inline">\(n \geq 1\)</span>, we have</p>
+<p><span class="math display">\[ \pi_n g(n,n+1) =  \rho^n(1-\rho) \lambda\]</span>
+and
+<span class="math display">\[ \pi_{n+1} g(n+1,n ) =  \rho^{n+1}(1-\rho) \mu.\]</span>
+Thus recalling that <span class="math inline">\(\rho = \lambda/\mu\)</span>, we obtain the equality
+<span class="math display">\[ \pi_n g(n, n+1 ) = \pi_{n+1} g(n+1, n).\]</span>
+Similarly,
+<span class="math display">\[ \pi_n g(n, n-1 ) = \pi_{n-1} g(n-1, n).\]</span>
+For the case <span class="math inline">\(n=0\)</span>, we have</p>
+<p><span class="math display">\[\pi_0g(0,1) = (1- \rho)\lambda\]</span>
+and
+<span class="math display">\[ \pi_1g(1,0) = (1- \rho)\rho \mu\]</span>
+so that
+<span class="math display">\[ \pi_0 g(0,1) = \pi_1 g(1,0).\]</span></p>
+Thus we have verified the reversibility conditions.
+</div>
+
+<hr>
+<hr>
+<ul>
+<li>Version: 01 December 2020</li>
+<li><a href="https://tsoo-math.github.io/ucl/QHW8-sols.Rmd">Rmd Source</a></li>
 </ul>
 
 

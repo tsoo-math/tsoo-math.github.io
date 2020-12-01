@@ -16,8 +16,37 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+```{exercise, name="Borel-Cantelli"}
 
-```{exercise}
+
+*  Let $P$ be a transition matrix for a Markov chain.  Show that if 
+
+$$ \sum_{n =1} ^{\infty} p_{ss}(n) < \infty$$
+  then the state $s$ is transient.
+
+*  Consider a sequence of  coin-flips $(X_n)_{n\in \mathbb{Z}^+}$ where $p_n = \frac{1}{n^2}$ and $\mathbb{P}(X_n = 1) = p_n$.    Show that there is a *random* time $N$ such that $\mathbb{P}(N < \infty) =1$ and for all $n > N$, we have $X_n =0$.  
+
+```
+
+<br>
+
+```{solution}
+
+
+We just have to recall what infinitely often means and observe that if something does not occur infinitely often, it **stops** happening!
+
+*  Let $X$ be a Markov chain with transition matrix $P$; assume that $X$ is started at the state $s$.  Let 
+$A_n =\{ X_n = s\}$.   Then applying the first Borel-Cantelli lemma to the sequence of sets $A_n$, we obtain the desired result.
+
+*  Let $A_n = \{ X_n=1 \}$.  Again, the result is immediate from the first Borel-Cantelli lemma.
+```
+
+
+<br>
+
+
+
+```{exercise} 
 Let $X$  be an irreducible  aperiodic Markov chain on a finite number of states, started at the state $s$.  Show without using any fancy limit theorems, that $\mathbb{E} T < \infty$, where 
 
 $$T = \inf\{ n \geq 1:  X_n =s\}.$$
@@ -25,13 +54,28 @@ $$T = \inf\{ n \geq 1:  X_n =s\}.$$
 ```
 
 
+<hr>
 
+```{solution}
+We go back to basics.  If $P$ is the transition matrix, then by the assumptions of irreducibility and aperiodicity, we know that $P^M$ has all positive entries for some $M>0$; let $\delta >0$ be the smallest entry.  Hence every $M$ steps, we have a non-zero probability $\delta >0$ of getting to the state $s$.  Thus 
+$$ \mathbb{P}(T > kM) \leq (1- \delta)^k$$
+  from which we easily deduce that $T$ has finite expectation.  
+```
+
+
+<br>
 
 ```{exercise}
 Let $N$ be a Poisson process on $[0, \infty)$.  Fix $T >0$.  Show that $R(t) = N(T-t)$ is a Poisson process on $[0, T]$.   Hint:  appeal to appropriate construction of Poisson processes.
 
 ```
 
+
+
+```{solution}
+We use the construction of Poisson processes are uniform random variables.  Suppose we are dealing with a Poisson process of intensity $\lambda$.    Specifically, we  divide $[0, \infty)$ into intervals of length $T$, where we independently place a Poisson number, with mean $T \lambda$, of independent random variables that are uniformly distributed in the interval of length $T$.   There is no real notation of direction in this construction; moreover if $U$ is uniformly distributed in $[0, T]$, then $T-U$ is still uniformly distributed in $[0,T]$.  Thus the desired reversibility is obvious.  
+
+```
 
 
 
@@ -77,9 +121,44 @@ for all states $i,j$.
 
 *  Show that $\pi$ must be stationary.
 
-*  Show the the continuous-time Markov chain corresponding to a M/M/1 queue is reversible with respect to its stationary distribution.
+*  Show the the continuous-time Markov chain corresponding to a $M(\lambda)/M(\mu)/1$ queue is reversible with respect to its stationary distribution.
 ```
 
+```{solution}
+
+
+*  We recall that the rows of a $Q$ matrix are cooked up to sum to zero.  Hence, 
+$$(\pi G)_k =  \sum_i \pi_i g_{ik} = \pi_k\sum_i  g_{ki} = \pi_k \cdot 0 = 0$$ 
+  
+  
+*    We recall that 
+$$\pi_i = \rho^i(1-\rho)$$
+  $$ g(n, n+1) = \lambda  \text{ and }  g(n, n-1) = \mu  \text{  for } n \geq 1$$
+  $$ g(0, 1)= \lambda.$$
+  
+Hence we easily verify that for $n \geq 1$, we have
+
+$$ \pi_n g(n,n+1) =  \rho^n(1-\rho) \lambda$$
+  and
+$$ \pi_{n+1} g(n+1,n ) =  \rho^{n+1}(1-\rho) \mu.$$
+  Thus recalling that $\rho = \lambda/\mu$, we obtain the equality
+$$ \pi_n g(n, n+1 ) = \pi_{n+1} g(n+1, n).$$
+  Similarly, 
+$$ \pi_n g(n, n-1 ) = \pi_{n-1} g(n-1, n).$$
+For the case $n=0$, we have
+
+$$\pi_0g(0,1) = (1- \rho)\lambda$$
+  and
+$$ \pi_1g(1,0) = (1- \rho)\rho \mu$$
+so that
+$$ \pi_0 g(0,1) = \pi_1 g(1,0).$$
+
+Thus we have verified the reversibility conditions.   
+```
+
+
+<hr>
+<hr>
 
 
 
