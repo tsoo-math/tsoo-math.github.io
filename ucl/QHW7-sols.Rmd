@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{exercise}
-Use the alternating renewal theorem to show that under mild conditions, we have that the probability that the number of arrrival in the interval $[0,t]$ goes to $1/2$ as $t \to \infty$.  Why do we need mild conditions?  Why do we need $t \to \infty$.    
+Use the alternating renewal theorem to show that under mild conditions, we have that the probability that the number of arrrival in the interval $[0,t]$ is even  goes to $1/2$ as $t \to \infty$.  Why do we need mild conditions?  Why do we need $t \to \infty$.    
 ```
 
 <br>
@@ -26,12 +26,12 @@ Use the alternating renewal theorem to show that under mild conditions, we have 
 
 
 
-*  We can not expect the limit to converge to $1/2$ if we have a lattice type distribution.  In particular, imagine the case where the inter-arrival times are deterministic and occur at integer times; in the case we know exactly when it wil be even or odd.  In general, even we also know near the beginning there are no arrivals, so it will more likely be even; thus we need to consider large $t$.  
+*  We can not expect the limit to converge to $1/2$ if we have a lattice type distribution.  In particular, imagine the case where the inter-arrival times are deterministic and occur at integer times; in the case we know exactly when it will be even or odd.  In general, even we also know near the beginning there are no arrivals, so it will more likely be even; thus we need to consider large $t$.  
 
 
 
 
-*  If we envision the inter-arrival times as an alternating process, where the working time has the same distribution as the service time, we are are interesting when the machine is working, and this limit goes to $1/2$ by the alternating renewal theorem 
+*  If we envision the inter-arrival times as an alternating process, where the working time has the same distribution as the service time, we are are interested when the machine is working, and this limit goes to $1/2$ by the alternating renewal theorem 
 
 ```
 

@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{exercise}
-Use the alternating renewal theorem to show that under mild conditions, we have that the probability that the number of arrrivals for renewal process in the interval $[0,t]$ goes to $1/2$ as $t \to \infty$.  Why do we need mild conditions?  Why do we need $t \to \infty$.    
+Use the alternating renewal theorem to show that under mild conditions, we have that the probability that the number of arrrivals for renewal process in the interval $[0,t]$ is even  goes to $1/2$ as $t \to \infty$.  Why do we need mild conditions?  Why do we need $t \to \infty$.    
 ```
 
 <br>
