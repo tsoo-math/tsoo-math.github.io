@@ -3120,12 +3120,12 @@ slide:not(.current) .plotly.html-widget{
 <ul>
 <li><p>\(Q(t)\) the number of items in the system at time \(t\)</p></li>
 <li><p>\(\rho = \lambda/\mu\) is the traffic intensity</p></li>
-<li><p>\(Q\) is a continuous-time Markov chain, with generator \(G\) given by \[G(n, n-1) = \mu   \text{ for all $n \geq 1$} \] and \[G(n, n+1) - \lambda  \text{ for all $n \geq 0$ }\]</p></li>
+<li><p>\(Q\) is a continuous-time Markov chain, with generator \(G\) given by \[G(n, n-1) = \mu   \text{ for all $n \geq 1$} \] and \[G(n, n+1) = \lambda  \text{ for all $n \geq 0$ }\]</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Theorem: stationary distribution</h2></hgroup><article  id="theorem-stationary-distribution">
 
-<p>If \(\rho &lt;0\), then as \(t \to \infty\) \[ \mathbb{P}(Q(t) = n) \to  (1- \rho)\rho^n = \pi_n,\] were \(\pi\) is the stationary distribution.</p>
+<p>If \(\rho &lt;1\), then as \(t \to \infty\) \[ \mathbb{P}(Q(t) = n) \to  (1- \rho)\rho^n = \pi_n,\] were \(\pi\) is the stationary distribution.</p>
 
 <ul>
 <li>Solving \(\pi G = \mathbf{0}\), we obtain for \(n \geq 1\)</li>
@@ -3211,7 +3211,7 @@ slide:not(.current) .plotly.html-widget{
 <li><p>We applied Burke’s theorem to two M/M/1 queues in series.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Version: 29 November 2020</h2></hgroup><article  id="version-29-november-2020">
+</article></slide><slide class=""><hgroup><h2>Version: 04 December 2020</h2></hgroup><article  id="version-04-december-2020">
 
 <ul>
 <li><a href='https://tsoo-math.github.io/ucl/intro-queuestwo.Rmd' title=''>Rmd Source</a></li>

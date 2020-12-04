@@ -18,13 +18,13 @@ knitr::opts_chunk$set(echo = TRUE)
 *  $Q$ is a continuous-time Markov chain, with generator $G$ given by 
 $$G(n, n-1) = \mu   \text{ for all $n \geq 1$} $$
 and
-$$G(n, n+1) - \lambda  \text{ for all $n \geq 0$ }$$
+$$G(n, n+1) = \lambda  \text{ for all $n \geq 0$ }$$
 
 
 ## Theorem: stationary distribution
 
 
-If $\rho <0$, then as $t \to \infty$
+If $\rho <1$, then as $t \to \infty$
 $$ \mathbb{P}(Q(t) = n) \to  (1- \rho)\rho^n = \pi_n,$$
 were $\pi$ is the stationary distribution.
 
