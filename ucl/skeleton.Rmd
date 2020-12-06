@@ -68,6 +68,10 @@ These are a subset of the links that are available on the main Moodle page for o
 *   [The return of the law of large numbers](https://tsoo-math.github.io/ucl/borel.html)
 
 
+*   [Introduction to the probabilistic method](https://tsoo-math.github.io/ucl/randomone.html)
+
+*   [Introduction to random graphs](https://tsoo-math.github.io/ucl/randomtwo.html)
+
 
 <br>
 

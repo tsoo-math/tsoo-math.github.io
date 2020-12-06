@@ -1,0 +1,226 @@
+---
+title: "Introduction to random graphs"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+\newcommand{\e}{\varepsilon}
+\newcommand\ns[1]{ \left\{ {#1} \right\} }
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\F}{{\mathcal F}}
+\renewcommand{\P}{{\mathbb P}}  
+\newcommand{\E}{{\mathbb E}} 
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+#  Connectivity of Erdos-Renyi graphs
+
+Let $G_n \sim \mathcal{G}(n,p_n)$.  We want to study the connectivity of $G_n$, as $n \to \infty$.  It turns out that if $p$ is fixed the problems are not as interesting and we will consider $p_n \to 0$.    Recall that a graph is **connected** if for every two vertices $v, u$ there exists a sequence $v=v_0, v_1, \ldots, v_n = u$ such that $\ns{v_i, v_{i+1}}$  is an edge.    A vertex $v$ is **isolated** if it has no neighbours. 
+
+
+```{lemma}
+Fix $p \in (0,1)$.  If $G_n \sim \mathcal{G}(n,p)$, then 
+$$\mathbb{P}(G_n \text{ is connected} ) \to 1$$
+
+as $n \to \infty$.
+```
+<hr>
+
+```{proof}
+Let $G_n \sim \mathcal{G}(n,p)$.  Let $u, v$ be vertices.  Let $T_n^{u,v}$ be the number of vertices out of the remaining $n-2$, that are adjacent to *both* $u$ and $v$.  Then 
+$$T_n = \sum_w X_w$$
+  where $X_w =1$ if $w$ is adjacent to both $u$ and $v$ and $X_w=0$ otherwise.
+Clearly, 
+$$\mathbb{P}(T_n = 0) = (1-p^2)^{n-2} \to 0.$$
+```
+
+We can strengthen this result as follows.  
+
+```{lemma}
+Let $G_n \sim \mathcal{G}(n,p)$.  Let $X_n$ be the number of pairs of vertices that do not have a common neighbour. Then
+$$ \P(X_n =0) \to 1$$
+```
+
+```{proof}
+We have
+$$X_n = \sum \mathbf{1}[T_n^{u,v} =0],$$
+  so that
+\begin{eqnarray*}
+ \E X_n &=& \sum \E T_n^{u,v} \\
+&=& \sum \P(T_n^{u,v} =0) \\
+&=& {n \choose 2} (1-p^2)^{n-2} \to 0
+\end{eqnarray*}
+Since Markov's inequality gives
+$$ \P(X_n \geq 1) \leq \E X_n$$
+we deduce that $\P(X_n =0) \to 1$, as desired.
+
+```
+
+The use of Markov's inequality above is sometimes referred to as a **first moment method**.
+
+```{theorem, name="Erdos-Renyi connectivity"}
+Let $c \in \R$.  Let $p_n = (\log n)/n + c/n$.    Let $G_n \sim \mathcal{G}(n,p_n)$.  Then  
+$$ \mathbb{P}(G_n \text{ is connected} ) \to e^{-e^{-c}}.$$
+  Moreover, if $X_n$ is the number of isolated points in $G_n$, then it converges in distribution to a Poisson random variable.
+
+```
+
+In order to prove the Erdos-Renyi connectivity theorem, we will need to make use the following fact.
+```{lemma, name="Poisson approximation"}
+Let $W_n = \sum_{i=1} ^n X_i$, where $X_i$ are possibly dependent Bernouli random variables all with parameter $p_n$.  Suppose that $n p_n \to \lambda$. 
+Let $$F^r = \sum \E (X_{n_1}\cdots X_{n_r}),$$ where the sum is taken over all ${n \choose r}$ distinct choices.  If
+$$F^r \to \lambda^r/r!$$
+  then $W_n$ converges in distribution to a Poisson random variables with mean $\lambda$.  
+```
+<br>
+ 
+
+We will not prove this lemma.  Note that $F^1 = \E W_n$ and  in the simple case that the $X_i$ are independent, where we know the lemma holds,  we have that 
+$$F^r = p_n^r {n \choose r} = \frac{n(n-1) \cdots (n-r+1) p_n^r}{r!} \to \lambda^r/r!.$$  
+
+
+
+```{proof, name=" Sketch proof of Erdos-Renyi connectivity"}
+Let $G_n \sim \mathcal{G}(n,p_n)$.  For each vertex $v$, let $X_v = \mathbf{1}[\text{v is isolated}]$ and 
+$$ W_n = \sum X_v.$$
+  Note that for $n$ large, $p_n$ is small, so that from the power series for $\log(1-x)$  we have 
+Then   
+$$\log \Big( ne^{-c}\E (W_n) \Big)  = 0$$
+  so that
+$$ \E (W_n) \sim e^{-c} /n$$ 
+
+  Given $r$ distinct vertices, $v_1, \ldots, v_r$, we can easily compute that 
+\begin{eqnarray*}
+\E [X_{v_1} \cdots X_{v_n}] &=& \P( \text{ all the vertices $v_1, \ldots, v_r$ are isolated} )\\
+&=& (1-p_n)^{ r(n-1) - {r \choose 2}}.
+\end{eqnarray*}
+Hence
+$${n \choose r}  (1-p_n)^{ r(n-1) - {r \choose 2}} \to \frac{(e^{-c})^r}{r!}.$$
+
+  Thus the number of isolated vertices converges to a Poisson random variable with mean $e^{-c}$.    Now we need to make an argument that in the limit, if  there are no isolated vertics, then the graph is connected, which is of course not true for graphs in general.
+```
+
+<br>
+  
+  
+With this theorem in hand, it  is not hard to believe that if $p_n =  \lambda \frac{\log n}{n}$, and if $\lambda >1$, then in the limit, the Erdos-Renyi random graph will certainly  be connected, and if $\lambda < 1$, then it will have isolated vertics and will not be connected.  
+
+
+
+#  Simulations
+
+
+One might ask how we can simulate a Erdos-Renyi random graph.  While R  has many fancy packages that will do this for us, and probably more efficiently, let us play with it ourselves.   Let us assume that a graph has vertices $V = \ns{1, \ldots, n}$  Given a graph $G = (V, E)$, we say that the **adjacency matrix** is given the zero-one matrix, where $a_{ij} = 1$ if $\ns{i, j} \in E$ and $a_{ij} = 0$ otherwise.  The adjacency matrix contains all the information about the graph; notice that is symmetric, and we do not allow for self-loops.  Thus an realization of an Erdos-Renyi random graph is just the simulation of ${n \choose 2}$ Bernoulli random variables.
+
+```{r}
+er <-function(x){
+n = x[1]
+p = x[2]
+
+A = matrix(0, n,n)
+
+for(i in 1:(n-1)){
+
+x= replicate(i, 0)
+
+A[i,] <- c(x, rbinom(n-i, 1, p))
+
+}
+A <- A + t(A)
+A
+}
+
+
+```
+
+
+One way to check if a graph is connected, is to start at a vertex, say $1$,  and explore the graph, and see if you reach all the vertices.  
+
+```{r}
+explore <- function(G){
+n = dim(G)[1]
+  bag =  which(G[1,]!=0)
+storage <- bag
+L  = length(storage)
+while(L > 0 & length(bag)<n ){
+level <-storage
+  storage<-NULL
+  oldbag <-bag
+  for( i in 1:L){ 
+  storage <- c( storage, which(G[level[i],  ]!=0  ))
+  bag <- c(bag, storage)
+  bag <- bag[!duplicated(bag)]
+  L<- length(storage)
+}
+if(length(oldbag)==length(bag)){L<-0}
+  }
+sum( length(bag)==n)
+}  
+
+```
+Now we can test one of claimed conjectures:  
+
+```{r}
+n=35
+p= 0.5 * log(n) / n
+
+x=replicate( 75, explore( er(c(n, p ) ))  )
+
+mean(x)
+
+n=35
+p= 1.5 * log(n) / n
+
+x=replicate( 75, explore( er(c(n, p ) ))  )
+
+mean(x)
+
+```
+
+# Further reading
+
+
+
+
+* [Ten lectures on the probabilistic method](https://epubs.siam.org/doi/book/10.1137/1.9781611970074), Joel Spencer
+
+*  [Graph theory](http://diestel-graph-theory.com/), Reinhard Diestel
+
+
+Erdos-Renyi random graphs may not be a good model for many social networks that you may be interested in.  For more information see this [link](https://www.nature.com/articles/30918).
+
+
+
+# Summary
+
+* We discussed the connectivity of Erdos-Renyi random graphs
+
+
+<hr> 
+
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/randomtwo.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+

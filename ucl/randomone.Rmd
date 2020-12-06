@@ -1,0 +1,124 @@
+---
+title: "Introduction to the probabilistic method"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+\newcommand{\e}{\varepsilon}
+\newcommand\ns[1]{ \left\{ {#1} \right\} }
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\F}{{\mathcal F}}
+\renewcommand{\P}{{\mathbb P}}  
+\newcommand{\E}{{\mathbb E}} 
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Introduction
+
+Probability   theory can used to give nonconstructive existence proofs.     When we study a class of objects,  we are often interested in proving that within that class of objects there is one with a certain special property.   One way to prove that such an object exists is to endow the class of objects with some probability measure and then prove that one that is chosen randomly according to this law has the required property with nonzero probability.   
+
+  We give an example of this method.     Consider the (greedy) base ten decimal expansion of a real number $x$ in the unit interval given by
+  $$ x = 0.x_1x_2 \cdots = \sum_{i=1} ^\infty \frac{x_i}{10^i}.$$  
+We say that $x$ is **normal** in base $10$ if for every $d \in \ns{0, 1, \ldots, 9}$, we have
+$$ f_d^n(x)  =  \frac{\sum_{i=1} ^n \mathbf{1}[x_i = d]}{n}  \to \frac{1}{10}.$$   If we let $(X_i)_{i=1}^{\infty}$ be a sequence of i.i.d.\ random variables that are uniformly distributed on $\ns{0, 1, \ldots, 9}$, and consider the random number given by
+$$X = 0.X_1 X_2 \cdots$$
+then by the law of large numbers gives that  $f_d^n(X) \to 1/10$ almost surely for every $d$.     Thus if we choose a random number according to the law of $X$, we are certain to obtain a normal number.  
+
+Although it is not too difficult to write down explicit normal numbers in certain bases, it is a difficult  problem to write down number that is normal in every base $b \geq 1$; such numbers are **absolutely normal**.    It is not hard to see that if $X$ is uniformly distributed in the unit interval, then  almost surely it is absolutely normal.
+
+It is an open problem to determine whether numbers such as $\pi$ and $\sqrt{2}$ are normal (in any base).  
+
+
+# Ramsey numbers and union bounds
+
+In elementary analysis,  a fundamental theorem of Bolzano states that every sequence of real numbers has a monotone subsequence.  One interpretation of this fact is that in a disordered system one can always find a subsystem that is ordered.    We will investigate this concept in graph theory.
+
+
+Recall that a **graph** is a pair $G= (V, E)$, where $V$ is a set of **vertices** and $E$ is a (possibly empty) set of   two element subsets of $V$ called (undirected) **edges**.   Two vertices $x,y$ are **adjacent** if $\ns{x,y} \in E$; adjacent vertices are sometimes called **neighbours**.      We say that $G$ is **complete** if all the vertices are adjacent.      We say that a graph  $H$ is a **subgraph** of $G$ its vertices and edges are subsets of those in $G$.   The subgraph $G[V'] = (V', E')$ **induced** be a subset vertices $V' \subseteq V$ is the graph given by taking $E'$ to be the set of all edges in $E$ that have both vertices in $V'$.    A subset of vertices $C \subseteq V$ is a **clique**  if the subgraph induced by $C$ is complete.  A subset of vertices is **independent** if no two are adjacent.  Note here that independence is different from our usual notation of *stochastic* independence.   The clique and independence **numbers** of a graph $G$ are denoted by $\omega(G)$ and $\alpha(G)$, where $\omega(G)$ is the number of vertices in a clique with the most vertices, and $\alpha(G)$ is the number of vertices in an independent set with  the most vertices.   
+
+
+
+Let $r,s \in \Z^{+}$.  Let $R(s,r)$ be the smallest integer  such that every graph with $R(s,r)$ number of vertices has a clique with $s$ vertices or an independent set with $r$ vertices.  Ramsey proved that $R$ is well-defined, since it might have been the case that  no such integer satisfied this property.      Another way of defining $R(s,r)$ to say that it is smallest integer such every two-coloring of the edges of the complete graph on $R(s,r)$ vertices has a clique of red or blue edges; this description has the obvious extension to the case of three or more colors.
+
+```{lemma, name="Party lemma"} 
+$R(3,3) =6$
+  ```
+<br>
+
+Ramsey's proof that $R$ is well-defined gives an upper bound on $R(k) := R(k,k)$
+
+```{theorem, name="Ramsey"}
+For every integer $k$, we have
+$$R(k) \leq 2^{2k-3}.$$
+```
+
+```{theorem, name="Erdos"}
+For every integer $k \geq 3$,
+$$ R(k) > 2^{k/2}.$$
+```
+
+We write  $G \sim \mathcal{G}(n,p)$, if $G$ is random a graph on $n$ vertices, where two distinct  vertices are adjacent with probability $p$   independently of the other pairs.  This model of random graphs are often referred to as Erdos-Renyi random graphs.  
+
+
+
+```{proof, name="Erdos lower bound"}
+By the party lemma, we may assume that $k \geq 4$, so that $k! > 2^k$.     Let $n \leq 2^{k/2}$.   Let $G  \sim \mathcal{G}(n,p=\tfrac{1}{2})$.   Note that $\alpha(G)$ is a random variables, since $G$ is random.    Observe that for any $\ell \leq n$, we have
+$$ \ns{  \alpha(G) \geq \ell } = \bigcup_{ A \subset V, |A| = \ell} \ns{A \text{ is an independent set in } G}.$$  For a fixed set $A$, clearly
+$$ \P(\ns{A \text{ is an independent set in } G}) = (1-p)^{\ell \choose 2}.$$
+   Thus an easy union bound gives
+$$ \P (\alpha(G) \geq \ell) \leq {n \choose \ell} (1-p)^{\ell \choose 2}.$$
+The dual result also holds
+  $$ \P (\omega(G) \geq \ell) \leq {n \choose \ell} p^{\ell \choose 2}.$$
+For $\ell =k$ and $p = \tfrac{1}{2}$, we have
+$$\P(\omega(G) \geq k) = \P (\alpha(G) \geq k) \leq  \frac{ (2^{k/2}) ^k}{k!} \big(\frac{1}{2}\big)^{k(k-1)/2}\leq \frac{2^{k/2}}{2^k} < \frac{1}{2}.$$
+Hence
+$$ \P( \omega(G) \geq k \text { or } \alpha(G) \geq k) < 1,$$
+so that the randomly selected graph $G$ has a nonzero probability of being a witness to the claimed lower bound.  
+```
+
+
+
+
+
+# Further reading
+
+
+
+* [Ten lectures on the probabilistic method](https://epubs.siam.org/doi/book/10.1137/1.9781611970074), Joel Spencer
+
+*  [Graph theory](http://diestel-graph-theory.com/), Reinhard Diestel
+
+
+# Summary
+
+*  We illustrated the probabilistic method by showing the instance of normal numbers and giving a lower bound on the diagonal Ramsey number. 
+
+<hr> 
+
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/randomone.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
