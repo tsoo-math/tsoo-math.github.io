@@ -24,6 +24,7 @@ output: html_document
   + Return of the law of large numbers
   + ICA 2 (projects chosen and assigned)
 * Week 15 (7 Dec - 13 Dec):
+  + Introduction to the probabilistic method and random graphs
 * week 16 (14 Dec - 20 Dec):
   +  ICA 3 assigned
 
