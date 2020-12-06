@@ -127,16 +127,25 @@ $$ \psi(t) = 1- F(t+y) +  (\psi*F)(t).$$
 $$ \psi(t) = 1- F(t+y) + \int_0 ^t [1-F(t+y-x)] dm(x)$$
   and rearranging gives the desired result.
 
-*  Since $0 \leq 1- F \leq 1$ is non-increasing and
+*  For each fixed $y$, we will apply the key renewal theorem on the function 
+$$k_y(x) = 1- F(x+y).$$
 
-$$ \int_0 ^{\infty} [1-F(x)] dx = \mathbb{E}X_1 = \mu < \infty,$$
+Since $0 \leq 1- F \leq 1$ is non-increasing and
 
-the key renewal theorem gives that 
+\begin{eqnarray*}
+ \int_0 ^{\infty} k_y(x)dx &=& \int_0 ^{\infty} [1-F(x+y)] dx \\
+&=&  \mu - \int_0 ^y [1-F(x)] dx \\
+  &\leq&  \mathbb{E}X_1 = \mu < \infty,
+\end{eqnarray*}
 
-$$ \lim_{t \to \infty} \int_0 ^t [1-F(t+y-x)] dm(x)  = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx,$$
+the key renewal theorem applies, and gives that 
+
+\begin{eqnarray*}
+ \lim_{t \to \infty} \int_0 ^t [1-F(t+y-x)] dm(x)  &=& \frac{1}{\mu} \int_0 ^{\infty} [1-F(x+y)]dx\\
+&=&  \frac{1}{\mu} \Big( \mu - \int_0 ^y [1-F(x)] dx \Big).
+\end{eqnarray*}
   
-  
-  from which the desired conclusion follows.  
+Now, remember, [mind your surroundings](https://www.youtube.com/watch?v=Uk280jVuH1w), and we still owe the universe a *one minus*,  so the desired conclusion follows.  
   
 
 ```

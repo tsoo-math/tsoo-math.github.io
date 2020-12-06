@@ -468,12 +468,21 @@ as desired.</p>
 <p><span class="math display">\[ \psi(t) = 1- F(t+y) + \int_0 ^t [1-F(t+y-x)] dm(x)\]</span>
 and rearranging gives the desired result.</p>
 <ul>
-<li>Since <span class="math inline">\(0 \leq 1- F \leq 1\)</span> is non-increasing and</li>
+<li>For each fixed <span class="math inline">\(y\)</span>, we will apply the key renewal theorem on the function
+<span class="math display">\[k_y(x) = 1- F(x+y).\]</span></li>
 </ul>
-<p><span class="math display">\[ \int_0 ^{\infty} [1-F(x)] dx = \mathbb{E}X_1 = \mu &lt; \infty,\]</span></p>
-<p>the key renewal theorem gives that</p>
-<p><span class="math display">\[ \lim_{t \to \infty} \int_0 ^t [1-F(t+y-x)] dm(x)  = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx,\]</span></p>
-<p>from which the desired conclusion follows.</p>
+<p>Since <span class="math inline">\(0 \leq 1- F \leq 1\)</span> is non-increasing and</p>
+<p><span class="math display">\[\begin{eqnarray*}
+ \int_0 ^{\infty} k_y(x)dx &amp;=&amp; \int_0 ^{\infty} [1-F(x+y)] dx \\
+&amp;=&amp;  \mu - \int_0 ^y [1-F(x)] dx \\
+  &amp;\leq&amp;  \mathbb{E}X_1 = \mu &lt; \infty,
+\end{eqnarray*}\]</span></p>
+<p>the key renewal theorem applies, and gives that</p>
+<p><span class="math display">\[\begin{eqnarray*}
+ \lim_{t \to \infty} \int_0 ^t [1-F(t+y-x)] dm(x)  &amp;=&amp; \frac{1}{\mu} \int_0 ^{\infty} [1-F(x+y)]dx\\
+&amp;=&amp;  \frac{1}{\mu} \Big( \mu - \int_0 ^y [1-F(x)] dx \Big).
+\end{eqnarray*}\]</span></p>
+<p>Now, remember, <a href="https://www.youtube.com/watch?v=Uk280jVuH1w">mind your surroundings</a>, and we still owe the universe a <em>one minus</em>, so the desired conclusion follows.</p>
 </div>
 
 
@@ -508,13 +517,13 @@ and rearranging gives the desired result.</p>
 <pre class="r"><code>y = replicate(1000, tile(111))
 
 mean(y)</code></pre>
-<pre><code>## [1] 0.691</code></pre>
+<pre><code>## [1] 0.688</code></pre>
 <p>You might guess that this probability is:</p>
 <pre class="r"><code>pi/(pi + sqrt(2))</code></pre>
 <pre><code>## [1] 0.68958</code></pre>
 <p><br></p>
 <ul>
-<li>Version: 23 November 2020</li>
+<li>Version: 06 December 2020</li>
 <li><a href="https://tsoo-math.github.io/ucl/QHW6.1-sols.Rmd">Rmd Source</a></li>
 </ul>
 
