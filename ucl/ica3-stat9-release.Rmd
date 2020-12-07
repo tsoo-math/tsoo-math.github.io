@@ -175,7 +175,7 @@ It is permissible to review your previous module  notes on mle estimation.  [3 p
 
 
 #  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ica3-stat9-release.Rmd)
+  * [Rmd Source](https://tsoo-math.github.io/ucl/ica3-stat9-release.Rmd)
 
 
 
