@@ -1,0 +1,186 @@
+---
+title: "Stat0009 (2020) ICA 3"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Introduction
+
+* Made available 7 December.
+* Due UCL Week 23, 3 February 2021, 13:00 London Time.
+* This ICA consists of six questions for a total of $70$ points.
+* This ICA is worth 30 percent of your grade for this module.
+* Some questions will require you to write and run R code.
+* The ICA must be completed in R and typeset using R Markdown with Latex code, just like the way our module content is generated.
+* Please hand in the html file and the Rmd source file.
+* As usual, part of the grading will depend on the clarity and presentation of your solutions.
+*  Please do in groups of 3-4.
+*  UCL regulations state the you must have completely different groups for ICA2 and ICA3.
+*  You are to do this assignment within your declared groups, without any help from others.
+*  You are allowed to use any materials and code that was presented so far.
+*  Do not search the internet for answers to the ICA.
+*  Do not use any fancy code or packages imported from elsewhere.
+
+
+
+
+#  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** We are aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. We have read the guidelines in the student handbook and understand what constitutes plagiarism. We hereby affirm that the work we are submitting for this in-course assessment is entirely our own.
+
+
+
+# Anonymous Marking 
+
+Please do **not** write your names anywhere on the submission. Please include only your **student numbers** as the proxy identifier.
+
+
+
+# 1.)   It's your birthday. [10 points]
+
+You might recall a  proof that when there are only twenty-three people in a room, then with probability almost $1/2$, the room contains two people with  the same birth*day*,  under the assumptions that there are $365$ days in a year, and birthdays throughout the year are equally distributed, and the birthdays of the occupants of the room are independent.  
+
+Under these similar assumptions, let $p(n)$ be the probability that in a room of $n$ people that there are three people people that share the same birthday.  By running simulations:
+
+*  Plot an approximate  graph of $p(n)$.  [8 points]  
+
+*  Find $n$ such that $p(n) \approx 1/2$.  [2 points]
+
+
+
+
+
+
+
+# 2.)  Pretending $\pi$ has random digits and data processing. [10 points]
+
+*  Find or generate a million or so digits of $\pi$.  See for example you may use this [link](http://newton.ex.ac.uk/research/qsystems/collabs/pi/pi6.txt).  Here it is okay to use the internet to find basic importation functions or use fancy formulas for the digits of $\pi$.   [2 points]
+
+*  Process your digits so that they are in groups of $10$, so that you can pretend each group of $10$ is realization of a number that is uniformly distributed in $[0,1]$.  You might need to take special care of groups beginning with $0$.  [2 points]
+
+*  Put everything into a single vector, where the first entry contains the number $0.1415926535$. [2 points]
+
+*   Plot of histogram to check if they appear uniformly distributed. [2 points]
+
+*  Find the mean and variance of the *data* to make sure the data has been imported properly. [2 points]
+
+
+
+
+
+
+
+# 3.)  Using $\pi$ for continuous-time Markov chains. [20 points]
+
+
+Consider the continuous-time Markov chain $X$ with three state $\{1,2,3\}$ with $Q$ matrix given by
+
+
+
+```{r}
+Q <- matrix(c(-5,2,3, 2,-3,1, 2,6,-8), nrow =3)
+Q = t(Q)
+Q
+```
+
+*  Use linear algebra and R to find the stationary distribution $\lambda$.  You may need to import a package.   [2 points]
+
+*  Write code, which uses **only** the *randomization* provided by the digits of $\pi$  so that you obtain the state of the chain at time $t$, starting at a state $i$.  [14 points]
+
+*   For $t=35$, and starting at state $3$,  by running a large number of simulation, find the average number of times the Markov chain is in each of the states at time $t$.  You may find that you may need to be more economical, given the number of digits of $\pi$ that were imported.  [2 points]
+
+
+*  Discuss your results, as it relates to the theory you learned, and the randomization obtained from $\pi$. [2 points]  
+
+
+In your coding, you may need a mechanism  to keep track of which bits of the randomness from $\pi$ have already been used; in order to facilitate this, you may need a function to be able to change the value of a variable that exists globally outside definitions of functions;  the following example illustrates how to accomplish this:
+
+```{r}
+counterr =0
+
+example <- function(t){
+counterr <<- counterr +1
+
+t+5
+}
+
+example(1)
+example(10)
+counterr
+```
+
+
+
+
+
+# 4.)   Response time in M/M/1 queue.  [10 points]
+
+Consider a $M(\lambda) / M(\mu) /1$ queue, where $\lambda < \mu$ and the queue is started at stationarity so that the number of items in the system at any time $t$, has the same distribution.  Consider an arrival at some time $t$.  
+
+*   Show that the total time it spends in the system is exponential with rate $\mu - \lambda$, by using the *brute force* exercise in [HW8](https://tsoo-math.github.io/ucl/QHW8-sols.html).   [8 points]
+
+*   Show that this is consistent with Little's law.  [2 points]
+
+
+
+
+
+
+
+
+# 5.)  Queues in series. [10 points]
+
+Suppose that customers arrive at a queue  with independent exponential service times of rate $2$, and when they depart, they enter another queue also with independent exponential service times, but at rate $5$.   Assume that the customers enter the first queue arrive as a Poisson process of rate $1$.   Let $Q_1(t)$ and $Q_2(t)$ be the number of customers in the respective queues at time $t$.  Verify by simulations that the stationary distribution for $(Q_1, Q_2)$ is given  by a  *product* of geometric distributions.  
+
+
+
+
+
+# 6.)   Estimating the transition matrix for a Markov chain.  [10 points]
+
+Let $X$ be an irreducible and aperiodic matrix on a finite number of states $S$.  For each $a, s \in S$, let 
+
+$$N_{as}^n = \sum_{i=0} ^n   \mathbf{1}[X_i=a, X_{i+1} =s].$$
+
+
+*  Using a version of the law of large numbers that you conjectured in [HW 3](https://tsoo-math.github.io/ucl/QHW3-sols.html), argue  that 
+
+$$T_{n} =  \frac{N_{ab} ^n}{  \sum_{s \in S}  N_{as}^n }$$ gives a sequence of  consistent estimators for $p_{ab}$.  [5 points] 
+
+
+*  Is $T_n$ unbiased?  If not, what additional assumptions are needed to ensure that it is?  [2 points]
+
+*  Suppose that you know all the values of the transition matrix, except the values $p_{ab}$ and $p_{ac}$.  Also assume you know that the Markov chain has a starting distribution $\rho$.   Find the maximum likelihood estimate of the values $p_{ab}$ and $p_{ac}$, given a realization 
+$$X=x=(x_0, x_1, \ldots, x_n).$$  
+It is permissible to review your previous module  notes on mle estimation.  [3 points]
+
+
+
+
+
+
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ica3-stat-release.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
