@@ -97,7 +97,7 @@ $$ \pi_0 = 1- \rho$$
 **Theorem** Suppose items enter a $M(\lambda)/M(\mu_1)/1$ queue, then upon exiting report to another queues with exponential service rate $\mu_2$.  If $\lambda < \min(\mu_1, \mu_2)$, then the continuous-time Markov chain $(Q_1, Q_2)$ has stationary distribution given by
 
 $$(m,n) \mapsto \rho_1^m(1-\rho_1) *   \rho_2^n(1-\rho_2)$$
-where $\rho_1 = \mu_1 /\lambda$ and $\rho_2 = \mu_2/\lambda$.  
+where $\rho_1 = \lambda/\mu_1$ and $\rho_2 = \lambda/\mu_2$.  
 
 
 ## Proof

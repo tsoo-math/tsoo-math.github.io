@@ -60,10 +60,13 @@ output: html_document
     +  [Eighth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
     +  We agreed to release ICA 3 later, as discussed in an [email](https://moodle.ucl.ac.uk/blocks/quickmail/message.php?id=74063).  
     +  We discussed HW 7.
-    +  We went [back to basics](https://youtu.be/0Tj8wDy2cfQ) to where it all began and discussed  a [version](https://tsoo-math.github.io/ucl/borel.html) of the strong law of large numbers and proved it using the Borel-Cantelli lemma.
+    +  We went [back to basics](https://youtu.be/0Tj8wDy2cfQ) to where it all began and discussed  a [version](https://tsoo-math.github.io/ucl/borel.html) of the strong law of large numbers and proved it using the Borel-Cantelli lemma.  This meeting was not recorded.
 
 * Week 15 (7 Dec - 13 Dec):
     +  [Ninth meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+    +   We discussed HW8
+    +   We released [ICA3](https://tsoo-math.github.io/ucl/ica3-stat9-release.html) and discussed mechanics of the remaining two ICAs.  This meeting was not recorded.
+
 
 * week 16 (14 Dec - 20 Dec):
     +  [Last meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
