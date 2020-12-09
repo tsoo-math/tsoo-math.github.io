@@ -14260,7 +14260,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="My-first-time">My first time<a class="anchor-link" href="#My-first-time">&#182;</a></h1><p>This is my first time using <a href="https://jupyter.org/">Jupyter</a> and coding in <a href="https://www.python.org/">Python</a>.  Jupyter notebook appears to be a possible alternative to RStudio and allows one to also code in R and other languages.  We can use type text as Markdown and also use Latex.</p>
-<p><strong>Please continue to do your homework anc ICAs and projects in R and Rstudio as we have throughout the term.  Do not submit work in Python or with Jupyter.</strong></p>
+<p><strong>Please continue to do your homework and ICAs and projects in R and Rstudio as we have throughout the term.  Do not submit work in Python or with Jupyter.</strong></p>
 
 </div>
 </div>
@@ -14268,9 +14268,9 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Euler's-method">Euler's method<a class="anchor-link" href="#Euler's-method">&#182;</a></h1><p>Recall that in the movie <a href="https://www.youtube.com/watch?v=v-pbGAts_Fg">Hidden Figures</a>, the <em>ancient</em> method is used to solve an important problem at NASA.</p>
 <p>We are concerned with giving a numerical solution the initial-value problem (IVP) given by
-\begin{equation}
+\begin{equation*}
 y' = f(t,y)  \text{ and }  y(t_0) = y_0.
-\end{equation}</p>
+\end{equation*}</p>
 <p>Suppose we are looking for a  solution $y$ to the IVP.  We know that $y(t_0) = y_0$, but we can also approximate using tangent lines for $t_1$ near $t_0$ so that
 $$ y(t_1)  \approx y_1:=   y(t_0) + y'(t_0) (t_1 - t_0)  =  y_0 +  f(t_0, y_0) (t_1-t_0).$$
 Now, if we want another $t_2$ near $t_1$, we can repeat the same reasoning to obtain
@@ -14483,7 +14483,7 @@ Typically, one might choose a uniform mesh size, $h = y_{i+1} - y_i$, where $h$ 
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The following code will illustrate the concept of what exactly does $90$ percent refer to in a $t$-distribution based confidence interval.  We consider the case, where we have a sample of five independent normal random variables, where <em>both</em> the mean and variance are unknown. With the standard notation, we have  $\alpha=0.1$, $n=5$, and $n-1=4$;  the
 critical value is given by  $t(0.05,4)=2.132$.  Given a random sample $x= (x_1, \ldots, x_5)$,  we know that the confidence interval is given by</p>
-$$ \bar{x} \pm 2.132 \cdot \frac{s(x)}{ \sqrt{5}}.$$<p>The true mean either lies in this interval or not;  once we have given $x$, there is <strong>no</strong> probability involved.  However, if we repeat this experiment many times, roughly $90$ percent of those confidence intervals will contain the true mean.   We will illustrate this by sampling from standard normals, repeatedly, so that $0$ will be contained in $90$ percent of the confidence intervals.</p>
+$$ \bar{x} \pm 2.132 \cdot \frac{s(x)}{ \sqrt{5}}.$$<p>The true mean either lies in this interval or not;  once we are given $x$, in the classical sense,  there is no probability involved.  However, if we repeat this experiment many times, roughly $90$ percent of those confidence intervals will contain the true mean.   We will illustrate this by sampling from standard normals, repeatedly, so that $0$ will be contained in $90$ percent of the confidence intervals.</p>
 <p>The code will illustrate the use a <em>function</em> and a <em>for loop</em>.</p>
 
 </div>
@@ -14531,41 +14531,6 @@ $$ \bar{x} \pm 2.132 \cdot \frac{s(x)}{ \sqrt{5}}.$$<p>The true mean either lies
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>0.895
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[92]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>2020-12-09 15:31:46.855253
 </pre>
 </div>
 </div>

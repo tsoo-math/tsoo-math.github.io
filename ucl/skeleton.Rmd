@@ -72,6 +72,9 @@ These are a subset of the links that are available on the main Moodle page for o
 
 *   [Introduction to random graphs](https://tsoo-math.github.io/ucl/randomtwo.html)
 
+*   [Introduction to maths/stats with Python](https://tsoo-math.github.io/ucl/first.html)
+
+
 
 <br>
 

@@ -25,8 +25,9 @@ output: html_document
   + ICA 2 (projects chosen and assigned)
 * Week 15 (7 Dec - 13 Dec):
   + Introduction to the probabilistic method and random graphs
-* week 16 (14 Dec - 20 Dec):
   +  ICA 3 assigned
+* week 16 (14 Dec - 20 Dec):
+  + Introduction to Python (Please continue to do all your submitted work in R)
 
 * week 23: (2021):  [ICA 3](https://tsoo-math.github.io/ucl/ica3-stat9-release.html) due; 3 February 2021, 13:00 London time
 * we3k 27: (2021):  [ICA 2](https://tsoo-math.github.io/ucl/ICAproject-ideas.html) due; 3 March 2021, 13:00 London time
