@@ -30,7 +30,7 @@ output: html_document
   + Introduction to Python (Please continue to do all your submitted work in R)
 
 * week 23: (2021):  [ICA 3](https://tsoo-math.github.io/ucl/ica3-stat9-release.html) due; 3 February 2021, 13:00 London time
-* we3k 27: (2021):  [ICA 2](https://tsoo-math.github.io/ucl/ICAproject-ideas.html) due; 3 March 2021, 13:00 London time
+* week 27: (2021):  [ICA 2](https://tsoo-math.github.io/ucl/ICAproject-ideas.html) due; 3 March 2021, 13:00 London time
 
 # Other notes
 
