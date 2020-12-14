@@ -27,6 +27,7 @@ output: html_document
   + Introduction to the probabilistic method and random graphs
   +  ICA 3 assigned
 * week 16 (14 Dec - 20 Dec):
+  + [ICA 1 solutions]([ICA 1 solutions](https://tsoo-math.github.io/ucl/ica-stat9.html))
   + Introduction to Python (Please continue to do all your submitted work in R)
   + Shinny apps
 
