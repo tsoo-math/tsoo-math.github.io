@@ -10,6 +10,8 @@ output: html_document
 These are a subset of the links that are available on the main Moodle page for our module.   This is *not* meant to be a replacement for [Moodle](https://moodle.ucl.ac.uk/), but may be useful if you are having trouble accessing Moodle.   In addition, most of html files were generated in R Markdown, and if you are interested in the source file, you can probably access it by changing the extension to *Rmd*.
 
 
+# General links
+
 * [Module Outline](https://tsoo-math.github.io/ucl/link0009.html)
 
 * [Schedule](https://tsoo-math.github.io/ucl/0009diary.html)
@@ -19,6 +21,10 @@ These are a subset of the links that are available on the main Moodle page for o
 * [Homework](https://tsoo-math.github.io/ucl/homework.html)
 
 * [Recorded Lectures on Youtube](https://tsoo-math.github.io/ucl/videosyoutube0009.html)
+
+#  Lecture notes
+
+
 
 * [Introduction to R](https://tsoo-math.github.io/ucl/intro-R.html)
 
@@ -81,7 +87,7 @@ These are a subset of the links that are available on the main Moodle page for o
 *   [Shiny App Source](https://tsoo-math.github.io/ucl/app.R)
 
 
-
+<br>
 <br>
 
 Version: `r format(Sys.time(), '%d %B %Y')`

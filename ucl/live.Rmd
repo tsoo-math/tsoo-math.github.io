@@ -70,6 +70,9 @@ output: html_document
 
 * week 16 (14 Dec - 20 Dec):
     +  [Last meeting Monday 2PM UK time](https://ucl.zoom.us/j/5904204711)
+    +  We discussed the [solutions](https://tsoo-math.github.io/ucl/ica-stat9.html) for ICA1
+    +  We discussed Shiny Apps and introduced the very basics of Python.  This meeting was not recorded.
+    +  [Happy Holidays](https://www.youtube.com/watch?v=mmZBC92pgrE)
 
 <br>
 <br>
