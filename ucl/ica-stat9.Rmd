@@ -269,11 +269,11 @@ We can hope to obtain the standardized normal, by replacing the variance with th
 
 ```{r}
 samplev <- function(){
-  path = steps( c(initial(), 100 )  )
-z=  (sum(path) - 100*mstat)/sd(path)
+  path = steps( c(initial(),400 )  )
+z=  (sum(path) - 400*mstat)/(20*sd(path))
 z  
 }
-y = replicate(1000, mcclt())
+y = replicate(1000, samplev())
 hist(y, prob=TRUE, breaks=30)
 curve(dnorm(x), add=TRUE)
 ```
@@ -327,7 +327,7 @@ mu
 dpois(5, 2 * 1/mu)
 ```
 #  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/ica-stat9.Rmd)
+  * [Rmd Source](https://tsoo-math.github.io/)
 
 
 
