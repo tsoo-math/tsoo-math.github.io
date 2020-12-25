@@ -264,13 +264,19 @@ y = replicate(1000, mcclt())
 hist(y, prob=TRUE, breaks=50)
 ```
 
-We can hope to obtain the standardized normal, by replacing the variance with the *sample* variance.
+We can hope to obtain the standardized normal, by replacing the variance with an estimate for the variance: we can do this separately.  
 
 
 ```{r}
+sumsz=replicate(1000, sum( steps( c(initial(),400 ) ) ) ) 
+sdest= sd(sumsz)    
+                  
+
+
+
 samplev <- function(){
   path = steps( c(initial(),400 )  )
-z=  (sum(path) - 400*mstat)/(20*sd(path))
+z=  (sum(path) - 400*mstat)/(sdest)
 z  
 }
 y = replicate(1000, samplev())
