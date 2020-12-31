@@ -206,6 +206,9 @@ sum(two==3)/1000
 ```
 As expected both averages to be close to $\pi(3)$ by a version of the law of large numbers.
 
+
+Note that the wording of the question in the third part, suggests that we should actually simulate the chain, and count the number of times it is in the state $3$, and repeat this procedure, a large number of times, say $100$, since it says *average number of times* rather than *average time*.  We would end with answers, like $56$ and $57$;  again, the law of large numbers explains why  these two quantities are the same.    
+
 * 
 
 We start the chain at $3$ and simulates until it returns, with a *while* loop. 
