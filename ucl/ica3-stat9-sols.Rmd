@@ -1,0 +1,501 @@
+---
+title: "Stat0009 (2020) ICA 3"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Introduction
+
+* Made available by or during UCL Week 16 (14 December -- 18 December)
+* Due UCL Week 23, 3 February 2021, 13:00 London Time.
+* This ICA consists of six questions for a total of $70$ points.
+* This ICA is worth 30 percent of your grade for this module.
+* Some questions will require you to write and run R code.
+* The ICA must be completed in R and typeset using R Markdown with Latex code, just like the way our module content is generated.
+* Please hand in the html file and the Rmd source file.
+* As usual, part of the grading will depend on the clarity and presentation of your solutions.
+*  You are to do this assignment within your declared groups, without any help from others.
+*  You are allowed to use any materials and code that was presented so far.
+*  Do not search the internet for answers to the ICA.
+*  Do not use any fancy code or packages imported from elsewhere.
+
+
+
+#  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** We are aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. We have read the guidelines in the student handbook and understand what constitutes plagiarism. We hereby affirm that the work we are submitting for this in-course assessment is entirely our own.
+
+
+
+# Anonymous Marking 
+
+Please do **not** write your names anywhere on the submission. Please include only your **student numbers** as the proxy identifier.
+
+
+
+# 1.)   It's your birthday. [10 points]
+
+You might recall a  proof that when there are only twenty-three people in a room, then with probability almost $1/2$, the room contains two people with  the same birth*day*,  under the assumptions that there are $365$ days in a year, and birthdays throughout the year are equally distributed, and the birthdays of the occupants of the room are independent.  
+
+Under these similar assumptions, let $p(n)$ be the probability that in a room of $n$ people that there are three people people that share the same birthday.  By running simulations:
+
+*  Plot an approximate  graph of $p(n)$.  [8 points]  
+
+*  Find $n$ such that $p(n) \approx 1/2$.  [2 points]
+
+## Solution
+
+This is easily accomplished using the sample function.  We also use the sum function to check if a triple match exists and report $1$ if it does and $0$ otherwise.
+
+```{r}
+match <-function(n){
+  x = sample(365,n, replace=TRUE)
+  N=0
+  date=0
+  while(N <3 && date < 366){
+    date <- date+1
+    N = sum(x==date)
+  }
+  sum(N>2)
+  }
+```
+
+We now sample with the *match* function for values of $n$ from $1$ to $388$, and replicate this process for each $n$ 200 times.
+
+```{r}
+prob= c(0,0)
+  for ( n in 3:388){
+    prob <- c(prob, mean(replicate(200, match(n) ) ) )
+  }
+numofpeople = seq(1,388, by=1)
+plot(numofpeople, prob)
+```
+
+Now we run a simple search using the fact that $p(n)$ is monotone, to look for the $n$ gives $p(n) \approx 1/2$. 
+
+```{r}
+probb=0
+argprob=0
+while(probb <0.5){
+  argprob <- argprob +1
+  probb <- prob[argprob]
+}
+
+argprob
+
+```
+
+
+
+
+
+# 2.)  Pretending $\pi$ has random digits and data processing. [10 points]
+
+*  Find or generate a million or so digits of $\pi$.  See for example you may use this [link](http://newton.ex.ac.uk/research/qsystems/collabs/pi/pi6.txt).  Here it is okay to use the internet to find basic importation functions or use fancy formulas for the digits of $\pi$.   [2 points]
+
+*  Process your digits so that they are in groups of $10$, so that you can pretend each group of $10$ is realization of a number that is uniformly distributed in $[0,1]$.  You might need to take special care of groups beginning with $0$.  [2 points]
+
+*  Put everything into a single vector, where the first entry contains the number $0.1415926535$. [2 points]
+
+*   Plot of histogram to check if they appear uniformly distributed. [2 points]
+
+*  Find the mean and variance of the *data* to make sure the data has been imported properly. [2 points]
+
+
+
+
+
+## Solution
+
+We import the suggested text file, and have to delete the NA values where there was an empty line.
+
+```{r}
+x=read.delim("pi6.txt", header=FALSE, sep="")
+z = c(10^{-10}*x[1,1], 10^{-10}*x[1,2], 10^{-10}*x[1,3], 10^{-10}*x[1,4], 10^{-10}*x[1,5])
+for (i in 2:20099){
+     z <- c(z, 10^{-10}*x[i,1], 10^{-10}*x[i,2], 10^{-10}*x[i,3], 10^{-10}*x[i,4], 10^{-10}*x[i,5])
+}
+length(z)
+z[1]
+z[length(z)]
+z <-na.omit(z)
+length(z)
+format(z[1], nsmall=10)
+mean(z)
+var(z)
+hist(z, prob=TRUE)
+```
+
+<hr>
+
+
+# 3.)  Using $\pi$ for continuous-time Markov chains. [20 points]
+
+
+Consider the continuous-time Markov chain $X$ with three state $\{1,2,3\}$ with $Q$ matrix given by
+
+
+
+```{r}
+Q <- matrix(c(-5,2,3, 2,-3,1, 2,6,-8), nrow =3)
+Q = t(Q)
+Q
+```
+
+*  Use linear algebra and R to find the stationary distribution $\lambda$.  You may need to import a package.   [2 points]
+
+*  Write code, which uses **only** the *randomization* provided by the digits of $\pi$  so that you obtain the state of the chain at time $t$, starting at a state $i$.  [14 points]
+
+*   For $t=35$, and starting at state $3$,  by running a large number of simulation, find the average number of times the Markov chain is in each of the states at time $t$.  You may find that you may need to be more economical, given the number of digits of $\pi$ that were imported.  [2 points]
+
+
+*  Discuss your results, as it relates to the theory you learned, and the randomization obtained from $\pi$. [2 points]  
+
+
+In your coding, you may need a mechanism  to keep track of which bits of the randomness from $\pi$ have already been used; in order to facilitate this, you may need a function to be able to change the value of a variable that exists globally outside definitions of functions;  the following example illustrates how to accomplish this:
+
+```{r}
+counterr =0
+
+example <- function(t){
+counterr <<- counterr +1
+
+t+5
+}
+
+example(1)
+example(10)
+counterr
+```
+
+
+## Solution
+
+We have to load a package to do basic linalg, as was done in a previous homework.  
+
+```{r}
+library("pracma")
+Y = t(Q)
+stat=nullspace(Y)
+stat = stat/ sum(stat)
+stat
+```
+
+
+We adapt code from [HW5](https://tsoo-math.github.io/ucl/QHW5-sols.html).  We *delete* any used values of the digits of $\pi$; we also mention that we were not very careful, and wasted some randomness in the clocks portion of the code.
+
+```{r}
+randpi <- z
+
+
+jump <- function(i){
+  q = Q[i,]
+  clocks = c( -log(1- randpi[1] ) / q[1]    , -log(1- randpi[2] ) / q[2], -log(1- randpi[3] ) / q[3]  )
+clocks[i] = Inf
+j=which.min(clocks)
+time = clocks[j]
+randpi <<-randpi[-1]
+randpi <<-randpi[-1]
+randpi <<-randpi[-1]
+c(j,time)
+}
+```
+
+```{r}
+runMC <- function(x){
+  i = x[1]
+  t = x[2]
+  totaltime=0
+  while(totaltime < t){
+    new = jump(i)
+  totaltime = new[2] + totaltime
+  if(totaltime < t ){ i <- new[1] }
+  }
+i
+}
+```
+
+We can find an average with $t=35$, and $n =200$. We also check how much randomness is left. 
+
+```{r}
+y = replicate(200, runMC(c(3,35)))
+av= c( sum(y==1)/200, sum(y==2)/200, sum(y==3)/200)
+av
+length(randpi)
+```
+
+
+The convergence theory says that if we used true randomness then the values of the vector av should be close the stationary distribution stat.  
+
+
+```{r}
+av-stat
+```
+
+
+Hence, we observe that the values of $\pi$ provide sufficient randomization for the convergence theory of Markov chains, at least in this case.  
+
+
+
+# 4.)   Response time in M/M/1 queue.  [10 points]
+
+Consider a $M(\lambda) / M(\mu) /1$ queue, where $\lambda < \mu$ and the queue is started at stationarity so that the number of items in the system at any time $t$, has the same distribution.  Consider an arrival at some time $t$.  
+
+*   Show that the total time it spends in the system is exponential with rate $\mu - \lambda$, by using the *brute force* exercise in [HW8](https://tsoo-math.github.io/ucl/QHW8-sols.html).   [8 points]
+
+*   Show that this is consistent with Little's law.  [2 points]
+
+
+
+## Solution
+
+
+
+We already know from the *brute force* exercise in [HW8](https://tsoo-math.github.io/ucl/QHW8-sols.html) that the time an item waits until finally being serviced is given by $W$ with cumulative distribution function 
+
+$$\mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)},$$
+
+
+where $\rho = \lambda/\mu$.  
+
+After finally reaching queue, the service time $S$ is exponential and independent of $W$, where $S$ is exponential with rate $\mu$.   Thus it suffice to compute the density for $Z=W+S$.  This is routine, except for the atom at $W=0$.  We have
+
+$$ \mathbb{P}(Z \leq z, W=0) + \mathbb{P}(Z \leq z, W >0)= A(z) + B(z)$$
+so that the case $W=0$ can be handled separately.  
+
+We have by convolution that
+$$
+\begin{eqnarray*}
+B'(z) &=& \int_0 ^ z \mu e^{ - \mu x} \rho (\mu- \lambda )e^{-(\mu - \lambda) (z-x)} dx \\
+&=&   (\mu - \lambda) e^{-z(\mu - \lambda)} \int_0 ^z \lambda   e^{-x \lambda} dx \\
+&=&   (\mu - \lambda) e^{-z(\mu - \lambda)} \big(1- e^{-\lambda z} )  \\
+&=&   (\mu - \lambda) e^{-z(\mu - \lambda)} - (\mu - \lambda) e^{-z\mu}.
+\end{eqnarray*}
+$$
+
+Clearly, 
+
+$$ A(z) = \mathbb{P}(S \leq x) \mathbb{P}(W=0) = [1-e^{-z\mu}](1- \rho),$$
+
+so that
+
+$$A'(z) = \mu e^{-z\mu}(1- \rho) =  e^{-z\mu}(\mu- \lambda).$$
+
+
+Hence the desired result follows.
+
+
+*   Little's law tells us that $L = \lambda W$, where $\lambda$, where $L$ is the long term average number of items in the system, $W$ is the long term average waiting time (sorry for the clash of notation), and $\lambda$ is the long term average arrival rate.  We know that $\lambda = \lambda$, and we know number of people in the queue is geometric so that the mean is $\rho/(1-\rho)$, thus
+
+$$W = \frac{\mu^{-1}}{(1- \rho)} = \frac{1}{\mu - \lambda}$$
+which is exactly the mean of the computed exponential distribution above.
+
+
+
+# 5.)  Queues in series. [10 points]
+
+Suppose that customers arrive at a queue  with independent exponential service times of rate $2$, and when they depart, they enter another queue also with independent exponential service times, but at rate $5$.   Assume that the customers enter the first queue arrive as a Poisson process of rate $1$.   Let $Q_1(t)$ and $Q_2(t)$ be the number of customers in the respective queues at time $t$.  Verify by simulations that the stationary distribution for $(Q_1, Q_2)$ is given  by a  *product* of geometric distributions.  
+
+
+## Solution 
+
+We begin by modifying the code we had in [HW 7](https://tsoo-math.github.io/ucl/QHW7-sols.html) that was for a single M/M/1 queue.    We note that by time $t$, if an item has not left the first queue, it will not have entered the second queue. 
+
+
+```{r}
+num <-function(t){
+  inter = rexp(1,1)
+  arr = inter
+  
+
+  
+  while(t > arr[length(arr)]){
+    inter <-c(inter, rexp(1,1))
+    arr <- cumsum(inter)
+}
+  
+  L = length(inter)
+  service = rexp(L, 2)
+  
+    
+ output <- arr[1] + service[1]
+for (i in 1:(L-1) ) {
+if (arr[i+1] < output[i]){output <- c(output, output[i] + service[i+1])}
+if (arr[i+1] > output[i]){output <- c(output, arr[i+1] + service[i+1])}
+}   
+output <- output[-L]
+
+
+
+arr2 = output[output <t]
+L2=length(arr2)
+service2 = rexp(L,5)
+
+output2 <- arr2[1] + service2[1]
+
+for (i in 1:(L2-1) ) {
+if (arr2[i+1] < output2[i]){output2 <- c(output2, output2[i] + service2[i+1])}
+if (arr2[i+1] > output2[i]){output2 <- c(output2, arr2[i+1] + service2[i+1])}
+}   
+
+
+
+
+
+n1=sum(output >t)
+n2=sum(output2 >t)
+
+c(n1, n2)
+}
+```
+
+
+
+We check on time $t=600$, a thousand times.  
+
+
+```{r}
+x= replicate(1000, num(600))
+x1 = x[1,]
+x2 = x[2,]
+b1 = seq(-1,max(x1)+1, by=1)
+b2 = seq(-1,max(x2)+1, by=1)
+hist(x1, prob=TRUE, breaks=b1)
+hist(x2, prob=TRUE, breaks=b2)
+```
+
+We run various tests, marginally.
+
+```{r}
+
+p1=1-1/2
+p2 = 1-1/5
+
+mean(x1) - (  (1-p1)/p1 )
+testt1= c(sum(x1==0)/1000 - dgeom(0,p1),sum(x1==1)/1000 - dgeom(1,p1)
+         ,sum(x1==2)/1000 - dgeom(2,p1),sum(x1==3)/1000 - dgeom(3,p1),
+sum(x1==4)/1000 - dgeom(4,p1))
+
+mean(x2) - (  (1-p2)/p2 )
+testt2= c(sum(x2==0)/1000 - dgeom(0,p2),sum(x2==1)/1000 - dgeom(1,p2)
+         ,sum(x2==2)/1000 - dgeom(2,p2),sum(x2==3)/1000 - dgeom(3,p2),
+sum(x2==4)/1000 - dgeom(4,p2))
+
+
+testt1
+testt2
+```
+
+Finally, we check the product structure.
+
+```{r}
+
+
+productc <-function(j){
+  a=j[1]
+  b=j[2]
+  
+num=0
+for (i in 1:1000){
+if (x1[i]==a && x2[i]==b){
+num <- num+1}
+}
+
+num/1000 - dgeom(a,p1)*dgeom(b,p2)
+  }
+
+errors = c( productc(c(0,0)),productc(c(0,1)),productc(c(0,2)),productc(c(1,0)),productc(c(2,0)),productc(c(3,0)),
+productc(c(2,2)),productc(c(1,1)),productc(c(2,3)),productc(c(2,4)) )
+
+errors
+
+
+
+```
+
+
+# 6.)   Estimating the transition matrix for a Markov chain.  [10 points]
+
+Let $X$ be an irreducible and aperiodic matrix on a finite number of states $S$.  For each $a, s \in S$, let 
+
+$$N_{as}^n = \sum_{i=0} ^n   \mathbf{1}[X_i=a, X_{i+1} =s].$$
+
+
+*  Using a version of the law of large numbers that you conjectured in [HW 3](https://tsoo-math.github.io/ucl/QHW3-sols.html), argue  that 
+
+$$T_{n} =  \frac{N_{ab} ^n}{  \sum_{s \in S}  N_{as}^n }$$ gives a sequence of  consistent estimators for $p_{ab}$.  [5 points] 
+
+
+*  Is $T_n$ unbiased?  If not, what additional assumptions are needed to ensure that it is?  [2 points]
+
+*  Suppose that you know all the values of the transition matrix, except the values $p_{ab}$ and $p_{ac}$.  Also assume you know that the Markov chain has a starting distribution $\rho$.   Find the maximum likelihood estimate of the values $p_{ab}$ and $p_{ac}$, given a realization 
+$$X=x=(x_0, x_1, \ldots, x_n).$$  
+It is permissible to review your previous module  notes on mle estimation.  [3 points]
+
+
+## Solution
+
+
+*  We conjectured, but did not prove that $$N_{ab} ^n/n \to \pi_a p_{ab};$$ assuming this fact, and using the finite  state assumption, we have  
+$$   \sum_{s \in S}  N_{as}^n/n \to \sum_{s \in S} \pi_a p_{as} = \pi_a.$$
+Hence it follows that the ratio in question converges to $p_{ab}$.
+
+*   Not graded, as it is more technical than I intended.
+
+
+*  The value $v := p_{ab} + p_{ac}$ is known by assumption.  Thus we are left with a one-dimesional optimization problem; set $\theta = p_{ab}$, so that $p_{ac} = v - \theta$.    Let $\rho$ be the starting distribution for $X$.  The likelihood is given by
+
+$$L(\theta; x) =  \rho_{x_0} \prod_{i=0} ^{n} p_{x_i x_{i+1}}$$
+
+and
+
+$$\ell(\theta) =  \log(\rho_0) + \sum_{i=0} ^n \log(p_{x_i x_{i+1}}).$$
+
+Thus the only terms that are non-constant with respect to $\theta$ are terms that  contain $p_{ab}=\theta$ and $p_{ac}=v - \theta$; specifically,
+
+$$\ell'(\theta) = \frac{N_{ab} ^n}{\theta} -  \frac{N_{ac} ^n}{v-\theta}.$$
+
+Setting $\ell'(\theta) =0$, we obtain that the estimates
+
+$$ \hat{p}_{ab} =   \frac{vN_{ab}^n}{N_{ab}^n + N_{ac}^n  }$$
+
+
+and
+
+
+$$ \hat{p}_{ac} =   \frac{vN_{ac}^n}{N_{ab}^n + N_{ac}^n  }.$$
+
+Note that in the case that both $N_{ab} = 0 = N_{ac}$, the mle is clearly 
+
+$$\hat{p}_{ab}=  \hat{p}_{ac}= 0.$$
+
+
+
+
+
+
+
+#  Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/ica3-stat9-sols.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+

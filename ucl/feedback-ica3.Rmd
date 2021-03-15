@@ -1,0 +1,60 @@
+---
+title: "ICA3-feedback"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1
+
+*  Most groups had no problems with this question
+*  In some cases,instructions were not followed and simulations were not made, but a direct calculation was attempted.
+*  Sometimes the question was misinterpreted, despite the posted clarification. 
+
+## Question 2
+
+*  Most groups had no problems with this question
+*  Sometimes instructions were ignored.
+
+## Question 3
+
+*  This question was in general well-understood.
+*  Some groups used R's randomization despite explicit instructions not too!
+*  There was an explicit warning about running out of randomization, but some groups chose to re-use the randomization, sometimes without warning!  
+
+
+## Question 4
+
+*  Most groups understood this question, and had no real issues.
+*  Several groups did not follow instructions and did use the brute force result as required.
+*  One can often pretend in their heads that $\mathbb{P}(X=x)$ is the same as the density for a continuous random variable, and it is not without danger, but one should not write this an exam script.
+
+
+## Question 5
+
+* On the whole, most groups understood this question.
+
+* Some groups did not really run a simulation of the queues together, but ran them separtely; this is not a true simulation of the queue as items enter the first, exit the first and enter the second.
+
+*  The independence should be checked.
+
+* I may have introduced buggy code, in some previous examples,  for dealing with R's buggy dealing of histograms for discrete distribution.  No one lost points if they used my buggy code for discrete histograms here. 
+
+
+## Question 6
+
+*  When taking limits as $n\to \infty$, the final answer should no longer have a $n$ in it.
+
+*  Part b) was not graded as it was a bit more technical than I intended.
+
+*  Several submissions did not  properly make use of the fact that in the mle was really a one-dimensional problem.
+
+<br>
+<br>
+
+
+
+
+
