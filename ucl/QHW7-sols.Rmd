@@ -83,7 +83,7 @@ n
 ```{r}
 num(323)
 x = replicate(1000, num(323))
-b = seq(-1,max(x)+1, by=0.5)
+b = seq(-1,max(x)+1, by=1)
 hist(x, prob=TRUE, breaks=b)
 ```
 
