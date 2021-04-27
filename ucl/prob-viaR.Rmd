@@ -1,9 +1,9 @@
 ---
 title: "Basic probabilty and statistics via R"
 output:
-  bookdown::html_document2: default
   bookdown::pdf_document2:
     keep_tex: yes
+  bookdown::html_document2: default
   bookdown::word_document2:
     toc: yes
   pdf_document:
@@ -72,7 +72,7 @@ $$\mathbb{P} (| X_n - X| > \epsilon) \leq  \epsilon^{-2} \mathbb{E} | X_n -X|^2 
 ```
 <br>
 ```{exercise}
-Let $g: [0,1] \to \mathbb{R}$ be a continuous function.  Let $(X_i)_{i \in \mathbb{Z}^{+]}}$ be independent random variables that are uniformly distributed on the interval $[0,1]$.  Show that
+Let $g: [0,1] \to \mathbb{R}$ be a continuous function.  Let $(X_i)_{i \in \mathbb{Z}^{+}}$ be independent random variables that are uniformly distributed on the interval $[0,1]$.  Show that
 $$ \frac{1}{n}\sum_{i=1} ^ n g(X_i) \to \int_0 ^1 g(x) dx.$$
 ```
 <br>

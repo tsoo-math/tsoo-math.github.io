@@ -1,0 +1,337 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Basic probabilty and statistics via R},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Basic probabilty and statistics via R}
+\author{}
+\date{\vspace{-2.5em}}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[section]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{the-law-of-large-numbers}{%
+\section{The law of large numbers}\label{the-law-of-large-numbers}}
+
+We will give a quick review of the law of large numbers and illustrate applications of this theorem via R.
+
+\hypertarget{theory}{%
+\subsection{Theory}\label{theory}}
+
+You may recall that in probability theory, we are given the distribution of a non-negative integer-valued random variable \(X\) and we \emph{define} its \textbf{mean} to be
+
+\[ \mathbb{E} X = \sum_{x\in \mathbb{N}} x \mathbb{P}(X=x).\]
+The justification of the use of the word \emph{mean} or \emph{average} is given by the following theorem. Recall that a countable collection of random variables are \textbf{independent} if every finite subset of them is independent, and they are \textbf{identical} if they have the same distribution. We say that a sequence of random variables \((X_n)_{n \in \mathbb{Z}^+}\) converges \textbf{almost-surely} to a random variable \(X\) if there exists an event \(\Omega'\) with \(\mathbb{P}(\Omega') =1\) such that for every \(\omega \in \Omega'\), we have convergence in the usual pointwise sense: \(X_n(\omega) \to X(\omega)\), as \(n \to \infty\).
+
+\begin{theorem}[Law of large numbers (almost-sure version]
+\protect\hypertarget{thm:unnamed-chunk-1}{}{\label{thm:unnamed-chunk-1} \iffalse (Law of large numbers (almost-sure version) \fi{} } Let \((X_n)_{n \in \mathbb{Z}^{+}}\) be a sequence of independent and identically distributed (i.i.d.) random variables. If \(\mathbb{E} |X_1| < \infty\), then
+\[ n^{-1}(X_1 + \cdots + X_n) \to \mathbb{E} X_1\]
+almost-surely.\\
+\end{theorem}
+
+The almost-sure version of the law of large numbers has a somewhat difficult proof, but to prove convergence in the mean-square and in probability is easy. We say that \(X_n\) converges to \(X\) \textbf{in the mean-squared} if
+\[ \mathbb{E} | X_n - X|^{2} \to 0\]
+and we say that \(X_n\) coverges to \(X\) \textbf{in probability} if for every \(\epsilon >0\), we have
+\[\mathbb{P} ( | X_n - X| > \epsilon) \to 0.\]
+
+\begin{theorem}[Law of large numbers (convergence in mean-squared)]
+\protect\hypertarget{thm:unnamed-chunk-2}{}{\label{thm:unnamed-chunk-2} \iffalse (Law of large numbers (convergence in mean-squared)) \fi{} }Let \((X_n)_{n \in \mathbb{Z}^{+}}\) be a sequence of i.i.d.~random variables. If \(\mathbb{E} |X_1|^2 < \infty\), then
+\[ n^{-1}(X_1 + \cdots + X_n) \to \mathbb{E} X_1\]
+in the mean-squared.
+\end{theorem}
+
+\begin{proof}
+\iffalse{} {Proof. } \fi{}Let \(S_n = X_1 + \cdots + X_n\). Note that \(\mathbb{E} S_n = n \mathbb{E} X_1\). We have\\
+\begin{eqnarray*}
+\mathbb{E} | n^{-1}S_n - \mathbb{E} X_1 |^2 &=&  n^{-2}\mathbb{E} | S_n - n\mathbb{E} X_1 |^2 \\
+&=&  n^{-2}\mathrm{var}(S_n)  \\
+&=&  n^{-2} \sum_{i=1} ^n \mathrm{var}(X_i)  \\
+&=&  n^{-1}  \mathrm{var}(X_1) \to 0, 
+\end{eqnarray*}
+where we need an independence assumption to commute the varaince as a sum or variances.
+\end{proof}
+
+Convergence in probability is an easy consequence of Markov's inequality.
+
+\begin{lemma}[Markov's inequality]
+\protect\hypertarget{lem:unnamed-chunk-4}{}{\label{lem:unnamed-chunk-4} \iffalse (Markov's inequality) \fi{} }Let \(X \geq 0\) be a random variable, then for all \(a \geq 0\), we have
+\[ a^2\mathbb{P} ( X > a ) \leq \mathbb{E} X^2.\]
+\end{lemma}
+\begin{lemma}
+\protect\hypertarget{lem:unnamed-chunk-5}{}{\label{lem:unnamed-chunk-5} }If \(X_n\) converges to \(X\) in the mean-square, then it coverges in probability.
+\end{lemma}
+\begin{proof}
+\iffalse{} {Proof. } \fi{}Let \(\epsilon >0\). Markov's inequality gives
+\[\mathbb{P} (| X_n - X| > \epsilon) \leq  \epsilon^{-2} \mathbb{E} | X_n -X|^2 \to 0.\]
+\end{proof}
+\begin{exercise}
+\protect\hypertarget{exr:unnamed-chunk-7}{}{\label{exr:unnamed-chunk-7} }Let \(g: [0,1] \to \mathbb{R}\) be a continuous function. Let \((X_i)_{i \in \mathbb{Z}^{+}}\) be independent random variables that are uniformly distributed on the interval \([0,1]\). Show that
+\[ \frac{1}{n}\sum_{i=1} ^ n g(X_i) \to \int_0 ^1 g(x) dx.\]
+\end{exercise}
+Recall that if \(T_n\) is a sequence of estimators for a parameter \(\theta\), then we say that \(T_n\) is \textbf{consistent} if \(T_n \to \theta\) in probability.
+
+\begin{exercise}
+\protect\hypertarget{exr:unnamed-chunk-8}{}{\label{exr:unnamed-chunk-8} }Show that the usual sample variance is an consistent estimator for the \emph{true} variance.
+\end{exercise}
+
+\hypertarget{application}{%
+\subsection{Application}\label{application}}
+
+The law of large numbers gives us another way to compute probabilities. If we want to compute say \(p=\mathbb{P}( Z> 1)\), one way to is to consider i.i.d. random variables with the same law as \(Z\), and consider the count
+\[ S_n = \mathbf{1}[X_1 >1] + \cdots + \mathbf{1}[X_n >1],\]
+where \(\mathbf{1}[X_i >1] =1\) if \(X_i >1\) and zero otherwise. Since the \(X_i\) are i.i.d. the Bernoulli random variables \(\mathbf{1}[X_i >1]\) are also i.i.d. and thus the law of large numbers applies\\
+\[ n^{-1} S_n \to p,\]
+and thus the average for large values of \(n\) approximates \(p\).
+
+In R it is possible to simulate random variables, and thus it is possible to approximates probabilities. In short, we can do most of the exercises of elementary probability by simulation.
+
+\begin{exercise}[The hat check problem]
+\protect\hypertarget{exr:unnamed-chunk-9}{}{\label{exr:unnamed-chunk-9} \iffalse (The hat check problem) \fi{} }A professor completely forgets the names and faces of all \(n=20\) students in his class. He randomly hands back their midterms. Let \(p_n\) be the probability that no one receives their own test back. It is known that as \(n \to \infty\) we have \(p_n \to e^{-1}\), and the approximation is quite good for even \(n=20\). Demonstrate this fact with R.\\
+\end{exercise}
+\begin{solution}
+\iffalse{} {Solution. } \fi{}
+Note that with R we can easily generate a random permutation of the 20 papers, as a permuation of 20 numbers. Each random permuation generated by R is considered to be independent. We can check whether a permuation is \emph{in-order} by defining a function \emph{Hand}; we repeat this experiment (10000 times) with the replicate function and keep score.
+\end{solution}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{inorder }\OtherTok{=} \FunctionTok{seq}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{20}\NormalTok{,}\DecValTok{1}\NormalTok{)}
+\NormalTok{Hand }\OtherTok{\textless{}{-}}\ControlFlowTok{function}\NormalTok{()\{}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{20}\NormalTok{,}\DecValTok{20}\NormalTok{, }\AttributeTok{replace=}\NormalTok{F);}
+\FunctionTok{is.element}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, x}\SpecialCharTok{==}\NormalTok{inorder)}
+\NormalTok{\}}
+\NormalTok{r }\OtherTok{\textless{}{-}}\FunctionTok{replicate}\NormalTok{(}\DecValTok{10000}\NormalTok{, }\FunctionTok{Hand}\NormalTok{())}
+\FunctionTok{sum}\NormalTok{(r}\SpecialCharTok{==}\ConstantTok{FALSE}\NormalTok{)}\SpecialCharTok{/}\DecValTok{10000}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3602
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1}\SpecialCharTok{/}\FunctionTok{exp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3678794
+\end{verbatim}
+
+\begin{exercise}[Boxes and balls]
+\protect\hypertarget{exr:unnamed-chunk-12}{}{\label{exr:unnamed-chunk-12} \iffalse (Boxes and balls) \fi{} } A box initially contains \(8\) blue balls and \(4\) red balls. Terry closes his eyes and randomly picks a ball and then follows the following procedure: if it is a blue ball, he puts the blue ball back in, and also adds another blue ball; if it is a red ball, then he removes the red ball from the bin and in addition, removes another red ball. Suppose you did not see what Terry did and close your eyes and pick a ball at random and it is red; then what is the probability that Terry picked a blue ball? Use R.\\
+\end{exercise}
+\begin{solution}
+\iffalse{} {Solution. } \fi{}First, we code one iteration of this procedure, which reports the first ball, and the second ball. We will use Bernoulli random variables, whereby \emph{zero} will mean a blue ball, and \emph{one} will mean a red ball, has been drawn.
+Next, we play the \emph{game} a large number of (independent) times.
+
+We also, store as two separate vectors, the outcome of the first pick, and the second pick. We want to count the number of times the second pick resulted in a red ball, and out of those times, the first pick was a blue ball, and then take the ratio. We write a simple loop to accomplish this.
+\end{solution}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{game }\OtherTok{\textless{}{-}}\ControlFlowTok{function}\NormalTok{() \{}
+\NormalTok{x }\OtherTok{=} \FunctionTok{rbinom}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{, }\DecValTok{4}\SpecialCharTok{/}\DecValTok{12}\NormalTok{);}
+\NormalTok{y }\OtherTok{=} \FunctionTok{rbinom}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{, }\DecValTok{2}\SpecialCharTok{/}\DecValTok{10}\NormalTok{);}
+\ControlFlowTok{if}\NormalTok{ (x}\SpecialCharTok{==}\DecValTok{0}\NormalTok{)}
+\NormalTok{y }\OtherTok{=} \FunctionTok{rbinom}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{, }\DecValTok{4}\SpecialCharTok{/}\DecValTok{13}\NormalTok{);}
+\FunctionTok{c}\NormalTok{(x,y)}
+\NormalTok{\}}
+
+\NormalTok{z }\OtherTok{=} \FunctionTok{replicate}\NormalTok{(}\DecValTok{10000}\NormalTok{, }\FunctionTok{game}\NormalTok{());}
+\NormalTok{F }\OtherTok{=}\NormalTok{ z[}\DecValTok{1}\NormalTok{,]}
+\NormalTok{S }\OtherTok{=}\NormalTok{ z[}\DecValTok{2}\NormalTok{,]}
+
+\NormalTok{br}\OtherTok{=}\DecValTok{0}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{10000}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{ (S[i]}\SpecialCharTok{==}\DecValTok{1} \SpecialCharTok{\&\&}\NormalTok{ F[i]}\SpecialCharTok{==}\DecValTok{0}\NormalTok{)}
+\NormalTok{br }\OtherTok{\textless{}{-}}\NormalTok{ br}\SpecialCharTok{+}\DecValTok{1}
+\NormalTok{br}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2116
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{r}\OtherTok{=}\FunctionTok{sum}\NormalTok{(S}\SpecialCharTok{==}\DecValTok{1}\NormalTok{)}
+\NormalTok{r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2782
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{br}\SpecialCharTok{/}\NormalTok{r}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7606039
+\end{verbatim}
+
+\begin{exercise}[Uniform random variables]
+\protect\hypertarget{exr:unnamed-chunk-15}{}{\label{exr:unnamed-chunk-15} \iffalse (Uniform random variables) \fi{} }Let \((U_i)_{i \in \mathbb{Z} ^+}\) be a sequence of independent random variables that are uniformly distributed in \([0,1]\). Let
+\[S_n = X_1 + \cdots + X_n.\]
+Let \[T = \inf\{n \geq 1:  S_n >1\}\]
+so that \(T\) is the first time the sum is greater than \(1\). Use R to compute \(\mathbb{E} T\). You will not be disappointed.
+\end{exercise}
+\begin{exercise}[Histograms]
+\protect\hypertarget{exr:unnamed-chunk-16}{}{\label{exr:unnamed-chunk-16} \iffalse (Histograms) \fi{} }Carefully explain why plotting a (probability) histogram of some sample data may give an approximation of the probability density function of some random variable.
+\end{exercise}
+
+\begin{exercise}[Integration]
+\protect\hypertarget{exr:unnamed-chunk-17}{}{\label{exr:unnamed-chunk-17} \iffalse (Integration) \fi{} }Let \(f(x) = x^2\). Compute
+\[ \int_0 ^2 f(x)dx\]
+by appealing to the law of large numbers and running R simulations.
+\end{exercise}
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+We reviewed the law of large numbers and gave some proofs of some basic results. We showed how the law of large numbers can be used in conjugation with R to compute or estimate various probabilities arising from elementary probability theory.
+
+\hypertarget{version-27-april-2021}{%
+\section{Version: 27 April 2021}\label{version-27-april-2021}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://tsoo-math.github.io/ucl/prob-viaR.Rmd}{Rmd Source}
+\end{itemize}
+
+\end{document}

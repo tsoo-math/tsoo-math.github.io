@@ -28,12 +28,12 @@ These are a subset of the links that are available on the main Moodle page for o
 
 * [Introduction to R](https://tsoo-math.github.io/ucl/intro-R.html)      [(pdf)](https://tsoo-math.github.io/ucl/intro-R.pdf)
 
-* [Law of Large numbers and R](https://tsoo-math.github.io/ucl/prob-viaR.html)
+* [Law of Large numbers and R](https://tsoo-math.github.io/ucl/prob-viaR.html)   [(pdf)](https://tsoo-math.github.io/ucl/prob-viaR.pdf)
 
 
 * [How reliable are simulations](https://tsoo-math.github.io/ucl/random2d.html)
 
-*  [Random variables: theory and practice](https://tsoo-math.github.io/ucl/randomTP-slides.html)
+*  [Random variables: theory and practice](https://tsoo-math.github.io/ucl/randomTP-slides.html)  [(pdf)](https://tsoo-math.github.io/ucl/randomTP.pdf)
 
 * [Coupling and total variational distance](https://tsoo-math.github.io/ucl/TV.html)
 
