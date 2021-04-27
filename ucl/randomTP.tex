@@ -206,8 +206,9 @@ The \(X_k\) behave like independent random variables that are uniformly distribu
 \hypertarget{box-mueller-for-normal-random-variables}{%
 \section{Box-Mueller for normal random variables}\label{box-mueller-for-normal-random-variables}}
 
-It turns out that the the inverse transform method is often too slow. The \href{https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-29/issue-2/A-Note-on-the-Generation-of-Random-Normal-Deviates/10.1214/aoms/1177706645.full}{Box-Muller method} for generating normal random variables. Ann.~Math. Stat.~ 1958 is a more efficient way generating normal random variables.\\
-* Let \(U\) and \(V\) be independent random variables that uniformly distributed on the unit interval. Set
+It turns out that the the inverse transform method is often too slow. The \href{https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-29/issue-2/A-Note-on-the-Generation-of-Random-Normal-Deviates/10.1214/aoms/1177706645.full}{Box-Muller method} for generating normal random variables. Ann.~Math. Stat.~ 1958 is a more efficient way generating normal random variables.
+
+Let \(U\) and \(V\) be independent random variables that uniformly distributed on the unit interval. Set
 \[X = \sqrt{ -2 \log U} \cos (2 \pi V)\]
 and
 \[Y =     \sqrt{ -2 \log U} \sin (2 \pi V).\]
@@ -224,17 +225,17 @@ is a bijection from \((0,1) \times (0,1)\) to \(\mathbb{R}^2 \setminus \{ (0,0)\
 It has Jacobian is given by
 \[J(x,y) = -\frac{1}{2\pi } e^{-(x^2 + y^2)/2}\]
 Hence the (joint) pdf for \((X,Y)\) is given by
+
 \[(x,y) \mapsto  \Big( \frac{1}{\sqrt{2 \pi} } e^{-x^2/2}  \cdot    \frac{1}{\sqrt{2 \pi}}  e^{-y^2/2} \Big),\]
 
-\begin{verbatim}
 as desired.
-\end{verbatim}
 \end{proof}
 
 \hypertarget{acceptancerejection-methods-sampling-on-a-disc}{%
 \section{Acceptance/Rejection methods: Sampling on a disc}\label{acceptancerejection-methods-sampling-on-a-disc}}
 
-A powerful method of generating random variables, goes back to \href{https://mcnp.lanl.gov/pdf_files/nbs_vonneumann.pdf}{von Neumann}.\\
+A powerful method of generating random variables, goes back to \href{https://mcnp.lanl.gov/pdf_files/nbs_vonneumann.pdf}{von Neumann}.
+
 We simulate a single uniformly distributed point on the disc, by simulating a uniform point on a square, and \emph{accept} it if lands inside an inscribed disc, or \emph{reject} otherwise, and repeat until we have acceptance.
 
 Consider the following function
@@ -301,8 +302,7 @@ The acceptance/rejection method can used to sample from a pdf.
 \hypertarget{proof-of-method}{%
 \subsection{Proof of method}\label{proof-of-method}}
 
-\begin{proof}
-\iffalse{} {Proof. } \fi{}Observe that by the change of variables formula and Fubini, we have
+Observe that by the change of variables formula and Fubini, we have
 \begin{eqnarray*}
  \mathbb{P}(Y \leq x, MU g(Y) \leq f(Y)) 
 &=& \int_{-\infty} ^x \int_0 ^1 \mathbf{1}[Mu g(y) \leq f(y)]g(y)dudy \\
@@ -317,7 +317,6 @@ Thus
 \mathbb{P}(Y \leq x | MU g(Y) \leq f(Y)) = F(x).
 \]
 So, given that we accepted the distribution of \(Y\), is the distribution of \(X\), that random variable we want to sample/simulate.
-\end{proof}
 
 \hypertarget{a-simple-example-with-code}{%
 \subsection{A simple example with code}\label{a-simple-example-with-code}}
@@ -354,7 +353,7 @@ So, given that we accepted the distribution of \(Y\), is the distribution of \(X
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{randomTP_files/figure-latex/unnamed-chunk-6-1.pdf}
+\includegraphics{randomTP_files/figure-latex/unnamed-chunk-5-1.pdf}
 
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
