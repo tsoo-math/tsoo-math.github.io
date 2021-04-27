@@ -26,7 +26,7 @@ These are a subset of the links that are available on the main Moodle page for o
 
 
 
-* [Introduction to R](https://tsoo-math.github.io/ucl/intro-R.html)
+* [Introduction to R](https://tsoo-math.github.io/ucl/intro-R.html)      [(pdf)](https://tsoo-math.github.io/ucl/intro-R.pdf)
 
 * [Law of Large numbers and R](https://tsoo-math.github.io/ucl/prob-viaR.html)
 
