@@ -1,6 +1,8 @@
 ---
 title: "Coupling and total variational distance"
-output: ioslides_presentation
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
 ---
 
 
@@ -96,7 +98,7 @@ exitcoupled<-function(){
   while(june < 5){
     v = coupled()
     june <- june + 2*v[1] -1
-    tessa <- june + 2*v[2] -1
+    tessa <- tessa + 2*v[2] -1
     njune <- 1+njune
     ntessa <- 1 + ntessa}
   while(tessa <5){
