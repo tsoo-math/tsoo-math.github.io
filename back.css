@@ -5,6 +5,19 @@ a:link {
   color: #FFFF00;
 }
 
+
+a:visited {
+  color: #ECE3A1;
+}
+
+a:visited {
+  color: #ccff00;
+}
+
+
+
+FF
+
 body {
   background-image: url('https://tsoo-math.github.io/night.jpg');
   background-repeat: no-repeat;
