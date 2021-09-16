@@ -1,4 +1,4 @@
-.title { color: #FF4500 }
+.title { color: #FFFAFA}
 
 
 a:link {
@@ -7,11 +7,11 @@ a:link {
 
 
 a:visited {
-  color: #E8a317;
+  color: #ECE3A1;
 }
 
 a:hover {
-  color: #ccff00;
+  color: #adff2f;
 }
 
 
