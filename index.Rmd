@@ -9,26 +9,25 @@ css: back.css
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 [Information at UCL Statistical Science](https://www.ucl.ac.uk/statistics/dr-terry-soo)
 
-<hr>
-
-[Research and publications](https://tsoo-math.github.io/m3/research.html)
-
-<hr>
-
-[A photo of me, by modern art, in Jerusalem](https://tsoo-math.github.io/m3/tsrain.jpg)
 
 
-[A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
+* [Research and publications](https://tsoo-math.github.io/m3/research.html)
 
-<hr>
 
-[Probability at UCL](https://sites.google.com/view/probability-at-ucl/home?authuser=0)
 
-<hr>
+* [A photo of me, by modern art, in Jerusalem](https://tsoo-math.github.io/m3/tsrain.jpg)
 
-[Stat 0009, Fall 2021](https://tsoo-math.github.io/ucl/skeleton2021.html)
+
+* [A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
+
+
+
+* [Probability at UCL](https://sites.google.com/view/probability-at-ucl/home?authuser=0)
+
+
+
+* [Stat 0009, Fall 2021](https://tsoo-math.github.io/ucl/skeleton2021.html)
 
 
