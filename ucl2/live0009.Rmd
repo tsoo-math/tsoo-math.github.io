@@ -1,0 +1,44 @@
+---
+title: "Live/In-person session diary 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/cal_term_times_2021_2022.pdf)
+
+
+* Week 6 (4 Oct - 10 Oct):  
+* Week 7 (11 Oct - 17 Oct): 
+* Week 8 (18 Oct - 24 Oct):  
+* Week 9 (25 Oct - 31 Oct):  
+* Week 10 (1 Nov - 7 Nov):   ICA1 assigned
+* Week 11 (8 Nov - 14 Nov):  Reading break
+* Week 12 (15 Nov - 21 Nov): ICA1 due
+* Week 13 (22 Nov - 28 Nov):  
+* Week 14 (29 Nov - 5 Dec):  
+  
+* Week 15 (6 Dec - 12 Dec): ICA2 and ICA3 assigned
+  
+* week 16 (13 Dec - 19 Dec):
+  
+
+* week 23: (31 Jan - 6 Feb;  2022):  ICA3 due
+* week 27: (28 Feb 6 Mar; 2027):  ICA2 due
+
+# Other notes
+
+* First term Monday (27 September 2021 -- Friday 17 December 2021)
+
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>
