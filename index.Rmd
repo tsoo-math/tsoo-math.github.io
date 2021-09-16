@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-* [Stat 0009, Fall 2021](https://tsoo-math.github.io/ucl/skeleton2021.html)
+* [Stat 0009, Fall 2021](https://tsoo-math.github.io/ucl2/skeleton2021.html)
 
 * [Remove background image](https://tsoo-math.github.io/index-noback.html)
 
