@@ -9,7 +9,8 @@ css: back.css
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-[Information at UCL Statistical Science](https://www.ucl.ac.uk/statistics/dr-terry-soo)
+
+*  [My information at UCL Statistical Science](https://www.ucl.ac.uk/statistics/dr-terry-soo)
 
 
 
