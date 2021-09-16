@@ -1,5 +1,10 @@
 .title { color: #D0D0D0 }
 
+
+a:link {
+  color: #0000CD;
+}
+
 body {
   background-image: url('https://tsoo-math.github.io/night.jpg');
   background-repeat: no-repeat;
