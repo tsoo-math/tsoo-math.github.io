@@ -10,27 +10,27 @@ css: back.css
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-*  [My information at UCL Statistical Science](https://www.ucl.ac.uk/statistics/dr-terry-soo)
+* `r emo::ji("school")` [My information at UCL Statistical Science](https://www.ucl.ac.uk/statistics/dr-terry-soo)
 
 
 
-* [Research and publications](https://tsoo-math.github.io/m3/research.html)
+*  `r emo::ji("chart_with_upwards_trend")` [Research and publications](https://tsoo-math.github.io/m3/research.html)
 
 
 
-* [A photo of me, by modern art, in Jerusalem](https://tsoo-math.github.io/m3/tsrain.jpg)
+* `r emo::ji("camera")` [A photo of me, by modern art, in Jerusalem](https://tsoo-math.github.io/m3/tsrain.jpg)
 
 
-* [A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
-
-
-
-* [Probability at UCL](https://sites.google.com/view/probability-at-ucl/home?authuser=0)
+* `r emo::ji("camera")` [A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
 
 
 
-* [Stat 0009, Fall 2021](https://tsoo-math.github.io/ucl2/skeleton2021.html)
+* `r emo::ji("game_die")` [Probability at UCL](https://sites.google.com/view/probability-at-ucl/home?authuser=0)
 
-* [Remove background image](https://tsoo-math.github.io/index-noback.html)
+
+
+* `r emo::ji("teacher")` [Stat 0009, Fall 2021](https://tsoo-math.github.io/ucl2/skeleton2021.html)
+
+* &#x2B58; [Remove background image](https://tsoo-math.github.io/index-noback.html)
 
 
