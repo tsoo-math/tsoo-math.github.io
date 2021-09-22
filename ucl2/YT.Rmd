@@ -1,0 +1,127 @@
+---
+title: YouTube videos
+author: 
+date:  Fall 2021
+output: html_document
+---
+
+# Abstract
+
+The videos made for Stat 0009 will be available on YouTube as well as Moodle.
+
+# Introduction to R
+
+* [1/4](https://youtu.be/Wca7VHwQ_cE)
+* [2/4](https://youtu.be/v0MNnDjDMrM)
+* [3/4](https://youtu.be/So3qZfFavU8)
+* [4/4](https://youtu.be/16N5ZmMyuyM)
+
+
+#  Probability via R 
+
+* [1/4](https://youtu.be/am_TzZu9Dp0)
+* [2/4](https://youtu.be/8lPWEGHjCHw)
+* [3/4](https://youtu.be/8Ql7twLM5bE)
+* [4/4](https://youtu.be/lNl6rayqQ_A)
+
+#  Random variables: theory and practice
+
+* [1/2](https://youtu.be/P_q-673VUQE)
+* [2/2](https://youtu.be/NoJi2rqJI4k)
+
+#  Coupling and total variational distance
+
+* [1/3](https://youtu.be/DNWD7gTKBT8)
+* [2/3](https://youtu.be/wILoCQnhUJ4)
+* [3/3](https://youtu.be/ktpnxFVTGoU)
+
+
+#  Review of Markov chains
+
+*  [1/4](https://youtu.be/J9n_jw8p2U8)
+*  [2/4](https://youtu.be/98ryYhma6S8)
+*  [3/4](https://youtu.be/lIWpSvivKM8)
+*  [4/4](https://youtu.be/Of7w6MQ2y_0)
+
+
+# Making Markov chains converge
+
+*  [1/4](https://youtu.be/JjQ59Ox1PeU) 
+*  [2/4](https://youtu.be/CmLUGaCUDe8)
+*  [2.5/4](https://youtu.be/ZpjB0vU6lZU)  
+*  [3/4](https://youtu.be/oM1ZPVx6cKE)
+*  [4/4](https://youtu.be/Y282zep9Fdc)
+
+
+#  Coupling from the past
+
+*  [1/1](https://youtu.be/-5CuiH9iNFQ)
+
+
+
+#  Poisson processes
+
+*  [1/5](https://youtu.be/vfm0MUAPjrU) 
+*  [2/5](https://youtu.be/q9nCwd2lOOs)
+*  [3/5](https://youtu.be/kRNnssm2uxA)
+*  [4/5](https://youtu.be/o0BHijuwsrY)
+*  [5/5](https://youtu.be/5YLQ5ZM2dj4)
+
+
+#  Continuous-time Markov chains
+
+
+*  [1/5](https://youtu.be/XyFZsqkW3Kg) 
+*  [2/5](https://youtu.be/yhtCy1PtgJo)
+*  [3/5](https://youtu.be/IcPc_LMpQ_c)
+*  [4/5](https://youtu.be/NaZbxNoI-dw)
+*  [5/5](https://youtu.be/nqJZtI8ELeM)
+
+
+
+# Introduction to renewal processes
+
+*  [1/2](https://youtu.be/X2iDldle0XU) 
+*  [2/2](https://youtu.be/vgQ9q-JB7xU)
+
+<br>
+
+*  [1/5](https://youtu.be/tawiVwrFxIQ)
+*  [2/5](https://youtu.be/ET7UAdqIzU4)
+*  [3/5](https://youtu.be/_WDzuwzCEpY)
+*  [4/5](https://youtu.be/UxGZv5_bDuY)
+*  [5/5](https://youtu.be/drwL5dzx1uE)
+
+
+<br>
+
+*  [1/2](https://youtu.be/c1AApfMUGsQ) 
+*  [2/2](https://youtu.be/YF6NKz6Dclw)
+
+
+# Queues
+
+*  [1/3](https://youtu.be/ohb5-aJtgOk) 
+*  [2/3](https://youtu.be/V1wjLKLuIOs)
+*  [3/3](https://youtu.be/-nJ1viaP9ic)
+
+<br>
+
+*  [1/2](https://youtu.be/AmyiKeGlDo0) 
+*  [2/2](https://youtu.be/4qGkG61_U38)
+
+#  Probabilistic method
+
+*  [1/1](https://youtu.be/SPDty9gXCGA)
+
+
+<br>
+<br>
+<br>
+
+
+# Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>
