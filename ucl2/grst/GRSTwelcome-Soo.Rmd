@@ -1,0 +1,74 @@
+---
+title: "Statistical Science"
+subtitle: "Research Students Induction"
+date: "September 2021"
+author: Terry Soo, Graduate Research Students Tutor; t.soo@ucl.ac.uk
+output: ioslides_presentation
+lang: "en-gb"
+---
+
+<!--
+Comments in here.
+-->
+
+##
+
+Welcome!
+
+
+
+My role: personal tutor to all research students
+
+
+
+## The basics
+
+
+
+Meet with supervisor(s)
+
+* in-person and remotely (Zoom)
+* working title, initial objectives, skills, reading, courses
+* interaction with supervisors: how, how often
+
+[DOSSRSH: Department of Statistical Science Research Students Home Moodle page](https://moodle.ucl.ac.uk/course/view.php?id=25287)
+
+Key sources of information: induction, upgrade to PhD, examination ...
+ 
+## UCL requirements
+
+* [UCL research student log](https://researchlog.grad.ucl.ac.uk/): monitoring, useful record
+    + you add working title, goals, expected end date
+    + [progress milestones](https://moodle.ucl.ac.uk/mod/resource/view.php?id=3083448): (0,3,6,12,24,30,36) months  
+* [Upgrade to PhD](https://www.ucl.ac.uk/students/sites/students/files/mphil_phd_upgrade_guidelines.pdf) (from MPhil)
+    + 9-18 months (full-time), 15-30 months (part-time)
+    + report (work plus timetable to PhD), upgrade viva
+* [Transferable skills training](https://web.microsoftstream.com/video/a5c798a5-f3d7-4f3a-81b1-53d48ba23960) ($\geq 20$ points per year)
+    + [Doctoral School courses](https://www.ucl.ac.uk/human-resources/learning-development/learning-and-development-portfolio/researcher-development/doctoral-skills): writing, presenting, IT ...
+    + workshops, languages, teaching, committee work, seminars (attending/giving), conference attendance
+* [Research Integrity](https://www.ucl.ac.uk/research/integrity) Training:  Please do it when requested
+
+## Departmental requirements
+
+* [Departmental Seminars](https://www.ucl.ac.uk/statistics/seminar) (1 skills point per term)
+* 6 month research progress report
+    + research topic, literature review, research plan and tentative timetable
+    + meet to discuss with both/all supervisors
+* Advanced statistical training
+    + (normally) do 4 [LTCC](http://www.ltcc.ac.uk/) courses (or equivalent ...) 
+    + [APTS](http://www2.warwick.ac.uk/fac/sci/statistics/apts/), [NATCOR](http://www.natcor.ac.uk/), audit [MSc courses](https://www.ucl.ac.uk/module-catalogue/?collection=drupal-module-catalogue&facetsort=alpha&num_ranks=20&daat=10000&sort=title), 
+    + discuss with your supervisor(s) now
+    + this is **not** transferable skills training
+
+## Things to do now
+
+* Discuss [LTCC](http://www.ltcc.ac.uk/) (or similar) courses with your supervisor
+* [UCL research student log](https://researchlog.grad.ucl.ac.uk/): add working title, end date
+* [Doctoral School welcome videos (end of page)](https://www.grad.ucl.ac.uk/events/doctoral-school-welcome.html), especially
+    + [What is a research degree at UCL?](https://web.microsoftstream.com/video/d4bbdb54-0a2b-4da3-87d0-d0a0b69333e2)
+    + [Key people, resources and spaces](https://web.microsoftstream.com/video/0dbe3f19-33e9-4bea-8207-201b9ee55287)
+    + [Researcher development at UCL - Doctoral Skills](https://web.microsoftstream.com/video/a5c798a5-f3d7-4f3a-81b1-53d48ba23960)
+
+If you have any questions then please contact me on t.soo@ucl.ac.uk
+
+I am happy to have a Zoom/Teams call or arrange an in-person meeting.
