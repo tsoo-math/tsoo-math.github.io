@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/cal_term_times_2021_2022.pdf)
 
-* Week 4 (20 Sept - 26 Sept):  
+* Week 4 (20 Sept - 26 Sept):  First email
 * Week 5 (27 Sept - 3 Oct):
 * Week 6 (4 Oct - 10 Oct):  
 * Week 7 (11 Oct - 17 Oct): 
