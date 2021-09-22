@@ -1,7 +1,7 @@
 ---
 title: "Statistical Science"
 subtitle: "Research Students Induction"
-date: "September 2021"
+date: "[Available on YouTube](https://youtu.be/NHmmu34_fBc)"
 author: Terry Soo, Graduate Research Students Tutor; t.soo@ucl.ac.uk
 output: ioslides_presentation
 lang: "en-gb"
