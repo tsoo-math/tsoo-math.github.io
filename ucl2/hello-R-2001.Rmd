@@ -1,0 +1,63 @@
+---
+title: "Hello-R"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introduction
+
+Welcome!  I would like to get to you a bit. But first
+
+*  Download/Install [R](https://www.r-project.org/)
+*  Download/Install [R studio](https://rstudio.com/)
+*  Download/Install [R markdown](https://rmarkdown.rstudio.com/)
+*  Install  [R bookdown](https://bookdown.org/yihui/bookdown/get-started.html)
+*  Install [Tinytex](https://yihui.org/tinytex/)
+
+Not only can you type run R code, you can produce html and pdf files with math and R code together!  Roughly speaking R studio is an easy way to use R, and R markdown is a language easily generates html files with R code and math symbols, allowing the use of basic [Latex](https://en.wikibooks.org/wiki/LaTeX/Mathematics) code; it is how I generates many of the html pages for our module.
+
+#  Getting to know you
+
+Please send me an *html* file generated using R markdown with the following information.  It might be helpful to use this R markdown file as a template (see below).
+
+*  Name
+*  What programme/course are you in? BSc/Msc?
+*  What year are you in?
+*  Your favourite math/stats equation, say for example:
+$\sum_{i=1}^n i = \frac{n(n+1)}{2}$ or
+$$ \mathbb{E} g(X) = \int_{-\infty} ^{\infty} g(x) f_X(x) dx$$
+or
+$$ \frac{d}{dx} \int_0 ^x f(u)du = f(x)$$
+*  Why are you taking this module
+*  What skills do you hope to obtain after taking the module?
+*  Have you taken Stat 0007 at UCL?
+*  Have you taken a module elsewhere that dealt with Markov chains?
+*  Have you used R before?
+*  Are you in London?  What time zone are you in?
+*  Do you have a reliable internet connection
+*  Have you used the UCL VPN?
+*  What is your favourite show/movie?  For example: [Condor Heroes](https://www.youtube.com/watch?v=jC1rTOLNGBY) 
+*  What is your favourite song?  For example:  [Delicate](https://www.youtube.com/watch?v=tCXGJQYZ9JA)
+*  Do you have any other concerns?
+
+<br>
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+[R Markdown source](https://tsoo-math.github.io/ucl2/hello-R-2001.Rmd)
+<br>
+<br>
+<br>
+
+
