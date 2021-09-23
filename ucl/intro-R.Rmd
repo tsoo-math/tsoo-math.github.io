@@ -1,13 +1,7 @@
 ---
 title: "Introduction to R"
 output:
-  bookdown::pdf_document2:
-    keep_tex: yes
   bookdown::html_document2: default
-  bookdown::word_document2:
-    toc: yes
-  pdf_document:
-    toc: yes
 ---
 
 
@@ -190,8 +184,9 @@ We introduced some basics of R, and we gave examples programming basics includin
 <br>
 <br>
 
-# Version:  25 September 2020
 
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-R.Rmd)
 
 
 <br>
