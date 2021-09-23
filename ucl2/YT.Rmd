@@ -16,6 +16,8 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 * [3/4](https://youtu.be/So3qZfFavU8)
 * [4/4](https://youtu.be/16N5ZmMyuyM)
 
+* [slides](https://tsoo-math.github.io/ucl/intro-R-slides.html)
+
 
 #  Probability via R 
 
@@ -23,6 +25,8 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 * [2/4](https://youtu.be/8lPWEGHjCHw)
 * [3/4](https://youtu.be/8Ql7twLM5bE)
 * [4/4](https://youtu.be/lNl6rayqQ_A)
+
+* [slides](https://tsoo-math.github.io/ucl/prob-viaR-slides.html)
 
 #  Random variables: theory and practice
 
