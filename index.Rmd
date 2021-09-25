@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-* `r emo::ji("teacher")` [Stat 0009, Fall 2021](https://nbviewer.jupyter.org/urls/tsoo-math.github.io/ucl2/skeleton2021.ipynb/%3Fflush_cache%3Dtrue)
+* `r emo::ji("teacher")` [Stat 0009, Fall 2021](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/skeleton2021.ipynb)
 
 * &#x2B58; [Remove background image](https://tsoo-math.github.io/index-noback.html)
 
