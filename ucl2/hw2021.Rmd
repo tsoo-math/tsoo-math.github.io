@@ -16,7 +16,7 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 
 * Week 6 (4 Oct - 10 Oct):  
   - [Getting started with R](https://tsoo-math.github.io/ucl2/hello-R-2001.html)
-  - [Getting started with Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/hello-p.ipynb/%3Fflush_cache%3DTrue)
+  - [Getting started with Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/hello-p.ipynb/%3Fflush_cache%3Dtrue)
 * Week 7 (11 Oct - 17 Oct): 
 * Week 8 (18 Oct - 24 Oct):  
 * Week 9 (25 Oct - 31 Oct):  
