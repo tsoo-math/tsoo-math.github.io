@@ -7,8 +7,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/cal_term_times_2021_2022.pdf)
+# General information
 
+We will *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded.
+
+
+# By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/cal_term_times_2021_2022.pdf)
 
 * Week 6 (4 Oct - 10 Oct):  
 * Week 7 (11 Oct - 17 Oct): 

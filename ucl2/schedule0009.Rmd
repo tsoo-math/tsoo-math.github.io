@@ -7,6 +7,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# [Live session information](https://tsoo-math.github.io/ucl2/live0009.html)
+
+
 # By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/cal_term_times_2021_2022.pdf)
 
 * Week 4 (20 Sept - 26 Sept):  First email
