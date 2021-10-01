@@ -1,0 +1,51 @@
+---
+title: "Homework Week6"
+output: html_document
+  # bookdown::html_document2: default
+  # bookdown::pdf_document2:
+  #  keep_tex: yes
+  # bookdown::word_document2:
+  #  toc: yes
+#  pdf_document:
+ #   toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+# Integration
+
+Approximate the integral 
+$$ \int_0 ^{\infty} \sin(x) x^2 e^{-x} dx$$ by appealing the law of large numbers and using R.  Hint:  Consider an i.i.d.\ sequence of exponential random variables all with rate $1$.
+
+#  Grouping coins
+
+Again, consider a sequence of 20 fair coin flips, as discussed in our first live session.    using R, estimate the probability that we will see a run of at least four heads.  Hopefully, we get a number bigger than $0.27$.
+
+#  Pen and paper?
+
+Let $(U_i)_{i \in \mathbb{Z} ^+}$ be a sequence of independent random variables that are uniformly distributed in $[0,1]$.  Let 
+$$S_n = X_1 + \cdots + X_n.$$
+  Let $$T = \inf\{n \geq 1:  S_n >1\}$$
+  so that $T$ is the first time the sum is greater than $1$.  Use R or pen and paper  to compute $\mathbb{E} T$.
+
+
+#  Python
+
+Now do the same exercises in Python.
+
+
+### Endnotes
+
+*  Version `r format(Sys.time(), '%d %B %Y')`
+*  The R Markdown source file is usually available by replacing *html* with *Rmd*; you can use  [this link](https://tsoo-math.github.io/ucl2/2021-HW-week6.Rmd)
+
+<br>
+<br>
+<br>

@@ -15,6 +15,9 @@ We will *attempt* to live stream, the live in-person sessions.  Please note that
 # By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/cal_term_times_2021_2022.pdf)
 
 * Week 6 (4 Oct - 10 Oct):  
+  - Introductions, first meeting.
+  - [Exercise sheet](https://tsoo-math.github.io/ucl2/2021-week6.html)
+  - [Introduction to Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/intro-to-python.ipynb/%3Fflush_cache%3Dtrue)
 * Week 7 (11 Oct - 17 Oct): 
 * Week 8 (18 Oct - 24 Oct):  
 * Week 9 (25 Oct - 31 Oct):  
