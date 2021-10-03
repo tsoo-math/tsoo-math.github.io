@@ -33,6 +33,7 @@ Suppose I have two types of light bulbs, type-ex and type-wye, whose lifetimes i
 
 Suppose that when Tessa buys a Kinder surprise candy egg to get the Kinder surprise toy.     Each egg contains one of $n$ toys uniformly at random, independently of each other.      She wishes to collect all $n$ toys.  Let $T$ be the number of toys her father has to buy in order for her to collect all $n$ toys.  Compute $\mathbb{E} T$.  You should obtain a nice formula that will allow you to compute easily $\mathbb{E} T$ if $n=7$.  Hint: let $T_i$ be the number of toys that need to be purchased, after collecting $i-1$ distinct toys, then 
 $$ T = T_1 + \cdots +T_n.$$
+
 #  Convolution
 
 Let $U$ and $V$ be independent random variables that are uniformly distributed in the unit interval $[0,1]$.  Compute the pdf for the random variable $U+V$.  Hint: sometimes the result is called the *triangular* distribution.
