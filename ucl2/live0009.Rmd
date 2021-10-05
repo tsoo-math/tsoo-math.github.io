@@ -17,6 +17,7 @@ We will *attempt* to live stream, the live in-person sessions.  Please note that
 * Week 6 (4 Oct - 10 Oct):  
   - Introductions, first meeting.
   - [Exercise sheet](https://tsoo-math.github.io/ucl2/2021-week6.html)
+    - [Solutions](https://tsoo-math.github.io/ucl2/class1sol.html)
   - [Introduction to Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/intro-to-python.ipynb/%3Fflush_cache%3Dtrue)
   - This session was recorded, and will be available on Moodle, but not YouTube.
 * Week 7 (11 Oct - 17 Oct): 

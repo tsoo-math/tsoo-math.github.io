@@ -66,6 +66,8 @@ Note that $T_1=1$, since at the start, any toy is new.  For the next toy, any of
 &=& n \sum_{i=1}^n \frac{1}{i}.
 \end{eqnarray*}
 
+See [also](https://en.wikipedia.org/wiki/Euler%27s_constant)
+
 
 ## Convolution
 
