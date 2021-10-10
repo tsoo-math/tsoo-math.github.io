@@ -33,12 +33,16 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 * [1/2](https://youtu.be/P_q-673VUQE)
 * [2/2](https://youtu.be/NoJi2rqJI4k)
 
+* [slides](https://tsoo-math.github.io/ucl/randomTP-slides.html)
+
+
 #  Coupling and total variational distance
 
 * [1/3](https://youtu.be/DNWD7gTKBT8)
 * [2/3](https://youtu.be/wILoCQnhUJ4)
 * [3/3](https://youtu.be/ktpnxFVTGoU)
 
+*  [slides](https://tsoo-math.github.io/ucl/TV.html)
 
 #  Review of Markov chains
 
@@ -47,6 +51,7 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 *  [3/4](https://youtu.be/lIWpSvivKM8)
 *  [4/4](https://youtu.be/Of7w6MQ2y_0)
 
+*  [slides](https://tsoo-math.github.io/ucl/reviewMC-slides.html)
 
 # Making Markov chains converge
 
