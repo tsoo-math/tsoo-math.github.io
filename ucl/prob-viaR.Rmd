@@ -1,9 +1,9 @@
 ---
 title: "Basic probabilty and statistics via R"
 output:
+  bookdown::html_document2: default
   bookdown::pdf_document2:
     keep_tex: yes
-  bookdown::html_document2: default
   bookdown::word_document2:
     toc: yes
   pdf_document:
@@ -81,7 +81,8 @@ Recall that if $T_n$ is a sequence of estimators for a parameter $\theta$, then 
 
 ```{exercise}
 Show that the usual sample variance is an consistent estimator for the *true* variance.
-
+Hint:  use the fact that:
+	$$(n-1)S^2 = \sum_{i=1}^n X_i^2 \ - \ n(\bar{X})^2.$$
 ```
 ## Application
 
@@ -153,7 +154,7 @@ $$S_n = X_1 + \cdots + X_n.$$
   so that $T$ is the first time the sum is greater than $1$.  Use R to compute $\mathbb{E} T$.  You will not be disappointed.  
 
 ```{exercise, name="Histograms"}
-Carefully explain why plotting a (probability) histogram of some sample data may give an  approximation of the probability density function of some random variable.
+Carefully explain why plotting a (probability) histogram of some sample data may give an  approximation of the probability density function of some random variable.  Hint: assume the density $f$ is constant over a small  bin $[a,b]$.  Consider a random sample $X_1, \ldots, X_n$ from $f$.   In order to compute the height at the bin, what do you do?  Take $n$ large, and appeal to the law of large numbers.
 ```
 
 ```{exercise, name="Integration"}

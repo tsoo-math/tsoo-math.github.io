@@ -200,10 +200,10 @@ Recall that if \(T_n\) is a sequence of estimators for a parameter \(\theta\), t
 
 \begin{exercise}
 \protect\hypertarget{exr:unnamed-chunk-8}{}{\label{exr:unnamed-chunk-8} }Show that the usual sample variance is an consistent estimator for the \emph{true} variance.
+Hint: use the fact that:
+\[(n-1)S^2 = \sum_{i=1}^n X_i^2 \ - \ n(\bar{X})^2.\]
 \end{exercise}
-
-\hypertarget{application}{%
-\subsection{Application}\label{application}}
+\#\# Application
 
 The law of large numbers gives us another way to compute probabilities. If we want to compute say \(p=\mathbb{P}( Z> 1)\), one way to is to consider i.i.d. random variables with the same law as \(Z\), and consider the count
 \[ S_n = \mathbf{1}[X_1 >1] + \cdots + \mathbf{1}[X_n >1],\]
@@ -234,7 +234,7 @@ Note that with R we can easily generate a random permutation of the 20 papers, a
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.3602
+## [1] 0.3751
 \end{verbatim}
 
 \begin{Shaded}
@@ -280,7 +280,7 @@ We also, store as two separate vectors, the outcome of the first pick, and the s
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2116
+## [1] 2018
 \end{verbatim}
 
 \begin{Shaded}
@@ -291,7 +291,7 @@ We also, store as two separate vectors, the outcome of the first pick, and the s
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2782
+## [1] 2703
 \end{verbatim}
 
 \begin{Shaded}
@@ -301,7 +301,7 @@ We also, store as two separate vectors, the outcome of the first pick, and the s
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.7606039
+## [1] 0.7465779
 \end{verbatim}
 
 \begin{exercise}[Uniform random variables]
@@ -325,8 +325,8 @@ by appealing to the law of large numbers and running R simulations.
 
 We reviewed the law of large numbers and gave some proofs of some basic results. We showed how the law of large numbers can be used in conjugation with R to compute or estimate various probabilities arising from elementary probability theory.
 
-\hypertarget{version-27-april-2021}{%
-\section{Version: 27 April 2021}\label{version-27-april-2021}}
+\hypertarget{version-10-october-2021}{%
+\section{Version: 10 October 2021}\label{version-10-october-2021}}
 
 \begin{itemize}
 \tightlist
