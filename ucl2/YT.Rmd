@@ -61,12 +61,15 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 *  [3/4](https://youtu.be/oM1ZPVx6cKE)
 *  [4/4](https://youtu.be/Y282zep9Fdc)
 
+* [slides](https://tsoo-math.github.io/ucl/reviewMC-slides.html)
+
+
 
 #  Coupling from the past
 
 *  [1/1](https://youtu.be/-5CuiH9iNFQ)
 
-
+* [slides](https://tsoo-math.github.io/ucl/coupling-from-past.html)
 
 #  Poisson processes
 
