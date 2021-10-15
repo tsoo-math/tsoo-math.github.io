@@ -53,7 +53,7 @@ $$
 
 *  If we are so lucky that $T < \infty$, then $g_m$ will be a constant function for *each* $m \geq T$.
 
-*  With this coupling, at this time $T$ and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same value values $g_m(1)$ for $m \geq T$.  Although, in general $g_T \not = g_{T+1}$.
+*  With this coupling, at this time $T$ and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same  values $g_m(1)$ for $m \geq T$.  Although, in general $g_T \not = g_{T+1}$.
 
 *  We take $K$ be the realized value for $\pi$.  
 
@@ -225,7 +225,7 @@ z
 Compare with page 10!
 
 ##   Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/randomTP-slides.Rmd)
+  * [Rmd Source](https://tsoo-math.github.io/ucl/coupling-from-past.Rmd)
 
 
 

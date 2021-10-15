@@ -1,0 +1,200 @@
+---
+title: "Coupling from the past"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Sampling from the stationary distribution of a Markov chain
+
+Sometimes in order to sample/simulate from a distribution $\pi$, we cook up a Markov chain $X$ so that $\pi$ is the stationary distribution.  There are many reasons why we may need/want to do this, since we may not have enough information about $\pi$ to directly sample from it, but we may still be able to cook up a Markov chain where $\pi$ is the stationary distribution.  We run the Markov chain, and for large times $n$, we know that the $X_n$ will have law close to $\pi$.  We saw a version this procedure with the Gibbs sampler in
+[Homework 3, Question 4](https://tsoo-math.github.io/ucl/QHW3.html)
+
+[Coupling from the past](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O) is an *exact* method of sampling $\pi$ introduced by Propp and [Wilson](http://www.dbwilson.com/exact/).   In some applications, theoretical and applied, exactness is important. 
+
+
+# All trains go to London?
+
+In order to motivate the coupling from the past, first we will discuss a naive variation of the Propp and Wilson algorithm that does *not* work.   Consider a transition matrix $P$ on a state space $S=\{1, \ldots, N\}$.  Consider the Markov chain as constructed in [Making Markov chains converge, Section 2](https://tsoo-math.github.io/ucl/markov-c.html).  Thus we have a function $\phi:S \times [0,1] \to S$ such that if $U$ is uniformly distributed in $[0,1]$ then
+ $$\mathbb{P}(\phi(i, U) =j) = p_{ij}.$$  
+
+We simulate the Markov chain started at $i\in S$, for $m$ steps, by taking $m$ independent uniforms $U_0, \ldots, U_{m-1}$ to obtain:
+
+$$ 
+\begin{eqnarray*}
+&& G_m(i)= \Big( X_0=i, X_1=\phi(i,U_0), X_2= \phi(X_1, U_1),  \ldots X_m= \phi(X_{m-1}, U_{m-1}) \Big)
+\end{eqnarray*}
+$$
+In fact, using the *same* randomization $U_0, \ldots, U_{m-1}$ we can see what *path* each $i \in S$ takes.   Thus, this gives a coupling of all these random paths.  Let $g_m(i) = X_m = G_m(i)[m]$ be the last value.    Let $T$ be the first time such that there exists $K \in S$ such that $g_T(1) = g_T(i)= K$ for all $i \in S$.   If we are so lucky that $T < \infty$, then $g_m$ will be a constant function for *each* $m \geq T$.
+
+With this coupling, at this time $T$ and after, the starting point of the chain is in some sense forgotten, since regardless of the initial values, it ends up with the same values $g_m(1)$ for $m \geq T$.  Although, in general $g_T \not = g_{T+1}$.  
+
+We take $K$ be the realized value for $\pi$.  Does this work? Answer **no**.  
+
+
+# Code (incorrect forward case)
+
+
+The following code will show that this procedure will in general fail. Consider the transition matrix $P$ given by
+
+```{r}
+P <- matrix(c(1/4, 1/4, 1/2, 0,0, 
+              1/4, 1/4,0,0,1/2, 
+              1/4,0,0, 1/2, 1/4, 
+              0,0,0,1/2, 1/2, 1/5, 1/5, 1/5, 1/5, 1/5), nrow =5)
+P <-t(P)
+P
+```
+
+We want to advance the chain one step, using the *same* randomness.  We modify the step function that appeared in
+  [Making Markov chains converage, Section 2](https://tsoo-math.github.io/ucl/markov-c.html):
+  
+  
+```{r}  
+stepcoupled <- function(zinput){
+  xoutput=c(-1, -1, -1, -1, -1)
+  sameu = runif(1)
+  for(i in 1:5){
+    j=0
+  cumq = cumsum(P[zinput[i],])
+  while(xoutput[i] ==-1){
+    j<-j+1
+    if(sameu <= cumq[j]){xoutput[i] <-j}
+  }
+  }
+  xoutput
+}
+```
+
+
+Now we want to repeat this until the paths meet.  First, we define a method to check whether 
+all the entries of a vector are equal.
+```{r}
+
+check <- function(x){
+output= 1
+a = x[1]
+for (i in 2: length(x)){
+  if (x[i] != a){output <-0}
+}
+output
+}
+```
+
+
+```{r}
+london <- function(){
+  x = c(1,2,3,4,5)
+  while(check(x)==0){
+  x <- stepcoupled(x)
+}
+x
+}
+```
+
+It is not hard to verify that the output $K$ will not in general have the stationary distribution.  In fact, one can cook up Markov chains where $K$ even *omits* values $k$, where $\pi(k) >0$.  
+
+
+```{r}
+Q <- P
+for(i in 1:10000){
+  Q <- Q %*% P
+}
+Q
+x = replicate(1000, london()[1])
+mean(x==5)
+
+```
+
+
+# What about going backwards!   All roads lead to Rome
+
+The general idea is if we run an Markov chain from time $-\infty$ to time $0$, then 
+if it is aperiodic and irreducible, by time $0$ it will have reached the stationary distribution.  Consider now
+$$ 
+\begin{eqnarray*}
+&& G_m(i)= \Big( X_{-m}=i, X_{-m+1}=\phi(i,U_{-m}),  X_{-m+2}= \phi(X_{-m+1}, U_{-m+1}), \ldots X_0= \phi(X_{-1}, U_{-1}) \Big)
+\end{eqnarray*}
+$$
+
+Let $g_m(i) = G_m(i)(m)= X_0$.  We want to find the smallest $M$ (hopefully finite) such that $g_M$ is a constant function, for all starting values $i$.
+
+The subtle difference between the forward case and backward case is that $g_{m} =g_M$ for all $m \geq M$; this fact tells us that we need not go sample from $-\infty$ to time $0$ to achieve stationarity, we just need to go back to time $-M$.  Take $K = g_M(1)=X_0$ to be realized value for the stationary distribution $\pi$.  
+
+Again in order to simulate this, we must keep in mind this is a coupling, and we must use the same randomness each time.  This is again a somewhat subtle matter, compared to other MCMC methods.  This is the [price](https://www.youtube.com/watch?v=oYE_EibkEkg) we pay for the magic of  *exact* sampling.
+
+
+# Code (correct backward case)
+
+We will consider the same transition $P$ and we modify the previous *stepcoupled* function to have greater 
+control over the randomization.
+
+```{r}
+stepcoupleu<- function(zinputu){
+  sameu = zinputu[6]
+  zinput = zinputu[-6]
+  xoutput=c(-1, -1, -1, -1, -1)
+  for(i in 1:5){
+    j=0
+  cumq = cumsum(P[zinput[i],])
+  while(xoutput[i] ==-1){
+    j<-j+1
+    if(sameu <= cumq[j]){xoutput[i] <-j}
+  }
+  }
+  xoutput
+}
+```
+
+
+
+Here the *rome* function replaces the *london* function.  Notice we need to keep track and re-use  the uniform random variables generated.
+
+```{r}
+rome <- function(){
+x=c(1,2,3,4,5)
+m=1
+uhis=-99
+while(check(x)==0){
+  x<-c(1,2,3,4,5)
+  m <- m+1
+  uhis <- c(uhis, runif(1))
+  for (i in 0:(m-2) ){
+    x <- stepcoupleu(c(x,uhis[m-i]))
+  }
+}
+x
+}
+```
+
+
+```{r}
+rome()
+italy=( replicate(10000, rome()[1]) )
+
+z=c(mean(italy==1),mean(italy==2),
+    mean(italy==3),mean(italy==4),mean(italy==5))
+z
+```
+Compare with the previous forward result.
+
+# Summary
+
+*  We discussed an *exact* sample procedure 
+*  We saw that going forwards does not work, but going backwards does
+*  We saw that the procedure was a bit complicated in the same randomization had to be reused carefully.
+
+## Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/coupling-from-past-lec.Rmd)
+
+
+
+
+
+
