@@ -1,0 +1,109 @@
+---
+title: "In class exercise:  Coupling and Transition matrices"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#  Gambler's ruin
+
+Recall the Gambler's ruin problem from the last session.   Suppose someone plays the following gambling game.   They bet $1$ pound on a fair flip of a coin and win $1$ pound if it comes up heads, and lose if come up tails.
+  They start with $1$ pound, and stop playing once they have reached $5$ pounds or have  no money left.   Express this problem up as a Markov chain.  In particular:
+  
+  * Specify the state space and transition matrix.
+  * Take  high powers of the transition matrix in R; comment on what you see.
+  
+  
+#  Anything is possible
+  
+Consider the transition matrix $P$ on the states $\{1,2,3,4\}$ given by:  
+  
+```{r}  
+P <- matrix(c(0, 1/2, 1/2, 0, 0, 1/2, 0,0,0,1/2, 1/2,0,0, 1/2, 0, 0,0,0,1/2, 1/2, 1/3, 1/3, 0, 0, 1/3), nrow =5)
+P <-t(P)
+P
+```
+
+* Compute powers of $P$ until you see that all the entries are positive.  
+
+* What does it mean if all the entries are positive?
+
+
+
+#  Convex combinations
+
+* Let $\lambda$ and $\mu$ be probability measures on $\Omega$ with events $\mathcal{F}$.     
+
+Recall that $\lambda$ is a probability measure if
+
+   - $\lambda(\Omega) =1$
+   - $\lambda(A ) \in [0,1]$ for all events $A \in \mathcal{F}$
+   - $\lambda( \bigcup_{i=1} ^{\infty} A_i) = \sum_{i=1}^{\infty} \lambda(A_i)$ for any countable number of pairwise disjoint events $A_1, A_2, \ldots$.
+
+Show that 
+$$\rho = (1-t)\lambda + t \mu$$
+is a probability measure on $\Omega$ for all $t \in [0,1]$.  
+
+* Let $P$ be a transition matrix on a state space $S$.  Show that if $\lambda$ and $\mu$ are stationary measures of $P$, then any convex combination of $\lambda$ and $\mu$ is a  stationary measure for $P$.   
+
+* Consider the transition matrix on four states given by
+$$
+\left( \begin{array}{cccc}
+1/2 & 1/2 & 0 & 0 \\
+1/2 & 1/2 & 0 & 0  \\
+0 & 0 & 1/3 & 2/3 \\
+0 & 0 & 1/2 & 1/2 \\
+ \end{array} \right)
+ $$
+* Find three stationary measures for $P$.  
+*  Does $P$ have finitely many stationary measures?
+
+
+#  Periodicity
+
+Consider the transition matrix $P$ on the states $\{1,2,3\}$ given by:  
+```{r}
+P <- matrix( c( 0,0,1,0, 0,0,0,1, 1/2,1/2,0,0, 1,0,0,0), nrow =4)
+P <- t(P)
+P
+```
+*  Take powers of $P$, what do you observe?
+*  Does $P$ have any stationary distributions?  Explain.
+*  Consider the transition matrix $Q = P^2$.  Does $Q$ have any stationary distributions.  Explain.  
+
+
+# Maximal coupling
+
+Let $X$ and $Y$ be discrete random variables taking values on the space $S$, with probability mass functions $p$ and $q$.   Show that there exists a coupling of $(X', Y')$ of $X$ and $Y$ such that 
+$$d_{TV}(X, Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y').$$
+
+Hint: consider a joint distribution for $X'$ and $Y'$, where maximize the probability that $X'=Y'$ and you spread out the rest of the remaining probability as equally as possible.
+
+
+#  A triangle inequality
+
+Let $X_1, \ldots, X_n$ be independent integer-valued random variables.  Also let $Y_1, \ldots, Y_n$ be independent integer-valued random variables.  Set $S=X_1 + \cdots + X_n$ and $W = Y_1 + \cdots + Y_n$.  Show that 
+
+$$d_{TV}(X, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i),$$
+so that equality is obtained in the usual coupling inequality. 
+
+Hint:  Use a maximal coupling, along with independence.
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl2/class3.Rmd)
+<br>
+<br>
+<br>
