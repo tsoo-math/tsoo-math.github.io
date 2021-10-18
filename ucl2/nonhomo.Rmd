@@ -1,0 +1,20 @@
+---
+title: "Non-homogeneous Poisson processes"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+For many applications, it is obvious that one should consider a rate $\lambda = \lambda(t)$ that depends on time; the expected number arrivals during to a coffee shop will most likely depend on the time.  Here we are interested in simulating such Poisson processes by thinning as constructed by [Lewis and Shedler, 1979](https://onlinelibrary.wiley.com/doi/abs/10.1002/nav.3800260304).  Recall that if we are given a Poisson process of intensity $4$, and we *keep* each arrival independently with probability $\tfrac{2}{3}$, we are left with a Poisson process of intensity $\tfrac{8}{3}$.  This same idea can be used to generate a non-homogeneous Poisson point process of intensity $\lambda(t)$, where $0\leq \lambda(t) \leq M$ is uniformly bounded by $M$.  
+
+  *  First generate a homogeneous Poisson process of intensity $M$
+  *  At each point/arrival $t$ that is generated, we keep it independently with probability 
+  $$ \frac{\lambda(t)}{M}$$
+
+## Exercise 
+
+Suppose that we are given $\lambda(t) = \sin(t) + 4$.  Generate a nonhomogeneous Poisson point process on $[0, 200]$ with intensity function $\lambda$.      
