@@ -92,7 +92,7 @@ P%*%P %*% P
 P%*%P %*% P %*% P
 P%*%P %*% P %*% P  %*% P
 ```
-* Despite the periodicity, we still  have a stationary distribution
+* Despite the periodicity, we *still*  have a stationary distribution
 
 ```{r}
 tP = t(P)
@@ -136,13 +136,19 @@ mean(z==1)
 
 ```
 
-*  When we consider $Q = P^2$, in some sense, life is easier, the blocks no longer alternate, and now we are left we two irreducible components, which can be analyzed individually.  Each component will have a stationary distribution, and as per the previous exercise, any convex combination of these will also be a stationary distribution.  
+*  When we consider $Q = P^2$, in some sense, life is easier, the blocks no longer alternate, and now we are left we two irreducible components, which can be analyzed individually.  Each component will have a stationary distribution, and as per the previous exercise, any convex combination of these will also be a stationary distribution.   In fact, we see that the previous stationary distribution, for the periodic Markov chain,  is a convex combination these stationary distributions.
 
 ```{r}
 Q
 Q %*% Q
 Q %*% Q %*% Q
+tQ = t(Q)
+E=eigen(tQ)
+E
+EE = E$vectors[,1]
+EE/sum(EE)
 ```
+
 
 
 # Maximal coupling

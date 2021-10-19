@@ -265,7 +265,7 @@ P%*%P %*% P</code></pre>
 ## [3,] 0.625 0.375 0.00 0.00
 ## [4,] 0.750 0.250 0.00 0.00</code></pre>
 <ul>
-<li>Despite the periodicity, we still have a stationary distribution</li>
+<li>Despite the periodicity, we <em>still</em> have a stationary distribution</li>
 </ul>
 <pre class="r"><code>tP = t(P)
 E=eigen(tP)
@@ -315,9 +315,9 @@ steps &lt;- function(n){
 
 z = steps(10000)
 mean(z==1)</code></pre>
-<pre><code>## [1] 0.3326667</code></pre>
+<pre><code>## [1] 0.3342666</code></pre>
 <ul>
-<li>When we consider <span class="math inline">\(Q = P^2\)</span>, in some sense, life is easier, the blocks no longer alternate, and now we are left we two irreducible components, which can be analyzed individually. Each component will have a stationary distribution, and as per the previous exercise, any convex combination of these will also be a stationary distribution.</li>
+<li>When we consider <span class="math inline">\(Q = P^2\)</span>, in some sense, life is easier, the blocks no longer alternate, and now we are left we two irreducible components, which can be analyzed individually. Each component will have a stationary distribution, and as per the previous exercise, any convex combination of these will also be a stationary distribution. In fact, we see that the previous stationary distribution, for the periodic Markov chain, is a convex combination these stationary distributions.</li>
 </ul>
 <pre class="r"><code>Q</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
@@ -337,6 +337,22 @@ mean(z==1)</code></pre>
 ## [2,] 0.750 0.250 0.000 0.000
 ## [3,] 0.000 0.000 0.625 0.375
 ## [4,] 0.000 0.000 0.750 0.250</code></pre>
+<pre class="r"><code>tQ = t(Q)
+E=eigen(tQ)
+E</code></pre>
+<pre><code>## eigen() decomposition
+## $values
+## [1]  1.0  1.0 -0.5 -0.5
+## 
+## $vectors
+##           [,1]      [,2]       [,3]       [,4]
+## [1,] 0.8944272 0.0000000 -0.7071068  0.0000000
+## [2,] 0.4472136 0.0000000  0.7071068  0.0000000
+## [3,] 0.0000000 0.8944272  0.0000000 -0.7071068
+## [4,] 0.0000000 0.4472136  0.0000000  0.7071068</code></pre>
+<pre class="r"><code>EE = E$vectors[,1]
+EE/sum(EE)</code></pre>
+<pre><code>## [1] 0.6666667 0.3333333 0.0000000 0.0000000</code></pre>
 </div>
 </div>
 <div id="maximal-coupling" class="section level1" number="5">
