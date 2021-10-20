@@ -315,7 +315,7 @@ steps &lt;- function(n){
 
 z = steps(10000)
 mean(z==1)</code></pre>
-<pre><code>## [1] 0.3314669</code></pre>
+<pre><code>## [1] 0.3321668</code></pre>
 <ul>
 <li>When we consider <span class="math inline">\(Q = P^2\)</span>, in some sense, life is easier, the blocks no longer alternate, and now we are left we two irreducible components, which can be analyzed individually. Each component will have a stationary distribution, and as per the previous exercise, any convex combination of these will also be a stationary distribution. In fact, we see that the previous stationary distribution, for the periodic Markov chain, is a convex combination these stationary distributions.</li>
 </ul>
@@ -358,7 +358,8 @@ EE/sum(EE)</code></pre>
 <div id="maximal-coupling" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Maximal coupling</h1>
 <p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be discrete random variables taking values on the space <span class="math inline">\(S\)</span>, with probability mass functions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>. Show that there exists a coupling of <span class="math inline">\((X&#39;, Y&#39;)\)</span> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> such that
-<span class="math display">\[d_{TV}(X, Y) = d_{TV}(X&#39;, Y&#39;) = 2 \mathbb{P}(X&#39; \not = Y&#39;).\]</span></p>
+<span class="math display">\[d_{TV}(X, Y) = d_{TV}(X&#39;, Y&#39;) = 2 \mathbb{P}(X&#39; \not = Y&#39;),\]</span>
+so that equality is obtained in the usual coupling inequality.</p>
 <p>Hint: consider a joint distribution for <span class="math inline">\(X&#39;\)</span> and <span class="math inline">\(Y&#39;\)</span>, where maximize the probability that <span class="math inline">\(X&#39;=Y&#39;\)</span> and you spread out the rest of the remaining probability as equally as possible.</p>
 <div id="solutions-1" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Solutions</h2>
@@ -391,8 +392,7 @@ d_{TV}(X&#39;,Y&#39;) &amp;=&amp; \sum_{i \in S}|p_i-q_i| \\
 <div id="a-triangle-inequality" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> A triangle inequality</h1>
 <p>Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be independent integer-valued random variables. Also let <span class="math inline">\(Y_1, \ldots, Y_n\)</span> be independent integer-valued random variables. Set <span class="math inline">\(S=X_1 + \cdots + X_n\)</span> and <span class="math inline">\(W = Y_1 + \cdots + Y_n\)</span>. Show that</p>
-<p><span class="math display">\[d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i),\]</span>
-so that equality is obtained in the usual coupling inequality.</p>
+<p><span class="math display">\[d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i).\]</span></p>
 <p>Hint: Use a maximal coupling, along with independence.</p>
 <div id="solutions-2" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Solutions</h2>

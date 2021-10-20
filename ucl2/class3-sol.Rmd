@@ -154,7 +154,8 @@ EE/sum(EE)
 # Maximal coupling
 
 Let $X$ and $Y$ be discrete random variables taking values on the space $S$, with probability mass functions $p$ and $q$.   Show that there exists a coupling of $(X', Y')$ of $X$ and $Y$ such that 
-$$d_{TV}(X, Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y').$$
+$$d_{TV}(X, Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y'),$$
+so that equality is obtained in the usual coupling inequality.
 
 Hint: consider a joint distribution for $X'$ and $Y'$, where maximize the probability that $X'=Y'$ and you spread out the rest of the remaining probability as equally as possible.
 
@@ -195,8 +196,8 @@ $$
 
 Let $X_1, \ldots, X_n$ be independent integer-valued random variables.  Also let $Y_1, \ldots, Y_n$ be independent integer-valued random variables.  Set $S=X_1 + \cdots + X_n$ and $W = Y_1 + \cdots + Y_n$.  Show that 
 
-$$d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i),$$
-so that equality is obtained in the usual coupling inequality. 
+$$d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i).$$
+ 
 
 Hint:  Use a maximal coupling, along with independence.
 
