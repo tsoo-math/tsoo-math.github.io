@@ -158,15 +158,73 @@ $$d_{TV}(X, Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y').$$
 
 Hint: consider a joint distribution for $X'$ and $Y'$, where maximize the probability that $X'=Y'$ and you spread out the rest of the remaining probability as equally as possible.
 
+## Solutions
+
+Consider the joint distribution (possibly infinite matrix) $r$ defined as follows.  We set $$r_{ii}= t_i:= \min(p_i,q_i).$$
+Let $$ \theta = \sum_{i\in S} t_i.$$
+If $\theta = 1$, then we set all other off-diagonal entries in $r$ to be zero.  Otherwise, set for $i \not =j$, set $$r_{ij} = \frac{(p_i- t_i) ( q_j - t_j)}{1-\theta}.$$
+
+We easily verify that $r_{ij} \geq 0$ is a joint distribution for $X$ and $Y$.    For example, we show that the first marginal is $p$, the distribution of $X$. 
+
+$$
+\begin{eqnarray*}
+\sum_{j \in S} r_{ij} &=& t_i + \sum_{j \in S \setminus \{i\} } r_{ij} \\
+&=& t_i + \frac{(p_i- t_i)}{1-\theta}\sum_{j \in S \setminus \{i\} }   (q_j - t_j) \\
+&=&  t_i +  \frac{(p_i- t_i)}{1-\theta}(1-q_i - \theta + t_i ).
+\end{eqnarray*}
+$$
+
+If $p_i = t_i$, then we obtain that 
+
+$$\sum_{j \in S} r_{ij} = t_i = p_i= \mathbb{P}(X=i);$$
+otherwise, $q_i = t_i$, and we still have
+
+$$\sum_{j \in S} r_{ij} = t_i + p_i - t_i = p_i = \mathbb{P}(X=i).$$
+Recall that $$2\min(a,b) = a+b - |a-b|.$$ Also note that that if $X'$ and $Y'$ have joint distribution $r$, then $\mathbb{P}(X' = Y') = \theta$.  Thus  
+
+$$
+\begin{eqnarray*}
+d_{TV}(X',Y') &=& \sum_{i \in S}|p_i-q_i| \\
+&=&  \sum_{i\in S} [p_i+q_i - 2 \min(p_i, q_i)]  \\
+&=&  2 - 2\theta \\
+&=&  2\mathbb{P}(X' \not = Y').
+\end{eqnarray*}
+$$
 
 #  A triangle inequality
 
 Let $X_1, \ldots, X_n$ be independent integer-valued random variables.  Also let $Y_1, \ldots, Y_n$ be independent integer-valued random variables.  Set $S=X_1 + \cdots + X_n$ and $W = Y_1 + \cdots + Y_n$.  Show that 
 
-$$d_{TV}(X, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i),$$
+$$d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i),$$
 so that equality is obtained in the usual coupling inequality. 
 
 Hint:  Use a maximal coupling, along with independence.
+
+
+## Solutions
+
+Let $Z_i'=(X_i', Y_i')$ be a maximal coupling of $X_i$ and $Y_i$, which exists by the previous exercise.    Note that 
+$$ d_{TV}(X_i,Y_i) = 2 \mathbb{P}(X_i' \not = Y_i').$$
+Furthermore, we require $Z_1', \ldots, Z_n'$ to be independent; this ensures that 
+$X_1', \ldots, X'_n$ are independent and $Y_1', \ldots, Y_n'$ are independent.  Hence by assumption that $X_1, \ldots, X_n$ are independent and $Y_1, \ldots, Y_n$ are independent, we have that  if
+$$ S' = X_1' + \cdots + X_n'$$
+and 
+
+$$ W' = Y_1' + \cdots + Y_n',$$
+
+then $S'$ has the same distribution as $S$ and $W'$ has the same distribution as $W$; in other words, $(S',W')$ is a coupling of $S$ and $W$.   Hence starting with the coupling inequality, we have
+
+$$
+\begin{eqnarray*}
+d_{TV}(S, W) &=&   d_{TV}(S', W') \\
+&\leq& 2 \mathbb{P}(S' \not = W') \\
+&\leq & 2 \mathbb{P}\Big( \bigcup_{i=1}^n \{ X_i' \not = Y_i'\} \Big) \\
+&\leq&   \sum_{i=1} ^n 2\mathbb{P}(X_i' \not = Y_i') \\
+&=&   \sum_{i=1} ^n d_{TV}(X_i, Y_i), 
+\end{eqnarray*}
+$$
+as desired.
+
 
 
 #  Endnotes

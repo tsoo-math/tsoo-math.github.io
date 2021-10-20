@@ -31,7 +31,7 @@ Using an exponential random variable, generate a normal random variable that is 
 #  Total variatonal distance
  
 Let $X$ and $Y$ be Poisson random variables with means $\lambda > \mu$.  Show that 
-$$d_{TV}(X, Y) \leq 2 (1-\exp(\lambda - \mu))$$
+$$d_{TV}(X, Y) \leq 2 (1-\exp(\mu-\lambda))$$
 
 #  Reversibility
 

@@ -315,7 +315,7 @@ steps &lt;- function(n){
 
 z = steps(10000)
 mean(z==1)</code></pre>
-<pre><code>## [1] 0.3342666</code></pre>
+<pre><code>## [1] 0.3314669</code></pre>
 <ul>
 <li>When we consider <span class="math inline">\(Q = P^2\)</span>, in some sense, life is easier, the blocks no longer alternate, and now we are left we two irreducible components, which can be analyzed individually. Each component will have a stationary distribution, and as per the previous exercise, any convex combination of these will also be a stationary distribution. In fact, we see that the previous stationary distribution, for the periodic Markov chain, is a convex combination these stationary distributions.</li>
 </ul>
@@ -360,18 +360,66 @@ EE/sum(EE)</code></pre>
 <p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be discrete random variables taking values on the space <span class="math inline">\(S\)</span>, with probability mass functions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>. Show that there exists a coupling of <span class="math inline">\((X&#39;, Y&#39;)\)</span> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> such that
 <span class="math display">\[d_{TV}(X, Y) = d_{TV}(X&#39;, Y&#39;) = 2 \mathbb{P}(X&#39; \not = Y&#39;).\]</span></p>
 <p>Hint: consider a joint distribution for <span class="math inline">\(X&#39;\)</span> and <span class="math inline">\(Y&#39;\)</span>, where maximize the probability that <span class="math inline">\(X&#39;=Y&#39;\)</span> and you spread out the rest of the remaining probability as equally as possible.</p>
+<div id="solutions-1" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Solutions</h2>
+<p>Consider the joint distribution (possibly infinite matrix) <span class="math inline">\(r\)</span> defined as follows. We set <span class="math display">\[r_{ii}= t_i:= \min(p_i,q_i).\]</span>
+Let <span class="math display">\[ \theta = \sum_{i\in S} t_i.\]</span>
+If <span class="math inline">\(\theta = 1\)</span>, then we set all other off-diagonal entries in <span class="math inline">\(r\)</span> to be zero. Otherwise, set for <span class="math inline">\(i \not =j\)</span>, set <span class="math display">\[r_{ij} = \frac{(p_i- t_i) ( q_j - t_j)}{1-\theta}.\]</span></p>
+<p>We easily verify that <span class="math inline">\(r_{ij} \geq 0\)</span> is a joint distribution for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. For example, we show that the first marginal is <span class="math inline">\(p\)</span>, the distribution of <span class="math inline">\(X\)</span>.</p>
+<p><span class="math display">\[
+\begin{eqnarray*}
+\sum_{j \in S} r_{ij} &amp;=&amp; t_i + \sum_{j \in S \setminus \{i\} } r_{ij} \\
+&amp;=&amp; t_i + \frac{(p_i- t_i)}{1-\theta}\sum_{j \in S \setminus \{i\} }   (q_j - t_j) \\
+&amp;=&amp;  t_i +  \frac{(p_i- t_i)}{1-\theta}(1-q_i - \theta + t_i ).
+\end{eqnarray*}
+\]</span></p>
+<p>If <span class="math inline">\(p_i = t_i\)</span>, then we obtain that</p>
+<p><span class="math display">\[\sum_{j \in S} r_{ij} = t_i = p_i= \mathbb{P}(X=i);\]</span>
+otherwise, <span class="math inline">\(q_i = t_i\)</span>, and we still have</p>
+<p><span class="math display">\[\sum_{j \in S} r_{ij} = t_i + p_i - t_i = p_i = \mathbb{P}(X=i).\]</span>
+Recall that <span class="math display">\[2\min(a,b) = a+b - |a-b|.\]</span> Also note that that if <span class="math inline">\(X&#39;\)</span> and <span class="math inline">\(Y&#39;\)</span> have joint distribution <span class="math inline">\(r\)</span>, then <span class="math inline">\(\mathbb{P}(X&#39; = Y&#39;) = \theta\)</span>. Thus</p>
+<p><span class="math display">\[
+\begin{eqnarray*}
+d_{TV}(X&#39;,Y&#39;) &amp;=&amp; \sum_{i \in S}|p_i-q_i| \\
+&amp;=&amp;  \sum_{i\in S} [p_i+q_i - 2 \min(p_i, q_i)]  \\
+&amp;=&amp;  2 - 2\theta \\
+&amp;=&amp;  2\mathbb{P}(X&#39; \not = Y&#39;).
+\end{eqnarray*}
+\]</span></p>
+</div>
 </div>
 <div id="a-triangle-inequality" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> A triangle inequality</h1>
 <p>Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be independent integer-valued random variables. Also let <span class="math inline">\(Y_1, \ldots, Y_n\)</span> be independent integer-valued random variables. Set <span class="math inline">\(S=X_1 + \cdots + X_n\)</span> and <span class="math inline">\(W = Y_1 + \cdots + Y_n\)</span>. Show that</p>
-<p><span class="math display">\[d_{TV}(X, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i),\]</span>
+<p><span class="math display">\[d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i),\]</span>
 so that equality is obtained in the usual coupling inequality.</p>
 <p>Hint: Use a maximal coupling, along with independence.</p>
+<div id="solutions-2" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Solutions</h2>
+<p>Let <span class="math inline">\(Z_i&#39;=(X_i&#39;, Y_i&#39;)\)</span> be a maximal coupling of <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span>, which exists by the previous exercise. Note that
+<span class="math display">\[ d_{TV}(X_i,Y_i) = 2 \mathbb{P}(X_i&#39; \not = Y_i&#39;).\]</span>
+Furthermore, we require <span class="math inline">\(Z_1&#39;, \ldots, Z_n&#39;\)</span> to be independent; this ensures that
+<span class="math inline">\(X_1&#39;, \ldots, X&#39;_n\)</span> are independent and <span class="math inline">\(Y_1&#39;, \ldots, Y_n&#39;\)</span> are independent. Hence by assumption that <span class="math inline">\(X_1, \ldots, X_n\)</span> are independent and <span class="math inline">\(Y_1, \ldots, Y_n\)</span> are independent, we have that if
+<span class="math display">\[ S&#39; = X_1&#39; + \cdots + X_n&#39;\]</span>
+and</p>
+<p><span class="math display">\[ W&#39; = Y_1&#39; + \cdots + Y_n&#39;,\]</span></p>
+<p>then <span class="math inline">\(S&#39;\)</span> has the same distribution as <span class="math inline">\(S\)</span> and <span class="math inline">\(W&#39;\)</span> has the same distribution as <span class="math inline">\(W\)</span>; in other words, <span class="math inline">\((S&#39;,W&#39;)\)</span> is a coupling of <span class="math inline">\(S\)</span> and <span class="math inline">\(W\)</span>. Hence starting with the coupling inequality, we have</p>
+<p><span class="math display">\[
+\begin{eqnarray*}
+d_{TV}(S, W) &amp;=&amp;   d_{TV}(S&#39;, W&#39;) \\
+&amp;\leq&amp; 2 \mathbb{P}(S&#39; \not = W&#39;) \\
+&amp;\leq &amp; 2 \mathbb{P}\Big( \bigcup_{i=1}^n \{ X_i&#39; \not = Y_i&#39;\} \Big) \\
+&amp;\leq&amp;   \sum_{i=1} ^n 2\mathbb{P}(X_i&#39; \not = Y_i&#39;) \\
+&amp;=&amp;   \sum_{i=1} ^n d_{TV}(X_i, Y_i), 
+\end{eqnarray*}
+\]</span>
+as desired.</p>
+</div>
 </div>
 <div id="endnotes" class="section level1" number="7">
 <h1><span class="header-section-number">7</span> Endnotes</h1>
 <ul>
-<li>Version: 19 October 2021</li>
+<li>Version: 20 October 2021</li>
 <li><a href="https://tsoo-math.github.io/ucl2/class3-sol.Rmd">Rmd Source</a>
 <br>
 <br>
