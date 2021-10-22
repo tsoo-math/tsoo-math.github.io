@@ -31,6 +31,7 @@ We will *attempt* to live stream, the live in-person sessions.  Please note that
   -  We discussed material from last week; in particular, coupling and total variational distance.
   - [Exercise sheet](https://tsoo-math.github.io/ucl2/class3.html)
     - [Partial solutions](https://tsoo-math.github.io/ucl2/class3-sol.html)
+  - This session was recorded, and available only on Moodle.
 * Week 9 (25 Oct - 31 Oct):  
   - [Exercise sheet](https://tsoo-math.github.io/ucl2/class4.html)
       - [Partial Solutions]
