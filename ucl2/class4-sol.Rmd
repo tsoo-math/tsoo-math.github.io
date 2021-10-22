@@ -68,7 +68,7 @@ Check it!  Note that for $a >0,$ we have $\min(a,1) =a$, then  $\min(1/a, 1) =1$
 
 ##  Exercise
 
-Technically, we have only verified Metropolis-Hastings for a finite state space, but it is not difficult that it could also work for continuous distributions.    Try the Metropolis algorithm, on the first exercise using by letting $Y$ be normal with mean $i$, where we let $Q(j|i)$ be the pdf of a normal distribution centered at $i$ with variance $1$.  Fix $n=5$, and $t=2$.     
+Technically, we have only verified Metropolis-Hastings for a finite state space,  but we also adapt the algorithm for the case of continuous distributions.    Try the Metropolis algorithm, on the first exercise using by letting $Y$ be normal with mean $i$, where we let $Q(j|i)$ be the pdf of a normal distribution centered at $i$ with variance $1$.  Fix $n=5$, and $t=2$.     
 
 ### Solution
 
