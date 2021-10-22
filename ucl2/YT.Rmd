@@ -80,6 +80,9 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 *  [5/5](https://youtu.be/5YLQ5ZM2dj4)
 
 
+*  [slides](https://tsoo-math.github.io/ucl/poisson-slides.html)
+
+
 #  Continuous-time Markov chains
 
 

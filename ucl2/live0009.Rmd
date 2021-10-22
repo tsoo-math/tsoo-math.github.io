@@ -32,6 +32,8 @@ We will *attempt* to live stream, the live in-person sessions.  Please note that
   - [Exercise sheet](https://tsoo-math.github.io/ucl2/class3.html)
     - [Partial solutions](https://tsoo-math.github.io/ucl2/class3-sol.html)
 * Week 9 (25 Oct - 31 Oct):  
+  - [Exercise sheet](https://tsoo-math.github.io/ucl2/class4.html)
+      - [Partial Solutions]
 * Week 10 (1 Nov - 7 Nov):   ICA1 assigned
 * Week 11 (8 Nov - 14 Nov):  Reading break
 * Week 12 (15 Nov - 21 Nov): ICA1 due

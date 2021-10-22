@@ -26,9 +26,11 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
       - [Solutions in Python, including the last Q](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week7.ipynb/%3Fflush_cache%3Dtrue)
 * Week 8 (18 Oct - 24 Oct):  
   - [Exercises](https://tsoo-math.github.io/ucl2/2021-HW-week8.html)
-  - [Solutions in R](https://tsoo-math.github.io/ucl/QHW3-sols.html)
-  - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week8.ipynb/%3Fflush_cache%3Dtrue)
+    - [Solutions in R](https://tsoo-math.github.io/ucl/QHW3-sols.html)
+    - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week8.ipynb/%3Fflush_cache%3Dtrue)
 * Week 9 (25 Oct - 31 Oct):  
+  - [Exercises](https://tsoo-math.github.io/ucl/QHW4.html)
+    - [Solutions in R](https://tsoo-math.github.io/ucl/QHW4-sol.html)
 * Week 10 (1 Nov - 7 Nov):   ICA1 assigned
 * Week 11 (8 Nov - 14 Nov):  Reading break
 * Week 12 (15 Nov - 21 Nov): ICA1 due
