@@ -33,6 +33,7 @@ We will *attempt* to live stream, the live in-person sessions.  Please note that
     - [Partial solutions](https://tsoo-math.github.io/ucl2/class3-sol.html)
   - This session was recorded, and available only on Moodle.
 * Week 9 (25 Oct - 31 Oct):  
+  - [Python inside R](https://tsoo-math.github.io/ucl2/class4.1.html)
   - [Exercise sheet](https://tsoo-math.github.io/ucl2/class4.html)
       - [Partial Solutions]
 * Week 10 (1 Nov - 7 Nov):   
