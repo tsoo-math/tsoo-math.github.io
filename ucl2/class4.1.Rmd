@@ -1,0 +1,56 @@
+---
+title: "In class exercise:  Python inside R"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#  Introduction
+
+
+In this example, we will run Python inside R.  You need to install the package *reticulate* and load the corresponding library.   
+
+```{python}     
+import numpy as np
+zp = np.array([1,2,3])
+print(zp)
+```
+
+We can port the Python array zp, into R as follows.
+
+```{r}
+zr <- as.vector(py$zp)
+zr
+
+xr= c(2,4,6)
+xr
+```
+
+We can also port things back into Python
+
+```{python}
+wp = r.xr
+wp = np.array(wp)
+print(wp)
+print(wp + zp)
+```
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl2/class4.1.Rmd)
+<br>
+<br>
+<br>
