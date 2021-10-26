@@ -72,6 +72,38 @@ Technically, we have only verified Metropolis-Hastings for a finite state space,
 
 ### Solution
 
+To check reversibility, for $i \not = j$, we have
+
+$$
+\begin{eqnarray*}
+\pi_{i}P(j|i) &=& \pi_{i}Q(j|i)\alpha(j|i)  \\
+&=&      \pi_{i}Q(j|i)\min\big( \tfrac{\tilde{\pi}(j)}{\tilde{\pi}(i)} \cdot \tfrac{Q(i|j)}{Q(j|i)},1\big).
+\end{eqnarray*}
+$$
+
+If  $\min\big( \tfrac{\tilde{\pi}(j)}{\tilde{\pi}(i)} \cdot \tfrac{Q(i|j)}{Q(j|i)},1\big)=\tfrac{\tilde{\pi}(j)}{\tilde{\pi}(i)} \cdot \tfrac{Q(i|j)}{Q(j|i)}$, then 
+
+$$
+\begin{eqnarray*}
+\pi_{i}P(j|i) &=&  \pi_{i}Q(j|i)  \tfrac{\tilde{\pi}(j)}{\tilde{\pi}(i)} \\
+&=&  \pi_j Q(j|i),
+\end{eqnarray*}
+$$
+
+and $\min\big( \tfrac{\tilde{\pi}(i)}{\tilde{\pi}(j)} \cdot \tfrac{Q(j|i)}{Q(i|j)},1\big)=1$, so that 
+
+$$
+\begin{eqnarray*}
+\pi_{i}P(j|i) &=&   \pi_j Q(j|i) \\ 
+&=&    \pi_j Q(j|i)\min\big( \tfrac{\tilde{\pi}(i)}{\tilde{\pi}(j)} \cdot \tfrac{Q(j|i)}{Q(i|j)},1\big) \\
+&=&  \pi_j P(j|i),
+\end{eqnarray*}
+$$
+as desired.  A similar argument holds, if $\min\big( \tfrac{\tilde{\pi}(j)}{\tilde{\pi}(i)} \cdot \tfrac{Q(i|j)}{Q(j|i)},1\big)=1$.
+
+### Solution R code
+
+
 ```{r}
 h <- function(x){
  z=0
