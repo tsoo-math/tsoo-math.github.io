@@ -102,7 +102,7 @@ P =
 
 Suppose that $X$ is a Markov chain, and suppose $X_0$ has law $(1/3, 1/3, 1/3)$.
 
-  * Find $\mathbb{P} (X_8 = 3)$
+  * Find $\mathbb{P} (X_5 = 3)$
   * Compute $P^n$ for large $n$
   * If you change the initial distribution for $X_0$, for large $n$, what effect does this have on the distribution $X_n$
 ```  
