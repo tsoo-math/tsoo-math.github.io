@@ -92,7 +92,7 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 *  [4/5](https://youtu.be/NaZbxNoI-dw)
 *  [5/5](https://youtu.be/nqJZtI8ELeM)
 
-
+*  [slides](https://tsoo-math.github.io/ucl/continuous-timeMC-slides.html)
 
 # Introduction to renewal processes
 
