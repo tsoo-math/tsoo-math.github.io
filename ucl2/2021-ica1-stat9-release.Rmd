@@ -1,0 +1,118 @@
+---
+title: "Stat0009 ICA1 (2021)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+# py_install("matplotlib")
+```
+
+
+
+# Introduction
+
+* Made available UCL Week 10: 1 November 2021
+* Due UCL Week 12: 18 November 2021, 13:00 London Time.
+* This ICA consists of five questions, worth 50 points;
+* another 10 points will be given based on presentation, so that the total available points is 60.  
+* This ICA is worth 30 percent of your grade for this module.
+* Many questions will require you to write and run R/Python code.
+* The ICA must be completed in R Markdown/Juptyer Notebook and typeset using  Markdown with Latex code, just like the way our module content is generated.  You can choose to use either R or Python.
+* Please hand in the html file and the Rmd/ipynb source file.
+* As usual, part of the grading will depend on the clarity and presentation of your solutions.
+*  You are to do this assignment by yourselves, without any help from others.
+*  You are allowed to use any materials and code that was presented so far.
+*  Do not search the internet for answers to the ICA.
+*  Do not use any fancy code or packages imported from elsewhere.
+
+
+
+##  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I am aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. I have read the guidelines in the student handbook and understand what constitutes plagiarism. I hereby affirm that the work I am submitting for this in-course assessment is entirely my own.
+
+
+
+## Anonymous Marking 
+
+Please do **not** write your name anywhere on the submission. Please include only your **student number** as the proxy identifier.
+
+
+
+
+
+# Questions
+
+
+
+
+
+##  1.) Empirical distribution [10 points]
+
+*  Let $X_1, \ldots, X_n$ be i.i.d. random variables all with cdf $F$.  Show that for every $x \in \mathbb{R}$, we have
+
+$$ \frac{1}{n} \sum_{i=1}^n \mathbf{1}[ X_i \leq x]  \to F(x).  \    \text{[5 points]}$$
+
+
+*  Demonstrate this fact by running simulations of a large number of random variables that are uniformly distributed in the unit interval $[0,1]$.  [5 points]
+
+
+##  2.) Generating random variables [10 points]
+
+
+*  Show that if $X$ is a continuous random variable taking values on $D$ with a cdf that is strictly increasing on $D$,  then the random variable $F(X)$ is uniformly distributed  on the unit interval $[0,1]$.  [3 points]
+
+*  Show that if $U$ is uniformly distributed in $[0, \tfrac{\pi}{2}]$, then $\sin^2(U)$ has the beta distribution with parameters $(\tfrac{1}{2}, \tfrac{1}{2})$. [3 points]
+
+*  Suppose that you have access to a true source of randomization given by say radioactive decay; that is, you  have access to independent random variables that are exponentially distributed with rate $1$.   Show that you can generate random variables with the beta distribution with parameters $(\tfrac{1}{2}, \tfrac{1}{2})$.  [2 points]
+
+*  Demonstrate your procedure in the last question, by computer simulations, and plot a histogram of the results against pdf of the beta $(\tfrac{1}{2}, \tfrac{1}{2})$. [2 points]
+
+
+
+## 3.) Random walk [5 points]
+
+Let $S_n = X_1 + \cdots + X_n$, where $X_i$ are i.i.d. random variables, with $$\mathbb{P}(X_1 = 1) = \tfrac{1}{2} = \mathbb{P}(X_1 = -1).$$
+
+Let $$L_n = \# \{ 1 \leq k \leq n : S_k >0\}.$$  Demonstrate, by simulations, that $L_n/n$ converges in distribution to the beta $(\tfrac{1}{2}, \tfrac{1}{2})$ distribution.
+
+
+
+
+## 4.) Exporting and importing data [5 points]
+
+*  Simulate $250$ random variables that are uniformly distributed in $[0,1]$.
+*  Export them to a tab delimited text file named *export.txt*.
+*  Now import them back  and save them under the variable *imported*.
+*  Plot a probability histogram of the imported data.  You may need to do some processing as the values may be in a table, rather than a vector.
+
+## 5.) Estimating the stationary distribution [10 points]
+
+*  Suppose you are given the output of a $100000$ steps of a irreducible and aperiodic finite state Markov chain.    Carefully explain how you could estimate the stationary distribution for this Markov chain, and why you estimator is reasonable.  [5 points]
+
+*  Import the data from the file [markovchain.txt](https://tsoo-math.github.io/ucl2/markovchain.txt) and use this data and your method above to estimate the stationary distribution.  [5 points]
+
+## 6.) Poisson processes [10 points]
+
+Suppose  a shop that operates daily in the time interval $[a,b]$.  It  has customers arriving according to a Poisson process of intensity $3$ in the time interval $[a, c)$, and a Poisson process of intensity $5$ in the time interval $[c,b)$; here $a$ and $b$ are known,  but $c$ is *unknown*.   You can imagine the shop keeper notices that at some point in the day, the shop seems to get busier.  The shop keeper has a log of all the arrival times, for each of $n$ days of operation, where $n$ is large.  
+
+*  Given an open  interval $(r,s) \subset [a,b]$, explain how you can use the shop keeper's log to make a good guess at whether or not $(r,s)$ contains the unknown time $c$; show that as $n \to \infty$ you will know with certainty whether $c \in (r,s)$.  Carefully explain your answer. [5 points] 
+
+*  Demonstrate your answer by running simulations; for example, choose $a=0$, $b=8$, and $c=4$, and simulate the arrivals to generate the shop keeper's log.  Now apply your method with the intervals $(2.7, 4.3)$ and $(5,6)$.  [5 points]
+
+
+# Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.Rmd)
+
+
