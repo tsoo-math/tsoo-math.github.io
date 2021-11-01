@@ -40,10 +40,11 @@ We will *attempt* to live stream, the live in-person sessions.  Please note that
   - This session was recorded, and only available on Moodle.  
 * Week 10 (1 Nov - 7 Nov):   
   - [Poisson process on a sphere](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/sphere.ipynb)
-      -[Solutions](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/sphere-sol.ipynb)
+      - [Solutions](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/sphere-sol.ipynb)
   - [Non-homogeneous Poisson process](https://tsoo-math.github.io/ucl2/nonhomo.html)
       - [Solutions](https://tsoo-math.github.io/ucl2/nonhomo-sols.html)
   - [ICA1](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html) assigned
+  - This meeting was recorded and will be available in Moodle.
 * Week 11 (8 Nov - 14 Nov):  Reading break
 * Week 12 (15 Nov - 21 Nov): ICA1 due
 * Week 13 (22 Nov - 28 Nov):  
