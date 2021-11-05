@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Week 7 (11 Oct - 17 Oct): Random variables: theory and practice, Coupling and total variational distance, Review of Markov chains
 * Week 8 (18 Oct - 24 Oct):  Convergence of Markov chains, Coupling from the past
 * Week 9 (25 Oct - 31 Oct):  Poisson processes
-* Week 10 (1 Nov - 7 Nov):   ICA1 assigned
+* Week 10 (1 Nov - 7 Nov):  Continuous-time Markov chains;  [ICA1](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html) assigned
 * Week 11 (8 Nov - 14 Nov):  Reading break
 * Week 12 (15 Nov - 21 Nov): ICA1 due
 * Week 13 (22 Nov - 28 Nov):  
