@@ -12,6 +12,16 @@ Instructor:  Terry Soo
 email:  t.soo@ucl.ac.uk
 <br>
 My [homepage](https://www.terrysoo.com)
+<br>
+Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/documents/Stochastic-Processes.pdf)
+<br>
+
+* 10.30-12.30; Mondays, starting November 8   
+* UCL Cruciform B304 (weeks 1-4) 
+* UCL Physics A1/3 (week 5)
+* Zoom [link](https://ucl.zoom.us/my/terrysoo) (when available)
+
+
 
 # Abstract
 
