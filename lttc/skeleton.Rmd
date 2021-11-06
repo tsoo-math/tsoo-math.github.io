@@ -11,7 +11,7 @@ Instructor:  Terry Soo
 <br>
 email:  t.soo@ucl.ac.uk
 <br>
-My [homepage](https:\\www.terrysoo.com)
+My [homepage](https://www.terrysoo.com)
 
 # Abstract
 
