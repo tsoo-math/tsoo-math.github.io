@@ -1,0 +1,284 @@
+%document begins at approx line 100
+\documentclass[12pt, reqno]{amsart}
+%\include{macrosu}
+%%%%%general use
+\usepackage{url,enumerate}
+\usepackage{amsmath,amssymb,amsfonts,amstext, amsthm}
+\usepackage{url,xspace}
+%\usepackage[hypertex]{hyperref}
+\usepackage{verbatim}
+
+%\usepackage[left=1.9cm, right=1.9cm, top=1 cm, bottom=1 cm, noheadfoot]{geometry}
+\usepackage{amsmath, amssymb}
+
+
+
+
+
+
+%%%%theorems, propositions, lemmas, corollary
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{atheorem}[theorem]{Advanced Theorem}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newcommand{\egg}{\hfill \ensuremath{\Diamond}} %%used to signal end of example
+\newcommand{\superqed}{\hfill \ensuremath{\Box}}
+%%conjectures, open questions, and questions.
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{open}[conjecture]{Open Problem}
+\newtheorem{question}[conjecture]{Question}
+\newtheorem{ex}{Exercise}[section]   
+\newtheorem{exq}[ex]{Example done in class}
+\newtheorem{pres}[ex]{Presentation project}
+\newtheorem*{sol}{Solution}   
+%%%%%%general use commands
+\newcommand{\df}{\bf\boldmath}
+\newcommand\dff[1]{\textbf{#1}}
+\newcommand{\note}[1]{{\bf
+{[#1\marginpar{{\bf $\bigstar\bigstar\bigstar$}}]}}}
+\newcommand\supp[1]{  [#1] }
+\newcommand\cardsupp[1]{  \# [#1] }
+\newcommand\ns[1]{ \left\{ {#1} \right\} }
+\newcommand\ob[1]{ \left( {#1} \right) }
+\newcommand\onee{{\mathbf{1}}}
+\newcommand\powerset{ { \boldsymbol{\mathcal P}}}
+\newcommand{\ind}{{\mathbf 1}}
+\newcommand\one[1]{\ind_{#1}}
+\newcommand{\eqd}{\stackrel{d}{=}}  %%equal in distribution
+\newcommand\deq{{:=}}
+\newcommand\floor[1]{\lfloor  {#1}   \rfloor}
+\newcommand\naiveset[1]{ \{ {#1} \} }
+\newcommand\obracket[1] {   \left( {#1} \right) }
+\newcommand\cbracket[1] {   \left[ {#1} \right] }
+\newcommand\setbracket[1] {   \big\{ {#1} \big \} }
+%%math blackboard
+\renewcommand{\P}{{\mathbb P}}  %probability
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\E}{{\mathbb E}}     %expectation operator
+%%%mathcal
+\newcommand\borel{{\mathcal{B}}}    % borel sigmal field
+\newcommand{\leb}{{\mathcal L}}  %Lebes measure
+\newcommand{\les}{{\mathcal L}}
+\newcommand{\J}{{\mathcal J}}
+\newcommand{\F}{{\mathcal F}}     %sigma-field
+%\renewcommand\G{{\mathcal G}}        % some sigma field
+%\newcommand{\U}{{\mathcal U}}
+\newcommand{\V}{{\mathcal V}}
+\newcommand{\Var}{{\mathrm{Var}}}
+\newcommand{\Cov}{{\mathrm{Cov}}}
+\newcommand{\Cor}{\rho}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\ran}{\mathrm{ran}}
+
+\newcommand{\re}{\mathrm{Re}}
+\newcommand{\im}{\mathrm{Im}}
+
+\DeclareMathOperator\Arg{Arg}
+
+
+
+\newcommand{\A}{{\mathcal A}}     %measurable set of measures
+\newcommand{\e}{\varepsilon}
+%gothic-cal
+\newcommand\gothh[1]{  {\mathcal #1} }
+\newcommand\goth[1]{  {\mathfrak #1} }
+%\newcommand{\les}{\ell}
+\newcommand\fracc[2]{ #1 /#2 }      %alternate form of \frac
+\newcommand\X{{\Omega}}            % State space
+%\newcommand\w{{\omega}}            % State space element
+\newcommand\Oo{ {\mathcal O } }
+\newcommand\XX{{\mathbb M}}         % space of point measures
+\newcommand\M{{\mathcal M}}        % some sigma field
+\newcommand\onea[1]{ \mathbf{1}{ [#1]}    }
+\newcommand\borelg{\goth{B}}
+\newcommand\gothhh[1]{  { #1} }
+\newcommand\ronn{{\big |}}
+\newcommand\ronnn{{|}}
+\newcommand{\GZF}{\Upsilon_{\mathbb{C}}}
+\newcommand{\GZH}{\Upsilon_{\mathbb{D}}}
+\newcommand{\bGZH}{\widehat{\Upsilon}_{\mathbb{D}}}
+\newcommand\nss[1]{ \left\{ {\ns{#1}} \right\} }
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\tr}{trace}
+\newcommand{\erk}{\hfill \ensuremath{\Diamond}} %%used to signal end of remark
+\newcommand{\prob}{\xrightarrow{\P}}
+%{{ \stackrel{\text{\rm{prob}}}{\longrightarrow
+%}  }}
+\newcommand\new[1]{  { {\bf  new: #1} }}
+
+%\usepackage{fullpage}
+
+\begin{document}
+\today
+\begin{title}
+{Expectation II}
+\end{title}
+\maketitle{}
+
+\begin{abstract}
+We will define the expectation of a continuous random variable and discuss  basic properties.  
+\end{abstract}
+
+
+\section{Introduction}
+
+Let $X$ be a continuous real-valued random variable with pdf $f$.  Suppose that 
+$$\int |x| f(x)  dx< \infty.$$
+We define the \dff{expectation} or \dff{mean} of $X$ via
+$$ \E X = \int  xf(x)dx.$$
+\begin{remark}
+The law of large numbers as stated earlier for discrete random variable is still valid.  
+\end{remark}
+
+\begin{ex} 
+ Let $X$ be uniformly distributed on the unit interval.  Find $\E X$.  
+
+\end{ex}
+
+
+\begin{ex}
+\label{exp}
+    Let $X$ be exponential with parameter (mean) $\mu >0$.  Show that $ \E X = \mu$.  
+
+\end{ex}
+
+
+
+\begin{ex} 
+\label{norm}
+  Let $X \sim N(\mu, \sigma^2)$.  Show that $\E X = \mu$.  
+
+\end{ex}
+
+\section{Properties of Expectation}
+
+\begin{theorem}[Change of variables, law of the unconscious statistician]
+\label{CV}
+Let $X$ be a continuous random variable  with pdf  $f$.     If $g: \R\to \R$ is Borel measurable,  then 
+	$$ \E g(X) = \int g(x)f(x) dx$$
+	whenever the integral  is absolutely convergent.  
+\end{theorem}
+
+The proof of Theorem \ref{CV} is harder for the case of continuous random variables.   We will revisit this Theorem later when we discuss expectation in more generality.   We will prove a simple case of Theorem \ref{CV}.
+
+\begin{proof}[Proof of Theorem \ref{CV}---$g$ strictly increasing and differentiable]
+Since $g$ is increasing, let $h = g^{-1}$. We have that 
+\begin{eqnarray*}
+ \P( g(X) \leq y)  &=&  \P( X \leq h(y)) \\
+ &=&  \int_{- \infty} ^{h(y)} f_X(x) dx,
+\end{eqnarray*}
+so that the fundamental theorem of calculus gives that the density for $Y = g(X)$ is given by
+$$f_Y(y) = f_X(h(y)) h'(y).$$  Thus with the change of variables $y = g(x)$ and the inverse function theorem, we have 
+$$ \E Y = \int y f_X(h(y)) h'(y) dy = \int g(x) f_X(x) dx.$$
+\end{proof}
+
+
+If $X$ and $Y$ are continuous  random variables defined on same probability space, we say that they are \dff{jointly continuous} with joint pdf $j:\R \times \R \to [0, \infty)$, if for all $x,y \in \R$, we have
+$$ \P(X \leq x , Y \leq y) = \int_{-\infty} ^y \int_{-\infty} ^x j(u,v) du dv;$$
+note that the pdf of $X$ is recovered by taking the whole integral in $v$,
+$$f_X(x) =   \int_{-\infty} ^{\infty}  j(u,v) dv$$
+and in this context sometimes its referred to as a \dff{marginal}.
+
+\begin{theorem}     If $X$ and $Y$ are jointly continuous random variables with joint pdf $j$ then they are independent if and only if $j$ factorizes as
+$$j(x,y) =f(x)g(y)$$
+for some functions $f$ and $g$.  
+
+\end{theorem}
+
+\begin{proof}
+Clearly, if $j$ factorizes, then $X$ and $Y$ are independent.  If $X$ and $Y$ are independent, then for $(x,y)$ where  $F(x,y) = \P(X \leq x, Y\leq y)$ is differentiable, we have
+\begin{eqnarray*}
+j(x,y) &=&  \frac{\partial^2}{ \partial x \partial y} \P(X \leq x, Y \leq y) \\
+&=& \frac{\partial^2}{ \partial x \partial y} \P(X \leq x) \P( Y \leq y) \\
+&=& \frac{ \partial }{\partial x} \P(X \leq x) \frac{\partial }{\partial y} \P( Y \leq y) \\
+&=& f_X(x) f_Y(y).
+\end{eqnarray*}
+
+\end{proof}
+
+
+
+\begin{theorem}[Change of variables, law of the unconscious statistician]
+\label{CVv}
+Let $X$  and $Y$ be jointly continuous random variables  with joint pdf $j$.     If $g: \R\ \times \R \to \R$ is Borel measurable,  then 
+	$$ \E g(X,Y) = \int\int g(x,y)j(x,y) dxdy.$$
+	whenever the integral  is absolutely convergent.  
+\end{theorem}
+
+
+
+Again, we will postpone the proof of Theorem \ref{CVv}.    An easy corollary of Theorem \ref{CVv} is again the linearity of expectation.  
+
+\section{General properties of expectation}
+
+We will not have enough time to give a unified treatment of expectation. Using more of the machinery from measure theory it is possible, in several classes to end up with the following expectation operator.  Let $(\Omega, \F, \P)$ be a probability space.  Let $RV^{+}$ denote the set of nonnegative random variable.   We can construct $\E : RV^{+} \to [0, \infty]$, with the following properties.
+\begin{enumerate}[(a)]
+\item
+If $X$ is a discrete random variable, then $\E X$ is the expectation in the elementary sense.
+\item
+Given a random variable $X \in RV^{+}$ there exists a sequence of discrete random variables such that for all $\omega \in \Omega$, we have  $X_n(\omega) \to  X(\omega)$ monotonically, so that $X_n(\omega) \leq X_{n+1}(\omega)$; furthermore, $\E X_n \to \E X$.
+\item
+The expectation operator is linear.
+\end{enumerate}
+We define expectation for  general random variables, by declaring:
+$$ \E X := \E X^{+} - \E X^{-},$$
+where $X^{+} = \max\ns{X, 0}$
+and $ X^{-} = -\min\ns{X, 0}$, so that $\E X$ is well defined as long as both the expectations in the difference are not both infinity.     Notice that 
+$$\E |X| =  \E X^{+} + \E X^{-}.$$
+The expectation operator agrees with all our previous notations for expectation of discrete and continuous random variables.    
+
+The expectation operator also  satisfies certain continuity properties.
+\begin{theorem}[Convergence theorems]
+\label{DOM}
+Let $X_n$ be a  sequence  of random variables that converge to $X$ (almost surely), so that for all $\omega \in \Omega$ (or an event $\Omega'$ with $\P(\Omega') =1$), we have $X_n(\omega) \to X(\omega)$.  
+\begin{enumerate}[(a)]
+\item
+Monotone convergence theorem:  If $0 \leq X_n $ is a non-decreasing sequence, then $\E X_n \to \E X$.
+\item
+Bounded convergence theorem:  If there exists $C$ such that $|X_n| \leq C$, then $\E |X| < \infty$ and  $\E |X_n -X| \to 0$.  
+\item
+Dominated convergence theorem:  If there exists a random variable $Y$ such that $\E|Y| < \infty$, and $|X_n| \leq Y$, then $\E |X| < \infty$ and  $\E|X_n - X| \to 0$.
+\item
+Fatou's Lemma: If $X_n \geq 0$, then $$\liminf_{n \to \infty} \E X_n \geq \E (\liminf_{n \to \infty} X_n).$$  
+\end{enumerate}
+\end{theorem}
+
+Throughout the course, we will assume such an expectation operator exists.  However, most of the time in our specific examples, we will operate in the discrete or continuous realm.  In addition, we will not use any fine properties or details of the construction, and furthermore, will try to  limit our use of Theorem \ref{DOM}.
+
+
+\end{document}
+
+
+
+
+\section{Uniform random variables in higher dimensions}
+
+We say that $\les$ is Lebesgue measure on $\R^d$ if it is the  $d$-fold  product measure of Lebesgue measure on $\R$; thus when $d=2$, Lebesgue measure gives the area of a set, and when $d=3$ it gives the area.      We say that $U$ is \dff{uniformly distributed} on a Borel set $A\subset \R^d$ if for all Borel sets $B \subset \R^d$, we have
+$$ \P( U \in B) = \frac{ \les(B \cap A)  }{ \les (B)}.$$
+
+\begin{ex}  Let $U$ be uniformly distributed on a disc of radius $Q$ in $\R^2$.    Write $U = (R, \Theta)$ in polar coordinates.  Show that $R$ and $\Theta$ are independent.   What are the  marginal  distributions for $R$ and $\Theta$?
+
+\end{ex}
+
+
+
+\section{Some calculations}
+
+
+
+\section{Some harder calculations}
+
+
+
+\end{document}
+
+
+

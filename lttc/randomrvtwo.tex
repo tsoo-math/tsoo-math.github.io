@@ -1,0 +1,257 @@
+%document begins at approx line 100
+\documentclass[12pt, reqno]{amsart}
+%\include{macrosu}
+%%%%%general use
+\usepackage{url,enumerate}
+\usepackage{amsmath,amssymb,amsfonts,amstext, amsthm}
+\usepackage{url,xspace}
+%\usepackage[hypertex]{hyperref}
+\usepackage{verbatim}
+
+%\usepackage[left=1.9cm, right=1.9cm, top=1 cm, bottom=1 cm, noheadfoot]{geometry}
+\usepackage{amsmath, amssymb}
+
+
+
+
+
+
+%%%%theorems, propositions, lemmas, corollary
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{atheorem}[theorem]{Advanced Theorem}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newcommand{\egg}{\hfill \ensuremath{\Diamond}} %%used to signal end of example
+\newcommand{\superqed}{\hfill \ensuremath{\Box}}
+%%conjectures, open questions, and questions.
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{open}[conjecture]{Open Problem}
+\newtheorem{question}[conjecture]{Question}
+\newtheorem{ex}{Exercise}[section]   
+\newtheorem{exq}[ex]{Example done in class}
+\newtheorem{pres}[ex]{Presentation project}
+\newtheorem*{sol}{Solution}   
+%%%%%%general use commands
+\newcommand{\df}{\bf\boldmath}
+\newcommand\dff[1]{\textbf{#1}}
+\newcommand{\note}[1]{{\bf
+{[#1\marginpar{{\bf $\bigstar\bigstar\bigstar$}}]}}}
+\newcommand\supp[1]{  [#1] }
+\newcommand\cardsupp[1]{  \# [#1] }
+\newcommand\ns[1]{ \left\{ {#1} \right\} }
+\newcommand\ob[1]{ \left( {#1} \right) }
+\newcommand\onee{{\mathbf{1}}}
+\newcommand\powerset{ { \boldsymbol{\mathcal P}}}
+\newcommand{\ind}{{\mathbf 1}}
+\newcommand\one[1]{\ind_{#1}}
+\newcommand{\eqd}{\stackrel{d}{=}}  %%equal in distribution
+\newcommand\deq{{:=}}
+\newcommand\floor[1]{\lfloor  {#1}   \rfloor}
+\newcommand\naiveset[1]{ \{ {#1} \} }
+\newcommand\obracket[1] {   \left( {#1} \right) }
+\newcommand\cbracket[1] {   \left[ {#1} \right] }
+\newcommand\setbracket[1] {   \big\{ {#1} \big \} }
+%%math blackboard
+\renewcommand{\P}{{\mathbb P}}  %probability
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\E}{{\mathbb E}}     %expectation operator
+%%%mathcal
+\newcommand\borel{{\mathcal{B}}}    % borel sigmal field
+\newcommand{\leb}{{\mathcal L}}  %Lebes measure
+\newcommand{\les}{{\mathcal L}}
+\newcommand{\J}{{\mathcal J}}
+\newcommand{\F}{{\mathcal F}}     %sigma-field
+%\renewcommand\G{{\mathcal G}}        % some sigma field
+%\newcommand{\U}{{\mathcal U}}
+\newcommand{\V}{{\mathcal V}}
+\newcommand{\Var}{{\mathrm{Var}}}
+\newcommand{\Cov}{{\mathrm{Cov}}}
+\newcommand{\Cor}{\rho}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\ran}{\mathrm{ran}}
+
+\newcommand{\re}{\mathrm{Re}}
+\newcommand{\im}{\mathrm{Im}}
+
+\DeclareMathOperator\Arg{Arg}
+
+
+
+\newcommand{\A}{{\mathcal A}}     %measurable set of measures
+\newcommand{\e}{\varepsilon}
+%gothic-cal
+\newcommand\gothh[1]{  {\mathcal #1} }
+\newcommand\goth[1]{  {\mathfrak #1} }
+%\newcommand{\les}{\ell}
+\newcommand\fracc[2]{ #1 /#2 }      %alternate form of \frac
+\newcommand\X{{\Omega}}            % State space
+%\newcommand\w{{\omega}}            % State space element
+\newcommand\Oo{ {\mathcal O } }
+\newcommand\XX{{\mathbb M}}         % space of point measures
+\newcommand\M{{\mathcal M}}        % some sigma field
+\newcommand\onea[1]{ \mathbf{1}{ [#1]}    }
+\newcommand\borelg{\goth{B}}
+\newcommand\gothhh[1]{  { #1} }
+\newcommand\ronn{{\big |}}
+\newcommand\ronnn{{|}}
+\newcommand{\GZF}{\Upsilon_{\mathbb{C}}}
+\newcommand{\GZH}{\Upsilon_{\mathbb{D}}}
+\newcommand{\bGZH}{\widehat{\Upsilon}_{\mathbb{D}}}
+\newcommand\nss[1]{ \left\{ {\ns{#1}} \right\} }
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\tr}{trace}
+\newcommand{\erk}{\hfill \ensuremath{\Diamond}} %%used to signal end of remark
+\newcommand{\prob}{\xrightarrow{\P}}
+%{{ \stackrel{\text{\rm{prob}}}{\longrightarrow
+%}  }}
+\newcommand\new[1]{  { {\bf  new: #1} }}
+
+%\usepackage{fullpage}
+
+\begin{document}
+\today
+\begin{title}
+{Random variables II}
+\end{title}
+\maketitle{}
+
+\begin{abstract}
+We will discuss the existence of random variables and independent sequences of random variables. 
+\end{abstract}
+
+
+\section{Uniform random variables}
+
+Recall that we asserted the existence of Lebesgue measure on the unit interval; that is, by a result in measure theory, we know that there is a translation-invariant probability measure defined on the Borel subsets of the unit interval.   This is easily implies the existence of a random variable that is uniformly distributed on the unit interval.
+
+ \begin{theorem} 
+ \label{exU}
+   There exists a probability space $(\Omega, \F, \P)$ and a random variable $U: \Omega \to [0,1]$ such that $U$ is uniformly distributed on $[0,1]$.
+ 
+    \end{theorem}   
+The proof of Theorem \ref{exU} is underwhelming.
+
+\begin{proof}[Proof of Theorem \ref{exU}]
+Let $(\Omega, \F, \P)$ be the probability space for Lebesgue measure, where $\Omega = [0,1)$ is the unit interval, and $\F$ is the Borel subsets of the unit interval generated by the intervals of the form $[a,b)$, and $\P[a, b) = b-a$ for $ 0 \leq a < b <1$.    Take $U: \Omega \to \Omega$ to be the identity map; that is $U(\omega) = \omega$.  
+\end{proof}
+
+
+We will see that one uniform random variable is all we need.
+
+
+\begin{theorem}
+\label{everything}
+  Let $F$ be cdf.  There exists a probability space $(\Omega, \F, \P)$ and a random variable $X: \Omega \to \R$ with $F$ as its cdf.
+
+\end{theorem}
+
+Before we prove Theorem \ref{everything}, we give a simple construction to show how Theorem \ref{exU} implies the existence of any discrete random variable.  
+
+\begin{ex}  
+\label{part}
+Let $p:\N \to [0,1]$ be a pmf.  Find a (measurable) function $\phi:[0,1) \to \R$ such that $\phi(U)$ has pmf $p$, if $U$ is uniformly distributed in on the unit interval.
+
+\end{ex}
+
+\begin{proof}[Solution to Exercise \ref{part}]
+Let $U$ be uniformly distributed on the unit interval.  Consider the intervals $$I_0=[0, p_0), I_1=[p_0, p_1 +p_0), \ldots, I_{n+1}=[p_n,  p_{n+1} +p_n
+), \ldots.$$
+Clearly, the intervals are Borel measurable, and $\P(U \in I_n) = p_n$.  Set $$\phi = \sum_{n=0} ^{\infty}  n\mathbf{1}_{I_n}.$$  It is easy to verify that $\phi$ is measurable.  
+\end{proof}
+
+If $F$ is a cdf, in the case that $F$ is strictly increasing, then its inverse function is well-defined $F^{-1}$ on $(0, 1)$.   Sometimes $F^{-1}$ is called the \dff{quantile function}.    One can verify that it is also increasing.      If $U$ is uniformly distributed on the unit interval, then 
+since $F^{-1}$ is increasing we have 
+ \begin{equation}
+ \label{U}
+   \P(   F^{-1}(U) \leq x) = \P( U \leq F(x)) = F(x);
+   \end{equation}
+hence $F^{-1}(U)$ has the cdf $F$.  We should check that $F^{-1}$ is measurable. 
+
+\begin{lemma}
+If $f: \R \to \R$ is a monotone function, then it is measurable.  
+\end{lemma}
+
+\begin{proof}   By taking the negative, without loss of generality, assume that $f$ is nondecreasing.  Fix $ y\in \R$. 
+We have 
+$$ f^{-1}(-\infty, y) = \ns{x \in \R :  f(x) < y}.$$
+Since $f$ is nondecreasing, if $x \in  f^{-1}(-\infty, y) $, then any $z \leq x$ have  we $f(z) \leq f(x)$, thus we  also have $z \in  f^{-1}(-\infty, y) $.  Hence $  f^{-1}(-\infty, y) $ can be all of $\R$, the empty set,  or an  interval of the form $(-\infty, z)$ or $(\infty, z]$ for $z \in \R$. 
+%
+\end{proof}
+
+For cdf $F$ that is not necessarily strictly increasing, we define its \dff{generalized quantile function} via 
+$$ F^{-1}(y) = \sup\ns{ x\in \R:  F(x) < y},$$
+for $y \in (0,1)$,  
+which is a nondecreasing and thus measurable function. 
+\begin{proof}[Proof of Theorem \ref{everything}]
+We already know that there is a probability space that can house a random variable $U$ that is uniformly distributed in the unit interval.  One can verify using the right continuity of $F$ that \eqref{U} holds for the case where we have to use the generalized quantile function.
+\end{proof}
+
+
+\begin{remark}
+Note that the proof of Theorem \ref{everything} gives one way of generating random variables, if one is given a random variable that is uniformly distributed on the unit interval to begin with---in practice this is often the case, in the sense that most mathematical software has the ability to generate such  pseudo random variables.  However, in practice, there are usually much quicker and efficient ways to generate random variables than to use Theorem \ref{everything}. 
+\end{remark}
+
+
+
+\section{Independent sequences of random variables}
+
+
+We will see that everything we want  is a result of the fact that there exists one random variable that is uniformly distributed in on the unit interval.  Given $u \in [0,1)$, we write $$u = \sum_{i=1} ^{\infty}  \frac{b_i}{2^{i}},$$
+where $b_i = b_i(u) \in \ns{0,1}$ so that the sequence $b(u) = (b_1, b_2, \ldots)$ gives the binary expansion of $u$.  
+
+
+For fixed $n \geq 1$ and any binary sequence $a \in \ns{0,1} ^n$ we have 
+$$\P(b_1(U) = a_1, \ldots, b_n(U) = a_n) = \frac{1}{2^n},$$
+since this event corresponds to an event that $U$ is in an interval of length $\tfrac{1}{2^n}.$  It is also not difficult to see that 
+$$ \P(b_2(U) = a_2, \ldots, b_n(U) = a_n) = \frac{1}{2^{n-1}},$$
+since this event corresponds to the an event that $U$ belongs to one of two disjoint intervals of length $\tfrac{1}{2^n}$.  Moreover, if we have $k$ remaining restrictions out the coordinates ${i_1, \ldots, i_k}$, then 
+$$\P( b_{i_1}(U) = a_{i_1} , \ldots, b_{i_k}(U) = a_{i_k}) = \frac{1}{2^k}.$$  Thus we have the following result.
+
+\begin{proposition}
+\label{binaryexp}
+If $U$ is uniformly distributed on the unit interval, then $b(U)$ gives a sequence of i.i.d.\ Bernoulli $\tfrac{1}{2}$ variables.  
+\end{proposition}
+
+From Proposition \ref{binaryexp}, it is easy to see that how we can get  two independent random variables that are uniformly distributed on the unit interval from one such random variable---just take odd and even bits.   Moreover, we have the following corollary.
+
+\begin{corollary}  Let $U$ be uniformly distributed on the unit interval.  Let $F$ be a cdf.    There exists a measurable functions $v_i: [0,1) \to [0,1)$ such that $$v_1(U_1), v_2(U), \ldots$$ is an i.i.d.\ sequence of random variables have $F$ as their cdf.  
+
+\end{corollary}
+
+\begin{proof}
+By taking binary expansions, we get a an infinite sequence of i.i.d.\ random variables $U_1, \ldots, U_n, \ldots$ that are uniformly distributed on the unit interval.  By applying $F^{-1}$ to each $U_i$ we obtain the desired result--once you believe the following. 
+\end{proof}
+  
+  \begin{ex}  Show that if $X$ and $Y$ are independent real-valued random variables, then if $g$ and $h$ are Borel measurable functions, then $g(X)$ and $h(Y)$ are also independent random variables.
+  \end{ex}
+
+\begin{comment}
+
+
+\begin{proof}
+\begin{eqnarray*}
+\P(g (X) \in A, h(Y) \in B) ) & =& \P( X \in g^{-1}(A)  , Y \in h^{-1}(B) )  \\
+&=& \P(X \in g^{-1}(A) ) \P(   Y \in h^{-1}(B)) \\ 
+&=& \P( g(X) \in A) \P(h(Y) \in B).
+\end{eqnarray*}
+
+\end{proof}
+
+\end{comment}
+
+
+
+
+
+\end{document}
+
+
+

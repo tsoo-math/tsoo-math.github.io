@@ -1,0 +1,410 @@
+%document begins at approx line 100
+\documentclass[12pt, reqno]{amsart}
+%\include{macrosu}
+%%%%%general use
+\usepackage{url,enumerate}
+\usepackage{amsmath,amssymb,amsfonts,amstext, amsthm}
+\usepackage{url,xspace}
+%\usepackage[hypertex]{hyperref}
+\usepackage{verbatim}
+
+%\usepackage[left=1.9cm, right=1.9cm, top=1 cm, bottom=1 cm, noheadfoot]{geometry}
+\usepackage{amsmath, amssymb}
+
+
+
+
+
+
+%%%%theorems, propositions, lemmas, corollary
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{atheorem}[theorem]{Advanced Theorem}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newcommand{\egg}{\hfill \ensuremath{\Diamond}} %%used to signal end of example
+\newcommand{\superqed}{\hfill \ensuremath{\Box}}
+%%conjectures, open questions, and questions.
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{open}[conjecture]{Open Problem}
+\newtheorem{question}[conjecture]{Question}
+\newtheorem{ex}{Exercise}[section]   
+\newtheorem{exq}[ex]{Example done in class}
+\newtheorem{pres}[ex]{Presentation project}
+\newtheorem*{sol}{Solution}   
+%%%%%%general use commands
+\newcommand{\df}{\bf\boldmath}
+\newcommand\dff[1]{\textbf{#1}}
+\newcommand{\note}[1]{{\bf
+{[#1\marginpar{{\bf $\bigstar\bigstar\bigstar$}}]}}}
+\newcommand\supp[1]{  [#1] }
+\newcommand\cardsupp[1]{  \# [#1] }
+\newcommand\ns[1]{ \left\{ {#1} \right\} }
+\newcommand\ob[1]{ \left( {#1} \right) }
+\newcommand\onee{{\mathbf{1}}}
+\newcommand\powerset{ { \boldsymbol{\mathcal P}}}
+\newcommand{\ind}{{\mathbf 1}}
+\newcommand\one[1]{\ind_{#1}}
+\newcommand{\eqd}{\stackrel{d}{=}}  %%equal in distribution
+\newcommand\deq{{:=}}
+\newcommand\floor[1]{\lfloor  {#1}   \rfloor}
+\newcommand\naiveset[1]{ \{ {#1} \} }
+\newcommand\obracket[1] {   \left( {#1} \right) }
+\newcommand\cbracket[1] {   \left[ {#1} \right] }
+\newcommand\setbracket[1] {   \big\{ {#1} \big \} }
+%%math blackboard
+\renewcommand{\P}{{\mathbb P}}  %probability
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\E}{{\mathbb E}}     %expectation operator
+%%%mathcal
+\newcommand\borel{{\mathcal{B}}}    % borel sigmal field
+\newcommand{\leb}{{\mathcal L}}  %Lebes measure
+\newcommand{\les}{{\mathcal L}}
+\newcommand{\J}{{\mathcal J}}
+\newcommand{\F}{{\mathcal F}}     %sigma-field
+%\renewcommand\G{{\mathcal G}}        % some sigma field
+%\newcommand{\U}{{\mathcal U}}
+\newcommand{\V}{{\mathcal V}}
+\newcommand{\Var}{{\mathrm{Var}}}
+\newcommand{\Cov}{{\mathrm{Cov}}}
+\newcommand{\Cor}{\rho}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\ran}{\mathrm{ran}}
+
+\newcommand{\re}{\mathrm{Re}}
+\newcommand{\im}{\mathrm{Im}}
+
+\DeclareMathOperator\Arg{Arg}
+
+
+
+\newcommand{\A}{{\mathcal A}}     %measurable set of measures
+\newcommand{\e}{\varepsilon}
+%gothic-cal
+\newcommand\gothh[1]{  {\mathcal #1} }
+\newcommand\goth[1]{  {\mathfrak #1} }
+%\newcommand{\les}{\ell}
+\newcommand\fracc[2]{ #1 /#2 }      %alternate form of \frac
+\newcommand\X{{\Omega}}            % State space
+%\newcommand\w{{\omega}}            % State space element
+\newcommand\Oo{ {\mathcal O } }
+\newcommand\XX{{\mathbb M}}         % space of point measures
+\newcommand\M{{\mathcal M}}        % some sigma field
+\newcommand\onea[1]{ \mathbf{1}{ [#1]}    }
+\newcommand\borelg{\goth{B}}
+\newcommand\gothhh[1]{  { #1} }
+\newcommand\ronn{{\big |}}
+\newcommand\ronnn{{|}}
+\newcommand{\GZF}{\Upsilon_{\mathbb{C}}}
+\newcommand{\GZH}{\Upsilon_{\mathbb{D}}}
+\newcommand{\bGZH}{\widehat{\Upsilon}_{\mathbb{D}}}
+\newcommand\nss[1]{ \left\{ {\ns{#1}} \right\} }
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\tr}{trace}
+\newcommand{\erk}{\hfill \ensuremath{\Diamond}} %%used to signal end of remark
+\newcommand{\prob}{\xrightarrow{\P}}
+%{{ \stackrel{\text{\rm{prob}}}{\longrightarrow
+%}  }}
+\newcommand\new[1]{  { {\bf  new: #1} }}
+
+%\usepackage{fullpage}
+
+\begin{document}
+\today
+\begin{title}
+{Random variables I}
+\end{title}
+\maketitle{}
+
+\begin{abstract}
+It is often more easier to work with functions defined on probability spaces, rather than working with probability spaces directly.   
+\end{abstract}
+
+
+\section{Introduction}
+
+Suppose we wager on a finite sequence $n$ of coin-flip:  I win 2 dollars when the coin comes up heads, and lose 1 dollar if it comes up tails.    One way to model this is to come up with a probability space consisting of the possible values of my possibly negative winnings after $n$ flips.   However, we already know how to construct a canonical probability space $(\Omega, \F, \P)$ for a sequence of $n$ independent coin-flips by taking a product measure for  $\Omega = \ns{0,1}^n$.  If we define $X: \ns{0,1}^n \to \R$ via
+$$ X(\omega) = \sum_{i=1} ^n [3\omega_i-1],$$
+then $X$ is of my total winnings.     Notice the value of $X$ depends on $\omega$ so it depends on a which coin-flips we get; thus $X$ is called a random variable.     This notation allows us to address many questions using probability theory  in an easy way.  For example, the number
+$$ \P\ns{\omega \in \Omega:  X(\omega) \geq 0 }$$
+is the probability that I do not lose any money.
+
+For countable probability spaces, a random variable is simply a  function (usually real-valued) defined on the probability space.  However, we have to be a bit more careful in the case of uncountable probability spaces.  In what follows we develop some of the basic terminology and machinery that allows us to deal with random variables. 
+
+\section{Measurable functions}
+
+Let $(\Omega, \F)$ and $(R, \mathcal{G})$ be a measurable spaces.  We say that a function $f: \Omega \to R$ is \dff{measurable} if for every $B \in \mathcal{G}$ we have $$f^{-1}(B) = \ns{ \omega \in \Omega:  f(\omega) \in B}  \in \F.$$  In many cases we are interested in real-valued measurable functions in which case by default we endow $R=\R$ with the the Borel sigma-algebra so that $\mathcal{G} = \mathcal{B(\R)}$.  
+
+\begin{remark}
+An important elementary fact that is often useful in our discussion of measurable functions is that the inverse image preserves the set operation of union, intersection and complements; that is,
+$$ f^{-1} \big(  \bigcup_{i \in I} A_i \big) =   \bigcup_{i \in I} f^{-1}(A_i)$$
+$$ f^{-1} \big(  \bigcap_{i \in I}A_i \big) =   \bigcap_{i \in I} f^{-1}(A_i)$$
+$$ f^{-1}(A^c) = \big(  f^{-1}(A) \big)^c.$$
+
+\end{remark}
+
+
+
+The simplest measurable functions are the \dff{indicators}.  For every $A \in \F$, we let $\mathbf{1}_A: \Omega \to \ns{0,1}$ be given by  $\mathbf{1}_A(\omega) = 1$ if $\omega \in A$, and $\mathbf{1}_A(\omega$) =0 if $\omega \in A^c$.
+
+\begin{ex}  Show that the indicators are measurable if we treat them as real-valued functions or if we treat them as functions to $\ns{0,1}$ endowed with its power set as its sigma-algebra.  
+
+\end{ex}
+
+
+\begin{ex}
+Let $(\Omega, \F)$ be a measurable space, and $f:\Omega \to \R$ be a measurable function.  Show the set $$f^{-1}(\mathcal B)=\ns{f^{-1}(B):  B \in \mathcal B}$$ is a sigma-algebra for $\Omega$.
+\end{ex}
+
+\begin{lemma} 
+\label{genC}
+Let $(\Omega, \F)$ be a measurable space.    Let $\mathcal{C}$ be  a collection of subsets that generate $\mathcal{B}$.   Show that   $f: \Omega \to \R$ is measurable if and only if $f^{-1}(\mathcal{C}) \subseteq \mathcal{F}$.  
+%
+\end{lemma}
+
+\begin{proof}
+We prove the non-trivial direction.   Consider 
+$$\mathcal{D} =   \ns{  B \in \mathcal{B}:   f^{-1}(B) \in \F} .$$
+By assumption, $\mathcal{C} \subseteq \mathcal{D}$; furthermore, it is easy to verify that $\mathcal{D}$ is a sigma-algebra.  Since $\mathcal{C}$ generates $\mathcal{B}$, we are done.  
+\end{proof}
+
+
+\begin{lemma} 
+\label{use}
+ Let $(\Omega, \F)$ be a measurable space.  A function $f: \Omega \to \R$ is measurable if and only if for every $x \in \R$ we have 
+$$ f^{-1}{(-\infty, x)} = \ns{\omega \in \Omega:  f(\omega) < x}  \in \F$$
+and
+$$ f^{-1}{(-\infty, x]} = \ns{\omega \in \Omega:  f(\omega) \leq x}  \in \F.$$
+
+
+\end{lemma}
+
+
+
+
+\begin{ex}
+Show that a continuous function $f: \R \to \R$ is measurable.  In this context, the Borel sigma-algebra is used for both the domain and co-domain.  
+\end{ex}
+
+A direct proof of the following proposition is tricky.
+\begin{proposition}
+\label{sum}
+Show that the sum of two real-valued measurable functions is again measurable.
+\end{proposition}
+
+For $f: \Omega \to \R$ let 
+$$ \ns{ f <x } = \ns{ \omega \in \Omega:  f(\omega) <x}.$$
+
+\begin{proof}
+Let $(\Omega, \F)$ be a measurable space.  Let $f,g : \Omega \to \R$ be measurable functions.  Let $x \in \R$.  Set $h = f +g$.
+Observe that  denseness of the rationals gives:
+$$ \ns{ h< x} = \bigcup_{r \in \mathbb{Q}}  \ns{ f< r} \cap \ns{ g < x -r }$$
+The measurability of $f$ and $g$ implies 
+$$  \ns{ f< r} \cap \ns{ g < x -r } \in \F$$
+for each $r \in \Q$.  Since the union is countable, we have that $\ns{ h< x} \in \F$.   By Lemma \ref{use}, this is enough.  
+\end{proof}
+
+
+\begin{ex}  Show that the multiplication of two real-valued measurable functions is again measurable.  
+
+\end{ex}
+
+
+\begin{ex}  Show that the minimum of two real-valued measurable functions is again measurable.  
+
+\end{ex}
+
+
+
+\section{Random variables and their distributions}
+
+
+Let $(\Omega, \F, \P)$ be a probability space.  Let $X :\Omega \to \R$ be a measurable function; in this context, we say that $X$ is a  (real-valued)  \dff{random variable}.    More generally, if $(R, \mathcal{G})$ is a measurable space, then $X: \Omega \to R$ is a \dff{random variable} if $X$ is a measurable function; usually we are interested in the case that $R$ is a countable set and $R = \R^d$; in the case where $R$ is countable, one can usually assume that $R = \N$.   The \dff{law} or the  \dff{distribution} of the random variable $X$ is given by the measure 
+$$ Q(B) :=  \P( X \in B)$$
+for each $B \in \mathcal{B}$.  
+\begin{ex}
+\label{rvM}
+Check that $Q$ is a probability measure for the measurable space $(\R, \mathcal{B})$.  
+\end{ex}
+The \dff{cumulative distribution function} for $X$ is given by the function $F: \R \to [0,1]$ with  
+$$ F(x) = \P \ns{ \omega \in \Omega:  X(\omega) \leq x} = \P(X \leq x).$$
+
+\begin{lemma}
+\label{law}
+If two random variables have the same cumulative distribution function,  then they have the same law.
+\end{lemma}
+
+The proof of Lemma \ref{law} requires some tools from measure theory which we have not yet discussed.  
+
+
+
+\begin{ex}  
+\label{cdf}
+Prove that a cumulative distribution function is non-decreasing and right continuous, with $$\lim_{x \to -\infty} F(x) = 0 \text{ and }  \lim_{x \to \infty} F(x) = 1.$$
+\end{ex}
+
+
+In general, if $F: \R \to [0,1]$ has the properties in Exercise \ref{cdf}, we say that $F$ is a \dff{cumulative distribution function}  (cdf).  We will show later that given by a cdf $F$ we can construct a random variable on a probability space with $F$ as its cdf.
+
+\begin{theorem}  If $F$ is a cdf, then there exists a probability space $(\Omega, \F, \P)$ and a random variable $X: \Omega \to \R$ such that $X$ has $F$ as its pdf.
+
+\end{theorem}
+
+
+\subsection{Independence}
+
+Let $(\Omega, \F, \P)$ be a probability space and $(R, \mathcal{G})$ be a measurable space.    Let $X$ and $Y$ be random variables,  We say that $X$ and $Y$ are \dff{independent} if 
+\begin{eqnarray*}
+\P(X \in A, Y \in B) &:=& \P\ns{\omega \in \Omega:  X(\omega) \in A \text{ and }  Y(\omega) \in B} \\
+&=& \P(X \in A) \P (Y \in B).
+\end{eqnarray*}
+In the case of real-valued random variables, where $R = \R$, and $\mathcal{G} = \mathcal{B}$ one also has that $X$ and $Y$ are independent if and only if
+\begin{eqnarray*}
+\P(X \leq x, Y\leq y) &=& \P(X \leq x) \P(Y \leq y) \\
+&=& F_X(x) F_Y(y)
+\end{eqnarray*}
+for all $x,y \in \R$.  
+
+
+If $X_1, X_2, \ldots, $ is a sequence of real-valued random variables, we say that the random variables are \dff{independent} if for any finite distinct choice of indexes $i_1, \ldots, i_n$ and real numbers $x_1, \ldots, x_n$ we have
+$$\P(X_{i_1} \leq x_1, \ldots, X_{i_n} \leq x_n) = \prod_{j=1} ^n \P(X_{i_j} \leq x_{j}).$$
+
+We say that the random variables are \dff{identical} if they are have the same distribution.  We will often work with independent and identical sequences of random variables, as called i.i.d.\ sequences.  Let us stress here that if $X$ and $Y$ are identical random variables, this does {\em not} imply that $X(\omega) = Y(\omega)$; it only implies that they have an identical distribution.
+
+\begin{ex} Let $(\Omega, \F, \P)$ be a probability space.  Let $A$ and $B$ be events.  Show that $A$ and $B$ are independent if and only if $\mathbf{1}_A$ is independent of $\mathbf{1}_B$.  
+	
+	\end{ex}
+
+
+In what follows we will discuss two important categories of real-valued random variables give some examples.  
+
+ 
+
+\subsection{Discrete random variables}
+
+Let $(\Omega, \F, \P)$ be a probability space.  We say that a random variable $X$ is \dff{discrete} if there is a countable set $C$ such that $\P(X \in C) =1$.  Sometimes the function given by
+$$ p(c) = \P(X=c)$$ 
+is called a \dff{probability mass function} or a \dff{probability distribution function} (pmf, pdf).     More generally, any $p: C \to [0,1]$ such that $$\sum_{c \in C} p(c) =1$$ can be referred to as a pmf.  Given a pmf $p$, the a random variable with pmf $p$ is defined in  the  probability space $(C, \powerset(C), \P)$, where $\P(c) = p$----just take $X: C \to C$ to be the identity map.  Thus we have no theoretical issues with the existence of discrete random variables.     
+
+
+\subsection{Some important examples} 
+For what follows all random variables are assumed to be defined on a probability space, $(\Omega, \F, \P)$.  
+%
+We say that  $X$ is a \dff{Bernoulli} random variable with parameter $p \in (0,1)$, and we write $X \sim Bern(p)$,  if $\P(X=0) = 1-p$ and $\P(X=1) = p$.  Let $n$ be a positive integer.   We say  that $S$ is a \dff{binomial} random variable with parameter $(n,p)$ and write $S \sim Bin(n,p)$,  if $\P( 0 \leq X \leq n) = 1$, and 
+$$\P(S=k) = {n \choose k}p^k(1-p)^{n-k}$$ 
+for all integers $ 0\leq k \leq n$.  
+
+\begin{ex}
+	Let $p \in (0,1)$.  Let $(X_i)_{i=1} ^n$ be i.i.d.\ random variables with $X_1 \sim Bern(p)$.  Let $S= X_1 + \cdots +X_n$.  Show that $S \sim Bin(n,p)$.  
+\end{ex}
+
+\begin{ex}
+	\label{geo}
+	Let $X_1, X_2, \ldots, $ be i.i.d.\ random variables with $X_1 \sim Bern(p)$.  Let
+	$$T = \inf\ns{n \geq 1:  X_n =1}.$$
+	Find the pmf for $T$.
+	
+\end{ex}
+
+\begin{remark}
+	Notice that in Exercise \ref{geo}, we assumed the existence of an infinite sequence of i.i.d.\  coin-flips.  Technically, this is something that might not exist.   Don't worry it does.  We will prove this later.
+\end{remark}
+
+
+
+
+We say  $X$ is a \dff{Poisson} random variable with mean $\lambda >0$, and we write $X \sim Poi(\lambda)$ if 
+$$\P(X = k) = e^{-\lambda} \frac{\lambda^k}{k!},$$
+for all nonnegative integers $k$.  
+
+
+
+\begin{ex}
+	Let $n>0$ and $\lambda >0$.  let $W \sim Poi(\lambda)$.      Let $(X_i)_{i=1}^n$ be independent Bernoulli random variables with parameter $p=\lambda/n$.  Let $S_n = X_1 + \cdots + X_n$.  Show for all nonnegative integers $k$, we have $\lim_{n \to \infty} \P(S_n =k) = \P(W=k)$. 
+\end{ex}
+
+
+
+\begin{ex}[Superposition]
+	Show that the sum of independent Poisson random variables is again a Poisson random variable.
+\end{ex}
+
+
+
+\subsection{Continuous random variables}
+
+We say that a real-valued random variable $X$ is a \dff{continuous} random variable if there exists a nonnegative integrable function $f: \R \to [0, \infty)$ such that for all $x \in \R$ we have 
+$$\P( X \leq x) = \int_{-\infty} ^x f(v) dv;$$
+and more generally, 
+$$\P(X \in A) = \int_A f(v)dv$$
+for all $A \in \mathcal{B}$. 
+ 
+Thus the cdf $F$ for $X$ is (absolutely) continuous, and moreover; the fundamental theorem of calculus gives $F'(x)= f(x)$.   Our density functions will usually be piecewise continuous bounded Riemann integrable functions.
+
+
+
+ The function $f$ is called the \dff{probability density function} (pdf) for $X$. In general, any integrable function $f: \R \to [0, \infty)$ with 
+$$\int_{-\infty} ^{\infty} f(v)dv =1$$
+is a pdf.    We will show later that given a pdf $f$ we can construct a probability space in which we can define a random variable with $f$ as its pdf.
+
+Note that for a continuous random $X$ with a pdf $f$ we have
+$$\P( a\leq X \leq b ) = \int_a ^b f(u) du$$ for all $a <b$
+and for all $x \in \R$ we have
+$$\P(X =x) = 0.$$
+
+\subsection{Some important examples}
+
+We say that a real-valued random variable $U$ is \dff{uniformly distributed} in the interval $(a,b)$ if $U$ has the density function $\frac{1}{b-a}\mathbf{1}_{(a,b)}$; thus if $(c,d) \subseteq (a,b)$, we have 
+$$\P(U \in (c,d))  = \P( c < U < d)= \frac{d-c}{b-a}.$$
+
+
+\begin{ex}  Let $U$ be uniformly distributed on $(0,1)$.   Let $a  < b$.    Find a  function $\phi: [0,1] \to \R$ so that $\phi(U)$ is uniformly distributed on $(a,b)$.  
+\end{ex}
+
+
+
+We say that a real-valued random variable $X$ is an \dff{exponential} random variable with parameter (mean) $\mu >0$ if it has pdf given by
+$$ f(x) = \frac{1}{\mu} \exp (- x / \mu) \mathbf{1}[x >0].$$
+
+\begin{ex}  Check that the $f$ defined above is indeed a pdf.
+
+\end{ex}
+
+\begin{ex}  Let $X$ be an exponential random variable and $a >0$.   Check that $a X$ is an exponential random variable.
+
+\end{ex}
+
+
+\begin{ex}  Show that the minimum of two independent exponential random variables is again an exponential random variable.
+
+\end{ex}
+
+\begin{ex}  Let $U$ be uniformly distributed on $(0,1)$.  Check that $-\log(U)$ is an exponential random variable.
+
+\end{ex}
+
+
+We say that $X$ is a \dff{normal} random variable with parameters (mean) $\mu \in \R$ and (variance) $\sigma^2 >0$ if it has pdf given by
+$$f(x) = \frac{1}{\sqrt{ 2\pi} \sigma } \exp[  -(x- \mu)^2 / 2 \sigma^2] .$$
+
+\begin{ex}  Check that the $f$ defined above is indeed a pdf.
+
+\end{ex}
+
+\begin{ex}  Let $X$ be an normal  random variable.   Let $a,b \in \R$.  Check that $aX + b$ is a again a normal variable.  
+
+\end{ex}
+
+
+
+\end{document}
+
+
+

@@ -1,0 +1,253 @@
+%document begins at approx line 100
+\documentclass[12pt, reqno]{amsart}
+%\include{macrosu}
+%%%%%general use
+\usepackage{url,enumerate}
+\usepackage{amsmath,amssymb,amsfonts,amstext, amsthm}
+\usepackage{url,xspace}
+%\usepackage[hypertex]{hyperref}
+\usepackage{verbatim}
+
+%\usepackage[left=1.9cm, right=1.9cm, top=1 cm, bottom=1 cm, noheadfoot]{geometry}
+\usepackage{amsmath, amssymb}
+
+
+
+
+
+
+%%%%theorems, propositions, lemmas, corollary
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{atheorem}[theorem]{Advanced Theorem}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newcommand{\egg}{\hfill \ensuremath{\Diamond}} %%used to signal end of example
+\newcommand{\superqed}{\hfill \ensuremath{\Box}}
+%%conjectures, open questions, and questions.
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{open}[conjecture]{Open Problem}
+\newtheorem{question}[conjecture]{Question}
+\newtheorem{ex}{Exercise}[section]   
+\newtheorem{exq}[ex]{Example done in class}
+\newtheorem{pres}[ex]{Presentation project}
+\newtheorem*{sol}{Solution}   
+%%%%%%general use commands
+\newcommand{\df}{\bf\boldmath}
+\newcommand\dff[1]{\textbf{#1}}
+\newcommand{\note}[1]{{\bf
+{[#1\marginpar{{\bf $\bigstar\bigstar\bigstar$}}]}}}
+\newcommand\supp[1]{  [#1] }
+\newcommand\cardsupp[1]{  \# [#1] }
+\newcommand\ns[1]{ \left\{ {#1} \right\} }
+\newcommand\ob[1]{ \left( {#1} \right) }
+\newcommand\onee{{\mathbf{1}}}
+\newcommand\powerset{ { \boldsymbol{\mathcal P}}}
+\newcommand{\ind}{{\mathbf 1}}
+\newcommand\one[1]{\ind_{#1}}
+\newcommand{\eqd}{\stackrel{d}{=}}  %%equal in distribution
+\newcommand\deq{{:=}}
+\newcommand\floor[1]{\lfloor  {#1}   \rfloor}
+\newcommand\naiveset[1]{ \{ {#1} \} }
+\newcommand\obracket[1] {   \left( {#1} \right) }
+\newcommand\cbracket[1] {   \left[ {#1} \right] }
+\newcommand\setbracket[1] {   \big\{ {#1} \big \} }
+%%math blackboard
+\renewcommand{\P}{{\mathbb P}}  %probability
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\E}{{\mathbb E}}     %expectation operator
+%%%mathcal
+\newcommand\borel{{\mathcal{B}}}    % borel sigmal field
+\newcommand{\leb}{{\mathcal L}}  %Lebes measure
+\newcommand{\les}{{\mathcal L}}
+\newcommand{\J}{{\mathcal J}}
+\newcommand{\F}{{\mathcal F}}     %sigma-field
+%\renewcommand\G{{\mathcal G}}        % some sigma field
+%\newcommand{\U}{{\mathcal U}}
+\newcommand{\V}{{\mathcal V}}
+\newcommand{\Var}{{\mathrm{Var}}}
+\newcommand{\Cov}{{\mathrm{Cov}}}
+\newcommand{\Cor}{\rho}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\ran}{\mathrm{ran}}
+
+\newcommand{\re}{\mathrm{Re}}
+\newcommand{\im}{\mathrm{Im}}
+
+\DeclareMathOperator\Arg{Arg}
+
+
+
+\newcommand{\A}{{\mathcal A}}     %measurable set of measures
+\newcommand{\e}{\varepsilon}
+%gothic-cal
+\newcommand\gothh[1]{  {\mathcal #1} }
+\newcommand\goth[1]{  {\mathfrak #1} }
+%\newcommand{\les}{\ell}
+\newcommand\fracc[2]{ #1 /#2 }      %alternate form of \frac
+\newcommand\X{{\Omega}}            % State space
+%\newcommand\w{{\omega}}            % State space element
+\newcommand\Oo{ {\mathcal O } }
+\newcommand\XX{{\mathbb M}}         % space of point measures
+\newcommand\M{{\mathcal M}}        % some sigma field
+\newcommand\onea[1]{ \mathbf{1}{ [#1]}    }
+\newcommand\borelg{\goth{B}}
+\newcommand\gothhh[1]{  { #1} }
+\newcommand\ronn{{\big |}}
+\newcommand\ronnn{{|}}
+\newcommand{\GZF}{\Upsilon_{\mathbb{C}}}
+\newcommand{\GZH}{\Upsilon_{\mathbb{D}}}
+\newcommand{\bGZH}{\widehat{\Upsilon}_{\mathbb{D}}}
+\newcommand\nss[1]{ \left\{ {\ns{#1}} \right\} }
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\tr}{trace}
+\newcommand{\erk}{\hfill \ensuremath{\Diamond}} %%used to signal end of remark
+\newcommand{\prob}{\xrightarrow{\P}}
+%{{ \stackrel{\text{\rm{prob}}}{\longrightarrow
+%}  }}
+\newcommand\new[1]{  { {\bf  new: #1} }}
+
+%\usepackage{fullpage}
+
+\begin{document}
+\today
+\begin{title}
+{Expectation I}
+\end{title}
+\maketitle{}
+
+\begin{abstract}
+We will define the expectation of a discrete random variable and prove basic properties.  
+\end{abstract}
+
+
+\section{Introduction}
+
+Let $X$ be a discrete real-valued random variable taking values in the countable set $R \subseteq \R$ with pmf $f(x) = \P(X =x)$.  Suppose that 
+$$\sum_{x \in R} |x| f(x) < \infty.$$
+We define the \dff{expectation} or \dff{mean} of $X$ via
+$$ \E X = \sum_{x \in \R}  xf(x). $$
+The justification for this definition is the following theorem.
+\begin{theorem}[Law of large numbers]
+\label{LLN}
+Let $(X_i)_{i=1} ^{\infty}$ be a i.i.d.\ sequence of (discrete) real-valued random variables, defined on a probability space $(\Omega, \F, \P)$.  Assume $\E X_1 = \mu \in \R$.  Let the sample average be given by 
+$$S_n = \frac{1}{n} \sum_{i=1} ^{n} X_i.$$    There exists an event $\Omega' \in \F$ with unit probability, such that   for all $\omega \in \Omega'$ we have   $S_n(\omega) \to \mu $  as $n \to \infty$.   
+\end{theorem}
+
+
+
+
+\begin{remark}
+We have not defined expectation for continuous (and other) random variables yet, but Theorem \ref{LLN} will hold as stated,  given the appropriate definitions.   The full proof of Theorem \ref{LLN} is slightly beyond the scope of this course.  However, we will be able to prove a slightly less general version that will be sufficient for many of our applications and examples.  
+\end{remark}
+
+\begin{remark}
+We require the sum defining expectation to be absolutely convergent; this ensures that the order in which the summation takes place does not matter.  In the case that $X$ is a nonnegative random variable, it makes sense to define expectation to be infinite if the associated sum fails to converge.
+\end{remark}
+
+\begin{remark} 
+\label{dist}
+Note that in the definition of expectation, it is computed using the only the pmf of $X$ so expectation is invariant under choice of probability space; that is, if $X$ and $Y$ have the same law, then $\E X = \E Y$.  
+\end{remark}
+
+
+\begin{ex}
+\label{bern}
+    Let $X \sim Bern(p)$, where $p \in [0,1]$.   Show that $\E X=p$. 
+
+\end{ex}
+
+
+
+\begin{ex}  Let $X \sim Poi(\mu)$, where $\mu >0$.   Show that $\E X = \lambda$. 
+
+\end{ex}
+
+\section{Properties of Expectation}
+
+\begin{theorem}[Change of variables, law of the unconscious statistician]
+\label{CV}
+Let $X$ be a discrete random variable  taking values on a countable set $R$ with pdf $f$.   If $g: R\to \R$, then 
+	$$ \E g(X) = \sum_x g(x)f(x),$$
+	whenever the sum is absolutely convergent.  
+\end{theorem}
+
+\begin{proof}
+Note that $g(X)$ is a discrete real-valued random variable.  If $B = \ns{ g(x) \in R: x\in R}$, then   
+	$$\E g(X) = \sum_{y \in B}  y\P(g(X) =y).$$
+  Let $R_y := \ns{x \in R: g(x)=y }$.  Note that the sets $R_y$ partition the set $R$.    Thus 
+$$\P(g(X)=y  ) = \P(R_y) = \sum_{x \in R_y} f(x)$$
+and
+$$\E g(X) = \sum_{y \in B}\sum_{x \in R_y} yf(x) = \sum_{y \in B} \sum_{x \in R_y} g(x)f(x) = \sum_{x \in R}g(x)f(x);$$
+here the assumption of absolute convergence allows us to freely interchange the order of summation.
+\end{proof}
+Applying Theorem \ref{CV} with the the absolute value function, we have that the expectation of $X$  is well-defined provided $\E |X| < \infty$. 
+
+
+If $X$ and $Y$ are random variables defined on same probability space, taking values on sets $A$ and $B$ respectively, we say that they are \dff{jointly distributed} and if they are both discrete we say that they \dff{joint distribution} is given by $j : A \times B \to [0,1]$ with 
+$$ j(x,y) = \P(X=x, Y=y) = \P \big( \ns{ X=x} \cap \ns{Y =y} \big).$$
+Notice that $j$ is the pmf for the discrete random variable $Z = (X,Y)$.
+
+\begin{corollary}[Triangle inequality]
+Let $a,b \in \R$.  If $X$ and $Y$ are jointly distributed discrete real-valued random variables, such that $\E |X|, \E |Y| < \infty$, then $\E(|aX + bY|\leq  |a| \E |X| + |b| \E |Y| < \infty$.
+\end{corollary}
+\begin{proof}  Suppose $X$ and $Y$ take values on a countable sets $A,B \subseteq \R$, respectively.    Consider the discrete random variable $Z = (X,Y)$ with joint pdf $j$ and the function $g: A \times B \to \R$ given by 
+$$ g(z) = g(x,y) = |ax + by|.$$  Note that
+\begin{eqnarray*}
+\sum_{A \times B} g(x,y) j(x,y)    &\leq&   |a| \sum_{A \times B}|x| j(x,y) + |b| \sum_{A \times B}|y| j(x,y) \\
+&=&   |a| \sum_{ x \in A}  \sum_{ y \in B} |x| j(x,y) + |b|  \sum_{y \in B} \sum_{x \in A}|y| j(x,y) \\
+&=&  |a| \sum_{ x \in A} |x| \P(X =x)  +  |b| \sum_{y \in B} |y| \P(Y = y) \\
+&=&  |a| \E|X| + |b| \E| Y|.
+\end{eqnarray*}
+\end{proof}
+
+\begin{corollary}[Linearity of expectation]
+\label{lin}
+Let $a,b \in \R$.  If $X$ and $Y$ are jointly distributed discrete real-valued random variables, such that $\E |X|, \E |Y| < \infty$, then $\E(aX + bY) = a \E X + b \E Y.$
+\end{corollary}
+
+
+\begin{remark}
+Note that in Corollary \ref{lin}, we do not make any assumption on the joint distribution of $X$ and $Y$; in particular, it is not necessary to assume they are independent. 
+\end{remark}
+
+
+\begin{ex}  Prove Corollary \ref{lin}.
+
+\end{ex}
+
+
+\begin{ex}
+\label{bin}
+  Let $X \sim Bin(n,p)$.  Find $\E X$.  
+
+\end{ex}
+
+\begin{proof}[Solution]
+We know that if $X_1, \ldots, X_n$ are i.id.\ Bernoulli random variables with parameter $p$, then $S = X_1 + \cdots X_n$ is a binomial random variable with parameter $(n,p)$.   Thus $X$ has the same law as $S$.  By Remark \ref{dist}, we know that $\E S = \E X$ and Exercise \ref{bern} and Corollary \ref{lin}, we have
+$$ \E S = \E(X_1 + \cdots + X_n) = np.$$
+\end{proof}
+
+
+
+\begin{remark}  Our solution to Exercise \ref{bin} is an example of a technique in probability theory sometimes referred to as coupling.   We are easily able to compute $ \E X$ by considering a probability space where it was easy to compute since in this case we envisioned $X$ as an independent sum of Bernoulli's.  
+
+\end{remark}
+
+
+
+
+
+
+
+\end{document}
+
+
+

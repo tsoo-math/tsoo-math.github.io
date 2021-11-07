@@ -37,7 +37,15 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 
 #  Lecture notes
 
-* 
+* Re-introduction to probability theory 
+  * [Sample spaces](https://tsoo-math.github.io/lttc/re-introduction.html)
+  * [Random variables I](https://tsoo-math.github.io/lttc/randomrv.pdf)
+  * [Random variables II](https://tsoo-math.github.io/lttc/randomrvtwo.pdf)
+  * [Expectation (discrete)](https://tsoo-math.github.io/lttc/expectation-d.pdf)
+  * [Expectation (continuous)](https://tsoo-math.github.io/lttc/expectation-c.pdf)
+  
+  
+# Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`
 

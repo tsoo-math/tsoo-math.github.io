@@ -1,0 +1,286 @@
+---
+title: "Introduction to probability theory:  sample spaces"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Abstract 
+
+This is a general re-introduction to probabilty theory for those who have already taken undergraduate probabilty and statistics modules.
+
+#  Probability spaces
+
+We will see that Kolmogorov's theory of probability allows one to define independent (finite and infinite) sequences of (fair) coin-flips and will allows to state and prove versions of the law of large numbers; that is, if toss a fair coin $n$ times, the average number of heads approaches $\frac{1}{2}$ as $n \to \infty$.   It is easy to see that such a statement requires a  careful framework and qualification, since our experience tells us that the probability that we see all heads in $n$ flips is $\frac{1}{2^n}$.  Thus even as $n$ gets large, there is a non-zero probability that the average number of heads is $1$.  
+
+
+
+## Measurable spaces
+ 
+Let $\Omega$ be a set.  Recall that if $A \subseteq \Omega$, we denote its *complement* by 
+$$A^c  :=  \{\omega \in \Omega:  \omega \not \in A\}.$$
+Sometimes the complement is also denoted by $A'$.  
+
+We say that $\mathcal F$ is a *sigma-algebra* for $\Omega$ if it is a set of subsets of $\Omega$ with the following properties:
+
+* $\Omega \in \mathcal F$.
+* If $A \in \mathcal{F}$, then $A^c \in \mathcal F$; that is, $\mathcal F$ is closed under complements.
+* If $A_1, A_2, \ldots$ are each elements of $\mathcal F$, then the set given by the countable  union $\bigcup_{i=1}^ {\infty}A_i$ is an element of $\mathcal F$; that is, $\mathcal F$ is closed under countable unions.  
+
+Recall that a set $C$ is *countable* if there exists a surjection from the natural numbers onto $C$; in other words, the elements of $C$ can exhausted in a sequence  $c_0, c_1, c_2, \ldots$, where elements may be listed twice.  
+ 
+We call the pair $(\Omega, \mathcal F)$ a *measurable space*.   Sometimes elements of $\mathcal F$ are called *measurable sets*.
+
+
+Given a set $\Omega$, the power set of $\Omega$ given by all subsets of $\Omega$ and denoted by
+$$ \mathcal{P}(\Omega) := \{A:  A \subseteq \Omega\}$$
+is always a sigma-algebra for $\Omega$.  The trivial sigma-algebra given by
+$$ \mathcal{T} = \{ \emptyset, \Omega\}$$
+is also always a sigma-algebra for $\Omega$.       For technical reasons that will surface soon enough, when $\Omega$ is uncountable, its power set becomes too large to serve as a useful sigma algebra for $\Omega$ (for the purposes of probability).
+
+*  Exercise:  Let $\Omega$ be a set.   Let $\mathbf{G}$ be a collection of sigma-algebras for $\Omega$.  Show that the intersection all of the sigma-algebras of $\mathbf{G}$ is also a sigma-algebra.
+ 
+
+Hence given a collection of subsets of $\Omega$ given by $C \subseteq \mathcal{P}(\Omega)$, the exercise allows us to define the *smallest* sigma-algebra containing the sets $C$; sometimes this is denoted by $\sigma(C)$ and is also called the sigma-algebra *generated* by $C$.  
+
+### The Borel sigma-algebra
+Let $d \geq 1$ and $G \subseteq \mathbb{R}^d$.  Note that $\mathbb{R}^d$ is uncountable.     Recall  that $x \in G$ is an *interior* point if there exists $\epsilon >0$ such that open ball of radius $\epsilon$ is contained in $G$; that is, if
+$$ B(x, \epsilon) :=  \{ y \in \mathbb{R}^d:  |x-y| < \epsilon\},$$
+then $B(x, \epsilon) \subseteq G$.    We say that $G$ is *open* if every point of $G$ is an interior point.  Let $\tau$ denote the open subsets of $\mathbb{R}^d$.   The *Borel* sigma-algebra for $\mathbb{R}^d$ is $\mathcal{B} = \mathcal{B}(\mathbb{R}^d) =\sigma(\tau)$--the smallest sigma-algebra containing the open sets.  A member of $\mathcal{B}$ is often called a *Borel* set.    It is a non-trivial exercise to show that the Borel sigma-algebra does not contain all subsets of $\mathbb{R}^d$.    However,  the Borel sigma-algebra usually contains enough subsets for the purposes of analysis and probability.  
+
+The following facts from analysis are useful when discussing the Borel sets.
+
+**Theorem**:   The rational points $\mathbb{Q}^d$ are dense in $\mathbb{R}^d$; that is, for every $x \in \mathbb{R}^d$ and every $\epsilon>0$ we have that $B(x, \epsilon) \cap \mathbb{Q}^d \not =\emptyset$.  
+
+
+**Corollary**:  Every open subset of $\mathbb{R}^d$ is given by a countable union of open balls.
+
+*Proof*:  Let $G$ be an open subset of $\mathbb{R}^d$.  Since $G$ is open, for each point $x \in G$, let
+$$\epsilon_x := \sup\{\epsilon >0:  B(x, \epsilon) \subseteq G\},$$
+so that $B(x, \epsilon_x)$ is the biggest open ball about $x$ that resides in $G$.  
+
+   Clearly, 
+$$G = \bigcup_{x \in G} B(x, \epsilon_x).$$  We claim that
+$$ G =  \bigcup_{x \in G\cap \mathbb{Q}^d} B(x, \epsilon_x),$$
+which is a countable union since $\mathbb{Q}$ is countable.  
+
+Let $x \in G$.  It suffices to find  $q \in \mathbb{Q}^d$ so that $x \in B(q, \epsilon_q)$.      By the denseness of the rationals, there exist $q \in \mathbb{Q}^d$ such that
+$$ q \in B(x, \epsilon_x /2) \subseteq B(x, \epsilon_x) \subseteq G$$
+so that
+$$ x \in B(q, \epsilon_x/2)  \subseteq B(x, \epsilon_x) \subseteq G.$$  Hence, by definition, $\epsilon_q \geq \epsilon_x/2$, so that $x \in B(q, \epsilon_q)$.  
+
+
+
+* Exercise:  Find a countable subset of open sets $C \subseteq \tau$ for which $\sigma(C) = \mathcal{B}$.  
+
+
+
+
+## Measures and probability measures
+
+Let $\Omega$ be a set, and $\mathcal{F}$ be a sigma-algebra for $\Omega$.  We say that a set function $\mu: \mathcal{F} \to [0, \infty]$ is a *measure* if 
+
+* $\mu(\emptyset)=0$, and 
+*  if  it is countably additive; that is, if $A_1, A_2, \ldots \in \mathcal F$ are pairwise disjoint sets ($i \not = j$ implies $A_i \cap A_j = \emptyset$), then $\mu(\bigcup_{i=1}^{\infty}A_i) = \sum_{i=1}^{\infty} \mu(A_i)$.     
+
+
+We call the triple $(\Omega, \mathcal F, \mu)$ a *measure space*.     Measure spaces are used in analysis to generalize the Riemann integral to be make sense of the notation of the  length/area/volume of a general set.    Kolmogorov observed and demonstrated  that the language of measure theory is rich enough to capture and formalize most of our notions of probability and statistics.       
+
+A measure space $(\Omega, \mathcal F, \mathbb{P})$ is a *probability space* if $\mathbb{P}(\Omega) =1$.  In this context, one often refers to measurable sets as *events*, and $\Omega$ is sometimes referred to as the *sample space*.        We say that two events $A$ and $B$ are *independent* if $\mathbb{P}(A \cap B) = \mathbb{P}(A) \mathbb{P}(B)$.  More generally, 
+Let $\mathcal{A}=\{A_1,A_2, \ldots\}$ be a collection of events.  We say that the events are *pairwise* independent if $\mathbb{P}(A_i\cap A_j) = \mathbb{P}(A_i)\mathbb{P}(A_j)$ for all $i \not = j$,  and we say that they are *independent* or *mutually independent* if for every finite subset of events $A_{i_1}, A_{i_2}, \dots A_{i_n}$ (where the $i_j$ are distinct), we have that 
+$$\mathbb{P}\big(\bigcap_{j=1}^n A_{i_j}\big) = \prod_{j=1}^n \mathbb{P}(A_{i_j}).$$
+
+
+# Countable (and finite) probability spaces
+
+We give several examples of countable probability spaces that could be used to model simple random phenomenon.   If the sample space is countable, then one can choose its power-set to be a sigma-algebra for it.  
+
+## A single coin-flip
+
+We construct a probability space for a single coin-flip in the following way.   Take $\Omega = \{0,1\}$ and  
+$$\mathcal F = \mathcal{P}({\Omega}) = \{ \emptyset, \{0\}, \{1\}, \{0,1\}\}.$$
+Clearly, $(\Omega, \mathcal F)$ is a measurable space.  Let $p \in [0,1]$.    Now define $\mathbb{P}: \mathcal F \to [0,1]$ by setting $\mathbb{P}(\{0\}) = 1-p$ and $\mathbb{P}(\{1\}) = p$.   Clearly, $\mathbb{P}$ extends to all of $\mathcal{F}$ by requiring
+$$ \mathbb{P}(A) = \sum_{a \in A} \mathbb{P}(\{a\}),$$
+for $A \in \mathcal{F}$.   It is easy to verify that $(\Omega, \mathcal{F}, \mathbb{P})$ is a probability space.
+
+
+
+## The case of equal probabilities
+
+Let $\Omega$ be a finite set.   Consider the measurable space $(\Omega,  \mathcal{P}({\Omega}) )$.  
+ One useful set-function  $\mathbb{P}$ on $\mathcal{F} = \mathcal{P}({\Omega})$  is to assign equal probabilities to each element of the sample space $\Omega$;   this  leads us to set $\mathbb{P}(E) = |E|/|\Omega|$ for each  event $E \in \mathcal{F}$, where $|E|$ is the number of elements in $E$.   It is easy to verify that $(\Omega, \mathcal{F}, \mathbb{P})$ is a probability space.
+
+## Arbitrary probabilities
+
+Let $\Omega = \{s_1, s_2, \ldots\}$ be a sample space with a countable number of elements and again endow $\Omega$ with the sigma-algebra  $\mathcal{F} = \mathcal{P}(\Omega)$. Let  $(p_i)_{i=1}^\infty$ be a sequence of non-negative numbers such that $\sum_{i=1}^ {\infty} p_i = 1$.  For any event  $E= \{s_{i_1}, s_{i_2},  \ldots\}$  set 
+
+
+$$\mathbb{P}(E) = \sum_{j=1} ^ {\infty} p_{i_j} = \sum_{\omega \in E} \mathbb{P}(\{\omega\})$$
+
+It is easy to verify that $(\Omega, \mathcal{F}, \mathbb{P})$ is a probability space.
+
+
+
+## A finite number of independent trials
+
+From our work so far, we can model a single coin-flip or dice roll with a countable number of faces.  In what follows we show how we can model a finite number of independent dice rolls.   Let $(\Omega_i, \mathcal{F}_i, \mu_i)$ be probability spaces for $i=1,2$.    
+Recall that the Cartesian product of two sets $\Omega_1$ and $\Omega_2$ is the set of all ordered pairs given by
+$$\Omega_1 \times \Omega_2 = \{(a,b): a \in \Omega_1, b \in  \Omega_2 \}.$$
+
+The *product sigma-algbera*  for $\Omega_1 \times \Omega_2$ is the smallest sigma-algebra generated by $\mathcal{F}_1 \times \mathcal{F}_2$ and is denoted by $\mathcal{F}_1 \otimes \mathcal{F}_2$.   The *product measure* $\mu_1 \otimes \mu_2$ is set function on $\mathcal{F}_1 \otimes \mathcal{F}_2$ for which
+
+$$( \mu_1 \otimes \mu_2)(A \times B) = \mu_1(A) \mu_2(B)$$
+for all $A \in \mathcal{F}_1$ and all $B \in \mathcal{F}_2$.
+
+**Theorem**:
+The product measure exists and is uniquely defined by the above condition in the case of probability measures. 
+
+The full proof of this Theorem is beyond the scope of this course.   However, it is easy to prove in the special case of countable sample spaces endowed  with their power sets as sigma-algebras.  
+  
+*Proof (countable case)*:  Let $\Omega_1$ and $\Omega_2$ be countable sample spaces endowed with their power sets as their respective sigma-algebras and probability measures $\mu_1$ and $\mu_2$.   Note that $\Omega_1 \times \Omega_2$ is still countable from which it follows that  $\mathcal{F}_1 \otimes \mathcal{F}_2$ is the power set of $\Omega_1 \times \Omega_2$. We know by setting
+$$
+ \begin{equation}
+   (\mu_1 \otimes \mu_2) (\omega_1, \omega_2) =\mu_1(\omega_1)\mu_2(\omega_2)
+   \end{equation}
+$$this equality extends uniquely  to a probability measure defined on   the power set of $\Omega_1 \times \Omega_2$.   It is not difficulty  to verify that this implies the required identity in the case of general events.  
+  
+* Exercise: Show that the Cartesian product of two countable sets is again countable. 
+  
+* Exercise Give an example of a probability space where $A_1,A_2,A_3$ are events such that they are pairwise independent,  but not mutually independent.
+
+
+
+
+# Uncountable probability spaces
+
+We discuss two central and related examples in probability theory where the sample space is uncountable.  These examples justify the need of the somewhat elaborate language of measure theory.   
+
+
+## Uncountable sets
+
+Recall that two sets $A$ and $B$ have the same cardinality if there exists a bijection from $A$ onto $B$, in which case we write $|A| = |B|$.     We write $|A| \leq  |B|$ if there exists an injection from $A$ into $B$.
+
+**Theorem (Schorder-Bernstein)**: Let $A$ and $B$ be sets.  If $|A| \leq |B|$ and $|B| \leq |A|$, then $|A|= |B|$.  
+
+If $|A| \leq |B|$, then we say $|A| < |B|$ if there does not exists an injection from $B$ to $A$ or equivalently by Schorder-Bernstein theorem there does not exists a bijection from $A$ to $B$.  
+Recall that a  set $A$ is *infinite* if $|\mathbb{N}| \leq |A|$ and  is *uncountable* if $|\mathbb{N}| < |A|$.  
+
+**Theorem (Cantor)**: 
+For any set $A$, we have $|A| < | \mathcal{P}(A)|$.
+
+
+*Proof*:  Clearly, $|A| \leq | \mathcal{P}(A) |$.  Towards a contradiction, suppose that there exists a surjective $\phi: A \to | \mathcal{P}(A)|$.  Consider the subset of $A$ given by
+$$ C := \{ a \in A:  a \not \in \phi(a)\}.$$ 
+Since $\phi$ is onto,  there exists $c \in 	A$, with $\phi(c) =C$.  If $c \in C$, then $c \not \in \phi(c) = C$ by definition of $\phi$.  Thus  $c \not \in C = \phi(c)$.  But then by definition of $\phi$ we must have $c \in C$.  So we have contradiction.  
+
+
+I like to define
+$$\mathbb{N} = \{0, 1, \ldots, \}$$ and 
+use 
+$$\mathbb{Z}^{+} = \{1, 2, \ldots, \}$$.
+Recall that for any two sets $A$ and $B$, we let $A^B$ denote the set of all functions $f:A \to B$.   Thus  we can represent the set of all infinite binary sequences by $\{0,1\} ^{\mathbb{N}}$.   
+
+
+**Corollary**:  The set $\{0,1\} ^{\mathbb{N}}$ of all infinite sequences of zeros and ones is uncountable.
+
+*Proof*: Clearly, the map $\phi(\omega) = \{ n \in \mathbb{N}:  \omega_n=1\}$ is a bijection from $\{0,1\} ^{\mathbb{N}}$ to $\mathcal{P}(\mathbb{N})$.  
+
+
+**Corollary**: The unit interval of real numbers is uncountable.  
+
+*Sketch proof*: It is not hard to see that  the map $\phi: \{0,1\}^{\mathbb{N}} \to [0,1]$ given by
+$$\phi(\omega) = \sum_{i=0}^{\infty} \frac{\omega_i}{2^{i+1}}$$ 
+is onto; moreover,  the only points in $[0,1]$ that possibly have two pre-images are rational.
+Standard set theory arguments allows us to conclude that $\{0,1\}^{\mathbb{N}}$ and $[0,1]$ have the same cardinality.  
+
+What Cantor's theorem means for probability is that we need uncountable probability spaces in order to define a single uniform random variable on $[0,1]$ or an infinite sequence of iid coin-flips.
+
+
+##  An infinite sequence of coin-flips
+
+In order the state the law of large numbers for independent fair coin-flips we need a probability space $(\Omega, \mathcal{F}, \mathbb{P})$  for infinite binary sequences.  Clearly, a suitable sample space is given by $\Omega = \{0,1\}^{\mathbb{N}}$.  Any sigma-algebra $\mathcal{F}$ for $\Omega$ should include all events for the form 
+$$C(a) := \{ \omega \in \Omega :  \omega(k)=a(k) \text{ for all } k \in K \}$$
+where $K$ is a finite subset of $\mathbb{N}$ and  $a \in \{0,1\}^K$ is a finite binary string.   Sets of this form are often referred to as *cylinder* sets.     Denote the set of all cylinder sets by $\mathcal{A}$.  Since the coin-flips are fair and independent we also require
+
+$$
+\begin{equation}
+  \mathbb{P}(C(a)) = 2^{-|K|},
+  \end{equation}
+$$
+which for the purposes of these notes, we will refer to as the *correct calculation on finite sets*.
+
+Another  desirable property  is that  $\mathbb{P}$ is translation-invariant or stationary.  Let $T: \Omega \to \Omega$ be the left-shift, so that $(T\omega)(i) = \omega(i+1)$ for all $i \in \mathbb{N}$.    We say that $\mathbb{P}$ is *translation-invariant* if 
+
+$$\mathbb{P} \circ T^{-1} = \mathbb{P}.$$
+  
+ **Theorem (Measure theory--Caratheodory extension theory**:
+ There exists  a unique translation-invariant probability measure $\mathbb{P}$ satisfying  the correct calculation on finite sets  that is defined on all of   $\sigma(\mathcal{A})$.
+
+Note that $\sigma(\mathcal{A})$ is strictly smaller than $\mathcal{P}(\Omega)$. 
+
+ **Theorem (Measure theory-nonmeasurable sets)**:
+
+Any  $\mathbb{P}$ satisfying the correct calculation on finite sets that is defined on all of $\sigma(\mathcal{A})$ and is  translation-invariant cannot be defined on all of $\mathcal{P}(\Omega)$.
+
+The proof of Theorem \ref{AC} relies on  the axiom of choice, and is not difficult, but is  beyond the scope of this course.  
+
+
+## Lebesgue measure
+
+In probability theory it is also a fundamental problem to make sense of what it means to choose a point uniformly at random on the unit interval; in other words we want to  define a probability space $(\Omega, \mathcal{F}, \mathbb{P})$ for this random process.      A suitable sample space is given by $\Omega = [0,1)$.  Any sigma-algebra $\mathcal{F}$  for $\Omega$ should include all events of the form $[a,b)$ where $0 \leq a < b < 1$.   Let $\mathcal{A}$ be the set of all such events.    Since the point is chosen uniformly at random, we also require
+$$
+\begin{equation}
+ \mathbb{P} (a,b) = b-a,
+\end{equation}
+$$
+which for the purposes of these notes, will be referred to as *the correct length on intervals*. 
+
+Another desirable property is that $\mathbb{P}$ is translation-invariant.  For $x,y \in \Omega$, let $x \oplus y = x+y \mod 1$, so that $x \oplus y = x+y$ if $x +y \in [0,1)$ and $x \oplus y = 1- (x+y)$ if $x+y >1$.   For a set $E \subseteq [0,1)$ set
+
+$$x \oplus E = \{ x \oplus e:  e \in E\}.$$  
+
+We say that $\mathbb{P}$ is *translation-invariant* if  
+$$\mathbb{P}(E) = \mathbb{P}(x \oplus E)$$
+
+for all $x \in \Omega$ and all $ E \in \mathcal{F}$.  
+	
+**Theorem (Measure theory--Caratheodory extension theory**:  The exists  a unique translation-invariant  probability measure $\mathbb{P}$ satisfying the correct length on intervals,  that is defined on all of   $\sigma(\mathcal{A})$.
+  
+
+Note that $\sigma(\mathcal{A})$ is strictly smaller than $\mathcal{P}(\Omega)$. 
+
+**Theorem (Measure theory-nonmeasurable sets)**: Any  $\mathbb{P}$ satisfying the correct length on intervals,  that is defined on all of $\sigma(\mathcal{A})$ and  is translation-invariant cannot be defined on all of $\mathcal{P}(\Omega)$.
+  
+  
+## Arbitrary unions
+
+You might have wonder why only countable unions appear in the definition of probability space, in particular why a probability measure is only required to be countably additive.  
+  
+Suppose $(\Omega, \mathcal{F}, \mathbb{P})$ is the probability space for an infinite sequence of coin-flips given previously.  It is not hard to show that 
+$$
+\begin{equation}
+  \mathbb{P}(\omega) = 0
+  \end{equation}
+$$
+for every $\omega \in \Omega$.  
+  If $\mathbb{P}$ were required to have *arbitrarily* (uncountable) additivity, we would have
+  $$\mathbb{P}(\Omega) = \sum_{\omega \in \Omega} \mathbb{P}(\omega) = 0,$$
+a contradiction.   
+
+
+  
+## Aftermath
+  
+  I hope that our discussion motivates the needs for measure theory in the case of uncountable samples spaces.  In this course, we will not focus on measure-theoretic issues, but will still try to point out where they occur.   In some courses on measure theory, a large portion of the course is dedicated to  proving a version of Caratheodory's extension theorem.  We will not prove this important theorem and will simply assume or assert the existence of the necessary probability spaces.   It turns out, and you will see, that we can *do* all of probability theory with a single uniform random variable or a single bi-infinite sequence of iid coin-flips.   
+  
+
+# Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>
+<br>
