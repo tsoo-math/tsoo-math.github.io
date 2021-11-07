@@ -22,18 +22,22 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 * Zoom [link](https://ucl.zoom.us/my/terrysoo) (when available)
 
 
+# General links/references 
 
-# Abstract
+*  Related materials from UCL Stat 9 [2021](https://nbviewer.org/url/tsoo-math.github.io/ucl2/skeleton2021.ipynb)
 
-I will make the page soon
+*   Related materials from UCL Stat 9 [2020](https://tsoo-math.github.io/ucl/skeleton.html)
 
+*  Extra reading and  [references](https://tsoo-math.github.io/lttc/references.html)
 
-# General links
+#  Schedule
 
+*  Week1:  Introductions; Review of probability theory; Markov chains.
 
 
 #  Lecture notes
 
+* 
 
 Version: `r format(Sys.time(), '%d %B %Y')`
 
