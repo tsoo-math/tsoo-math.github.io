@@ -37,7 +37,7 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 
 #  Lecture notes
 
-* Re-introduction to probability theory 
+* Re-introduction to probability theory (mostly review) 
   * [Sample spaces](https://tsoo-math.github.io/lttc/re-introduction.html)
   * [Random variables I](https://tsoo-math.github.io/lttc/randomrv.pdf)
   * [Random variables II](https://tsoo-math.github.io/lttc/randomrvtwo.pdf)
