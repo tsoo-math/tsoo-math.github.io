@@ -1,0 +1,67 @@
+---
+title: "LTTC Homework"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Abstract
+
+This document contains a running list of recommended homework exercises.
+
+# Basics
+
+*  Using the law of large numbers, carefully justify why a probability histogram of large size sample from a pdf $f$ ends up *looking* like $f$.
+
+*  Examine [Exercise 2](https://tsoo-math.github.io/ucl2/2021-week6.html) by hand and by simulation.
+
+* Examine [Exercise Pen and Paper](https://tsoo-math.github.io/ucl2/2021-HW-week6.html) by hand and by simulation.
+
+*   Let $X \geq  0$ be a continuous random variable with finite first moment.     Prove that
+$$\mathbb{E} X = \int_0 ^{\infty} \mathbb{P}(X >t) dt.$$
+Hint:  use a double integral.  
+
+*  Let $X$ and $Y$ be nonnegative independent continuous random variables.   Prove that for $t >0$, we have
+$$\mathbb{P}(XY > t) = \int_0 ^{\infty} \mathbb{P}(X >\tfrac{t}{y}) f_Y(y) dy,$$
+where $f_Y$ is the probability density function for $Y$.   
+
+*  Using the previous results prove that
+$$\mathbb{E}( X Y)  = (\mathbb{E} X )(\mathbb{E} Y),$$
+assuming all the expectations are finite.  
+
+
+*   Recall that $X$ has the gamma distribution with parameters $\alpha, \beta >0$ if it has probability density function given by 
+$$
+\begin{equation}
+f(x; \alpha, \beta)=
+ \frac{ \mathbf{1}_{(0, \infty)}(x)}{\beta^{\alpha} \Gamma(\alpha)} x^{\alpha-1} e^{-x /\beta}.
+\end{equation}
+$$
+Let $g: [0, \infty) \to \mathbb{R}$ be a bounded continuous function and $n \in \mathbb{Z}^{+}$.  Prove that  
+$$ \lim_{n \to \infty} \frac{1}{\beta^n \Gamma(n)} \int_ 0^{\infty} g(x/n) x^{n-1} e^{-x /\beta} dx =g(\beta).$$ 
+
+*  Let $Z$ be a real-valued random variable.   Recall that if $m$ is the unique point such that $\mathbb{P}(Z \leq m) = \tfrac{1}{2}$, then  it is  the *median* of $Z$.    We say that $Z$ is *symmetric* about $m$ if for all $c \geq 0$, we have $\mathbb{P}(Z -m \geq c) = \mathbb{P}(Z -m \leq -c)$ .      Let $X = (X_1, \ldots, X_{2n+1})$ be a random sample from a  symmetric  distribution with unique median zero and     order statistics given by $Y_1 \leq Y_2 \cdots \leq Y_{n+1} \leq \cdots \leq Y_{2n+1}$. 
+ The *sample median* is given by $M(X) =  Y_{n+1}$.
+
+    * Show that $-Y_{n+1}$ has the same distribution as $Y_{n+1}$.  Hint, you can do this without fancy order statistics knowledge.
+
+    * Assuming the expectations exist,  show that $\mathbb{E} Y_{n+1} =0$.
+
+    *  Let $\epsilon >0$.   Let $B \sim Bin(2n+1, p)$, where $p = \mathbb{P}(X_1 > \epsilon)$.  Show that $\mathbb{P}( Y_{n+1} > \epsilon) =  \mathbb{P}(B \geq n+1)$.
+
+    * Show that  $\mathbb{P}(B \geq n+1) \to 0$ as $n \to \infty$.   Deduce that  $M(X) \to 0$ in probability.
+    
+    
+*  Let $X= (X_1, \ldots,X_{2n+1})$ be a random sample from the normal distribution with unknown mean $\mu \in \mathbb{R}$ and known unit variance.    Use the previous exercises to show that  the sample median is unbiased and consistent estimator for $\mu$.  Recall that a (sequence of) estimators is *consistent* if they converge in probabilty to the parameter being estimated.    
+
+# Endnotes
+
+* Version:  `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/lttc/homeworklttc.Rmd)
+  
+
+<br>
+<br>
+<br>
