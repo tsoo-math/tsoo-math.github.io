@@ -32,7 +32,8 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 
 #  Schedule
 
-*  Week1:  Introductions; Review of probability theory; Markov chains.
+*  Week1:  Introductions; Review of probability theory
+    * [Recording](https://www.dropbox.com/s/ra3op7p2tuwyg77/GMT20211108-103103_Recording_1920x1080.mp4?dl=0)
 
 
 #  Lecture notes
