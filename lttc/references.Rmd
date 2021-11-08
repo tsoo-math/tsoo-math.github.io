@@ -12,6 +12,7 @@ General references for probability and stochastic processes
 *  [Geoffrey Grimmett and David Stirzaker](https://zbmath.org/?q=an%3A1437.60004)
 *  [Norris](https://zbmath.org/?q=an%3A0873.60043)
 *  [Levin, Peres, Wilmer](https://zbmath.org/?q=an%3A1160.60001)
+*  [Lindvall](https://zbmath.org/?q=an%3A1013.60001)
 *  [Cox and Isham](https://zbmath.org/?q=an%3A0441.60053)
 *  [Durrett](https://zbmath.org/?q=an%3A1202.60001)
 *  [Williams](https://zbmath.org/?q=an%3A0722.60001)
