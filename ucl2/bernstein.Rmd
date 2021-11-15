@@ -1,0 +1,67 @@
+---
+title: "Weierstrass Approximation Theorem"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Abstract
+
+We will prove Weierstrass' approximation theorem by coin flips
+
+
+## Bernstein polynomials
+
+Let $f_n:D \to \mathbb{R}$ be a sequence of functions.  Recall that $f_n \to f$ *uniformly* in $D$ if 
+$$\lim_{n \to \infty}\sup_{x \in D} |f_n(x) - f(x)| =0.$$
+
+**Theorem (Weierstrass)**:
+
+Let $f:[0,1] \to \mathbb{R}$ be a continuous function.  There exists a sequence of polynomials $f_n$ that converge uniformly to $f$.
+
+
+**Exercise**:
+Show that Weierstrass' theorem holds on any bounded interval $[a,b]$.
+
+The proof we present here, uses probability is due to Bernstein.
+
+*Proof (Bernstein)*:
+Let $f:[0,1] \to \mathbb{R}$ be continuous.  Let $p\in (0,1)$.  Let $S_n \sim Bern(n,p)$.  Consider the Bernstein polynomial given by 
+$$f_n(p) = \mathbb{E}_p(f(S_n/n)) =  \sum_{k=0} ^n {n \choose k}f(k/n)p^k (1-p)^{n-k};$$
+notice that $f_n(1)= f(1)$ and $f_n(0) = f(0)$.  
+
+Let $\epsilon>0$.  Note that since $f$ is continuous on the compact interval $[0,1]$, it is uniformly continuous on $[0,1]$;  so that  there is a $\delta >0$ (which  depends only on $\epsilon$ and is  independent of $x$ and $y$) such that if $|x - y| < \delta$, then  $|f(x) - f(y)| < \epsilon$.  Also, let $M= \sup_{x \in [0,1]} |f(x)|$.   Thus for all $p \in [0,1]$, we have that
+
+$$
+\begin{eqnarray*}
+ |f_n(p) - f(p)| & = &  | \mathbb{E}_p f(S_n/n) - \mathbb{E}_p f(p) | \\
+&\leq & \mathbb{E}_p | f(S_n/n) - f(p)| \\
+&\leq&  \epsilon + 2M\mathbb{P}_p( |S_n/n - p| > \delta)  \\
+&\leq&  \epsilon + 2M\delta^{-2} \mathbb{E}_p|S_n/n -p|^2 \\
+&=&  \epsilon + 2M \delta^{-2}  \mathrm{var}_p(S_n/n) \\
+&=&  \epsilon + 2M \delta^{-2} p(1-p)/n  \\
+&\leq& \epsilon + M\delta^{-2} /2n
+\end{eqnarray*}
+$$
+Thus $\limsup_{n \to \infty} \sup_{p \in [0,1]} |f_n(p) - f(p)| \leq \epsilon$.  
+
+
+
+**Exercise**:
+Let $f:[0,1] \to \mathbb{R}$ be a continuous function.  Assume that for all nonnegative integers $n$ we have,  
+$$ \int_0 ^1 x^n f(x)dx = 0$$
+Show that $f=0$.  Hint: you may want to use  the fact that if $\int_0^1 |f(x)|^2 dx = 0$, then $f =0$.  
+
+
+
+**Exercise**:  Let $X$ and $Y$ be continuous random variables with continuous pdfs that are supported in $[0,1]$.  Show that if $\mathbb{E} X^n = \mathbb{E} Y^n$ for all nonnegative intergers $n$, then $X$ and $Y$ have the same law.   
+
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl2/bernstein.Rmd)
