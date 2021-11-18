@@ -46,7 +46,10 @@ We will *attempt* to live stream, the live in-person sessions.  Please note that
   - [ICA1](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html) assigned
   - This meeting was recorded and will be available in Moodle.
 * Week 11 (8 Nov - 14 Nov):  Reading break
-* Week 12 (15 Nov - 21 Nov): ICA1 due
+* Week 12 (15 Nov - 21 Nov): 
+  - We discussed some previous homework exercises, and background for ICA2. 
+  - [Weierstrass approximation theorem](https://tsoo-math.github.io/ucl2/bernstein.html)
+  - This session was recorded, and will be available on Moodle, only.
 * Week 13 (22 Nov - 28 Nov):  
 * Week 14 (29 Nov - 5 Dec):  
   
