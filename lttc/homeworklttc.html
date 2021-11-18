@@ -195,13 +195,35 @@ f(x; \alpha, \beta)=
 <li><p>Let <span class="math inline">\(\epsilon &gt;0\)</span>. Let <span class="math inline">\(B \sim Bin(2n+1, p)\)</span>, where <span class="math inline">\(p = \mathbb{P}(X_1 &gt; \epsilon)\)</span>. Show that <span class="math inline">\(\mathbb{P}( Y_{n+1} &gt; \epsilon) = \mathbb{P}(B \geq n+1)\)</span>.</p></li>
 <li><p>Show that <span class="math inline">\(\mathbb{P}(B \geq n+1) \to 0\)</span> as <span class="math inline">\(n \to \infty\)</span>. Deduce that <span class="math inline">\(M(X) \to 0\)</span> in probability.</p></li>
 </ul></li>
-<li><p>Let <span class="math inline">\(X= (X_1, \ldots,X_{2n+1})\)</span> be a random sample from the normal distribution with unknown mean <span class="math inline">\(\mu \in \mathbb{R}\)</span> and known unit variance. Use the previous exercises to show that the sample median is unbiased and consistent estimator for <span class="math inline">\(\mu\)</span>. Recall that a (sequence of) estimators is <em>consistent</em> if they converge in probabilty to the parameter being estimated.</p></li>
+<li><p>Let <span class="math inline">\(X= (X_1, \ldots,X_{2n+1})\)</span> be a random sample from the normal distribution with unknown mean <span class="math inline">\(\mu \in \mathbb{R}\)</span> and known unit variance. Use the previous exercises to show that the sample median is unbiased and consistent estimator for <span class="math inline">\(\mu\)</span>. Recall that a (sequence of) estimators is <em>consistent</em> if they converge in probability to the parameter being estimated.<br />
+</p></li>
+<li><p>Prove that there exists a deterministic set of positive integers <span class="math inline">\(S\)</span> such that for <em>every</em> positive integer <span class="math inline">\(a\)</span>, we have <span class="math display">\[\frac{ \big|  S \cap \{ a, 2a, \ldots, na\} \big| }{n} \to \frac{1}{2}.\]</span> Hint: choose a random subset, and show that there is an event of probability one for which it will satisfy the above requirement. Your final answer should be a deterministic set.</p></li>
+<li><p>Let <span class="math inline">\(Z\)</span> be a random variable with the standard normal distribution.</p>
+<ul>
+<li><p>Show that for <span class="math inline">\(t &gt;0\)</span>, we have <span class="math display">\[\mathbb{P}(Z &gt;t)\leq  \frac{1}{t\sqrt{2\pi}} e^{-\tfrac{t^2}{2}}.\]</span></p></li>
+<li><p>Show that for <span class="math inline">\(t &gt;0\)</span>, we have <span class="math display">\[\mathbb{P}(Z &gt;t) \geq  \frac{1}{\sqrt{2\pi}} \big(\frac{1}{t} - \frac{1}{t^3}\big)  e^{-\tfrac{t^2}{2}}.\]</span> Hint: take the derivative of the lower bound and see what you get.</p></li>
+</ul></li>
+<li><p>Let <span class="math inline">\((X_i)_{i=3} ^{\infty}\)</span> be an i.i.d. sequence of standard normal variables. Prove that almost surely <span class="math display">\[\limsup_{n \to \infty}  \frac{X_n}{\sqrt{2 \log n}} =1.\]</span></p></li>
 </ul>
+</div>
+<div id="coupling" class="section level1">
+<h1>Coupling</h1>
+<ul>
+<li><p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are real-valued random variables. We say that <span class="math inline">\(X\)</span> <strong>stochastically dominates</strong> <span class="math inline">\(Y\)</span> if for all <span class="math inline">\(z \in \mathbb{R}\)</span>, we have <span class="math inline">\(\mathbb{P}(X \leq z) \leq \mathbb{P}(Y \leq z)\)</span>. Let us say that a coupling <span class="math inline">\((X&#39;, Y&#39;)\)</span> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is <strong>monotone</strong> if <span class="math inline">\(\mathbb{P}(X&#39; \geq Y&#39;) =1\)</span>.</p>
+<ul>
+<li>Use the quantile coupling to show that for real-valued random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> we have that <span class="math inline">\(X\)</span> stochastically dominates <span class="math inline">\(Y\)</span> if and only if there exists a monotone coupling of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</li>
+</ul></li>
+<li><p>Let <span class="math inline">\(0 &lt; q &lt; p &lt;1\)</span>. Let <span class="math inline">\(X \sim Bin(p)\)</span> and <span class="math inline">\(Y \sim Bin(q)\)</span>. Find a coupling <span class="math inline">\((X&#39;, Y&#39;)\)</span> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> so that <span class="math inline">\(X&#39; \geq Y&#39;\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(f:[0,1] \to \mathbb{R}\)</span> be a continuous function. Let <span class="math inline">\(n\geq 1\)</span>. Consider the Bernstein polynomial for <span class="math inline">\(f\)</span> is defined by <span class="math display">\[p(x) = \sum_{k=0}^n f(k/n){n \choose k} x^k(1-x)^{n-k}.\]</span> Show that if <span class="math inline">\(f\)</span> is an increasing function, then <span class="math inline">\(p\)</span> is an increasing function.</p></li>
+<li><p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be discrete random variables taking values on the space <span class="math inline">\(S\)</span>, with probability mass functions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>. Show that there exists a (<strong>maximal</strong>) coupling of <span class="math inline">\((X&#39;, Y&#39;)\)</span> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> such that the equality is achieved in the coupling inequality: <span class="math display">\[d_{TV}(X, Y) = d_{TV}(X&#39;, Y&#39;) = 2 \mathbb{P}(X&#39; \not = Y&#39;),\]</span></p></li>
+<li><p>Let <span class="math inline">\(X_1, \ldots, X_n\)</span> be independent integer-valued random variables. Also let <span class="math inline">\(Y_1, \ldots, Y_n\)</span> be independent integer-valued random variables. Set <span class="math inline">\(S=X_1 + \cdots + X_n\)</span> and <span class="math inline">\(W = Y_1 + \cdots + Y_n\)</span>. Show that</p></li>
+</ul>
+<p><span class="math display">\[d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i).\]</span></p>
 </div>
 <div id="endnotes" class="section level1">
 <h1>Endnotes</h1>
 <ul>
-<li>Version: 08 November 2021</li>
+<li>Version: 18 November 2021</li>
 <li><a href="https://tsoo-math.github.io/lttc/homeworklttc.Rmd">Rmd Source</a></li>
 </ul>
 <p><br> <br> <br></p>

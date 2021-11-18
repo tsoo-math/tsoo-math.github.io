@@ -54,7 +54,42 @@ $$ \lim_{n \to \infty} \frac{1}{\beta^n \Gamma(n)} \int_ 0^{\infty} g(x/n) x^{n-
     * Show that  $\mathbb{P}(B \geq n+1) \to 0$ as $n \to \infty$.   Deduce that  $M(X) \to 0$ in probability.
     
     
-*  Let $X= (X_1, \ldots,X_{2n+1})$ be a random sample from the normal distribution with unknown mean $\mu \in \mathbb{R}$ and known unit variance.    Use the previous exercises to show that  the sample median is unbiased and consistent estimator for $\mu$.  Recall that a (sequence of) estimators is *consistent* if they converge in probabilty to the parameter being estimated.    
+*  Let $X= (X_1, \ldots,X_{2n+1})$ be a random sample from the normal distribution with unknown mean $\mu \in \mathbb{R}$ and known unit variance.    Use the previous exercises to show that  the sample median is unbiased and consistent estimator for $\mu$.  Recall that a (sequence of) estimators is *consistent* if they converge in probability to the parameter being estimated.    
+* Prove that there exists a deterministic set of positive integers $S$ such that for *every* positive integer $a$, we have
+$$\frac{ \big|  S \cap \{ a, 2a, \ldots, na\} \big| }{n} \to \frac{1}{2}.$$
+Hint:  choose a random subset, and show that there is an event of probability  one for which it will satisfy the above requirement.    Your final answer should be a deterministic set.      
+
+*  Let $Z$ be a random variable with the standard normal distribution.   
+    * Show that for $t >0$, we have
+$$\mathbb{P}(Z >t)\leq  \frac{1}{t\sqrt{2\pi}} e^{-\tfrac{t^2}{2}}.$$
+
+    * Show that for $t >0$, we have
+$$\mathbb{P}(Z >t) \geq  \frac{1}{\sqrt{2\pi}} \big(\frac{1}{t} - \frac{1}{t^3}\big)  e^{-\tfrac{t^2}{2}}.$$  Hint:  take the derivative of the lower bound   and see what you get.
+
+* Let $(X_i)_{i=3} ^{\infty}$ be an i.i.d.\ sequence of standard normal variables.  Prove that almost surely $$\limsup_{n \to \infty}  \frac{X_n}{\sqrt{2 \log n}} =1.$$
+
+
+# Coupling
+
+
+*  Let  $X$ and $Y$ are real-valued random variables.  We say that $X$ **stochastically dominates** $Y$ if for all $z \in \mathbb{R}$, we have $\mathbb{P}(X \leq z) \leq \mathbb{P}(Y \leq z)$.  Let us say that a coupling $(X', Y')$ of $X$ and $Y$ is **monotone** if $\mathbb{P}(X' \geq Y') =1$.     
+    * Use the quantile coupling to show that for real-valued random variables $X$ and $Y$ we have that $X$ stochastically dominates $Y$ if and only if there exists a monotone coupling of $X$ and $Y$.
+
+
+* Let $0 < q < p <1$.  Let $X \sim Bin(p)$ and $Y \sim Bin(q)$.  Find a coupling $(X', Y')$ of $X$ and $Y$ so that $X' \geq Y'$.  
+
+* Let $f:[0,1] \to \mathbb{R}$ be a continuous function.  Let $n\geq 1$.   Consider the Bernstein polynomial for $f$ is defined by
+$$p(x) = \sum_{k=0}^n f(k/n){n \choose k} x^k(1-x)^{n-k}.$$  Show that if $f$ is an increasing function, then $p$ is an increasing function.  
+
+
+*  Let $X$ and $Y$ be discrete random variables taking values on the space $S$, with probability mass functions $p$ and $q$.   Show that there exists a (**maximal**) coupling of $(X', Y')$ of $X$ and $Y$ such that the equality is achieved in the coupling inequality:
+$$d_{TV}(X, Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y'),$$
+
+
+*  Let $X_1, \ldots, X_n$ be independent integer-valued random variables.  Also let $Y_1, \ldots, Y_n$ be independent integer-valued random variables.  Set $S=X_1 + \cdots + X_n$ and $W = Y_1 + \cdots + Y_n$.  Show that 
+
+$$d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i).$$
+
 
 # Endnotes
 
