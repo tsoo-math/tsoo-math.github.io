@@ -20,8 +20,8 @@ knitr::opts_chunk$set(echo = TRUE)
 * Week 9 (25 Oct - 31 Oct):  Poisson processes
 * Week 10 (1 Nov - 7 Nov):  Continuous-time Markov chains;  [ICA1](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html) assigned
 * Week 11 (8 Nov - 14 Nov):  Reading break
-* Week 12 (15 Nov - 21 Nov): ICA1 due
-* Week 13 (22 Nov - 28 Nov):  
+* Week 12 (15 Nov - 21 Nov): Introduction to renewal theory 1; ICA1 due
+* Week 13 (22 Nov - 28 Nov):  Introduction to renewal theory 2+3
 * Week 14 (29 Nov - 5 Dec):  
   
 * Week 15 (6 Dec - 12 Dec): ICA2 and ICA3 assigned

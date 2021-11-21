@@ -42,6 +42,8 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
   - [Exercises](https://tsoo-math.github.io/ucl/QHW6.html)
       - [Solutions in R](https://tsoo-math.github.io/ucl/QHW6-sols.html)
 * Week 13 (22 Nov - 28 Nov):  
+  - [Exercises](https://tsoo-math.github.io/ucl/QHW6.1.html)
+      - [Solutions in R](https://tsoo-math.github.io/ucl/QHW6.1-sols.html)
 * Week 14 (29 Nov - 5 Dec):  
   
 * Week 15 (6 Dec - 12 Dec): ICA2 and ICA3 assigned

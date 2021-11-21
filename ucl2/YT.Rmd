@@ -109,13 +109,15 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 *  [3/5](https://youtu.be/_WDzuwzCEpY)
 *  [4/5](https://youtu.be/UxGZv5_bDuY)
 *  [5/5](https://youtu.be/drwL5dzx1uE)
+*  [slides](https://tsoo-math.github.io/ucl/intro-renewaltwo-slides.html)
+
 
 
 <br>
 
 *  [1/2](https://youtu.be/c1AApfMUGsQ) 
 *  [2/2](https://youtu.be/YF6NKz6Dclw)
-
+*   [slides](https://tsoo-math.github.io/ucl/intro-renewalthree-slides.html)
 
 # Queues
 
