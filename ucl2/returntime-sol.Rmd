@@ -1,0 +1,171 @@
+---
+title: "In class exercise:  Return times and symbolic computing"
+output:  html_document
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+# py_install("matplotlib")
+# py_install("sympy")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Symbolic computing inside Python  (inside R)
+
+Will we explore basic symbolic computing inside Python.  In symbolic computing, the software is able to compute $2x = x+x$  or $\int_0^x x^2 dx = \tfrac{x^3}{3}$ *without* having a numerical value for $x$.  Popular software includes, Maple, Mathematica, and Sage; Python's *sympy* is a basic in-house substitute, which we will explore.
+
+
+```{python}
+import sympy as sym
+
+x = sym.pi   # the digit pi
+print(x)
+print("#############")
+print(x.evalf())
+print("#############")
+print(x.evalf(100))
+print("#############")
+
+x = sym.Symbol('x')   # you got to tell Python that x is symbol
+print(sym.simplify((x + x)))
+
+y = sym.Symbol('y')
+y=sym.integrate(3 * x ** 2, x)  # integrate 3x^2
+print(y)
+print("#############")
+```
+
+We can also do linear algebra
+
+```{python}
+a = sym.Symbol('a')
+b = sym.Symbol('b')
+c = sym.Symbol('c')
+d = sym.Symbol('d')
+M =  sym.Symbol('M')
+M=sym.Matrix([[a, b], [c, d]])
+print(M)
+print("#############")
+print(M.det())
+print("#############")
+print(M.T)
+print("#############")
+print(M.eigenvects())
+print("#############")
+Msub = M.subs(a,1).subs(b,1).subs(c,1).subs(d,0)
+values = Msub.eigenvects()
+print("#############")
+print(values)
+print("#############")
+
+
+```
+
+
+
+
+
+# A Markov chain
+
+Consider the three state Markov chain on $\{1,2,3\}$ where 
+$$p_{11} = p = 1-p_{12}$$ 
+$$p_{22} = q=1- p_{23}$$
+and
+$$p_{31}=1.$$
+
+We will consider the case where $q \in (0,1)$ is fixed, but will think of $p \to 1$.  
+
+* Write down the transition matrix.
+
+* Suppose the Markov chain $X$ with these transition probabilities starts in state $1$.  Let $T = \inf\{n \geq 1: X_n = 1\}$.   Compute (by brute force) $\mathbb{E}(T)$.
+
+* Find the stationary distribution of the transition matrix.
+
+*  Simulate the chain, and leave $p$ and $q$ as variables that you can choose.
+
+*  See that all your findings and answers are consistent.
+
+## Partial solutions
+
+In order to compute $\mathbb{E}(T)$, we can save a little time, by employing the strong Markov property. Let $G$ be geometric random variable  with parameter $1-q$ that is independent of the chain $X$;  note that $1-q$ is the probability that we can exit state $2$, given we are there.  Then $T$ has the same law as:
+
+$$T' = 1 \cdot \mathbf{1}[X_1=1] + \mathbf{1}[X_1=2](2+G),$$
+
+here recall that $\mathbf{1}[X_1=1]$ is one if $X_1=1$ and zero if $X_1=0$.   
+Then by the linearity of expectation and the independence of $G$ and $X$, we have 
+
+$$\mathbb{E}(T') = p + (1-p)(2 + \frac{1}{1-q});$$
+
+notice as $p \to 1$, we have that $\mathbb{E} \to 1$, as expected.
+
+We can compute the eigenvalues of the transition matrix in Python.  We know from theory, that if $\pi$ is the stationary distribution, then $\mathbb{E}(T) = (\pi(1))^{-1}$, which we can confirm here algebraically. 
+
+
+```{python}
+p = sym.Symbol('p')
+q = sym.Symbol('q')
+P =  sym.Symbol('P')
+P=sym.Matrix([[p, 1-p,0], [0,q, 1-q], [1,0,0]])
+Pt =  sym.Symbol('Pt')
+Pt= P.T
+print("#############")
+print(Pt.eigenvects())
+print("#############")
+print(sym.simplify( ( 1/(1-p)  + 1/(1-q) +1  ) / (1/(1-p))         )        )
+print("#############")
+print(sym.simplify(2-p + (1-p)/(1-q)                )     )
+print("#############")
+print(sym.simplify(    ( 1/(1-p)  + 1/(1-q) +1  ) / (1/(1-p)) -  (2-p + (1-p)/(1-q)  )        )        )
+```
+
+
+
+
+We will simulate the chain in R, for the values $p=0.75$ and $q=0.25$.
+
+```{r}
+step <-function(i,p,q){
+P <- matrix(c(p,1-p,0, 
+              0,q,1-q, 
+              1,0,0), nrow =3)
+P <-t(P)
+q = P[i,]
+  x=-1
+  u = runif(1)
+  j=0
+  cumq = cumsum(q)
+  while(x==-1){
+    j<-j+1
+    if(u <= cumq[j]){x <-j}
+  }
+  x
+}
+
+steps <- function(n,p,q){
+  x = 1
+  for (i in 1:n){
+    x <- c(x, step(x[i],p,q))
+  }
+  x
+}
+mc=steps(1000,0.75,0.25)
+stat = c(mean(mc==1), mean(mc ==2),mean(mc ==3))
+stat
+```
+
+
+```{python}
+x=((p + (2 - p)*(q - 1) - 1)/(q - 1)).subs(p,0.75).subs(q,0.25)
+y=1/x
+print (y.evalf())
+```
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl2/returntime-sol.Rmd)
+<br>
+<br>
+<br>
