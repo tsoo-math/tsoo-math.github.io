@@ -235,6 +235,16 @@ print(&quot;#############&quot;)</code></pre>
 <pre class="python"><code>print(&quot;#############&quot;)
 </code></pre>
 <pre><code>## #############</code></pre>
+<p>The output may be a bit hard to read, we have the eigenvalue, its multiplicity, and the eigenvector(s): here we substitute in the identity matrix in two dimensions, so that the eigenvalue <span class="math inline">\(1\)</span> has en eigenbasis that is spanned by the usual coordinate basis vectors.</p>
+<pre class="python"><code>M=sym.Matrix([[a, b], [c, d]])
+Msub = M.subs(a,1).subs(b,0).subs(c,0).subs(d,1)
+values = Msub.eigenvects()
+print(values)</code></pre>
+<pre><code>## [(1, 2, [Matrix([
+## [1],
+## [0]]), Matrix([
+## [0],
+## [1]])])]</code></pre>
 </div>
 <div id="a-markov-chain" class="section level1">
 <h1>A Markov chain</h1>
@@ -254,7 +264,7 @@ print(&quot;#############&quot;)</code></pre>
 <p>here recall that <span class="math inline">\(\mathbf{1}[X_1=1]\)</span> is one if <span class="math inline">\(X_1=1\)</span> and zero if <span class="math inline">\(X_1=0\)</span>.<br />
 Then by the linearity of expectation and the independence of <span class="math inline">\(G\)</span> and <span class="math inline">\(X\)</span>, we have</p>
 <p><span class="math display">\[\mathbb{E}(T&#39;) = p + (1-p)(2 + \frac{1}{1-q});\]</span></p>
-<p>notice as <span class="math inline">\(p \to 1\)</span>, we have that <span class="math inline">\(\mathbb{E} \to 1\)</span>, as expected.</p>
+<p>notice as <span class="math inline">\(p \to 1\)</span>, we have that <span class="math inline">\(\mathbb{E}(T) \to 1\)</span>, as expected.</p>
 <p>We can compute the eigenvalues of the transition matrix in Python. We know from theory, that if <span class="math inline">\(\pi\)</span> is the stationary distribution, then <span class="math inline">\(\mathbb{E}(T) = (\pi(1))^{-1}\)</span>, which we can confirm here algebraically.</p>
 <pre class="python"><code>p = sym.Symbol(&#39;p&#39;)
 q = sym.Symbol(&#39;q&#39;)
@@ -287,7 +297,7 @@ print(&quot;#############&quot;)</code></pre>
 <pre><code>## #############</code></pre>
 <pre class="python"><code>print(sym.simplify(    ( 1/(1-p)  + 1/(1-q) +1  ) / (1/(1-p)) -  (2-p + (1-p)/(1-q)  )        )        )</code></pre>
 <pre><code>## 0</code></pre>
-<p>We will simulate the chain in R, for the values <span class="math inline">\(p=0.75\)</span> and <span class="math inline">\(q=0.25\)</span>.</p>
+<p>We will simulate the chain in R, for the values <span class="math inline">\(p=0.75\)</span> and <span class="math inline">\(q=0.25\)</span>. We will find the average number of times the chain is in state <span class="math inline">\(1\)</span>. We will also run code to estimate <span class="math inline">\(\mathbb{E}(T)\)</span>.</p>
 <pre class="r"><code>step &lt;-function(i,p,q){
 P &lt;- matrix(c(p,1-p,0, 
               0,q,1-q, 
@@ -312,10 +322,26 @@ steps &lt;- function(n,p,q){
   }
   x
 }
-mc=steps(1000,0.75,0.25)
+mc=steps(5000,0.75,0.25)
 stat = c(mean(mc==1), mean(mc ==2),mean(mc ==3))
 stat</code></pre>
-<pre><code>## [1] 0.6073926 0.2257742 0.1668332</code></pre>
+<pre><code>## [1] 0.6208758 0.2187562 0.1603679</code></pre>
+<pre class="r"><code>time &lt;- function(i,p,q){
+  n =0
+  x=i
+  n &lt;- n+1
+  x &lt;-step(x,p,q)
+  while(x !=i){
+    n &lt;-n+1
+    x &lt;- step(x,p,q)
+  }
+  n
+}
+
+m=mean(replicate(5000, time(1,0.75,0.25)))
+
+1/m</code></pre>
+<pre><code>## [1] 0.6205014</code></pre>
 <pre class="python"><code>x=((p + (2 - p)*(q - 1) - 1)/(q - 1)).subs(p,0.75).subs(q,0.25)
 y=1/x
 print (y.evalf())</code></pre>
@@ -325,7 +351,7 @@ print (y.evalf())</code></pre>
 <div id="endnotes" class="section level1">
 <h1>Endnotes</h1>
 <ul>
-<li>Version: 21 November 2021</li>
+<li>Version: 22 November 2021</li>
 <li><a href="https://tsoo-math.github.io/ucl2/returntime-sol.Rmd">Rmd Source</a> <br> <br> <br></li>
 </ul>
 </div>
