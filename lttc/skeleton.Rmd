@@ -57,11 +57,14 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 * [Coupling and total variational distance](https://tsoo-math.github.io/ucl/TV-lec.html)
 * [Review of Markov chains](https://tsoo-math.github.io/ucl/reviewMC.html)
 * [Coupling and the long term behaviour of Markov chains](https://tsoo-math.github.io/ucl/markov-c.html)
+*  [Poisson processes](https://tsoo-math.github.io/ucl/poisson.html)
+* [Continuous-time Markov chains](https://tsoo-math.github.io/ucl/continuous-timeMC.html)
+*  [Renewal processes](https://tsoo-math.github.io/ucl/intro-renewal.html)
 
 #  Other materials
 
 * [Rolling Homework](https://tsoo-math.github.io/lttc/homeworklttc.html)
-
+* [Worked exercises for Poisson processes](https://tsoo-math.github.io/ucl/poisson-ex.worked.html)
 
 * [Introduction to R](https://tsoo-math.github.io/ucl/intro-R.html)
 * [Introduction to Python](https://nbviewer.org/url/tsoo-math.github.io/ucl2/intro-to-python.ipynb/%3Fflush_cache%3Dtrue)
