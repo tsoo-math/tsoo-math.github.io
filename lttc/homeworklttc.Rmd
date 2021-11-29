@@ -90,6 +90,42 @@ $$d_{TV}(X, Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y'),$$
 
 $$d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i).$$
 
+# Markov chains
+
+* We proved that for an irreducible aperiodic Markov chain $X$ on a finite number of states $S$, *that is started at stationarity*, we have that if 
+$$V_n = \sum_{k=0} ^{n-1} \mathbf{1}[X_k=s],$$
+
+then $V_n/n \to \pi(s)$ in the mean-squared, where $\pi$ is the stationary distribution.  Show that the assumption that the chain is started at stationarity can be removed. 
+
+*  Prove that for an irreducible Markov chain on a finite state space $S$, we have that for each $s \in S$, the return time 
+$$T = \inf \{n\geq 1:  X_n=s\}$$
+has finite expectation, regardless of the starting distribution of the chain.  
+
+*  A **measure-preserving system** is a probability space $(\Omega, \mathcal{F}, \mu)$ endowed with a self-map $T: \Omega \to \Omega$, where $\mu \circ T^{-1} = \mu$.    Verify that a Markov chain started at a stationary distribution corresponds to a measure-preserving system. Hint: consider shifting the coordinates of your Markov chain.
+
+*  We that a measure-preserving system is **ergodic** if every invariant set has measure zero or one; that is, if $\mu(A \triangle T^{-1}(A)) = 0$, then $\mu(A) \in \{0,1\}$.  Find an example of a stationary Markov chain with non-trivial invariant sets.
+
+*  Show that the **strong mixing** condition given by
+
+$$\mu(A \cap T^{-n}B) \to \mu(A) \mu(B)   \text{ for all } A, B \in \mathcal{F}$$
+
+
+
+
+implies ergodicity.  Note by the usual measure theory arguments, verifying the above condition for a large enough class of $A,B$ is equivalent to verifying the strong mixing condition.
+
+*  Check that aperiodic irreducible finite state Markov chains, started at the stationary distribution, are strongly mixing.   This allows us to obtain limit theorems from the general statements in ergodic theory.  Hint: first consider the case corresponding to the events $A = \{ X_1=s \}$ and $B =\{ X_3=t\}$.
+
+
+*  The von Neumann ergodic theorem gives that for any stationary ergodic process $X = (X_k)_{k=0} ^{\infty}$ endowed the left-shift, where $(T X)_i = X_{i+1}$, we have the following convergence in the mean-squared
+
+$$ \frac{1}{n} \sum_{k=0} ^{n-1} f( T^k X) \to \mathbb{E} f(X)$$
+
+for all $f$ such that $\mathbb{E} [f(X)]^2 < \infty$.  Consider the function $f$ where
+
+$$f(x) = \mathbf{1}[x_{2} = c, x_1 = b, x_0 =a].$$
+What happens for a Markov chain?  Run simulations and check that everything is consistent, for a particular Markov chain.
+
 
 # Endnotes
 

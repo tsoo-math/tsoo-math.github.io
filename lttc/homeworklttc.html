@@ -220,10 +220,32 @@ f(x; \alpha, \beta)=
 </ul>
 <p><span class="math display">\[d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i).\]</span></p>
 </div>
+<div id="markov-chains" class="section level1">
+<h1>Markov chains</h1>
+<ul>
+<li>We proved that for an irreducible aperiodic Markov chain <span class="math inline">\(X\)</span> on a finite number of states <span class="math inline">\(S\)</span>, <em>that is started at stationarity</em>, we have that if <span class="math display">\[V_n = \sum_{k=0} ^{n-1} \mathbf{1}[X_k=s],\]</span></li>
+</ul>
+<p>then <span class="math inline">\(V_n/n \to \pi(s)\)</span> in the mean-squared, where <span class="math inline">\(\pi\)</span> is the stationary distribution. Show that the assumption that the chain is started at stationarity can be removed.</p>
+<ul>
+<li><p>Prove that for an irreducible Markov chain on a finite state space <span class="math inline">\(S\)</span>, we have that for each <span class="math inline">\(s \in S\)</span>, the return time <span class="math display">\[T = \inf \{n\geq 1:  X_n=s\}\]</span> has finite expectation, regardless of the starting distribution of the chain.</p></li>
+<li><p>A <strong>measure-preserving system</strong> is a probability space <span class="math inline">\((\Omega, \mathcal{F}, \mu)\)</span> endowed with a self-map <span class="math inline">\(T: \Omega \to \Omega\)</span>, where <span class="math inline">\(\mu \circ T^{-1} = \mu\)</span>. Verify that a Markov chain started at a stationary distribution corresponds to a measure-preserving system. Hint: consider shifting the coordinates of your Markov chain.</p></li>
+<li><p>We that a measure-preserving system is <strong>ergodic</strong> if every invariant set has measure zero or one; that is, if <span class="math inline">\(\mu(A \triangle T^{-1}(A)) = 0\)</span>, then <span class="math inline">\(\mu(A) \in \{0,1\}\)</span>. Find an example of a stationary Markov chain with non-trivial invariant sets.</p></li>
+<li><p>Show that the <strong>strong mixing</strong> condition given by</p></li>
+</ul>
+<p><span class="math display">\[\mu(A \cap T^{-n}B) \to \mu(A) \mu(B)   \text{ for all } A, B \in \mathcal{F}\]</span></p>
+<p>implies ergodicity. Note by the usual measure theory arguments, verifying the above condition for a large enough class of <span class="math inline">\(A,B\)</span> is equivalent to verifying the strong mixing condition.</p>
+<ul>
+<li><p>Check that aperiodic irreducible finite state Markov chains, started at the stationary distribution, are strongly mixing. This allows us to obtain limit theorems from the general statements in ergodic theory. Hint: first consider the case corresponding to the events <span class="math inline">\(A = \{ X_1=s \}\)</span> and <span class="math inline">\(B =\{ X_3=t\}\)</span>.</p></li>
+<li><p>The von Neumann ergodic theorem gives that for any stationary ergodic process <span class="math inline">\(X = (X_k)_{k=0} ^{\infty}\)</span> endowed the left-shift, where <span class="math inline">\((T X)_i = X_{i+1}\)</span>, we have the following convergence in the mean-squared</p></li>
+</ul>
+<p><span class="math display">\[ \frac{1}{n} \sum_{k=0} ^{n-1} f( T^k X) \to \mathbb{E} f(X)\]</span></p>
+<p>for all <span class="math inline">\(f\)</span> such that <span class="math inline">\(\mathbb{E} [f(X)]^2 &lt; \infty\)</span>. Consider the function <span class="math inline">\(f\)</span> where</p>
+<p><span class="math display">\[f(x) = \mathbf{1}[x_{2} = c, x_1 = b, x_0 =a].\]</span> What happens for a Markov chain? Run simulations and check that everything is consistent, for a particular Markov chain.</p>
+</div>
 <div id="endnotes" class="section level1">
 <h1>Endnotes</h1>
 <ul>
-<li>Version: 18 November 2021</li>
+<li>Version: 29 November 2021</li>
 <li><a href="https://tsoo-math.github.io/lttc/homeworklttc.Rmd">Rmd Source</a></li>
 </ul>
 <p><br> <br> <br></p>
