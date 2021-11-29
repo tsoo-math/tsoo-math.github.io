@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Week 11 (8 Nov - 14 Nov):  Reading break
 * Week 12 (15 Nov - 21 Nov): Introduction to renewal theory 1; ICA1 due
 * Week 13 (22 Nov - 28 Nov):  Introduction to renewal theory 2+3
-* Week 14 (29 Nov - 5 Dec):  
+* Week 14 (29 Nov - 5 Dec):  Introduction to queues
   
 * Week 15 (6 Dec - 12 Dec): ICA2 and ICA3 assigned
   
