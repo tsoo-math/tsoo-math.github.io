@@ -1,0 +1,46 @@
+---
+title: "In class exercise:  Tiling and  size-biased intervals"
+output:  html_document
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+# py_install("matplotlib")
+# py_install("sympy")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Baby wald
+
+Let $X=(X_i)_{i=1}^{\infty}$ be an iid sequence of random variables.  Let $N$ be a random nonnegative integer that is independent of $X$.  Suppose $X_1$ and $N$ have finite expectations. Prove that
+$$ \mathbb{E} \big( \sum_{i=1} ^N X_i \big)  = \mathbb{E}N \mathbb{E} X_1$$
+
+
+# Tiling
+
+*  How would you do [Exercise 4](https://tsoo-math.github.io/ucl/QHW6.1-sols.html) analytically? 
+
+*  What would you do if there is more than two tiles, and the tiles did not occur with equal probability?
+
+* Use simulations to test your formula.  
+
+
+# Size-biased intervals
+
+Let $\Pi$ be a Poisson point process on $[0, \infty)$.  Pick a (large)  number, say $x=\sqrt{2} + 100$.    Find the smallest interval $(A,B)$ such that $x \in (A,B)$, and $A$ and $B$ are points of $\Pi$, thus $B$ is the next arrival after $A$.       
+
+*  Find the distribution of $S=B - A$.   
+
+*  Is $S$ exponentially distributed?  Explain.
+
+*  Do simulations to confirm your findings. 
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl2/week14.Rmd)
+<br>
+<br>
+<br>
