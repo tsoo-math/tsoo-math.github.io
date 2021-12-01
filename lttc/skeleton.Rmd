@@ -40,6 +40,8 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
         *  I believe that I technically only proved the Bernstein polynomials converged pointwise, and did not argue enough that the convergence is uniform; for this, you really need to use Markov's inequality and notice that the variance is maximized at $p=\tfrac{1}{2}$; see the notes for details.  
 * Week3: Markov chains and Doeblin's coupling.
   * [Recording](https://www.dropbox.com/s/6x9nzsv200bfd8q/GMT20211122-103141_Recording_1920x1080.mp4?dl=0)
+* Week4: Law of large numbers for Markov chains
+  * [Recording](https://www.dropbox.com/s/6oq2tv1irpghpik/GMT20211129-103153_Recording_1920x1080.mp4?dl=0)
 
 
 #  Lecture notes
