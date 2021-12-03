@@ -1,0 +1,86 @@
+---
+title: "Homework 8 (Week 15, 2021)"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+```{exercise} 
+Let $X$  be an irreducible  aperiodic Markov chain on a finite number of states, started at the state $s$.  Show without using any fancy limit theorems, that $\mathbb{E} T < \infty$, where 
+
+$$T = \inf\{ n \geq 1:  X_n =s\}.$$
+  
+```
+
+
+
+
+
+<br>
+
+```{exercise}
+Let $N$ be a Poisson process on $[0, \infty)$.  Fix $T >0$.  Show that $R(t) = N(T-t)$ is a Poisson process on $[0, T]$.   Hint:  appeal to appropriate construction of Poisson processes.
+
+```
+
+
+
+
+
+
+
+
+
+```{exercise}
+**By brute force**, show that for a $M(\lambda)/M(\mu)/1$ queue that is started with at stationarity, so that the number of items in the system at time any time $t$ has distribution
+
+$$\mathbb{P}(Q(t) = n) = \rho^n(1-\rho)$$
+  
+  has the property that an arrival waits time $W$ until being served, where $W$ has law
+
+$$ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}.$$
+
+```
+
+
+
+
+```{exercise}
+We say that a continuous-time Markov chain with generator-(Q matrix) $G$ is **reversible** with respect to the probability measure $\pi$ if
+
+$$ \pi_i g_{ij} = \pi_j g_{ji}$$ 
+
+for all states $i,j$.
+
+
+*  Show that $\pi$ must be stationary.
+
+*  Show the the continuous-time Markov chain corresponding to a $M(\lambda)/M(\mu)/1$ queue is reversible with respect to its stationary distribution.
+```
+
+
+
+
+<hr>
+<hr>
+
+
+
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW8.1.Rmd)
+

@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Week 13 (22 Nov - 28 Nov):  Introduction to renewal theory 2+3
 * Week 14 (29 Nov - 5 Dec):  Introduction to queues
   
-* Week 15 (6 Dec - 12 Dec): ICA2 and ICA3 assigned
+* Week 15 (6 Dec - 12 Dec):  Introduction to queues 2; ICA2 and ICA3 assigned
   
 * week 16 (13 Dec - 19 Dec):
   

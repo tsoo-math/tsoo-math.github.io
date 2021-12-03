@@ -1,0 +1,142 @@
+---
+title: "Homework 8 (Week 15, 2021, Solutions)"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+
+```{exercise} 
+Let $X$  be an irreducible  aperiodic Markov chain on a finite number of states, started at the state $s$.  Show without using any fancy limit theorems, that $\mathbb{E} T < \infty$, where 
+
+$$T = \inf\{ n \geq 1:  X_n =s\}.$$
+  
+```
+
+
+<hr>
+
+```{solution}
+We go back to basics.  If $P$ is the transition matrix, then by the assumptions of irreducibility and aperiodicity, we know that $P^M$ has all positive entries for some $M>0$; let $\delta >0$ be the smallest entry.  Hence every $M$ steps, we have a non-zero probability $\delta >0$ of getting to the state $s$.  Thus 
+$$ \mathbb{P}(T > kM) \leq (1- \delta)^k$$
+  from which we easily deduce that $T$ has finite expectation.  
+```
+
+
+<br>
+
+```{exercise}
+Let $N$ be a Poisson process on $[0, \infty)$.  Fix $T >0$.  Show that $R(t) = N(T-t)$ is a Poisson process on $[0, T]$.   Hint:  appeal to appropriate construction of Poisson processes.
+
+```
+
+
+
+```{solution}
+We use the construction of Poisson processes are uniform random variables.  Suppose we are dealing with a Poisson process of intensity $\lambda$.    Specifically, we  divide $[0, \infty)$ into intervals of length $T$, where we independently place a Poisson number, with mean $T \lambda$, of independent random variables that are uniformly distributed in the interval of length $T$.   There is no real notation of direction in this construction; moreover if $U$ is uniformly distributed in $[0, T]$, then $T-U$ is still uniformly distributed in $[0,T]$.  Thus the desired reversibility is obvious.  
+
+```
+
+
+
+
+
+```{exercise}
+**By brute force**, show that for a $M(\lambda)/M(\mu)/1$ queue that is started with at stationarity, so that the number of items in the system at time any time $t$ has distribution
+
+$$\mathbb{P}(Q(t) = n) = \rho^n(1-\rho)$$
+  
+  has the property that an arrival waits time $W$ until being served, where $W$ has law
+
+$$ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}.$$
+
+```
+
+<br>
+
+
+```{solution}
+An arrival arrives at time $t$ to a queue with $n$ items in front with probability   $\rho^n(1-\rho)$, will have to wait for these $n$ items to clear, taking time which  is a sum of exponentials, giving a gamma distribution.  
+
+We have for $x \geq 0$, that 
+
+\begin{eqnarray*}
+\mathbb{P}(W \leq x) &=& 1-\rho +  \sum_{n=1} ^{\infty} \mathbb{P}(W \leq x | N(t)= n) \mathbb{P}(N(t) =n) \\
+&=&  1-\rho +   \sum_{n=0} ^{\infty}  \int_0 ^x \Big( \frac{\mu^n t^{n-1} }{\Gamma(n)} e^{-\mu t} dt \Big)  \rho^n(1-\rho)   \\
+&=&   1-\rho +    (1- \rho)\int_0 ^x  e^{-\mu t}   \sum_{n=1} ^{\infty}  \frac{\lambda^n t^{n-1}  }{(n-1)!} dt \\
+&=&  1-\rho +    (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  \sum_{n=0} ^{\infty}  \frac{ (\lambda t)^n  }{n!} dt \\
+&=&    1-\rho +  (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  e^{\lambda t}  dt  \\
+&=&  1-\rho +  \rho (1- e^{-(\mu - \lambda)x}  )  \\
+&=&  1- \rho e^{-x(\mu - x)}
+\end{eqnarray*}
+```
+
+```{exercise}
+We say that a continuous-time Markov chain with generator-(Q matrix) $G$ is **reversible** with respect to the probability measure $\pi$ if
+
+$$ \pi_i g_{ij} = \pi_j g_{ji}$$ 
+
+for all states $i,j$.
+
+
+*  Show that $\pi$ must be stationary.
+
+*  Show the the continuous-time Markov chain corresponding to a $M(\lambda)/M(\mu)/1$ queue is reversible with respect to its stationary distribution.
+```
+
+```{solution}
+
+
+*  We recall that the rows of a $Q$ matrix are cooked up to sum to zero.  Hence, 
+$$(\pi G)_k =  \sum_i \pi_i g_{ik} = \pi_k\sum_i  g_{ki} = \pi_k \cdot 0 = 0$$ 
+  
+  
+*    We recall that 
+$$\pi_i = \rho^i(1-\rho)$$
+  $$ g(n, n+1) = \lambda  \text{ and }  g(n, n-1) = \mu  \text{  for } n \geq 1$$
+  $$ g(0, 1)= \lambda.$$
+  
+Hence we easily verify that for $n \geq 1$, we have
+
+$$ \pi_n g(n,n+1) =  \rho^n(1-\rho) \lambda$$
+  and
+$$ \pi_{n+1} g(n+1,n ) =  \rho^{n+1}(1-\rho) \mu.$$
+  Thus recalling that $\rho = \lambda/\mu$, we obtain the equality
+$$ \pi_n g(n, n+1 ) = \pi_{n+1} g(n+1, n).$$
+  Similarly, 
+$$ \pi_n g(n, n-1 ) = \pi_{n-1} g(n-1, n).$$
+For the case $n=0$, we have
+
+$$\pi_0g(0,1) = (1- \rho)\lambda$$
+  and
+$$ \pi_1g(1,0) = (1- \rho)\rho \mu$$
+so that
+$$ \pi_0 g(0,1) = \pi_1 g(1,0).$$
+
+Thus we have verified the reversibility conditions.   
+```
+
+
+<hr>
+<hr>
+
+
+
+
+*  Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/QHW8.1-sols.Rmd)
+
