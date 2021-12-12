@@ -54,9 +54,11 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
   * [ICA2 released](https://tsoo-math.github.io/ucl2/ICAproject-ideas-2021.html)
   
 * week 16 (13 Dec - 19 Dec):
+  * Revisions:  see last ICA1 and 3 from 2020
+  * [ICA3 released](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html)
   
 
-* week 24: (7 Feb - 13 Feb;  2022):  ICA3 due
+* week 24: (7 Feb - 13 Feb;  2022):  [ICA3](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) due
 * week 27: (28 Feb 6 Mar; 2027):  [ICA2](https://tsoo-math.github.io/ucl2/ICAproject-ideas-2021.html) due
 
 # Other notes
