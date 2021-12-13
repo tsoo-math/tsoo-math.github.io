@@ -116,6 +116,52 @@ Let $\Pi$ be a Poisson point process on $[0, \infty)$.  Pick a (large)  number, 
 
 *  Do simulations to confirm your findings. 
 
+
+## Solutions
+
+Consider a Poisson process of intensity $\lambda$
+
+*  We already know from the memoryless property that $B-x$ is still exponentially distributed with rate $\lambda$.  It is not hard to argue from [reversibility](https://tsoo-math.github.io/ucl/QHW8.1.html) that $x-A$ is also exponentially distributed with rate $\lambda$.  
+
+One can also think about generating a two-sided Poisson process on $(-\infty, -\infty)$, this can be accomplished by putting together two independent Poisson processes on $(0, \infty)$ glued at $0$, where one is flipped.
+
+*  We see that $S$ has actually the sum of two independent exponentials.  
+
+*  We can also see this in the following Python code, where we take $\lambda$=1:
+
+```{python}
+
+# Poisson arrivals just past the end time
+
+def pois(end):
+  T= np.array([np.random.exponential()])
+  while(T[-1]<end):
+    T = np.append(T, T[-1] + np.random.exponential())
+  return T
+
+def find(times,x):
+  n=0
+  while(x > times[n]):
+    n = n+1
+  return (times[n] - times[n-1])
+
+print(find(pois(200), 100+np.sqrt(2) ))
+
+
+y = [find(pois(200), 100+np.sqrt(2) ) for _ in range(5000)  ]
+
+print(np.mean(y))
+
+import matplotlib.pyplot as plt
+supress=plt.hist(y, bins = 100, density=True, label='Proability Histogram') 
+t=np.linspace(0,10,num=1000)
+plt.plot(t,t*np.exp(-1*t), label='Exact Density')
+plt.legend(loc='upper left')
+plt.show()
+
+
+```
+
 #  Endnotes
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
