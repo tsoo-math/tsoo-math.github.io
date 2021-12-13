@@ -1,0 +1,125 @@
+---
+title: "In class exercise:  Tiling and  size-biased intervals"
+output:  html_document
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+# py_install("matplotlib")
+# py_install("sympy")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Baby wald
+
+Let $X=(X_i)_{i=1}^{\infty}$ be an iid sequence of random variables.  Let $N$ be a random nonnegative integer that is independent of $X$.  Suppose $X_1$ and $N$ have finite expectations. Prove that
+$$ \mathbb{E} \big( \sum_{i=1} ^N X_i \big)  = \mathbb{E}N \mathbb{E} X_1$$
+
+## Solution
+
+Observe that 
+
+$$\sum_{i=1} ^N X_i  =  \sum_{n=0} ^{\infty}\sum_{i=1} ^n X_i\mathbf{1}[N=n].$$
+
+Note that we take as convention that when $n=0$, we have the empty sum, which is zero. Since $N$ and the iid sequence $X$ are independent, we have that
+
+$$\mathbb{E}(X_i \mathbf{1}[N=n] ) = \mathbb{E}(X_i) \mathbb{E}(\mathbf{1}[N=n] ) =  \mathbb{E}(X_i) \mathbb{P}(N=n).$$
+Thus taking expectations on both sides (and bring the expectation operator over an infinite sum) we have 
+
+$$ \mathbb{E} \big( \sum_{i=1} ^N X_i \big) = \sum_{n=0} ^{\infty}\sum_{i=1} ^n \mathbb{E}(X_i) \mathbb{P}(N=n) = \mathbb{E}(X_1)\sum_{n=0}n\mathbb{P}(N=n) = \mathbb{E}(X_1) \mathbb{E}(N),$$
+
+as desired.
+
+
+# Tiling
+
+*  How would you do [Exercise 4](https://tsoo-math.github.io/ucl/QHW6.1-sols.html) analytically? 
+
+
+
+*  What would you do if there is more than two tiles, and the tiles did not occur with equal probability?
+
+* Use simulations to test your formula.  
+
+
+## Solutions
+
+* Consider two tile types: a and b, of lengths $a$ and $b$, respectively.    We can consider this an alternating renewal process: the working time is the time it remains in an a-tile, before switching to a b-tile, having service time, the time it remains in the b-tile. In order to compute the working time, we note that we spend time $a$ on each time we get an a-tile; thus by the Baby Wald result the working time is given by $aN_a$, where $N_a$ is geometric with parameter $p=\tfrac{1}{2}$.   Similarly, the service time is given by $bN_b$, and again $N_b$ is just geometric with parameter $p=\tfrac{1}{2}$.   Applying the theorem on alternating renewal processes we have 
+
+$$\lim_{t \to \infty} \mathbb{P}(\text{that we are on an a-tile at time } t) = \frac{\mathbb{E}( aN_a) }{\mathbb{E}( aN_a) + \mathbb{E}( bN_b) } = \frac{a}{a+b}$$
+
+
+*  Consider the case of three tiles $a$, $b$, and $c$ that occur with probabilities $p_a + p_b + p_c =1$.  Again, we can treat this as an alternating renewal process.  The working time is $aN_a$, where $N_a$ is now a geometric $1-p_a$.  The service time is a bit more complicated, as remaining on a b-tile or a c-tile counts as service; the number of such tiles is again geometric $1-p_b-p_c = p_a$, but we really do need to use the Baby Wald, as the tiles could be or length $b$ or $c$, with probabilites $\tfrac{p_b}{p_b+p_c}$ and $\tfrac{p_c}{p_b+p_c}$ respectively, giving an expecting service time of 
+
+$$\big( b \cdot \tfrac{p_b}{p_b+p_c} + c \cdot \tfrac{p_c}{p_b+p_c} \big) \cdot \tfrac{1}{p_a}.$$
+
+Thus
+
+$$\lim_{t \to \infty} \mathbb{P}(\text{that we are on an a-tile at time } t) = \frac{\tfrac{a}{1-p_a}} { \tfrac{a}{1-p_a}  +  (b \cdot \tfrac{p_b}{p_b+p_c} + c \cdot \tfrac{p_c}{p_b+p_c} \big) \cdot \tfrac{1}{p_a} }.$$
+
+*  We test this formula in Python, with $a=1, b=\sqrt{2}, c=\pi$ and $p_a = 2/9$, $p_b=3/9$, and $p_c = 4/9$.  We check the tile type at  $t=300$, for a total of $1000$ independent times. 
+
+```{python}
+import numpy as np
+
+pa= 2/9
+pb= 3/9
+pc= 4/9
+
+a=1
+b=np.sqrt(2)
+c=np.pi
+
+def type():
+  x=a
+  u=np.random.uniform()
+  if (u > pa and u < pa+pb):
+    x=b
+  if (u > pa+pb):
+    x=c
+  return x
+
+def tile(t):
+  ctile = type()
+  tlength = ctile
+  while(t > tlength):
+    ctile = type()
+    tlength = tlength + ctile
+  return ctile
+
+y = [tile(300) for _ in range(1000)  ]
+
+freq = np.unique(y,return_counts = True)
+
+print(freq)
+
+tile1 = (1/1000)*freq[1][0]
+
+
+tile1theory =   (a/(1-pa)) / (    a/(1-pa)    +  (b*(pb/(pb+pc)) +c *(pc/(pb + pc)))*(1/pa)                   ) 
+print(tile1 - tile1theory      )
+
+```
+
+
+
+
+# Size-biased intervals
+
+Let $\Pi$ be a Poisson point process on $[0, \infty)$.  Pick a (large)  number, say $x=\sqrt{2} + 100$.    Find the smallest interval $(A,B)$ such that $x \in (A,B)$, and $A$ and $B$ are points of $\Pi$, thus $B$ is the next arrival after $A$.       
+
+*  Find the distribution of $S=B - A$.   
+
+*  Is $S$ exponentially distributed?  Explain.
+
+*  Do simulations to confirm your findings. 
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl2/week14-sols.Rmd)
+<br>
+<br>
+<br>
