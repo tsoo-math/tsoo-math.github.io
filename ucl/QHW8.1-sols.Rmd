@@ -76,7 +76,7 @@ We have for $x \geq 0$, that
 
 \begin{eqnarray*}
 \mathbb{P}(W \leq x) &=& 1-\rho +  \sum_{n=1} ^{\infty} \mathbb{P}(W \leq x | N(t)= n) \mathbb{P}(N(t) =n) \\
-&=&  1-\rho +   \sum_{n=0} ^{\infty}  \int_0 ^x \Big( \frac{\mu^n t^{n-1} }{\Gamma(n)} e^{-\mu t} dt \Big)  \rho^n(1-\rho)   \\
+&=&  1-\rho +   \sum_{n=1} ^{\infty}  \int_0 ^x \Big( \frac{\mu^n t^{n-1} }{\Gamma(n)} e^{-\mu t} dt \Big)  \rho^n(1-\rho)   \\
 &=&   1-\rho +    (1- \rho)\int_0 ^x  e^{-\mu t}   \sum_{n=1} ^{\infty}  \frac{\lambda^n t^{n-1}  }{(n-1)!} dt \\
 &=&  1-\rho +    (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  \sum_{n=0} ^{\infty}  \frac{ (\lambda t)^n  }{n!} dt \\
 &=&    1-\rho +  (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  e^{\lambda t}  dt  \\
