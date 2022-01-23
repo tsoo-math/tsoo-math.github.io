@@ -14,7 +14,7 @@ library(reticulate)
 # Introduction
 
 * Made available UCL Week 16
-* Due UCL Week 24; 9 February 2022.
+* Due UCL Week 24; 9 February 2022; 11:50 PM, London time.
 * You are to work in groups of 2-4; there should be no overlap with your ICA2 groups.
 * This ICA consists of five questions, worth 65 points;
 * another 10 points will be given based on presentation, so that the total available points is 75.  
@@ -84,7 +84,7 @@ $$(w_1; k,\theta) \mapsto \mathbf{1}[w_1 >0]\frac{k w_1^{k-1}}{\theta}   \exp[  
 
 * [3 points] Identify the distribution of $s(\theta|t(x))$.
 
-*  [4 points] Now *pretend* you could not identify it, and could not deduce exact constant factors.   For the simple case, where $\alpha =2$,  $\beta=3$, $n=3$, and  $x_1=2, x_2=4, x_3=6$, sample from $s(\theta|t(x))$ using the Metropolis algorithm. 
+*  [4 points] Now *pretend* you could not identify it, and could not deduce exact constant factors.   For the simple case, where $\alpha =2$,  $\beta=3$, $n=3$, and  $x_1=2, x_2=4, x_3=6$, sample from $s(\theta|t(x))$ using the Metropolis algorithm; also take $k=1$. 
 
 *  [3 points] Plot independent samples in a probability histogram and compare with the true result.
 
