@@ -1,0 +1,59 @@
+Becoming a UCL supervisor.
+24 Janurary 2022
+
+Abstract
+
+This document mainly applies to those who are looking to become either a primary of subsidary supervisor in the Department of Statistical Science at UCL.
+
+
+Key People:  
+
+Alexandros Beskos; a.beskos@ucl.ac.uk; Research students tutor (admissions)
+Marina Lewis; marina.lewis@ucl.ac.uk; Key administrator for research students (admission to graduation)
+Terry Soo; t.soo@ucl.ac.uk;  Research students tutor (post admissions) 
+
+Introduction
+
+Everyone should complete two training courses:
+
+https://www.ucl.ac.uk/teaching-learning/professional-development/arena-open/research-supervision-ucl
+
+You may be exempt from the second course if you have previous experience.
+
+After you complete the courses, please notify Marina.
+
+You will need to complete this form:
+
+https://tsoo-math.github.io/ucl2/standard.docx
+
+
+The form requires approval from a departmental graduate tutor, and is sent the faculty for approval from the faculty tutor for MAPS.
+
+There are various rules governing who can be a supervisor.
+
+https://www.ucl.ac.uk/academic-manual/chapters/chapter-5-research-degrees-framework#supervisors
+
+https://www.ucl.ac.uk/academic-manual/sites/academic-manual/files/chapter_5_part_a_research_degree_regulations_2021-22.pdf
+
+https://www.ucl.ac.uk/academic-manual/sites/academic-manual/files/eligible_staff_categories_for_supervising_research_students_2020-21.pdf
+
+If you are a new member of staff, with no supervision experience, it may be necessary to include an experienced member of staff as part of the supervision team.
+
+Other notes
+
+- It is very likely that if this is your first time supervising a student, and student you are interested in supervising has not yet been admitted, then Alex will be your main point of contact as the admissions tutor. 
+- If the student is already admitted, and you are interested in being apart of their advisory team, then Terry will be your main point of contact.
+- Typically, approval for UCL academic members of staff is straightforward.
+- An honourary appointment may be required for people who are not affliated with UCL.
+- Not all research fellows can be approved to be on a supervisory team; it may depend on grade, and term of appointment.
+- Members of staff, who are on the teaching track, who are interested in supervising research students need special permission; in particular, an endorsement from the head of department.
+- In order to view applicants on Portico, you may need to complete this form:
+
+https://tsoo-math.github.io/ucl2/grst/form-port.docx
+-----------------------------------------------------------------------------------------
+A version of this document is also available at:
+
+https://tsoo-math.github.io/ucl2/grst/becoming-a-supervisor.txt
+
+End of document
+-----------------------------------------------------------------------------------------
