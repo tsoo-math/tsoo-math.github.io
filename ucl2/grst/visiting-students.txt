@@ -35,4 +35,4 @@ End of document
 
 A version of this document is available at
 
-https://tsoo-math.github.io/ucl2/grst/visiting-student.txt
+https://tsoo-math.github.io/ucl2/grst/visiting-students.txt
