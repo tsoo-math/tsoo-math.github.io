@@ -1,0 +1,38 @@
+Information about visiting students
+Terry Soo
+4 March 2022
+
+This short note is aimed at members of staff who may be interested in hosting visiting students
+
+Formal route
+
+If you are planning on hosting a visiting student for 3 months or longer, then they will need to be officially registered, and in particular, fees will apply:
+
+https://www.ucl.ac.uk/prospective-students/international/study-abroad-and-exchange/visiting-research-students
+
+In the fee-paying case, many of the regular rules then kick-in:
+
+https://www.ucl.ac.uk/academic-manual/sites/academic-manual/files/guidelines_for_supervising_visiting_research_students_2019-20.pdf
+
+https://www.ucl.ac.uk/academic-manual/sites/academic-manual/files/chapter_5_part_a_research_degree_regulations_2021-22.pdf
+
+
+Informal route
+
+If you are planning on ``informally'' hosting a student, then there may still be various visa requirements; my guess is these requirements would be similar to that of any other unpaid visiting scholar.  As long as they are not registered as a student and getting UCL credit, then they would most likely not require a student visa.  You may find this site useful:
+
+https://www.gov.uk/check-uk-visa?step-by-step-nav=b1f1b767-776f-43ac-af4b-2bbbc39e3ad2
+
+With regards to informally hosting a student, the duty of care lies completely with the hosting advisor. 
+
+The student will need access to the building and id etc; Shanna maybe able to help you with this.  Chakkapas maybe able to help with IT issues; the student may need to bring own laptop.  
+
+It may be possible that the student be given office/desk space, like what is provided for our own research studentsl; there is currently a shortage.  Please give Marina lots of time to arrange this possibility.
+
+As the department is quite quiet these days, the host should be available to receive the student when they arrive.
+-------------------------------------------------------------------
+End of document
+
+A version of this docuemnt is available at
+
+https://tsoo-math.github.io/ucl2/grst/visiting-student.txt
