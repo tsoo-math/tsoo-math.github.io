@@ -5,7 +5,14 @@ date:  Fall 2021
 output: html_document
 ---
 
+# Mock exam
+
+[Link](https://tsoo-math.github.io/lttc/lttc-mock.html)
+
+
+
 #  Basics
+
 
 Instructor:  Terry Soo
 <br>
