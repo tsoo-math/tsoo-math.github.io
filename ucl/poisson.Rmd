@@ -230,6 +230,7 @@ sort(P, decreasing=F)
 
 
 In more general spaces, it is more natural to consider the point process (the location of the arrivals) rather than the counting process (the  total number  arrivals).   Here we think of the point process $\Pi$  as a random subset of $\mathbb{R}^d$, and we let $\Pi(A)$ to be the number of $\Pi$-point in $A \subset \mathbb{R}^d$.       We say that $\Pi$ is a **Poisson point process on $\mathbb{R}^d$ with intensity $\lambda$** if: 
+
 * For every subset $A \subset \mathbb{R}^d$ of finite volume $|A|$, the random variable is $\Pi(A)$ is a Poisson random variable with mean $\lambda |A|$.
 
 * For any finite collection of disjoint sets  $A_1, \ldots, A_n$ with finite volume the random variables $\Pi(A_1), \ldots, \Pi(A_n)$ are independent.
