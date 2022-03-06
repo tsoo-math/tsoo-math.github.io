@@ -8,10 +8,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 * [Becoming a supervisor](https://tsoo-math.github.io/ucl2/grst/becoming-a-supervisor.txt)
-* [Chapter 5](https://www.ucl.ac.uk/academic-manual/chapters/chapter-5-research-degrees-framework#supervisors)
+* [Chapter 5--the main rule book ](https://www.ucl.ac.uk/academic-manual/chapters/chapter-5-research-degrees-framework#supervisors)
 * [Form to become a supervisor](https://tsoo-math.github.io/ucl2/grst/standard.docx)
-* [Portico access](https://tsoo-math.github.io/ucl2/grst/form-port.docx)
+* [Portico access--to view applicants](https://tsoo-math.github.io/ucl2/grst/form-port.docx)
 * [Interuption of studies](https://tsoo-math.github.io/ucl2/grst/interruption-of-study-research-students.docx)
 * [PhD progression](https://tsoo-math.github.io/ucl2/grst/progression.txt)
-
+* [Visiting students](https://tsoo-math.github.io/ucl2/grst/visiting-students.txt)
 
