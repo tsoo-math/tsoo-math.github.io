@@ -1,5 +1,5 @@
 Becoming a UCL supervisor.
-26 Janurary 2022
+11 May 2022
 
 Abstract
 
@@ -41,12 +41,22 @@ If you are a new member of staff, with no supervision experience, it may be nece
 
 Other notes
 
+- It is very likely that a potential student will need to be interviewed, and as a potential advisor you will be part of the interview and thus may be required to complete UCL recruitment training such as ``Fair and Inclusive Recruitment at UCL," in addition to the UCL mandatory training:
+
+https://www.ucl.ac.uk/human-resources/learning-development/mandatory-training
+
 - It is very likely that if this is your first time supervising a student, and student you are interested in supervising has not yet been admitted, then Alex will be your main point of contact as the admissions tutor. 
+
 - If the student is already admitted, and you are interested in being apart of their advisory team, then Terry will be your main point of contact.
+
 - Typically, approval for UCL academic members of staff is straightforward.
+
 - An honourary appointment may be required for people who are not affliated with UCL.
+
 - Not all research fellows can be approved to be on a supervisory team; it may depend on grade, and term of appointment.
+
 - Members of staff, who are on the teaching track, who are interested in supervising research students need special permission; in particular, an endorsement from the head of department.
+
 - In order to view applicants on Portico, you may need to complete this form:
 
 https://tsoo-math.github.io/ucl2/grst/form-port.docx
