@@ -11,8 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ##  An open dialogue  with Ioanna and Sam
 
-- Torrington (1-19) G10
-- Online [Zoom](https://ucl.zoom.us/my/terrysoo)
-- Monday 13 June 2PM
+### Torrington (1-19) G10
+### Online [Zoom](https://ucl.zoom.us/my/terrysoo)
+### Monday 13 June 2PM
 
 
