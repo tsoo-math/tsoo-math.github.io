@@ -6,3 +6,8 @@ body {
   background-size: 60%;
 }
 
+
+
+section {
+background-size: contain
+}

@@ -25,3 +25,7 @@ div {
   background-color: rgba(255, 255, 255, 0);
   padding: 0.25em;
 }
+
+section {
+background-size: contain
+}
