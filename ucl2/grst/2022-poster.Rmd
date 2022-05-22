@@ -1,7 +1,12 @@
 ---
-title: "UCL Statistical Science Poster Day"
-output: html_document
+title: "UCL STATISTICAL SCIENCE POSTER DAY"
+output:
+  pdf_document: default
+  html_document: default
 ---
+
+\pagenumbering{gobble}
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(warning = FALSE, echo = TRUE)
@@ -28,7 +33,7 @@ y4= c(6.58,5.76,7.71,8.84,8.47,7.04,5.25,12.5,5.56,7.91,6.89)
 
 
 # bmp(filename="ans.bmp", width=960)
-par(mfrow=c(2,2), mar = c(5, 5, 5, 5), pch=19, cex=1)
+par(mfrow=c(2,2), mar = c(5, 5, 5, 5), pch=19, cex=0.7)
 
 plot(x1,y1, col = "blue",  pch=20, xlim=c(4,19), xlab = "Prizes", ylab="PhD students", axes=FALSE, main="27 October", cex.main = 2, asp=1)
 
