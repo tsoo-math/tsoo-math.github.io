@@ -15,3 +15,4 @@ knitr::opts_chunk$set(echo = TRUE)
 * [PhD progression](https://tsoo-math.github.io/ucl2/grst/progression.txt)
 * [Visiting students](https://tsoo-math.github.io/ucl2/grst/visiting-students.txt)
 
+*  [UCL Poster Day](https://tsoo-math.github.io/ucl2/grst/2022-poster.html)
