@@ -9,7 +9,7 @@ css: back.css
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-#  <span style="color:magenta">An open dialogue  with Alexandros Beskos, Sam Livingstone, and Ioanna Manolopoulou</span>
+##  <span style="color:magenta">An open dialogue  with Alexandros Beskos, Sam Livingstone, and Ioanna Manolopoulou</span>
 
 <br>
 <br>
