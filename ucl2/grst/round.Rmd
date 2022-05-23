@@ -10,14 +10,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-<br>
-<br>
-<br>
-<br>
 
 
 
-#  <span style="color:magenta">An open dialogue  with Alexandros Beskos, Sam Livingstone, and Ioanna Manolopoulou</span>
+##  <span style="color:magenta">An open dialogue  with Alexandros Beskos, Sam Livingstone, and Ioanna Manolopoulou</span>
+
+<br>
+<br>
+<br>
+<br>
 
 
 ## Torrington (1-19) G10
