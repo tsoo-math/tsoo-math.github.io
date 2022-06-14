@@ -21,8 +21,8 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 
 
-## Torrington (1-19) G10
+## Torrington (1-19) 247
 ## Online [Zoom](https://ucl.zoom.us/my/terrysoo)
-## TBA
+## Tuesday 21 June
 
 
