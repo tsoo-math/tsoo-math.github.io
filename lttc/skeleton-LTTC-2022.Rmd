@@ -1,0 +1,35 @@
+---
+title: LTTC Stochastic Processes 
+author: 
+date:  Fall 2021
+output: html_document
+---
+
+
+#  Basics
+
+
+Instructor:  Terry Soo
+<br>
+email:  t.soo@ucl.ac.uk
+<br>
+My [homepage](https://www.terrysoo.com)
+<br>
+Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/documents/Stochastic-Processes.pdf)
+<br>
+
+* 10.50-12.50; Mondays, 3 October - 31 October   
+* De Morgan House, Russell Square
+
+# General links/references 
+
+*  [Materials from 2021](https://tsoo-math.github.io/lttc/skeleton.html)
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>
+<br>
