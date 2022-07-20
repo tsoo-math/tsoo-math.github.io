@@ -1,0 +1,27 @@
+---
+title: "Find me at UCL"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+* [1-19 Torrington Place](https://www.google.co.uk/maps/dir/St+Pancras+International,+Euston+Road,+London/1-19+Torrington+Place,+London/@51.5269433,-0.1395485,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x48761b3b8d98ed25:0xb92d6fcfa832dd12!2m2!1d-0.126133!2d51.531427!1m5!1m1!1s0x48761b2ec8d84449:0x193b27f19f916f1f!2m2!1d-0.1343463!2d51.5218924!3e2)
+* Office 143
+* +44 20 3108 3440
+
+# Mailing address
+
+Department of Statistical Science
+<br>
+University College London
+<br>
+Gower Street
+<br>
+London WC1E 6BT
+<br>
+United Kingdom
+
