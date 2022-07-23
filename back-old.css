@@ -1,19 +1,17 @@
-.title { color: #000000;
-text-transform: uppercase;
-}
+.title { color: #FFA500}
 
 
 a:link {
-  color: #FF0000;
+  color: #FFFF00;
 }
 
 
 a:visited {
-  color: #B22222;
+  color: #ECE3A1;
 }
 
 a:hover {
-  color: #8B0000;
+  color: #adff2f;
 }
 
 
