@@ -3,7 +3,7 @@ text-transform: uppercase;
 }
 
 
-a:link {
+a:link {font-size: 30px;
   color: #FF0000;
 }
 
