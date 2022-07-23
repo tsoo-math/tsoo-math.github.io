@@ -11,13 +11,13 @@ css: back.css
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-* `r emo::ji("school")` [My information at UCL Statistical Science](https://www.ucl.ac.uk/statistics/dr-terry-soo)
+* `r emo::ji("school")` [Profile at UCL](https://www.ucl.ac.uk/statistics/dr-terry-soo)
 
 
 
-*  `r emo::ji("chart_with_upwards_trend")` [Research and publications](https://tsoo-math.github.io/m3/research.html)
+*  `r emo::ji("chart_with_upwards_trend")` [Research](https://tsoo-math.github.io/m3/research.html)
 
-
+<br>
 
 * `r emo::ji("camera")` [A photo of me, by modern art, in Jerusalem](https://tsoo-math.github.io/m3/tsrain.jpg)
 
