@@ -1,8 +1,6 @@
 ---
 title: "Find me at UCL"
-output: 
-html_document:
-css: backk.css
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -15,6 +13,12 @@ knitr::opts_chunk$set(echo = TRUE)
 * Office 143
 * +44 20 3108 3440
 
+
+![Local map](https://tsoo-math.github.io/map.jpg)
+
+
+
+
 # Mailing address
 
 Department of Statistical Science
@@ -26,4 +30,7 @@ Gower Street
 London WC1E 6BT
 <br>
 United Kingdom
+
+
+
 
