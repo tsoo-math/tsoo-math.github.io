@@ -39,6 +39,13 @@ knitr::opts_chunk$set(echo = TRUE)
 *   `r emo::ji("file")` [PhD Tutor administration](https://tsoo-math.github.io/ucl2/grst/links.html)
 
 
+<br>
+
+*   `r emo::ji("round pushpin")` [Find me](https://tsoo-math.github.io/find.html)
+
+<br>
+
+
 
 
 * &#x2B58; [Remove background image](https://tsoo-math.github.io/index-noback.html)
