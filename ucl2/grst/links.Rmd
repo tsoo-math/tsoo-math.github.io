@@ -6,6 +6,11 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+*  [UCL Poster Day](https://tsoo-math.github.io/ucl2/grst/2022-poster.html)
+
+
+
 *  [Induction slides-containing useful links](https://tsoo-math.github.io/ucl2/grst/GRSTwelcome-Soo.html)
 * [Becoming a supervisor](https://tsoo-math.github.io/ucl2/grst/becoming-a-supervisor.txt)
 * [Chapter 5--the main rule book ](https://www.ucl.ac.uk/academic-manual/chapters/chapter-5-research-degrees-framework#supervisors)
@@ -15,4 +20,18 @@ knitr::opts_chunk$set(echo = TRUE)
 * [PhD progression](https://tsoo-math.github.io/ucl2/grst/progression.txt)
 * [Visiting students](https://tsoo-math.github.io/ucl2/grst/visiting-students.txt)
 
-*  [UCL Poster Day](https://tsoo-math.github.io/ucl2/grst/2022-poster.html)
+<br>
+<br>
+
+
+* [Portico](https://evision.ucl.ac.uk/urd/sits.urd/run/siw_lgn)
+
+*  [Research logs](https://researchlog.grad.ucl.ac.uk/)
+
+* [Email](https://www.ucl.ac.uk/isd/how-to/log-to-outlook-web-access-owa)
+
+*  [UCL Finance](https://www.ucl.ac.uk/finance/)
+
+*  [UCL Clarity](https://clarityportals.com/ucl-5391)
+
+*  [UCL Moodle](https://moodle.ucl.ac.uk/)
