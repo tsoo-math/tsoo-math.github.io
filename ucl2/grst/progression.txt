@@ -1,5 +1,5 @@
 Phd progression
-8 May 2022
+3 September 2022
 Terry Soo
 
 
@@ -32,7 +32,15 @@ Please fill out the form and verify to me that all relevant sections of the rese
 
 https://www.ucl.ac.uk/students/sites/students/files/upgrade_panel_report.docx
 
-Viva
+
+Completing research status (CRS)
+
+If your registration is coming to end, you may be able to go on CRS status.  ``All research students who have completed their approved period of registration may register as CRS students while they write up their theses. Transfer to CRS status is only permitted with the approval of a student’s supervisor or other departmental authority.''  In particular, you need to have completed your upgrade, and be ready to submit your thesis in one year (FT) or two (PT).
+
+https://www.ucl.ac.uk/students/status/research-students/completing-research-status
+
+
+Viva and thesis submission
 
 You must `enter' the exam via Portico about four months before you are ready to submit.
 
@@ -47,6 +55,8 @@ https://www.ucl.ac.uk/academic-manual/sites/academic_manual/files/examiner_nomin
 More information and forms can be found here:
 
 https://www.ucl.ac.uk/academic-manual/chapters/chapter-5-research-degrees-framework#supervisors
+
+After you submit your thesis, you will be given ``enrolled-submitted'' status for 6 months; this means you will continue as an enrolled student with the same access levels as an enrolled fee-paying student, or someone on CRS.   Note that you will no longer be liable for fees at the point you submit thesis, or move to CRS, whichever is sooner.
 
 Interruption of study
 
