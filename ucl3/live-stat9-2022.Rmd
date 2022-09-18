@@ -1,0 +1,56 @@
+---
+title: "Live/In-person session diary 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# General information
+
+We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed. 
+
+
+# By [UCL week](https://www.ucl.ac.uk/staff/sites/staff/files/cal_2022_2023.pdf)
+
+* Week 6 (3 Oct - 9 Oct):  
+  - Introductions, first meeting.
+  
+* Week 7 (10 Oct - 16 Oct): 
+ 
+* Week 8 (17 Oct - 23 Oct):  
+  
+* Week 9 (24 Oct - 30 Oct):  
+  
+* Week 10 (31 Nov - 6 Nov):   
+ 
+* Week 11 (7 Nov - 13 Nov):  Reading break
+* Week 12 (14 Nov - 20 Nov): 
+ 
+* Week 13 (21 Nov - 27 Nov):  
+* Week 14 (28 Nov - 4 Dec):  
+  
+* Week 15 (5 Dec - 11 Dec): 
+ 
+* week 16 (12 Dec - 16 Dec):
+ 
+
+
+# Other notes
+
+* First term (Monday 26 September 2022 -- Friday 16 December 2022)
+
+* week 12: (14 Nov - 20 Nov; 2022):  ICA1 due, 18 November
+* week 24: (6 Feb - 12 Feb;  2023):  ICA3 due, 9 February
+* week 27: (27 Feb - 5 Mar; 2023):  ICA2 due, 3 March
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>

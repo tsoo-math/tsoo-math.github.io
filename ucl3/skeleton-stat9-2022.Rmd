@@ -13,9 +13,9 @@ output: html_document
 
 
 *  [Module Outline](https://tsoo-math.github.io/ucl3/outline-stat9-2022.html)
-*  [Schedule](https://tsoo-math.github.io/ucl2/schedule0009.html)
-*  [Live/In-person session information](https://tsoo-math.github.io/ucl2/live0009.html)
-*  [Homework](https://tsoo-math.github.io/ucl2/hw2021.html)
+*  [Schedule](https://tsoo-math.github.io/ucl3/schedule-stat9-2022.html)
+*  [Live/In-person session information](https://tsoo-math.github.io/ucl3/live-stat9-2022.html)
+*  [Homework](https://tsoo-math.github.io/ucl3/hw-stat9-2022.html)
 *  [Recorded lectures on YouTube](https://tsoo-math.github.io/ucl2/YT.html)
 
 *  [Materials from previous years](https://nbviewer.org/url/tsoo-math.github.io/ucl2/skeleton2021.ipynb)

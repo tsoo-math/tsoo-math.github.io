@@ -1,0 +1,49 @@
+---
+title: "Schedule 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# [Live session information](https://tsoo-math.github.io/ucl2/live-stat9-2022.html)
+
+
+# By [UCL week](https://www.ucl.ac.uk/staff/sites/staff/files/cal_2022_2023.pdf)
+
+## Tenative schedule, will be updated 
+
+* Week 4 :  First email
+* Week 5 :
+* Week 6 :  Introductions: R, Python, Law of large numbers.
+* Week 7 : Random variables: theory and practice, Coupling and total variational distance, Review of Markov chains
+* Week 8 :  Convergence of Markov chains, Coupling from the past
+* Week 9 :  Poisson processes
+* Week 10 :  Continuous-time Markov chains;  [ICA1](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html) assigned
+* Week 11 :  Reading break
+* Week 12 : Introduction to renewal theory 1; ICA1 due
+* Week 13 :  Introduction to renewal theory 2+3
+* Week 14 :  Introduction to queues
+  
+* Week 15 :  Introduction to queues 2; [ICA2](https://tsoo-math.github.io/ucl2/ICAproject-ideas-2021.html) assigned
+  
+* week 16 :  Review and wrap-up. [ICA3](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) assigned.
+  
+
+
+
+# Other notes
+
+
+
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>

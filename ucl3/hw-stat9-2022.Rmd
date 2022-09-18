@@ -1,0 +1,80 @@
+---
+title: "Homework 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Please do the homework as posted weekly! Only the ICAs will be formally assessed and officially recorded; thus you do not need to hand in HW for the purposes of grading.
+
+
+
+# By [UCL week](https://www.ucl.ac.uk/staff/sites/staff/files/cal_2022_2023.pdf)
+
+## Tenative schedule, will be updated
+
+
+* Week 6 (3 Oct - 9 Oct):  
+  - [Getting started with R](https://tsoo-math.github.io/ucl2/hello-R-2001.html)
+  - [Getting started with Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/hello-p.ipynb/%3Fflush_cache%3Dtrue)
+  - [Exercises](https://tsoo-math.github.io/ucl2/2021-HW-week6.html)
+      - [Solutions in R](https://tsoo-math.github.io/ucl/QHW1-sol.html)
+      - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week6.ipynb/%3Fflush_cache%3Dtrue)
+* Week 7 (10 Oct - 16 Oct): 
+  - [Exercises](https://tsoo-math.github.io/ucl2/2021-HW-week7.html)
+      - [Solutions in R](https://tsoo-math.github.io/ucl/QHW2-sol.html)
+      - [Solutions in Python, including the last Q](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week7.ipynb/%3Fflush_cache%3Dtrue)
+* Week 8 (17 Oct - 23 Oct):  
+  - [Exercises](https://tsoo-math.github.io/ucl2/2021-HW-week8.html)
+    - [Solutions in R](https://tsoo-math.github.io/ucl/QHW3-sols.html)
+    - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week8.ipynb/%3Fflush_cache%3Dtrue)
+* Week 9 (24 Oct - 30 Oct):  
+  - [Exercises](https://tsoo-math.github.io/ucl/QHW4.html)
+    - [Solutions in R](https://tsoo-math.github.io/ucl/QHW4-sol.html)
+    - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week9.ipynb)
+* Week 10 (31 Oct - 6 Nov):   
+  - [ICA1 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html) assigned
+      * [ICA1-sols 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9.html)
+  - [Continuous-time MC exercises](https://tsoo-math.github.io/ucl/QHW5.html)
+      - [Solutions in R](https://tsoo-math.github.io/ucl/QHW5-sols.html)
+      - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week10.ipynb)
+* Week 11 (7 Nov - 13 Nov):  Reading break
+* Week 12 (14 Nov - 20 Nov): ICA1 due
+  - [Exercises](https://tsoo-math.github.io/ucl/QHW6.html)
+      - [Solutions in R](https://tsoo-math.github.io/ucl/QHW6-sols.html)
+* Week 13 (21 Nov - 27 Nov):  
+  - [Exercises](https://tsoo-math.github.io/ucl/QHW6.1.html)
+      - [Solutions in R](https://tsoo-math.github.io/ucl/QHW6.1-sols.html)
+* Week 14 (28 Nov - 4 Dec):  
+  - [Exercises](https://tsoo-math.github.io/ucl/QHW7.html)
+      - [Solutions in R](https://tsoo-math.github.io/ucl/QHW7-sols.html)
+  
+* Week 15 (5 Dec - 11 Dec): 
+  - [Exercises](https://tsoo-math.github.io/ucl/QHW8.1.html)
+    - [Solutions in R](https://tsoo-math.github.io/ucl/QHW8.1-sols.html)
+  * [ICA2 2021 project ideas](https://tsoo-math.github.io/ucl2/ICAproject-ideas-2021.html)
+  
+* week 16 (12 Dec - 16 Dec):
+  * Revisions:  
+  * [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html)
+  
+
+
+# Other notes
+
+* ICA1: Released 04/11/2022; Due 18/11/2022
+* ICA2: Released  09/12/2022; Due 03/03/2023
+* ICA3: Released 16/12/2022; Due 09/02/2023
+ 
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>
