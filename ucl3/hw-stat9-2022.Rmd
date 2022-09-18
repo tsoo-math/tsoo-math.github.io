@@ -7,7 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Please do the homework as posted weekly! Only the ICAs will be formally assessed and officially recorded; thus you do not need to hand in HW for the purposes of grading.
+Please do the homework as posted weekly! Only the ICAs will be formally assessed and officially recorded; thus you do not need to hand in HW (except the ICAs) for the purposes of grading.
 
 
 
