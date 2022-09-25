@@ -49,7 +49,7 @@ plot(x3,y3, col = "dark green",  pch=20, xlim=c(4,19), xlab = TeX(r'($s_{x}^2 = 
 
 
 
-plot(x4,y4, col = "purple",  pch=20, xlim=c(4,19), xlab = "Contact Terry Soo; t.soo@ucl.ac.uk", ylab=TeX(r'($\rho =0.816$)'), axes=FALSE, main="",  cex.main = 2,asp=1)
+plot(x4,y4, col = "purple",  pch=20, xlim=c(4,19), xlab = "Please contact Terry Soo; t.soo@ucl.ac.uk", ylab=TeX(r'($\rho =0.816$)'), axes=FALSE, main="",  cex.main = 2,asp=1)
 curve(3 + 0.5*x, add=TRUE)
 ```
 
