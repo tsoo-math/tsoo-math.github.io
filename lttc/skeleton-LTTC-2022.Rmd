@@ -25,6 +25,21 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 
 *  [Materials from 2021](https://tsoo-math.github.io/lttc/skeleton.html)
 
+*  [Videos on YouTube](https://tsoo-math.github.io/ucl2/YT.html)
+
+
+*  [Rolling homework](https://tsoo-math.github.io/lttc/homeworklttc.html)
+
+# Classes
+
+* Class 1: Introduction to random number generation, R, Python, and the weak law of large numbers.
+  - [Intro to R](https://tsoo-math.github.io/ucl/intro-R.html)
+  - [Intro to Python](https://nbviewer.org/url/tsoo-math.github.io/ucl2/intro-to-python.ipynb/%3Fflush_cache%3Dtrue)
+  - [Random variables, theory and practice](https://tsoo-math.github.io/ucl/randomTP.html)
+  
+  - [Law of large numbers and R](https://tsoo-math.github.io/ucl/prob-viaR.html)
+
+
 ### Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`

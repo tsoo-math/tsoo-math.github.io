@@ -11,6 +11,31 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This document contains a running list of recommended homework exercises.
 
+
+# Week 1 (2022)
+
+*  Using the law of large numbers, carefully justify why a probability histogram of large size sample from a pdf $f$ ends up *looking* like $f$.
+
+*  Let $T \geq 1$ be a positive integer-valued random variable.  Let $X_1, X_2, \ldots$ be iid random variables, with finite expectation.  Let $S_n = X_1 + \cdots +X_n$.  Show that it may *not* be true that 
+$$\mathbb{E}(S_T) = \mathbb{E}(T) \cdot \mathbb{E}(X_1).$$
+
+
+*  Show by example that the pairwise independence of random variables  is a weaker property than the (full) independence of random variables.
+
+*  Compute using the law of large numbers and simulations the following integral:
+$$\int_0 ^ 5 \sin(x) e^x dx;$$
+hint:  identify a random variable that has this integral for its expectation. 
+
+*  Let $X$ be a continuous random variable, with cdf $F$.  Show that $F(X)$ is uniformly distributed on $[0,1]$; for simplicity, you may assume that $F$ is invertible. 
+
+*  Assuming that Python or R only has uniform random variables available, code (in two ways) a  [geometric](https://en.wikipedia.org/wiki/Geometric_distribution) random variable with support on the positive integers.  Simulate your geometric random variable, and demonstrate by simulations that you have correctely coded it.  
+
+*  Demonstrate, by simulations, that the sum of two independent Poisson random variables is again a Poisson random variable; in your simulations you may restrict to the case of means $2.5$ and $3.7$.
+
+#  From (2021)
+
+
+
 # Basics
 
 *  Using the law of large numbers, carefully justify why a probability histogram of large size sample from a pdf $f$ ends up *looking* like $f$.
