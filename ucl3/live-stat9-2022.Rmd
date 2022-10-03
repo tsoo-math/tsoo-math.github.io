@@ -16,6 +16,10 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 * Week 6 (3 Oct - 9 Oct):  
   - Introductions, first meeting.
+  - Introduction to R, Python
+  - Uniform random variables and generating random variables
+  - (Weak) law of large numbers
+  - This meeting was recorded, and is available via Moodle (only)
   
 * Week 7 (10 Oct - 16 Oct): 
  
