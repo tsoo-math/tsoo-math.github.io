@@ -111,5 +111,5 @@ print( (1/12)* area(given))
 
 Version: `r format(Sys.time(), '%d %B %Y')`
 
-
+* [Rmd source](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.Rmd)
 
