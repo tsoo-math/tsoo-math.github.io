@@ -1,0 +1,27 @@
+---
+title: "Random triangles"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this exercise, we will estimate, by running simulations, the expected area of a certain randomly selected triangle.  Given a fixed deterministic triangle, we will uniformly and independently at random select three points inside it, and consider the area of the triangle formed by these three random points.  It is known that the expected area of such a random triangle is $\tfrac{1}{12}$ that of the original triangle.
+
+# Warm up
+
+Consider the triangle with vertices:  $(0,0)$, $(3,0)$, and $(1,2)$.  One way to select a point uniformly at random in this triangle, is to uniformly select one at random on a square containing this triangle: if the point lands on the triangle, then we take it, otherwise, we try again.  Code this procedure.
+
+# The problem
+
+Consider a fixed triangle of your choosing; you can use the previous one.  Simulate the independent uniform points on the triangle, and compute its area.  You may find [this](https://people.richland.edu/james/lecture/m116/matrices/applications.html) helpful, if you are at a loss of how to compute the area.  Finally repeat this procedure, and find the average value.  Enjoy!
+
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+

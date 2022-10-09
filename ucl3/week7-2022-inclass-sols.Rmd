@@ -1,0 +1,115 @@
+---
+title: "Random triangles"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+# py_install("matplotlib")
+```
+
+In this exercise, we will estimate, by running simulations, the expected area of a certain randomly selected triangle.  Given a fixed deterministic triangle, we will uniformly and independently at random select three points inside it, and consider the area of the triangle formed by these three random points.  It is known that the expected area of such a random triangle is $\tfrac{1}{12}$ that of the original triangle.
+
+# Warm up
+
+Consider the triangle with vertices:  $(0,0)$, $(3,0)$, and $(1,2)$.  One way to select a point uniformly at random in this triangle, is to uniformly select one at random on a square containing this triangle: if the point lands on the triangle, then we take it, otherwise, we try again.  Code this procedure.
+
+# The problem
+
+Consider a fixed triangle of your choosing; you can use the previous one.  Simulate the independent uniform points on the triangle, and compute its area.  You may find [this](https://people.richland.edu/james/lecture/m116/matrices/applications.html) helpful, if you are at a loss of how to compute the area.  Finally repeat this procedure, and find the average value.  Enjoy!
+
+
+# Solutions 
+
+We will do our solutions using Python (inside R)
+
+
+## Warm up
+
+Notice the given triangle is clearly a subset of a square of side length $3$, with the bottom left coordinate at the origin.  It is easy to simulate a random point on this square simple as a pair of independent random variables uniformly distributed on the interval $[0,3]$.  Notice that the triangle sits on the x-axis, and has boundaries, $y = 2*x$ and $y = 3 -x$.
+
+```{python}
+
+import numpy as np
+
+def tri():
+  n=0
+  while n==0:
+    x=3*np.random.uniform()
+    y=3*np.random.uniform()
+    if (x <1 and y <= 2*x ):
+      z = np.array([x,y])
+      n=1
+    if (x >=1 and y <= 3-x ):
+      z = np.array([x,y])
+      n=1
+  return z
+
+points = [tri() for _ in range(5)]
+print(points)
+```
+
+## The problem
+
+We use the determinant formula for area to compute the area of the randomly chosen triangle. 
+
+```{python}
+def area(points):
+  x1=points[0][0]
+  y1=points[0][1]
+  x2=points[1][0]
+  y2=points[1][1]
+  x3=points[2][0]
+  y3=points[2][1]
+  M=([x1,y1,1],[x2,y2,1],[x3,y3,1])
+  d=np.linalg.det(M)
+  d = 0.5*abs(d)
+  return d
+
+
+
+p1 = np.array([0,0])
+p2 = np.array([1,0])
+p3 = np.array([1,1])
+test = np.array([p1,p2,p3])
+print(test)
+print(test[0][0])
+
+print(area(test))
+```
+
+Now we can run the simulations
+
+```{python}
+
+def samplearea():
+  p1=tri()
+  p2=tri()
+  p3=tri()
+  sample=np.array([p1,p2,p3])
+  return area(sample)
+
+samples =  [samplearea() for _ in range(10000)]
+m = np.mean(samples)
+
+print(m)
+
+p1 = np.array([0,0])
+p2 = np.array([1,2])
+p3 = np.array([3,0])
+given = np.array([p1,p2,p3])
+print( (1/12)* area(given))
+
+
+
+
+```
+  
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
