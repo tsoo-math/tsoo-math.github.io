@@ -32,6 +32,21 @@ hint:  identify a random variable that has this integral for its expectation.
 
 *  Demonstrate, by simulations, that the sum of two independent Poisson random variables is again a Poisson random variable; in your simulations you may restrict to the case of means $2.5$ and $3.7$.
 
+# Week 2
+
+*  How would code a uniform point a disc without throwing away randomness, as we do in the rejection sampling?
+
+*  How would you code a uniform point on the surface of a  sphere?
+
+*  By simulation reproduce [Figure 12](https://www.diva-portal.org/smash/get/diva2:644463/FULLTEXT01.pdf)
+
+*  Show that it is indeed enough to consider the Weierstrass theorem on the unit interval.
+
+*  What about a higher dimensional version of Weierstrass?
+
+
+
+
 #  From (2021)
 
 

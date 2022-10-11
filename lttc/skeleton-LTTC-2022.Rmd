@@ -40,6 +40,24 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
   - [Law of large numbers and R](https://tsoo-math.github.io/ucl/prob-viaR.html)
 
 
+* Class 2: Rejection sampling, Integration,  Weierstrass approximation theorem
+
+  - [Weierstrass](https://tsoo-math.github.io/ucl2/bernstein.html)
+
+
+
+# Some code that might have been discussed in class
+
+- [Time for the sum to exceed (Pen and Paper)](https://nbviewer.org/url/tsoo-math.github.io/ucl2/2021-hw-week6.ipynb/%3Fflush_cache%3Dtrue)
+
+- [Rejection sampling on a disc (Section 8)](https://tsoo-math.github.io/ucl/randomTP.html)
+
+- [Von Neumann fair bit extractor](https://nbviewer.org/url/tsoo-math.github.io/ucl2/intro-to-python.ipynb/%3Fflush_cache%3Dtrue)
+
+- [Integration](https://nbviewer.org/url/tsoo-math.github.io/ucl2/2021-hw-week6.ipynb/%3Fflush_cache%3Dtrue)
+
+- [Random triangles](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html)
+
 ### Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`
