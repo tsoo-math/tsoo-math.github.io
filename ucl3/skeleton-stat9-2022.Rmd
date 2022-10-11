@@ -30,7 +30,6 @@ output: html_document
 *  [Basic probability and statistics via R](https://tsoo-math.github.io/ucl/prob-viaR.html)
 *  Watch videos: Introduction to R and Probability via R
 
-# To be determined, rough schedule
 
 ## Week 7
 
@@ -39,6 +38,9 @@ output: html_document
 *  [You always knew coupling](https://tsoo-math.github.io/ucl/coupling-rev.html)
 *  [Review of MC](https://tsoo-math.github.io/ucl/reviewMC.html)
 *  Watch videos:  Random variables: theory and practice; Coupling and total variational distance; Review of Markov chains.
+
+# To be determined, rough schedule
+
 
 ## Week 8
 

@@ -22,7 +22,10 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - This meeting was recorded, and is available via Moodle (only)
   
 * Week 7 (10 Oct - 16 Oct): 
+  - We discussed rejection sampling and introduced the concept of coupling. 
   - Random triangles [worksheet](https://tsoo-math.github.io/ucl3/week7-2022-inclass.html)
+    - [solutions](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html)
+ 
  
 * Week 8 (17 Oct - 23 Oct):  
   
