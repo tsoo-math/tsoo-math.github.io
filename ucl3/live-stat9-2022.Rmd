@@ -28,6 +28,8 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
  
  
 * Week 8 (17 Oct - 23 Oct):  
+  - Playing with a two-by-two Markov chain and symbolic computing in Python 
+    - [worksheet](https://tsoo-math.github.io/ucl3/week8-2022-inclass.html)
   
 * Week 9 (24 Oct - 30 Oct):  
   
