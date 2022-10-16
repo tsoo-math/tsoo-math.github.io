@@ -1,0 +1,197 @@
+---
+title: "In class exercise: Two-by-two and symbolic computing"
+output:  html_document
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+# py_install("matplotlib")
+# py_install("sympy")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Symbolic computing inside Python  (inside R)
+
+Will we explore basic symbolic computing inside Python.  In symbolic computing, the software is able to compute $2x = x+x$  or $\int_0^x x^2 dx = \tfrac{x^3}{3}$ *without* having a numerical value for $x$.  Popular software includes, Maple, Mathematica, and Sage; Python's *sympy* is a basic in-house substitute, which we will explore.
+
+
+```{python}
+import sympy as sym
+
+x = sym.pi   # the digit pi
+print(x)
+print("#############")
+print(x.evalf())
+print("#############")
+print(x.evalf(100))
+print("#############")
+
+x = sym.Symbol('x')   # you got to tell Python that x is symbol
+print(sym.simplify((x + x)))
+
+y = sym.Symbol('y')
+y=sym.integrate(3 * x ** 2, x)  # integrate 3x^2
+print(y)
+print("#############")
+```
+
+We can also do linear algebra
+
+```{python}
+a = sym.Symbol('a')
+b = sym.Symbol('b')
+c = sym.Symbol('c')
+d = sym.Symbol('d')
+M =  sym.Symbol('M')
+M=sym.Matrix([[a, b], [c, d]])
+print(M)
+print("#############")
+print(M.det())
+print("#############")
+print(M.T)
+print("#############")
+print(M.eigenvects())  # eigenvalue, multiplicity, eigenvector
+print("#############")
+Msub = M.subs(a,1).subs(b,1).subs(c,1).subs(d,0)
+values = Msub.eigenvects()
+print("#############")
+print(values)
+print("#############")
+
+
+```
+
+
+
+
+
+# A Markov chain
+
+Consider the two state Markov chain on $\{1,2\}$ where 
+$$p_{11} = a = 1-p_{12}$$ 
+and
+
+$$p_{21} = b=1- p_{21}$$
+
+We will consider the case where $a,b \in (0,1)$.
+
+* Write down the transition matrix.
+
+* Find the stationary distribution of the transition matrix.
+
+*  Simulate the chain, (starting at $1$) and leave $a$ and $b$ as variables that you can choose.
+
+* Choose $a=0.3$ and $b=0.2$.
+
+*  At $t=100$ of your simulation, for this snapshot,  record the value of the Markov chain; repeat this for $N=300$ times, and find the proportion times that the chain is at $1$ and $2$.
+
+
+*  For a given simulation, of length $t=1000$, also record the total number of times the Markov chain takes the value $1$; take this number and divide it by $1000$.  
+
+* What did you observe?
+
+
+# Solutions
+
+
+* We can compute the eigenvalues of the transition matrix in Python. 
+
+
+```{python}
+import numpy as np
+
+a = sym.Symbol('a')
+b = sym.Symbol('b')
+P =  sym.Symbol('P')
+P=sym.Matrix([[a, 1-a], [b,1-b]])
+Pt =  sym.Symbol('Pt')
+Pt= P.T
+print("#############")
+print(Pt.eigenvects())
+print("#############")
+
+Q=P.subs(a,0.1).subs(b,0.4)
+print(Q)
+print(Q[0])
+print(Q[1])
+print(Q[2])
+print(Q[3])
+v1= np.array(  [Q[0],Q[1]]  )
+v2= np.array(  [Q[2],Q[3]]  )  
+Q = np.array([v1,v2])
+print(Q)
+
+```
+
+So we read off that the eigenvector we are after is $[-b/(a-1), 1]$, and after normalization, we have 
+$$\frac{1}{1-a+b} *[b, 1-a].$$
+
+Note, we would get the nicer looker expression, if we had chosen: $a \to 1-a$ at the outset.
+
+*  We simulate the chain in Python 
+
+```{python}
+
+def step(i,A,B):    # advancing the MC by one step, when you are at state i, with values for a and b
+    Q = P.subs(a,A).subs(b,B)
+    v1= np.array([Q[0],Q[1]])
+    v2=np.array([Q[2],Q[3]])
+    Q = np.array([v1,v2])
+    q = Q[i-1]    # this the transition vector for state i
+    x=-1
+    u = np.random.uniform()   # imagine the interval [0,1] split up into smaller intervals with probabilities q_j summing to 1
+    j=0
+    cumq = np.cumsum(q)
+    while(x==-1):            
+        j = j+1
+        if (u <= cumq[j-1]):        # if u lands in the interval of length q_j, then we jump to state j
+            x = j
+    return x
+
+def steps(i,n,A,B):  # advances the MC by n steps, starting at state i, (with values A and B) keeping a complete history
+    x = np.array([i])
+    for j in range(n):
+        x = np.append(x,  step(x[j],A,B)   )
+    return x
+
+print(steps(1,10, 0.3,0.2))
+```
+
+
+* In the snap shot counts, we have
+
+```{python}
+x= [steps(1,100,0.3,0.2)[100] for _ in range(300)]
+freq = np.unique(x,return_counts = True)
+print(freq)
+stat = (1/300)* np.array( [freq[1][0], freq[1][1] ])
+thstat = (1/(1-0.3+0.2))*np.array([0.2, 1-0.3])
+print("#############")
+print(stat)
+print(thstat)
+print("#############")
+```
+
+In the sample path average, we have
+
+```{python}
+
+path = steps(1, 1000, 0.3,0.2)
+freq = np.unique(path,return_counts = True)
+print(freq)
+stat = (1/1001)* np.array( [freq[1][0], freq[1][1] ])
+print(stat)
+```
+
+In both cases, we recover the stationary distribution.
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week8-2022-inclass-sols.Rmd)
+<br>
+<br>
+<br>
