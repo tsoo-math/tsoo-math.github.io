@@ -65,6 +65,8 @@ curve(3 + 0.5*x, add=TRUE)
 
 *  Book prize:  Generously provided by Cambridge University Press
 
+*  Last updated: `r format(Sys.time(), '%d %B %Y')`
+
 
 
 
