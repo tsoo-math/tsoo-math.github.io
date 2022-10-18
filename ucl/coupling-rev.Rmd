@@ -35,7 +35,7 @@ $$
 the most interesting part of this proof is the in the second to last line, where we recognize that the sum is the sum of the pmf of a binomial random variable with parameter $(n-1, p)$.  
 
 It is possible you never even saw this proof.  A much easier proof is given by the fact that, if $Y_1, \ldots, Y_n$ are independent Bernoulli random variables with paramter $p$, then 
-$$X ' = Y_1 + \cdots + Y_n'$$
+$$X ' = Y_1 + \cdots + Y_n$$
 has the same law as $X$, and thus the same expectation and variance!
 The upshot is the linearity of expecation comes to the rescue.
 $$\mathbb{E} X = \mathbb{E} X' = \sum_{i=1} ^n \mathbb{E} Y_i = np.$$
