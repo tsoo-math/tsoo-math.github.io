@@ -19,6 +19,7 @@ Let $n \geq 1$ be an integer and $p \in (0,1)$. Recall that we say that $X \sim 
 
 $$\mathbb{P}(X=k) = { n \choose k} p^k (1-p)^{n-k}$$
 and $X$ is integer-valued on $\{0,1,\ldots, n\}$.  If I told you to compute the mean and variance of $X$ from the definition, then what happens?  It is quite brutal, even the mean:  most of the proof is applying the definition, and manipulating the sigma notation.  We have
+
 $$
 \begin{eqnarray*}
 \mathbb{E} X &=& \sum_{k=0}^n k {n \choose k}p^k(1-p)^{n-k} \\
@@ -53,9 +54,9 @@ Let  $X$ and $Y$ are real-valued random variables.  We say that $X$ **stochastic
 
 Notice that if $X$ stochastically dominates $Y$, then the quantile coupling produces a monotone coupling! We have
 
-$$ X'= F_X^{-1}(U) \geq F_{Y}^{-1}(U) = Y'.$$
+$$X'= F_X^{-1}(U) \geq F_{Y}^{-1}(U) = Y'$$
 In particular, if $X$ stochastically dominates $Y$, we have
-$$ \mathbb{E} X = \mathbb{E} X' \geq \mathbb{E} Y' = \mathbb{E} Y.$$
+$$\mathbb{E} X = \mathbb{E} X' \geq \mathbb{E} Y' = \mathbb{E} Y.$$
 
 
 
