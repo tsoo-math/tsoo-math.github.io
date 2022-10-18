@@ -39,14 +39,20 @@ output: html_document
 *  [Review of MC](https://tsoo-math.github.io/ucl/reviewMC.html)
 *  Watch videos:  Random variables: theory and practice; Coupling and total variational distance; Review of Markov chains.
 
-# To be determined, rough schedule
 
 
 ## Week 8
 
 *  [Making Markov chains converge](https://tsoo-math.github.io/ucl/markov-c.html)
-*  [Coupling from the past](https://tsoo-math.github.io/ucl/coupling-from-past-lec.html)
-*  Watch videos:  Making Markov chains converge; Coupling from the past
+* More advance material (can postpone)
+  *  [Coupling from the past](https://tsoo-math.github.io/ucl/coupling-from-past-lec.html)
+*  Watch videos:  
+    - Making Markov chains converge
+    - Coupling from the past (can postpone)
+
+
+# To be determined, rough schedule
+
 
 
 ## Week 9
