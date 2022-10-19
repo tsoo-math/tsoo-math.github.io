@@ -44,6 +44,12 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 
   - [Weierstrass](https://tsoo-math.github.io/ucl2/bernstein.html)
 
+* Class 3: Markov chains and their convergence
+  - [Introduction](https://tsoo-math.github.io/ucl/reviewMC.html)
+  - [Coupling](https://tsoo-math.github.io/ucl/TV-lec.html)
+    - [You always knew coupling](https://tsoo-math.github.io/ucl/coupling-rev.html)
+  - [Doeblin's coupling](https://tsoo-math.github.io/ucl/markov-c.html)
+
 
 
 # Some code that might have been discussed in class
@@ -57,6 +63,8 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 - [Integration](https://nbviewer.org/url/tsoo-math.github.io/ucl2/2021-hw-week6.ipynb/%3Fflush_cache%3Dtrue)
 
 - [Random triangles](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html)
+
+- [Symbolic computing and a general two state Markov chain](https://tsoo-math.github.io/ucl3/week8-2022-inclass-sols.html)
 
 ### Endnotes
 
