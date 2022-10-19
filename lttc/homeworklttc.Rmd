@@ -44,6 +44,22 @@ hint:  identify a random variable that has this integral for its expectation.
 
 *  What about a higher dimensional version of Weierstrass?
 
+# Week 3
+
+
+*  Do [Question 2](https://tsoo-math.github.io/ucl/QHW3.html)
+
+*  If Markov chains have one-step memory, what happens if we study three-step memory processes?  Is the theory the same, why?
+
+*  Suppose $X$ and $Y$ are jointly distributed random variables.  Find a coupling such that $Y' = \phi(X', U)$, where $U$ is independent of $X'$ and uniformly distributed on the unit interval.
+
+
+*  Do [Question 2](https://tsoo-math.github.io/ucl/ica-stat9-test.html)
+
+*  You may recall the central limit theorem for iid random variables; explore what happens with Markov chains.  In particular, see [Question  3](https://tsoo-math.github.io/ucl/ica-stat9-test.html)
+
+
+*  Suppose you are given only the data (the realization) of a Markov chain, say for one hundred steps; how would you go about generating another hundred steps of this Markov chain?
 
 
 
