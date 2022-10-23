@@ -1,0 +1,33 @@
+---
+title: "Data from a MC"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+# py_install("matplotlib")
+```
+
+
+
+In this worksheet, we will consider the output of a Markov chain that is stored on a textfile.  We will import this data, and do basics statistics to estimate the stationary distribution of corresponding Markov chain.
+
+
+
+
+*  Suppose you are given the output of a $100000$ steps of a irreducible and aperiodic finite state Markov chain.    Carefully explain how you could estimate the stationary distribution for this Markov chain, and why you estimator is reasonable.  
+
+*  Import the data from the file [markovchain.txt](https://tsoo-math.github.io/ucl3/markovchain.txt)  and use this data and your method above to estimate the stationary distribution.
+
+*  Any ideas for the transition matrix?
+
+
+
+
+
+# Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week9-2022-inclass.Rmd)
+

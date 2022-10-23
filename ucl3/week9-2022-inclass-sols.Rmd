@@ -1,0 +1,55 @@
+---
+title: "Data from a MC"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+# py_install("matplotlib")
+```
+
+
+
+In this worksheet, we will consider the output of a Markov chain that is stored on a textfile.  We will import this data, and do basics statistics to estimate the stationary distribution of corresponding Markov chain.
+
+
+
+
+*  Suppose you are given the output of a $100000$ steps of a irreducible and aperiodic finite state Markov chain.    Carefully explain how you could estimate the stationary distribution for this Markov chain, and why you estimator is reasonable.  
+
+*  Import the data from the file [markovchain.txt](https://tsoo-math.github.io/ucl3/markovchain.txt)  and use this data and your method above to estimate the stationary distribution.
+
+*  Any ideas for the transition matrix?
+
+
+# Solutions
+
+
+*  Since the chain is on a finite state space and irreducible and aperiodic, it has a unique stationary distribution $\pi$, and  we know that a version of the law of large numbers gives that for every state $s$, we have
+
+$$\frac{1}{n} \sum_{i=1}^n \mathbf{1}[X_i = s] \to \pi(s).$$
+Thus for each state, we simply need to count the number of occurrences and divide by $100000$, to get its approximate probability under $\pi$.  
+
+*  A quick scan of the file shows there are $4$ states: $1,2,3,4$.  With R, we have:
+
+```{r}
+z =read.table("markovchain.txt", sep=",")
+z= z[,]
+
+b1 = seq(-1,5, by=1)
+hist(z, prob=TRUE, breaks=b1)
+
+sum(z==1)/100000
+sum(z==2)/100000
+sum(z==3)/100000
+sum(z==4)/100000
+```
+
+
+
+# Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week9-2022-inclass-sols.Rmd)
+
