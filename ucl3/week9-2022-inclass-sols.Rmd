@@ -47,7 +47,7 @@ sum(z==3)/100000
 sum(z==4)/100000
 ```
 
-Next we show how this code might be done in Python; you may need to install the package pandas; see above for the code to do that.
+Next we show how this code might be done in Python; you may need to install the package pandas; if you are running this inside R,  you may need to put *py_install("pandas")* where you load the *library(reticulate)*.
 
 ```{python}
 import pandas as pd
