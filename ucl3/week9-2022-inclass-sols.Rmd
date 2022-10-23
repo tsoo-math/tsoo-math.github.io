@@ -7,6 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(reticulate)
 # py_install("matplotlib")
+# py_install("pandas")
 ```
 
 
@@ -46,7 +47,25 @@ sum(z==3)/100000
 sum(z==4)/100000
 ```
 
+Next we show how this code might be done in Python; you may need to install the package pandas; see above for the code to do that.
 
+```{python}
+import pandas as pd
+import numpy as np
+
+mydata = pd.read_csv("https://tsoo-math.github.io/ucl3/markovchain.txt", sep =",")
+
+print(mydata)
+
+y = mydata.loc[:, 'x']
+print(y)
+print(np.mean(y==1))
+print(np.mean(y==2))
+print(np.mean(y==3))
+print(np.mean(y==4))
+
+
+```
 
 # Endnotes
 

@@ -197,6 +197,50 @@ hist(z, prob=TRUE, breaks=b1)</code></pre>
 <pre><code>## [1] 0.41172</code></pre>
 <pre class="r"><code>sum(z==4)/100000</code></pre>
 <pre><code>## [1] 0.16849</code></pre>
+<p>Next we show how this code might be done in Python; you may need to install the package pandas; see above for the code to do that.</p>
+<pre class="python"><code>import pandas as pd
+import numpy as np
+
+mydata = pd.read_csv(&quot;https://tsoo-math.github.io/ucl3/markovchain.txt&quot;, sep =&quot;,&quot;)
+
+print(mydata)</code></pre>
+<pre><code>##         x
+## 1       1
+## 2       2
+## 3       4
+## 4       3
+## 5       4
+## ...    ..
+## 99997   3
+## 99998   3
+## 99999   2
+## 100000  4
+## 100001  3
+## 
+## [100001 rows x 1 columns]</code></pre>
+<pre class="python"><code>y = mydata.loc[:, &#39;x&#39;]
+print(y)</code></pre>
+<pre><code>## 1         1
+## 2         2
+## 3         4
+## 4         3
+## 5         4
+##          ..
+## 99997     3
+## 99998     3
+## 99999     2
+## 100000    4
+## 100001    3
+## Name: x, Length: 100001, dtype: int64</code></pre>
+<pre class="python"><code>print(np.mean(y==1))</code></pre>
+<pre><code>## 0.17022829771702283</code></pre>
+<pre class="python"><code>print(np.mean(y==2))</code></pre>
+<pre><code>## 0.24956750432495675</code></pre>
+<pre class="python"><code>print(np.mean(y==3))</code></pre>
+<pre><code>## 0.4117158828411716</code></pre>
+<pre class="python"><code>print(np.mean(y==4))
+</code></pre>
+<pre><code>## 0.16848831511684884</code></pre>
 </div>
 <div id="endnotes" class="section level1">
 <h1>Endnotes</h1>
