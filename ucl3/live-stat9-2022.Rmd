@@ -34,7 +34,10 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
       - [solutions](https://tsoo-math.github.io/ucl3/week8-2022-inclass-sols.html)
     - This meeting was recorded, and is available via Moodle (only)
   
-* Week 9 (24 Oct - 30 Oct):  
+* Week 9 (24 Oct - 30 Oct): 
+  - Playing with data from a Markov chain
+    - [worksheet](https://tsoo-math.github.io/ucl3/week9-2022-inclass.html)
+    - [solutions](https://tsoo-math.github.io/ucl3/week9-2022-inclass.html)
   
 * Week 10 (31 Oct - 6 Nov):   
  
