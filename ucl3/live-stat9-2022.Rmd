@@ -41,6 +41,7 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
       - [solutions](https://tsoo-math.github.io/ucl3/week9-2022-inclass-sols.html)
   - [Shiny app for Poisson on a disc](https://terry-soo.shinyapps.io/Poisson-disc/)
     - [Source](https://tsoo-math.github.io/ucl/app.R)
+  - [Poisson and WW2](https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2019.01315.x)
   - This meeting was recorded, and is available via Moodle (only)
 * Week 10 (31 Oct - 6 Nov):   
  
