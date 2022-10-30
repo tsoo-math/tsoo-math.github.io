@@ -61,6 +61,22 @@ hint:  identify a random variable that has this integral for its expectation.
 
 *  Suppose you are given only the data (the realization) of a Markov chain, say for one hundred steps; how would you go about generating another hundred steps of this Markov chain?
 
+# Week 4
+
+*  So we have all this theory for Markov chains, where you have to look back at one-step; what happens if you allow two-step memory?
+
+*  Suppose I prove a law of large numbers type result for Markov chains started at stationarity.  How would I extend this proof to any starting distribution?
+
+*  Find an example where the sum of two *dependent* Poisson random variables is again a Poisson.  Hint: perturb the joint mass function of two independent Poisson random variables.
+
+* Explore that happens if instead of starting with a Poisson number of iid uniforms, you use other discrete distributions.
+
+*  Consider iid pertubations of the lattice; that is, for each $n \in \mathbb{Z}^d$, we perturb it to obtain the perturbed lattice $$\Pi := \{n + X_n: n \in \mathbb{Z}^d\},$$ 
+where $(X_n)_{n \in \mathbb{Z}^d}$ are iid $\mathbb{R}^d$ random variables.  Thus $\Pi$ is a point process-- a random scattering points in $\mathbb{R}^d$.  Show that mass is conserved, so that the expected number of points in the set $[0,1)^d$ is (still) one.  (Optional)
+
+
+# Week 5
+
 
 
 #  From (2021)
