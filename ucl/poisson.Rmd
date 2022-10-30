@@ -87,7 +87,7 @@ We can make use of R and simulate many realizations of Poisson point processes. 
   
 * If someone gave you a (single) sample realization of a Poisson process on a large interval, how would you estimate the intensity as unknown parameter?
     
-*  If you are using a Poisson process of intensity $\lambda$ to model the arrival of customers, what should the {\em units} be?
+*  If you are using a Poisson process of intensity $\lambda$ to model the arrival of customers, what should the *units* be?
 
 
 I think the last point is very important in applications; everything has units in the real world, and it can be quite revealing to make sure all the units work out.
@@ -263,7 +263,7 @@ plot(x,y, xlim=c(0,1), ylim=c(0,1))
 
 
 * (Scaling)  Given a Poisson point process $\Pi$ on $\mathbb{R}^d$ of intensity $\lambda$, the scaled point process $c \Pi$ formed by multiplying each $\Pi$-point by $c >0$, is a Poisson point process of intensity $c^{-1} \lambda$.
-\end{theorem}
+
 
 # Exercises
     
