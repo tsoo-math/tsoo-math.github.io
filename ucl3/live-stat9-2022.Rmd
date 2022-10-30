@@ -44,7 +44,8 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - [Poisson and WW2](https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2019.01315.x)
   - [Animal versus human poll, what Americans think](https://today.yougov.com/topics/society/articles-reports/2021/05/13/lions-and-tigers-and-bears-what-animal-would-win-f)
   - This meeting was recorded, and is available via Moodle (only)
-* Week 10 (31 Oct - 6 Nov):   
+* Week 10 (31 Oct - 6 Nov):  
+  - [Reinforced random walk](https://tsoo-math.github.io/ucl3/week10-2022-inclass.html) (non-Markovian processes)
  
 * Week 11 (7 Nov - 13 Nov):  Reading break
 * Week 12 (14 Nov - 20 Nov): 

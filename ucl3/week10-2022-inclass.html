@@ -169,7 +169,7 @@ pre code {
 
 
 <p>In this worksheet, we will consider a natural random walk process, that is not Markovian.</p>
-<p>The reinforced random walk on the integers is defined as follows: if you are <span class="math inline">\(i \in \mathbb{Z}\)</span>, then you can only go to <span class="math inline">\(i+1\)</span> or <span class="math inline">\(i-1\)</span>, and you move to <span class="math inline">\(i+1\)</span> with probability <span class="math inline">\(v(i+1)/[v(i) + v(i+1)]\)</span>, where <span class="math inline">\(v(j)\)</span> is the total number of times an integer <span class="math inline">\(j\)</span> has already been visited. Initially, we take <span class="math inline">\(v=1\)</span> everywhere.</p>
+<p>The reinforced random walk on the integers is defined as follows: if you are <span class="math inline">\(i \in \mathbb{Z}\)</span>, then you can only go to <span class="math inline">\(i+1\)</span> or <span class="math inline">\(i-1\)</span>, and you move to <span class="math inline">\(i+1\)</span> with probability <span class="math inline">\(v(i+1)/[v(i-1) + v(i+1)]\)</span>, where <span class="math inline">\(v(j)\)</span> is the total number of times an integer <span class="math inline">\(j\)</span> has already been visited. Initially, we take <span class="math inline">\(v=1\)</span> everywhere.</p>
 <p>It is a theorem of <a href="https://projecteuclid.org/journals/annals-of-probability/volume-32/issue-3B/Vertex-reinforced-random-walk-on-%e2%84%a4-eventually-gets-stuck-on/10.1214/009117907000000694.full">Tarres (2004)</a> that the walk will <em>eventually</em> get stuck on <em>five</em> vertices. In this worksheet we will try to write some code to illustrate this fact.</p>
 <div id="endnotes" class="section level1">
 <h1>Endnotes</h1>
