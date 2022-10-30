@@ -1,0 +1,25 @@
+---
+title: "Reinforced random walk"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+# py_install("matplotlib")
+```
+
+
+
+In this worksheet, we will consider a natural random walk process, that is not Markovian.
+
+The reinforced random walk on the integers is defined as follows:  if you are $i \in \mathbb{Z}$, then you can only go to $i+1$ or $i-1$, and you move to $i+1$ with probability $v(i+1)/[v(i) + v(i+1)]$, where $v(j)$ is the total number of times an integer $j$ has already been visited.  Initially, we take $v=1$ everywhere. 
+
+It is a theorem of [Tarres (2004)](https://projecteuclid.org/journals/annals-of-probability/volume-32/issue-3B/Vertex-reinforced-random-walk-on-%e2%84%a4-eventually-gets-stuck-on/10.1214/009117907000000694.full) that the walk will *eventually* get stuck on *five* vertices.  In this worksheet we will try to write some code to illustrate this fact.
+
+
+# Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week10-2022-inclass.Rmd)
+

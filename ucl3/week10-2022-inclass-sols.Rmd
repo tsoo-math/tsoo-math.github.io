@@ -1,0 +1,87 @@
+---
+title: "Reinforced random walk"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+# py_install("matplotlib")
+```
+
+
+
+In this worksheet, we will consider a natural random walk process, that is not Markovian.
+
+The reinforced random walk on the integers is defined as follows:  if you are $i \in \mathbb{Z}$, then you can only go to $i+1$ or $i-1$, and you move to $i+1$ with probability $v(i+1)/[v(i) + v(i+1)]$, where $v(j)$ is the total number of times an integer $j$ has already been visited.  Initially, we take $v=1$ everywhere. 
+
+It is a theorem of [Tarres (2004)](https://projecteuclid.org/journals/annals-of-probability/volume-32/issue-3B/Vertex-reinforced-random-walk-on-%e2%84%a4-eventually-gets-stuck-on/10.1214/009117907000000694.full) that the walk will *eventually* get stuck on *five* vertices.  In this worksheet we will try to write some code to illustrate this fact.
+
+
+# Solutions
+
+We will store the number of visits to positive integers in the vectors *vpos*, store the visits to negative integers in *vneg*, and the visits to zero as *vzero*.  We will start the walk at the origin.
+
+```{r}
+
+step <-function(i,l,r){
+  nextstep = i-1
+  p = r/(l+r)
+  if (rbinom(1,1,p) == 1){nextstep <- i+1}
+  nextstep
+}
+
+steps<- function(N){
+  vpos =1
+  vneg =1
+  vzero =1
+  path = 0
+  wr = 1
+  wl =1
+  k=0
+  while(k <N){
+    current= path[length(path)]
+    if (current+1 >0 && length(vpos) >= current+1){
+      wr = vpos[current+1]
+    }
+    if (current+1 ==0){
+      wr = vzero
+    }
+    if (current+1 <0){
+      wr = vneg[abs(current+1)]
+    }
+  
+     if (current-1 <0 && length(vneg) >= abs(current-1)){
+      wl = vneg[abs(current-1)]
+    }
+    if (current-1 ==0){
+      wl = vzero
+    } 
+    if (current-1 >0){
+      wl = vpos[current-1]
+    } 
+    
+    
+nextspot = step(current, wl,wr)
+an = abs(nextspot)
+  path <- c(path, nextspot)
+  if (nextspot==0){vzero<- vzero+1}
+  if (nextspot <0 && an <= length(vneg)){vneg[an] <- vneg[an] +1  }
+  if (nextspot <0 && an > length(vneg)){vneg <-c(vneg, 2)  }
+  if (nextspot >0 && an <= length(vpos)){vpos[an] <- vpos[an] +1  }
+  if (nextspot >0 && an > length(vpos)){vpos <-c(vpos, 2)  }
+  wl=1
+  wr=1
+  k <-k+1
+  }  
+list(path, vneg, vzero, vpos)
+}
+steps(2000)
+```
+
+
+# Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week10-2022-inclass.Rmd)
+
