@@ -5,7 +5,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(reticulate)
+# library(reticulate)
 # py_install("matplotlib")
 ```
 
@@ -32,8 +32,8 @@ step <-function(i,l,r){
 }
 
 steps<- function(N){
-  vpos =1
-  vneg =1
+  vpos =NULL
+  vneg =NULL
   vzero =1
   path = 0
   wr = 1
