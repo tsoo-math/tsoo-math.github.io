@@ -83,5 +83,5 @@ steps(2000)
 # Endnotes
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
-* [Rmd Source](https://tsoo-math.github.io/ucl3/week10-2022-inclass.Rmd)
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week10-2022-inclass-sols.Rmd)
 
