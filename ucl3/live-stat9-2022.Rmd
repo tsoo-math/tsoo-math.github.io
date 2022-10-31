@@ -44,8 +44,12 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - [Poisson and WW2](https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2019.01315.x)
   - [Animal versus human poll, what Americans think](https://today.yougov.com/topics/society/articles-reports/2021/05/13/lions-and-tigers-and-bears-what-animal-would-win-f)
   - This meeting was recorded, and is available via Moodle (only)
-* Week 10 (31 Oct - 6 Nov):  
+* Week 10 (31 Oct - 6 Nov): 
+  - We discussed the expectations for ICA1, and the module in general.  We also went over a homework exercise on the uniform distribution, and introduced continuous Markov chains, using [holding](https://finalfantasy.fandom.com/wiki/Doom_(status)) times.
   - [Reinforced random walk](https://tsoo-math.github.io/ucl3/week10-2022-inclass.html) (non-Markovian processes)
+    - [solutions](https://tsoo-math.github.io/ucl3/week10-2022-inclass-sols.html)
+    - [optional materials to help understand trapping](https://tsoo-math.github.io/ucl/borel.html)
+    - [optional materials to help understand simple random walk](https://www.dropbox.com/s/m6ei3u8uh8t5vur/exercise-sheet.pdf?dl=0)
  
 * Week 11 (7 Nov - 13 Nov):  Reading break
 * Week 12 (14 Nov - 20 Nov): 

@@ -55,6 +55,9 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
   - [Poisson processes](https://tsoo-math.github.io/ucl/poisson.html) on finite volumes
     - [Clarke's application](https://www.cambridge.org/core/journals/journal-of-the-institute-of-actuaries/article/abs/an-application-of-the-poisson-distribution/F75111847FDA534103BD4941BD96A78E)
       - [More discussion](https://rss.onlinelibrary.wiley.com/doi/pdf/10.1111/j.1740-9713.2019.01315.x)
+      
+* Class 5:  Poisson processes continued
+  - [Continuous-time Markov chains (Optional)](https://tsoo-math.github.io/ucl/continuous-timeMC.html)
 
 # Some code that might have been discussed in class
 
@@ -78,6 +81,7 @@ Original [posting](http://www.ltcc.ac.uk/media/london-taught-course-centre/docum
 -  [Poisson process on a sphere](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/sphere-sol.ipynb)
 
 - [Vertex reinforced random walk](https://tsoo-math.github.io/ucl3/week10-2022-inclass-sols.html)
+  - [Optional materials to help understand trapping](https://tsoo-math.github.io/ucl/borel.html)
 
 ### Endnotes
 
