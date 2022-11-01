@@ -77,7 +77,12 @@ where $(X_n)_{n \in \mathbb{Z}^d}$ are iid $\mathbb{R}^d$ random variables.  Thu
 
 # Week 5
 
+*  From the modelling assumptions of Poisson processes, show that if the unit interval contains exactly one point, then that point is uniformly distributed.
+    - Extend your proof to the case of two or more points.
 
+*  How would you simulate a uniform on the surface of an ellipse?
+
+*  More Poisson questions [here](https://tsoo-math.github.io/ucl/poisson-ex.worked.html)
 
 #  From (2021)
 
