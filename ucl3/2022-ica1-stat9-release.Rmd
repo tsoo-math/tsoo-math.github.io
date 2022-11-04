@@ -5,7 +5,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(reticulate)
+# library(reticulate)
 # py_install("matplotlib")
 ```
 
@@ -62,7 +62,7 @@ Let $X_1, X_2, \ldots$ be iid exponential random variables with unknown rate $\l
 
 ##  2.) The area of a random triangle inside a disc [10 points]
 
-Demonstrate by simulations that if three points are sampled  independently and uniformly at random inside a disc of radius $1$, then the expected area of the corresponding triangle is $35/48\pi$. 
+Demonstrate by simulations that if three points are sampled  independently and uniformly at random inside a disc of radius $1$, then the expected area of the corresponding triangle is $\tfrac{35}{48\pi}$. 
 
 
 
@@ -73,7 +73,7 @@ Demonstrate by simulations that if three points are sampled  independently and u
 ## 3.) Markov chains [10 points]
 
 *  Suppose $X$ is  irreducible and aperiodic finite state Markov chain on a state space $S$, containing the states $a,b$ and $c$.   Consider the associated sums given by
-$$T_n:= \frac{1}{n+1} \sum_{k=0} ^n \mathbf{I}[X_{i+2} =c, X_{i+1}=b =, X_{i} =a].$$
+$$T_n:= \frac{1}{n+1} \sum_{k=0} ^n \mathbf{I}[X_{k+2} =c, X_{k+1}=b , X_{k} =a].$$
 Guess the limit for $T_n$ as $n\to \infty$.  Provide evidence (not necessarily a proof) for your guess. [5 points]
 
 *  Demonstrate your guess, via simulations, using the Markov chain with transition matrix
@@ -105,6 +105,7 @@ Consider the point process on the unit interval $[0,1]$ that is a sampled by pla
 # Endnotes
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
+  * Minor typos corrected in the index-summation for number 3.
 * [Rmd Source](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.Rmd)
 
 <br>
