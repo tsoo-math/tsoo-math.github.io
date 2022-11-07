@@ -107,6 +107,8 @@ Consider the point process on the unit interval $[0,1]$ that is a sampled by pla
 * Version: `r format(Sys.time(), '%d %B %Y')`
   * Minor typos corrected in the index-summation for number 3.
   * The indicator function notation in Q3, has been *switched* from $\mathbf{I}$ to our usual notation with $\mathbf{1}$.
+  * No coding is required for Q4; this is a ``pen and paper'' type exercise.
+  * In Q3, an initial distribution is not specified.
 * [Rmd Source](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.Rmd)
 
 <br>
