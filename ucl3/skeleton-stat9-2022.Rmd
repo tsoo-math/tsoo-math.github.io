@@ -77,7 +77,7 @@ output: html_document
 
 
 
-# To be determined, rough schedule
+
 
 
 ## Week 12
@@ -85,6 +85,9 @@ output: html_document
 * [Introduction to renewal theory](https://tsoo-math.github.io/ucl/intro-renewal.html)
 * Watch videos:  Introduction to renewal theory (2 videos)
 * ICA 1 due 
+
+# To be determined, rough schedule
+
 
 ## Week 13
 
