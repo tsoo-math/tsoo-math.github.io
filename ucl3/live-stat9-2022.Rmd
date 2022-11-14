@@ -54,7 +54,10 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 * Week 11 (7 Nov - 13 Nov):  Reading break
   
 * Week 12 (14 Nov - 20 Nov): 
+  - We discussed the inspection paradox in the context of Poisson processes
+  - We discussed the renewal theory and the strong Markov property in the context of Markov chains
   - [worksheet](https://tsoo-math.github.io/ucl3/week12-2022-inclass.html)
+    - [solutions](https://tsoo-math.github.io/ucl3/week12-2022-inclass-sols.html)
 * Week 13 (21 Nov - 27 Nov):  
 * Week 14 (28 Nov - 4 Dec):  
   
