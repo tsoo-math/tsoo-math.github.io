@@ -136,18 +136,32 @@ metro <- function(n){
   x
 }
 
-
 z = replicate(2000, metro(2000))
+
 
 hist(z, prob=TRUE, breaks=50)
 x= seq(0, 1, by =0.1)
 curve(dbeta(x,3,4), add=TRUE)
 ```
 
+### Remarks
+
+Actually, the above histogram, although does give the desired beta, is *not* what I intended to check.  What I intended to do was to take the *last* entry of metro(2000) a large number of times, which would directly verify that distribution of the last entry of metro(2000) is almost the beta.  We do the intended computation below.
+
+```{r}
+z = replicate(2500, metro(2000)[length(metro(2000))])
+
+hist(z, prob=TRUE, breaks=50)
+x= seq(0, 1, by =0.1)
+curve(dbeta(x,3,4), add=TRUE)
+
+```
+
+
 #  Endnotes
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
-* [Rmd Source](https://tsoo-math.github.io/ucl2/class4-sol.Rmd)
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week12-2022-sols.Rmd)
 <br>
 <br>
 <br>
