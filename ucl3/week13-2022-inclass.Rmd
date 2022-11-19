@@ -1,0 +1,44 @@
+---
+title: "In class exercise:  Return times and symbolic computing"
+output:  html_document
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+# py_install("matplotlib")
+# py_install("sympy")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+[Recall](https://tsoo-math.github.io/ucl3/week8-2022-inclass.html) we learned a bit about symbolic computing using in Python.  In this worksheet, we will solve an exercise regarding return times and Markov chains, using Python (or brute force) and also using theory. 
+
+
+# A Markov chain
+
+Consider the three state Markov chain on $\{1,2,3\}$ where 
+$$p_{11} = p = 1-p_{12}$$ 
+$$p_{22} = q=1- p_{23}$$
+and
+$$p_{31}=1.$$
+
+We will consider the case where $q \in (0,1)$ is fixed, but will think of $p \to 1$.  
+
+* Write down the transition matrix.
+
+* Suppose the Markov chain $X$ with these transition probabilities starts in state $1$.  Let $T = \inf\{n \geq 1: X_n = 1\}$.   Compute (by brute force) $\mathbb{E}(T)$.
+
+* Find the stationary distribution of the transition matrix.
+
+*  Simulate the chain, and leave $p$ and $q$ as variables that you can choose.
+
+*  See that all your findings and answers are consistent.
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week13-2022-inclass.Rmd)
+<br>
+<br>
+<br>
