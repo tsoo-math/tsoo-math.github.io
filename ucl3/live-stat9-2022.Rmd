@@ -61,9 +61,11 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - This meeting was recorded, and is available via Moodle (only)
 * Week 13 (21 Nov - 27 Nov): 
   - We discussed the excessive time distribution and its connection to stationary increments.
-  - We discussed how the Blackwell renewal theorem hold of Poisson processes, and how it is *easier* for renewal proceses with stationary increments:
+  - We discussed how the Blackwell renewal theorem hold of Poisson processes, and how it is *easier* for renewal processes with stationary increments:
       - We argued that in the stationary case, we have $m(t+h) - m(t) = \mathbb{E}N(h) = m(h)$; I tried to make an argument that $\mathbb{E}N(h) = h/\mu$ just using the fact that $\lim_{h \to \infty}m(t)/t = 1/\mu$, which is **not** correct; a more involved argument is given in the notes.
   - [worksheet](https://tsoo-math.github.io/ucl3/week13-2022-inclass.html)
+    - [solutions](https://tsoo-math.github.io/ucl2/returntime-sol.html)
+  - My imagination of what the stock market is [like](https://www.youtube.com/watch?v=6d1GkOKvcYU)
   - This meeting was recorded, and is available via Moodle (only)
 * Week 14 (28 Nov - 4 Dec):  
   
