@@ -1,0 +1,58 @@
+---
+title: "In class exercise:  Meet your classmates, inspection paradox,  and tiling"
+output:  html_document
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+# py_install("matplotlib")
+# py_install("sympy")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Warm up questions
+
+- How could know the average salary of your friends without them disclosing individual salaries?
+
+- Suppose $C_1, C_2,$ are iid Cauchy random variables.  Let $X_i = C_i + \mu$, where $\mu \in \mathbb{R}$ is unknown.  Suppose we are given a random sample $(X_1, \ldots, X_n)$. How could you estimate $\mu$?    
+
+- If we measured all the heights of the people in our class, would you expect an normal distribution?
+
+
+- Consider the following game with fair coins:  I toss two, you toss three, the person with the most heads wins, except in the case of I tie, where I win; what is the probability that I will win?
+  - What about the case of $n$ versus $n+1$ coins?
+
+# [Stochastic domination](https://tsoo-math.github.io/ucl/coupling-rev.html) and the inspection paradox
+
+Consider a renewal process, with inter-arrival times $X_1, X_2, \ldots$.   Let $L(t)$ be the length of the interval between the two arrivals containing $t$.   We claimed that $\mathbb{E}L(t) \geq \mathbb{E}X_1$.   Prove this statement by proving:
+$$\mathbb{P}(L(t) > x) \geq \mathbb{P}(X_1> x);$$
+
+Recall that this is enough, by Taylor Swift's invisible [string](https://www.youtube.com/watch?v=JEvXuo1649g).
+Hint:  condition on the current *age* of the interval being  $s$, that is, $A(t)=s$; here $A(t) + E(t) = L(t)$, so that $A(t)$ is the distance from the left inter-arrival to $t$, and $E(t)$ is the remaining distance to from $t$ to the right inter-arrival. 
+
+
+# Baby wald
+
+Let $X=(X_i)_{i=1}^{\infty}$ be an iid sequence of random variables.  Let $N$ be a random nonnegative integer that is independent of $X$.  Suppose $X_1$ and $N$ have finite expectations. Prove that
+$$ \mathbb{E} \big( \sum_{i=1} ^N X_i \big)  = \mathbb{E}N \mathbb{E} X_1$$
+
+
+# Tiling
+
+*  How would you do [Exercise 4](https://tsoo-math.github.io/ucl/QHW6.1-sols.html) analytically? 
+
+*  What would you do if there is more than two tiles, and the tiles did not occur with equal probability?
+
+* Use simulations to test your formula.  
+
+
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week14-2022-inclass.Rmd)
+<br>
+<br>
+<br>

@@ -67,7 +67,8 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
     - [solutions](https://tsoo-math.github.io/ucl2/returntime-sol.html)
   - My imagination of what the stock market is [like](https://www.youtube.com/watch?v=6d1GkOKvcYU)
   - This meeting was recorded, and is available via Moodle (only)
-* Week 14 (28 Nov - 4 Dec):  
+* Week 14 (28 Nov - 4 Dec): 
+  - [worksheet](https://tsoo-math.github.io/ucl3/week14-2022-inclass.html)
   
 * Week 15 (5 Dec - 11 Dec): 
  
