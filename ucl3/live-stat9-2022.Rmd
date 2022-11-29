@@ -68,7 +68,11 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - My imagination of what the stock market is [like](https://www.youtube.com/watch?v=6d1GkOKvcYU)
   - This meeting was recorded, and is available via Moodle (only)
 * Week 14 (28 Nov - 4 Dec): 
+  - We introduced Little's theorem
   - [worksheet](https://tsoo-math.github.io/ucl3/week14-2022-inclass.html)
+    - [solutions](https://tsoo-math.github.io/ucl3/week14-2022-inclass-sols.html)
+  - [Euclid on incommensurables and incomparables](https://projecteuclid.org/journals/notre-dame-journal-of-formal-logic/volume-40/issue-3/Incommensurables-and-Incomparables--On-the-Conceptual-Status-and-the/10.1305/ndjfl/1022615620.pdf) 
+  - This meeting was recorded, and is available via Moodle (only)
   
 * Week 15 (5 Dec - 11 Dec): 
  
