@@ -70,18 +70,18 @@ $$ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}.$$
 
 
 ```{solution}
-An arrival arrives at time $t$ to a queue with $n$ items in front with probability   $\rho^n(1-\rho)$, will have to wait for these $n$ items to clear, taking time which  is a sum of exponentials, giving a gamma distribution.  
+An arrival arrives at time $t$ to a queue with $n$ items in front with probability   $\rho^n(1-\rho)$, will have to wait for these $n$ items to clear, taking time which  is a sum of exponentials, giving a gamma distribution; here we also note that the memoryless property of exponentials allows us to forget about the time spent serving an item before the arrival.    
 
 We have for $x \geq 0$, that 
 
 \begin{eqnarray*}
-\mathbb{P}(W \leq x) &=& 1-\rho +  \sum_{n=1} ^{\infty} \mathbb{P}(W \leq x | N(t)= n) \mathbb{P}(N(t) =n) \\
+\mathbb{P}(W \leq x) &=& 1-\rho +  \sum_{n=1} ^{\infty} \mathbb{P}(W \leq x | Q(t)= n) \mathbb{P}(Q(t) =n) \\
 &=&  1-\rho +   \sum_{n=1} ^{\infty}  \int_0 ^x \Big( \frac{\mu^n t^{n-1} }{\Gamma(n)} e^{-\mu t} dt \Big)  \rho^n(1-\rho)   \\
 &=&   1-\rho +    (1- \rho)\int_0 ^x  e^{-\mu t}   \sum_{n=1} ^{\infty}  \frac{\lambda^n t^{n-1}  }{(n-1)!} dt \\
 &=&  1-\rho +    (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  \sum_{n=0} ^{\infty}  \frac{ (\lambda t)^n  }{n!} dt \\
 &=&    1-\rho +  (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  e^{\lambda t}  dt  \\
 &=&  1-\rho +  \rho (1- e^{-(\mu - \lambda)x}  )  \\
-&=&  1- \rho e^{-x(\mu - x)}
+&=&  1- \rho e^{-x(\mu - x)}.
 \end{eqnarray*}
 ```
 

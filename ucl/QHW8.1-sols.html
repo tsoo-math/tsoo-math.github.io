@@ -199,16 +199,16 @@ from which we easily deduce that <span class="math inline">\(T\)</span> has fini
 <p><br></p>
 
 <div class="solution">
-<p> <span class="solution"><em>Solution. </em></span> An arrival arrives at time <span class="math inline">\(t\)</span> to a queue with <span class="math inline">\(n\)</span> items in front with probability <span class="math inline">\(\rho^n(1-\rho)\)</span>, will have to wait for these <span class="math inline">\(n\)</span> items to clear, taking time which is a sum of exponentials, giving a gamma distribution.</p>
+<p> <span class="solution"><em>Solution. </em></span> An arrival arrives at time <span class="math inline">\(t\)</span> to a queue with <span class="math inline">\(n\)</span> items in front with probability <span class="math inline">\(\rho^n(1-\rho)\)</span>, will have to wait for these <span class="math inline">\(n\)</span> items to clear, taking time which is a sum of exponentials, giving a gamma distribution; here we also note that the memoryless property of exponentials allows us to forget about the time spent serving an item before the arrival.</p>
 <p>We have for <span class="math inline">\(x \geq 0\)</span>, that</p>
 <span class="math display">\[\begin{eqnarray*}
-\mathbb{P}(W \leq x) &amp;=&amp; 1-\rho +  \sum_{n=1} ^{\infty} \mathbb{P}(W \leq x | N(t)= n) \mathbb{P}(N(t) =n) \\
+\mathbb{P}(W \leq x) &amp;=&amp; 1-\rho +  \sum_{n=1} ^{\infty} \mathbb{P}(W \leq x | Q(t)= n) \mathbb{P}(Q(t) =n) \\
 &amp;=&amp;  1-\rho +   \sum_{n=1} ^{\infty}  \int_0 ^x \Big( \frac{\mu^n t^{n-1} }{\Gamma(n)} e^{-\mu t} dt \Big)  \rho^n(1-\rho)   \\
 &amp;=&amp;   1-\rho +    (1- \rho)\int_0 ^x  e^{-\mu t}   \sum_{n=1} ^{\infty}  \frac{\lambda^n t^{n-1}  }{(n-1)!} dt \\
 &amp;=&amp;  1-\rho +    (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  \sum_{n=0} ^{\infty}  \frac{ (\lambda t)^n  }{n!} dt \\
 &amp;=&amp;    1-\rho +  (1-\rho) \int_0 ^x   \lambda e^{-\mu t}  e^{\lambda t}  dt  \\
 &amp;=&amp;  1-\rho +  \rho (1- e^{-(\mu - \lambda)x}  )  \\
-&amp;=&amp;  1- \rho e^{-x(\mu - x)}
+&amp;=&amp;  1- \rho e^{-x(\mu - x)}.
 \end{eqnarray*}\]</span>
 </div>
 
@@ -251,7 +251,7 @@ Thus we have verified the reversibility conditions.
 <hr>
 <hr>
 <ul>
-<li>Version: 19 December 2021</li>
+<li>Version: 29 November 2022</li>
 <li><a href="https://tsoo-math.github.io/ucl/QHW8.1-sols.Rmd">Rmd Source</a></li>
 </ul>
 
