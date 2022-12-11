@@ -65,7 +65,7 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 # Other notes
 
 * [ICA1](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html): Released 04/11/2022; Due 18/11/2022
-* ICA2: Released  09/12/2022; Due 03/03/2023
+* [ICA2](https://tsoo-math.github.io/ucl2/2022-ica2-project.html): Released  09/12/2022; Due 03/03/2023
 * ICA3: Released 16/12/2022; Due 09/02/2023
  
 

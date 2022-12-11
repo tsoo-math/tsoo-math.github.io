@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Week 13 :  Introduction to renewal theory 2+3
 * Week 14 :  Introduction to queues
   
-* Week 15 :  Introduction to queues 2; [ICA2](https://tsoo-math.github.io/ucl2/ICAproject-ideas-2021.html) assigned
+* Week 15 :  Introduction to queues 2; [ICA2](https://tsoo-math.github.io/ucl2/2022-ica2-project.html) assigned
   
 * week 16 :  Review and wrap-up. [ICA3](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) assigned.
   

@@ -75,6 +75,10 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - This meeting was recorded, and is available via Moodle (only)
   
 * Week 15 (5 Dec - 11 Dec): 
+  - We discussed $M/M/1$ queues and Burke's theorem
+  - We discussed ICA2 
+  - We reviewed an old ICA3 from 2021
+  - This meeting was recorded, and is available via Moodle (only)
  
 * week 16 (12 Dec - 16 Dec):
  

@@ -75,18 +75,19 @@ Often one can apply the renewal-reward theorem to prove other theorems by coming
 
 **Theorem (Law of large numbers for continuous-time Markov chains):**  Let $X$ be an irreducible continuous-time Markov chain on a finite number of states with stationary distribution $\pi$.  Let $s$ be a state.  Then 
 
-$$  \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \to \pi(s).$$
+$$  \frac{1}{t}\int_0 ^t \mathbf{1}[X(u)=s]du \to \pi(s).$$
 
-*Proof:*  Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at $s$, and the time it takes to return to $s$.      Let us give ourselves a reward $R_i$ when the Markov chain reaches the state $s$ for the $i$t-time,  which is exactly the amount of time the chain stays at state $s$, before leaving.  Thus with the renewal-reward process $(Y, R)$ the limit 
+*Proof:*  Suppose the chain starts at state $s$, and consider the renewal process given by inter-arrival times $Y_i$ corresponding to how the long chain spends at $s$, and the time it takes to return to $s$.      Let us give ourselves a reward $R_i$ when the Markov chain reaches the state $s$ for the $i$-th-time,  which is exactly the amount of time the chain stays at state $s$, before leaving.  Thus with the renewal-reward process $(Y, R)$ the limit 
 
-$$\lim_{t \to \infty} \frac{C(t)}{t}  = \lim_{t \to \infty} \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] = \frac{\mathbb{E}(R_1)}{\mathbb{E}(Y_1)}$$
+$$\lim_{t \to \infty} \frac{C(t)}{t}  = \lim_{t \to \infty} \frac{1}{t}\int_0 ^t \mathbf{1}[X(u)=s]du = \frac{\mathbb{E}(R_1)}{\mathbb{E}(Y_1)}$$
 
 exists almost surely, since its clear relevant expectations are finite; in particular, we know that $\mathbb{E}R_1=h_s$ is the mean holding time at state $s$.     
 
 Clearly, we would get the same limit if the chain was started at the stationary distribution, and we know that 
-$$0 \leq \frac{1}{t}\int_0 ^t \mathbf{1}[X(t)=s] \leq 1$$
-and $$\mathbb{E}(\mathbf{1}[X(t) =s]) = \mathbb{P}(X(t) = s)  = \pi(s).$$
-Hence by an interchange of limits argument (the bounded covergence theorem) and taking expectations on both sides of the limit, we identify that limit must be 
+$$0 \leq \frac{1}{t}\int_0 ^t \mathbf{1}[X(u)=s]du \leq 1$$
+and 
+$$\mathbb{E}(\mathbf{1}[X(u) =s]) = \mathbb{P}(X(u) = s)  = \pi(s).$$
+Hence by an interchange of limits argument (the bounded convergence theorem) and taking expectations on both sides of the limit, we identify that limit must be 
 $$\pi(s) = \frac{h_s}{\mathbb{E} Y_1}.$$
 
 Note that we obtained a similar expression for discrete time Markov chains at the end of our first discussion on renewal theory.
