@@ -113,9 +113,10 @@ output: html_document
 
 ## Week 16
 
+* [ICA1 2023 - released](https://tsoo-math.github.io/ucl3/2022-ica3-stat9-release.html)
 * Revisions, wrap up.
-* [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) assigned.
-
+* [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) 
+  * [sols](https://tsoo-math.github.io/ucl3/2021-ica3-stat9.html)
 
 ### Endnotes
 
