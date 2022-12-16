@@ -129,5 +129,5 @@ Consider the following system where items arrive as a Poisson process with inten
 # Endnotes
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
-* [Rmd Source](https://tsoo-math.github.io/ucl3/2022-ica3/release.Rmd)
+* [Rmd Source](https://tsoo-math.github.io/ucl3/2022-ica3-stat9-release.Rmd)
 
