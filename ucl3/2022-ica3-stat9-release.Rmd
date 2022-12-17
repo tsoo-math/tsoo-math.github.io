@@ -81,7 +81,7 @@ $$Y := (Y_0, Y_1, \ldots, Y_N)= (X_N, X_{N-1} \ldots, X_0).$$
 
 ## 4.) Poisson processes [5 points]
 
-Given $\lambda_N > \lambda_Q >0$, show that there exists Poisson processes $N$ and $Q$, with rates $\lambda_N$ and $\lambda_Q$, respectively, such that $N(t) \geq Q(t)$ for all $t \geq 0$, and such that the first arrival for $N$ is always comes before the first arrival for $Q$.
+Given $\lambda_N > \lambda_Q >0$, show that there exists Poisson processes $N$ and $Q$, with rates $\lambda_N$ and $\lambda_Q$, respectively, such that $N(t) \geq Q(t)$ for all $t \geq 0$, and such that the first arrival for $N$  always comes *strictly* before the first arrival for $Q$.
 
 
 
@@ -127,6 +127,9 @@ Consider the following system where items arrive as a Poisson process with inten
 
 
 # Endnotes
+
+* Q2: the word *standard* is used to mean that the two components are independent are mean-zero with unit-variance.
+* Q4: the word *strictly* is added to clarify.
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
 * [Rmd Source](https://tsoo-math.github.io/ucl3/2022-ica3-stat9-release.Rmd)
