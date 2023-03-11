@@ -124,8 +124,8 @@ experimentchi(8,3,6, 95, 20000)
 
 ### Endnotes
 
-Version: `r format(Sys.time(), '%d %B %Y')`
-
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/CI.Rmd)
 
 <br>
 <br>
