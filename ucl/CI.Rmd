@@ -1,0 +1,132 @@
+---
+title: "Basic confidence intervals"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introduction
+
+We will derive and simulate some  confidence intervals that are typically encountered undergraduate statistics
+
+## Normal random variables, unknown mean, known variance
+
+### Derivation
+
+Let $X_1, \ldots, X_n$ be independent normal random variables all with mean $\mu$ and variance $\sigma^2$.  Here $\mu$ is unknown, but $\sigma$ is *known*.     Let $\bar{X}$ be the usual sample mean.  We know that 
+
+$$Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \sim N(0,1).$$ 
+
+Recall that for $\alpha \in (0,1)$, $z_{\alpha}$ is the number such that $\mathbb{P}(Z \geq z_{\alpha}) = \alpha$, so that  $\mathbb{P}( -z_{\alpha/2} \leq Z \leq z_{\alpha/2}) = 1- \alpha$.  
+
+Consider the following calculation
+
+
+$$
+\begin{eqnarray*}
+1- \alpha &=& \mathbb{P}( -z_{\alpha/2} \leq Z \leq z_{\alpha/2}) \\
+&=&  \mathbb{P}\Big( -z_{\alpha/2} \leq \frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \leq z_{\alpha/2}\Big)  \\
+&=& \mathbb{P}\Big( -z_{\alpha/2}\frac{ \sigma} { \sqrt{n}} \leq \bar{X} - \mu \leq z_{\alpha/2}\frac{ \sigma} { \sqrt{n}}  \Big)  \\
+&=&  \mathbb{P}\Big( \mu \in \big[\bar{X} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \bar{X} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \big] \Big);
+\end{eqnarray*}
+$$
+
+that is, the probability that the true mean $\mu$ lies in the *random* interval given by 
+
+$$\Big[\bar{X} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \  \bar{X} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \Big]$$
+is $1- \alpha$.  
+
+This calculation motivates the following definition.   Suppose we actually observe the values of $X_1, \ldots, X_n$, and we find that $\bar{X}= \bar{x}$.  Then we say that the *deterministic* interval given by 
+
+$$\Big( \bar{x} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \ \bar{x} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \Big)$$
+is a $100(1-\alpha)$\%  (two-sided) *confidence interval* for $\mu$.    Sometimes confidence interval is also expressed compactly as
+$$\bar{x} \pm  z_{\alpha/2} \frac{\sigma}{\sqrt{n}}.$$
+We remark that once data is observed, and a confidence interval is computed, it is a deterministic interval, and whether or not the true mean or parameter lies in the confidence interval is no longer a probabilistic.   
+
+
+### Code
+
+Here, we will run repeated experiments to demonstrate that the proportion of times the true variance lies in a $100(1-\alpha)$\% confidence interval is indeed $1-\alpha$.
+
+```{r}
+experiment <- function(mu, sigma, n, percent, trials)  # N(mu, sigma); n data points; percent of CI; trials=number of experiments 
+{
+  alpha = 1- percent/100
+  c = qnorm(alpha/2,lower.tail=F) # critical value
+  b = c*sigma/sqrt(n) 
+  totalinside = 0  # total times the true mean mu lies inside the CI
+  for(i in 1:trials){
+  inside=0
+  x = rnorm(n, mu, sigma) # simulate the data
+  xbar = mean(x)
+  if(mu < xbar + b && mu > xbar - b   ){inside =1}  # check whether the CI contains mu
+  totalinside <- totalinside + inside # update
+  }
+  totalinside/trials  # output the proportion
+}
+  
+experiment(5,2,12, 92, 20000)
+
+```
+
+
+## Confidence intervals for the sample variance
+
+Let $X_1, \ldots, X_n$ be independent normal random variables all with mean $\mu$ and variance $\sigma^2$, both of which are *unknown*.    Let $\bar{X}$ be the usual sample mean and $S^2$ be the usual sample variance.  We have the nice fact that
+$$C:=\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1).$$
+
+Hence it follows that a $100(1-\alpha)$\%  (two-sided) *confidence interval* for $\sigma^2$ is given by
+
+$$\Big( \frac{(n-1)s^2}{r}, \frac{(n-1)s^2}{\ell}\Big),$$
+where $S^2 = s^2$ is an observed sample variance, and we compute two critical values:
+$$\mathbb{P}(C >r) = \alpha/2  \text{ and }   \mathbb{P}(C <\ell) = \alpha/2.$$ 
+
+### Code
+
+Here, we will run repeated experiments to demonstrate that the proportion of times the true mean lies in a $100(1-\alpha)$\% confidence interval is indeed $1-\alpha$.
+
+
+```{r}
+experimentchi <- function(mu, sigma, n, percent, trials)  # N(mu, sigma); n data points; percent of CI; trials=number of experiments 
+{
+  alpha = 1- percent/100
+  L = qchisq(alpha/2,n-1) # critical values
+  R = qchisq(alpha/2,n-1,lower.tail=F)
+  totalinside = 0  # total times the true mean mu lies inside the CI
+  sigma2 = sigma^2
+  for(i in 1:trials){
+  inside=0
+  x = rnorm(n, mu, sigma) # simulate the data
+  sq = var(x)
+  S = sq*(n-1)
+  a = S/R
+  b = S/L # the confidence interval is (a,b)
+  if( sigma2 >a && sigma2 <b   ){inside =1}  # check whether the CI contains sigma^2
+  totalinside <- totalinside + inside # update
+  }
+  totalinside/trials  # output the proportion
+}
+  
+experimentchi(8,3,6, 95, 20000)
+
+
+
+```
+
+### Exercises
+
+* In the case of the confidence interval for the true mean of a random sample of normals, consider the case where  $\sigma$ is *unknown*.
+* In the case of the confidence interval for the true variance of a random sample of normals, consider the case where $\mu$ is  *known*.
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>
+<br>
