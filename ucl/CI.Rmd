@@ -49,7 +49,7 @@ We remark that once data is observed, and a confidence interval is computed, it 
 
 ### Code
 
-Here, we will run repeated experiments to demonstrate that the proportion of times the true variance lies in a $100(1-\alpha)$\% confidence interval is indeed $1-\alpha$.
+Here, we will run repeated experiments to demonstrate that the proportion of times the true mean lies in a $100(1-\alpha)$\% confidence interval is indeed $1-\alpha$.
 
 ```{r}
 experiment <- function(mu, sigma, n, percent, trials)  # N(mu, sigma); n data points; percent of CI; trials=number of experiments 
@@ -86,7 +86,7 @@ $$\mathbb{P}(C >r) = \alpha/2  \text{ and }   \mathbb{P}(C <\ell) = \alpha/2.$$
 
 ### Code
 
-Here, we will run repeated experiments to demonstrate that the proportion of times the true mean lies in a $100(1-\alpha)$\% confidence interval is indeed $1-\alpha$.
+Here, we will run repeated experiments to demonstrate that the proportion of times the true variance lies in a $100(1-\alpha)$\% confidence interval is indeed $1-\alpha$.
 
 
 ```{r}
