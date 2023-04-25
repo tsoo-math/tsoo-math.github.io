@@ -6,7 +6,7 @@ editor: visual
 
 ## Introduction
 
-[Quarto](https://quarto.org) is even fancier and possibly easier to use than R-markdown; it is run on RStudio, just like R-Markdown, and the coding is almost exactly the same, so that Rmd files can be compiled as qmd files with minor edits. Some of the advantages are that although it was probably made with R code in mind, it can easily run Python code as well.
+[Quarto](https://quarto.org) is even fancier and possibly easier to use than R-markdown; it is run on RStudio, just like R-Markdown, and the coding is almost exactly the same, so that Rmd files can be compiled as qmd files with minor edits. 
 
 ### R-example
 

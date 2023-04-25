@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p><a href="https://quarto.org">Quarto</a> is even fancier and possibly easier to use than R-markdown; it is run on RStudio, just like R-Markdown, and the coding is almost exactly the same, so that Rmd files can be compiled as qmd files with minor edits. Some of the advantages are that although it was probably made with R code in mind, it can easily run Python code as well.</p>
+<p><a href="https://quarto.org">Quarto</a> is even fancier and possibly easier to use than R-markdown; it is run on RStudio, just like R-Markdown, and the coding is almost exactly the same, so that Rmd files can be compiled as qmd files with minor edits.</p>
 <section id="r-example" class="level3">
 <h3 class="anchored" data-anchor-id="r-example">R-example</h3>
 <p>We simulate the amount of time it take for a head to appear, when tossing a bias coin.</p>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>sim <span class="ot">=</span> <span class="fu">replicate</span>(<span class="dv">100000</span>, <span class="fu">flips</span>(<span class="fl">0.4</span>))</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.50434</code></pre>
+<pre><code>[1] 2.49501</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="fl">0.4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -141,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>sim <span class="op">=</span> [flips(<span class="fl">0.4</span>) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100000</span>)]</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.mean(sim))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2.50839</code></pre>
+<pre><code>2.49646</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">/</span><span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
