@@ -1,0 +1,63 @@
+---
+title: "Using Quarto"
+format: html
+editor: visual
+---
+
+## Introduction
+
+[Quarto](https://quarto.org) is even fancier and possibly easier to use than R-markdown; it is run on RStudio, just like R-Markdown, and the coding is almost exactly the same, so that Rmd files can be compiled as qmd files with minor edits. Some of the advantages are that although it was probably made with R code in mind, it can easily run Python code as well.
+
+### R-example
+
+We simulate the amount of time it take for a head to appear, when tossing a bias coin.
+
+```{r}
+flips <- function(p){
+  x=0
+  n=0
+  while(x==0){
+    x=rbinom(1,1,p)
+    n=n+1
+  }
+n
+}
+sim = replicate(100000, flips(0.4))
+mean(sim)
+1/0.4
+```
+
+## Python-example
+
+We do the same experiment in Python,
+
+```{python}
+import numpy as np
+
+def flips(p):
+  x=0
+  n=0
+  while x==0:
+    x=np.random.binomial(1,p,1)
+    n=n+1
+  return n
+
+sim = [flips(0.4) for _ in range(100000)]
+print(np.mean(sim))
+print(1/0.4)
+```
+
+## Math
+
+It appears that Quarto can easily handle Latex equation arrays *without* have the two dollar signs between the code, which allows for easier conversation into pdf.
+
+Let $U_1, U_2, \ldots$ be independent and uniformly distributed on the unit interval. By the law of large numbers and the change of variables formula, we have \begin{eqnarray*}
+\int_0 ^1 g(x) dx &=& \mathbb{E}g(U_1) \\
+&=& \lim_{n \to \infty} \frac{1}{n} \sum_{i=1} ^n g(U_i)
+\end{eqnarray*}
+
+### Other notes
+
+[qmd Source](https://tsoo-math.github.io/ucl3/quarto.qmd)
+
+Version: `r format(Sys.time(), '%d %B %Y')`
