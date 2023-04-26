@@ -25,7 +25,7 @@ Welcome!  I would like to get to you a bit. But first
   * Download/Install [R markdown](https://rmarkdown.rstudio.com/)
   * Install  [R bookdown](https://bookdown.org/yihui/bookdown/get-started.html)
   * Install [Tinytex](https://yihui.org/tinytex/)
-* Download/Install [Quarto](https://tsoo-math.github.io/ucl3/quarto.html) the new and fancy version of R Markdown.  
+* Download/Install [Quarto](https://tsoo-math.github.io/ucl3/quarto.html) the new and fancy version of R Markdown, which is a bit easier to use; the code is essentially the same. The Quarto version of this file is available [here](https://tsoo-math.github.io/ucl/hello-0009q.html).
 
 Not only can you type run R code, you can produce html and pdf files with math and R code together!  Roughly speaking R studio is an easy way to use R, and R markdown is a language easily generates html files with R code and math symbols, allowing the use of basic [Latex](https://en.wikibooks.org/wiki/LaTeX/Mathematics) code; it is how I generates many of the html pages for our module.
 
