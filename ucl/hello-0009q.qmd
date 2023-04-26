@@ -1,13 +1,9 @@
 ---
 title: "Hello-0009"
-output:
-  bookdown::html_document2: default
-  bookdown::pdf_document2:
-    keep_tex: yes
-  bookdown::word_document2:
-    toc: yes
-  pdf_document:
-    toc: yes
+format: 
+    html:
+      toc: true
+number-sections: true
 ---
 
 
@@ -31,7 +27,7 @@ Not only can you type run R code, you can produce html and pdf files with math a
 
 #  Getting to know you
 
-Please send me an *html* file generated using R markdown (Quarto) with the following information.  It might be helpful to use the [hello-0009.Rmd](https://tsoo-math.github.io/ucl/hello-0009.Rmd) as a template.
+Please send me an *html* file generated using R markdown (Quarto) with the following information.  It might be helpful to use the [hello-0009.qmd](https://tsoo-math.github.io/ucl/hello-0009q.qmd) as a template.
 
 *  Name
 *  What programme/course are you in? BSc/Msc?
@@ -54,7 +50,7 @@ $$ \frac{d}{dx} \int_0 ^x f(u)du = f(x)$$
 
 # Endnotes
 
-[Rmd Source](https://tsoo-math.github.io/ucl/hello-0009.Rmd)
+[qmd Source](https://tsoo-math.github.io/ucl/hello-0009q.qmd)
 
 Version: `r format(Sys.time(), '%d %B %Y')`
 
