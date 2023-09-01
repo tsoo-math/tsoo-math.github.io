@@ -32,6 +32,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * `r emo::ji("teacher")` [Stat 0009, Fall 2022](https://tsoo-math.github.io/ucl3/skeleton-stat9-2022.html)
 
+* `r emo::ji("teacher")` [Stat 0009, Fall 2023](https://tsoo-math.github.io/ucl4/skeleton-stat9-2023.html)
+
 
 * `r emo::ji("teacher")` [LTTC Stochastic processes, Fall 2022](https://tsoo-math.github.io/lttc/skeleton-LTTC-2022.html)
 
