@@ -1,8 +1,8 @@
 ---
 title: ''
 output:
-  word_document: default
   html_document: default
+  word_document: default
   pdf_document: default
 ---
 
@@ -26,6 +26,7 @@ library(latex2exp)
 
 ## Poster competition in Statistics & Probability 
 
+![](.\qr-code2.png)
 
 
 * 8 November 2023
@@ -38,6 +39,9 @@ library(latex2exp)
     
 *  £ 1000 in prizes 
 
+* contact: Terry Soo: t.soo@ucl.ac.uk
+
+* https://tsoo-math.github.io/ucl2/grst/2023-poster.html
 
 *  Last updated: `r format(Sys.time(), '%d %B %Y')`
 
