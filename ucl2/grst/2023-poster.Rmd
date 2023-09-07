@@ -1,0 +1,53 @@
+---
+title: ''
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+\pagenumbering{gobble}
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, echo = TRUE)
+```
+
+```{r, echo=FALSE, results= 'hide', warning = FALSE}
+library(latex2exp)
+```
+
+
+# PHD STUDENTS
+
+# UCL STATISTICAL SCIENCE 
+
+# WANTS YOU!
+
+## Poster competition in Statistics & Probability 
+
+
+
+* 8 November 2023
+
+*   3.30 - 5.00 PM, at [1-19 Torrington Place](https://www.ucl.ac.uk/maps/1-19-torrington-place),  UCL Stats Department
+
+*   Guest Judge  TBA 
+
+*  Guest Seminar at 2 PM TBA
+    
+*  £ 1000 in prizes 
+
+
+*  Last updated: `r format(Sys.time(), '%d %B %Y')`
+
+
+
+
+```{r, echo=FALSE, results='hide'}
+dev.off()
+```
+
+
+
+
