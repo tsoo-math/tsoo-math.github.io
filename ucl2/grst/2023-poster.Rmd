@@ -1,9 +1,9 @@
 ---
 title: ''
 output:
-  html_document: default
-  word_document: default
   pdf_document: default
+  word_document: default
+  html_document: default
 ---
 
 \pagenumbering{gobble}
@@ -37,7 +37,7 @@ library(latex2exp)
 
 *  Guest Seminar at 2 PM TBA
     
-*  £ 1000 in prizes 
+*  £ 1000 in prizes, we welcome posters from all universities 
 
 * contact: Terry Soo: t.soo@ucl.ac.uk
 
