@@ -25,6 +25,8 @@ knitr::opts_chunk$set(echo = TRUE)
 * `r emo::ji("camera")` [A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
 
 
+* `r emo::ji("game_die")` [Poster Competition 2023](https://tsoo-math.github.io/ucl2/grst/2023-poster.html)
+
 
 * `r emo::ji("game_die")` [Probability at UCL](https://sites.google.com/view/probability-at-ucl/home?authuser=0)
 
