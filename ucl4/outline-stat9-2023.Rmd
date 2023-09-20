@@ -60,6 +60,12 @@ The ICAs will have a coding component that would need to be done in R or Python.
 
 Throughout the module students will have the chance to work on various exercises that will test and build their understanding of the material.
 
+# ChatGPT and other related tools
+
+* The use of ChatGPT and related tools with regards to ICA1 and ICA3 is *not* permitted.  
+* The use of ChatGPT and related tools in assisting in the project ICA2 is permitted, *in accordance with UCL's* [policy](https://www.ucl.ac.uk/students/exams-and-assessments/assessment-success-guide/engaging-ai-your-education-and-assessment).   
+  * Do not use these tools to generate your essay or entire paragraphs.
+  * Do not use these tools to generate large blocks of code, and to avoid the exercise of understanding and implementing algorithms.  
 
 # Module delivery
 
