@@ -13,7 +13,7 @@ output: html_document
 
 * [Live in-person sessions](https://tsoo-math.github.io/ucl4/live-stat9-2023.html)
 
-* [Homework]((https://tsoo-math.github.io/ucl4/hw-stat9-2023.html))
+* [Homework](https://tsoo-math.github.io/ucl4/hw-stat9-2023.html)
 
 * [UCL Calender 2023-2024](https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf)
 
