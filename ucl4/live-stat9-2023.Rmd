@@ -1,0 +1,38 @@
+---
+title: "Live/In-person session diary 2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# General information
+
+We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed. 
+
+
+# By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf)
+
+
+
+
+# Other notes
+
+
+
+* ICA1: Released 03/11/2023; Due 17/11/2023
+* ICA2: Released 08/12/2023; Due 01/03/2024
+* ICA3: Released 15/12/2022; Due 09/02/2024
+
+
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>

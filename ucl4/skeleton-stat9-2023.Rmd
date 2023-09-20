@@ -7,8 +7,11 @@ output: html_document
 
 # General information
 
+* [Module outline](https://tsoo-math.github.io/ucl4/outline-stat9-2023.html)
 
 * [Location and time](https://timetable.ucl.ac.uk/tt/moduleTimet.do?firstReq=Y&moduleId=STAT0009&acadYearFl=N)
+
+* [Live in-person sessions](https://tsoo-math.github.io/ucl4/live-stat9-2023.html)
 
 * [UCL Calender 2023-2024](https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf)
 
