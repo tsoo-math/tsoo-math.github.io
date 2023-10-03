@@ -15,6 +15,13 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 # By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf)
 
 
+# Week 6
+  * First meeting: introductions, module outline and mechanics
+  * We discussed the basics of rejection sampling
+  * We proved the weak law of large numbers and discussed various forms of convergence
+  * This meeting was recorded can the link to access this is available only on Moodle
+
+
 
 
 # Other notes

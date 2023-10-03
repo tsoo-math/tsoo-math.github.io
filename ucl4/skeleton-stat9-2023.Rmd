@@ -24,7 +24,7 @@ output: html_document
 
 
 
-# Lecture notes, by week (2022-2023)
+# Lecture notes, by week (tenative)
 
 ## Week 6 
 
