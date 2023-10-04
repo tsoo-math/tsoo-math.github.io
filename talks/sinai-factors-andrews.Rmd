@@ -1,0 +1,128 @@
+---
+title: "Independent, but not identically distributed coin-flips"
+author: "Terry Soo"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Some works discussed
+
+Joint work with [Zemer Kosloff](http://math.huji.ac.il/~zemkos/)
+
+-  [Some factors of nonsingular Bernoulli shifts](https://arxiv.org/abs/2010.04636)
+
+- [Sinai factors of nonsingular systems: Bernoulli shifts and Anosov flows](https://arxiv.org/abs/2111.14497)
+
+
+##  Sinai
+
+Sinai's factor theorem (1964)
+
+- Given iid systems: $B(p)=(A^{\mathbb{Z}}, p^{\mathbb{Z}}, T)$ and $B(q) = (B^{\mathbb{Z}}, q^{\mathbb{Z}}, T)$
+
+-  With entropies:  $H(q) \leq H(p)= h_{ p^{\mathbb{Z}}}(T)$ 
+- There exists $\phi: A^{\mathbb{Z}} \to B^{\mathbb{Z}}$ with 
+  -   $\phi \circ T = T \circ \phi$ and
+  - $p^{\mathbb{Z}} \circ \phi^{-1} =\phi_{\#} p^{\mathbb{Z}} =  q^{\mathbb{Z}}$
+- The symbolic system in the domain of $\phi$ be replaced with any ergodic measure-preserving  system.  
+
+- Isomorphisms:  Ornstein (1970)
+
+## Examples
+
+- $p=(\tfrac{1}{3}, \tfrac{1}{3},\tfrac{1}{3})$ and  $q=(\tfrac{1}{2}, \tfrac{1}{2})$
+  - Kolomogorov (1959):  Since $H(p) > H(q)$, the Bernoulli shift $B(p)$ is *not* a factor of $B(q)$.
+  - Sinai's theorem tells us that $B(q)$ is a factor of $B(p)$. 
+  
+- $p=(\tfrac{1}{8}, \tfrac{1}{8}, \tfrac{1}{8}, \tfrac{1}{8}, \tfrac{1}{2})$ and  $q=(\tfrac{1}{4}, \tfrac{1}{4}, \tfrac{1}{4}, \tfrac{1}{4},0)$
+  - Melshalkin (1959):  $B(p)$ isomorphic to $B(q)$; 
+    - $4 \mapsto \{2,3\}$;  $\{2,3\} \mapsto 1$; $\{0,1\} \mapsto 0$ 
+      - Equivariantly match $4$ with everything else: use the parity of the partner to determine mapping for $4$.
+
+
+## Keane and Smorodinsky
+
+Keane and Smorodinsky's finitary factor (1977)
+
+- The factor map $\phi$ can be made to be continuous almost-everywhere 
+  - For some $M:A^{\mathbb{Z}} \to \mathbb{N}$ with $p^{\mathbb{Z}}(x: M(x) < \infty) = 1$
+  - $\phi(x)_0 = \phi(x')_0$, if $x[-M,M] = x[-M,M]$  
+
+  
+## Nonsingular systems
+
+Nonsingular Bernoulli systems
+
+- $(\Omega, \mu)$ measured probability space
+- $T: \Omega \to \Omega$ with $T_{\#} \mu \sim \mu$
+  - Rich behavior with regards to orbit equivalence and Dye's theorem
+  - No equivalent entropy theory
+
+- $\Omega = A^{\mathbb{Z}}$, $\mu = \bigotimes_{i \in \mathbb{Z}} p_i$, and $T$ is the left-shift
+
+We are interested in factor maps from  nonsingular Bernoulli shifts to stationary Bernoulli  systems: $\phi_{\#} \mu \sim q^{\mathbb{Z}}$   
+
+
+##  Theorems for nonsingular Bernoulli shifts
+
+(Kosloff and Soo, 2022)
+
+ Limiting marginal measure: $p_{|i|}(a) \to p(a)$; Entropy: $H(p)$
+
+- Existence of iid finitary factors with near optimal entropy: $H(p) - \epsilon$ 
+
+- Upper bound of $H(p)$ on the entropy of finitary iid factors
+
+- *Any* nonsingular system be obtained as a  factor if
+    - The system does not satisfy Poincare recurrence and 
+    - The factor map is *not* finitary
+
+## A simple example
+
+Consider  $A = \{0,1\}$, and the family of product measures $\rho^c$ with marginals
+	$$\rho_n^c(0) = \frac{1}{2} + \frac{c}{\sqrt{n}} \cdot \mathbf{1}[n \geq 1, c/\sqrt{n} < 1/2],$$
+where $c>0$ is a parameter. 
+
+- Kakutani's theorem (1948) implies that   $\rho^c$ is nonsingular and is not be equivalent to  the product measure $(\tfrac{1}{2}, \tfrac{1}{2})^{\mathbb{Z}}$.
+
+- Studied by Vaes and Wahl (2018) giving simple examples of ergodic, conservative Bernoulli shifts that do not admit an absolutely continuous shift-invariant measure.
+
+## Continued:  critical parameter
+
+
+-  Furthermore, we  proved that there exists a critical  $c^{*} \in(1/6, \infty)$  such that  the shift is totally dissipative for $c> c^{*}$  and for $c  < c^{*}$ the shift is conservative.
+  - When $c >c^{*}$,   the shift has any system as a (non-finitary) factor
+  - When $c<c^{*}$ finitary iid factors must have entropy at most $\log 2$, and 
+    - almost $\log 2$ finitary iid factors exist.
+    - We can not rule out the possibility of a non-fintiary iid factor with entropy larger than $\log 2$.
+  
+
+
+
+
+
+## Sketch proof: the disspiative case
+
+Anything is possible: the dissipative case
+
+- Nonsingular Bernoulli shifts are either totally dissipative or conservative 
+- Hopf: There is a wandering set $W \subset \Omega$ such that the disjoint union of its translates is the whole space.
+- Thus any two totally dissipative systems are isomorphic:  
+    - Fix a Borel isomorphism $b:W \to W'$
+    - $\omega \leftrightarrow (w, n) \leftrightarrow (b(w), n)$
+-  The direct product of a totally dissipative system with *any* nonsingular system is still totally dissipative.
+- The projection map gives the required factor.
+
+## Sketch proof: low entropy finitary  factors
+
+## Thank you
+
+
+
+
+
+  
