@@ -11,7 +11,7 @@
 
 
 
-<title>Live/In-person session diary 2023</title>
+<title>Random triangles and linear regression</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,49 +348,64 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Live/In-person session diary 2023</h1>
+<h1 class="title toc-ignore">Random triangles and linear regression</h1>
 
 </div>
 
 
-<div id="general-information" class="section level1">
-<h1>General information</h1>
-<p>We may <em>attempt</em> to live stream, the live in-person sessions.
-Please note that it is UCL’s expectation that students attend in-person.
-The Zoom link is available <a href="https://ucl.zoom.us/my/terrysoo">here</a>. Not all sessions will
-be recorded or streamed.</p>
+<div id="random-triangles" class="section level1">
+<h1>Random triangles</h1>
+<p>In this exercise, we will estimate, by running simulations, the
+expected area of a certain randomly selected triangle. Given a fixed
+deterministic triangle, we will uniformly and independently at random
+select three points inside it, and consider the area of the triangle
+formed by these three random points. It is known that the expected area
+of such a random triangle is <span class="math inline">\(\tfrac{1}{12}\)</span> that of the original
+triangle.</p>
+<div id="warm-up" class="section level2">
+<h2>Warm up</h2>
+<p>Consider the triangle with vertices: <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((3,0)\)</span>, and <span class="math inline">\((1,2)\)</span>. One way to select a point
+uniformly at random in this triangle, is to uniformly select one at
+random on a square containing this triangle: if the point lands on the
+triangle, then we take it, otherwise, we try again. Code this
+procedure.</p>
 </div>
-<div id="by-ucl-week" class="section level1">
-<h1>By <a href="https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf">UCL
-week</a></h1>
+<div id="the-problem" class="section level2">
+<h2>The problem</h2>
+<p>Consider a fixed triangle of your choosing; you can use the previous
+one. Simulate the independent uniform points on the triangle, and
+compute its area. You may find <a href="https://people.richland.edu/james/lecture/m116/matrices/applications.html">this</a>
+helpful, if you are at a loss of how to compute the area. Finally repeat
+this procedure, and find the average value. Enjoy!</p>
 </div>
-<div id="week-6" class="section level1">
-<h1>Week 6</h1>
-<ul>
-<li>First meeting: introductions, module outline and mechanics</li>
-<li>We discussed the basics of rejection sampling</li>
-<li>We proved the weak law of large numbers and discussed various forms
-of convergence</li>
-<li>This meeting was recorded can the link to access this is available
-only on Moodle</li>
-</ul>
 </div>
-<div id="week-7" class="section level1">
-<h1>Week 7</h1>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week7-2023-inclass.html">Worksheet</a></li>
-</ul>
-</div>
-<div id="other-notes" class="section level1">
-<h1>Other notes</h1>
-<ul>
-<li>ICA1: Released 03/11/2023; Due 17/11/2023</li>
-<li>ICA2: Released 08/12/2023; Due 01/03/2024</li>
-<li>ICA3: Released 15/12/2022; Due 09/02/2024</li>
-</ul>
-<p><br> <br></p>
+<div id="linear-regression" class="section level1">
+<h1>Linear regression</h1>
+<p>In this more open ended exercise, we consider the problem of simple
+linear regression, and how you might use R (or Python) to illustrate to
+a someone, taking a first module in statistic, that the usual least
+squared estimators are good.</p>
+<div id="some-basic-defintions-that-might-be-useful" class="section level2">
+<h2>Some basic defintions that might be useful</h2>
+<p>Let <span class="math inline">\(x_1, \ldots, x_n, \  y_1, \ldots, y_n
+\in \mathbb{R}\)</span>. Define <span class="math display">\[\overline{xy} = \frac{1}{n} \sum_{i=1}^n x_i
+y_i,\]</span> <span class="math display">\[ \overline{x^2}
+=  \frac{1}{n}\sum_{i=1}x_i^2,\]</span> <span class="math display">\[V(x) = \frac{1}{n} \sum_{i=1}^n(x_i -
+\bar{x})^2.\]</span> <span class="math display">\[CV(x,y)  = \frac{1}{n}
+\sum_{i=1}^n(x_i - \bar{x})(y_i - \bar{y}).  \]</span> Consider the
+linear model, <span class="math inline">\(y_i = mx_i + b +
+\epsilon_i\)</span>, where <span class="math inline">\(\epsilon_i\)</span> are iid mean zero random
+variables, and <span class="math inline">\((m,b)\)</span> are unknown.
+In your previous courses, with some calculus, you derived an estimator
+for the slope:</p>
+<p><span class="math display">\[\hat{m}
+=  CV(x,y)   /  V(x).\]</span></p>
+<p>Demonstrate with by simulations that this is a good estimator.</p>
+<div id="endnotes" class="section level3">
+<h3>Endnotes</h3>
 <p>Version: 08 October 2023</p>
-<p><br> <br> <br></p>
+</div>
+</div>
 </div>
 
 

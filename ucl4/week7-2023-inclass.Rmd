@@ -1,0 +1,51 @@
+---
+title: "Random triangles and linear regression"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Random triangles
+
+
+In this exercise, we will estimate, by running simulations, the expected area of a certain randomly selected triangle.  Given a fixed deterministic triangle, we will uniformly and independently at random select three points inside it, and consider the area of the triangle formed by these three random points.  It is known that the expected area of such a random triangle is $\tfrac{1}{12}$ that of the original triangle.
+
+## Warm up
+
+Consider the triangle with vertices:  $(0,0)$, $(3,0)$, and $(1,2)$.  One way to select a point uniformly at random in this triangle, is to uniformly select one at random on a square containing this triangle: if the point lands on the triangle, then we take it, otherwise, we try again.  Code this procedure.
+
+## The problem
+
+Consider a fixed triangle of your choosing; you can use the previous one.  Simulate the independent uniform points on the triangle, and compute its area.  You may find [this](https://people.richland.edu/james/lecture/m116/matrices/applications.html) helpful, if you are at a loss of how to compute the area.  Finally repeat this procedure, and find the average value.  Enjoy!
+
+
+
+# Linear regression
+
+In this more open ended exercise, we consider the problem of simple linear regression, and how you might use R (or Python) to illustrate to a someone, taking a first module in statistic, that the usual least squared estimators are good.  
+
+## Some basic defintions that might be useful
+
+
+Let $x_1, \ldots, x_n, \  y_1, \ldots, y_n \in \mathbb{R}$.   Define 
+$$\overline{xy} = \frac{1}{n} \sum_{i=1}^n x_i y_i,$$
+$$ \overline{x^2} =  \frac{1}{n}\sum_{i=1}x_i^2,$$
+$$V(x) = \frac{1}{n} \sum_{i=1}^n(x_i - \bar{x})^2.$$
+$$CV(x,y)  = \frac{1}{n} \sum_{i=1}^n(x_i - \bar{x})(y_i - \bar{y}).  $$
+Consider the linear model, $y_i = mx_i + b + \epsilon_i$, where $\epsilon_i$ are iid mean zero random variables, and $(m,b)$ are unknown.    In your previous courses, with some calculus, you derived an estimator for the slope:
+
+$$\hat{m} =  CV(x,y)   /  V(x).$$
+
+Demonstrate with by simulations that this is a good estimator.
+
+
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+

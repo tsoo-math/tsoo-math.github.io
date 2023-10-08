@@ -21,7 +21,8 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   * We proved the weak law of large numbers and discussed various forms of convergence
   * This meeting was recorded can the link to access this is available only on Moodle
 
-
+# Week 7
+  * [Worksheet](https://tsoo-math.github.io/ucl4/week7-2023-inclass.html)
 
 
 # Other notes
