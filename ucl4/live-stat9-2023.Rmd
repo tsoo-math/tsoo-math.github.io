@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # General information
 
-We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed. 
+We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed.  The recording links will be available on Moodle.
 
 
 # By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf)
