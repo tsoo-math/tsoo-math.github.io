@@ -1,0 +1,31 @@
+---
+title: "A simple random walk"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Random walk on a clock
+
+In this exercise, we will explore and illustrate various key concepts with a simple example.   Consider the a random walk on $5$ *states*: $S = \{a,b,c,d,e\}$, which we picture to be positioned on clock, in clockwise order.  Consider the following random walk, where we start at $X_0=a$.   We  a roll a fair dice, and use it to decide to move clockwise to the state $b$, counterclockwise to the state $e$, or stay put, all with equal probability;  similarly, at each state, we roll a fair independent dice, to determine whether to move forward, back, or stay put.  We follow our position on this clock as $X= (X_0, X_1, X_2, \ldots)$.   
+
+We are interested in the following questions:
+
+* For large values of $n$, what is the law of the single random variable $X_n$?  Explore by coding.
+  * Does it make it difference, if we had started at any other point; that is, if $X_0=b$, then how does this effect the distribution of $X_n$, when $n$ is large?  Explore by coding.
+* What happens if we start $X_0$ at a point uniformly at random on $S$?  
+
+
+* Consider two independent random walks on the clock $X$ and $Y$, where $X_0=a$ and $Y_0=b$.  Prove that if $T = \inf\{n \geq 1: X_n=Y_n\}$, then $\mathbb{P}(T < \infty)=1$.   Hint:  every $5$ steps,  there is a probability that $X$ stays put, and $Y$ goes forward, in which case, they will meet.  
+  * Consider the following *coupling* of $X$ and $Y$, run them independently until they meet, that is use independent dice to determine their movements, but after they meet, use the *same* dice, so that there movements are now synchronized: call the coupled random walk $(X', Y')$, and let $T$ be the first time they meet, and when forever after they are binded.  Now show that for every $s \in S$, we have
+  $\lim_{n \to \infty}|\mathbb{P}(X_n' = s) - \mathbb{P}(Y_n'=s)| =0$     
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+

@@ -1,0 +1,66 @@
+---
+title: "A simple random walk"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Random walk on a clock
+
+In this exercise, we will explore and illustrate various key concepts with a simple example.   Consider the a random walk on $5$ *states*: $S = \{a,b,c,d,e\}$, which we picture to be positioned on clock, in clockwise order.  Consider the following  walk, where we start at $X_0=a$.   We  a roll a fair dice, and use it to decide to move clockwise to the state $b$, counterclockwise to the state $e$, or stay put, all with equal probability;  similarly, at each state, we roll a fair independent dice, to determine whether to move forward, back, or stay put.  We follow our position on this clock as $X= (X_0, X_1, X_2, \ldots)$.   
+
+We are interested in the following questions:
+
+* For large values of $n$, what is the law of the single random variable $X_n$?  Explore by coding.
+  * Does it make it difference, if we had started at any other point; that is, if $X_0=b$, then how does this effect the distribution of $X_n$, when $n$ is large?  Explore by coding.
+* What happens if we start $X_0$ at a point uniformly at random on $S$?  
+
+
+* Consider two independent random walks on the clock $X$ and $Y$, where $X_0=a$ and $Y_0=b$.  Prove that if $T = \inf\{n \geq 1: X_n=Y_n\}$, then $\mathbb{P}(T < \infty)=1$.   Hint:  every $5$ steps,  there is a probability that $X$ stays put, and $Y$ goes forward, in which case, they will meet.  
+  * Consider the following *coupling* of $X$ and $Y$, run them independently until they meet, that is use independent dice to determine their movements, but after they meet, use the *same* dice, so that there movements are now synchronized: call the coupled random walk $(X', Y')$, and let $T$ be the first time they meet, and when forever after they are binded.  Notice that individually, $X'$ has the same distribution as $X$ and $Y'$ has the same distribution as $Y$.  Now show that for every $s \in S$, we have
+  $\lim_{n \to \infty}|\mathbb{P}(X_n' = s) - \mathbb{P}(Y_n'=s)| =0$     
+
+
+# Partial solutions
+
+We will first code the three-sided fair coin from a fair dice.  Then we will use the dice and modular arithmetic to code the walk.  Specifically, we envision the walk on $S=\{0,1,2,3,4\}$ and add $-1,1$ or $0$ with equal probability, where $4+1 = 0 \bmod 5$.
+
+## Code
+
+```{r}
+three <- function(){
+  dice = sample(1:6, 1)
+  move = 0
+  if(dice <3){move <- 1}
+  if(dice > 4){move <- -1}
+  move
+}
+walk <-function(s,n){
+  x=s
+  current=s
+  k=0
+  while(k <n+1){
+    current <- (current + three()) %% 5
+    x <- c(x, current)
+    k <-k+1}
+  x
+    
+  }
+
+x = walk(0,10000)
+p = c(mean(x==0), mean(x==1),mean(x==2),mean(x==3), mean(x==4) )
+p
+x = walk(1,10000)
+q = c(mean(x==0), mean(x==1),mean(x==2),mean(x==3), mean(x==4) )
+q
+```
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
