@@ -26,6 +26,9 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   * [Worksheet](https://tsoo-math.github.io/ucl4/week7-2023-inclass.html)
     * [Partial Solutions](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html)
 
+# Week 8
+  * [Worksheet](https://tsoo-math.github.io/ucl4/week8-2023-inclass.html)
+
 
 # Other notes
 
