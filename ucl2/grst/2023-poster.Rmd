@@ -1,9 +1,9 @@
 ---
 title: ''
 output:
-  pdf_document: default
-  word_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 ---
 
 \pagenumbering{gobble}
@@ -33,9 +33,9 @@ library(latex2exp)
 
 *   3.30 - 5.00 PM, at [1-19 Torrington Place](https://www.ucl.ac.uk/maps/1-19-torrington-place),  UCL Stats Department
 
-*   Guest Judge  TBA 
+*   Guest Judge:  Professor [Guy Nason](https://www.imperial.ac.uk/people/g.nason), Imperial 
 
-*  Guest Seminar at 2 PM TBA
+*  Guest Seminar at 2 PM: Professor Guy Nason, details TBA 
     
 *  £ 1000 in prizes, we welcome posters from all universities 
 
