@@ -45,14 +45,14 @@ walk <-function(s,n){
     current <- (current + three()) %% 5
     x <- c(x, current)
     k <-k+1}
-  x
+  current
     
   }
 
-x = walk(0,10000)
+x = replicate(1000, walk(0,500))
 p = c(mean(x==0), mean(x==1),mean(x==2),mean(x==3), mean(x==4) )
 p
-x = walk(1,10000)
+x = replicate(1000, walk(1,500))
 q = c(mean(x==0), mean(x==1),mean(x==2),mean(x==3), mean(x==4) )
 q
 ```
@@ -60,7 +60,7 @@ q
 
 ### Endnotes
 
-Version: `r format(Sys.time(), '%d %B %Y')`
-
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Source](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.rmd)
 
 

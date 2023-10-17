@@ -411,21 +411,24 @@ walk &lt;-function(s,n){
     current &lt;- (current + three()) %% 5
     x &lt;- c(x, current)
     k &lt;-k+1}
-  x
+  current
     
   }
 
-x = walk(0,10000)
+x = replicate(1000, walk(0,500))
 p = c(mean(x==0), mean(x==1),mean(x==2),mean(x==3), mean(x==4) )
 p</code></pre>
-<pre><code>## [1] 0.2088582 0.2080584 0.1930614 0.1883623 0.2016597</code></pre>
-<pre class="r"><code>x = walk(1,10000)
+<pre><code>## [1] 0.204 0.197 0.199 0.199 0.201</code></pre>
+<pre class="r"><code>x = replicate(1000, walk(1,500))
 q = c(mean(x==0), mean(x==1),mean(x==2),mean(x==3), mean(x==4) )
 q</code></pre>
-<pre><code>## [1] 0.2034593 0.1978604 0.1986603 0.2019596 0.1980604</code></pre>
+<pre><code>## [1] 0.180 0.193 0.223 0.207 0.197</code></pre>
 <div id="endnotes" class="section level3">
 <h3>Endnotes</h3>
-<p>Version: 15 October 2023</p>
+<ul>
+<li>Version: 17 October 2023</li>
+<li><a href="https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.rmd">Source</a></li>
+</ul>
 </div>
 </div>
 </div>

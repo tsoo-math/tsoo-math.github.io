@@ -27,8 +27,13 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
     * [Partial Solutions](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html)
 
 # Week 8
-  * [Worksheet](https://tsoo-math.github.io/ucl4/week8-2023-inclass.html)
 
+* We discussed the relation between uniform random variables, coin flips, and the inverse transform method.
+* We discussed coupling in more detail and its relation with the total variational distance.
+* We introduced Markov chains, and the key assumption of them being aperiodic and irreducible
+
+* [Worksheet](https://tsoo-math.github.io/ucl4/week8-2023-inclass.html)
+  * [Partial solutions](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sols.html)
 
 # Other notes
 
