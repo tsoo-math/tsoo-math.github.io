@@ -12,7 +12,30 @@ knitr::opts_chunk$set(echo = TRUE)
 This document contains a running list of recommended homework exercises.
 
 
-# Week 1 (2022)
+
+# (2023)
+
+## Class 1
+
+* Consider your favorite triangle $T$, with base lying flat on the $x$-axis.  Compute the joint density $f(x,y)$ for a uniform random that is uniformly distributed on $T$.  Are the marginal distributions uniform?  Explain
+
+* Find a bijective transformation from a uniform random variable on the unit interval to one that is uniform on your triangle.
+
+* A simple example of a  structural causal model (SCM), is given by a directed graph on two vertices, $2 \to 1$, where random variables $X_2$ and $X_1$ have the following functional relation: $X_1 = \phi_1(X_2, \epsilon_1)$, for some deterministic function $\phi_1$, and noise $\epsilon_1$ that is uniformly distributed on the unit interval, and independent of $X_2$; here we might think of $2$ as causing $1$.   Show that if we are given a joint distribution on two random variables, this can always be represented as a SCM. 
+
+## Class 2
+
+* The [Perron–Frobenius theorem
+](https://en.wikipedia.org/wiki/Perron%E2%80%93Frobenius_theorem) ensures that an aperiodic irreducible transition matrix $P$ has a unique stationary distribution $\pi$ and all other eigenvectors will have absolute value less than $1$.  Use this fact to show that $p_{ij}(n) \to \pi(j)$.  See [also](https://www.jstor.org/stable/48665544).   
+
+* Are all transition matrices diagonalizable?
+
+* Consider simple symmetric random walk $S$ on $\mathbb{Z}$.  Suppose $S_0 = 0$  Prove that for every $k$ even, we have $d_{TV}(S_n, S_n+k) \to 0$, as $n \to \infty$. 
+
+# From (2022)
+
+
+## Week 1 (2022)
 
 *  Using the law of large numbers, carefully justify why a probability histogram of large size sample from a pdf $f$ ends up *looking* like $f$.
 
@@ -32,7 +55,7 @@ hint:  identify a random variable that has this integral for its expectation.
 
 *  Demonstrate, by simulations, that the sum of two independent Poisson random variables is again a Poisson random variable; in your simulations you may restrict to the case of means $2.5$ and $3.7$.
 
-# Week 2
+## Week 2
 
 *  How would code a uniform point a disc without throwing away randomness, as we do in the rejection sampling?
 
@@ -44,7 +67,7 @@ hint:  identify a random variable that has this integral for its expectation.
 
 *  What about a higher dimensional version of Weierstrass?
 
-# Week 3
+## Week 3
 
 
 *  Do [Question 2](https://tsoo-math.github.io/ucl/QHW3.html)
@@ -61,7 +84,7 @@ hint:  identify a random variable that has this integral for its expectation.
 
 *  Suppose you are given only the data (the realization) of a Markov chain, say for one hundred steps; how would you go about generating another hundred steps of this Markov chain?
 
-# Week 4
+## Week 4
 
 *  So we have all this theory for Markov chains, where you have to look back at one-step; what happens if you allow two-step memory?
 
@@ -75,7 +98,7 @@ hint:  identify a random variable that has this integral for its expectation.
 where $(X_n)_{n \in \mathbb{Z}^d}$ are iid $\mathbb{R}^d$ random variables.  Thus $\Pi$ is a point process-- a random scattering points in $\mathbb{R}^d$.  Show that mass is conserved, so that the expected number of points in the set $[0,1)^d$ is (still) one.  (Optional)
 
 
-# Week 5
+## Week 5
 
 *  From the modelling assumptions of Poisson processes, show that if the unit interval contains exactly one point, then that point is uniformly distributed.
     - Extend your proof to the case of two or more points.
@@ -88,7 +111,7 @@ where $(X_n)_{n \in \mathbb{Z}^d}$ are iid $\mathbb{R}^d$ random variables.  Thu
 
 
 
-# Basics
+## Basics
 
 *  Using the law of large numbers, carefully justify why a probability histogram of large size sample from a pdf $f$ ends up *looking* like $f$.
 
@@ -146,7 +169,7 @@ $$\mathbb{P}(Z >t) \geq  \frac{1}{\sqrt{2\pi}} \big(\frac{1}{t} - \frac{1}{t^3}\
 * Let $(X_i)_{i=3} ^{\infty}$ be an i.i.d.\ sequence of standard normal variables.  Prove that almost surely $$\limsup_{n \to \infty}  \frac{X_n}{\sqrt{2 \log n}} =1.$$
 
 
-# Coupling
+## Coupling
 
 
 *  Let  $X$ and $Y$ are real-valued random variables.  We say that $X$ **stochastically dominates** $Y$ if for all $z \in \mathbb{R}$, we have $\mathbb{P}(X \leq z) \leq \mathbb{P}(Y \leq z)$.  Let us say that a coupling $(X', Y')$ of $X$ and $Y$ is **monotone** if $\mathbb{P}(X' \geq Y') =1$.     
@@ -167,7 +190,7 @@ $$d_{TV}(X, Y) = d_{TV}(X', Y') = 2 \mathbb{P}(X' \not = Y'),$$
 
 $$d_{TV}(S, W) \leq \sum_{i=1}^n d_{TV}(X_i, Y_i).$$
 
-# Markov chains
+## Markov chains
 
 * We proved that for an irreducible aperiodic Markov chain $X$ on a finite number of states $S$, *that is started at stationarity*, we have that if 
 $$V_n = \sum_{k=0} ^{n-1} \mathbf{1}[X_k=s],$$
@@ -204,7 +227,7 @@ $$f(x) = \mathbf{1}[x_{2} = c, x_1 = b, x_0 =a].$$
 What happens for a Markov chain?  Run simulations and check that everything is consistent, for a particular Markov chain.
 
 
-# Endnotes
+### Endnotes
 
 * Version:  `r format(Sys.time(), '%d %B %Y')`
 * [Rmd Source](https://tsoo-math.github.io/lttc/homeworklttc.Rmd)
