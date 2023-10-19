@@ -35,7 +35,7 @@ library(latex2exp)
 
 *   Guest Judge:  Professor [Guy Nason](https://www.imperial.ac.uk/people/g.nason), Imperial 
 
-*  Guest Seminar at 2 PM: Professor Guy Nason, details TBA 
+*  Guest Seminar at 2 PM: Professor Guy Nason, [Network Time Series](https://tsoo-math.github.io/ucl2/grst/nason/nason.html) 
     
 *  £ 1000 in prizes, we welcome posters from all universities 
 

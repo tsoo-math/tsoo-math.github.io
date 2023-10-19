@@ -1,0 +1,20 @@
+---
+title: "Network Time Series"
+output: html_document
+author: 'Guy Nason  (Imperial College, London)'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+A network time series is a multivariate time series where the individual series are known to be linked by some underlying network structure. Sometimes this network is known a priori, and sometimes the network has to be created, often inferred from the multivariate series itself. Network time series are becoming increasingly common, long, and collected over a large number of variables. We are particularly interested in network time series whose network structure changes over time.
+
+We describe some recent developments in the modeling of network time series via generalized network autoregressive (GNAR) process models. These models use regular autoregressive links between a variable and its past and between a variable and the past of its neighbours. GNAR models are highly parsimonious and, hence, work well for short series or those afflicted by worrying amounts of missing data. For the same reason, they tend not to overfit and often exhibit excellent forecasting performance, especially when compared to alternatives such as vector autoregressive models.
+
+This talk explains the GNAR model, some tools for fitting and model selection and demonstrates their use on epidemic and economic data.
+
+
