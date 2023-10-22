@@ -1,0 +1,105 @@
+---
+title: "In class exercise: Two-by-two and symbolic computing"
+output:  html_document
+---
+
+
+```{r setup, include=FALSE}
+library(reticulate)
+# py_install("matplotlib")
+# py_install("sympy")
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Symbolic computing inside Python  (inside R)
+
+Will we explore basic symbolic computing inside Python.  In symbolic computing, the software is able to compute $2x = x+x$  or $\int_0^x x^2 dx = \tfrac{x^3}{3}$ *without* having a numerical value for $x$.  Popular software includes, Maple, Mathematica, and Sage; Python's *sympy* is a basic in-house substitute, which we will explore.
+
+
+```{python}
+import sympy as sym
+
+x = sym.pi   # the digit pi
+print(x)
+print("#############")
+print(x.evalf())
+print("#############")
+print(x.evalf(100))
+print("#############")
+
+x = sym.Symbol('x')   # you got to tell Python that x is symbol
+print(sym.simplify((x + x)))
+
+y = sym.Symbol('y')
+y=sym.integrate(3 * x ** 2, x)  # integrate 3x^2
+print(y)
+print("#############")
+```
+
+We can also do linear algebra
+
+```{python}
+a = sym.Symbol('a')
+b = sym.Symbol('b')
+c = sym.Symbol('c')
+d = sym.Symbol('d')
+M =  sym.Symbol('M')
+M=sym.Matrix([[a, b], [c, d]])
+print(M)
+print("#############")
+print(M.det())
+print("#############")
+print(M.T)
+print("#############")
+print(M.eigenvects())
+print("#############")
+Msub = M.subs(a,1).subs(b,1).subs(c,1).subs(d,0)
+values = Msub.eigenvects()
+print("#############")
+print(values)
+print("#############")
+
+
+```
+
+
+
+
+
+# A Markov chain
+
+Consider the two state Markov chain on $\{1,2\}$ where 
+$$p_{11} = a = 1-p_{12}$$ 
+and
+
+$$p_{21} = b=1- p_{21}$$
+
+We will consider the case where $a,b \in (0,1)$.
+
+* Write down the transition matrix.
+
+* Find the stationary distribution of the transition matrix.
+
+*  Simulate the chain, (starting at $1$) and leave $a$ and $b$ as variables that you can choose.
+
+* Choose $a=0.3$ and $b=0.2$.
+
+*  At $t=100$ of your simulation, for this snapshot,  record the value of the Markov chain; repeat this for $N=300$ times, and find the proportion times that the chain is at $1$ and $2$.
+
+
+* For a given simulation, of length $t=1000$, also record the total number of times the Markov chain takes the value $1$ and $2$; take these numbers and divide it by $1000$ (or a thousand and one depending how you coded)
+  * Also record the number of times the sequence $(1,1,2)$ appears in the chain, and takes this number and divide by $1000$; what do you expect to see?
+
+
+
+* What did you observe?
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl3/week8-2022-inclass.Rmd)
+<br>
+<br>
+<br>
