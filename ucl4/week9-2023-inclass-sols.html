@@ -404,7 +404,7 @@ print(M)</code></pre>
 <pre><code>## Matrix([[a, c], [b, d]])</code></pre>
 <pre class="python"><code>print(&quot;#############&quot;)</code></pre>
 <pre><code>## #############</code></pre>
-<pre class="python"><code>print(M.eigenvects())</code></pre>
+<pre class="python"><code>print(M.eigenvects())  # eigenvalue, multiplicity, eigenvector</code></pre>
 <pre><code>## [(a/2 + d/2 - sqrt(a**2 - 2*a*d + 4*b*c + d**2)/2, 1, [Matrix([
 ## [-d/c + (a/2 + d/2 - sqrt(a**2 - 2*a*d + 4*b*c + d**2)/2)/c],
 ## [                                                         1]])]), (a/2 + d/2 + sqrt(a**2 - 2*a*d + 4*b*c + d**2)/2, 1, [Matrix([
@@ -444,22 +444,131 @@ for this snapshot, record the value of the Markov chain; repeat this for
 <span class="math inline">\(N=300\)</span> times, and find the
 proportion times that the chain is at <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>.</p></li>
 <li><p>For a given simulation, of length <span class="math inline">\(t=1000\)</span>, also record the total number of
-times the Markov chain takes the value <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>; take these numbers and divide it by
-<span class="math inline">\(1000\)</span> (or a thousand and one
-depending how you coded)</p>
-<ul>
-<li>Also record the number of times the sequence <span class="math inline">\((1,1,2)\)</span> appears in the chain, and takes
-this number and divide by <span class="math inline">\(1000\)</span>;
-what do you expect to see?</li>
-</ul></li>
+times the Markov chain takes the value <span class="math inline">\(1\)</span>; take this number and divide it by
+<span class="math inline">\(1000\)</span>.</p></li>
 <li><p>What did you observe?</p></li>
 </ul>
+</div>
+<div id="solutions" class="section level1">
+<h1>Solutions</h1>
+<ul>
+<li>We can compute the eigenvalues of the transition matrix in
+Python.</li>
+</ul>
+<pre class="python"><code>import numpy as np
+
+a = sym.Symbol(&#39;a&#39;)
+b = sym.Symbol(&#39;b&#39;)
+P =  sym.Symbol(&#39;P&#39;)
+P=sym.Matrix([[a, 1-a], [b,1-b]])
+Pt =  sym.Symbol(&#39;Pt&#39;)
+Pt= P.T
+print(&quot;#############&quot;)</code></pre>
+<pre><code>## #############</code></pre>
+<pre class="python"><code>print(Pt.eigenvects())</code></pre>
+<pre><code>## [(1, 1, [Matrix([
+## [-b/(a - 1)],
+## [         1]])]), (a - b, 1, [Matrix([
+## [-1],
+## [ 1]])])]</code></pre>
+<pre class="python"><code>print(&quot;#############&quot;)</code></pre>
+<pre><code>## #############</code></pre>
+<pre class="python"><code>Q=P.subs(a,0.1).subs(b,0.4)  ## testing code for subs (will not be using these values)
+print(Q)</code></pre>
+<pre><code>## Matrix([[0.100000000000000, 0.900000000000000], [0.400000000000000, 0.600000000000000]])</code></pre>
+<pre class="python"><code>print(Q[0])</code></pre>
+<pre><code>## 0.100000000000000</code></pre>
+<pre class="python"><code>print(Q[1])</code></pre>
+<pre><code>## 0.900000000000000</code></pre>
+<pre class="python"><code>print(Q[2])</code></pre>
+<pre><code>## 0.400000000000000</code></pre>
+<pre class="python"><code>print(Q[3])</code></pre>
+<pre><code>## 0.600000000000000</code></pre>
+<pre class="python"><code>v1= np.array(  [Q[0],Q[1]]  )
+v2= np.array(  [Q[2],Q[3]]  )  
+Q = np.array([v1,v2])
+print(Q)</code></pre>
+<pre><code>## [[0.100000000000000 0.900000000000000]
+##  [0.400000000000000 0.600000000000000]]</code></pre>
+<p>So we read off that the eigenvector we are after is <span class="math inline">\([-b/(a-1), 1]\)</span>, and after normalization,
+we have <span class="math display">\[\frac{1}{1-a+b} *[b,
+1-a].\]</span></p>
+<p>Note, we would get the nicer looker expression, if we had chosen:
+<span class="math inline">\(a \to 1-a\)</span> at the outset.</p>
+<ul>
+<li>We simulate the chain in Python</li>
+</ul>
+<pre class="python"><code>
+def step(i,A,B):    # advancing the MC by one step, when you are at state i, with values for a and b
+    Q = P.subs(a,A).subs(b,B)
+    v1= np.array([Q[0],Q[1]])
+    v2=np.array([Q[2],Q[3]])
+    Q = np.array([v1,v2])
+    q = Q[i-1]    # this the transition vector for state i
+    x=-1
+    u = np.random.uniform()   # imagine the interval [0,1] split up into smaller intervals with probabilities q_j summing to 1
+    j=0
+    cumq = np.cumsum(q)
+    while(x==-1):            
+        j = j+1
+        if (u &lt;= cumq[j-1]):        # if u lands in the interval of length q_j, then we jump to state j
+            x = j
+    return x
+
+def steps(i,n,A,B):  # advances the MC by n steps, starting at state i, (with values A and B) keeping a complete history
+    x = np.array([i])
+    for j in range(n):
+        x = np.append(x,  step(x[j],A,B)   )
+    return x
+
+print(steps(1,10, 0.3,0.2))</code></pre>
+<pre><code>## [1 1 2 2 2 2 2 2 1 2 2]</code></pre>
+<ul>
+<li>In the snap shot counts, we have</li>
+</ul>
+<pre class="python"><code>x= [steps(1,100,0.3,0.2)[100] for _ in range(300)]
+freq = np.unique(x,return_counts = True)
+print(freq)</code></pre>
+<pre><code>## (array([1, 2]), array([ 68, 232], dtype=int64))</code></pre>
+<pre class="python"><code>stat = (1/300)* np.array( [freq[1][0], freq[1][1] ])
+thstat = (1/(1-0.3+0.2))*np.array([0.2, 1-0.3])
+print(&quot;#############&quot;)</code></pre>
+<pre><code>## #############</code></pre>
+<pre class="python"><code>print(stat)</code></pre>
+<pre><code>## [0.22666667 0.77333333]</code></pre>
+<pre class="python"><code>print(thstat)</code></pre>
+<pre><code>## [0.22222222 0.77777778]</code></pre>
+<pre class="python"><code>print(&quot;#############&quot;)</code></pre>
+<pre><code>## #############</code></pre>
+<p>In the sample path average, we have</p>
+<pre class="python"><code>
+path = steps(1, 1000, 0.3,0.2)
+freq = np.unique(path,return_counts = True)
+print(freq)</code></pre>
+<pre><code>## (array([1, 2]), array([214, 787], dtype=int64))</code></pre>
+<pre class="python"><code>stat = (1/1001)* np.array( [freq[1][0], freq[1][1] ])
+print(stat)</code></pre>
+<pre><code>## [0.21378621 0.78621379]</code></pre>
+<p>In both cases, we recover the stationary distribution.</p>
+<p>And in a final example, we count the occurrences of <span class="math inline">\((1,1,2)\)</span> occurs</p>
+<pre class="python"><code>
+path = steps(1, 1000, 0.3,0.2)
+oneonetwo = 0
+for i in range(998):
+  if (path[i]==1 and path[i+1]==1 and path[i+2]==2):
+    oneonetwo = oneonetwo +1
+
+print(oneonetwo/1000)</code></pre>
+<pre><code>## 0.05</code></pre>
+<pre class="python"><code>tans= (thstat[0])*(0.3) * (0.7)
+print(tans)</code></pre>
+<pre><code>## 0.04666666666666666</code></pre>
 </div>
 <div id="endnotes" class="section level1">
 <h1>Endnotes</h1>
 <ul>
-<li>Version: 25 October 2023</li>
-<li><a href="https://tsoo-math.github.io/ucl3/week8-2022-inclass.Rmd">Rmd
+<li>Version: 26 October 2023</li>
+<li><a href="https://tsoo-math.github.io/ucl4/week9-2023-inclass-sols.Rmd">Rmd
 Source</a> <br> <br> <br></li>
 </ul>
 </div>
