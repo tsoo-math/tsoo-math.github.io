@@ -55,7 +55,13 @@ We discussed Markov chains and their convergence properties
 * [A simple example](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.html)
 * [Doeblin's coupling](https://tsoo-math.github.io/ucl/markov-c.html)
 
+## Class three
 
+We discussed coupling from the past and von Neumann's $L^2$ Ergodic Theorem
+
+* [Coupling from the past](https://tsoo-math.github.io/ucl/coupling-from-past-lec.html)
+
+* [The mean ergodic theorem](https://www.dropbox.com/scl/fi/6gnp5ywp2rgpirsc8yptv/lec2-von.pdf?rlkey=ltqn8y4efrr2o4ve15992azi2&dl=0)
 
 ### Endnotes
 

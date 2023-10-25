@@ -30,7 +30,14 @@ This document contains a running list of recommended homework exercises.
 
 * Are all transition matrices diagonalizable?
 
-* Consider simple symmetric random walk $S$ on $\mathbb{Z}$.  Suppose $S_0 = 0$  Prove that for every $k$ even, we have $d_{TV}(S_n, S_n+k) \to 0$, as $n \to \infty$. 
+* Consider simple symmetric random walk $S$ on $\mathbb{Z}$.  Suppose $S_0 = 0$  Prove that for every $k$ even, we have $d_{TV}(S_n, S_n+k) \to 0$, as $n \to \infty$.
+
+
+## Class 3
+
+* We saw that if $X = (X_0, X_1, \ldots, )$ was a stationary sequence, with $X_i \in \mathbb{R}$, then this gave rise to a measure-preserving $(\mathbb{R}^{\mathbb{N}}, \mu, T)$, where $\mu(\cdot) = \mathbb{P}(X \in  \cdot)$, and $T$ is the left-shift.  Now suppose that $(\Omega, \mu, T)$ is an arbitrary measure-preserving system, what would you say is the corresponding stationary sequence?  
+
+
 
 # From (2022)
 
