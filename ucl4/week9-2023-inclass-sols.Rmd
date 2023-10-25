@@ -73,7 +73,7 @@ Consider the two state Markov chain on $\{1,2\}$ where
 $$p_{11} = a = 1-p_{12}$$ 
 and
 
-$$p_{22} = b=1- p_{21}$$
+$$p_{21} = b=1- p_{22}$$
 
 We will consider the case where $a,b \in (0,1)$.
 
