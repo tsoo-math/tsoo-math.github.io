@@ -63,6 +63,18 @@ We discussed coupling from the past and von Neumann's $L^2$ Ergodic Theorem
 
 * [The mean ergodic theorem](https://www.dropbox.com/scl/fi/6gnp5ywp2rgpirsc8yptv/lec2-von.pdf?rlkey=ltqn8y4efrr2o4ve15992azi2&dl=0)
 
+## Class four
+
+We gave an overview of Poisson process and also discussed independent and deterministic thinning.
+
+* [Poisson processes](https://tsoo-math.github.io/ucl/poisson.html)
+  * [Some exercises](https://tsoo-math.github.io/ucl/poisson-ex.worked.html)
+
+#### Additional links
+
+* [Ball's paper](https://www.emis.de/journals/EJP-ECP/article/view/1134.html)
+* [Thinning on finite volumes](https://www.ams.org/journals/proc/2011-139-02/S0002-9939-2010-10535-X/S0002-9939-2010-10535-X.pdf)
+  
 ### Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`

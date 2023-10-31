@@ -37,6 +37,13 @@ This document contains a running list of recommended homework exercises.
 
 * We saw that if $X = (X_0, X_1, \ldots, )$ was a stationary sequence, with $X_i \in \mathbb{R}$, then this gave rise to a measure-preserving $(\mathbb{R}^{\mathbb{N}}, \mu, T)$, where $\mu(\cdot) = \mathbb{P}(X \in  \cdot)$, and $T$ is the left-shift.  Now suppose that $(\Omega, \mu, T)$ is an arbitrary measure-preserving system, what would you say is the corresponding stationary sequence?  
 
+## Class 4
+
+
+* Suppose we are given the exponential inter-arrival time description of a Poisson process.  Show that conditional that are exactly two points in the interval $[0,1]$, then the distribution of those two points are given by two independent uniforms.
+
+* Suppose $Z = (Z_i)_{i \in \mathbb{Z}}$ are i.i.d.\ real-valued random variables.    Consider the point process $\Pi$ with points given by $$\{ i + Z_i: i \in \mathbb{Z} \}.$$
+Show that  $\mathbb{E}(\Pi[0,1) ) = 1$.
 
 
 # From (2022)
