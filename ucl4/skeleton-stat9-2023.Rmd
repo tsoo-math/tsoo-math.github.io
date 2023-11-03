@@ -7,6 +7,8 @@ output: html_document
 
 # General information
 
+* [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
+
 * [Module outline](https://tsoo-math.github.io/ucl4/outline-stat9-2023.html)
 
 * [Location and time](https://timetable.ucl.ac.uk/tt/moduleTimet.do?firstReq=Y&moduleId=STAT0009&acadYearFl=N)
@@ -70,11 +72,13 @@ output: html_document
 
 ## Week 10
 
-* [ICA1 2022 - released](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html)
+* [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
+ 
 
 *  [Continuous-time Markov chains](https://tsoo-math.github.io/ucl/continuous-timeMC.html)
 *  Watch videos:  Continuous-time Markov chains
-*  [ICA 1 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html)
+* [ICA1 2022](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html)
+* [ICA 1 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html)
 
 
 

@@ -43,7 +43,7 @@ This module will assume some experience with the basics of probability and stati
 
 We will have 3 ICAs. Pay no attention to the ordering of ICA 2 and ICA 3.
 
-The first ICA (30 %) will be a regular assignment given around the middle of the term to make sure we have learned the basics.
+The first [ICA](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html) (30 %) will be a regular assignment given around the middle of the term to make sure we have learned the basics.
 
 The third ICA (30 %) will be centered around more involved problems that will require a synthesis of ideas from throughout the module. This may be done in groups. Due in 2024
 

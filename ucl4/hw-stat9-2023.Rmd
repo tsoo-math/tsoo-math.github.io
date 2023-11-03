@@ -13,6 +13,8 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 
 # By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf)
 
+* [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
+
 ## Tenative schedule, may be updated
 
 
@@ -35,12 +37,13 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
     - [Solutions in R](https://tsoo-math.github.io/ucl/QHW4-sol.html)
     - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week9.ipynb)
 * Week 10 (30 Oct - 5 Nov):   
-  - [ICA1 2022](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html) assigned
-  * [ICA1 2022-sols](https://tsoo-math.github.io/ucl3/2022-ica1-stat9.html)
-      * [ICA1-sols 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9.html)
+  * [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
   - [Continuous-time MC exercises](https://tsoo-math.github.io/ucl/QHW5.html)
       - [Solutions in R](https://tsoo-math.github.io/ucl/QHW5-sols.html)
       - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week10.ipynb)
+  - [ICA1 2022](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html) 
+    * [ICA1 2022-sols](https://tsoo-math.github.io/ucl3/2022-ica1-stat9.html)
+        * [ICA1-sols 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9.html)
 * Week 11 (6 Nov - 12 Nov):  Reading break
 * Week 12 (13 Nov - 19 Nov): ICA1 due
   - [Exercises](https://tsoo-math.github.io/ucl/QHW6.html)
@@ -67,7 +70,7 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 # Other notes
 
 
-* ICA1: Released 03/11/2023; Due 17/11/2023
+* [ICA1](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html): Released 03/11/2023; Due 17/11/2023
 * ICA2: Released 08/12/2023; Due 01/03/2024
 * ICA3: Released 15/12/2022; Due 09/02/2024
 
