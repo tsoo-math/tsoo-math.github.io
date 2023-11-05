@@ -1,9 +1,9 @@
 ---
 title: ''
 output:
-  pdf_document: default
-  word_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 ---
 
 \pagenumbering{gobble}
@@ -39,6 +39,8 @@ library(latex2exp)
   * [Drayton House B20](https://www.ucl.ac.uk/estates/roombooking/building-location/?id=107)
     
 *  £ 1000 in prizes, we welcome posters from all universities 
+
+*  Just show up with your printed poster, no size or template requirements
 
 * contact: Terry Soo: t.soo@ucl.ac.uk
 
