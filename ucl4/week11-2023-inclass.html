@@ -11,7 +11,7 @@
 
 
 
-<title>Live/In-person session diary 2023</title>
+<title>In class exercise: Metropolis algorithm</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,109 +348,72 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Live/In-person session diary 2023</h1>
+<h1 class="title toc-ignore">In class exercise: Metropolis algorithm</h1>
 
 </div>
 
 
-<div id="general-information" class="section level1">
-<h1>General information</h1>
-<p>We may <em>attempt</em> to live stream, the live in-person sessions.
-Please note that it is UCL’s expectation that students attend in-person.
-The Zoom link is available <a href="https://ucl.zoom.us/my/terrysoo">here</a>. Not all sessions will
-be recorded or streamed. The recording links will be available on
-Moodle.</p>
+<div id="introduction" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>In these exercises, we will explore an powerful method of sampling from a distribution <span class="math inline">\(\pi\)</span>. The algorithm we will discuss is usually referred to as the Metropolis-Hastings algorithm; Metropolis was one of the authors on the ground breaking <a href="https://en.wikipedia.org/wiki/Equation_of_State_Calculations_by_Fast_Computing_Machines">paper</a> and <a href="https://academic.oup.com/biomet/article-abstract/107/1/1/5686745?redirectedFrom=fulltext">Hastings</a> considered extensions to this work and applications to statistics.</p>
+<p>The key feature is that again we construct a Markov chain that has <span class="math inline">\(\pi\)</span> as its stationary distribution, and we need only know <span class="math inline">\(\pi\)</span> up to a constant factor. The following simple exercise in Bayesian statistics may help to illustrate why this is important.</p>
+<div id="exercise" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Exercise</h2>
+<p>Let <span class="math inline">\(X=(X_1, \ldots, X_n)\)</span> be a random sample from the conditional distribution of <span class="math inline">\(X_1\)</span> given <span class="math inline">\(\Theta = \theta\)</span>, where
+<span class="math inline">\(X_1|\theta \sim Bern(\theta)\)</span> and <span class="math inline">\(\Theta \sim Unif(0,1)\)</span>. Find the posterior distribution.</p>
+<div id="solution" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Solution</h3>
+<p>Let <span class="math inline">\(x \in \{0,1\}^n\)</span> and <span class="math inline">\(t= x_1 + \cdots +x_n\)</span>. Let <span class="math inline">\(\theta \in (0,1)\)</span>. Let
+<span class="math inline">\(r(\theta) = \mathbf{1}[\theta \in (0,1)]\)</span> be the prior pdf for <span class="math inline">\(\Theta\)</span> and <span class="math inline">\(f_X\)</span> be the pdf for <span class="math inline">\(X\)</span>. We have that
+<span class="math display">\[\begin{eqnarray*}  
+s(\theta|x) &amp;=&amp;  \frac{L(x|\theta)r(\theta)}{ f_X(x)} \\
+&amp;=&amp;  \frac{\theta^t (1-\theta)^{n-t}}{f_X(x)}.
+\end{eqnarray*}\]</span>
+We have that
+<span class="math display">\[f_X(x) = \int_0 ^1 L(x|\theta) d\theta = \int_0 ^1 \theta^t(1-\theta)^{n-t}d \theta,\]</span>
+where we recognize that we don’t really need to compute this integral, since we recognize that this is the beta distribution, so that <span class="math inline">\(s(\theta|x)\)</span> is given by the pdf of beta distribution in <span class="math inline">\(\theta\)</span>
+with parameters <span class="math inline">\(\alpha = t+1\)</span> and <span class="math inline">\(\beta = n-t+1\)</span>, where <span class="math inline">\(t= x_1 + \cdots + x_n\)</span>.</p>
+<p>A problem arises when we do not recognize the distribution, and the integral of <span class="math inline">\(f_X\)</span> is difficult to compute, but we still want to sample, simulate, or understand <span class="math inline">\(s(\theta|x)\)</span>.</p>
 </div>
-<div id="by-ucl-week" class="section level1">
-<h1>By <a href="https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf">UCL
-week</a></h1>
 </div>
-<div id="week-6" class="section level1">
-<h1>Week 6</h1>
+</div>
+<div id="the-metropolis-hastings-algorithm" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> The Metropolis-Hastings algorithm</h1>
+<p>Suppose that we want to sample from <span class="math inline">\(\pi(i) = \tilde{\pi}(i)/C\)</span>; in this context it is often called the <em>target</em> distribution, and we only know <span class="math inline">\(\tilde{\pi}\)</span> In the Metropolis algorithm, we choose a <em>symmetric</em> transition matrix <span class="math inline">\(Q\)</span>, called the <em>proposal distribution</em> and we typically write <span class="math inline">\(Q(j|i) = Q_{ij}\)</span>; it turns out than we will many choices for <span class="math inline">\(Q\)</span>, and it is an active area of research on how to choose the best <span class="math inline">\(Q\)</span> with respect to convergence and robustness. Hastings generalized the Metropolis algorithm to allow from non-symmetric choices for <span class="math inline">\(Q\)</span>. We consider the Markov chain which advances one step in the following way.</p>
 <ul>
-<li>First meeting: introductions, module outline and mechanics</li>
-<li>We discussed the basics of rejection sampling</li>
-<li>We proved the weak law of large numbers and discussed various forms
-of convergence</li>
-<li>This meeting was recorded can the link to access this is available
-only on Moodle</li>
+<li><p>If we are at a state <span class="math inline">\(i\)</span>, so that <span class="math inline">\(X_n=i\)</span>, then we generate a random variable <span class="math inline">\(Y=j\)</span> with distribution <span class="math inline">\(Q(\cdot|i)\)</span>.</p></li>
+<li><p>Given that <span class="math inline">\(Y=j\)</span>, we move to state <span class="math inline">\(j\)</span>, so that <span class="math inline">\(X_{n+1} = j\)</span>, with probability
+<span class="math display">\[ \alpha(j|i) = \min\big( \tfrac{\tilde{\pi}(j)}{\tilde{\pi}(i)} \cdot \tfrac{Q(i|j)}{Q(j|i)},1\big);\]</span></p></li>
+<li><p>Otherwise, we stay in state <span class="math inline">\(i\)</span>, so that <span class="math inline">\(X_{n+1} = i\)</span>.</p></li>
 </ul>
+<p>If we do move to state <span class="math inline">\(j\)</span> the proposal is sometimes refered to as being <em>accepted</em>; we can actually have some freedom to choose <span class="math inline">\(\alpha\)</span>, and the choice above is sometimes referred to as the Metropolis choice.</p>
+<p>In order to show that this method works, we show that <span class="math inline">\(\pi\)</span> is indeed a stationary distribution for this Markov chain, and to do this, it is enough to verify that it is a reversible distribution with respect to the transition matrix, which is given by:
+<span class="math display">\[ P(j|i) = Q(j|i)\alpha(j|i),\]</span></p>
+<p>when <span class="math inline">\(i \not = j\)</span>. We need to check that
+<span class="math display">\[ \pi_{i}P(j|i) = \pi_{j} P(i|j);\]</span>
+notice that there is nothing to check if <span class="math inline">\(i = j\)</span>.</p>
+<div id="exercise-1" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Exercise</h2>
+<p>Check it! Note that for <span class="math inline">\(a &gt;0,\)</span> we have <span class="math inline">\(\min(a,1) =a\)</span>, then <span class="math inline">\(\min(1/a, 1) =1\)</span>.</p>
 </div>
-<div id="week-7" class="section level1">
-<h1>Week 7</h1>
-<ul>
-<li>We discussed the homework from last week and introduced the concept
-of coupling.</li>
-<li><a href="https://tsoo-math.github.io/ucl4/week7-2023-inclass.html">Worksheet</a>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html">Partial
-Solutions</a></li>
-</ul></li>
-</ul>
+<div id="exercise-2" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Exercise</h2>
+<p>Technically, we have only verified Metropolis-Hastings for a finite state space, but we also adapt the algorithm for the case of continuous distributions. Try the Metropolis algorithm, on the first exercise, so we are given <span class="math inline">\(\tilde{\pi}(\theta) = \theta^t (1-\theta)^{n-t}\)</span>, using by letting <span class="math inline">\(Y\)</span> be normal with mean <span class="math inline">\(i\)</span>, where we let <span class="math inline">\(Q(j|i)\)</span> be the pdf of a normal distribution centered at <span class="math inline">\(i\)</span> with variance <span class="math inline">\(1\)</span>. Fix <span class="math inline">\(n=5\)</span>, and <span class="math inline">\(t=2\)</span>.</p>
 </div>
-<div id="week-8" class="section level1">
-<h1>Week 8</h1>
-<ul>
-<li><p>We discussed the relation between uniform random variables, coin
-flips, and the inverse transform method.</p></li>
-<li><p>We discussed coupling in more detail and its relation with the
-total variational distance.</p></li>
-<li><p>We introduced Markov chains, and the key assumption of them being
-aperiodic and irreducible</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl4/week8-2023-inclass.html">Worksheet</a></p>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week8-2023-inclass-sols.html">Partial
-solutions</a></li>
-</ul></li>
-</ul>
+<div id="exercise-3" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Exercise</h2>
+<p>How would you adapt the Metropolis-Hastings algorithm for the case of a bivariate continuous distribution? Try it in the case <span class="math inline">\(\tilde{\pi}(x,y)= e^{-x^2/2} e^{-y^2/2}\)</span>—of course you know <span class="math inline">\(\pi\)</span>, and a two dimensional uniform exploration.</p>
 </div>
-<div id="week-9" class="section level1">
-<h1>Week 9</h1>
-<ul>
-<li>We discussed Poisson processes
-<ul>
-<li><a href="https://terry-soo.shinyapps.io/Poisson-disc/">Shiny App</a>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl/app.R">Source</a></li>
-</ul></li>
-</ul></li>
-<li><a href="https://tsoo-math.github.io/ucl4/week9-2023-inclass.html">Worksheet</a>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week9-2023-inclass-sols.html">Solutions</a></li>
-</ul></li>
-</ul>
 </div>
-<div id="week-10" class="section level1">
-<h1>Week 10</h1>
+<div id="endnotes" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Endnotes</h1>
 <ul>
-<li>We discussed ICA1 expectations and guidelines.
-<ul>
-<li>We went over <a href="https://tsoo-math.github.io/ucl3/2022-ica1-stat9.html">ICA1
-2022</a></li>
-</ul></li>
-<li>We discussed and coded a simple voting model. More in-depth
-information and background can be found <a href="https://www.math.uvic.ca/~aquas/papers/paper23.pdf">here</a> or <a href="https://www.worldscientific.com/doi/10.1142/S0219493704000912">here</a>.
-<ul>
-<li>Worksheet and solutions to come.</li>
-</ul></li>
+<li>Version: 06 November 2023</li>
+<li><a href="https://tsoo-math.github.io/ucl4/week11-2023.Rmd">Rmd Source</a>
+<br>
+<br>
+<br></li>
 </ul>
-</div>
-<div id="week-11" class="section level1">
-<h1>Week 11</h1>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week11-2023-inclass.html">Worksheet</a></li>
-</ul>
-</div>
-<div id="other-notes" class="section level1">
-<h1>Other notes</h1>
-<ul>
-<li>ICA1: Released 03/11/2023; Due 17/11/2023</li>
-<li>ICA2: Released 08/12/2023; Due 01/03/2024</li>
-<li>ICA3: Released 15/12/2022; Due 09/02/2024</li>
-</ul>
-<p><br> <br></p>
-<p>Version: 06 November 2023</p>
-<p><br> <br> <br></p>
 </div>
 
 

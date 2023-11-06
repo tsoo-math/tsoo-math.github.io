@@ -1,0 +1,86 @@
+---
+title: "In class exercise:  Metropolis algorithm"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#  Introduction
+
+In these exercises, we will explore an powerful method of sampling from a distribution $\pi$.  The algorithm we will discuss is usually referred to as the Metropolis-Hastings algorithm; Metropolis was one of the authors on the ground breaking [paper](https://en.wikipedia.org/wiki/Equation_of_State_Calculations_by_Fast_Computing_Machines) and [Hastings](https://academic.oup.com/biomet/article-abstract/107/1/1/5686745?redirectedFrom=fulltext) considered extensions to this work and applications to statistics. 
+
+The key feature is that again we construct a Markov chain that has $\pi$ as its stationary distribution, and we need only know $\pi$ up to a constant factor.  The following simple exercise in Bayesian statistics may help to illustrate why this is important. 
+
+## Exercise
+
+Let $X=(X_1, \ldots, X_n)$ be a random sample from the conditional distribution of $X_1$ given $\Theta = \theta$, where 
+	$X_1|\theta \sim Bern(\theta)$ and $\Theta \sim Unif(0,1)$.  Find the posterior distribution.	
+
+
+### Solution
+Let $x \in \{0,1\}^n$ and $t= x_1 + \cdots +x_n$. Let $\theta \in (0,1)$.  Let 
+$r(\theta) = \mathbf{1}[\theta \in (0,1)]$ be the prior pdf for $\Theta$ and $f_X$ be the pdf for $X$.      We have that
+\begin{eqnarray*}  
+s(\theta|x) &=&  \frac{L(x|\theta)r(\theta)}{ f_X(x)} \\
+&=&  \frac{\theta^t (1-\theta)^{n-t}}{f_X(x)}.
+\end{eqnarray*}
+We have that 
+$$f_X(x) = \int_0 ^1 L(x|\theta) d\theta = \int_0 ^1 \theta^t(1-\theta)^{n-t}d \theta,$$
+where we recognize that we don't really need to compute this integral, since we recognize that this is the beta distribution, so that $s(\theta|x)$ is given by the pdf of beta distribution in $\theta$
+ with parameters $\alpha = t+1$ and $\beta = n-t+1$, where $t= x_1 + \cdots + x_n$.
+
+
+A problem arises when we do not recognize the distribution, and the integral of $f_X$ is difficult to compute, but we still want to sample, simulate, or understand  $s(\theta|x)$.
+
+# The Metropolis-Hastings algorithm
+
+Suppose that we want to sample from $\pi(i) = \tilde{\pi}(i)/C$; in this context it is often called the *target* distribution, and we only know $\tilde{\pi}$    In the Metropolis algorithm,  we choose a *symmetric* transition matrix $Q$, called the *proposal distribution* and we typically write $Q(j|i) = Q_{ij}$; it turns out than we will many choices for $Q$, and it is an active area of research on how to choose the best $Q$ with respect to convergence and robustness.  Hastings generalized the Metropolis algorithm to allow from non-symmetric choices for $Q$.    We consider the Markov chain which advances one step in the following way.  
+
+* If we are at a state $i$, so that $X_n=i$, then we generate a random variable $Y=j$ with distribution $Q(\cdot|i)$.  
+
+* Given that $Y=j$, we move to state $j$, so that $X_{n+1} = j$,  with probability
+$$ \alpha(j|i) = \min\big( \tfrac{\tilde{\pi}(j)}{\tilde{\pi}(i)} \cdot \tfrac{Q(i|j)}{Q(j|i)},1\big);$$
+
+*  Otherwise, we stay in state $i$, so that $X_{n+1} = i$.
+
+If we do move to state $j$ the proposal is sometimes refered to as being *accepted*; we can actually have some freedom to choose $\alpha$, and the choice above is sometimes referred to as the Metropolis choice.  
+
+In order to show that this method works, we show that $\pi$ is indeed a stationary distribution for this Markov chain, and to do this, it is enough to verify that it is a reversible distribution with respect to the transition matrix, which is given by:
+$$ P(j|i) = Q(j|i)\alpha(j|i),$$
+
+when $i \not = j$.  We need to check that
+$$ \pi_{i}P(j|i) = \pi_{j} P(i|j);$$
+notice that there is nothing to check if $i = j$.  
+
+## Exercise
+
+Check it!  Note that for $a >0,$ we have $\min(a,1) =a$, then  $\min(1/a, 1) =1$.
+
+##  Exercise 
+
+Technically, we have only verified Metropolis-Hastings for a finite state space,  but we also adapt the algorithm for the case of continuous distributions.     Try the Metropolis algorithm, on the first exercise, so we are given $\tilde{\pi}(\theta) = \theta^t (1-\theta)^{n-t}$, using by letting $Y$ be normal with mean $i$, where we let $Q(j|i)$ be the pdf of a normal distribution centered at $i$ with variance $1$.  Fix $n=5$, and $t=2$.     
+
+## Exercise
+
+How would you adapt the Metropolis-Hastings algorithm for the case of a bivariate continuous distribution?  Try it in the case $\tilde{\pi}(x,y)= e^{-x^2/2} e^{-y^2/2}$---of course you know $\pi$, and a two dimensional uniform exploration.
+
+
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl4/week11-2023.Rmd)
+<br>
+<br>
+<br>
