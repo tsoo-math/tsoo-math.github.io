@@ -98,6 +98,9 @@ Let $\epsilon >0$. Suppose that $X$ is a Poisson random variable of mean $\lambd
 
 # Endnotes
 
+* Q5 is an old-school maths-type exercise, with no coding.
+
+
 * [source](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.Rmd)
 * Version: `r format(Sys.time(), '%d %B %Y')`
 
