@@ -74,6 +74,13 @@ We gave an overview of Poisson process and also discussed independent and determ
 
 * [Ball's paper](https://www.emis.de/journals/EJP-ECP/article/view/1134.html)
 * [Thinning on finite volumes](https://www.ams.org/journals/proc/2011-139-02/S0002-9939-2010-10535-X/S0002-9939-2010-10535-X.pdf)
+
+
+## Class five
+
+* [Strong law of large numbers](https://tsoo-math.github.io/ucl/borel.html)
+* [Weierstrass approximation](https://tsoo-math.github.io/ucl2/bernstein.html)
+* [Renewal processes](https://tsoo-math.github.io/ucl/intro-renewal.html)
   
 ### Endnotes
 
