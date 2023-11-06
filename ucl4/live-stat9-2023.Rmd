@@ -51,8 +51,11 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 # Week 11
 
-* [Worksheet](https://tsoo-math.github.io/ucl4/week11-2023-inclass.html)
+* we discussed the content delivery and ethos of the module.
+* We reviewed continuous-time Markov chains.
 
+* [Worksheet](https://tsoo-math.github.io/ucl4/week11-2023-inclass.html)
+  * [Solutions](https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html)
 
 
 # Other notes
