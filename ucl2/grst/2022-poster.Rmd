@@ -61,9 +61,11 @@ curve(3 + 0.5*x, add=TRUE)
 *   Guest Judge Prof [Jim Smith](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/smith/) 
     * Prof Smith will also be giving the departmental seminar at 2 PM
     
-*  Cash prize:  £ 500 
+* Cash prize:  £ 500 
+  * Kevin Huang and Ilina Yozova 
 
-*  Book prize:  Generously provided by Cambridge University Press
+* Book prize:  Generously provided by Cambridge University Press
+  * David Bang, Max Hird, and Luke Hardcastle 
 
 *  Last updated: `r format(Sys.time(), '%d %B %Y')`
 
