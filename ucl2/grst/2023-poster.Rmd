@@ -38,13 +38,19 @@ library(latex2exp)
 * Guest Seminar at 2 PM: Professor Guy Nason, [Network Time Series](https://tsoo-math.github.io/ucl2/grst/nason/nason.html) 
   * [Drayton House B20](https://www.ucl.ac.uk/estates/roombooking/building-location/?id=107)
     
-*  £ 1000 in prizes, we welcome posters from all universities 
-
+* £ 1000 in prizes, we welcome posters from all universities 
+  * Matias Altamirano Montero
+  * Zsuzsa Baran 
+  * James Briant
+  * Jeffrey Tse
+  
 *  Just show up with your printed poster, no size or template requirements
 
 * contact: Terry Soo: t.soo@ucl.ac.uk
 
 * https://tsoo-math.github.io/ucl2/grst/2023-poster.html
+
+* [2022 edition](https://tsoo-math.github.io/ucl2/grst/2022-poster.html)
 
 *  Last updated: `r format(Sys.time(), '%d %B %Y')`
 

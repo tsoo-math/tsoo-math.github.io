@@ -62,7 +62,7 @@ curve(3 + 0.5*x, add=TRUE)
     * Prof Smith will also be giving the departmental seminar at 2 PM
     
 * Cash prize:  £ 500 
-  * Kevin Huang and Ilina Yozova 
+  * Kevin Huang and Ilina Yozova (shared prize)
 
 * Book prize:  Generously provided by Cambridge University Press
   * David Bang, Max Hird, and Luke Hardcastle 
