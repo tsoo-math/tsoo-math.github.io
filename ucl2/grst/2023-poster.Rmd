@@ -39,10 +39,10 @@ library(latex2exp)
   * [Drayton House B20](https://www.ucl.ac.uk/estates/roombooking/building-location/?id=107)
     
 * £ 1000 in prizes, we welcome posters from all universities 
-  * Matias Altamirano Montero
-  * Zsuzsa Baran 
-  * James Briant
-  * Jeffrey Tse
+  * Matias Altamirano Montero (UCL Stats)
+  * Zsuzsanna Baran (Cambridge)
+  * James Briant (UCL Stats)
+  * Jeffrey Tse (Oxford)
   
 *  Just show up with your printed poster, no size or template requirements
 
