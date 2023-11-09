@@ -46,7 +46,7 @@ library(latex2exp)
   
 *  Just show up with your printed poster, no size or template requirements
 
-* [Photo](https://tsoo-math.github.io/ucl2/grst/poster-2023-pic)
+* [Photo](https://tsoo-math.github.io/ucl2/grst/poster-2023-pic.jpg)
 
 * contact: Terry Soo: t.soo@ucl.ac.uk
 
