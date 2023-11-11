@@ -100,6 +100,12 @@ Let $\epsilon >0$. Suppose that $X$ is a Poisson random variable of mean $\lambd
 
 * Q5 is an old-school maths-type exercise, with no coding.
 
+* Q4: this is a Poisson point process on the entire real line $\mathbb{R}=(-\infty, \infty)$, which can be constructed by joining two independent Poisson point processes on the half line $[0, \infty)$, at the origin.
+
+* Q1:  If necessary, you are free to use numerical solvers in R; that is, you do not need to code Newton's method yourself, but you are welcome to.
+
+* I will create a submission portal on Moodle soon.
+
 
 * [source](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.Rmd)
 * Version: `r format(Sys.time(), '%d %B %Y')`
