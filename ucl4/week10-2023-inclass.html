@@ -11,7 +11,7 @@
 
 
 
-<title>Live/In-person session diary 2023</title>
+<title>Voronoi diagrams and voting</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,116 +348,45 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Live/In-person session diary 2023</h1>
+<h1 class="title toc-ignore">Voronoi diagrams and voting</h1>
 
 </div>
 
 
-<div id="general-information" class="section level1">
-<h1>General information</h1>
-<p>We may <em>attempt</em> to live stream, the live in-person sessions.
-Please note that it is UCL’s expectation that students attend in-person.
-The Zoom link is available <a href="https://ucl.zoom.us/my/terrysoo">here</a>. Not all sessions will
-be recorded or streamed. The recording links will be available on
-Moodle.</p>
+<div id="voronoi-cells" class="section level1">
+<h1>Voronoi cells</h1>
+<p>Given a discrete subset of <span class="math inline">\(D \subset
+\mathbb{R}^d\)</span>, you can imagine that <span class="math inline">\(D\)</span> is a realization of a Poisson point
+process, we associate to each <span class="math inline">\(x \in
+D\)</span>, its <em>Voronoi cell</em> <span class="math inline">\(V(x)
+\subseteq \mathbb{R}^d\)</span>, which consists of all the points <span class="math inline">\(y \in \mathbb{R}^d\)</span>, such that <span class="math inline">\(\| x- y\| &lt; \|z - y\|\)</span> for all <span class="math inline">\(z \in D \setminus \{x\}\)</span>. You can imagine
+that each point (cellphone location) <span class="math inline">\(y \in
+\mathbb{R}^d\)</span> would like to report to the nearest (cellphone
+tower) point in <span class="math inline">\(D\)</span>, and <span class="math inline">\(V(x)\)</span> is all the points that report to
+<span class="math inline">\(x\)</span>. For more information see <a href="https://en.wikipedia.org/wiki/Voronoi_diagram">wiki link</a>.</p>
 </div>
-<div id="by-ucl-week" class="section level1">
-<h1>By <a href="https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf">UCL
-week</a></h1>
-</div>
-<div id="week-6" class="section level1">
-<h1>Week 6</h1>
+<div id="a-simple-voting-model" class="section level1">
+<h1>A simple voting model</h1>
+<p>Here we consider a simple voting model studied in by <a href="https://www.math.uvic.ca/~aquas/papers/paper23.pdf">Quas</a>.
+Suppose we have <span class="math inline">\(n\)</span> candidates, and
+their political positions are represented on a point on the unit
+interval <span class="math inline">\([0,1]\)</span>, and subsets of
+<span class="math inline">\([0,1]\)</span> represents a share of the
+voters. The support that each candidate has, is given by their Voronoi
+cell. The candidates go through, <span class="math inline">\(n-1\)</span> rounds of election, where in each
+round, the candidate with the least support drops out.</p>
 <ul>
-<li>First meeting: introductions, module outline and mechanics</li>
-<li>We discussed the basics of rejection sampling</li>
-<li>We proved the weak law of large numbers and discussed various forms
-of convergence</li>
-<li>This meeting was recorded can the link to access this is available
-only on Moodle</li>
+<li>Plot a histogram of the position of the winner, when <span class="math inline">\(n\)</span> is large, and the candidates are
+uniformly distributed on <span class="math inline">\([0,1]\)</span></li>
 </ul>
 </div>
-<div id="week-7" class="section level1">
-<h1>Week 7</h1>
+<div id="endnotes" class="section level1">
+<h1>Endnotes</h1>
 <ul>
-<li>We discussed the homework from last week and introduced the concept
-of coupling.</li>
-<li><a href="https://tsoo-math.github.io/ucl4/week7-2023-inclass.html">Worksheet</a>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html">Partial
-Solutions</a></li>
-</ul></li>
+<li>Version: 12 November 2023</li>
+<li><a href="https://tsoo-math.github.io/ucl4/week10-2023-inclass.Rmd">Rmd
+Source</a> <br> <br> <br></li>
 </ul>
-</div>
-<div id="week-8" class="section level1">
-<h1>Week 8</h1>
-<ul>
-<li><p>We discussed the relation between uniform random variables, coin
-flips, and the inverse transform method.</p></li>
-<li><p>We discussed coupling in more detail and its relation with the
-total variational distance.</p></li>
-<li><p>We introduced Markov chains, and the key assumption of them being
-aperiodic and irreducible</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl4/week8-2023-inclass.html">Worksheet</a></p>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week8-2023-inclass-sols.html">Partial
-solutions</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="week-9" class="section level1">
-<h1>Week 9</h1>
-<ul>
-<li>We discussed Poisson processes
-<ul>
-<li><a href="https://terry-soo.shinyapps.io/Poisson-disc/">Shiny App</a>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl/app.R">Source</a></li>
-</ul></li>
-</ul></li>
-<li><a href="https://tsoo-math.github.io/ucl4/week9-2023-inclass.html">Worksheet</a>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week9-2023-inclass-sols.html">Solutions</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="week-10" class="section level1">
-<h1>Week 10</h1>
-<ul>
-<li>We discussed ICA1 expectations and guidelines.
-<ul>
-<li>We went over <a href="https://tsoo-math.github.io/ucl3/2022-ica1-stat9.html">ICA1
-2022</a></li>
-</ul></li>
-<li>We discussed and coded a simple voting model. More in-depth
-information and background can be found <a href="https://www.math.uvic.ca/~aquas/papers/paper23.pdf">here</a> or <a href="https://www.worldscientific.com/doi/10.1142/S0219493704000912">here</a>.
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week11-2023-inclass.html">Worksheet</a>
-and <a href="https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html">solutions</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="week-11" class="section level1">
-<h1>Week 11</h1>
-<ul>
-<li><p>we discussed the content delivery and ethos of the
-module.</p></li>
-<li><p>We reviewed continuous-time Markov chains.</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl4/week11-2023-inclass.html">Worksheet</a></p>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html">Solutions</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="other-notes" class="section level1">
-<h1>Other notes</h1>
-<ul>
-<li>ICA1: Released 03/11/2023; Due 17/11/2023</li>
-<li>ICA2: Released 08/12/2023; Due 01/03/2024</li>
-<li>ICA3: Released 15/12/2022; Due 09/02/2024</li>
-</ul>
-<p><br> <br></p>
-<p>Version: 12 November 2023</p>
-<p><br> <br> <br></p>
 </div>
 
 

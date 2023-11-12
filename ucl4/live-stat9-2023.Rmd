@@ -47,7 +47,7 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 * We discussed ICA1 expectations and guidelines.
   * We went over [ICA1 2022](https://tsoo-math.github.io/ucl3/2022-ica1-stat9.html)
 * We discussed and coded a simple voting model.  More in-depth information and background can be found [here](https://www.math.uvic.ca/~aquas/papers/paper23.pdf) or [here](https://www.worldscientific.com/doi/10.1142/S0219493704000912).
-  * Worksheet and solutions to come.
+  * [Worksheet](https://tsoo-math.github.io/ucl4/week11-2023-inclass.html) and [solutions](https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html) 
 
 # Week 11
 

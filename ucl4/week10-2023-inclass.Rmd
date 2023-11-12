@@ -1,0 +1,28 @@
+---
+title: "Voronoi diagrams and voting"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Voronoi cells
+
+Given a discrete subset of $D \subset \mathbb{R}^d$, you can imagine that $D$ is a realization of a Poisson point process, we associate to each $x \in D$, its *Voronoi cell* $V(x) \subseteq \mathbb{R}^d$, which consists of all the points $y \in \mathbb{R}^d$, such that $\| x-  y\| < \|z - y\|$ for all $z \in D \setminus \{x\}$.  You can imagine that each point (cellphone location) $y \in \mathbb{R}^d$ would like to report to the nearest (cellphone tower) point in $D$, and $V(x)$ is all the points that report to $x$.  For more information see [wiki link](https://en.wikipedia.org/wiki/Voronoi_diagram).
+
+# A simple voting model
+
+Here we consider a simple voting model studied in by [Quas](https://www.math.uvic.ca/~aquas/papers/paper23.pdf).  Suppose we have $n$ candidates, and their political positions are represented on a point on the unit interval $[0,1]$, and subsets of $[0,1]$ represents a share of the voters.  The support that each candidate has, is given by their Voronoi cell.  The candidates go through, $n-1$ rounds of election, where in each round, the candidate with the least support drops out.  
+
+* Plot a histogram of the position of the winner, when $n$ is large, and the candidates are uniformly distributed on $[0,1]$
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl4/week10-2023-inclass.Rmd)
+<br>
+<br>
+<br>
+

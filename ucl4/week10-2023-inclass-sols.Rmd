@@ -1,0 +1,105 @@
+---
+title: "Voronoi diagrams and voting"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Voronoi cells
+
+Given a discrete subset of $D \subset \mathbb{R}^d$, you can imagine that $D$ is a realization of a Poisson point process, we associate to each $x \in D$, its *Voronoi cell* $V(x) \subseteq \mathbb{R}^d$, which consists of all the points $y \in \mathbb{R}^d$, such that $\| x-  y\| < \|z - y\|$ for all $z \in D \setminus \{x\}$.  You can imagine that each point (cellphone location) $y \in \mathbb{R}^d$ would like to report to the nearest (cellphone tower) point in $D$, and $V(x)$ is all the points that report to $x$.  For more information see [wiki link](https://en.wikipedia.org/wiki/Voronoi_diagram).
+
+# A simple voting model
+
+Here we consider a simple voting model studied in by [Quas](https://www.math.uvic.ca/~aquas/papers/paper23.pdf).  Suppose we have $n$ candidates, and their political positions are represented on a point on the unit interval $[0,1]$, and subsets of $[0,1]$ represents a share of the voters.  The support that each candidate has, is given by their Voronoi cell.  The candidates go through, $n-1$ rounds of election, where in each round, the candidate with the least support drops out.  
+
+* Plot a histogram of the position of the winner, when $n$ is large, and the candidates are uniformly distributed on $[0,1]$
+
+## Solutions
+
+Given a set of points (candidates) on the unit interval, the function V computes length of the interval those points would claim under the Voronoi tessellation; this is the length of the area of support corresponding to each candidate. Notice that we treat the endpoints separately.  
+
+```{r}
+
+V <- function(x){
+y = sort(x, decreasing =F)
+L = length(y)
+d = y[1] + (y[2] - y[1])/2
+if (L>2) {
+for (i in 2 :(L-1))
+d <- c(d, (y[i] - y[i-1])/2 + (y[i+1] - y[i])/2)
+}
+d <- c(d, (y[L]-y[L-1])/2 + 1-y[L])
+d
+}
+```
+The following version of V does not use a *for* loop, and may be faster.
+```{r}
+VV <- function(x){
+y = sort(x, decreasing =F)
+L = length(y)
+d = y[1] + (y[2] - y[1])/2
+w =NULL
+if(L >2){
+yp <- y[-1]
+ye <- y[-L]
+w=(yp-ye)/2
+w<-w[-length(w)]
+ypp<- yp[-1]
+yp <- yp[-(L-1)]
+w <- w + (ypp - yp)/2
+}
+ w <- c(d,w, (y[L]-y[L-1])/2 + 1-y[L])
+ w
+}
+```
+
+The following function tells us which candidate drops out.
+```{r}
+amin <- function(x){
+   which(x==min(x))
+}
+```
+Finally, we need a way of repeating this procedure until there is one winner, where we start with $n$ independent and uniformly distributed candidates.
+```{r}
+Loop <- function(n){
+x <- runif(n)
+y <- sort(x, decreasing=F)
+i=1
+while(i < n)
+{amin(VV(y))	
+y <- y[-amin(VV(y))]
+i <- i+1}
+y
+}
+
+```
+
+Here, we plot a histogram of the winner, in the case $n=10$ and $n=50$
+
+
+```{r}
+
+b = seq(0,1, by=0.01)
+x10=replicate(3000, Loop(10))
+
+hist(x10, prob=TRUE, breaks=b)
+
+x50=replicate(3000, Loop(50))
+
+hist(x50, prob=TRUE, breaks=b)
+
+```
+
+
+
+#  Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl4/week10-2023-inclass-sols.Rmd)
+<br>
+<br>
+<br>
+
