@@ -58,6 +58,12 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   * [Solutions](https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html)
 
 
+# Week 12
+
+* We discussed expectations for ICA1
+* We reviewed the worksheets on MCMC and Voroni cells
+* We introduced a renewal-type argument for Markov chains
+
 # Other notes
 
 
