@@ -230,7 +230,7 @@ $$|T_i - T^d_j| < \epsilon$$
 
 Recall we started with $m^d = F^d + m* F^d$ and obtained $m^d = F^d + m^d * F$, the key being that $m^d * F= m * F^d$.  
 
-Similar considerations give the following.
+Similar considerations give the following.  See [Exercise 2](https://tsoo-math.github.io/ucl/QHW6.1.html).
 
 **Theorem (Uniqueness of solutions):**  
 Let $m$ be a renewal function and $F$ be cumulative distribution function for the inter-arrival times.  Let 
