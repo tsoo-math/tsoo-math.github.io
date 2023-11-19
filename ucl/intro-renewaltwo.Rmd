@@ -105,7 +105,7 @@ Let $N$ be a renewal process, with i.i.d.\ inter-arrival times given by $X_1, X_
 
 $$E(t) = T_{N(t) +1} -t;$$ 
 
-we have no reason to believe that it should be distributed as $X_1$.    It turns out that if we are allowed to have a different distribution for $X_1$,  while maintaining the same i.i.d.\ distribution for $X_2, X_3, \ldots$, we can define a **modified** or **delayed** renewal process $N^d$ that has stationary increments, and it is much easier to verify that this process satisfies Blackwell's renewal theorem; in particular one has that if $m^d(t) = \mathbb{E} N^d(t)$, then 
+we have no reason to believe that it should be distributed as $X_1$.    It turns out that if we are allowed to have a different distribution for $X_1$,  while maintaining the same i.i.d.\ distribution for $X_2, X_3, \ldots$, we can define a **modified** or **delayed** renewal process $N^d$ that has stationary increments, and it is much easier to verify that this process satisfies Blackwell's renewal theorem; in particular, we will see that if  $m^d(t) = \mathbb{E} N^d(t)$, then 
 
 $$ m^d(t+h) - m^d(t) = \frac{h}{\mu}.$$
 
@@ -115,7 +115,7 @@ It turns out that limiting distribution of $E(t)$ is what we should choose for $
 $$\lim_{t \to \infty} \mathbb{P}(E(t) \leq y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx=: F^d(y),$$
 
 
-where $F$ is the cdf of $X_1$ which is non-lattice type.  However, once we know the answer, we can simply use $F^d$ as the modifed distribution for $X_1$ and check that it does lead to stationary increments.  There are some technical calculations involved.       
+where $F$ is the cdf of $X_1$ which is non-lattice type; see [Exercise 3](https://tsoo-math.github.io/ucl/QHW6.1.html).  However, once we know the answer, we can simply use $F^d$ as the modifed distribution for $X_1$ and check that it does lead to stationary increments.  There are some technical calculations involved.       
 
 Let us simulate $E(t)$ for large $t$ in the case where the inter-arrival times are uniformly distributed on $[0,1]$ and we see that it agrees with the stated theory.
 
