@@ -64,6 +64,11 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 * We reviewed the worksheets on MCMC and Voroni cells
 * We introduced a renewal-type argument for Markov chains
 
+
+# Week 13
+
+* [Worksheet](https://tsoo-math.github.io/ucl4/week12-2023-inclass.html)
+
 # Other notes
 
 

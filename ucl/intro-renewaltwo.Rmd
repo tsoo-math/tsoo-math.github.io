@@ -216,7 +216,7 @@ as desired.
 * Various arguments can be used to deduce that with probability $1$, there exists some $i,j$ such that
 $$|T_i - T^d_j| < \epsilon$$
 
-* Redefine $N$ and $N'$ so that, from $i$ and $j$ onwards,  we use the same (new) i.i.d.\ random variables $Z_1, Z_2, \ldots$ that have the same inter-arrival distribution as $X_1$.  Specifically, $T_{i+1} = T_i + Z_1$ and $T^d_{j+1} = Z_1$.
+* Redefine $N$ and $N'$ so that, from $i$ and $j$ onwards,  we use the same (new) i.i.d.\ random variables $Z_1, Z_2, \ldots$ that have the same inter-arrival distribution as $X_1$.  Specifically, $T_{i+1} = T_i + Z_1$ and $T^d_{j+1} = T^d_{j} + Z_1$.
 
 *  Now the redefined $N$ and $N^d$ will forever be $\epsilon$ close.
 

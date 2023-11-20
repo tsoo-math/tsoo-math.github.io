@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2023-11-20" />
 
-<title>Introduction to renewal processes II</title>
+<title>Fast foward</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,332 +349,36 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Introduction to renewal processes II</h1>
+<h1 class="title toc-ignore">Fast foward</h1>
+<h4 class="date">2023-11-20</h4>
 
 </div>
 
 
-<div id="more-advanced-renewal-theorems" class="section level1">
-<h1>More advanced renewal theorems</h1>
-<p>We will discuss some more advanced renewal theorems that will be
-useful for applications later. We call the function <span class="math inline">\(m(t):= \mathbb{E} N(t)\)</span> the
-<strong>renewal function</strong>.</p>
-<p><strong>Theorem (Elementary renewal theorem):</strong> The renewal
-function satisfies <span class="math inline">\(m(t)/ t \to
-(\mu)^{-1}\)</span>, where <span class="math inline">\(\mu\)</span> is
-the mean inter-arrival time.</p>
-<p>The elemenary renewal theorem can be thought of as a version of the
-law of large numbers. We already know that if <span class="math inline">\(N\)</span> is the renewal process, then <span class="math inline">\(N(t)/t \to (\mu)^{-1}\)</span>; hence the proof of
-the theorem is the justification of the following interchange of limits:
-<span class="math display">\[ \lim_{t \to \infty} \frac{ \mathbb{E}
-N(t)}{t} =  \mathbb{E} \Big( \lim_{t \to \infty} \frac{ N(t)}{t}
-\Big).\]</span></p>
-<p>We say that the law of a real-valued random variable is of
-<strong>lattice-type</strong> if for some <span class="math inline">\(a
-&gt;0\)</span> the random variables takes values in the set <span class="math display">\[a\mathbb{Z} = \{az: z \in  \mathbb{Z}\}\]</span>
-with probability one; the largest such possible <span class="math inline">\(a\)</span> is called the <strong>span</strong> of
-the lattice. Note that continuous random variables are of non-lattice
-type.</p>
-<p><strong>Theorem (Blackwell’s renewal theorem):</strong> A renewal
-process with inter-arrival times that are of non-lattice type has a
-renewal function <span class="math inline">\(m\)</span> that satisfies
-<span class="math display">\[\frac{m(t+h) - m(t)}{h} \to
-\frac{1}{\mu},\]</span> as <span class="math inline">\(t \to
-\infty\)</span>, for all <span class="math inline">\(h &gt;0\)</span>.
-Furthermore, in the case of a lattice-type inter-arrival time with span
-<span class="math inline">\(a\)</span>, the limit holds if we choose
-<span class="math inline">\(h\)</span> to be integer multiples of <span class="math inline">\(a\)</span>.</p>
-<p>The lattice type cases were previously proved by <a href="https://projecteuclid.org/download/pdf_1/euclid.pjm/1103051394">others</a>,
-and <a href="https://projecteuclid.org/download/imagefirstpage_1/euclid.dmj/1077474668">Blackwell</a>
-proved the more difficult non-lattice case. We will see in our coupling
-sketch proof that the non-lattice case is indeed more tricky.</p>
-<p>A consequence of this theorem is the following version which is often
-used in applications. Recall that it is possible to define Stieltjes’
-extension of the Riemann integral where we have <span class="math display">\[ \int_a ^b f(x) d\phi(x) = \int_a^b f(x)
-\phi&#39;(x) dx\]</span> if <span class="math inline">\(\phi\)</span> is
-continuously differentiable; the key is that we can make sense of the
-left-hand side even if <span class="math inline">\(\phi\)</span> is just
-monotone and right continuous. Going back to the definition of Riemann
-sums, we replace expressions of the sort: <span class="math display">\[
-f(x_i^{*})(x_{i+1} - x_i)\]</span> with <span class="math display">\[
-f(x_i^{*})(\phi(x_{i+1}) - \phi(x_i)).\]</span> Thus the length of an
-interval <span class="math inline">\((x_i, x_{i+1}]\)</span> is weighted
-by the function <span class="math inline">\(\phi\)</span>.</p>
-<p>Much of the theory is similar, but it also allows us to have a more
-unified treatment of sums and integrals. We need to be a bit careful
-about endpoints in the integration as jumps are possible. We will take
-the convention that an integrals are taken over intervals of the form.
-<span class="math inline">\((a, b]\)</span>. Working from the
-definitions it is possible to show that if <span class="math inline">\(\phi\)</span> is step function with jumps at
-points <span class="math inline">\(a &lt; s_1&lt; \cdots &lt;s_n &lt;
-b\)</span>, then <span class="math display">\[\int_a ^b f(x) d\phi(x) =
-\sum_{i=1} ^n f(s_j)[\phi(s_j+)- \phi(s_j-)].\]</span> This extension of
-the integral is useful for probability and statistics, since the
-cumulative distribution function <span class="math inline">\(F\)</span>
-of a random variable <span class="math inline">\(X\)</span>, is monotone
-and right-continuous, we have can take:</p>
-<p><span class="math display">\[ \mathbb{E}(X) = \int xdF(x),\]</span>
-where this formula gives the correct expressions whether <span class="math inline">\(X\)</span> is a continuous random variable or a
-discrete random variable or of <em>mixed type</em>. In what follows, it
-may be easier to pretend that the renewal function <span class="math inline">\(m\)</span> is differentiable and continuous so
-that <span class="math display">\[ dm(x) = m&#39;(x) dx.\]</span></p>
-<p><strong>Theorem (Key renewal theorem):</strong> Let <span class="math inline">\(g:[0, \infty) \to [0, \infty)\)</span> be
-non-increasing with <span class="math inline">\(\int_0 ^{\infty} g(x)dx
-&lt; \infty\)</span>. A renewal process with inter-arrival times that
-are of non-lattice type has a renewal function <span class="math inline">\(m\)</span> that satisfies <span class="math display">\[\int_0 ^t g(t-x) dm(x) \to \frac{1}{\mu} \int_0
-^{\infty} g(x)dx\]</span> as <span class="math inline">\(t \to
-\infty\)</span>.</p>
-<p>Notice that if we choose <span class="math inline">\(g(t) =
-\mathbf{1}_{[0, h]}(t)\)</span>, we have that <span class="math display">\[\int_0 ^{t+h} g(t+h-x) dm(x) = \int_{t} ^ {t+h}
-dm(x) = m(t+h)-m(t)\]</span> and <span class="math display">\[
-\frac{1}{\mu} \int_0 ^{\infty} g(x)dx = \frac{1}{\mu} \int_0 ^{\infty}
-g(x)dx = \frac{1}{\mu} \int_0 ^h dx = \frac{h}{\mu}.\]</span></p>
-<p>Thus we can recover Blackwell’s renewal theorem. However, the proof
-of key renewal theorem is obtained from Blackwell’s renewal theorem by
-considering limits of step functions; moreover, the assumption that
-<span class="math inline">\(g\)</span> is non-increasing can be relaxed
-for <span class="math inline">\(g\)</span> that are <em>directly Riemann
-integrable</em> which roughly means one can take a uniform mesh over
-<em>all</em> of <span class="math inline">\([0, \infty)\)</span> in
-computing the Riemann-type integral of <span class="math inline">\(g\)</span>.</p>
-<p>We will sketch a coupling proof of Blackwell’s renewal theorem due to
-<a href="https://projecteuclid.org/download/pdf_1/euclid.aop/1176995810">Lindvall</a>.
-Other proofs involve an analytic study of the renewal function, which we
-will not pursue in detail. However, we will make use of some facts
-surrounding renewal equations.</p>
-<p><strong>Theorem (Renewal equation):</strong> If <span class="math inline">\(m\)</span> is a renewal function, then it
-satisfies <span class="math display">\[ m(t) = F(t) + \int_0^t
-m(t-x)dF(x),\]</span> where <span class="math inline">\(F\)</span> is
-the cumulative distribution function of the inter-arrival times.</p>
-<p><em>Proof:</em> Let <span class="math inline">\(X_1, X_2,
-\ldots\)</span> be the inter-arrival times. We condition on the time of
-first arrival <span class="math inline">\(X_1\)</span>. Observe that if
-we set</p>
-<p><span class="math display">\[\phi(x) = \mathbb{E}(N(t) | X_1 = x
-)\]</span></p>
-<p>we have <span class="math inline">\(\phi(x) = 0\)</span> for all
-<span class="math inline">\(x &gt; t\)</span>, since are no arrivals,
-and for <span class="math inline">\(x \leq t\)</span>, we know that
-<span class="math inline">\(N(t)\)</span> is at least one, arriving at
-time <span class="math inline">\(x\)</span>, so that the distribution of
-<span class="math inline">\(N(t)\)</span> is given by <span class="math inline">\(1\)</span> + the number of arrivals that have come
-by time <span class="math inline">\(t-x\)</span>, which depends on <span class="math inline">\(X_2, X_3, \ldots\)</span> and thus as the same
-distribution as <span class="math inline">\(N(t-x)\)</span> so that
-<span class="math display">\[ \phi(x) = 1 + \mathbb{E}(N(t-x)).\]</span>
-Hence <span class="math display">\[
-\begin{eqnarray*}
-m(t) &amp;=&amp; \mathbb{E} (N(t)) \\
-&amp;=&amp; \mathbb{E} \phi(X_1)  \\
-&amp;=&amp; \int_0 ^{\infty} \phi(x) dF(x) \\
-&amp;=&amp; \int_0^t \big[ 1+ \mathbb{E}( N(t-x))\big]dF(x) \\
-&amp;=&amp;  F(t) + \int_0^t m(t-x)dF(x),
-\end{eqnarray*}
-\]</span> as desired.</p>
-<p>It will be nice to adopt some notation, and express the renewal
-equation as <span class="math display">\[ m = F + m*F;\]</span> here we
-set (whenever they can be well-defined)</p>
-<p><span class="math display">\[  (\phi * \psi)(t) = \int_0 ^t \phi(t-u)
-d \psi(u),\]</span></p>
-<p>where <span class="math inline">\(\phi(t) = \psi(t) = 0\)</span> if
-<span class="math inline">\(t &lt;0\)</span>. A version of integration
-by parts (think of <span class="math inline">\(d\psi(u) =
-\psi&#39;(u)du\)</span>) gives that</p>
-<p><span class="math display">\[ \phi* \psi = \psi * \phi.\]</span> The
-star-operation behaves like a convolution and is associative so that
-<span class="math display">\[ (\phi * \phi) * \zeta = \phi * (\phi *
-\zeta).\]</span></p>
-</div>
-<div id="excessive-life-and-stationary-increments" class="section level1">
-<h1>Excessive life and stationary increments</h1>
-<p>Let <span class="math inline">\(N\)</span> be a renewal process, with
-i.i.d. inter-arrival times given by <span class="math inline">\(X_1,
-X_2, \ldots\)</span>. Let <span class="math inline">\(T_1, T_2,
-\ldots\)</span> be the arrival times. We start with the question of when
-the distribution <span class="math inline">\(N(t+s) - N(t)\)</span> only
-depends on <span class="math inline">\(s\)</span>, like in a Poisson
-process. In general this will not be true, just by virtue of how we
-defined renewal processes: the first arrival is special, <span class="math inline">\(X_1\)</span> is the time from the origin (where
-there is no arrival) to the first arrival, whereas <span class="math inline">\(X_2\)</span> is the time between the first arrival
-the second. Another way to put it, if we pick a time <span class="math inline">\(t\)</span>, and wait until the next arrival after
-<span class="math inline">\(t\)</span>, this quantity is known as the
-<strong>excess lifetime</strong> given by</p>
-<p><span class="math display">\[E(t) = T_{N(t) +1} -t;\]</span></p>
-<p>we have no reason to believe that it should be distributed as <span class="math inline">\(X_1\)</span>. It turns out that if we are allowed
-to have a different distribution for <span class="math inline">\(X_1\)</span>, while maintaining the same
-i.i.d. distribution for <span class="math inline">\(X_2, X_3,
-\ldots\)</span>, we can define a <strong>modified</strong> or
-<strong>delayed</strong> renewal process <span class="math inline">\(N^d\)</span> that has stationary increments, and
-it is much easier to verify that this process satisfies Blackwell’s
-renewal theorem; in particular, we will see that if <span class="math inline">\(m^d(t) = \mathbb{E} N^d(t)\)</span>, then</p>
-<p><span class="math display">\[ m^d(t+h) - m^d(t) =
-\frac{h}{\mu}.\]</span></p>
-<p>It turns out that limiting distribution of <span class="math inline">\(E(t)\)</span> is what we should choose for <span class="math inline">\(X_1\)</span> if we want stationary increments,
-since as <span class="math inline">\(t \to \infty\)</span>, we can
-imagine that the renewal process would have forgotten its non-stationary
-choice of <span class="math inline">\(X_1\)</span>. It is possible to
-show (using the key renewal theorem and some more renewal equations)
-that</p>
-<p><span class="math display">\[\lim_{t \to \infty} \mathbb{P}(E(t) \leq
-y) = \frac{1}{\mu} \int_0 ^y [1-F(x)]dx=: F^d(y),\]</span></p>
-<p>where <span class="math inline">\(F\)</span> is the cdf of <span class="math inline">\(X_1\)</span> which is non-lattice type; see <a href="https://tsoo-math.github.io/ucl/QHW6.1.html">Exercise 3</a>.
-However, once we know the answer, we can simply use <span class="math inline">\(F^d\)</span> as the modifed distribution for <span class="math inline">\(X_1\)</span> and check that it does lead to
-stationary increments. There are some technical calculations
-involved.</p>
-<p>Let us simulate <span class="math inline">\(E(t)\)</span> for large
-<span class="math inline">\(t\)</span> in the case where the
-inter-arrival times are uniformly distributed on <span class="math inline">\([0,1]\)</span> and we see that it agrees with the
-stated theory.</p>
-<pre class="r"><code>excess &lt;- function(t){
-  arr  = runif(1)
-  inter = arr
-  while(arr[length(arr)] &lt;t){
-    inter &lt;- c(inter, runif(1))
-    arr &lt;- c(arr, arr[length(arr)] + inter[length(inter)])
-}
-arr[length(arr)] -t
-}
-
-E = replicate(10000, excess(151))
-hist(E, prob=TRUE, breaks=50)
-curve(2 - 2*x, add=TRUE)</code></pre>
-<p><img src="data:image/png;base64,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" width="672" /></p>
-<p>While we have the code, fresh in our heads, let us examine a closely
-related issue that is sometimes referred to as the <em>inspection
-paradox</em>. Let us look at the size of the interval <span class="math inline">\([T_{N(t)}, T_{N(t)+1}]\)</span> containing some
-<span class="math inline">\(t\)</span>; it turns out it is <em>not</em>
-uniformly distributed, and in general this interval is general has
-average size <em>larger</em> than <span class="math inline">\(\mathbb{E}
-X_1\)</span>; this is because larger intervals will tend to contain
-<span class="math inline">\(t\)</span>, so there is selection bias.</p>
-<pre class="r"><code>inspect &lt;- function(t){
-  arr  = runif(1)
-  inter = arr
-  while(arr[length(arr)] &lt;t){
-    inter &lt;- c(inter, runif(1))
-    arr &lt;- c(arr, arr[length(arr)] + inter[length(inter)])
-}
-inter[length(inter)]
-}
-
-Size = replicate(10000, inspect(15))
-hist(Size, prob=TRUE, breaks=50)</code></pre>
-<p><img src="data:image/png;base64,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" width="672" /></p>
-<p>Notice we are more likely to have chose a large uniform random
-variable for the last time we call runif(1), since if it was small the
-last arrival probably would not be bigger than <span class="math inline">\(t\)</span>.</p>
-<p><strong>Theorem (Stationary delay)</strong> The delayed renewal
-process has stationary increments if and only if the delay distribution
-has cumulative distribution given by <span class="math display">\[F^d(y):=\frac{1}{\mu} \int_0 ^y
-[1-F(x)]dx,\]</span></p>
-<p>where <span class="math inline">\(F\)</span> is the cumulative
-distribution of original inter-arrival times, and <span class="math inline">\(\mu\)</span> is the average.</p>
-<p>We will only prove the necessity portion of the theorem. Before we
-begin, it is easy to verify, by condition on <span class="math inline">\(X_1\)</span> (with law <span class="math inline">\(F^d\)</span>) that <span class="math inline">\(m^d(t) = \mathbb{E} N^d(t)\)</span> satisfies a
-renewal equation of the form <span class="math display">\[m^d(t) =
-F^d(t) + \int_0 ^t m(t-x) dF^d(x).\]</span> Thus <span class="math display">\[m^d = F^d + m* F^d.\]</span></p>
-<p>We already know that</p>
-<p><span class="math display">\[ m = F + m* F.\]</span></p>
-<p>Hence by basic properties of the star-operation, we have <span class="math display">\[
-\begin{eqnarray*}
-m*F^d &amp;=&amp; F*F^d + m * F * F^d \\
-&amp;=&amp;  F *( F^d + m*F) \\
-&amp;=&amp; F*m^d \\
-&amp;=&amp; m^d*F.
-\end{eqnarray*}
-\]</span></p>
-<p>Hence</p>
-<p><span class="math display">\[ m^d = F^d + m^d* F.\]</span> <em>Proof
-of Stationary delay (necessity):</em> If <span class="math inline">\(N^d\)</span> has stationary increments, then <span class="math display">\[N^d(t+s) - N^d(t)\]</span> has the same law as
-<span class="math inline">\(N^d(s)\)</span>. Hence for all <span class="math inline">\(s, t \geq 0\)</span>, we have</p>
-<p><span class="math display">\[m^d(s+t)= m^d(s) +m^d(t).\]</span> Since
-<span class="math inline">\(m^d\)</span> satisfies Cauchy’s functional
-equation, it follows that <span class="math display">\[m^d(t) =
-ct\]</span> for some <span class="math inline">\(c &gt;0\)</span>; it is
-easy to verify this fact for all positive rationals, and standard
-analysis arguments allow us to extend this result to all positive
-reals.</p>
-<p>A similar renewal theorem holds for <span class="math inline">\(m^d\)</span>, from which we know that <span class="math inline">\(c = \mu^{-1}\)</span>. In addition, we subsitute
-<span class="math inline">\(m^d\)</span> into one of our renewal
-equations to obtain that</p>
-<p><span class="math display">\[ cy = F^d(y) + c\int_0 ^y F(y-x)dx=
-F^d(y) + c\int_0^y F(x)dx\]</span> Thus</p>
-<p><span class="math display">\[ F^d(y) = c\int_0 ^y [1-
-F(x)]dx.\]</span> Taking the limit at <span class="math inline">\(y \to
-\infty\)</span>, we have</p>
-<p><span class="math display">\[1= c \int_0 ^{\infty} [1-F(x)]dx =
-c\mu,\]</span> as desired.</p>
-</div>
-<div id="sketch-proof-of-blackwells-renewal-theorem" class="section level1">
-<h1>Sketch proof of Blackwell’s renewal theorem</h1>
+<div id="playing-with-renewal-processes" class="section level1">
+<h1>Playing with renewal processes</h1>
+<p>In this exercise, we will demonstrate what happens when we look at a
+renewal process <span class="math inline">\(N(t)\)</span> for a large
+value of <span class="math inline">\(t \approx 150\)</span>. Consider
+the following simple <em>checks</em>:</p>
 <ul>
-<li><p>Consider independent renewal processes <span class="math inline">\(N\)</span> and <span class="math inline">\(N^d\)</span>, where <span class="math inline">\(N^d\)</span> is the stationary delayed
-version.</p></li>
-<li><p>Thus <span class="math inline">\(N\)</span> is constructed via
-<span class="math inline">\(X_1, X_2, \ldots\)</span> inter-arrival
-times, whereas, <span class="math inline">\(N^d\)</span> is constructed
-as <span class="math inline">\(X_1&#39;, X_2&#39;, \ldots, X_3,
-\ldots\)</span> inter-arrival times, and the sequences <span class="math inline">\(X\)</span> and <span class="math inline">\(X&#39;\)</span> are independent.</p></li>
-<li><p>Let <span class="math inline">\(\epsilon &gt;0\)</span>.</p></li>
-<li><p>Various arguments can be used to deduce that with probability
-<span class="math inline">\(1\)</span>, there exists some <span class="math inline">\(i,j\)</span> such that <span class="math display">\[|T_i - T^d_j| &lt; \epsilon\]</span></p></li>
-<li><p>Redefine <span class="math inline">\(N\)</span> and <span class="math inline">\(N&#39;\)</span> so that, from <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> onwards, we use the same (new)
-i.i.d. random variables <span class="math inline">\(Z_1, Z_2,
-\ldots\)</span> that have the same inter-arrival distribution as <span class="math inline">\(X_1\)</span>. Specifically, <span class="math inline">\(T_{i+1} = T_i + Z_1\)</span> and <span class="math inline">\(T^d_{j+1} = T^d_{j} + Z_1\)</span>.</p></li>
-<li><p>Now the redefined <span class="math inline">\(N\)</span> and
-<span class="math inline">\(N^d\)</span> will forever be <span class="math inline">\(\epsilon\)</span> close.</p></li>
-<li><p>Hence the limiting behaviour of <span class="math inline">\(N\)</span> is the same as <span class="math inline">\(N^d\)</span>.</p></li>
-<li><p>The Blackwell renewal theorem is obvious for <span class="math inline">\(N^d\)</span>, since <span class="math inline">\(m^d(t)= \mu^{-1} t\)</span>.</p></li>
-<li><p>We remark that the analogous Blackwell renewal theorem also holds
-for <em>any</em> delayed renewal process.</p></li>
+<li>Estimate by simulations the distribution of <span class="math inline">\(D_1=N(1) - N(0)\)</span>, <span class="math inline">\(D_2=N(151) - N(150)\)</span>, and <span class="math inline">\(D_3=N(161) - N(160)\)</span>. If <span class="math inline">\(N\)</span> is stationary, then <span class="math inline">\(D_1, D_2, D_3\)</span> should all have the same
+distribution
+<ul>
+<li>Run this check on a Poisson process, generated by exponential
+inter-arrival times</li>
+<li>Run this check on a the renewal process with inter-arrival times
+where <span class="math inline">\(X_i = 1+ U_i\)</span>, where <span class="math inline">\(U_i\)</span> are uniformly distributed on <span class="math inline">\([0,1]\)</span>.</li>
+</ul></li>
 </ul>
 </div>
-<div id="some-more-remarks-on-renewal-equations" class="section level1">
-<h1>Some more remarks on renewal equations</h1>
-<p>Recall we started with <span class="math inline">\(m^d = F^d + m*
-F^d\)</span> and obtained <span class="math inline">\(m^d = F^d + m^d *
-F\)</span>, the key being that <span class="math inline">\(m^d * F= m *
-F^d\)</span>.</p>
-<p>Similar considerations give the following. See <a href="https://tsoo-math.github.io/ucl/QHW6.1.html">Exercise 2</a>.</p>
-<p><strong>Theorem (Uniqueness of solutions):</strong><br />
-Let <span class="math inline">\(m\)</span> be a renewal function and
-<span class="math inline">\(F\)</span> be cumulative distribution
-function for the inter-arrival times. Let <span class="math display">\[
-\phi = H + H*m.\]</span> Then <span class="math inline">\(\phi\)</span>
-satisfies the renewal-type equation</p>
-<p><span class="math display">\[ \phi = H + \phi*F;\]</span> moreover
-<span class="math inline">\(\phi\)</span> is the unique solution to the
-renewal-type equation, provided that <span class="math inline">\(H\)</span> is bounded on finite intervals, which
-also implies that <span class="math inline">\(\phi\)</span> is bounded
-on finite intervals.</p>
-<p>If we are interested in <span class="math inline">\(\lim_{t \to
-\infty} \phi(t)\)</span>, we can use the form <span class="math inline">\(\phi = H + H*m\)</span> and possibly apply the key
-renewal theorem:</p>
-<p><span class="math display">\[\lim_{t \to \infty} \phi(t) = \lim_{t
-\to \infty} H(t) + \frac{1}{\mu} \int_0 ^{\infty} H(x)dx.\]</span></p>
-</div>
-<div id="summary" class="section level1">
-<h1>Summary</h1>
+<div id="endnotes" class="section level1">
+<h1>Endnotes</h1>
 <ul>
-<li><p>We stated Blackwell’s renewal theorem and the key renewal
-theorem.</p></li>
-<li><p>We discussed the connection between the limiting distribution for
-the excess lifetime and how this distribution can be chosen to be the
-delayed distribution which results in stationary increments for the
-associated delayed process.</p></li>
-<li><p>We discussed the inspection paradox and its explanation via
-size-biasing</p></li>
-<li><p>We sketched a coupling arguement for Blackwell’s renewal
-theorem.</p></li>
-<li><p>We worked with the basic mechanics of renewal equations.</p></li>
+<li>Version: 20 November 2023</li>
+<li><a href="https://tsoo-math.github.io/ucl4/week12-2023-inclass.Rmd">Rmd
+Source</a> <br> <br> <br></li>
 </ul>
-</div>
-<div id="version-20-november-2023" class="section level1">
-<h1>Version: 20 November 2023</h1>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl/intro-renewaltwo.Rmd">Rmd
-Source</a></li>
-</ul>
-<p><br> <br> <br></p>
 </div>
 
 
