@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Structure of the report
 * Standard of judgement shown in selection of material
 * Clarity of expression, readability and coherence
-* Correctness of grammar and spelling
+  * Correctness of grammar and spelling
 * Adequacy of diagrams, tables and graphs (if applicable)
 * Quality of presentation of mathematical material (if applicable)
 
@@ -48,7 +48,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Final mark  
 
-* Weighted average $0.6*M1 + 0.4*M2$
+* Weighted average $0.6*Mark1 + 0.4*Mark2$
 
 ## Feedback
 

@@ -1,7 +1,7 @@
 ---
 title: "Independent, but not identically distributed coin-flips"
 author: "Terry Soo"
-output: ioslides_presentation
+output: powerpoint_presentation
 ---
 
 ```{r setup, include=FALSE}
