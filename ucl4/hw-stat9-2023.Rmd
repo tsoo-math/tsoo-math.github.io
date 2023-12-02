@@ -72,7 +72,7 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 
 * [ICA1](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html): Released 03/11/2023; Due 17/11/2023
 * ICA2: Released 08/12/2023; Due 01/03/2024
-* ICA3: Released 15/12/2022; Due 09/02/2024
+* ICA3: Released 15/12/2023; Due 09/02/2024
 
 
 <br>

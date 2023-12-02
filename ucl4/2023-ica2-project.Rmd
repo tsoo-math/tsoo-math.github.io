@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * The ICA must be completed in R/Quarto/Python and typeset using Markdown with Latex code, just like the way our module content is generated.
 * Please hand in the html (or pdf file) **and** the Rmd/Jupyter notebook source files.
 * As usual, part of the grading will depend on the clarity and presentation of your solutions.
-*  You are to do this assignment, within your groups, without any help from others who are not in your ICA2 groups.
+*  You are to do this assignment, within your groups, without any help from others who are not in your ICA2 group.
 *  You are allowed to use any materials and code that was presented so far.
 *  Do not use any fancy code or packages imported from elsewhere.
 * The use of ChatGPT and related tools in assisting in the project ICA2 is permitted, in accordance with UCL’s [policy](https://www.ucl.ac.uk/students/exams-and-assessments/assessment-success-guide/engaging-ai-your-education-and-assessment).

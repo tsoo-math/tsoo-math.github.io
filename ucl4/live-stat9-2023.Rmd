@@ -33,7 +33,7 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 * We introduced Markov chains, and the key assumption of them being aperiodic and irreducible
 
 * [Worksheet](https://tsoo-math.github.io/ucl4/week8-2023-inclass.html)
-  * [Partial solutions](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sols.html)
+  * [Partial solutions](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.html)
 
 # Week 9
 * We discussed Poisson processes
@@ -72,6 +72,7 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 # Week 14
 
+* We discussed the two versions of Little's theorem.
 * [Worksheet](https://tsoo-math.github.io/ucl4/week14-2023-inclass.html)
 
 

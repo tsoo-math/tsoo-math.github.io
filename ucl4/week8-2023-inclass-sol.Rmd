@@ -61,6 +61,6 @@ q
 ### Endnotes
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
-* [Source](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.rmd)
+* [Source](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.Rmd)
 
 
