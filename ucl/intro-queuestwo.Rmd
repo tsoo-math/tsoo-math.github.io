@@ -66,7 +66,7 @@ $$ \pi_0 = 1- \rho$$
 
 *  We sketch a proof using reversibility. See [Reich's proof of Burke's theorem](https://www.jstor.org/stable/2237237?seq=1)
 
-*  It is easy to check that $Q$ is reversible.
+*  It is easy to check that $Q$ is reversible; see [Exercise 4](https://tsoo-math.github.io/ucl/QHW8.1-sols.html).
 
 *  Given $T>0$, the process $R(t)= Q(T-t)$ has the same law as $(Q(s), s\leq T)$.
 
@@ -90,7 +90,7 @@ $$ \pi_0 = 1- \rho$$
 
 *  It is a general question, given a item has to pass through two queues in series, one after another, which order should the queues to placed in?  
 
-*  This is in general a [hard question](https://www.tandfonline.com/doi/pdf/10.1080/00207728708967170?needAccess=true)
+*  This is in general a [hard question](https://www.jstor.org/stable/2631460)
 
 *  However, using Burke's theorem, we can show the order does not matter in the case of two M/M/1 queues in equilibrium.  
 
@@ -119,6 +119,7 @@ where $\rho_1 = \lambda/\mu_1$ and $\rho_2 = \lambda/\mu_2$.
 * We used reversibility to prove Burke's theorem.
 
 *   We applied Burke's theorem to two M/M/1 queues in series.
+  * See also [Question 5](https://tsoo-math.github.io/ucl/ica3-stat9-sols.html)
 
 
 ##  Version: `r format(Sys.time(), '%d %B %Y')`

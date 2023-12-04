@@ -204,6 +204,8 @@ $$
 
 *  We discussed [Little's theorem](https://pubsonline.informs.org/doi/abs/10.1287/opre.1110.0940).  The link requires UCL VPN.
 
+*  See also [Question 4](https://tsoo-math.github.io/ucl/ica3-stat9-sols.html) and [Exercise 3](https://tsoo-math.github.io/ucl/QHW8.1-sols.html)
+
 
 ##  Version: `r format(Sys.time(), '%d %B %Y')`
   * [Rmd Source](https://tsoo-math.github.io/ucl/intro-queues.Rmd)
