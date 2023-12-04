@@ -76,6 +76,14 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 * [Worksheet](https://tsoo-math.github.io/ucl4/week14-2023-inclass.html)
 
 
+# week 15
+
+* We released ICA2
+* We discussed  solutions to ICA1 (solutions on Moodle only)
+* We went over some key results for $M/M/1$ queues
+
+
+
 # Other notes
 
 
