@@ -1,0 +1,94 @@
+---
+title: "C++"
+format: html
+editor: visual
+date: last-modified	
+---
+
+# Introduction
+
+C $\subset$ C++ are key programming languages that are still amongst the most commonly used. In fact, they are used in the creation of R and Python. One may have to return to C and C++ when speed and memory are limiting factors. Although we will not be programming in with these languages in our module (**do not hand in ICAs using them**), one should be aware of their existence, and not be afraid to explore them, especially when it seems like your code in R is running too slowly.
+
+There are many ways to run and compile C++ programs on your computer. For example, you can try:
+
+-   [Visual Stuio](https://visualstudio.microsoft.com/)
+
+-   [In Juptyer notebook](https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb)
+
+-   [C++ Online Shell](https://cpp.sh/)
+
+-   [Wandbox Online](https://wandbox.org/)
+
+In addition, there are many resources and videos online. For example:
+
+-   [Programming with Mosh](https://www.youtube.com/watch?v=ZzaPdXTrSb8)
+-   [C++ in 100 seconds](https://www.youtube.com/watch?v=MNeX4EGtR5Y)
+
+In particular, I did skim through the first YouTube video, on Saturday, and had no prior experience with C++ before that, and was able to write the code presented here using the C++ Online Shell.
+
+
+# Overview
+
+One of the main differences between C++ and R is that you have to specify the data type: int (integer), double (floating point number), and string (text).  Like Python, this is a general purpose language, so in order to do maths/stats one usually has  to import libraries. In our example code, we revisit one of our first [exercises](https://tsoo-math.github.io/ucl2/2021-HW-week6.html). 
+
+### Code:  The average number of uniforms needed for its sum to exceed 1
+
+```{}
+// The average number of uniforms needed for its sum to exceed 1
+#include <iostream>    // standard library, almost needed for anything
+using namespace std;    // standard naming, commonly used, but debated whether one should use this
+#include <string>
+#include <random>
+
+
+
+
+int sum()   // notice we have to specify the type
+{
+  random_device rd;
+  mt19937 gen(rd());
+  uniform_real_distribution<> dis(0, 1.0);  // generating random variables (better than rand)
+  double T;
+  T=0;
+  int n;
+  n=0;
+  while (T<1) {
+      T= T+dis(gen);
+      n = n+1;
+}
+return n;
+}
+
+double repeater1(){          
+    double x;
+    x=0;
+    int n;     // the number of replicates to be inputed by the user
+    cout << "Type a number: "; // Type a number and press enter
+    cin >> n; // Get user input from the keyboard
+    for (int i = 0; i < n; ++i) {               // the famous increment in C
+    x = x + sum();
+    }
+    double m;
+    m = x/n;
+    return m;
+}
+
+// the main function, is called by C++; it has to return an integer, but is used to run your code
+
+int main(){        
+cout << repeater1();
+cout << "\n";        // newline
+cout << repeater1();
+return 0;
+}
+
+```
+
+
+
+
+### Other notes
+
+-   [qmd Source](https://tsoo-math.github.io/ucl4/C.qmd)
+
+
