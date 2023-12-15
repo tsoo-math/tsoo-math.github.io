@@ -5,13 +5,16 @@ date:  Fall 2023
 output: html_document
 ---
 
-# General information
+# ICA
 
 * [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
 
 * [ICA2 2023](https://tsoo-math.github.io/ucl4/2023-ica2-project.html)
 
 * [ICA3 2023](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html)
+
+
+# General information
 
 * [Module outline](https://tsoo-math.github.io/ucl4/outline-stat9-2023.html)
 
