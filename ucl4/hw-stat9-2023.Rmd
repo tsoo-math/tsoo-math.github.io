@@ -14,6 +14,8 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 # By [UCL week](https://www.ucl.ac.uk/estates/sites/estates/files/ucl_academic_calendar_2023_2024.pdf)
 
 * [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
+* [ICA2 2023](https://tsoo-math.github.io/ucl4/2023-ica2-project.html)
+* [ICA3 2023](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html)
 
 ## Tenative schedule, may be updated
 
@@ -58,12 +60,13 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 * Week 15 (4 Dec - 10 Dec): 
   - [Exercises](https://tsoo-math.github.io/ucl/QHW8.1.html)
     - [Solutions in R](https://tsoo-math.github.io/ucl/QHW8.1-sols.html)
-  * [ICA2 2021 project ideas](https://tsoo-math.github.io/ucl2/ICAproject-ideas-2021.html)
+  * [ICA2 2023 project ideas](https://tsoo-math.github.io/ucl4/2023-ica2-project.html)
   
 * week 16 (11 Dec - 15 Dec):
   * Revisions:  
-  * [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html)
-    * [sols](https://tsoo-math.github.io/ucl3/2021-ica3-stat9.html)
+  * [ICA3 2023](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html)
+    * [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html)
+      * [sols](https://tsoo-math.github.io/ucl3/2021-ica3-stat9.html)
   
 
 
@@ -72,7 +75,7 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 
 * [ICA1](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html): Released 03/11/2023; Due 17/11/2023
 * [ICA2](https://tsoo-math.github.io/ucl4/2023-ica2-project.html): Released 4/12/2023;  Due 01/03/2024
-* ICA3: Released 15/12/2023; Due 09/02/2024
+* [ICA3](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html): Released 15/12/2023; Due 09/02/2024
 
 
 <br>

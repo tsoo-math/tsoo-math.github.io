@@ -33,7 +33,7 @@ This module will assume some experience with the basics of probability and stati
 
 - Point process: Poisson processes, spatial Poisson point processes, Continuous-time Markov chains, semi-Markov processes.
 
-- Renewel theory: renewal theorems, Little’s theorem.
+- Renewal theory: renewal theorems, Little’s theorem.
 
 - Queues: stationary distributions, blow-up, waiting times.
 
@@ -43,11 +43,11 @@ This module will assume some experience with the basics of probability and stati
 
 We will have 3 ICAs. Pay no attention to the ordering of ICA 2 and ICA 3.
 
-The first [ICA](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html) (30 %) will be a regular assignment given around the middle of the term to make sure we have learned the basics.
+The first [ICA1](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html) (30 %) will be a regular assignment given around the middle of the term to make sure we have learned the basics.
 
-The third ICA (30 %) will be centered around more involved problems that will require a synthesis of ideas from throughout the module. This may be done in groups. Due in 2024
+The third [ICA3](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html) (30 %) will be centered around more involved problems that will require a synthesis of ideas from throughout the module. This may be done in groups. Due in 2024
 
-The second ICA (40 %) will be a group project based using the knowledge learned throughout the course. Due in 2024. Some examples include:
+The second [ICA2](https://tsoo-math.github.io/ucl4/2023-ica2-project.html) (40 %) will be a group project based using the knowledge learned throughout the course. Due in 2024. Some examples include:
 
 - construct toy models to explain and model random behaviour in our world;
 - critically examine evaluate theoretical and practical models that have been proposed;
