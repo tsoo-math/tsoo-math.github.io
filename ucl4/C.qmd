@@ -11,7 +11,7 @@ C $\subset$ C++ are key programming languages that are still amongst the most co
 
 There are many ways to run and compile C++ programs on your computer. For example, you can try:
 
--   [Visual Stuio](https://visualstudio.microsoft.com/)
+-   [Visual Studio](https://visualstudio.microsoft.com/)
 
 -   [In Juptyer notebook](https://mybinder.org/v2/gh/jupyter-xeus/xeus-cling/stable?filepath=notebooks/xcpp.ipynb)
 
@@ -24,16 +24,15 @@ In addition, there are many resources and videos online. For example:
 -   [Programming with Mosh](https://www.youtube.com/watch?v=ZzaPdXTrSb8)
 -   [C++ in 100 seconds](https://www.youtube.com/watch?v=MNeX4EGtR5Y)
 
-In particular, I did skim through the first YouTube video, on Saturday, and had no prior experience with C++ before that, and was able to write the code presented here using the C++ Online Shell.
-
+In particular, I did skim through the first YouTube video, on Saturday (9 Dec), and had no prior experience with C++ before that, and was able to write the code presented here using the C++ Online Shell.
 
 # Overview
 
-One of the main differences between C++ and R is that you have to specify the data type: int (integer), double (floating point number), and string (text).  Like Python, this is a general purpose language, so in order to do maths/stats one usually has  to import libraries. In our example code, we revisit one of our first [exercises](https://tsoo-math.github.io/ucl2/2021-HW-week6.html). 
+One of the main differences between C++ and R is that you have to specify the data type: int (integer), double (floating point number), and string (text). Like Python, this is a general purpose language, so in order to do maths/stats one usually has to import libraries. In our example code, we revisit one of our first [exercises](https://tsoo-math.github.io/ucl2/2021-HW-week6.html).
 
-### Code:  The average number of uniforms needed for its sum to exceed 1
+### Code: The average number of uniforms needed for its sum to exceed 1
 
-```{}
+```         
 // The average number of uniforms needed for its sum to exceed 1
 #include <iostream>    // standard library, almost needed for anything
 using namespace std;    // standard naming, commonly used, but debated whether one should use this
@@ -81,14 +80,8 @@ cout << "\n";        // newline
 cout << repeater1();
 return 0;
 }
-
 ```
-
-
-
 
 ### Other notes
 
 -   [qmd Source](https://tsoo-math.github.io/ucl4/C.qmd)
-
-

@@ -123,7 +123,7 @@ output: html_document
 
 ## Week 16
 
-* [ICA3 2023, to be released soon]
+* [ICA3 2023--released](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html)
   * [ICA3 2022](https://tsoo-math.github.io/ucl3/2022-ica3-stat9-release.html)
   * [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) 
     * [sols](https://tsoo-math.github.io/ucl3/2021-ica3-stat9.html)  
