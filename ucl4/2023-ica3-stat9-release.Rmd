@@ -1,0 +1,119 @@
+---
+title: "Stat0009 ICA3 (2023)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# library(reticulate)
+# py_install("matplotlib")
+```
+
+
+
+# Introduction
+
+* Made available UCL Week 16; 
+* Due 9 February 2024,  13:00 London time.
+*  This ICA is to be completed in a group of at most $4$, and each member of the group will receive the same grade.
+  *  Your group-mates must be disjoint from that of ICA2, so that if Sam is in your ICA2 group, they can not be in your ICA3 group. 
+* This ICA consists of 5 questions, worth 50 points;
+  * as usual, part of the grading will depend on the clarity and presentation of your solutions;
+  * another 5 points will be given based on presentation, so that the total available points is **55** 
+ 
+  * You **must**  hand in the html file **and**    the Rmd/Qmd/ipynb source file.
+* This ICA is worth 30 percent of your total grade for this module.
+* Some parts of the questions will require you to write and run R/Python code.
+* The ICA must be completed in R Markdown/Quarto/Juptyer Notebook and typeset using  Markdown with Latex code, just like the way our module content is generated.  You can choose to use either R or Python.
+*  You are to do this assignment, within your groups, without any help from others who are not in your ICA3 group.
+
+
+*  You are allowed to use any materials and code that was presented so far.
+*  Do not search the internet or  libraries for answers to the ICA.
+*  Do not use ChatGPT or similar AI type assistance.
+*  Do not use any fancy code or packages imported from elsewhere.
+*  Conduct yourselves honorably.
+
+
+
+##  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I am aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. I have read the guidelines in the student handbook and understand what constitutes plagiarism. I hereby affirm that the work the group is submitting for this in-course assessment is entirely our own.
+
+
+
+## Anonymous Marking 
+
+Please do **not** write your name anywhere on the submission. Please include only your **student number** as the proxy identifier.
+
+## Exercises
+
+
+
+
+
+## 1.) Summing the sum [10 points]
+
+Let   $S_n = X_1 + \cdots + X_n$, where  $X_1, \ldots, X_n$ are independent Bernoulli random variables with parameter $p=\tfrac{1}{2}$.   Set $Y_n = \sum_{k=1}^n  S_k.$  Set $S_0 =0$,  $Y_0  =0$, and $G_n = Y_n/n$, for $n \geq 1$.  
+
+* Is $Y = (Y_0, Y_1, \ldots)$ a Markov chain? Explain. [3 points]
+* Suppose you are told that for a finite $a >0$, we know that $G_n/n \to a$ (say in mean-square).  What must $a$ be? [3 points]
+* We know that $S_n$ satisfies a central limit.  By using simulations, illustrate that $G_n$ also satisfies a  central limit theorem; that is, if $Z_n:=\frac{G_n - nc_1}{c_2\sqrt{n}}$ converges in distribution to a standard normal distribution, for some fixed constants $c_1, c_2$. [4 points]
+
+
+
+## 2.) Poisson processes [10 points]
+
+* Prove that for a Poisson point process on $[0, \infty)$,  constructed with exponential inter-arrival times, that  conditional that there exactly *two* points in $[0,1]$, then those points are independently and uniformly distributed. [5 points]
+* Demonstrate this fact by simulations. [5 points]
+
+
+## 3.) Renewal processes [10 points]
+
+Consider the renewal process $N$ with inter-arrival times that are independent and uniform over $[3,4]$.   For all  integers $k$ consider the following limit:
+
+$$\lim_{t \to \infty}\mathbb{P}[N(t+1) - N(t)=k].$$
+
+* What values of $k$ are nontrivial? [1 point] 
+* Use simulations to estimate these probabilities. [3 points]
+* Compute the limit, analytically, pen and paper style. [6 points]
+
+## 4.) A variation of  Markov chain [10 points]
+
+Consider $X=[X(t)]_{t=0} ^{\infty}$, a  minor generalization of a continuous-time Markov chain on three states $S= \{1,2,3\}$, given as follows.  Set $X(0) =1$.  At state $1$, we have a uniform $[0,1]$ holding time and at states $2$ and $3$,  we have an exponential $1$ holding time,  and when it comes time to jump, we move to one of the other two state with equal probability.
+Consider
+
+$$p:=\lim_{t \to \infty}\mathbb{P}(X(t) =1).$$
+
+* Compute $p$ analytically. [5 points]
+
+* Verify your answer with simulations. [5 points]
+    
+
+
+## 5.)  Queues in series [10 points]
+
+Consider two queues/services in series, and Poisson arrivals with rate $1$.  Demonstrate by simulation that the order of the services can matter with respect to the total time in the system.   Also demonstrate that, in principle, your code is reasonable, by checking it against a simple case, where you have more precise and theoretical  knowledge.  
+
+
+
+
+# Endnotes
+
+* [source](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.Rmd)
+* Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
+
+<hr>
+<br>
+<br>
+<br>
