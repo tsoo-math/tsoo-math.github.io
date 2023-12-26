@@ -47,6 +47,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-* &#x2B58; [Remove background image](https://tsoo-math.github.io/index-noback.html)
+* &#x2B58; [Remove background image of my squash](https://tsoo-math.github.io/index-noback.html)
 
 
