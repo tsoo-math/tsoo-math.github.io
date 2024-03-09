@@ -6,16 +6,16 @@ text-transform: uppercase;
 
 
 a:link {font-size: 30px;
-  color: #39FF14;
+  color: #00FF00;
 }
 
 
 a:visited {
-  color: #B22222;
+  color: #6495ED;
 }
 
 a:hover {
-  color: #8B0000;
+  color: #6495ED;
 }
 
 
