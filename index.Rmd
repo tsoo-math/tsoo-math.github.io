@@ -11,42 +11,42 @@ css: back.css
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-* `r emo::ji("school")` [Profile at UCL](https://www.ucl.ac.uk/statistics/dr-terry-soo)
+*  [Profile at UCL](https://www.ucl.ac.uk/statistics/dr-terry-soo)
 
 
 
-*  `r emo::ji("chart_with_upwards_trend")` [Research](https://tsoo-math.github.io/m3/research.html)
-
-<br>
-
-* `r emo::ji("camera")` [A photo of me, by modern art, in Jerusalem](https://tsoo-math.github.io/m3/tsrain.jpg)
-
-
-* `r emo::ji("camera")` [A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
-
-
-
-* `r emo::ji("game_die")` [Probability at UCL](https://sites.google.com/view/probability-at-ucl/home?authuser=0)
-
-
-
-* `r emo::ji("teacher")` [Stat 0009, Fall 2023](https://tsoo-math.github.io/ucl4/skeleton-stat9-2023.html)
-
-
-* `r emo::ji("teacher")` [LTTC Stochastic processes, Fall 2023](https://tsoo-math.github.io/lttc/skeleton-LTTC-2023.html)
-
-
-* `r emo::ji("graph")` [Poster Competition 2023](https://tsoo-math.github.io/ucl2/grst/2023-poster.html)
+*  [Research](https://tsoo-math.github.io/m3/research.html)
 
 <br>
 
-*   `r emo::ji("round pushpin")` [Find me](https://tsoo-math.github.io/find.html)
+*  [A photo of me, outside UCL Statistical Science](https://tsoo-math.github.io/Terry-ucl-stats.jpeg)
+
+
+*  [A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
+
+
+
+* [Probability at UCL](https://sites.google.com/view/probability-at-ucl/home?authuser=0)
+
+
+
+*  [Stat 0009, Fall 2023](https://tsoo-math.github.io/ucl4/skeleton-stat9-2023.html)
+
+
+*  [LTTC Stochastic processes, Fall 2023](https://tsoo-math.github.io/lttc/skeleton-LTTC-2023.html)
+
+
+* [Poster Competition 2023](https://tsoo-math.github.io/ucl2/grst/2023-poster.html)
+
+<br>
+
+*    [Find me](https://tsoo-math.github.io/find.html)
 
 <br>
 
 
 
 
-* &#x2B58; [Remove background image of my squash](https://tsoo-math.github.io/index-noback.html)
+* &#x2B58; [Remove background image](https://tsoo-math.github.io/index-noback.html)
 
 
