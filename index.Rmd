@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 *  [A photo of me, outside UCL Statistical Science](https://tsoo-math.github.io/Terry-ucl-stats.jpeg)
 
 
-*  [A photo of me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
+* [A photo of me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
 
 
 
