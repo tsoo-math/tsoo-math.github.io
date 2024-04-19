@@ -169,16 +169,17 @@ $$ \int_0 ^2 f(x)dx$$
 
 We reviewed the law of large numbers and gave some proofs of some basic results.  We showed how the law of large numbers can be used in conjugation with R to compute or estimate various probabilities arising from elementary probability theory.    
 
+
+
+# Endnotes   
+
+* Etemadi [(1981)](https://link.springer.com/article/10.1007/BF01013465) found a short proof om Theorem 1.1, using only Lemma 1.1, and the [Borel-Cantelli](https://tsoo-math.github.io/ucl/borel.html) lemma.
+* For background on the law of large numbers see Denker [(2013)](https://www.ams.org/journals/bull/2013-50-03/S0273-0979-2013-01411-3/S0273-0979-2013-01411-3.pdf).
+
 <br>
 
-
-
-<br>
-<br>
-
-#   Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/prob-viaR.Rmd)
-
+* [Rmd Source](https://tsoo-math.github.io/ucl/prob-viaR.Rmd)
+* Version: `r format(Sys.time(), '%d %B %Y')`
 
 <br>
 <br>

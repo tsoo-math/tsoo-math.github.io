@@ -1,9 +1,9 @@
 ---
 title: "Random variables: theory and practice"
 output:
+  bookdown::html_document2: default
   bookdown::pdf_document2:
     keep_tex: yes
-  bookdown::html_document2: default
   bookdown::word_document2:
     toc: yes
   pdf_document:
@@ -84,7 +84,7 @@ $$X_{k+1} = a \cdot X_k \bmod m$$
 
 # Box-Mueller for normal random variables
 
-It turns out that the the inverse transform method is often too slow.  The [Box-Muller method](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-29/issue-2/A-Note-on-the-Generation-of-Random-Normal-Deviates/10.1214/aoms/1177706645.full) for generating normal random variables.  Ann.\ Math. Stat.\  1958 is a more efficient way generating normal random variables.   
+It turns out that the the inverse transform method is often too slow.  The Box-Muller method [(1958)](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-29/issue-2/A-Note-on-the-Generation-of-Random-Normal-Deviates/10.1214/aoms/1177706645.full)  is a more efficient way of generating normal random variables.   
 
 Let $U$ and $V$ be independent random variables that uniformly distributed on the unit interval.   Set
 	$$X = \sqrt{ -2 \log U} \cos (2 \pi V)$$ 
@@ -114,7 +114,7 @@ as desired.
 
 #  Acceptance/Rejection methods: Sampling on a disc
 
-A powerful method of generating random variables, goes back to [von Neumann](https://mcnp.lanl.gov/pdf_files/nbs_vonneumann.pdf). 
+A powerful method of generating random variables, goes back to von Neumann [(1951)](https://mcnp.lanl.gov/pdf_files/InBook_Computing_1961_Neumann_JohnVonNeumannCollectedWorks_VariousTechniquesUsedinConnectionwithRandomDigits.pdf). 
 
 
 We simulate a single uniformly distributed point on the disc, by simulating a uniform point on a square, and *accept* it if lands inside an inscribed disc, or *reject* otherwise, and repeat until we have acceptance.  
@@ -216,8 +216,17 @@ hist(accepted, prob=TRUE, B)
 * The central role of uniform random variables in theory and practice
 * Sampling methods such as acceptance/rejection
 
-#   Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/randomTP.Rmd)
+# Endnotes   
+
+* Kolmogorov [(1933)](https://dn790007.ca.archive.org/0/items/foundationsofthe00kolm/foundationsofthe00kolm.pdf) laid the foundations of modern probability theory by showing that probability theory could be done in mathematical apparatus of measure theory. 
+
+* To get a sense of pseduo-random number generation, in the past, on a [IBM 701](https://en.wikipedia.org/wiki/IBM_701) see Johnson [(1956)](https://www.ams.org/journals/mcom/1956-10-053/S0025-5718-1956-0076467-X/S0025-5718-1956-0076467-X.pdf)
+
+<br>
+
+* [Rmd Source](https://tsoo-math.github.io/ucl/randomTP.Rmd)
+* Version: `r format(Sys.time(), '%d %B %Y')`
+
 
 
 

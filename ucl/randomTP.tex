@@ -6,8 +6,8 @@
 ]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -33,13 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Random variables: theory and practice},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -108,9 +101,16 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Random variables: theory and practice},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Random variables: theory and practice}
 \author{}
@@ -128,6 +128,8 @@
 \newtheorem{example}{Example}[section]
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}[section]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[section]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Solution}
@@ -215,7 +217,7 @@ and
 Then \(X\) and \(Y\) are independent standard normals.
 
 \begin{proof}
-\iffalse{} {Proof. } \fi{}We solve for \((U,V)\) to obtain that
+We solve for \((U,V)\) to obtain that
 \[U = \exp[  -(X^2 + Y^2)/2]\]
 and
 \[V =  \frac{1}{2\pi} \arctan(Y /X).\]
@@ -368,13 +370,16 @@ So, given that we accepted the distribution of \(Y\), is the distribution of \(X
   Sampling methods such as acceptance/rejection
 \end{itemize}
 
-\hypertarget{version-27-april-2021}{%
-\section{Version: 27 April 2021}\label{version-27-april-2021}}
+\hypertarget{endnotes}{%
+\section{Endnotes}\label{endnotes}}
 
 \begin{itemize}
 \tightlist
 \item
-  \href{https://tsoo-math.github.io/ucl/randomTP.Rmd}{Rmd Source}
+  \href{https://dn790007.ca.archive.org/0/items/foundationsofthe00kolm/foundationsofthe00kolm.pdf}{Kolmogorov, 1933} laid the foundations of modern probability theory be showing that probability theory could be completed in mathematical apparatus of measure theory.
 \end{itemize}
+
+* \href{https://tsoo-math.github.io/ucl/randomTP.Rmd}{Rmd Source}
+* Version: 19 April 2024
 
 \end{document}

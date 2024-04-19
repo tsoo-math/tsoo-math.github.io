@@ -181,12 +181,12 @@ x
 
 We introduced some basics of R, and we gave examples programming basics including defining functions, while loops, for loops, and using the replicate function.
 
-<br>
-<br>
 
 
-#   Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-R.Rmd)
+
+# Endnotes
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/intro-R.Rmd)
 
 
 <br>
