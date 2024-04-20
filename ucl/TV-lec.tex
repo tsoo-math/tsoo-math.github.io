@@ -6,8 +6,8 @@
 ]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -33,13 +33,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Coupling and total variational distance},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
@@ -108,9 +101,16 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Coupling and total variational distance},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Coupling and total variational distance}
 \author{}
@@ -128,6 +128,8 @@
 \newtheorem{example}{Example}[section]
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}[section]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[section]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Solution}
@@ -199,7 +201,7 @@ We first code and test the coupled coin-flips.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.6727
+## [1] 0.6665
 \end{verbatim}
 
 \begin{Shaded}
@@ -209,7 +211,7 @@ We first code and test the coupled coin-flips.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.5063
+## [1] 0.4982
 \end{verbatim}
 
 Then, we run simulations to see long the game takes on average for June and Tessa.
@@ -231,7 +233,7 @@ Then, we run simulations to see long the game takes on average for June and Tess
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 14.476
+## [1] 15.256
 \end{verbatim}
 
 \begin{Shaded}
@@ -241,7 +243,7 @@ Then, we run simulations to see long the game takes on average for June and Tess
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 1838.2
+## [1] 197.64
 \end{verbatim}
 
 We could of run similar simulations without coupling. The point is, we established this result analytically using coupling. The code here is really just to illustrate the coupling. In the last bit of code, we note that in each simulation, under the coupling, Tessa never finishes before June.
@@ -276,17 +278,17 @@ We could of run similar simulations without coupling. The point is, we establish
 
 \begin{verbatim}
 ##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
-## [1,]    9   13    7   15   15    9   19    9    5
-## [2,] 1491   95    9  503   77    9 4035   67   67
+## [1,]   27    9   23   15   35   21   11    9    5
+## [2,]   91   11   45   37   59   23   29    9   17
 ##      [,10] [,11] [,12] [,13] [,14] [,15] [,16]
-## [1,]     9    29     7    11    13    31    17
-## [2,]    43   125     7    25    15    81   119
+## [1,]     5     7     9     5    11     5    15
+## [2,]    45     7     9    27    91    11   739
 ##      [,17] [,18] [,19] [,20] [,21] [,22] [,23]
-## [1,]    15    43     7     7    17     5    19
-## [2,]    29  1055    37   107 30317    37    59
+## [1,]     5    11     9     9     9     7     9
+## [2,]     7   387    21    59    31   201    47
 ##      [,24] [,25]
-## [1,]    19    15
-## [2,]    21  2491
+## [1,]    29    43
+## [2,]   121   115
 \end{verbatim}
 
 \hypertarget{total-variational-distance}{%
@@ -299,8 +301,8 @@ Let \(X\) and \(Y\) be real-valued random variables. The \textbf{total variation
 \subsection{Common formula}\label{common-formula}}
 
 \begin{lemma}
-\protect\hypertarget{lem:unnamed-chunk-5}{}{\label{lem:unnamed-chunk-5} } Let \(X\) and \(Y\) be integer-valued random variables. We have that
-\[d_{TV}(X,Y) = \sum_{z \in \mathbb{Z}} | \mathbb{P}(X=z) - \mathbb{P}(Y=z)|.\]\\
+\protect\hypertarget{lem:unnamed-chunk-5}{}\label{lem:unnamed-chunk-5}Let \(X\) and \(Y\) be integer-valued random variables. We have that
+\[d_{TV}(X,Y) = \sum_{z \in \mathbb{Z}} | \mathbb{P}(X=z) - \mathbb{P}(Y=z)|.\]
 \end{lemma}
 
 The proof follows from the following simple fact:
@@ -311,7 +313,7 @@ If \[D = \{z \in \mathbb{Z}:  \mathbb{P}(X =z) \geq \mathbb{P}(Y=z)\},\] then
 \end{eqnarray*}
 
 \begin{proof}
-\iffalse{} {Proof. } \fi{}Observe that for any \(A \subset \mathbb{Z}\), we have
+Observe that for any \(A \subset \mathbb{Z}\), we have
 \[|\mathbb{P}(X \in A) - \mathbb{P}(Y \in A)| = |\mathbb{P}(X \in A^c) - \mathbb{P}(Y\in A^c)|.\]
 Thus using the set \(D\), we see that
 \[d_{TV}(X,Y) \geq \sum_{z \in \mathbb{Z}} | \mathbb{P}(X=z) - \mathbb{P}(Y=z)|.\]
@@ -333,21 +335,21 @@ Thus it follows that
 \end{proof}
 
 \begin{exercise}
-\protect\hypertarget{exr:unnamed-chunk-7}{}{\label{exr:unnamed-chunk-7} }Let \(X \sim Bern(p)\), \(Y \sim Bern(q)\), and \(W \sim Poi(p)\). Compute
-\(d_{TV}(X,Y)\) and \(d_{TV}(X, W).\)\\
+\protect\hypertarget{exr:unnamed-chunk-7}{}\label{exr:unnamed-chunk-7}Let \(X \sim Bern(p)\), \(Y \sim Bern(q)\), and \(W \sim Poi(p)\). Compute
+\(d_{TV}(X,Y)\) and \(d_{TV}(X, W).\)
 \end{exercise}
 
 \hypertarget{coupling-inequality}{%
 \subsection{Coupling inequality}\label{coupling-inequality}}
 
 \begin{lemma}
-\protect\hypertarget{lem:unnamed-chunk-8}{}{\label{lem:unnamed-chunk-8} }If \(X\) and \(Y\) are jointly distributed random variables, then
+\protect\hypertarget{lem:unnamed-chunk-8}{}\label{lem:unnamed-chunk-8}If \(X\) and \(Y\) are jointly distributed random variables, then
 
 \[d_{TV}(X,Y) \leq 2\mathbb{P}(X \not = Y).\]
 \end{lemma}
 
 \begin{proof}
-\iffalse{} {Proof. } \fi{}Let \(A\) be an event. Note that
+Let \(A\) be an event. Note that
 
 \begin{eqnarray*}
         |\mathbb{P}(X \in A) - \mathbb{P}(Y \in A)|
@@ -385,11 +387,19 @@ d_{TV}(S_n, S_{n+1}) &\leq& 2\mathbb{P}(S_n \not = S_{n+1}) \\
 
 We saw some basics of how coupling can be used as a tool in probability theory and in particular, how it can be used the bound the total variational distance between two random variables.
 
-\hypertarget{version-28-april-2021}{%
-\section{Version: 28 April 2021}\label{version-28-april-2021}}
+\hypertarget{endnotes}{%
+\section{Endnotes}\label{endnotes}}
 
 \begin{itemize}
 \tightlist
+\item
+  FOr the relation between total variational distance and other related distance on distributions and random variables see Gibbs and Su \href{https://www.jstor.org/stable/1403865}{2002}.
+\end{itemize}
+
+\begin{itemize}
+\tightlist
+\item
+  Version: 19 April 2024
 \item
   \href{https://tsoo-math.github.io/ucl/TV-lec.Rmd}{Rmd Source}
 \end{itemize}

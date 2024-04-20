@@ -32,7 +32,10 @@ Then the Markov chain $X$ can be constructed as
 * $X_0 = f(U_{-1})$ 
 * $X_1 = \phi(X_0, U_0)$
 * $X_2 =  \phi(X_1, U_1)$
-* $X_{n+1} = \phi(X_{n}, U_n)$
+* $X_{n+1} = \phi(X_{n}, U_n).$
+
+Sometimes such a construction is called a random function representation of a Markov chain, see also Propp and Wilson [(1996)](https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291098-2418%28199608/09%299%3A1/2%3C223%3A%3AAID-RSA14%3E3.0.CO%3B2-O). 
+
 
 We consider the following example of this theory in R.  We will code everything in terms of uniform random variable, even though it is not necessary in R.
 
@@ -358,20 +361,14 @@ Hence the result follows from our first assertion.
 
 
 
+# Endnotes
 
+* For more on Doeblin,  see Lindvall [(1991)](https://www.jstor.org/stable/2244467?seq=3).
+* Doeblin also considered non-homogeneous Markov chains, see Cohn [(1981)](https://www.jstor.org/stable/1426690).
 
+<br>
 
-
-
-
-
-
-
-
-
-
-
-#  Version: `r format(Sys.time(), '%d %B %Y')`
+* Version: `r format(Sys.time(), '%d %B %Y')`
 * [Rmd Source](https://tsoo-math.github.io/ucl/markov-c.Rmd)
 
 

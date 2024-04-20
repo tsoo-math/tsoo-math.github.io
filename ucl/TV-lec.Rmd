@@ -1,14 +1,14 @@
 ---
 title: "Coupling and total variational distance"
 output:
-  bookdown::pdf_document2:
-    keep_tex: yes
+  bookdown::html_document2: default
   bookdown::word_document2:
     toc: yes
   html_document:
     toc: yes
     df_print: paged
-  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
   pdf_document:
     toc: yes
 ---
@@ -214,8 +214,16 @@ $$d_{TV}(X, Y)  = d_{TV}(X', Y) \leq 2\mathbb{P}(X' \not= Y )= \frac{2}{7}.$$
 We saw some basics of how coupling can be used as a tool in probability theory and in particular, how it can be used the bound the total variational distance between two random variables.
 
 
-#   Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/TV-lec.Rmd)
+# Endnotes
+
+* For the relations  between total variational distance and other related distances on distributions and random variables see Gibbs and Su [(2002)](https://www.jstor.org/stable/1403865).
+
+* For more information on coupling see Lindvall [(1992)](https://zbmath.org/1013.60001).
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/TV-lec.Rmd)
 
 
 <br>

@@ -224,8 +224,10 @@ z
 ```
 Compare with page 10!
 
-##   Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/coupling-from-past.Rmd)
+## Endnotes
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/coupling-from-past.Rmd)
 
 
 

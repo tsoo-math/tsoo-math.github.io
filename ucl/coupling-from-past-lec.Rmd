@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Sometimes in order to sample/simulate from a distribution $\pi$, we cook up a Markov chain $X$ so that $\pi$ is the stationary distribution.  There are many reasons why we may need/want to do this, since we may not have enough information about $\pi$ to directly sample from it, but we may still be able to cook up a Markov chain where $\pi$ is the stationary distribution.  We run the Markov chain, and for large times $n$, we know that the $X_n$ will have law close to $\pi$.  We saw a version this procedure with the Gibbs sampler in
 [Homework 3, Question 4](https://tsoo-math.github.io/ucl/QHW3.html)
 
-[Coupling from the past](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O) is an *exact* method of sampling $\pi$ introduced by Propp and [Wilson](http://www.dbwilson.com/exact/).   In some applications, theoretical and applied, exactness is important. 
+[Coupling from the past](https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1098-2418(199608/09)9:1/2%3C223::AID-RSA14%3E3.0.CO;2-O) is an *exact* method of sampling $\pi$ introduced by Propp and Wilson.   In some applications, theoretical and applied, exactness is important. 
 
 
 # All trains go to London?

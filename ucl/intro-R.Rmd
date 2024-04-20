@@ -116,11 +116,13 @@ Here the function sincos takes an input  $x$.  It is sometimes useful have funct
 # Basic programming in R
 
 We will introduce basic programming in R with the following exercise and will illustrate how to write a *while* loop in R.
-<br>
+
+
 ```{exercise}
 By running simulations in R, approximate the average number of  rolls of a fair dice it takes before you see a 6.
 ```
-<br>
+
+
 ```{solution}
 We make a function *numrolls* which counts how many times we need to roll a dice until we see a $6$.  Then we use the *replicate* command to repeat this function many time, and take the average.
 ```
@@ -145,7 +147,8 @@ In the next exercise, we illustrate how to write a *for* loop.
 ```{exercise}
 Define a function that tells you whether a positive integer is prime or not.
 ```
-<br>
+
+
 ```{solution}
 Let $n$ be an integer.  We first recall that $d$ is a divisor of $n$ if  there exists an integer $c$ such that $ n = cd$.  An  integer $n \geq 2$ is prime if it only divisors are $1$ and $n$.   R has a built in remainder function, which for nonnegative integers $a,b$ outputs the remainder in the sense of elementary school, when $a$ is divided by $b$.  Using the remainder function we define the *isprime* function, and use it spit out the prime numbers up to 500.
 

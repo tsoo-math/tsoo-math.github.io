@@ -43,26 +43,30 @@ If $P$ is a transition matrix, one may think of $P^n$ as the matrix with entries
 <br>
 
 ```{exercise, Name="Matrix multiplication"}
-Let $G=(V,E)$ be a   finite directed graph with vertices $V$ and edges $E$, here we allow the possibility of multiple edges and loops.    Let $A$ be the adjacency matrix for $G$ so that $$A_{ij}=\text{`the number of edges from $i$ to $j$'},$$   
+Let $G=(V,E)$ be a   finite directed graph with vertices $V$ and edges $E$, here we allow the possibility of multiple edges and loops.    Let $A$ be the adjacency matrix for $G$ so that 
+$$A_{ij}=\text{the number of edges from $i$ to $j$,}$$   
 for each $i,j \in V$.   Recall that a path of length $n$ from $i$ to $j$ is given by a sequence of vertices $i=v_1, v_2, \ldots, v_{n-1},v_{n}=j$ such that $(v_i, v_{i+1}) \in E$.    Show that the number for paths of length $n$ from $i$ to $j$ is given by $A^n_{ij}$ that is the $(i,j)$ entry in the matrix $A^n$.  
 ```
-<br>
+
+
 ```{solution}
-Let $$\rho_{ij}(n) =   \text{`the number of paths of length $n$ from $i$ to $j$'}.$$
+Let $$\rho_{ij}(n) =   \text{the number of paths of length $n$ from $i$ to $j$}.$$
 Clearly the result holds the case $n=1$.  For induction, assume the result the case general $n \geq 1$.  Observe that any path of length  $n+1$ from $i$ to $j$, must consists of a path of length $n$ which from $i$ to $k$ and a path of length $1$ from $k$ to $j$, for some $k \in V$.   Thus 
 \begin{eqnarray*}
  \rho_{ij}(n+1) &=& \sum_{k \in V} \rho_{ik}(n)\rho_{jk}(1) \\
 &=&\sum_{k \in V} A^n_{ik}A_{kj} = A^{n+1}_{ij}.
 \end{eqnarray*}
 ```
-<br>
+
+
 ```{lemma, Name="Some more matrix multiplication"}
 Let $P$ be the transition matrix for a Markox chain $X$.  Consider the matrix $P^n$, where we denote its entries via $P^n_{ij} = p_{ij}(n).$
   
 * We have that  $p_{ij}(n) = \mathbb{P} (X_n=j \ | \ X_0=i)$.
 * If $\lambda$ is the initial distribution of $X$, then $\lambda P^n$ gives the law of $X_n$. 
 ```
-<br>
+
+
 ```{proof}
 It is easy to verify that
 $$ \mathbb{P} (A \cap B | C) = \mathbb{P} (A | B \cap C) \mathbb{P} (B |C)$$
@@ -88,7 +92,9 @@ Finally if $X_0$ has law $\lambda$ given as a row vector, then
 &=&  (\lambda P^n)_j
 \end{eqnarray*}
 ```
-<br>
+
+
+
 ```{exercise}
 Let $P$ be the transition matrix on three states $\{1,2,3\}$ given by
 \begin{equation*}
@@ -107,7 +113,7 @@ Suppose that $X$ is a Markov chain, and suppose $X_0$ has law $(1/3, 1/3, 1/3)$.
   * If you change the initial distribution for $X_0$, for large $n$, what effect does this have on the distribution $X_n$
 ```  
 
-<br>
+
 ```{solution}
 We use R of course.  The computations are easy to do in R.  From the form of $P^n$, for large $n$ it will be obvious that the initial distribution is forgotten.
 ```
@@ -145,11 +151,13 @@ P =
 \end{pmatrix}
 \end{equation*}
 Find any stationary distributions for $P$.  What do you see?
+```
 
-  <br>
   
 ```{solution}
 Again we use R.   We need to do some normalizing, as linear algebra does not know we are doing statistics.  We will see the same repeated vector that appeared in $P^n$ from the previous part.
+```
+
  ```{r}
  P <- matrix(c(1/3, 1/3, 1/3, 1/4, 1/4,1/2, 1/8, 1/4, 5/8), nrow =3)
  P <- t(P)
@@ -162,11 +170,11 @@ EE
 F= EE /sum(EE)
 F
 ```
-<br>
+
 
 One obstruction to the existence of a stationary distribution is periodicity; think of a Markov chain that can only enter a state $i$ at even times. Another obstruction occurs if the Markov chain has countably many states and it drifts away with positive probability.   A Markov chain can also have multiple stationary distributions if it has absorbing states, that is states from which it cannot leave once it enters, or if it has a subset of states from which it enters it cannot leave.  
 
-## Playing with examples
+## Playing with a class of examples
 
 The following exercise gives us an easy class of examples to experiment with.
 
@@ -188,7 +196,20 @@ $$ (\pi P)_j = \sum_{i \in V} \pi_i p_{ij} = \frac{1}{2|E|} \sum_{i \in V} \math
 
 We reviewed the basics of the Markov property and transition matrices.  We saw how to compute stationary distributions as a problem of linear algebra.   We also introduced the class of examples given by random walk on a finite graph.      
 
+# Endnotes
+
+* For background and history of Markov chains see Seneta [(1996)](https://www.jstor.org/stable/1403785?seq=5), where we see that Markov (1906) not only introduced Markov chains, but also proved a corresponding weak law of large numbers.
+
+* Standard references include:
+  * Grimmett and Stirzker [(2001)](https://zbmath.org/1015.60002)
+  * Norris [(1997)](https://zbmath.org/0873.60043)
+  * Levin, Peres, and Wilmer [(2017)](https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf)
+
+
+
+
 <br>
+
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
 * [Rmd Source](https://tsoo-math.github.io/ucl/reviewMC.Rmd)
