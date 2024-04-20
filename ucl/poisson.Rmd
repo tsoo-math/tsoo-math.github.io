@@ -286,8 +286,17 @@ plot(x,y, xlim=c(0,1), ylim=c(0,1))
 * We saw how to simulate Poisson point processes on an interval and higher dimensions   
 * We thought about how about how all these characterizations are equivalent, and the suitability of the Poisson process for modelling.   
 
-#  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/poisson.Rmd)
+# Endnotes
+
+* Standard references include:
+  * Cox and Isham [(1980)](https://www.taylorfrancis.com/books/edit/10.1201/9780203743034/point-processes-cox-valerie-isham)
+  * Kingman [(2005)](https://onlinelibrary.wiley.com/doi/10.1002/0470011815.b2a07042)
+  * Kingman [(2006)](https://www.math.uni.wroc.pl/~pms/files/26.1/Article/26.1.5.pdf)
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/poisson.Rmd)
 
 
 

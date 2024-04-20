@@ -122,8 +122,17 @@ where $\rho_1 = \lambda/\mu_1$ and $\rho_2 = \lambda/\mu_2$.
   * See also [Question 5](https://tsoo-math.github.io/ucl/ica3-stat9-sols.html)
 
 
-##  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-queuestwo.Rmd)
+## Endnotes
+
+* For more information see Grimmett and Stirzker [(2001)](https://zbmath.org/1015.60002).
+* For history on queuing see Kingman [(2009)](https://link.springer.com/article/10.1007/s11134-009-9147-4).
+
+
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/intro-queuestwo.Rmd)
 
 
 

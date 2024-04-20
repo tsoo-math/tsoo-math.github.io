@@ -101,12 +101,22 @@ Note that we obtained a similar expression for discrete time Markov chains at th
 
 *  We introduced renewal-reward processes and gave a couple of applications
 
-*   
 
 
 
-#  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewalthree.Rmd)
+
+## Endnotes
+
+* Standard references include:
+
+  * Doob [(1948)](https://www.ams.org/journals/tran/1948-063-03/S0002-9947-1948-0025098-8/S0002-9947-1948-0025098-8.pdf)
+  * Grimmett and Stirzker [(2001)](https://zbmath.org/1015.60002)
+  * Cox [(1962)](https://zbmath.org/0103.11504)
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewalthree.Rmd)
 
 
 

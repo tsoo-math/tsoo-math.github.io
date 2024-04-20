@@ -3060,18 +3060,21 @@ var loadDeck = function(event) {
   });
 };
 
-if (document.readyState !== "loading" &&
-    document.querySelector('slides') === null) { 
-  // if the document is done loading but our element hasn't yet appeared, defer
-  // loading of the deck
-  window.setTimeout(function() {
-    loadDeck(null);
-  }, 0);
-} else {
-  // still loading the DOM, so wait until it's finished
-  document.addEventListener("DOMContentLoaded", loadDeck);
-}
+if (!window.Shiny) {
+  // If Shiny is loaded, the slide deck is initialized in ioslides template
 
+  if (document.readyState !== "loading" &&
+      document.querySelector('slides') === null) {
+    // if the document is done loading but our element hasn't yet appeared, defer
+    // loading of the deck
+    window.setTimeout(function() {
+      loadDeck(null);
+    }, 0);
+  } else {
+    // still loading the DOM, so wait until it's finished
+    document.addEventListener("DOMContentLoaded", loadDeck);
+  }
+}
 
 
 </script>
@@ -3228,9 +3231,17 @@ ul.task-list{list-style: none;}
 <li><p>See also <a href='https://tsoo-math.github.io/ucl/ica3-stat9-sols.html' title=''>Question 5</a></p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Version: 04 December 2023</h2></hgroup><article  id="version-04-december-2023">
+</article></slide><slide class=""><hgroup><h2>Endnotes</h2></hgroup><article  id="endnotes">
 
 <ul>
+<li>For more information see Grimmett and Stirzker <a href='https://zbmath.org/1015.60002' title=''>(2001)</a>.</li>
+<li>For history on queuing see Kingman <a href='https://link.springer.com/article/10.1007/s11134-009-9147-4' title=''>(2009)</a>.</li>
+</ul>
+
+<p><br></p>
+
+<ul>
+<li>Version: 20 April 2024</li>
 <li><a href='https://tsoo-math.github.io/ucl/intro-queuestwo.Rmd' title=''>Rmd Source</a></li>
 </ul>
 
@@ -3261,6 +3272,11 @@ ul.task-list{list-style: none;}
        window.jQuery(document).on('slideenter', function(e) {
          window.jQuery(e.target).trigger('shown');
       });
+    }
+    if (window.Shiny) {
+      // Initialize slides when this script appears on the page, since it
+      // indicates that the <slides> markup has been fully loaded.
+      window.loadDeck();
     }
   })();
 </script>

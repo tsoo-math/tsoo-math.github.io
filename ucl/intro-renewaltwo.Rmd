@@ -260,8 +260,24 @@ $$\lim_{t \to \infty} \phi(t) = \lim_{t \to \infty} H(t) + \frac{1}{\mu} \int_0 
 *  We worked with the basic mechanics of renewal equations.  
 
 
-#  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewaltwo.Rmd)
+## Endnotes
+
+
+
+
+<br>
+
+* Standard references include:
+
+  * Doob [(1948)](https://www.ams.org/journals/tran/1948-063-03/S0002-9947-1948-0025098-8/S0002-9947-1948-0025098-8.pdf)
+  * Grimmett and Stirzker [(2001)](https://zbmath.org/1015.60002)
+  * Cox [(1962)](https://zbmath.org/0103.11504)
+
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/intro-renewaltwo.Rmd)
 
 
 

@@ -242,8 +242,16 @@ $m_{ij} = -\frac{q_{ij}}{q_{ii}}$ for $i \not = j$ and $m_{ii} = 0$
 
 
 
-#  Version: `r format(Sys.time(), '%d %B %Y')`
-  * [Rmd Source](https://tsoo-math.github.io/ucl/continuous-timeMC.Rmd)
+## Endnotes
+
+* Standard references include:
+  * Grimmett and Stirzker [(2001)](https://zbmath.org/1015.60002)
+  * Norris [(1997)](https://zbmath.org/0873.60043)
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/ucl/continuous-timeMC.Rmd)
 
 
 
