@@ -69,7 +69,7 @@ $$\mathbb{E} X = \mathbb{E} X' \geq \mathbb{E} Y' = \mathbb{E} Y.$$
 
 * For more information on stochastic domination see Lindvall [(1999)](https://projecteuclid.org/journals/electronic-communications-in-probability/volume-4/issue-none/On-Strassens-Theorem-on-Stochastic-Domination/10.1214/ECP.v4-1005.full).
 
-* Stochastic domination plays a key role in the Karlin-Rubin theorem [(1956)](https://www.jstor.org/stable/2236994), which is needed to extend the Neyman–Pearson lemma for composite hypotheses; that is, even testing $H_0: p=1/2$ against $H_1: p< \tfrac{1}{2}$, in the simple case of Bernoulli trials.
+* Stochastic domination plays a key role in the Karlin-Rubin theorem [(1956)](https://www.jstor.org/stable/2236994), which is needed to extend the Neyman–Pearson lemma for composite hypotheses; that is, even testing $H_0: p=1/2$ against $H_1: p< \tfrac{1}{2}$, in the simple case of Bernoulli trials. See also Lehmann [(1955)](https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-26/issue-3/Ordered-Families-of-Distributions/10.1214/aoms/1177728487.full) and Lehmann and Romano [(2002)](https://zbmath.org/1491.62003).
 
 <br>
 
