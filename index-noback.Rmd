@@ -8,15 +8,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-*  [My information at UCL Statistical Science](https://www.ucl.ac.uk/statistics/dr-terry-soo)
-
 
 
 * [Research and publications](https://tsoo-math.github.io/m3/research.html)
 
 
 
-* [A photo of me, by modern art, in Jerusalem](https://tsoo-math.github.io/m3/tsrain.jpg)
+* [A photo of me at UCL](https://tsoo-math.github.io/terry-ucl.jpeg)
 
 
 * [A photo of me, at a mountain with the same name as me, in Beijing](https://tsoo-math.github.io/m3/terrysoo.htm)
