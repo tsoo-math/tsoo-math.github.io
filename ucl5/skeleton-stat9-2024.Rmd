@@ -1,0 +1,134 @@
+---
+title: Links for Stat 0009
+author: 
+date:  Fall 2024, under construction
+output: html_document
+---
+
+
+
+# General information
+
+* [Module outline](https://tsoo-math.github.io/ucl4/outline-stat9-2023.html)
+
+* [Location and time](https://timetable.ucl.ac.uk/tt/moduleTimet.do?firstReq=Y&moduleId=STAT0009&acadYearFl=N)
+
+* [Live in-person sessions](https://tsoo-math.github.io/ucl4/live-stat9-2023.html)
+
+* [Homework](https://tsoo-math.github.io/ucl4/hw-stat9-2023.html)
+
+* [UCL Calender 2024-2025](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2024_25_1.pdf)
+
+
+*  [Materials from previous years](https://tsoo-math.github.io/ucl4/skeleton-stat9-2023.html)
+
+*  [Recorded lectures on YouTube](https://tsoo-math.github.io/ucl2/YT.html)
+
+
+
+# Lecture notes, by week (tenative)
+
+## Week 6 
+
+* [Introduction to R](https://tsoo-math.github.io/ucl/intro-R.html)
+  * [Introduction to Quarto](https://tsoo-math.github.io/ucl3/quarto.html)
+*  [Introduction to Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/intro-to-python.ipynb/%3Fflush_cache%3Dtrue)
+*  [Basic probability and statistics via R](https://tsoo-math.github.io/ucl/prob-viaR.html)
+*  Watch videos: Introduction to R and Probability via R
+
+
+## Week 7
+
+*  [Random variables: theory and practice](https://tsoo-math.github.io/ucl/randomTP.html)
+*  [Coupling and total variational distance](https://tsoo-math.github.io/ucl/TV-lec.html)
+*  [You always knew coupling](https://tsoo-math.github.io/ucl/coupling-rev.html)
+*  [Review of MC](https://tsoo-math.github.io/ucl/reviewMC.html)
+*  Watch videos:  Random variables: theory and practice; Coupling and total variational distance; Review of Markov chains.
+
+
+
+## Week 8
+
+*  [Making Markov chains converge](https://tsoo-math.github.io/ucl/markov-c.html)
+* More advance material (can postpone)
+  *  [Coupling from the past](https://tsoo-math.github.io/ucl/coupling-from-past-lec.html)
+*  Watch videos:  
+    - Making Markov chains converge
+    - Coupling from the past (can postpone)
+
+
+
+
+
+## Week 9
+
+*  [Poisson processes](https://tsoo-math.github.io/ucl/poisson.html)
+*  [Poisson processes, worked exercises](https://tsoo-math.github.io/ucl/poisson-ex.worked.html)
+*  Watch videos: Poisson processes
+
+
+
+
+
+## Week 10
+
+* [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
+ 
+
+*  [Continuous-time Markov chains](https://tsoo-math.github.io/ucl/continuous-timeMC.html)
+*  Watch videos:  Continuous-time Markov chains
+* [ICA1 2022](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html)
+* [ICA 1 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html)
+
+
+
+## Week 11 (Reading week)
+
+* We had a live session that was recorded.
+
+
+## Week 12
+
+* [Introduction to renewal theory](https://tsoo-math.github.io/ucl/intro-renewal.html)
+* Watch videos:  Introduction to renewal theory (2 videos)
+* ICA 1 due 
+
+
+
+## Week 13
+
+* [Introduction to renewal theory II](https://tsoo-math.github.io/ucl/intro-renewaltwo.html)
+* [Introduction to renewal theory III](https://tsoo-math.github.io/ucl/intro-renewalthree.html)
+*  Watch the rest of the renewal theory videos (5 +2)
+
+
+
+## Week 14
+
+* [Introduction to queues](https://tsoo-math.github.io/ucl/intro-queues.html) 
+* Watch videos: Introduction to queues (3 videos)
+
+## Week 15
+
+* [Introduction queues II](https://tsoo-math.github.io/ucl/intro-queuestwo.html)
+* Watch videos:  Introduction to queues (2 videos)
+* [ICA2 2023--released](https://tsoo-math.github.io/ucl4/2023-ica2-project.html) 
+
+## Week 16
+
+* [ICA3 2023--released](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html)
+  * [ICA3 2022](https://tsoo-math.github.io/ucl3/2022-ica3-stat9-release.html)
+  * [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) 
+    * [sols](https://tsoo-math.github.io/ucl3/2021-ica3-stat9.html)  
+* [Bonus C++](https://tsoo-math.github.io/ucl4/C.html)
+* Revisions, wrap up.
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>
+<br>
