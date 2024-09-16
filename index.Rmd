@@ -19,6 +19,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br>
 
+* [Dynamics.Day@UCL](https://tsoo-math.github.io/Fitzrovia.html)
+
+<br>
+
 *  [A photo of me, outside UCL Statistical Science](https://tsoo-math.github.io/Terry-ucl-stats.jpeg)
 
 
