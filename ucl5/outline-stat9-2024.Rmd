@@ -1,0 +1,95 @@
+---
+title: "Outline"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Stochastic systems module outline 
+ [Terry Soo](https://terrysoo.com) 
+
+ [Fall 2024](https://tsoo-math.github.io/ucl5/skeleton-stat9-2024.html) 
+ 
+
+
+# Where and when
+
+This module has a face-to-face in-person [live](https://tsoo-math.github.io/ucl5/live-stat9-2024.html) session running [Mondays 14:00 - 16:00](https://timetable.ucl.ac.uk/tt/moduleTimet.do?firstReq=Y&moduleId=STAT0009&acadYearFl=N)
+
+
+
+# Prerequistes
+
+This module will assume some experience with the basics of probability and statistics, and Markov chains from UCL Stat0007.  We will make extensive use the software program R  and Python.  No prior experience with Python will be assumed, and usually you will be offered a choice between R or Python.
+
+# Course content
+
+- Quick review of probability and statistics from the perspective of R and Python.
+
+- Markov chains: convergence to stationarity, Doeblin coupling, coupling from the past, Markov chain Monte Carlo.
+
+- Point process: Poisson processes, spatial Poisson point processes, Continuous-time Markov chains, semi-Markov processes.
+
+- Renewal theory: renewal theorems, Little’s theorem.
+
+- Queues: stationary distributions, blow-up, waiting times.
+
+- Additional topics.
+
+# Formal assessments 
+
+We will have 3 ICAs. Pay no attention to the ordering of ICA 2 and ICA 3.
+
+The first [ICA1, 2023 version](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html) (30 %) will be a regular assignment given around the middle of the term to make sure we have learned the basics.
+
+The third [ICA3, 2023 version](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html) (30 %) will be centered around more involved problems that will require a synthesis of ideas from throughout the module. This may be done in groups. Due in 2025
+
+The second [ICA2, 2023 version](https://tsoo-math.github.io/ucl4/2023-ica2-project.html) (40 %) will be a group project based using the knowledge learned throughout the course. Due in 2025. Some examples include:
+
+- construct toy models to explain and model random behaviour in our world;
+- critically examine evaluate theoretical and practical models that have been proposed;
+- other suitable student proposed projects are also possible.
+
+The ICAs will have a coding component that would need to be done in R or Python.   Assignments are to be typeset, in a favour of Markdown/Latex, using RMarkdown (or Quatro) or Juptyer notebook. 
+
+
+# Informal assessments and feedback
+
+Throughout the module students will have the chance to work on various exercises that will test and build their understanding of the material.
+
+# ChatGPT and other related tools
+
+* The use of ChatGPT and related tools with regards to ICA1 and ICA3 is *not* permitted.  
+* The use of ChatGPT and related tools in assisting in the project ICA2 is permitted, *in accordance with UCL's* [policy](https://www.ucl.ac.uk/students/exams-and-assessments/assessment-success-guide/engaging-ai-your-education-and-assessment).   
+  * Do not use these tools to generate your essay or entire paragraphs.
+  * Do not use these tools to generate large blocks of code, and to avoid the exercise of understanding and implementing algorithms.  
+
+# Module delivery
+
+This module will require you to watch pre-recorded videos and study the lecture notes.  The class will consists of some traditional lecture components and more interactive activities.  It is important to come to class prepared to work and think, and it maybe helpful to bring a laptop.
+
+- Pre-recorded lectures, made available online.
+- Lecture notes and slides made available online
+- Live in-person workshops that review some aspects of the material in more detail.
+- Live in-person lectures that will help to introduce the required material for the week.
+
+As per UCL guidance, on accessibility, most materials will be provided in html format.  Source files will usually be made available, and it is possible to generate pdf files from these source files; another way to generate pdf is to as a print-as-pdf option.
+
+
+#  Additional resources
+
+All of the teaching materials from [Fall 2023](https://tsoo-math.github.io/ucl4/skeleton-stat9-2023.html), [Fall 2022](https://tsoo-math.github.io/ucl3/skeleton-stat9-2022.html), [Fall 2021](https://nbviewer.org/url/tsoo-math.github.io/ucl2/skeleton2021.ipynb), and [Fall 2020](https://tsoo-math.github.io/ucl/skeleton.html) are available online.
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>
+<br>
+
