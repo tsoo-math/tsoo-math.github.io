@@ -20,6 +20,16 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 * We discussed the basic module mechanics and lecture-workshop style.
 * We discussed the following [problem](https://arxiv.org/abs/2409.00732) that was on [Twitter](https://x.com/littmath/status/1769044719034647001)--due to Daniel Litt.
 * We discussed the law of large numbers and its role in simulations.
+
+# Week 7
+
+* We reviewed Monte Carlo integration
+* We reviewed sample spaces and uniform random variables
+* We discussed von Neumann's rejection sampling
+* We introduced coupling.  [Bond percolation](https://mathworld.wolfram.com/BondPercolation.html) was used to demonstrate the usefulness of coupling.  We mentioned the following related optional topics.
+  * [Bunkbed conjecture is false](https://en.wikipedia.org/wiki/Bunkbed_conjecture)
+  * [Couplas and wall street](https://www.pure.ed.ac.uk/ws/files/15459604/Formula_final2.pdf)
+
  
 # Other notes
 
