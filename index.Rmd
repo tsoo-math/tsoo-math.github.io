@@ -19,7 +19,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <br>
 
-* [Dynamics.Day@UCL](https://tsoo-math.github.io/Fitzrovia.html)
 
 <br>
 
@@ -42,6 +41,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * [Poster Competition 2023](https://tsoo-math.github.io/ucl2/grst/2023-poster.html)
 
+
+* [Fitzrovia Forum](https://tsoo-math.github.io/Fitzrovia.html)
 <br>
 
 *    [Find me](https://tsoo-math.github.io/find.html)
