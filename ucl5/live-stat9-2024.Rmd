@@ -32,7 +32,14 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 # Week 8
 
+* We reviewed and introduced Markov chains and some proof techniques with the worksheet.  We also discussed Doeblin's coupling and its role in proving convergence.  We also briefly mentioned an alternative approach based in linear algebra:  [Perron–Frobenius theorem](https://doi.org/10.1080/00029890.2021.1944755).
+
+
 * [Worksheet](https://tsoo-math.github.io/ucl5/week8-2024-inclass.html)
+
+  * [Partial sols](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.html)
+
+  
 
  
 # Other notes
