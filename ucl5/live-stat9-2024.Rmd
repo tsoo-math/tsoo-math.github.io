@@ -41,7 +41,11 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 # Week 9
 
+* We introduced Poisson processes and discussed the Metropolis algorithm.
+
+* [See Q1](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html)  
 * [Worksheet](https://tsoo-math.github.io/ucl4/week11-2023-inclass.html)
+  * [Parital solutions](https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html)
 
  
 # Other notes
