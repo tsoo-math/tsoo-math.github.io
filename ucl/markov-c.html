@@ -400,11 +400,11 @@ steps &lt;- function(n){
 }
 
 steps(100)</code></pre>
-<pre><code>##   [1] 4 4 4 4 5 5 5 2 1 2 1 2 5 2 5 1 3 1 2 1 3 1
-##  [23] 3 1 3 4 4 5 1 3 1 2 5 5 5 2 5 2 5 2 5 5 1 2
-##  [45] 5 5 5 2 1 2 1 3 4 5 1 2 1 3 4 4 5 1 2 1 3 1
-##  [67] 3 1 2 5 5 2 5 2 1 2 1 3 4 4 4 4 4 5 2 5 5 2
-##  [89] 1 3 1 3 1 2 5 2 5 1 2 1 3</code></pre>
+<pre><code>##   [1] 5 1 2 5 2 5 1 2 5 2 1 2 5 1 2 5 1 2 5 1 3 4
+##  [23] 5 1 3 4 4 4 4 4 5 2 5 5 5 5 2 1 3 4 5 2 5 1
+##  [45] 3 1 3 4 4 4 5 5 2 5 1 2 5 2 1 3 4 5 5 1 3 4
+##  [67] 5 5 2 1 3 1 3 1 2 5 1 2 1 2 5 5 5 2 1 3 4 5
+##  [89] 1 2 5 1 2 1 3 4 4 4 4 4 4</code></pre>
 </div>
 <div id="aperiodic-and-irreducible-markov-chains" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Aperiodic and irreducible Markov chains</h1>
@@ -506,22 +506,22 @@ coupled &lt;- function(z){
 }    
 coupled(stepsind())</code></pre>
 <pre><code>##   [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12] [,13] [,14]
-## x    1    2    1    3    4    4    4    4    5     5     5     1     3     4
-## y    5    1    3    1    2    5    1    3    4     5     5     1     3     4
-##   [,15] [,16]
-## x     5     1
-## y     5     1</code></pre>
+## x    1    2    1    2    1    2    5    2    1     2     5     5     1     3
+## y    5    1    3    4    4    4    4    4    4     4     5     5     1     3
+##   [,15] [,16] [,17]
+## x     4     4     4
+## y     4     4     4</code></pre>
 </div>
 <div id="bounds" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Bounds</h2>
 <p>We need to show that <span class="math inline">\(\mathbb{P}( T &gt;n) \to 0\)</span> as <span class="math inline">\(n \to \infty\)</span>. Let <span class="math inline">\(M\)</span> be so that <span class="math inline">\(P^M &gt;0\)</span>. Let <span class="math inline">\(\varepsilon = \min_{i,j \in S} p_{ij}(M)&gt;0\)</span>. Since <span class="math inline">\(X&#39;\)</span> and <span class="math inline">\(Z&#39;\)</span> are independent, we have <span class="math display">\[\mathbb{P}(X&#39;_M  = Z&#39;_M) = \sum_{j} \mathbb{P}(X_M&#39; = j)\mathbb{P}(Z_M&#39; = j) \geq \varepsilon \sum_{j} \mathbb{P}(X_M&#39; = j)= \varepsilon.\]</span></p>
 <p>Let <span class="math inline">\(k\)</span> be an integer. Then we have that<br />
-<span class="math display">\[\mathbb{P}(T &gt; kM) \leq (1- \varepsilon)^k.\]</span>
-::: {.theorem #unnamed-chunk-8 name=“Doeblin’s classical coupling”}
-If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are Markov chains with the same aperiodic irreducible transition matrix on a finite state space <span class="math inline">\(S\)</span>, then there exists <span class="math inline">\(M &gt;0\)</span> and <span class="math inline">\(\varepsilon &gt;0\)</span> such that
+<span class="math display">\[\mathbb{P}(T &gt; kM) \leq (1- \varepsilon)^k.\]</span></p>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-8" class="theorem"><strong>Theorem 4.1  (Doeblin&#39;s classical coupling) </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are Markov chains with the same aperiodic irreducible transition matrix on a finite state space <span class="math inline">\(S\)</span>, then there exists <span class="math inline">\(M &gt;0\)</span> and <span class="math inline">\(\varepsilon &gt;0\)</span> such that
 <span class="math display">\[d_{TV}(X_n,Y_n) \leq 2 (1- \varepsilon)^{ \lfloor n/M \rfloor}.\]</span>
-Here <span class="math inline">\(M\)</span> and <span class="math inline">\(\epsilon\)</span> depends only on <span class="math inline">\(P\)</span>.<br />
-:::</p>
+Here <span class="math inline">\(M\)</span> and <span class="math inline">\(\epsilon\)</span> depends only on <span class="math inline">\(P\)</span>.</p>
+</div>
 </div>
 </div>
 <div id="stationarity" class="section level1" number="5">
@@ -626,7 +626,7 @@ Hence the result follows from our first assertion.</p>
 </ul>
 <p><br></p>
 <ul>
-<li>Version: 20 April 2024</li>
+<li>Version: 25 October 2024</li>
 <li><a href="https://tsoo-math.github.io/ucl/markov-c.Rmd">Rmd Source</a></li>
 </ul>
 <p><br>

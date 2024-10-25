@@ -91,7 +91,7 @@ Let $P$ be a transition matrix on the state space $S$.    The **period** of a st
 
 ```{lemma, name="Aperiodic transition matrices"}
  If $P$ is aperiodic transition matrix on a finite state space $S$, then there exists $M>0$ such that $p_{ii}(n) >0$ for all $i\in S$ and all $n \geq M$.  
- ```
+```
 
 The proof requires a bit of elementary number theory.  
 
@@ -229,7 +229,8 @@ We need to show that $\mathbb{P}( T >n) \to 0$ as $n \to \infty$.        Let $M$
 
 
 Let $k$ be an integer.  Then we have that  
-$$\mathbb{P}(T > kM) \leq (1- \varepsilon)^k.$$ 
+$$\mathbb{P}(T > kM) \leq (1- \varepsilon)^k.$$
+
 ```{theorem, name="Doeblin's classical coupling"}
 If $X$ and $Y$ are Markov chains with the same aperiodic irreducible transition matrix on a finite state space $S$, then there exists $M >0$ and $\varepsilon >0$ such that
 $$d_{TV}(X_n,Y_n) \leq 2 (1- \varepsilon)^{ \lfloor n/M \rfloor}.$$
