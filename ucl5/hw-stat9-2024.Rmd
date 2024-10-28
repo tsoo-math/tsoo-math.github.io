@@ -14,8 +14,8 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 # By [UCL week](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2024_25_1.pdf)
 
 * ICA1: Released 01/11/2024; Due 15/11/2024
-* ICA2: Released 06/12/2023; Due 07/03/2024
-* ICA3: Released 13/12/2022; Due 07/02/2024
+* ICA2: Released 06/12/2024; Due 07/03/2025
+* ICA3: Released 13/12/2024; Due 07/02/2025
 
 
 ## Tenative schedule, may be updated

@@ -47,6 +47,11 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 * [Worksheet](https://tsoo-math.github.io/ucl4/week11-2023-inclass.html)
   * [Parital solutions](https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html)
 
+
+
+# Week 10
+
+* We discussed the procedures for ICA1 and went over some of the questions from [ICA1-2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html).
  
 # Other notes
 

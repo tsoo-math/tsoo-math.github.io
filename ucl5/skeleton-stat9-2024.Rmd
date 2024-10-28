@@ -72,11 +72,13 @@ output: html_document
 
 ## Week 10
 
-* [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
+* **ICA 1 2024- To be released**
  
 
 *  [Continuous-time Markov chains](https://tsoo-math.github.io/ucl/continuous-timeMC.html)
 *  Watch videos:  Continuous-time Markov chains
+
+* [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
 * [ICA1 2022](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html)
 * [ICA 1 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9-release.html)
 
@@ -84,7 +86,6 @@ output: html_document
 
 ## Week 11 (Reading week)
 
-* We had a live session that was recorded.
 
 
 ## Week 12
