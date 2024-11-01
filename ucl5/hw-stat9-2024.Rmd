@@ -39,11 +39,12 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
   - [Exercises](https://tsoo-math.github.io/ucl/QHW4.html)
     - [Solutions in R](https://tsoo-math.github.io/ucl/QHW4-sol.html)
     - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week9.ipynb)
-* Week 10 (28 Oct - 3 Nov):   
-  * [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)
+* Week 10 (28 Oct - 3 Nov):  
+  * [ICA1 2024](https://tsoo-math.github.io/ucl5/2024-ica1-stat9-release.html)
   - [Continuous-time MC exercises](https://tsoo-math.github.io/ucl/QHW5.html)
       - [Solutions in R](https://tsoo-math.github.io/ucl/QHW5-sols.html)
       - [Solutions in Python](https://nbviewer.jupyter.org/url/tsoo-math.github.io/ucl2/2021-hw-week10.ipynb)
+  * [ICA1 2023](https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html)      
   - [ICA1 2022](https://tsoo-math.github.io/ucl3/2022-ica1-stat9-release.html) 
     * [ICA1 2022-sols](https://tsoo-math.github.io/ucl3/2022-ica1-stat9.html)
         * [ICA1-sols 2021](https://tsoo-math.github.io/ucl2/2021-ica1-stat9.html)
