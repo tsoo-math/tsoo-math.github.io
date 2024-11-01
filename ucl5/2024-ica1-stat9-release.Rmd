@@ -1,0 +1,122 @@
+---
+title: "Stat0009 ICA1 (2024)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# library(reticulate)
+# py_install("matplotlib")
+```
+
+
+
+# Introduction
+
+* Made available UCL Week 10, 1 Nov 2024.
+* Due 15 November 2024,  13:00 London time.
+* You are to work by yourself. 
+* This ICA consists of 4 questions, worth 40 points;
+  * another 5 points will be given based on presentation, so that the total available points is **45** 
+  * You **must**  hand in the html file **and**    the Rmd/Qmd/ipynb source file.
+* This ICA is worth 30 percent of your grade for this module.
+* Some parts of the questions will require you to write and run R/Python code.
+* The ICA must be completed in R Markdown/Quarto/Juptyer Notebook and typeset using  Markdown with Latex code, just like the way our module content is generated.  You can choose to use either R or Python.
+
+* As usual, part of the grading will depend on the clarity and presentation of your solutions.
+*  You are to do this assignment by yourself, without any help from others.
+*  You are allowed to use any materials and code that was presented so far.
+*  Do not search the internet for answers to the ICA.
+*  Do not use ChatGPT or similar AI type assistance.
+*  Do not use any fancy code or packages imported from elsewhere.
+*  Conduct yourselves honorably.
+
+
+
+##  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I am aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. I have read the guidelines in the student handbook and understand what constitutes plagiarism. I hereby affirm that the work I am submitting for this in-course assessment is entirely my own.  Moreover, I confirm that I have not used ChatGPT or other AI type tools to complete this assignment. 
+
+
+
+## Anonymous Marking 
+
+Please do **not** write your name anywhere on the submission. Please include only your **student number** as the proxy identifier.
+
+
+
+
+
+# Questions
+
+
+## 1.) A random point on a disc [10 points]
+
+Suppose someone writes the following R code to generate a random point $Z=(X,Y)$ on $\mathbb{R}^2$:
+```{r}
+R = 2*runif(1)
+theta = 2*pi*runif(1)
+X = R*cos(theta)
+Y = R*sin(theta)
+```
+  * Modify the code so that it can produce as many independent samples of $Z$ as you demand. [3 points]
+  * Modify the code so that it rejects samples that lie outside a square of side length $1$ centered at the origin.  Call this resulting random point $W$. [2 points]
+  * Demonstrate by simulations that $W$ is not uniformly distributed on the square. [3 points]
+  * Prove that $W$ is not uniformly distributed on the square. [2 points]
+
+*You may complete the question in Python, even though the above code was given in R*
+
+
+
+## 2.) Markov chains (I) [10 points]
+
+
+The sample output of a Markov chain is available [here](https://tsoo-math.github.io/ucl5/data-ica1.txt).  
+
+* Based **reasonably** on this output, generate and continue the Markov chain for another $50$ steps. [5 points]  
+
+* Explain why your procedure is reasonable and display the output of your generated $50$ steps. [5 points]
+
+
+
+## 3.) Markov chains (II) [10 points]
+
+Let $X$ and $Y$ be independent Markov chains on a finite state space $S = \{1,2,3\}$, with different transition matrices $P$ and $Q$, respectively.  Suppose that the entries of $P$ and $Q$ are all positive.  Also assume that $X_0=1$ and $Y_0=2$.    Let $T=\inf\{n \geq 1:  X_n = Y_n\}.$
+
+  * Prove that $\mathbb{E} T < \infty$. [4 points]
+  * Let $Y'_k = Y_k$ for all $0 \leq k \leq T$ and set $Y'_k = X_k$ for all $k > T$.  Is $(X,Y')$ a coupling of $X$ and $Y$?  Explain.  [3 points]
+  * Let $c_n = d_{TV}(X_n, Y_n)$.  
+    * Does $\lim_{n \to \infty}c_n$ exists?  Explain. [2 points]
+    * Can the limit be zero?  Explain. [1 point]
+
+## 4.) Poisson point processes [10 points]
+
+Suppose someone wants simulate a Poisson point process of intensity $2$ on the disc $D$ of radius $1$.  However, they always delete/ignore and  re-sample when they see that the computer returns zero points.  Let $\Pi$ represent the point process given by a *kept* sample. 
+  
+  * What is the expected number of points of $\Pi$? [5 points]
+  * What is the probability that $\Pi$ has no points inside the inscribed square $S \subset D$ of side length $\sqrt{2}$?  Provide a numerical answer to four decimal places. [5 points]
+  
+  
+  
+
+
+
+# Endnotes
+
+* [source](https://tsoo-math.github.io/ucl5/2024-ica1-stat9-release.Rmd)
+* Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
+
+<hr>
+<br>
+<br>
+<br>
