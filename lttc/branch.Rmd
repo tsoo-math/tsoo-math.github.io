@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-A **branching process** with **offspring** distribution $p$ on \mathbb{N}$ is a  Markov chain $Z = (Z_0, Z_1, \ldots)$ with state space $\mathbb{N}$,  where $Z_0=1$ with transitions given by
+A **branching process** with **offspring** distribution $p$ on $\mathbb{N}$ is a  Markov chain $Z = (Z_0, Z_1, \ldots)$ with state space $\mathbb{N}$,  where $Z_0=1$ with transitions given by
 $$\mathbb{P}(Z_{n+1} = t | Z_n =s) = \mathbb{P}(X_1 + \cdots + X_s = t),$$
-where $X_i$ are iid random variables with the distribution $p$. We will always assume that $p_i \not =1$ and $p_0 + p_1 <1$, which implies that the generating function $\hat{p}$ is strictly convex. We are concerned the **extinction** probability $q \in [0,1]$.   Notice that $\{ Z_n = 0 \} \subseteq \{ Z_{n+1} = 0 \}$ which is given by
+where $X_i$ are iid random variables with the distribution $p$. We will always assume that $p_i \not =1$ and $p_0 + p_1 <1$, which implies that the generating function $\hat{p}$ is strictly convex. We are concerned the **extinction** probability $q \in [0,1]$.   Notice that $\{ Z_n = 0 \} \subseteq \{ Z_{n+1} = 0 \}$, so that we have
 $$
 \begin{eqnarray*}
 \mathbb{P}(\lim_{n \to \infty} Z_n =0 ) &=& \mathbb{P}(\bigcup_{n=1}^{\infty} \{ Z_n = 0 \}) \\
@@ -20,6 +20,7 @@ $$
 &=& q.
 \end{eqnarray*}
 $$
+
 ## An analysis of the generating function
 
 Notice that $g_{Z_0}(s) = s$ and $f(s) := g_{Z_1}(s) = \hat{p}(s)$.  Set $f_n(s):= g_{Z_{n}}(s)$.  By the random sums lemma, we have that $f_{n+1}(s) := f_{n}(f(s))$, so that more generally, we have that $f_n(s)$ is given by a $n$-fold composition.
@@ -48,16 +49,16 @@ $$\mathrm{var}(Z_n) = n^2 \sigma^2.$$
 Let $p$ be the offspring distribution for a branching process $Z$.  Let $\mu = \mathbb{E}(Z_1)$ and let $q \in [0,1]$ be the extinction probability.   
 
 * If $\mu \leq 1$, then $q=1$.
-* If $\mu >1$, then $q \in (0,1)$ is the unique solution to $\hat{p}(s) =s$ in the open interval $(0,1)$.
+* If $\mu >1$, then $q \in (0,1)$ is the unique solution to $\hat{p}(s) =s$ in the interval $[0,1)$.
 
 *Proof.*
 
 Notice that $\mathbb{P}(Z_n=0) = f_n(0) <1$ for all $n$, and $f_n(0)$ is non-decreasing in $n$ and convergent to $q$.  Since $f$ is continuous, we have
 $$q=\lim_{n \to \infty} f_{n+1}(0) = f( \lim_{n \to \infty} f_n(0) ) = f(q).$$
 
-* If $\mu \leq 1$, then $f'(s)<1$ for $s \in (0,1)$ and the  mean-value theorem gives that $f'(s) < $f(s) > s$, so that we must have $q=1$.
+* If $\mu \leq 1$, then $f'(s)<1$ for $s \in (0,1)$ and the  mean-value theorem gives that $f(s) > s$, so that we must have $q=1$.
 
-* If $\mu >1$, then a similar argument gives that $f(s) < s$, when $s \in (1-\epsilon, 1)$, for some small $\epsilon$.  Convexity considerations give that $f(s)=s $ has an unique solution in $[0,1)$; moreover, $q <1$, since $f(s) < s$ near $s=1$.
+* If $\mu >1$, then a similar argument gives that $f(s) < s$, when $s \in (1-\epsilon, 1)$, for some small $\epsilon$.  Convexity considerations give that $f(s)=s$ has an unique solution in $[0,1)$; moreover, $q <1$, since $f(s) < s$ near $s=1$--note that $f_n(0) <1$, if the limit is $q=1$, then we must at some point enter the epsilon range where $f(s)<s$, where the sequence would be decrease.
 
 ## Convergence when $\mu >1$
 
@@ -81,7 +82,7 @@ Thus we see that the sequence $W_1, W_2, \ldots$ is Cauchy in $L^2$ and by compl
   * Harris [(1963)](https://zbmath.org/1037.60001)
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
-
+  * [Source code](https://tsoo-math.github.io/lttc/branch.Rmd)
 
 <br>
 <br>

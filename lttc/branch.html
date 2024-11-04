@@ -356,9 +356,8 @@ display: none;
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <p>A <strong>branching process</strong> with <strong>offspring</strong>
-distribution <span class="math inline">\(p\)</span> on $ is a Markov
-chain <span class="math inline">\(Z = (Z_0, Z_1, \ldots)\)</span> with
-state space <span class="math inline">\(\mathbb{N}\)</span>, where <span class="math inline">\(Z_0=1\)</span> with transitions given by <span class="math display">\[\mathbb{P}(Z_{n+1} = t | Z_n =s) = \mathbb{P}(X_1
+distribution <span class="math inline">\(p\)</span> on <span class="math inline">\(\mathbb{N}\)</span> is a Markov chain <span class="math inline">\(Z = (Z_0, Z_1, \ldots)\)</span> with state space
+<span class="math inline">\(\mathbb{N}\)</span>, where <span class="math inline">\(Z_0=1\)</span> with transitions given by <span class="math display">\[\mathbb{P}(Z_{n+1} = t | Z_n =s) = \mathbb{P}(X_1
 + \cdots + X_s = t),\]</span> where <span class="math inline">\(X_i\)</span> are iid random variables with the
 distribution <span class="math inline">\(p\)</span>. We will always
 assume that <span class="math inline">\(p_i \not =1\)</span> and <span class="math inline">\(p_0 + p_1 &lt;1\)</span>, which implies that the
@@ -366,14 +365,17 @@ generating function <span class="math inline">\(\hat{p}\)</span> is
 strictly convex. We are concerned the <strong>extinction</strong>
 probability <span class="math inline">\(q \in [0,1]\)</span>. Notice
 that <span class="math inline">\(\{ Z_n = 0 \} \subseteq \{ Z_{n+1} = 0
-\}\)</span> which is given by <span class="math display">\[
+\}\)</span>, so that we have <span class="math display">\[
 \begin{eqnarray*}
 \mathbb{P}(\lim_{n \to \infty} Z_n =0 ) &amp;=&amp;
 \mathbb{P}(\bigcup_{n=1}^{\infty} \{ Z_n = 0 \}) \\
 &amp;=&amp;\lim_{n \to \infty} \mathbb{P}(Z_n =0) \\
 &amp;=&amp; q.
 \end{eqnarray*}
-\]</span> ## An analysis of the generating function</p>
+\]</span></p>
+</div>
+<div id="an-analysis-of-the-generating-function" class="section level2">
+<h2>An analysis of the generating function</h2>
 <p>Notice that <span class="math inline">\(g_{Z_0}(s) = s\)</span> and
 <span class="math inline">\(f(s) := g_{Z_1}(s) = \hat{p}(s)\)</span>.
 Set <span class="math inline">\(f_n(s):= g_{Z_{n}}(s)\)</span>. By the
@@ -407,8 +409,7 @@ distribution for a branching process <span class="math inline">\(Z\)</span>. Let
 <ul>
 <li>If <span class="math inline">\(\mu \leq 1\)</span>, then <span class="math inline">\(q=1\)</span>.</li>
 <li>If <span class="math inline">\(\mu &gt;1\)</span>, then <span class="math inline">\(q \in (0,1)\)</span> is the unique solution to
-<span class="math inline">\(\hat{p}(s) =s\)</span> in the open interval
-<span class="math inline">\((0,1)\)</span>.</li>
+<span class="math inline">\(\hat{p}(s) =s\)</span> in the interval <span class="math inline">\([0,1)\)</span>.</li>
 </ul>
 <p><em>Proof.</em></p>
 <p>Notice that <span class="math inline">\(\mathbb{P}(Z_n=0) = f_n(0)
@@ -416,13 +417,17 @@ distribution for a branching process <span class="math inline">\(Z\)</span>. Let
 \infty} f_n(0) ) = f(q).\]</span></p>
 <ul>
 <li><p>If <span class="math inline">\(\mu \leq 1\)</span>, then <span class="math inline">\(f&#39;(s)&lt;1\)</span> for <span class="math inline">\(s \in (0,1)\)</span> and the mean-value theorem
-gives that $f’(s) &lt; <span class="math inline">\(f(s) &gt; s\)</span>,
-so that we must have <span class="math inline">\(q=1\)</span>.</p></li>
+gives that <span class="math inline">\(f(s) &gt; s\)</span>, so that we
+must have <span class="math inline">\(q=1\)</span>.</p></li>
 <li><p>If <span class="math inline">\(\mu &gt;1\)</span>, then a similar
 argument gives that <span class="math inline">\(f(s) &lt; s\)</span>,
 when <span class="math inline">\(s \in (1-\epsilon, 1)\)</span>, for
 some small <span class="math inline">\(\epsilon\)</span>. Convexity
-considerations give that $f(s)=s $ has an unique solution in <span class="math inline">\([0,1)\)</span>; moreover, <span class="math inline">\(q &lt;1\)</span>, since <span class="math inline">\(f(s) &lt; s\)</span> near <span class="math inline">\(s=1\)</span>.</p></li>
+considerations give that <span class="math inline">\(f(s)=s\)</span> has
+an unique solution in <span class="math inline">\([0,1)\)</span>;
+moreover, <span class="math inline">\(q &lt;1\)</span>, since <span class="math inline">\(f(s) &lt; s\)</span> near <span class="math inline">\(s=1\)</span>–note that <span class="math inline">\(f_n(0) &lt;1\)</span>, if the limit is <span class="math inline">\(q=1\)</span>, then we must at some point enter the
+epsilon range where <span class="math inline">\(f(s)&lt;s\)</span>,
+where the sequence would be decrease.</p></li>
 </ul>
 </div>
 <div id="convergence-when-mu-1" class="section level2">
@@ -448,7 +453,11 @@ convergence.</p>
 <li>Grimmett and Stirzaker <a href="https://zbmath.org/1015.60002">(2001)</a></li>
 <li>Harris <a href="https://zbmath.org/1037.60001">(1963)</a></li>
 </ul></li>
-<li>Version: 04 November 2024</li>
+<li>Version: 04 November 2024
+<ul>
+<li><a href="https://tsoo-math.github.io/lttc/branch.Rmd">Source
+code</a></li>
+</ul></li>
 </ul>
 <p><br> <br> <br></p>
 </div>

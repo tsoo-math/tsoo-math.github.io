@@ -363,8 +363,9 @@ function</em> as the power series given by</p>
 <p>here the power series can often be merely considered <a href="https://en.wikipedia.org/wiki/Formal_power_series">formally</a> or
 we can treat it analytically, provided <span class="math inline">\(|s|&lt;1\)</span>, moreover Abel’s <a href="https://en.wikipedia.org/wiki/Abel%27s_theorem#:~:text=In%20mathematics%2C%20Abel&#39;s%20theorem%20for,who%20proved%20it%20in%201826">theorem</a>
 allows us to consider <span class="math inline">\(\hat{p}(1) = \lim_{s
-\uparrow 1} \hat{p}(s) = 1.\)</span> Thus the generating function of a
-distribution uniquely determines its distribution.</p>
+\uparrow 1} \hat{p}(s) = 1;\)</span> this is particularly important when
+we take derivatives. Thus the generating function of a distribution
+uniquely determines its distribution.</p>
 <p>Computations are sometimes easier when done in the context of
 generating functions. Note that <span class="math inline">\(X\)</span>
 has the distribution <span class="math inline">\(p\)</span>, then</p>
@@ -372,7 +373,7 @@ has the distribution <span class="math inline">\(p\)</span>, then</p>
 \hat{p}(s).\]</span> Easy computations give that</p>
 <p><span class="math display">\[\mathbb{E}(X) = g&#39;(1) \text { and }
 \mathrm{var}(X) = g^{\prime \prime}(1) + g&#39;(1) -
-[g&#39;(1)]^2\]</span></p>
+[g&#39;(1)]^2.\]</span></p>
 </div>
 <div id="independent-sums" class="section level2">
 <h2>Independent sums</h2>
@@ -403,7 +404,7 @@ Poisson variables is again a Poisson.</p>
 <p><strong>Lemma. (Random sums).</strong></p>
 <p>Let <span class="math inline">\(X=(X_1, X_2, \ldots)\)</span> be iid
 independent random variables taking values on <span class="math inline">\(\mathbb{N}\)</span>. Let <span class="math inline">\(N\)</span> be independent of <span class="math inline">\(X\)</span> and <span class="math inline">\(T = X_1
-+ \cdots X_N\)</span>. Then <span class="math display">\[g_T(s) =
++ \cdots + X_N\)</span>. Then <span class="math display">\[g_T(s) =
 g_N(g_{X_1}(s)).\]</span></p>
 <p><em>Proof.</em></p>
 <p><span class="math display">\[
@@ -434,7 +435,11 @@ with mean <span class="math inline">\(p\lambda\)</span>.</p>
 <ul>
 <li>Grimmett and Stirzaker <a href="https://zbmath.org/1015.60002">(2001)</a></li>
 </ul></li>
-<li>Version: 04 November 2024</li>
+<li>Version: 04 November 2024
+<ul>
+<li><a href="https://tsoo-math.github.io/lttc/gen-func.Rmd">Source
+code</a></li>
+</ul></li>
 </ul>
 <p><br> <br> <br></p>
 </div>

@@ -70,6 +70,12 @@ We discussed the law of large numbers and illustrated various coding application
 
 * [Poisson processes](https://tsoo-math.github.io/ucl/poisson.html)
 
+## Last class
+
+* [Generating functions](https://tsoo-math.github.io/lttc/gen-func.html)
+
+* [Branching processes](https://tsoo-math.github.io/lttc/branch.html)
+
 ### Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`
