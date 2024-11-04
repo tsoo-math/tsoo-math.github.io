@@ -1,0 +1,89 @@
+---
+title: "Generating functions"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Introduction
+
+Given a probability distribution $p = (p_0, p_1, \ldots)$ on $\mathbb{N}$ we define its *generating function* as the power series given by
+
+$$g(s)=g_p(s)=\hat{p}(s) := \sum_{n=0} ^{\infty} p_n s^n;$$
+
+here the power series can often be merely considered [formally](https://en.wikipedia.org/wiki/Formal_power_series) or we can treat it analytically, provided $|s|<1$, moreover Abel's [theorem](https://en.wikipedia.org/wiki/Abel%27s_theorem#:~:text=In%20mathematics%2C%20Abel's%20theorem%20for,who%20proved%20it%20in%201826) allows us to consider $\hat{p}(1) = \lim_{s \uparrow 1} \hat{p}(s) = 1.$    Thus the generating function of a distribution uniquely determines its distribution.  
+
+
+
+Computations are sometimes easier when done in the context of generating functions.  Note that $X$ has the distribution $p$, then 
+
+$$g_X(s):=\mathbb{E}(s^X) = \hat{p}(s).$$
+Easy computations give that
+
+$$\mathbb{E}(X) = g'(1) \text { and } \mathrm{var}(X) = g^{\prime \prime}(1) + g'(1) - [g'(1)]^2$$
+
+## Independent sums
+
+
+For probability distributions $p$ and $q$ on $\mathbb{N}$, let the convolution be given by 
+
+$$(p*q)(n) := \sum_{k=0} ^n p_k q_{n-k}.$$
+
+From our experience with multiplying power series, we have the following.
+
+**Lemma. (Convolution).**
+
+Let  $p$ and $q$ be probability distributions on $\mathbb{N}$. 
+
+  * If $X$ and $Y$ are independent random variables with distributions $p$ and $q$, respectively,  then the distribution of $Z = X+Y$ is given by $p*q$.
+  
+  * $\widehat{(p*q)}(s) = \hat{p}(s) \hat{q}(s)$.    
+  
+  
+  
+*Example. (Poisson distribution).*
+
+Let $X \sim \mathrm{Poi}(\lambda)$.  Then an easy calculation gives that
+$$\mathbb{E}(s^X) = e^{\lambda(s-1)}.$$
+
+*Exercise.* (Superposition of Poisson random variables)
+
+By using generating functions, show that the sum of two independent Poisson variables is again a Poisson.
+
+**Lemma. (Random sums).**
+
+Let $X=(X_1, X_2, \ldots)$ be iid independent random variables taking values on $\mathbb{N}$.  Let $N$ be independent of $X$ and $T = X_1 + \cdots X_N$.   Then
+$$g_T(s) = g_N(g_{X_1}(s)).$$
+
+*Proof.*
+
+$$
+\begin{eqnarray*}
+\mathbb{E}(s^T) &=& \mathbb{E} \Big( \mathbb{E} \big((s^{X_1} + \cdots + s^{X_N}) |N\big) \Big) \\
+&=& \sum_{n=0} ^{\infty} \mathbb{E}(s^{X_1 + \cdots + X_n}) \mathbb{P}(N=n) \\
+&=&  \sum_{n=0} ^{\infty} \prod_{k=1} ^n\mathbb{E}(s^{X_k}) \mathbb{P}(N=n) \\
+&=& \sum_{n=0} ^{\infty} \mathbb{P}(N=n)[g_{X_1}(s)]^n \\
+&=& g_N(g_{X_1}(s)).
+\end{eqnarray*}
+$$
+
+*Exercise. (Poisson thinning).*
+
+Let $N$ be a Poisson random variables with mean $\lambda$.  Suppose $M = X_1 + \cdots X_N$, where $X_i$ are iid Bernoulli random variables with mean $p \in (0,1)$ that are independent of $N$.  Show that $M$ is a Poisson random variable with mean $p\lambda$.
+
+### Endnotes
+
+* Standard references include
+  * Grimmett and Stirzaker [(2001)](https://zbmath.org/1015.60002)
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
+<br>
+<br>
+<br>
+
