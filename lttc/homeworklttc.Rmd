@@ -12,6 +12,38 @@ knitr::opts_chunk$set(echo = TRUE)
 This document contains a running list of recommended homework exercises.
 
 
+# (2024)
+
+## Poisson processes
+
+Suppose  a shop that operates daily in the time interval $[a,b]$.  It  has customers arriving according to a Poisson process of intensity $3$ in the time interval $[a, c)$, and a Poisson process of intensity $5$ in the time interval $[c,b)$; here $a$ and $b$ are known,  but $c$ is *unknown*.   You can imagine the shop keeper notices that at some point in the day, the shop seems to get busier.  The shop keeper has a log of all the arrival times, for each of $n$ days of operation, where $n$ is large.  
+
+*  Given an open  interval $(r,s) \subset [a,b]$, explain how you can use the shop keeper's log to make a good guess at whether or not $(r,s)$ contains the unknown time $c$; show that as $n \to \infty$ you will know with certainty whether $c \in (r,s)$.  Carefully explain your answer.  
+
+*  Demonstrate your answer by running simulations; for example, choose $a=0$, $b=8$, and $c=4$, and simulate the arrivals to generate the shop keeper's log.  Now apply your method with the intervals $(2.7, 4.3)$ and $(5,6)$.  
+
+## Branching processes
+
+For historial purposes see the original [problem](https://web.archive.org/web/20170123114453/http://ioearc.da.ulcc.ac.uk/9344/1/Educational%20Times%20Vol%2025%20Iss%20143.PDF) posed by [Galton](https://www.ucl.ac.uk/news/2020/jun/ucl-denames-buildings-named-after-eugenicists).   Consider the problem in the case $p_0 =1/16$, $p_1 = 3/8$, $p_2 = 3/8$, $p_3 = 1/8$, $p_4 = 1/16$, with $Z_0=1$. 
+
+## Markov chains (Estimating and coding)
+
+The sample output of a Markov chain is available [here](https://tsoo-math.github.io/lttc/data-lttc.txt).  
+
+* Based **reasonably** on this output, generate and continue the Markov chain for another $50$ steps.
+
+* Explain why your procedure is reasonable and display the output of your generated $50$ steps. 
+
+## Markov chains (Doeblin's coupling)
+
+Consider Doeblin's coupling and let $T$ be the random time when two Markov chains $X$ and $Y$ meet.  Suppose one is started at stationarity,  and the common transition matrix is irreducible and aperiodic on a finite state space.   Does $X_T$ have the stationary distribution?  Explain
+
+## Coupling
+
+
+Let $\epsilon >0$. Suppose that $X$ is a Poisson random variable of mean $\lambda >0$, and $Y_{\epsilon}$ is a Poisson random variable of mean $\lambda + \epsilon$.  Use the power of coupling to upper bound the total variational distance of $X$ and $Y$ as a function of $\epsilon$, and show that the distance converges to zero, as $\epsilon \to 0$.
+
+
 
 # (2023)
 

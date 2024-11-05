@@ -359,6 +359,68 @@ display: none;
 exercises.</p>
 </div>
 <div id="section" class="section level1">
+<h1>(2024)</h1>
+<div id="poisson-processes" class="section level2">
+<h2>Poisson processes</h2>
+<p>Suppose a shop that operates daily in the time interval <span class="math inline">\([a,b]\)</span>. It has customers arriving
+according to a Poisson process of intensity <span class="math inline">\(3\)</span> in the time interval <span class="math inline">\([a, c)\)</span>, and a Poisson process of
+intensity <span class="math inline">\(5\)</span> in the time interval
+<span class="math inline">\([c,b)\)</span>; here <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are known, but <span class="math inline">\(c\)</span> is <em>unknown</em>. You can imagine
+the shop keeper notices that at some point in the day, the shop seems to
+get busier. The shop keeper has a log of all the arrival times, for each
+of <span class="math inline">\(n\)</span> days of operation, where <span class="math inline">\(n\)</span> is large.</p>
+<ul>
+<li><p>Given an open interval <span class="math inline">\((r,s) \subset
+[a,b]\)</span>, explain how you can use the shop keeper’s log to make a
+good guess at whether or not <span class="math inline">\((r,s)\)</span>
+contains the unknown time <span class="math inline">\(c\)</span>; show
+that as <span class="math inline">\(n \to \infty\)</span> you will know
+with certainty whether <span class="math inline">\(c \in (r,s)\)</span>.
+Carefully explain your answer.</p></li>
+<li><p>Demonstrate your answer by running simulations; for example,
+choose <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=8\)</span>, and <span class="math inline">\(c=4\)</span>, and simulate the arrivals to
+generate the shop keeper’s log. Now apply your method with the intervals
+<span class="math inline">\((2.7, 4.3)\)</span> and <span class="math inline">\((5,6)\)</span>.</p></li>
+</ul>
+</div>
+<div id="branching-processes" class="section level2">
+<h2>Branching processes</h2>
+<p>For historial purposes see the original <a href="https://web.archive.org/web/20170123114453/http://ioearc.da.ulcc.ac.uk/9344/1/Educational%20Times%20Vol%2025%20Iss%20143.PDF">problem</a>
+posed by <a href="https://www.ucl.ac.uk/news/2020/jun/ucl-denames-buildings-named-after-eugenicists">Galton</a>.
+Consider the problem in the case <span class="math inline">\(p_0
+=1/16\)</span>, <span class="math inline">\(p_1 = 3/8\)</span>, <span class="math inline">\(p_2 = 3/8\)</span>, <span class="math inline">\(p_3 = 1/8\)</span>, <span class="math inline">\(p_4 = 1/16\)</span>, with <span class="math inline">\(Z_0=1\)</span>.</p>
+</div>
+<div id="markov-chains-estimating-and-coding" class="section level2">
+<h2>Markov chains (Estimating and coding)</h2>
+<p>The sample output of a Markov chain is available <a href="https://tsoo-math.github.io/lttc/data-lttc.txt">here</a>.</p>
+<ul>
+<li><p>Based <strong>reasonably</strong> on this output, generate and
+continue the Markov chain for another <span class="math inline">\(50\)</span> steps.</p></li>
+<li><p>Explain why your procedure is reasonable and display the output
+of your generated <span class="math inline">\(50\)</span>
+steps.</p></li>
+</ul>
+</div>
+<div id="markov-chains-doeblins-coupling" class="section level2">
+<h2>Markov chains (Doeblin’s coupling)</h2>
+<p>Consider Doeblin’s coupling and let <span class="math inline">\(T\)</span> be the random time when two Markov
+chains <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> meet. Suppose one is started at
+stationarity, and the common transition matrix is irreducible and
+aperiodic on a finite state space. Does <span class="math inline">\(X_T\)</span> have the stationary distribution?
+Explain</p>
+</div>
+<div id="coupling" class="section level2">
+<h2>Coupling</h2>
+<p>Let <span class="math inline">\(\epsilon &gt;0\)</span>. Suppose that
+<span class="math inline">\(X\)</span> is a Poisson random variable of
+mean <span class="math inline">\(\lambda &gt;0\)</span>, and <span class="math inline">\(Y_{\epsilon}\)</span> is a Poisson random variable
+of mean <span class="math inline">\(\lambda + \epsilon\)</span>. Use the
+power of coupling to upper bound the total variational distance of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> as a function of <span class="math inline">\(\epsilon\)</span>, and show that the distance
+converges to zero, as <span class="math inline">\(\epsilon \to
+0\)</span>.</p>
+</div>
+</div>
+<div id="section-1" class="section level1">
 <h1>(2023)</h1>
 <div id="class-1" class="section level2">
 <h2>Class 1</h2>
@@ -623,7 +685,7 @@ surely <span class="math display">\[\limsup_{n \to
 \infty}  \frac{X_n}{\sqrt{2 \log n}} =1.\]</span></p></li>
 </ul>
 </div>
-<div id="coupling" class="section level2">
+<div id="coupling-1" class="section level2">
 <h2>Coupling</h2>
 <ul>
 <li><p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are real-valued random variables. We
@@ -715,7 +777,7 @@ check that everything is consistent, for a particular Markov chain.</p>
 <div id="endnotes" class="section level3">
 <h3>Endnotes</h3>
 <ul>
-<li>Version: 31 October 2023</li>
+<li>Version: 05 November 2024</li>
 <li><a href="https://tsoo-math.github.io/lttc/homeworklttc.Rmd">Rmd
 Source</a></li>
 </ul>
