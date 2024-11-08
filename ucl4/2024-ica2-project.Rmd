@@ -1,0 +1,105 @@
+---
+title: "ICA2 possible projects"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+ 
+* This ICA is worth 40 percent of your grade for this module.
+*  This ICA is due UCL Week 28,  7 March 2025, 13:00 London Time.
+*  This ICA is to be completed in a group of 3-4; each member of the group will receive the same grade.
+*  Your group-mates must be disjoint from that of ICA3, so that if Sam is in your ICA3 group, they can not be in your ICA3 group. 
+* A grading scheme is available [here](https://tsoo-math.github.io/ucl/ICA-gradingform-2024.html).
+  * The project consists of a written report **and** 
+  * a 15 min recorded presentation, which typically would consists of a slide-talk presentation, where your identities are not revealed--do not show your face.
+* The ICA (written report) must be completed in R/Quarto/Python and typeset using Markdown with Latex code, just like the way our module content is generated.
+* Please hand in the html (or pdf file) **and** the Rmd/Jupyter notebook source files for your written report.
+* As usual, part of the grading will depend on the clarity and presentation of your project.
+*  You are to do this assignment, within your groups, without any help from others who are not in your ICA2 group.
+*  You are allowed to use any materials and code that was presented so far.
+*  Do not use any fancy code or packages imported from elsewhere.
+* The use of ChatGPT and related tools in *assisting* in the project ICA2 is permitted, in accordance with UCL’s [policy](https://www.ucl.ac.uk/students/exams-and-assessments/assessment-success-guide/engaging-ai-your-education-and-assessment)--[Category 2](https://www.ucl.ac.uk/teaching-learning/generative-ai-hub/three-categories-genai-use-assessment#:~:text=Category%202.&text=Students%20may%20not%20use%20GenAI,the%20development%20of%20specific%20skills).
+  * Do not use these tools to generate your essay or entire paragraphs.
+  * Do not use these tools to generate large blocks of code, and to avoid the exercise of understanding and implementing algorithms.
+
+
+* Please read UCL guidelines on [citation](https://library-guides.ucl.ac.uk/referencing-plagiarism/how-to-reference#:~:text=Whenever%20you%20directly%20quote%2C%20paraphrase,form%20of%20the%20original%20source.)
+
+#  Plagiarism and collusion
+
+Please familarize yourself with [the following excerpt on plagiarism and collusion from the student handbook ](https://tsoo-math.github.io/ucl/Plagiarism-Collusion.pdf)
+
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I am aware of the UCL Statistical Science Department's regulations on plagiarism for assessed coursework. I have read the guidelines in the student handbook and understand what constitutes plagiarism.  I hereby affirm that the work I am submitting for this in-course assessment is entirely our own.  
+
+
+
+# Anonymous Marking 
+
+Please do **not** write your names anywhere on the submission. Please include only your **student numbers** as a proxy identifier.
+
+
+
+# ICA project ideas
+
+The following are some suggestions, but you are free to choose your own projects and directions.  If you choose a project that is not listed here, I would like to have a chat with you and your group first to make sure it is suitable.  It is possible that more than one group chooses the same or similar project.  It is important that each group works on their own; in particular, two groups working on the same or similar project should not be helping each other on the project.  Please feel free to discuss with me for more details and directions regarding the following suggestions.
+
+
+
+*  There is a text (from a prison) that was coded using a Ceasar cipher; this was decoded using just pairwise probabilities and Markov chains.  One project I had in mind was to decode this text or encode/decode other suitably available texts, and also see if using a longer memory makes a difference. [background](https://www.ams.org/journals/bull/2009-46-02/S0273-0979-08-01238-X/) 
+
+
+
+*  	Various projects on card shuffling.  One would explore various shuffles and discuss using theory and simulation.  For example, see these papers and the references within:  [overhand shuffle](https://arxiv.org/pdf/math/0501401.pdf) [Shuffling cards and stopping times (use UCL VPN for link)](https://www.jstor.org/stable/2323590?origin=crossref&seq=1)
+[How many times do I have to shuffle this deck](http://www.ams.org/publicoutreach/feature-column/fcarc-shuffle)
+
+* 	Queuing:  central versus individual queues:  does it make sense that banks use centralized queues and supermarkets often use individual  queues?  In fact, some supermarkets have a combination of individual and centralized queues; is there some optimal arrangement?
+
+* Queuing:  block queuing: how many elevators do I need or should have at Heathrow airport?  When should lifts that go to dedicated levels be used?
+
+*  How to manage line-ups? Hospitals and other institutions   put priority based on need, but you can't make someone with a broken ankle wait forever?
+
+* How much staff do I need, at a hospital, if I want to ensure certain wait time benchmarks for patients.
+
+* How should planes be boarded and de-boarded? Develop models and test them. Compare with real world data.
+
+* 	Various models in statistical physics: eg: Discuss the Ising model, sample it using MCMC.  For example, this [paper](https://arxiv.org/abs/1012.3944) considers exact sampling.
+
+
+* 	Applications of MCMC to Bayesian statistics:  discuss the basic Bayesian framework,  and how MCMC is applied, supporting the examples with code.  
+
+* 	Discuss Quasi-Monte Carlo methods and illustrate theory with examples and simulations.  There is an introduction [here](http://websrv.cs.fsu.edu/~mascagni/Caflisch_1998_Acta_Numerica.pdf)
+ 
+*  Hidden Markov chains:  Often the observations we see, do not correspond to a Markov chain, but in the background a Markov chain is pulling the strings.   
+
+*  How can the theory we learned be applied and extended to model epidemics? If we understand a model and the model is good, does it allow us to make interventions that help us improve the situation. 
+
+* 	Write a report on a research paper, working through some of the theory and illustrating relevant examples via coding/simulation.
+
+* 	Write a report on a more advanced topic that was not covered in the module, and illustrate the relevant example via coding/simulation:  eg solutions of PDE via probability  theory, random walk and electrical networks.
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
+<br>
+<br>
+<br>

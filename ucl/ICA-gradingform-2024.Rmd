@@ -1,0 +1,127 @@
+---
+title: "Stat9 Project ICA2  Assessment form"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Candidate(s) identifier: 
+
+# Project title: 
+
+<hr>
+<hr>
+
+
+# Written report  
+
+## Content of written report
+
+* Amount of work done
+* Extent to which the student has demonstrated understanding
+* Quality & accuracy of reasoning, validity of interpretation, relevance of conclusions
+* Critical appraisal, discussion of limitations & further work
+* Clarity of objectives
+* Quality of the literature review and background information
+* Quality of data organisation & collection (if applicable)
+* Quality of programming / use of software (if applicable)
+
+<br>
+
+*  Mark1 (out of 100)
+```{r}
+Mark1=100
+```
+
+
+## Presentation of written report
+
+* Layout of the report and care in its presentation
+* Structure of the report
+* Standard of judgement shown in selection of material
+* Clarity of expression, readability and coherence
+  * Correctness of grammar and spelling
+* Adequacy of diagrams, tables and graphs (if applicable)
+* Quality of presentation of mathematical material (if applicable)
+
+<br>
+
+* Mark2 (out of 100)
+```{r}
+Mark2=100
+```
+
+
+
+## Weighted mark for written report
+
+
+
+```{r}
+MW=0.6*Mark1 + 0.4*Mark2
+MW
+```
+
+# Oral-recorded presentation
+
+## Clarity, Interest and Structure
+
+* Clarity of aims (Was it clear what the project was trying to achieve?)
+* Selection of material--did the presentation focus on features of the work required to understand: 
+  * How the aims were addressed? 
+  * What were the *headline messages*?
+* Clarity of argument / logical flow (Was there a coherent narrative?)
+* Clarity of conclusions (Were there clear conclusions? Did they relate to the project aims?)
+* Accessibility to intended audience (Was the material presented at a level comprehensible to the speaker’s peers? )
+
+<br>
+
+* Mark3 (out of 100) 
+
+```{r}
+Mark3 = 100
+```
+
+
+## Presentation Skills
+
+* Audience engagement:  Was the speaking audible and confident? Was the inflexion varied and interesting? 
+
+* Visual aids:  Were the slides clearly readable and uncluttered? Were the key messages easy to see? Were graphics and tables appropriately labelled and presented so as to convey at a glance the underlying message?
+* Appropriate length: Did the speaker fill the time available, comfortably and without rushing?
+
+<br>
+
+* Mark4 (out of 100)
+
+```{r}
+Mark4 =100
+```
+
+
+## Weighted mark for oral presentation
+
+
+```{r}
+MO=0.5*Mark3 + 0.5*Mark4
+MO
+```
+
+
+
+# Final mark  
+
+```{r}
+FM = 0.7*MW + 0.3*MO
+MO
+```
+
+# Feedback
+
+
+<br>
+<br>
+
