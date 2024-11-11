@@ -1,0 +1,29 @@
+---
+title: "Return times"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Extending what we learned
+
+Let $X$ be Markov chain on a finite state space $S$ with an irreducible and aperiodic transition matrix $P$ so that there is an unique stationary distribution $\pi$ on $S$.
+
+Let 
+$$S_n = \sum_{k=0} ^{n-1}\mathbf{1}[X_{k+1} = t, X_k=s]$$
+
+* Prove that $S_n/n \to \pi_s p_{st}$ using a return time argument. 
+
+* Demonstrate your return time argument by simulations.  
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
