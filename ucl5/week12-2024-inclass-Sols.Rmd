@@ -1,0 +1,162 @@
+---
+title: "Return times"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Extending what we learned
+
+Let $X$ be Markov chain on a finite state space $S$ with an irreducible and aperiodic transition matrix $P$ so that there is an unique stationary distribution $\pi$ on $S$.
+
+Let 
+$$S_n = \sum_{k=0} ^{n-1}\mathbf{1}[X_{k+1} = t, X_k=s]$$
+
+* Prove that $S_n/n \to \pi_s p_{st}$ using a return time argument. 
+
+* Demonstrate your return time argument by simulations.  
+
+
+# Partial Solutions
+
+We agreed that the candidate for $T$ following the renewal-type argument given in the [notes](https://tsoo-math.github.io/ucl/intro-renewal.html) should be:
+
+$$T_1 = \inf\{ n \geq 1:  X_{n-1} =s, X_n=t \}$$
+
+and that we should start the chain at $X_0 = t$.  Thus $T_n$ would be the first time, we reach the states $s$ and $t$, in order, for the $n$th time.    Breaking up the Markov chains by such return times allows us to use a regular law of large numbers to argue that
+$$S_{T_n}/T_n = n/T_n \to (\mathbb{E}T_1)^{-1} = \pi_s p_{st}.$$
+
+We can check this fact, by recycling some old code, found in [Number 2](https://tsoo-math.github.io/ucl/ica-stat9.html).
+
+
+
+*  We enter the the transition matrix $P$ into R
+
+```{r}
+P <- matrix(c(1/4,1/4, 1/2,1/4,1/4,1/2,1/8,1/4,5/8), nrow =3)
+P <-t(P)
+P
+```
+
+
+The left-eigenvector corresponding to the stationary distribution is easily computed and normalized
+```{r}
+eigen(t(P))
+z=eigen(t(P))$vector[,1]
+stat <- z/sum(z)
+stat
+```
+
+* When we compute $P^n$ for large $n$, we expect to see the stationary measure repeated as a row vector in the matrix, since we know from our convergence theory on Markov chains that $p_{ij}(n) \to \pi(j).$
+
+```{r}
+Q = P
+for (i in 1:1000){
+  Q <- Q %*% P
+}
+Q
+```
+
+*  In order to simulate the Markov chain, we can adapt the code we had used [before](https://tsoo-math.github.io/ucl/markov-c.html):
+
+```{r}
+step <- function(i){
+  q = P[i,]
+  x=-1
+  u = runif(1)
+  j=0
+  cumq = cumsum(q)
+  while(x==-1){
+    j<-j+1
+    if(u <= cumq[j]){x <-j}
+  }
+  x
+}
+
+steps <- function(y){
+  x = y[1]
+  n = y[2]
+  for (i in 1:n){
+    x <- c(x, step(x[i]))
+  }
+  x
+}
+
+```
+
+
+We start the chain at $3$ and simulates until it returns, with a *while* loop. 
+
+
+```{r}
+time <- function(i){
+  n =0
+  x=i
+  n <- n+1
+  x <-step(x)
+  while(x !=3){
+    n <-n+1
+    x <- step(x)
+  }
+  n
+}
+
+m=mean(replicate(1000, time(3)))
+1/m
+stat[3]
+```
+  
+
+* We will verify the claim for the case $s=1$ and $t=2$.
+
+
+```{r}
+time2 <- function(i){
+  n =0
+  x=i
+  n <- n+1
+  x = c(x, step(x[length(x)]) )
+  while(x[length(x)-1] !=1 | x[length(x)] !=2   ){
+    n <-n+1
+    x = c(x, step(x[length(x)] ))
+  }
+  n
+}
+
+z=mean(replicate(10000, time2(2)))
+1/z
+
+stat[1] * P[1,2]
+```
+  
+* The following code here, was used to debug and  make sure the above function worked properly--orginally it did not, since I mixed up *and* versus *or*.
+
+```{r}
+time3 <- function(i){
+  n =0
+  x=i
+  n <- n+1
+  x = c(x, step(x[length(x)]) )
+  while(x[length(x)-1] !=1 | x[length(x)] !=2   ){
+    n <-n+1
+    x = c(x, step(x[length(x)] ))
+  }
+  x
+}
+
+time3(2)
+```
+
+
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+* [Rmd Source](https://tsoo-math.github.io/ucl5/week12-2024-inclass-Sols.Rmd)
+
