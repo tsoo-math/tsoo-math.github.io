@@ -11,7 +11,7 @@
 
 
 
-<title>Live/In-person session diary 2024</title>
+<title>In class exercise: Meet your classmates, inspection paradox, and tiling</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,120 +348,74 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Live/In-person session diary 2024</h1>
+<h1 class="title toc-ignore">In class exercise: Meet your classmates,
+inspection paradox, and tiling</h1>
 
 </div>
 
 
-<div id="general-information" class="section level1">
-<h1>General information</h1>
-<p>We may <em>attempt</em> to live stream, the live in-person sessions.
-Please note that it is UCL’s expectation that students attend in-person.
-The Zoom link is available <a href="https://ucl.zoom.us/my/terrysoo">here</a>. Not all sessions will
-be recorded or streamed. The recording links will be available on
-Moodle.</p>
-</div>
-<div id="by-ucl-week" class="section level1">
-<h1>By <a href="https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2024_25_1.pdf">UCL
-week</a></h1>
-</div>
-<div id="week-6" class="section level1">
-<h1>Week 6</h1>
+<div id="warm-up-questions" class="section level1">
+<h1>Warm up questions</h1>
 <ul>
-<li>We discussed the basic module mechanics and lecture-workshop
-style.</li>
-<li>We discussed the following <a href="https://arxiv.org/abs/2409.00732">problem</a> that was on <a href="https://x.com/littmath/status/1769044719034647001">Twitter</a>–due
-to Daniel Litt.</li>
-<li>We discussed the law of large numbers and its role in
-simulations.</li>
-</ul>
-</div>
-<div id="week-7" class="section level1">
-<h1>Week 7</h1>
+<li><p>Devise a scheme, for when you are a party, so that a group of
+friends can reveal their average salary, without them disclosing
+individual salaries?</p></li>
+<li><p>Suppose <span class="math inline">\(C_1, C_2,\)</span> are iid
+Cauchy random variables. Let <span class="math inline">\(X_i = C_i +
+\mu\)</span>, where <span class="math inline">\(\mu \in
+\mathbb{R}\)</span> is unknown. Suppose we are given a random sample
+<span class="math inline">\((X_1, \ldots, X_n)\)</span>. How could you
+estimate <span class="math inline">\(\mu\)</span>?</p></li>
+<li><p>If we measured all the heights of the people in our class, would
+you expect an normal distribution?</p></li>
+<li><p>How would Taylor Swift compute <span class="math inline">\(\sin
+(0.1)\)</span>, without paying the computing companies?</p></li>
+<li><p>Consider the following game with fair coins: I toss two, you toss
+three, the person with the most heads wins, except in the case of a tie,
+where I win; what is the probability that I will win?</p>
 <ul>
-<li>We reviewed Monte Carlo integration</li>
-<li>We reviewed sample spaces and uniform random variables</li>
-<li>We discussed von Neumann’s rejection sampling</li>
-<li>We introduced coupling. <a href="https://mathworld.wolfram.com/BondPercolation.html">Bond
-percolation</a> was used to demonstrate the usefulness of coupling. We
-mentioned the following related optional topics.
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Bunkbed_conjecture">Bunkbed
-conjecture is false</a></li>
-<li><a href="https://www.pure.ed.ac.uk/ws/files/15459604/Formula_final2.pdf">Couplas
-and wall street</a></li>
+<li>What about the case of <span class="math inline">\(n\)</span> versus
+<span class="math inline">\(n+1\)</span> coins?</li>
 </ul></li>
 </ul>
 </div>
-<div id="week-8" class="section level1">
-<h1>Week 8</h1>
+<div id="stochastic-domination-and-the-inspection-paradox" class="section level1">
+<h1><a href="https://tsoo-math.github.io/ucl/coupling-rev.html">Stochastic
+domination</a> and the inspection paradox</h1>
+<p>Consider a renewal process, with inter-arrival times <span class="math inline">\(X_1, X_2, \ldots\)</span>. Let <span class="math inline">\(L(t)\)</span> be the length of the interval
+between the two arrivals containing <span class="math inline">\(t\)</span>. We claimed that <span class="math inline">\(\mathbb{E}L(t) \geq \mathbb{E}X_1\)</span>. Prove
+this statement by proving: <span class="math display">\[\mathbb{P}(L(t)
+&gt; x) \geq \mathbb{P}(X_1&gt; x);\]</span></p>
+<p>Recall that this is enough, by Taylor Swift’s invisible <a href="https://www.youtube.com/watch?v=OuFnpmGwg5k">string</a>. Hint:
+condition on the current <em>age</em> of the interval being <span class="math inline">\(s\)</span>, that is, <span class="math inline">\(A(t)=s\)</span>; here <span class="math inline">\(A(t) + E(t) = L(t)\)</span>, so that <span class="math inline">\(A(t)\)</span> is the distance from the left
+inter-arrival to <span class="math inline">\(t\)</span>, and <span class="math inline">\(E(t)\)</span> is the remaining distance to from
+<span class="math inline">\(t\)</span> to the right inter-arrival.</p>
+</div>
+<div id="baby-wald" class="section level1">
+<h1>Baby wald</h1>
+<p>Let <span class="math inline">\(X=(X_i)_{i=1}^{\infty}\)</span> be an
+iid sequence of random variables. Let <span class="math inline">\(N\)</span> be a random nonnegative integer that is
+independent of <span class="math inline">\(X\)</span>. Suppose <span class="math inline">\(X_1\)</span> and <span class="math inline">\(N\)</span> have finite expectations. Prove that
+<span class="math display">\[ \mathbb{E} \big( \sum_{i=1} ^N X_i
+\big)  = \mathbb{E}N \mathbb{E} X_1\]</span></p>
+</div>
+<div id="tiling" class="section level1">
+<h1>Tiling</h1>
 <ul>
-<li><p>We reviewed and introduced Markov chains and some proof
-techniques with the worksheet. We also discussed Doeblin’s coupling and
-its role in proving convergence. We also briefly mentioned an
-alternative approach based in linear algebra: <a href="https://doi.org/10.1080/00029890.2021.1944755">Perron–Frobenius
-theorem</a>.</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl5/week8-2024-inclass.html">Worksheet</a></p>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.html">Partial
-sols</a></li>
-</ul></li>
+<li><p>How would you do <a href="https://tsoo-math.github.io/ucl/QHW6.1-sols.html">Exercise 4</a>
+analytically?</p></li>
+<li><p>What would you do if there is more than two tiles, and the tiles
+did not occur with equal probability?</p></li>
+<li><p>Use simulations to test your formula.</p></li>
 </ul>
 </div>
-<div id="week-9" class="section level1">
-<h1>Week 9</h1>
+<div id="endnotes" class="section level1">
+<h1>Endnotes</h1>
 <ul>
-<li><p>We introduced Poisson processes and discussed the Metropolis
-algorithm.</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html">See
-Q1</a><br />
-</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl4/week11-2023-inclass.html">Worksheet</a></p>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html">Parital
-solutions</a></li>
-</ul></li>
+<li>Version: 24 November 2024</li>
+<li><a href="https://tsoo-math.github.io/ucl5/week14-2024-inclass.Rmd">Rmd
+Source</a> <br> <br> <br></li>
 </ul>
-</div>
-<div id="week-10" class="section level1">
-<h1>Week 10</h1>
-<ul>
-<li>We discussed the procedures for ICA1 and went over some of the
-questions from <a href="https://tsoo-math.github.io/ucl4/2023-ica1-stat9-release.html">ICA1-2023</a>.</li>
-</ul>
-</div>
-<div id="week-12" class="section level1">
-<h1>Week 12</h1>
-<ul>
-<li><p>We briefly discussed continuous-time Markov chains. We went over
-in some detail, the renewal-type argument for the a version of LLN for
-Markov chains.</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl5/week12-2024-inclass.html">Worksheet</a></p>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl5/week12-2024-inclass-Sols.html">Partial
-solutions</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="week-13" class="section level1">
-<h1>Week 13</h1>
-<ul>
-<li><p>We discussed how to recover stationary increments in the context
-of renewal processes.</p></li>
-<li><p><a href="https://tsoo-math.github.io/ucl5/week13-2024-inclass.html">Worksheet</a></p></li>
-</ul>
-</div>
-<div id="week-14" class="section level1">
-<h1>Week 14</h1>
-<ul>
-<li><a href="https://tsoo-math.github.io/ucl5/week14-2024-inclass.html">Worksheet</a></li>
-</ul>
-</div>
-<div id="other-notes" class="section level1">
-<h1>Other notes</h1>
-<p><br> <br></p>
-<p>Version: 24 November 2024</p>
-<p><br> <br> <br></p>
 </div>
 
 

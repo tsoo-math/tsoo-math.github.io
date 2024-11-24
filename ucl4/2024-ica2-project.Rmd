@@ -8,11 +8,37 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction
+
+* This assessment is classified as *Coursework* as defined in the UCL Student Regulations for Exams and Assessments. 
  
 * This ICA is worth 40 percent of your grade for this module.
+
+* The release date is 6 December 2024.
+
 *  This ICA is due UCL Week 28,  7 March 2025, 13:00 London Time.
+
+* Individual extensions to the submission deadline can only be granted where a student has been issued with a Summary of Reasonable Adjustments (SoRA), has used a Delayed Assessment Permit (if the assessment is eligible), or has made a valid claim for Extenuating Circumstances. The standard extension length for this assessment type is 10 working days.
+  * If you have an extension, it may *not* be reflected in Moodle.
+  * Delayed Assessment Permits and Extenuating Circumstances claims should be submitted through Portico. The module lead will be notified and will act on extensions approved via these routes, but the deadline displayed in the submission portal may *not* update.
+
+* You must only submit your work via the designated portal in Moodle. If you try to submit via email or any other channel this will not count as a submission and will not be marked.
+* There are strict, non-negotiable penalties for late submission, which for coursework are as follows.
+  * Up to 2 working days late: deduction of 10 percentage points, but no lower than the pass mark.
+  *	2-5 working days late: capped at the pass mark.
+  * More than 5 working days late: mark of 1.00%.
+
+* If the module lead becomes aware of a significant technical issue or outage affecting Moodle during the assessment, a message will be circulated to explain what has happened and the steps being taken to mitigate the issue. If you do not receive notification of a more widespread issue and you experience technical difficulties, you should refer to the Help & Support resources provided by UCL’s central IT service. However, last-minute technical issues will not be considered as valid grounds for missing the deadline, so ensure that you leave plenty of time to prepare, upload and check your submission.
+* Non-submission (in the absence of any valid Extenuating Circumstances) will mean that your mark for this component is recorded as 0.00% and you will be deemed to have made an attempt.
+
+* You should expect to receive feedback on this assessment within 20 working days of the submission deadline. In the event of a delay, the module lead will contact students directly with details of the revised timeline.
+*	© (2024)  UCL. This assessment paper is the intellectual property of UCL and subject to copyright. It must not be reproduced or shared with any third party without prior permission of UCL.
+
+<hr>
+
 *  This ICA is to be completed in a group of 3-4; each member of the group will receive the same grade.
 *  Your group-mates must be disjoint from that of ICA3, so that if Sam is in your ICA3 group, they can not be in your ICA3 group. 
+* To facilitate anonymous marking, you should not write your name anywhere on your work, including in file names or file descriptions requested as part of the submission process.
+
 * A grading scheme is available [here](https://tsoo-math.github.io/ucl/ICA-gradingform-2024.html).
   * The project consists of a written report **and** 
   * a 15 min recorded presentation, which typically would consists of a slide-talk presentation, where your identities are not revealed--do not show your face.
@@ -28,6 +54,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 * Please read UCL guidelines on [citation](https://library-guides.ucl.ac.uk/referencing-plagiarism/how-to-reference#:~:text=Whenever%20you%20directly%20quote%2C%20paraphrase,form%20of%20the%20original%20source.)
+
+* In preparation for this assessment, please ensure that you are familiar with the Department of Statistical Science’s guidance on academic integrity. When submitting your work, you will be required to make a declaration that you have read and understood this guidance.
+
 
 #  Plagiarism and collusion
 
