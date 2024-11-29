@@ -47,7 +47,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * As usual, part of the grading will depend on the clarity and presentation of your project.
 *  You are to do this assignment, within your groups, without any help from others who are not in your ICA2 group.
 *  You are allowed to use any materials and code that was presented so far.
-*  Do not use any fancy code or packages imported from elsewhere.
+*  Inline with our usual class policy and how I have presented module material, do not use any fancy code or packages imported from elsewhere.  In particular, if the main work/point of your project is the demonstrate branching processes, do not import or use a branching process package.
 * The use of ChatGPT and related tools in *assisting* in the project ICA2 is permitted, in accordance with UCL’s [policy](https://www.ucl.ac.uk/students/exams-and-assessments/assessment-success-guide/engaging-ai-your-education-and-assessment)--[Category 2](https://www.ucl.ac.uk/teaching-learning/generative-ai-hub/three-categories-genai-use-assessment#:~:text=Category%202.&text=Students%20may%20not%20use%20GenAI,the%20development%20of%20specific%20skills).
   * Do not use these tools to generate your essay or entire paragraphs.
   * Do not use these tools to generate large blocks of code, and to avoid the exercise of understanding and implementing algorithms.
@@ -79,7 +79,7 @@ Please do **not** write your names anywhere on the submission. Please include on
 
 # ICA project ideas
 
-The following are some suggestions, but you are free to choose your own projects and directions.  If you choose a project that is not listed here, I would like to have a chat with you and your group first to make sure it is suitable.  It is possible that more than one group chooses the same or similar project.  It is important that each group works on their own; in particular, two groups working on the same or similar project should not be helping each other on the project.  Please feel free to discuss with me for more details and directions regarding the following suggestions.
+The following are some suggestions, but you are free to choose your own projects and directions.  If you choose a project that is not listed here, I would like to have a chat with you and your group first to make sure it is suitable.  Moreover, I am happy to chat with you about your project.  It is possible that more than one group chooses the same or similar project.  It is important that each group works on their own; in particular, two groups working on the same or similar project should not be helping each other on the project.  Please feel free to discuss with me for more details and directions regarding the following suggestions.
 
 
 
