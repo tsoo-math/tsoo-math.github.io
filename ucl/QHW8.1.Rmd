@@ -1,5 +1,5 @@
 ---
-title: "Homework 8 (Week 15, 2021)"
+title: "Homework 8 (Week 15, 2024)"
 output:
   bookdown::html_document2: default
   bookdown::pdf_document2:
@@ -54,6 +54,8 @@ $$\mathbb{P}(Q(t) = n) = \rho^n(1-\rho)$$
 
 $$ \mathbb{P}(W \leq x) = 1- \rho e^{-x(\mu - \lambda)}.$$
 
+* See also [Number 4](https://tsoo-math.github.io/ucl/ica3-stat9-sols.html)  
+  
 ```
 
 
