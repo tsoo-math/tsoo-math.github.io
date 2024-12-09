@@ -87,9 +87,18 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 # Week 16
 
 
+
  
 
 # Other notes
+
+## My other nice in-class exercises and code
+
+* [Random triangle](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html)
+* [Shiny app](https://terry-soo.shinyapps.io/Poisson-disc/)
+  * [source](https://tsoo-math.github.io/ucl/app.R)
+* [Symbolic computing](https://tsoo-math.github.io/ucl2/returntime-sol.html)
+* [Reinforced random walk](https://tsoo-math.github.io/ucl3/week10-2022-inclass-sols.html)
 
 
 <br>
