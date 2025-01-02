@@ -18,46 +18,35 @@ library(latex2exp)
 ```
 
 
-# PHD STUDENTS
-
-# UCL STATISTICAL SCIENCE 
-
-# WANTS YOU!
-
-## The third annual Poster competition in Statistics & Probability 
-
-![](.\qr-code2.png)
+# The Third Poster session in Statistics & Probability at UCL
 
 
-* 12 March 2024
 
-*   3.30 - 5.00 PM, at [1-19 Torrington Place](https://www.ucl.ac.uk/maps/1-19-torrington-place),  UCL Stats Department (116,117,146)
 
-*   Guest Judge:  Professor [Guy Nason](https://www.imperial.ac.uk/people/g.nason), Imperial 
+* 12 March 2024. 2-5PM
 
-* Guest Seminar at 2 PM: Professor Guy Nason, [Network Time Series](https://tsoo-math.github.io/ucl2/grst/nason/nason.html) 
-  * [Drayton House B20](https://www.ucl.ac.uk/estates/roombooking/building-location/?id=107)
-    
+*   3.30 - 5.00 PM, at [1-19 Torrington Place](https://www.ucl.ac.uk/maps/1-19-torrington-place),  UCL Stats Department 
+
+* Guest Judge:  Professor Sir [John Aston](https://www.statslab.cam.ac.uk/~jada2/), Cambridge
+  * [Bio](https://tsoo-math.github.io/ucl2/grst/2024JABiography.pdf)
+  * [Photo](https://tsoo-math.github.io/ucl2/grst/JohnAston-pic.jpg)
+  * Special seminar at 2 PM: TBA
+  
 * £ 1000 in prizes, we welcome posters from all universities 
-  * Matias Altamirano Montero (UCL Stats)
-  * Zsuzsanna Baran (Cambridge)
-  * James Briant (UCL Stats)
-  * Jeffrey Tse (Oxford)
   
 *  Just show up with your printed poster, no size or template requirements
 
-* [Photo](https://tsoo-math.github.io/ucl2/grst/poster-2023-pic.jpg)
-
 * contact: Terry Soo: t.soo@ucl.ac.uk
 
-* https://tsoo-math.github.io/ucl2/grst/2025-poster.html
 
-* [2nd edition](https://tsoo-math.github.io/ucl2/grst/2023-poster.html)
+
+* [2023, 2nd edition](https://tsoo-math.github.io/ucl2/grst/2023-poster.html)
 
 *  Last updated: `r format(Sys.time(), '%d %B %Y')`
 
+* https://tsoo-math.github.io/ucl2/grst/2025-poster.html
 
-
+![](.\qr-code2025.png)
 
 ```{r, echo=FALSE, results='hide'}
 dev.off()
