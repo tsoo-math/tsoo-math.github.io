@@ -17,11 +17,12 @@ knitr::opts_chunk$set(warning = FALSE, echo = TRUE)
 library(latex2exp)
 ```
 
-
-# The Third Poster session in Statistics & Probability at UCL
-
+![](.\flyer.png)
 
 
+# Statistics & Probability 
+## Poster session at UCL
+### *Third edition*
 
 * 12 March 2024. 2-5PM
 
@@ -36,17 +37,29 @@ library(latex2exp)
   
 *  Just show up with your printed poster, no size or template requirements
 
-* contact: Terry Soo: t.soo@ucl.ac.uk
 
 
+* committee:  UCL Statistical science, Sam Livingstone, Kayvan Sadeghi, Terry Soo
+ * contact: t.soo@ucl.ac.uk
+
+
+
+<hr>
+
+
+
+
+
+* [Flyer](https://tsoo-math.github.io/ucl2/grst/flyer.pdf)
+
+  * [QR code](https://tsoo-math.github.io/ucl2/grst/qr-code2025.png)
 
 * [2023, 2nd edition](https://tsoo-math.github.io/ucl2/grst/2023-poster.html)
 
+<hr>
+
 *  Last updated: `r format(Sys.time(), '%d %B %Y')`
 
-* https://tsoo-math.github.io/ucl2/grst/2025-poster.html
-
-![](.\qr-code2025.png)
 
 ```{r, echo=FALSE, results='hide'}
 dev.off()
