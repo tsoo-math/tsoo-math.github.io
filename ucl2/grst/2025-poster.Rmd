@@ -17,8 +17,9 @@ knitr::opts_chunk$set(warning = FALSE, echo = TRUE)
 library(latex2exp)
 ```
 
-![](.\flyer.png)
 
+
+<img src="flyer.png" alt="Flyer image">
 
 # Statistics & Probability 
 ## Poster session at UCL
