@@ -32,7 +32,7 @@ library(latex2exp)
 * Guest Judge:  Professor Sir [John Aston](https://www.statslab.cam.ac.uk/~jada2/), Cambridge
   * [Bio](https://tsoo-math.github.io/ucl2/grst/2024JABiography.pdf)
   * [Photo](https://tsoo-math.github.io/ucl2/grst/JohnAston-pic.jpg)
-  * Special [seminar](https://tsoo-math.github.io/ucl2/aston-abstract.html) at 2 PM, B09 (1-19 Torrington Place).
+  * Special [seminar](https://tsoo-math.github.io/ucl2/grst/aston-abstract.html) at 2 PM, B09 (1-19 Torrington Place).
   
 * £ 1000 in prizes, we welcome posters from all universities 
   
