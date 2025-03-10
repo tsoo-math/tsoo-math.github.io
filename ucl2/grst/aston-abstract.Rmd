@@ -1,0 +1,13 @@
+---
+title: "Statistics, Science and Government: A Statistician as a CSA"
+output: html_document
+author: "John Aston"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Abstract*
+
+Statistics and data have always had a role in government, and censuses, for example, have been carried out for thousands of years to allow governments to make decisions. As a departmental chief scientific adviser, it was always important to me to make sure that the evidence was well considered in the policy-making process.  In this talk, I'll give some examples of how statistics was combined with other science in the policy process, and how hopefully the current appetite for science in government will continue to lead to better and better policy decisions. I very much hope this will encourage other mathematicians and statisticians to consider getting involved in science advice for themselves.
