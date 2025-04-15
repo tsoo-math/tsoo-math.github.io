@@ -35,8 +35,13 @@ library(latex2exp)
   * Special [seminar](https://tsoo-math.github.io/ucl2/grst/aston-abstract.html) at 2 PM, B09 (1-19 Torrington Place).
   
 * £ 1000 in prizes, we welcome posters from all universities 
+  *  Jeffrey Tse, Oxford; Selecting Invalid Instruments 
+  * Yann McLatchie, UCL Stats; Predictive Performance of Power Posteriors
+  * Kevin Huang, UCL Gatsby; Gaussian Universality and Convex Gaussian Min-Max Theorem for High Dimensional and Dependent Data 
   
 *  Just show up with your printed poster, no size or template requirements
+
+* [Photo](https://tsoo-math.github.io/ucl2/grst/2025-photo.jpg)
 
 
 
