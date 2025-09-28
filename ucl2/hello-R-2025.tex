@@ -1,0 +1,183 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Hello-R},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Hello-R}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\section{Installing R}\label{installing-r}
+
+Welcome! Make sure you have access to R. I recommend that you install
+it!
+
+\begin{itemize}
+\item
+  Download/Install \href{https://www.r-project.org/}{R}
+\item
+  Download/Install \href{https://rstudio.com/}{R studio}
+\item
+  Download/Install \href{https://rmarkdown.rstudio.com/}{R markdown}
+\item
+  Install \href{https://bookdown.org/yihui/bookdown/get-started.html}{R
+  bookdown}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    It is probably not necessary to install Bookdown and things are
+    probably moving towards
+    \href{https://tsoo-math.github.io/ucl3/quarto.html}{Quarto}.
+  \end{itemize}
+\item
+  Install \href{https://yihui.org/tinytex/}{Tinytex}
+\item
+  It maybe possible to do everything for free or a small price over the
+  \href{https://posit.cloud/}{cloud}
+\end{itemize}
+
+Not only can you type run R code, you can produce html and pdf files
+with math and R code together! Roughly speaking R studio is an easy way
+to use R, and R markdown is a language easily generates html files with
+R code and math symbols, allowing the use of basic
+\href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{Latex} code; it
+is how I generates many of the html pages for our module.
+
+\subsection{Practice}\label{practice}
+
+Try writing up solutions to these questions in R-Markdown.
+
+\begin{exercise}
+    Let $X$ and $Y$ be independent fair dice.  Compute the conditional pmf of $X$ given that $X+Y = 7$.
+\end{exercise}
+
+\begin{exercise}
+Let $X$ and $Y$ be independent random variables, where $X$ is Bernoulli with parameter $p \in [0,1]$ and $Y$ is Poisson with mean $1$.   Let $Z = X+Y$.  What is the probability that $Z=1$?  
+\end{exercise}
+
+\begin{exercise}
+Let $X = (X_1, \ldots, X_n)$ be a random sample from the Bernoulli family with parameter $p \in (0,1)$.  Consider a hypothesis test with $H_0: p =1/2$ vs $H_1: p =1/4$ and the test statistic $T= \bar{X}$.  Let $n=25$.  What should the rejection region be for a test of significance level $0.05$?
+\end{exercise}
+
+\begin{exercise} Let $\Phi$ be the cdf for the standard normal distribution.  Compute the value of the following integral in terms of $\Phi$.
+$$\int_{-1} ^{1}   e^{-(x-5)^2} dx.$$
+
+\end{exercise}
+
+\begin{exercise}
+Let $Z$ be a standard normal random variable.   Find an explicit deterministic function $\phi$ such that $\phi(Z)$ is uniformly distributed in $\{1,2,3\}.$
+    
+\end{exercise}
+
+\begin{exercise}
+Let $U$ be uniformly distributed in on a disc of radius $1$ centered at the origin in $\mathbb{R}^2$.   Write $U = (X,Y)$.   Show explicitly that $X$ is not independent of $Y$.   
+    
+\end{exercise}
+
+\begin{exercise}
+ Let $Z$,  $\epsilon$, and $\delta$ be independent random variables.  Suppose that $Y = \phi(Z, \epsilon)$ and $X = \psi(Z, \delta)$, where $\phi$ and $\psi$ are deterministic functions.   Carefully show  that $X$ is independent of $Y$, given $Z$, in the case that all the random variables are discrete.  
+\end{exercise}
+
+\begin{exercise}
+Let $U_1, \ldots, U_n$ be an independent discrete sequence of random variables that uniformly distributed in $\{1,2,3\}$.  Consider $M_n = \max(U_1, \ldots, U_n)$.  Prove that $M_n$ converges to $3$ as $n \to \infty$. 
+    
+\end{exercise}
+
+\begin{exercise}
+Consider a sequence of $20$ fair coin flips, Estimate the probability that we will see a run of at least four heads.   It is not hard to get a lower bound of $0.27$.
+    \end{exercise}
+
+\begin{exercise}
+Let $X$ and $Y$ be independent random variables that are uniformly distributed in $[0,1]$.  Sketch the pdf of $Z = X+Y$.  
+    
+\end{exercise}
+
+\begin{exercise}
+Let $X_1, \ldots, X_n$ be independent Poisson random variables with mean $\lambda$.   Let $T = X_1 + \cdots + X_n$.  Let $Y = \mathbf{1}[X_1=1]$ be the Bernoulli random variable that takes the value $1$ if and only if $X_1=1$.     Show that  $Z=\mathbb{E}(Y |T)$ converges to $\mathbb{P}(X_1=1)$ as $n \to \infty$.
+    
+\end{exercise}
+
+\begin{exercise}
+Let $\epsilon_1$ and $\epsilon_2$ be independent standard normals. Consider the system of equations
+
+\begin{eqnarray*}
+ X &=& \tfrac{1}{2} Y + \epsilon_1 \\
+ Y &=& \tfrac{1}{2} X + \epsilon_2.    
+\end{eqnarray*}
+
+Does the system have a solution, $(X,Y)$; what would the distribution be?
+    
+\end{exercise}
+
+\subsubsection{Version: 29 September
+2025}\label{version-29-september-2025}
+
+\href{https://tsoo-math.github.io/ucl2/hello-R-2025.Rmd}{R Markdown
+source}
+
+\end{document}

@@ -1,14 +1,12 @@
 ---
 title: "Hello-R"
 output:
-  bookdown::html_document2: default
-  bookdown::pdf_document2:
-    keep_tex: yes
-  bookdown::word_document2:
-    toc: yes
-  pdf_document:
-    toc: yes
+  html_document:
+    df_print: paged
 ---
+
+
+
 
 
 ```{r setup, include=FALSE}
@@ -16,9 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-# Introduction
+# Installing R
 
-Welcome!  I would like to get to you a bit. But first
+Welcome!  Make sure you have access to R.  I recommend that you install it!
 
 * Download/Install [R](https://www.r-project.org/)
 * Download/Install [R studio](https://rstudio.com/)
@@ -31,6 +29,79 @@ Welcome!  I would like to get to you a bit. But first
 
 Not only can you type run R code, you can produce html and pdf files with math and R code together!  Roughly speaking R studio is an easy way to use R, and R markdown is a language easily generates html files with R code and math symbols, allowing the use of basic [Latex](https://en.wikibooks.org/wiki/LaTeX/Mathematics) code; it is how I generates many of the html pages for our module.
 
+##  Practice
+
+Try writing up solutions to these questions in R-Markdown.
+
+
+
+* Let $X$ and $Y$ be independent fair dice.  Compute the conditional pmf of $X$ given that $X+Y = 7$.
+
+
+
+
+
+* Let $X$ and $Y$ be independent random variables, where $X$ is Bernoulli with parameter $p \in [0,1]$ and $Y$ is Poisson with mean $1$.   Let $Z = X+Y$.  What is the probability that $Z=1$?  
+
+
+
+
+* Let $X = (X_1, \ldots, X_n)$ be a random sample from the Bernoulli family with parameter $p \in (0,1)$.  Consider a hypothesis test with $H_0: p =1/2$ vs $H_1: p =1/4$ and the test statistic $T= \bar{X}$.  Let $n=25$.  What should the rejection region be for a test of significance level $0.05$?
+
+
+* Let $\Phi$ be the cdf for the standard normal distribution.  Compute the value of the following integral in terms of $\Phi$.
+$$\int_{-1} ^{1}   e^{-(x-5)^2} dx.$$
+
+
+
+
+
+* Let $Z$ be a standard normal random variable.   Find an explicit deterministic function $\phi$ such that $\phi(Z)$ is uniformly distributed in $\{1,2,3\}.$
+    
+
+
+
+* Let $U$ be uniformly distributed in on a disc of radius $1$ centered at the origin in $\mathbb{R}^2$.   Write $U = (X,Y)$.   Show explicitly that $X$ is not independent of $Y$.   
+    
+
+
+
+
+
+
+
+* Let $Z$,  $\epsilon$, and $\delta$ be independent random variables.  Suppose that $Y = \phi(Z, \epsilon)$ and $X = \psi(Z, \delta)$, where $\phi$ and $\psi$ are deterministic functions.   Carefully show  that $X$ is independent of $Y$, given $Z$, in the case that all the random variables are discrete.  
+
+
+
+
+* Let $U_1, \ldots, U_n$ be an independent discrete sequence of random variables that uniformly distributed in $\{1,2,3\}$.  Consider $M_n = \max(U_1, \ldots, U_n)$.  Prove that $M_n$ converges to $3$ as $n \to \infty$. 
+    
+
+
+
+* Consider a sequence of $20$ fair coin flips, Estimate the probability that we will see a run of at least four heads.   It is not hard to get a lower bound of $0.27$.
+    
+
+
+* Let $X$ and $Y$ be independent random variables that are uniformly distributed in $[0,1]$.  Sketch the pdf of $Z = X+Y$.  
+    
+
+
+
+* Let $X_1, \ldots, X_n$ be independent Poisson random variables with mean $\lambda$.   Let $T = X_1 + \cdots + X_n$.  Let $Y = \mathbf{1}[X_1=1]$ be the Bernoulli random variable that takes the value $1$ if and only if $X_1=1$.     Show that  $Z=\mathbb{E}(Y |T)$ converges to $\mathbb{P}(X_1=1)$ as $n \to \infty$.
+    
+
+
+
+
+* Let $\epsilon_1$ and $\epsilon_2$ be independent standard normals. Consider the system of equations
+\begin{eqnarray*}
+ X &=& \tfrac{1}{2} Y + \epsilon_1 \\
+ Y &=& \tfrac{1}{2} X + \epsilon_2.    
+\end{eqnarray*}
+Does the system have a solution, $(X,Y)$; what would the distribution be?
+    
 
 
 
@@ -38,8 +109,8 @@ Not only can you type run R code, you can produce html and pdf files with math a
 
 <br>
 
-#   Version: `r format(Sys.time(), '%d %B %Y')`
-[R Markdown source](https://tsoo-math.github.io/ucl2/hello-R-2001.Rmd)
+###   Version: `r format(Sys.time(), '%d %B %Y')`
+[R Markdown source](https://tsoo-math.github.io/ucl2/hello-R-2025.Rmd)
 <br>
 <br>
 <br>
