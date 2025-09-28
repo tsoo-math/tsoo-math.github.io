@@ -1,0 +1,47 @@
+---
+title: "Hello-R"
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2:
+    keep_tex: yes
+  bookdown::word_document2:
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introduction
+
+Welcome!  I would like to get to you a bit. But first
+
+* Download/Install [R](https://www.r-project.org/)
+* Download/Install [R studio](https://rstudio.com/)
+* Download/Install [R markdown](https://rmarkdown.rstudio.com/)
+* Install  [R bookdown](https://bookdown.org/yihui/bookdown/get-started.html)
+  * It is probably not necessary to install Bookdown and things are probably moving towards [Quarto](https://tsoo-math.github.io/ucl3/quarto.html).
+* Install [Tinytex](https://yihui.org/tinytex/)
+
+* It maybe possible to do everything for free or a small price over the [cloud](https://posit.cloud/)
+
+Not only can you type run R code, you can produce html and pdf files with math and R code together!  Roughly speaking R studio is an easy way to use R, and R markdown is a language easily generates html files with R code and math symbols, allowing the use of basic [Latex](https://en.wikibooks.org/wiki/LaTeX/Mathematics) code; it is how I generates many of the html pages for our module.
+
+
+
+
+
+
+<br>
+
+#   Version: `r format(Sys.time(), '%d %B %Y')`
+[R Markdown source](https://tsoo-math.github.io/ucl2/hello-R-2001.Rmd)
+<br>
+<br>
+<br>
+
+

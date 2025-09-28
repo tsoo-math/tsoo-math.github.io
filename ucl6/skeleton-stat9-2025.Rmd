@@ -9,6 +9,8 @@ output: html_document
 
 # General information
 
+* [Moodle](https://moodle.ucl.ac.uk/course/view.php?id=54044)
+
 * [Module outline 2025](https://tsoo-math.github.io/ucl6/outline-stat9-2025.html)
 
 * [Location and time](https://timetable.ucl.ac.uk/tt/moduleTimet.do?firstReq=Y&moduleId=STAT0009&acadYearFl=N)
