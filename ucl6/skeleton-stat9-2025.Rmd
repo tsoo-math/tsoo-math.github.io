@@ -9,11 +9,11 @@ output: html_document
 
 # General information
 
-* [Module outline 2024](https://tsoo-math.github.io/ucl5/outline-stat9-2024.html)
+* [Module outline 2025](https://tsoo-math.github.io/ucl6/outline-stat9-2025.html)
 
 * [Location and time](https://timetable.ucl.ac.uk/tt/moduleTimet.do?firstReq=Y&moduleId=STAT0009&acadYearFl=N)
 
-* [Live in-person sessions 2024](https://tsoo-math.github.io/ucl5/live-stat9-2024.html)
+* [Live in-person sessions 2025](https://tsoo-math.github.io/ucl6/live-stat9-2025.html)
 
 * [Homework 2025](https://tsoo-math.github.io/ucl6/hw-stat9-2025.html)
 

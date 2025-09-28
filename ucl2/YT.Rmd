@@ -1,7 +1,5 @@
 ---
 title: YouTube videos
-author: 
-date:  Fall 2021
 output: html_document
 ---
 
@@ -61,7 +59,7 @@ The videos made for Stat 0009 will be available on YouTube as well as Moodle.
 *  [3/4](https://youtu.be/oM1ZPVx6cKE)
 *  [4/4](https://youtu.be/Y282zep9Fdc)
 
-* [slides](https://tsoo-math.github.io/ucl/reviewMC-slides.html)
+* [slides](https://tsoo-math.github.io/ucl/markov-c-slides.html)
 
 
 
