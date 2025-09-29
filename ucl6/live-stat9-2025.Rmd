@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # General information
 
-We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed.  The recording links will be available on Moodle.
+We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed.  The recording links will be available on [Moodle](https://moodle.ucl.ac.uk/course/view.php?id=54044&section=0)---scroll to the bottom.
 
 
 # By [UCL week](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2025_26v1.pdf)
@@ -17,11 +17,11 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 # Week 6
 
-* We discussed the module outline and the mechanics of the module
+* We discussed the module outline and the mechanics of the module.
 
-* We discussed various forms of convergence and the law of large numbers
+* We discussed various forms of convergence and the law of large numbers.
 
-* We ended with a question that could be tackled using simulations
+* We ended with a question that could be tackled using simulations.
 
 
 <br>
