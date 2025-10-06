@@ -23,6 +23,13 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 * We ended with a question that could be tackled using simulations.
 
+#  Week 7
+
+* We discussed the sample of random variables
+
+* We discussed coupling and its connection to the total variational distance
+
+
 
 <br>
 <br>
