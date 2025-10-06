@@ -21,8 +21,7 @@ LTCC [site](http://www.ltcc.ac.uk/timetable/)
 <br>
 
 * 10.50-12.50; Mondays, 6 October - 3 November   
-* De Morgan House, Russell Square
-* 
+* Hardy room, De Morgan House, Russell Square
 
 
 
@@ -41,6 +40,9 @@ LTCC [site](http://www.ltcc.ac.uk/timetable/)
 # Classes
 
 ## First Class
+
+* [Law of Large numbers and R](https://tsoo-math.github.io/ucl/prob-viaR.html)
+* [Strong law of large numbers](https://tsoo-math.github.io/ucl/borel.html)
 
 
 ### Endnotes
