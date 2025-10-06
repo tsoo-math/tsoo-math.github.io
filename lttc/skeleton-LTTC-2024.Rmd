@@ -6,6 +6,11 @@ output: html_document
 ---
 
 
+
+# [2025](https://tsoo-math.github.io/lttc/skeleton-LTTC-2025.html)
+
+
+
 #  Basics
 
 
