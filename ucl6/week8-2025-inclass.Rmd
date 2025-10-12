@@ -1,0 +1,59 @@
+---
+title: "Sampling and Markov like properties "
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Rejection sampling
+
+Consider the function $x \to \frac{1}{\sqrt{2\pi}} e^{-x^2/2}$.   Suppose that I want to sample a point uniformly under the area enclosed by the function and the line $y=0$.  How would you accomplish this?  Code it.
+
+
+
+# Baby structural equation models
+
+## A line
+
+Let $\epsilon_1, \epsilon_2$ and $\epsilon_3$ be independent random variables.   Let $\phi_1, \phi_2$, $\phi_3$ be some deterministic functions.   Set $X_1 = \phi_1(\epsilon_1)$, $X_2 = \phi_2(X_1, \epsilon_2)$, and $X_3 = \phi_3(X_2,\epsilon_3)$.   Assume that $X_1, X_2$, and $X_3$ are discrete random variables.    It maybe helpful to visualize this arrangement as
+$$X_1 \to X_2 \to X_3.$$
+
+Suppose that $\mathbb{P}(X_3=x_3, X_2=x_2, X_1=x_1) >0$.  
+
+* Prove that 
+
+$$\mathbb{P}(X_3 = x_3 | X_2=x_2, X_1=x_1) = \mathbb{P}(X_3 = x_3 | X_2=x_2).$$
+
+* Prove that 
+
+$$\mathbb{P}(X_3=x_3, X_1=x_1 | X_2=x_2) = \mathbb{P}(X_3=x_3| X_2=x_2)\mathbb{P}(X_1=x_1 | X_2=x_2)$$
+
+## A common cause
+
+Let $\epsilon_1, \epsilon_2$ and $\epsilon_3$ be independent random variables.   Let $\phi_1, \phi_2$, $\phi_3$ be some deterministic functions.   Set $X_1 = \phi_1(\epsilon_1)$, $X_2 = \phi_2(X_1,\epsilon_2)$, and $X_3 = \phi_3(X_1, \epsilon_3)$.   Assume that $X_1, X_2$, and $X_3$ are discrete random variables.
+
+Are $X_2$ and $X_3$ conditionally indepedendant given $X_1$?  Explain.
+
+
+
+
+## A collider
+
+Let $\epsilon_1, \epsilon_2$ and $\epsilon_3$ be independent random variables.   Let $\phi_1, \phi_2$, $\phi_3$ be some deterministic functions.   Set $X_1 = \phi_1(\epsilon_1)$, $X_2 = \phi_2(\epsilon_2)$, and $X_3 = \phi_3(X_1, X_2,\epsilon_3)$.   Assume that $X_1, X_2$, and $X_3$ are discrete random variables.   Are $X_1$ and $X_2$ conditionally indepdendent given $X_3$?  Explain.
+
+
+
+## Functions of Markov chains
+
+Let $X = (X_i)_{i=0}^{\infty}$ be a Markov chain on the state space $S$.  Let $\phi: S \to S$ be deterministic function.  Suppose that $Y_i = \phi(X_i)$.   Is $Y=(Y_0,Y_1,\ldots)$ always a Markov chain?  Explain.
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
