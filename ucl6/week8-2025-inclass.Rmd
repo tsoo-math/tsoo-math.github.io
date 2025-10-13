@@ -35,14 +35,14 @@ $$\mathbb{P}(X_3=x_3, X_1=x_1 | X_2=x_2) = \mathbb{P}(X_3=x_3| X_2=x_2)\mathbb{P
 
 Let $\epsilon_1, \epsilon_2$ and $\epsilon_3$ be independent random variables.   Let $\phi_1, \phi_2$, $\phi_3$ be some deterministic functions.   Set $X_1 = \phi_1(\epsilon_1)$, $X_2 = \phi_2(X_1,\epsilon_2)$, and $X_3 = \phi_3(X_1, \epsilon_3)$.   Assume that $X_1, X_2$, and $X_3$ are discrete random variables.
 
-Are $X_2$ and $X_3$ conditionally indepedendant given $X_1$?  Explain.
+Are $X_2$ and $X_3$ conditionally independent  given $X_1$?  Explain.
 
 
 
 
 ## A collider
 
-Let $\epsilon_1, \epsilon_2$ and $\epsilon_3$ be independent random variables.   Let $\phi_1, \phi_2$, $\phi_3$ be some deterministic functions.   Set $X_1 = \phi_1(\epsilon_1)$, $X_2 = \phi_2(\epsilon_2)$, and $X_3 = \phi_3(X_1, X_2,\epsilon_3)$.   Assume that $X_1, X_2$, and $X_3$ are discrete random variables.   Are $X_1$ and $X_2$ conditionally indepdendent given $X_3$?  Explain.
+Let $\epsilon_1, \epsilon_2$ and $\epsilon_3$ be independent random variables.   Let $\phi_1, \phi_2$, $\phi_3$ be some deterministic functions.   Set $X_1 = \phi_1(\epsilon_1)$, $X_2 = \phi_2(\epsilon_2)$, and $X_3 = \phi_3(X_1, X_2,\epsilon_3)$.   Assume that $X_1, X_2$, and $X_3$ are discrete random variables.   Are $X_1$ and $X_2$ conditionally independent  given $X_3$?  Explain.
 
 
 
@@ -53,7 +53,7 @@ Let $X = (X_i)_{i=0}^{\infty}$ be a Markov chain on the state space $S$.  Let $\
 
 ### Endnotes
 
-Version: `r format(Sys.time(), '%d %B %Y')`
-
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [source](https://tsoo-math.github.io/ucl6/week8-2025-inclass.Rmd)
 
 
