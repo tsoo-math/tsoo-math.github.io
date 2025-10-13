@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-# Rejection sampling
+# Sampling
 
 Consider the function $x \to \frac{1}{\sqrt{2\pi}} e^{-x^2/2}$.   Suppose that I want to sample a point uniformly under the area enclosed by the function and the line $y=0$.  How would you accomplish this?  Code it.
 
