@@ -11,7 +11,7 @@ css: back.css
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-*  [Profile at UCL](https://www.ucl.ac.uk/mathematical-physical-sciences/dr-terry-soo)
+*  [Profile at UCL](https://profiles.ucl.ac.uk/74771-terry-soo)
 
 
 
