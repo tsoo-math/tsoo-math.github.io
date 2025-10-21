@@ -1,0 +1,170 @@
+---
+title: Renewal type arguments
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+## The Law of Large numbers for Markov chains
+
+
+In this section,  we will prove a version of the ergodic theorem for Markov chains by breaking the chain up into independent parts.  Let $X$ be a Markov chain on a state space $S$.  Recall that we say that a state $s \in S$ is **recurrent** if 
+$$\mathbb{P}( \text{there exists } n\geq 1 \text{ such that }  X_n=s \ | \  X_0=s)=1.$$  Furthermore, let $X$ be a Markov chain started at $s$ and  $T = \inf \{n \geq 1 : X_n=s\}$;  we say that a recurrent  state $s$ is **positive-recurrent** if $\mathbb{E} T < \infty$ and **null-recurrent** if $\mathbb{E} T = \infty$.  
+
+
+
+
+
+**Theorem (Law of large numbers):** Let $X$ be an irreducible Markov chain on a countable state space $S$.  Let $P$ be the transition matrix for $S$, and assume all the states are positive-recurrent.  Fix $s \in S$.    Start the chain $X$ at $s$.   Let  $T_1 = \inf \{n \geq 1 : X_n=s\}$ and
+let $$V_n = \sum_{k=0} ^{n} \mathbf{1}[X_k=s].$$
+Then 
+ $$V_n/n \to (\mathbb{E} T_1)^{-1}$$
+ almost surely.  
+
+
+The starting point of the proof of this version of the law of large numbers is the following observation.  Let $T_1 = \inf\{n >0:  X_n =s\}$.  Set $$T_{n} = \inf\{n >T_{n-1}:  X_n=s\}.$$
+Then  $T_n =  \sum_{k=1} ^{n-1} (T_{k+1} - T_k) + T_1$ and  $Y_k = T_{k+1} - T_k$ are i.i.d.\ random variables.  This may appear obvious from the Markov property, but it is a  seemingly stronger claim (that turns out is implied by the regular Markov property), since we need to argue that Markov chain *renews* itself each time it reaches the state $s$, which is a *random* time, rather than a deterministic time.   
+
+
+
+Let $X = (X_i)_{i \in \mathbb{N}}$ be a random process taking values in $S$.  If  $T$ is a nonnegative  integer-valued random variable with the property that for all $n \in \mathbb{N}$ there exists a deterministic function $\phi_n: S^n \to \{0,1\}$ such that  $\mathbf{1}[T=n] = \phi_n(X_0, X_1, \ldots, X_n)$, then we say that $T$ is a **stopping time**.  Thus $T$ does not look into the future, to determine whether to *stop* or not.   We will usually assume that $\mathbb{P}(T < \infty) = 1$.  
+
+
+**Theorem (Strong Markov property:**  Let $X$ be a Markov chain taking values in a state space $S$ with a transition matrix $P$.   If $T$ is a stopping time, then conditional on the event $\{X_T=s\}$ we have that $Y=(X_{T+k})_{k=0} ^{\infty}$ is  a Markov chain started at $s$ with transition matrix $P$ that is independent of $Z=(X_k)_{k=0}^{T}$. 
+
+
+
+*Proof:*  We will show that 
+$$\mathbb{P}(Y \in A, Z \in C \ | \ X_T=s) = \mathbb{P}(X \in A \ | \ X_0 =s)\mathbb{P}(Z \in C \ | \ X_T=s),$$   
+for  sets $A$ of the form $$A= \{a \in S^{\mathbb{N}}: a_0=z_0, \ldots, a_k=z_k\}.$$
+The event $\{Z \in C\}$ that we need to check are given by the disjoint union of 
+$$\{Z \in C\} \cap \{T=n\}.$$ 
+
+Thus we will check events of the form $B_n \cap \{T=n\}$, where
+$$B_n =\{ X_0 = b_0, X_1=b_1, \ldots, X_{n-1}=b_{n-1}, X_n=b_n\}.$$
+Recall that the event $\{T=n\}$ depends on only on the the Markov chain up to time $n$.  The (regular) Markov property gives that
+$$\mathbb{P}(X_T=z_0, \ldots, X_{T+k} = z_{k}, \ B_n, T=n, X_T=s) =$$
+$$\mathbb{P}(X_0=z_0, \ldots, X_k = z_k \ | X_0=s)\mathbb{P}(B_n, T=n, X_T=s).$$
+Summing over all $n\geq 0$, we have 
+$$\mathbb{P}(X_T=z_0, \ldots, X_{T+k} = z_{k}, Z \in C, X_T=s) =$$
+$$\mathbb{P}(X_0=z_0, \ldots, X_k = z_k \ | X_0=s)\mathbb{P}(Z \in C,  X_T=s),$$
+and dividing by $\mathbb{P}({X_T=s})$, we obtain the required result.   
+
+
+*Proof of law of large numbers:*
+
+
+By the Strong Markov property the random variables $Y_k = T_{k+1} - T_k$ are i.i.d.\ random variables. The law of large numbers gives that  $T_n/ n \to \mathbb{E} T_1$ almost surely.   Observe that $V_{T_n} = n+1$, and thus $V_{T_n} /T_n \to  (\mathbb{E} T_1)^{-1}$.   Hence $V_n / n \to (\mathbb{E} T_1)^{-1}$, since $T_n \to \infty$.  
+
+
+**Corollary** Let $\pi$ is the stationary distribution and $T^s = \inf \{ n \geq 1: X_n =s | X_0 =s\}$.  Then   $$(\mathbb{E} T^s)^{-1} = \pi(s).$$
+
+*Proof (aperiodic irreducible finite state space)*  We proved that $V_n/ n \to \pi(s)$ in probability.  We also proved that $V_n/ n \to   (\mathbb{E} T^s)^{-1}$ almost surely, and thus also in probability.  thus $(\mathbb{E} T^s)^{-1} = \pi(s)$.
+
+
+
+##  CLT for Markov chains
+
+The decomposition that we used to proe the LLN and also be used to prove a CLT.
+
+
+### Preliminaries
+
+
+In this section, we will consider some  results which are sometimes useful in computations.  
+
+**Lemma (Converging together):**
+If $X_n \xrightarrow{  \text{dist} } X$ and $|Y_n - X_n| \xrightarrow{  \text{prob} } 0$, then $Y_n \xrightarrow{  \text{dist} } X$.  
+
+
+**Theorem (Slutsky):**
+If $X_n$ converges to $X$ in distribution, and $Y_n$ converges to a constant $c \in \mathbb{R}$ in probability, then  (provided all the random variables are defined on the same probability space) we have that
+$$ X_n + Y_n \text{ converges in distribution to } X+c$$
+and
+$$ Y_nX_n \text{ converges in distribution to }  cX.$$
+
+
+**Lemma:** If $X_n \xrightarrow{  \text{dist} } X$ and $Y_n \xrightarrow{  \text{dist} } c$, then $(X_n, Y_n) \xrightarrow{  \text{dist} } (X, c)$, (assuming all the real random variables are defined on the same probability space).
+
+
+**Theorem (Taylor):**
+	Let $f$ be $k$ times differentiable at the point $a$.    Then there exists a function $r$ such that $\lim_{x \to a} r(x) \to 0$ and
+	$$f(x) = f(a) + f'(a)\cdot(x-a) + \cdots + \frac{f^{k}(a)}{k!} \cdot(x-a)^k + r(x)\cdot(x-a)^k.$$
+
+
+
+**Theorem (Delta method):**
+\label{delta}
+	Let $W_n$ be a sequence of random variables such that for some $\theta_0 \in \mathbb{R}$ and  $\sigma >0$, we have
+	$$ \sqrt{n}(W_n - \theta_0)  \xrightarrow{  \text{dist} } \ N(0, \sigma^2).$$ 
+	If $g$ is differentiable and $g'(\theta_0) \not =0$, then 
+		$$ \sqrt{n}(g(W_n) - g(\theta_0))  \xrightarrow{  \text{dist} } \ N(0, [g'(\theta_0)\sigma]^2).$$ 
+*Proof:*
+	First, observe that $W_n \to \theta_0$ in probability.  Next, by Taylor's theorem, write
+	$$g(W_n) = g(\theta_0) + g'(\theta_0)(W_n - \theta_0) +r(W_n)(W_n - \theta).$$
+Rearranging gives, 
+	 $$\sqrt{n}(g(W_n) - g(\theta_0)) = g'(\theta_0) \cdot \sqrt{n} (W_n - \theta_0) +  r(W_n)\cdot\sqrt{n}(W_n - \theta).$$
+	 By assumption we have that 
+	 $$g'(\theta_0) \cdot \sqrt{n} (W_n - \theta_0) \xrightarrow{  \text{dist} } \ N(0, [g'(\theta_0)\sigma]^2).$$
+	 Thus it suffices to show, by Slutsky's theorem, that the second term goes to $0$ in probability; this also follows from Slutsky's theorem since by definition of $r$, we know that $r(W_n) \to 0$ in probability, since  $W_n \to \theta_0$ in probability.     
+	
+
+Recall that if $Z \sim N(0,1)$, then the random variable given by $\chi^2 = Z^2$ has a chi-squared distribution with $1$ degree of freedom.
+
+*Exercise (Second order Delta method):*
+		Let $W_n$ be a sequence of random variables such that for some $\theta_0 \in \mathbb{R}$, we have
+		$$\sqrt{n}(W_n - \theta_0)  \xrightarrow{  \text{dist} } \ N(0, 1).$$ 
+		Prove that if $g$ is twice differentiable, $g'(\theta_0) =0$, $g^{\prime \prime}(\theta_0) \not=0$, then 
+		$$n(g(W_n) - g(\theta_0))  \xrightarrow{  \text{dist} } \  \frac{g^{\prime \prime }(\theta_0)}{2}\chi^2.$$ 
+
+
+### The CLT
+
+**Theorem (CLT):** Let $X$ be an irreducible Markov chain on a countable state space $S$.  Let $P$ be the transition matrix for $S$, and assume all the states are positive-recurrent.  Fix $s \in S$.    Start the chain $X$ at $s$.   Let  $T_1 = \inf \{n \geq 1 : X_n=s\}$,  $\mathbb{E}T_1 = \mu = (\pi_s)^{-1}$, $var(T_1) = \sigma^2 < \infty$, and
+let $$V_n = \sum_{k=0} ^{n} \mathbf{1}[X_k=s].$$
+Then 
+ $$\sqrt{n}(V_n/n -  \pi_s) \xrightarrow{  \text{dist} } N(0, \pi_s^3\sigma^2).$$
+*Proof:*  As in the proof of the LLN, we let $T_k$ be the $k$th return time to $s$, then the random variables $Y_k = T_{k+1} - T_k$ are iid.  Thus from the regular CLT for iid random variables we have that
+$$\sqrt{n}(T_n/n - \mu) \xrightarrow{  \text{dist} } N(0, \sigma^2).$$
+
+Applying the delta method with $g(x) = x^{-1}$, we have
+
+$$\sqrt{n}(n/T_n - \pi_s) \xrightarrow{  \text{dist} } N(0, \pi_s^4\sigma^2).$$
+Note that $n/T_n = V_{T_n}/T_n$ and since $T_n/n \to \mu$, we have that  
+
+$$\sqrt{T_n}(V_{T_n}/T_n - \pi_s) \xrightarrow{  \text{dist} } N(0, \pi_s^3\sigma^2).$$
+*Exercise:* Check that this is indeed enough, since we have the indexing $T_n$ instead of $n$ in the final expression.
+
+
+## Summary
+
+
+*   We  applied renewal type arguments to the study of Markov chains to obtain a LLN and a CLT.
+
+
+## Endnotes
+
+* Standard references include:
+
+  * Doob [(1948)](https://www.ams.org/journals/tran/1948-063-03/S0002-9947-1948-0025098-8/S0002-9947-1948-0025098-8.pdf)
+  * Grimmett and Stirzker [(2001)](https://zbmath.org/1015.60002)
+  * Cox [(1962)](https://zbmath.org/0103.11504)
+
+<br>
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+* [Rmd Source](https://tsoo-math.github.io/lttc/renewal-clt.Rmd)
+
+
+
+<br>
+<br>
+<br>
+
+
