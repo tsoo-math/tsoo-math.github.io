@@ -52,6 +52,13 @@ LTCC [site](http://www.ltcc.ac.uk/timetable/)
 
 * [Coupling and TV](https://tsoo-math.github.io/ucl/TV-lec.html)
 
+
+## Third Class
+
+* [Doeblin coupling](https://tsoo-math.github.io/ucl/markov-c.html)
+
+* [Renewal type arguments](https://tsoo-math.github.io/lttc/renewal-clt.html)
+
 ### Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`
