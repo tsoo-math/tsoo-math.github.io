@@ -359,8 +359,49 @@ display: none;
 exercises.</p>
 </div>
 <div id="section" class="section level1">
-<h1>(2024)</h1>
+<h1>2025</h1>
 <div id="poisson-processes" class="section level2">
+<h2>Poisson processes</h2>
+<ul>
+<li><p>Using the general definition, the given in the notes in the
+section <em>Other spaces and spatial Poisson point processes</em> in the
+case of a Poisson point process on <span class="math inline">\([0,
+\infty)\)</span>, show that if there is exactly one point in <span class="math inline">\([0,1]\)</span>, then it is uniformly
+distributed.</p></li>
+<li><p>Suppose that a Poisson point process of intensity <span class="math inline">\(\lambda &gt;0\)</span> on <span class="math inline">\([0, \infty)\)</span> has been constructed, by
+placing independent Poisson point process on the interval <span class="math inline">\([k, k+1)\)</span> for <span class="math inline">\(k=0, 1, \ldots.\)</span></p>
+<ul>
+<li>Show that indeed, the probability of the first arrival is
+exponential.<br />
+</li>
+<li>Illustrate your result via simulations.</li>
+</ul></li>
+<li><p>Consider a Poisson point process of unit intensity on the real
+line, which we think of as dust. We start at the origin, and are
+interested in vacuuming, and we do it in a greedy way, so that we always
+go to the closest piece of dust. For background (not necessary for the
+completion nor understanding of this question) <a href="https://link.springer.com/article/10.1007/s11134-011-9246-x">see
+this link</a>. Use the Borel-Cantelli lemma to prove that the vacuum
+cleaner will eventually pick a direction, and never turn back, so that
+it will leave an infinite number of points untouched.</p></li>
+<li><p>Compute directly (or by simulations) the probability that,
+initially, you will head in the positive direction twice,
+successively.</p></li>
+</ul>
+</div>
+<div id="law-of-large-numbers" class="section level2">
+<h2>Law of large numbers</h2>
+<ul>
+<li>State a Weierstrass approximation theorem for a continous function
+<span class="math inline">\(f : [0,1] \times [0,1] \to
+\mathbb{R}\)</span>. How would you prove such a theorem using
+probability?</li>
+</ul>
+</div>
+</div>
+<div id="section-1" class="section level1">
+<h1>(2024)</h1>
+<div id="poisson-processes-1" class="section level2">
 <h2>Poisson processes</h2>
 <p>Suppose a shop that operates daily in the time interval <span class="math inline">\([a,b]\)</span>. It has customers arriving
 according to a Poisson process of intensity <span class="math inline">\(3\)</span> in the time interval <span class="math inline">\([a, c)\)</span>, and a Poisson process of
@@ -420,7 +461,7 @@ converges to zero, as <span class="math inline">\(\epsilon \to
 0\)</span>.</p>
 </div>
 </div>
-<div id="section-1" class="section level1">
+<div id="section-2" class="section level1">
 <h1>(2023)</h1>
 <div id="class-1" class="section level2">
 <h2>Class 1</h2>
@@ -458,8 +499,8 @@ eigenvectors will have absolute value less than <span class="math inline">\(1\)<
 <li>We saw that if <span class="math inline">\(X = (X_0, X_1, \ldots,
 )\)</span> was a stationary sequence, with <span class="math inline">\(X_i \in \mathbb{R}\)</span>, then this gave rise
 to a measure-preserving <span class="math inline">\((\mathbb{R}^{\mathbb{N}}, \mu, T)\)</span>, where
-<span class="math inline">\(\mu(\cdot) = \mathbb{P}(X \in
-\cdot)\)</span>, and <span class="math inline">\(T\)</span> is the
+<span class="math inline">\(\mu(\cdot) = \mathbb{P}(X
+\in  \cdot)\)</span>, and <span class="math inline">\(T\)</span> is the
 left-shift. Now suppose that <span class="math inline">\((\Omega, \mu,
 T)\)</span> is an arbitrary measure-preserving system, what would you
 say is the corresponding stationary sequence?</li>
@@ -604,8 +645,8 @@ probability histogram of large size sample from a pdf <span class="math inline">
 by hand and by simulation.</p></li>
 <li><p>Examine <a href="https://tsoo-math.github.io/ucl2/2021-HW-week6.html">Exercise Pen
 and Paper</a> by hand and by simulation.</p></li>
-<li><p>Let <span class="math inline">\(X \geq 0\)</span> be a continuous
-random variable with finite first moment. Prove that <span class="math display">\[\mathbb{E} X = \int_0 ^{\infty} \mathbb{P}(X
+<li><p>Let <span class="math inline">\(X \geq  0\)</span> be a
+continuous random variable with finite first moment. Prove that <span class="math display">\[\mathbb{E} X = \int_0 ^{\infty} \mathbb{P}(X
 &gt;t) dt.\]</span> Hint: use a double integral.</p></li>
 <li><p>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be nonnegative independent continuous
 random variables. Prove that for <span class="math inline">\(t
@@ -635,7 +676,7 @@ is the unique point such that <span class="math inline">\(\mathbb{P}(Z
 -c)\)</span> . Let <span class="math inline">\(X = (X_1, \ldots,
 X_{2n+1})\)</span> be a random sample from a symmetric distribution with
 unique median zero and order statistics given by <span class="math inline">\(Y_1 \leq Y_2 \cdots \leq Y_{n+1} \leq \cdots \leq
-Y_{2n+1}\)</span>. The <em>sample median</em> is given by <span class="math inline">\(M(X) = Y_{n+1}\)</span>.</p>
+Y_{2n+1}\)</span>. The <em>sample median</em> is given by <span class="math inline">\(M(X) =  Y_{n+1}\)</span>.</p>
 <ul>
 <li><p>Show that <span class="math inline">\(-Y_{n+1}\)</span> has the
 same distribution as <span class="math inline">\(Y_{n+1}\)</span>. Hint,
@@ -643,8 +684,8 @@ you can do this without fancy order statistics knowledge.</p></li>
 <li><p>Assuming the expectations exist, show that <span class="math inline">\(\mathbb{E} Y_{n+1} =0\)</span>.</p></li>
 <li><p>Let <span class="math inline">\(\epsilon &gt;0\)</span>. Let
 <span class="math inline">\(B \sim Bin(2n+1, p)\)</span>, where <span class="math inline">\(p = \mathbb{P}(X_1 &gt; \epsilon)\)</span>. Show
-that <span class="math inline">\(\mathbb{P}( Y_{n+1} &gt; \epsilon) =
-\mathbb{P}(B \geq n+1)\)</span>.</p></li>
+that <span class="math inline">\(\mathbb{P}( Y_{n+1} &gt; \epsilon)
+=  \mathbb{P}(B \geq n+1)\)</span>.</p></li>
 <li><p>Show that <span class="math inline">\(\mathbb{P}(B \geq n+1) \to
 0\)</span> as <span class="math inline">\(n \to \infty\)</span>. Deduce
 that <span class="math inline">\(M(X) \to 0\)</span> in
@@ -777,7 +818,7 @@ check that everything is consistent, for a particular Markov chain.</p>
 <div id="endnotes" class="section level3">
 <h3>Endnotes</h3>
 <ul>
-<li>Version: 05 November 2024</li>
+<li>Version: 27 October 2025</li>
 <li><a href="https://tsoo-math.github.io/lttc/homeworklttc.Rmd">Rmd
 Source</a></li>
 </ul>

@@ -12,6 +12,27 @@ knitr::opts_chunk$set(echo = TRUE)
 This document contains a running list of recommended homework exercises.
 
 
+# 2025
+
+## Poisson processes
+
+* Using the general definition, the given in the notes in the section *Other spaces and spatial Poisson point processes* in the case of a Poisson point process on $[0, \infty)$, show that if there is exactly one point in $[0,1]$, then it is uniformly distributed.
+
+* Suppose that a Poisson point process of intensity $\lambda >0$ on $[0, \infty)$ has been constructed, by placing independent Poisson point process on the interval $[k, k+1)$ for $k=0, 1, \ldots.$   
+  - Show that indeed, the probability of the first arrival is exponential.  
+  - Illustrate your result via simulations. 
+
+* Consider a Poisson point process of unit intensity on the real line, which we think of as dust. We start at the origin, and are interested in vacuuming, and we do it in a greedy way, so that we always go to the closest piece of dust. For background (not necessary for the completion nor understanding of this question) [see this link](https://link.springer.com/article/10.1007/s11134-011-9246-x).  Use the Borel-Cantelli lemma to prove that the vacuum cleaner will eventually pick a direction, and never turn back, so that it will leave an infinite number of points untouched.
+
+* Compute directly (or by simulations) the  probability that, initially, you will head in the positive direction
+twice, successively.
+
+
+## Law of large numbers
+
+* State a  Weierstrass approximation theorem for a continous function $f : [0,1] \times [0,1] \to \mathbb{R}$.   How would you prove such a theorem using probability?
+
+
 # (2024)
 
 ## Poisson processes
