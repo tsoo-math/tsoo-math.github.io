@@ -16,7 +16,7 @@ This document contains a running list of recommended homework exercises.
 
 ## Poisson processes
 
-* Using the general definition, the given in the notes in the section *Other spaces and spatial Poisson point processes* in the case of a Poisson point process on $[0, \infty)$, show that if there is exactly one point in $[0,1]$, then it is uniformly distributed.
+* Using the general definition, the one given in the notes in the section *Other spaces and spatial Poisson point processes* in the case of a Poisson point process on $[0, \infty)$, show that if there is exactly one point in $[0,1]$, then it is uniformly distributed.
 
 * Suppose that a Poisson point process of intensity $\lambda >0$ on $[0, \infty)$ has been constructed, by placing independent Poisson point process on the interval $[k, k+1)$ for $k=0, 1, \ldots.$   
   - Show that indeed, the probability of the first arrival is exponential.  
@@ -30,7 +30,7 @@ twice, successively.
 
 ## Law of large numbers
 
-* State a  Weierstrass approximation theorem for a continous function $f : [0,1] \times [0,1] \to \mathbb{R}$.   How would you prove such a theorem using probability?
+* State a  Weierstrass approximation theorem for a continuous function $f : [0,1] \times [0,1] \to \mathbb{R}$.   How would you prove such a theorem using probability?
 
 
 # (2024)
