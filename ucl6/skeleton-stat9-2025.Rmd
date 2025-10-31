@@ -74,6 +74,9 @@ output: html_document
 
 ## Week 10
 
+
+* [ICA 1 2025-released](https://tsoo-math.github.io/ucl6/2025-ica1-stat9-release.html)
+
 * [ICA 1 2024](https://tsoo-math.github.io/ucl5/2024-ica1-stat9-release.html)
  
 
@@ -118,7 +121,8 @@ output: html_document
 * [ICA2 2024--released](https://tsoo-math.github.io/ucl5/2024-ica2-project.html) 
 
 ## Week 16
-* [ICA3 2024--released](https://tsoo-math.github.io/ucl5/2024-ica3-release.html)
+
+  * [ICA3 2024](https://tsoo-math.github.io/ucl5/2024-ica3-release.html)
   * [ICA3 2023](https://tsoo-math.github.io/ucl4/2023-ica3-stat9-release.html)
   * [ICA3 2022](https://tsoo-math.github.io/ucl3/2022-ica3-stat9-release.html)
   * [ICA3 2021](https://tsoo-math.github.io/ucl2/2021-ica3-stat9-release.html) 
