@@ -1,0 +1,168 @@
+---
+title: "Stat0009 ICA1 (2025)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# library(reticulate)
+# py_install("matplotlib")
+```
+
+<hr>
+
+# General rules
+
+
+* This assessment is classified as Coursework as defined in UCL’s [Student Policies for Exams and Assessments.](https://www.ucl.ac.uk/academic-manual/chapters/chapter-4-assessment-framework-taught-programmes/student-policies-exams-and-assessments) It contributes 30% to the overall mark for this module.
+
+* The release date for this assessment 31 Oct 2025.
+
+* The submission deadline is 13:00 (UK time) on 14 Nov 2025.
+
+* Individual extensions to the submission deadline can only be granted where a student has been provided Reasonable Academic Adjustments, has used a Delayed Assessment Permit (if the assessment is eligible), or has made a valid claim for Extenuating Circumstances. The standard extension length for this assessment type is 5 working days. 
+    
+    – If you have [Reasonable Academic Adjustments](https://www.ucl.ac.uk/students/support-and-wellbeing-services/disability-and-neurodiversity/your-reasonable-academic-adjustments), your extension should be setup automatically and you *may not see it* reflected in the deadline displayed in the submission portal. If you do not think that the correct adjustment has been applied, please contact the module lead at the earliest opportunity. 
+    
+    – [Delayed Assessment Permits](https://www.ucl.ac.uk/academic-manual/chapters/chapter-2-student-support-framework/section-2-delayed-assessment-scheme) and [Extenuating Circumstances](https://www.ucl.ac.uk/academic-manual/chapters/chapter-2-student-support-framework/section-3-short-term-illness-and-other-extenuating) claims should be submitted through Portico. The module lead will be notified and will act on extensions approved via these routes, but the deadline displayed in the submission portal *may not* update.
+
+* In preparation for this assessment, please ensure that you are familiar with the Department of Statistical Science’s guidance on [academic integrity](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf). When submitting your work, you will be required to make a declaration that you have read and understood this guidance.
+
+* Parts of your submission may be scanned using similarity detection software. If any breach of the assessment regulations is suspected, it will be investigated in accordance with UCL’s [Student Academic Misconduct Procedure.](https://www.ucl.ac.uk/academic-manual/chapters/chapter-6-student-casework-framework/section-9-student-academic-misconduct-procedure)
+
+* To facilitate anonymous marking, you should not write your name anywhere on your work, including in file names or file descriptions requested as part of the submission process.
+
+* You must only submit your work via the designated portal in Moodle. If you try to submit via email or any other channel this will not count as a submission and will not be marked.
+
+* There are strict, non-negotiable penalties for late submission, which for coursework are as follows.
+
+    – Up to 2 working days late: deduction of 10 percentage points, but no lower than the pass mark.
+
+    – 2-5 working days late: capped at the pass mark.
+
+    – More than 5 working days late: mark of 1.00%.
+
+* If the module lead becomes aware of a significant technical issue or outage affecting Moodle during the assessment, a message will be circulated to explain what has happened and the steps being taken to mitigate the issue. If you do not receive notification of a more widespread issue and you experience technical difficulties, you should refer to the [Help & Support](https://www.ucl.ac.uk/isd/help-support) resources provided by UCL’s central IT service. However, last-minute technical issues will not be considered as valid grounds for missing the deadline, so ensure that you leave plenty of time to prepare, upload and check your submission.
+
+* Non-submission (in the absence of any valid Extenuating Circumstances) will mean that your mark for this component is recorded as 0.00% and you will be deemed to have made an attempt.
+
+* You should expect to receive feedback on this assessment within 20 working days of the submission deadline.  For this ICA, most likely, you will have to wait until the new year for it to be graded. In the event of a delay, the module lead will contact students directly with details of the revised timeline.
+
+* © (2025) UCL. This assessment paper is the intellectual property of UCL and subject to copyright. It must not be reproduced or shared with any third party without prior permission of UCL.
+
+
+# Additional rules
+
+-   This ICA consists of 6 questions, worth 45 points.
+
+    -   Another 5 points will be given based on presentation, so that the total available points is **50**.
+    -   You **must** hand in the html file **and** the Rmd/Qmd/ipynb source file.
+
+-   Some parts of the questions will require you to write and run R/Python code.
+
+-   The ICA must be completed in R Markdown/Quarto/Juptyer Notebook and typeset using Markdown with Latex code, just like the way our module content is generated. You can choose to use either R or Python.
+    - Do not hide your code.  I should be able to grade the ICA *without* running the code or explicitly looking into the source files; in particular, I *should* be able to grade your ICA by just reading the html file.   Sometimes for various reasons, I will need to run things, and thus you still need to submit the source file, as well.
+
+-   As usual, part of the grading will depend on the clarity and presentation of your solutions.
+
+-   You are to do this assignment by yourself, without any help from others.
+
+-   You are allowed to use any materials and code that was presented so far.
+
+-   Do not search the internet for answers to the ICA.
+
+-   Do not use ChatGPT or similar AI type assistance.
+
+-   Do not use any fancy code or packages imported from elsewhere.
+
+-   Conduct yourselves honorably.
+
+
+### Anonymous Marking
+
+Please do **not** write your name anywhere on the submission. You may include your **student number** as a backup identifier, but this is not necessary.
+
+### Plagiarism and collusion
+
+Please familarize yourself with UCL's guidance on [academic integrity and plagiarism and collusion](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf) 
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I have read the Department of Statistical Science’s guidance on [academic integrity](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf) and understand what constitutes academic misconduct. I hereby affirm that the work I am submitting for this assessment is entirely my own, except where indicated by referencing.
+
+<hr>
+
+# Questions
+
+## 1 (5 points)
+
+For each $\epsilon \in [0,\tfrac{1}{4}]$, find a coupling of Bernoulli variables $X$ and $Y$ with parameter $\tfrac{1}{2}$ such that $\mathbb{P}(X \not = Y) = \epsilon$.
+
+## 2 (10 points)
+
+Let $f_1(x) = 3x^2$ and $f_2(x) = 4x^4$. Define the random variable $X$ in the following way. Choose a point $Z = (U, V)$ uniformly at random in $[0,1] \times [0,4]$. If $Z$ lies under both the curves $f_1$ and $f_2$, then set $X=U$; otherwise we independently repeat this procedure until $X$ is defined.
+
+* (5 points) By running simulations plot of a histogram representing the pdf for $X$. 
+* (5 points) Compute the exact formula for the pdf for $X$.  Overlay your pdf for $X$ with the histogram.
+
+## 3 (5 points)
+
+Let $U_1$ and $U_2$ be independent uniform random variables distributed on $[0,1]$. Consider the points $T_1 = U_1$ and $T_2 = U_1 + U_2$. Suppose the interval $[0,1]$ contains exactly one point.
+
+* (3 points) Compute, by hand,  the distribution of this point.   
+* (2 points) Check your answer by doing simulations.
+
+
+## 4 (10 points)
+
+Consider the Markov chain $X$ on five states $\{1,2,3,4,5\}$
+ started at $1$
+ with the following transition matrix:
+```{r}
+P <- matrix(c(1/8, 1/4, 1/2, 1/8,0, 
+              1/4, 1/4,0,0,1/2, 
+              0.1,0.2,0.3, 0, 0.4, 
+              0,0,0,1/2, 1/2, 
+              1/3, 1/3, 0, 0, 1/3), nrow =5)
+P <-t(P)
+P
+```
+Consider  $S_n = \sum_{k=0}^n\mathbf{1}[X_{k}=1,X_{k+3}=5]$.
+
+* (5 points) Make an educated guess, by extending known results, about the convergence of $S_n/(n+1)$, as $n \to \infty$.
+* (5 points) Demonstrate your guess is correct via simulation.    
+
+## 5 (10 points)
+
+Consider the process $X = (X_0,X_1,\ldots)$ defined in the following way. Let $U_0, U_1, \ldots$ be iid random variables that are uniformly distributed in $[0,1]$. We set $X_0=1$ and $X_1=1$. We also have a function $\phi:\{1,2\}^2 \times [0,1] \to \{1,2\}$ such that for $n\geq 0$, we have $X_{n+2} = \phi(X_{n+1}, X_{n}, U_{n+2})$.  Furthermore, we are given the probabilities 
+$\mathbb{P}(X_{n+2}=k | X_{n+1} =j,X_n =i ) := p_{ijk}$, in the following table. 
+
+
+|ij |k=0  |k=1  | 
+|:---|:---|:---|
+|i=1,j=1|0.3|0.7|
+|i=1,j=2|0.2|0.8|
+|i=2,j=1|0.1|0.9|
+|i=2,j=2|0.4|0.6|
+
+
+Consider $a_n:=\mathbb{P}(X_{n} =1, X_{n+1}=1)$.  
+
+* (5 points) By running repeated simulations estimate $\lim_{n\ \to \infty} a_n$.
+* (5 points) Compute precisely, $\lim_{n \to \infty}a_n$.  Carefully justify your answer.
+
+
+
+## 6 (5 points)
+
+Let $\Pi$ be a Poisson point process on the  Euclidean plane $\mathbb{R}^2$.   Let $n \geq 0$ and $r >0$.   Suppose that $\Pi(r) = \Pi(B(r))$ is the number of points of $\Pi$ in the disc of radius $r$ centered at the origin.   Identify the  conditional distribution of $\Pi(r)$ given that $\Pi(2r) = n$. 
+
+
+# Endnotes
+
+-   [source](https://tsoo-math.github.io/ucl6/2025-ica1-stat9-release.Rmd)
+-   Version: `r format(Sys.time(), '%d %B %Y')`
+
+
