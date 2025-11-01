@@ -140,7 +140,7 @@ Consider the process $X = (X_0,X_1,\ldots)$ defined in the following way. Let $U
 $\mathbb{P}(X_{n+2}=k | X_{n+1} =j,X_n =i ) := p_{ijk}$, in the following table. 
 
 
-|ij |k=0  |k=1  | 
+|ij |k=1  |k=2  | 
 |:---|:---|:---|
 |i=1,j=1|0.3|0.7|
 |i=1,j=2|0.2|0.8|
@@ -161,6 +161,9 @@ Let $\Pi$ be a Poisson point process on the  Euclidean plane $\mathbb{R}^2$.   L
 
 
 # Endnotes
+
+- Typo corrected on the table in Q5.  Previously, it displayed $k=0, k=1$, now it correctly reads $k=1, k=2$.
+
 
 -   [source](https://tsoo-math.github.io/ucl6/2025-ica1-stat9-release.Rmd)
 -   Version: `r format(Sys.time(), '%d %B %Y')`
