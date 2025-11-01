@@ -6,6 +6,8 @@ output: html_document
 ---
 
 
+* [ICA 1 2025 - released](https://tsoo-math.github.io/ucl6/2025-ica1-stat9-release.html)
+
 
 # General information
 
