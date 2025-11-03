@@ -1,0 +1,116 @@
+---
+title: "Construsting Brownian motion"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Introduction
+
+A *Brownian motion* $(B_t)_{t \in [0, \infty)}$  started at $B_0=0$ are a collection of  real-valued random variables defined on a probability space with the following properties.  We will sometimes write $B(t) = B_t$.
+
+
+  * Independent increments:  For any finite collection of times $0 \leq t_1 < t_2 < \cdots t_n$, we have
+  $$B(t_n) - B(t_{n-1}), \ldots,  B(t_2) - B(t_1)$$
+  are independent.
+  
+  * Normal stationary increments:  For any $0 \leq s < t$, we have that $$B(t) - B(s) \stackrel{d}{=} B(t-s) \stackrel{d}{=} N(0, t-s).$$  
+  
+  * Continuity: For almost-all $\omega$, we have $t \mapsto B_t(\omega)$ is a continuous function in the real-variable $t \in [0,\infty)$.
+  
+
+*Exercise: Scaling:*  Let $B$ be a Brownian motion.   Fix $u >0$.   The process $Y$ given by $Y_t = \frac{1}{\sqrt{u}}B_{ut}$ is a Brownian motion. 
+
+
+
+The main difficulty with proving the existence of Brownian motion is the continuity requirement.   Brownian motion was named after [Brown](https://en.wikipedia.org/wiki/Robert_Brown_(botanist,_born_1773)) (1827) who was studying pollen.   The first mathematical construction is due to Wiener (1920);   [Kendall](https://mathshistory.st-andrews.ac.uk/LMS/wiener_lms_obit.pdf)  notes that this was *before* Kolmogorov's axioms for probability.
+
+## [Levy's](https://mathshistory.st-andrews.ac.uk/LMS/levy_paul_lms_obit.pdf) construction
+
+  We will inductively piece together the desired Brownian motion.    We let $D_0 = \mathbb{Z}^{+}$, $D_1 = \frac{1}{2}D_0 = \{\tfrac{1}{2}, 1, \tfrac{3}{2}...\}$, and in general $D_n =  \{\tfrac{1}{2^n}, \tfrac{2}{2^n}, \ldots, 1, 1+ \tfrac{1}{2^n},...\}$.  Set $D = \bigcup_{n \in \mathbb{N}} D_n$ so that $D$ is the set of all positive dyadic rationals.  Note that $D$ is a countable set and thus with the existence of a single random variable that is uniformly distributed on the unit interval we can produce iid standard normal random variables $Y= (Y_t)_{t \in D}$.   We will construct Brownian motion (without continuity) on each $D_N$ and take a uniform limit to obtain the desired Brownian motion.
+
+* Stage $n=0$: For $t \in D_0 = \mathbb{Z}^{+}$, set 
+
+$$B_t = Y_1 + \cdots + Y_t.$$
+
+* Stage $n\geq1$:  Assume we did the job for $t \in D_{n-1}$.   For $t \in D_n \setminus D_{n-1}$, let 
+$$t- \frac{1}{2^n} =r< t < s= t+ \frac{1}{2^n}$$ 
+be the two closest dyadics in $D_{n-1}$.  Let
+$$Z_t = \frac{Y_t}{2^{(n+1)/2}}$$
+and
+$$B_t = \frac{1}{2}(B_r + B_s) + Z_t.$$
+Thus $B_t$ is  the average value of its neighbors with the addition of independent Gaussian noise.   You can easily check that we added the correct amount of noise by writing
+$$B_t = \frac{1}{2}(B_s - B_r + 2B_r) + Z_t;$$
+$B_s-B_r$ is independent of $B_r$, so that we easily compute the variance of $B_t$ to be $t$.  It is not difficult to see that we still have independent increments by considering:
+$$B_s - B_t =  \frac{1}{2}(B_s - B_r) - Z_t$$
+and
+$$B_t-B_r =  \frac{1}{2}(B_s - B_r) + Z_t.$$
+Recall that for a multivariate normal, we know that every linear combination is again normal and that we just need to compute the covariance to check independence. 
+* Thus we have Brownian motion defined on all of $D$.  
+
+In order to take a continuous limit, we proceed as follows.
+
+* For each $N \geq 0$, let $B^n$ be the linear interpolation of the $B$ on $D_n$, so that $B^n$ is a random continuous function on $[0, \infty)$. 
+* For $n\geq 1$, let  $E^n = B^n - B^{n-1}$.  Notice that $E^n_t = 0$ if $t \in D_{n-1}$.  For $t \in D_n$, we have that
+$$E^n_t = Z_t.$$
+* Note that 
+$$B^n_t = E^1_t + \cdots +E^n_t.$$
+In order to show that $B^n$ converges uniformly on an interval, say $[0,1]$, it suffices to show that sum converges, by the Weierstrass M-test. 
+
+Let  
+$$M_n = \sup_{t \in [0,1]} |E^n_t| = \sup_{ t \in [0,1] \cap D_n \setminus D_{n-1}   }\frac{|Y_t|}{2^{(n+1)/2}} $$
+Thus it suffices to argue that
+$$\mathbb{E}\sum_{n=1} ^ {\infty} M_n = \sum_{n=1} ^ {\infty} \mathbb{E} M_n   < \infty.$$
+Recall that $Y_t$ are just iid standard normals and $M_n$ is a maximal of $2^{n-1}$ of these, with a denominator of $2^{(n+1)/2}$.  Thus this is not hard.   For example, the expectation of the maximum of $k$ iid standard normals is bounded by $\sqrt{2 \log k}$---the key here is that there is a $\log$.   We will explore these possibilities later.
+
+To check the increments we just use the fact that $B$ on $[0, \infty)$ is the continuous limit of things that have the increment property.  
+
+## Baby [Donsker](https://zbmath.org/0042.37602) theorem
+
+Here, we will give a proof of the central limit theorem that can be extended to prove Donsker's version of the CLT.   The proof relies on the following coupling.
+
+**Skorokhood embedding theorem:**  Let $B$ be Brownian motion.  Let $X$ be a random variable with mean zero and unit variance.   There exist a stopping time $T$ such that $B_T   \stackrel{d}{=} X$ and $\mathbb{E}T = 1 = \mathbb{E} X^2$.
+
+It turns out it is enough for our purposes to have a randomized stopping time $T$; that is, the event $\{T \leq t\}$ is a function Brownian motion up to $t$ and $U$ a random variable that is independent of $B$.  You may recall the [Gambler's ruin](https://tsoo-math.github.io/ucl/gambler.html) problem.  In the case of Brownian motion, something similar is true, but we do not have the (basic) machinary to carry out a proof.  
+
+**Lemma (Gambler's ruin for BM):**  Let $B$ be Brownian motion with $B_0 =0$.  Let $a < 0 <b$.  Let 
+$$T=T_{a,b}  = \inf\{t\geq 0: B_t \not \in (a,b)\}.$$
+Then $$\mathbb{E}(T) = -ab = \mathbb{E} B_T^2$$ and the exit probabilities of $a$ and $b$ are given, respectively,  by
+$$\frac{-a}{b-a}  \text{ and }  \frac{b}{b-a}.$$
+
+Thus if $X$ has two values $a < 0 < b$, we can take $T$ to be the desired stopping time.   These ideas can be extended to cover all random variables with mean zero and finite variance.  
+
+*Exercise:*  Can we just take
+$$T = \inf\{t\geq 0: B_T = X\}?$$
+*Exercise:*  What can we do with three values?
+
+Brownian motion has enough (strong Markov) independence properties so that it can be decomposed just as the way we did for Markov chains.
+
+
+**Skorokhood embedding theorem (corollary):**   
+
+ Let $B$ be Brownian motion.  Let $X$ be a random variable with mean zero and unit variance.   There exist a stopping time $T$ such that $B_T   \stackrel{d}{=} X$ and $\mathbb{E}T = 1 = \mathbb{E} X^2$.  Furthermore, if $X_1, \ldots, X_n$ are iid all with the same distribution as $X$, then there exists a sequence of stopping times $T_0=0,T_1, \ldots, T_n$ with independent increments $T_k - T_{k-1}  \stackrel{d}{=} T$ and $S_n  \stackrel{d}{=} B(T_n)$.    
+ 
+*Proof of CLT:*  Set $$W_n(t) = B(nt)/\sqrt{n}  \stackrel{d}{=} B(t).$$  
+Then by the Skorokhood corollary, we have
+$$S_n/\sqrt{n}  \stackrel{d}{=} B(T_n)\sqrt{n} = W(T_n/n).$$
+By the law of large numbers, we that $T_n/n \to 1$;  we just need convergence in probability.  By standard [(weak convergence)](https://tsoo-math.github.io/lttc/renewal-clt.html) arguments, we obtain that $S_n/\sqrt{n} \xrightarrow{  \text{dist} } W(1) \sim N(0,1)$     
+
+
+### Endnotes
+
+* Standard references include
+  * Grimmett and Stirzaker [(2001)](https://zbmath.org/1015.60002)
+  * Norris [(1997)](https://zbmath.org/0938.60058)
+  * Peres and Morters [(2010)](https://zbmath.org/1243.60002)
+  * Obloj [(2004)](https://projecteuclid.org/journals/probability-surveys/volume-1/issue-none/The-Skorokhod-embedding-problem-and-its-offspring/10.1214/154957804100000060.full)
+
+* Version: `r format(Sys.time(), '%d %B %Y')`
+  * [Source code](https://tsoo-math.github.io/lttc/branch.Rmd)
+
+<br>
+<br>
+<br>
