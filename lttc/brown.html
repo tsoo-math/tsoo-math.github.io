@@ -361,9 +361,9 @@ random variables defined on a probability space with the following
 properties. We will sometimes write <span class="math inline">\(B(t) =
 B_t\)</span>.</p>
 <ul>
-<li><p>Independent increments: For any finite collection of times <span class="math inline">\(0 \leq t_1 &lt; t_2 &lt; \cdots t_n\)</span>, we
-have <span class="math display">\[B(t_n) - B(t_{n-1}), \ldots,  B(t_2) -
-B(t_1)\]</span> are independent.</p></li>
+<li><p>Independent increments: For any finite collection of times <span class="math inline">\(0 \leq t_1 &lt; t_2 &lt; \cdots &lt; t_n\)</span>,
+we have <span class="math display">\[\big(B(t_n) - B(t_{n-1})\big),
+\ldots,  \big(B(t_2) - B(t_1)\big)\]</span> are independent.</p></li>
 <li><p>Normal stationary increments: For any <span class="math inline">\(0 \leq s &lt; t\)</span>, we have that <span class="math display">\[B(t) - B(s) \stackrel{d}{=} B(t-s)
 \stackrel{d}{=} N(0, t-s).\]</span></p></li>
 <li><p>Continuity: For almost-all <span class="math inline">\(\omega\)</span>, we have <span class="math inline">\(t \mapsto B_t(\omega)\)</span> is a continuous
@@ -421,7 +421,8 @@ compute the covariance to check independence.</li>
 <li>For each <span class="math inline">\(N \geq 0\)</span>, let <span class="math inline">\(B^n\)</span> be the linear interpolation of the
 <span class="math inline">\(B\)</span> on <span class="math inline">\(D_n\)</span>, so that <span class="math inline">\(B^n\)</span> is a random continuous function on
 <span class="math inline">\([0, \infty)\)</span>.</li>
-<li>For <span class="math inline">\(n\geq 1\)</span>, let <span class="math inline">\(E^n = B^n - B^{n-1}\)</span>. Notice that <span class="math inline">\(E^n_t = 0\)</span> if <span class="math inline">\(t \in D_{n-1}\)</span>. For <span class="math inline">\(t \in D_n\)</span>, we have that <span class="math display">\[E^n_t = Z_t.\]</span></li>
+<li>For <span class="math inline">\(n\geq 1\)</span>, let <span class="math inline">\(E^n = B^n - B^{n-1}\)</span>. Notice that <span class="math inline">\(E^n_t = 0\)</span> if <span class="math inline">\(t \in D_{n-1}\)</span>. For <span class="math inline">\(t \in D_n \setminus D_{n-1}\)</span>, we have that
+<span class="math display">\[E^n_t = Z_t.\]</span></li>
 <li>Note that <span class="math display">\[B^n_t = E^1_t + \cdots
 +E^n_t.\]</span> In order to show that <span class="math inline">\(B^n\)</span> converges uniformly on an interval,
 say <span class="math inline">\([0,1]\)</span>, it suffices to show that
@@ -471,7 +472,7 @@ finite variance.</p>
 with three values?</p>
 <p>Brownian motion has enough (strong Markov) independence properties so
 that it can be decomposed just as the way we did for Markov chains.</p>
-<p><strong>Skorokhood embedding theorem (corollary):</strong></p>
+<p><strong>Skorokhood embedding theorem (Corollary):</strong></p>
 <p>Let <span class="math inline">\(B\)</span> be Brownian motion. Let
 <span class="math inline">\(X\)</span> be a random variable with mean
 zero and unit variance. There exist a stopping time <span class="math inline">\(T\)</span> such that <span class="math inline">\(B_T   \stackrel{d}{=} X\)</span> and <span class="math inline">\(\mathbb{E}T = 1 = \mathbb{E} X^2\)</span>.
@@ -482,11 +483,11 @@ T_n\)</span> with independent increments <span class="math inline">\(T_k
 - T_{k-1}  \stackrel{d}{=} T\)</span> and <span class="math inline">\(S_n  \stackrel{d}{=} B(T_n)\)</span>.</p>
 <p><em>Proof of CLT:</em> Set <span class="math display">\[W_n(t) =
 B(nt)/\sqrt{n}  \stackrel{d}{=} B(t).\]</span><br />
-Then by the Skorokhood corollary, we have <span class="math display">\[S_n/\sqrt{n}  \stackrel{d}{=} B(T_n)\sqrt{n} =
-W(T_n/n).\]</span> By the law of large numbers, we that <span class="math inline">\(T_n/n \to 1\)</span>; we just need convergence in
+Then by the Skorokhood Corollary, we have <span class="math display">\[S_n/\sqrt{n}  \stackrel{d}{=} B(T_n)\sqrt{n} =
+W_n(T_n/n).\]</span> By the law of large numbers, we that <span class="math inline">\(T_n/n \to 1\)</span>; we just need convergence in
 probability. By standard <a href="https://tsoo-math.github.io/lttc/renewal-clt.html">(weak
-convergence)</a> arguments, we obtain that <span class="math inline">\(S_n/\sqrt{n} \xrightarrow{  \text{dist} } W(1)
-\sim N(0,1)\)</span></p>
+convergence)</a> arguments, we obtain that <span class="math display">\[S_n/\sqrt{n} \xrightarrow{  \text{dist} } W(1)
+\sim N(0,1).\]</span></p>
 <div id="endnotes" class="section level3">
 <h3>Endnotes</h3>
 <ul>

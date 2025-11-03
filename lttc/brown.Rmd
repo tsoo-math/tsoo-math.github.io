@@ -13,8 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 A *Brownian motion* $(B_t)_{t \in [0, \infty)}$  started at $B_0=0$ are a collection of  real-valued random variables defined on a probability space with the following properties.  We will sometimes write $B(t) = B_t$.
 
 
-  * Independent increments:  For any finite collection of times $0 \leq t_1 < t_2 < \cdots t_n$, we have
-  $$B(t_n) - B(t_{n-1}), \ldots,  B(t_2) - B(t_1)$$
+  * Independent increments:  For any finite collection of times $0 \leq t_1 < t_2 < \cdots < t_n$, we have
+  $$\big(B(t_n) - B(t_{n-1})\big), \ldots,  \big(B(t_2) - B(t_1)\big)$$
   are independent.
   
   * Normal stationary increments:  For any $0 \leq s < t$, we have that $$B(t) - B(s) \stackrel{d}{=} B(t-s) \stackrel{d}{=} N(0, t-s).$$  
@@ -54,7 +54,7 @@ Recall that for a multivariate normal, we know that every linear combination is 
 In order to take a continuous limit, we proceed as follows.
 
 * For each $N \geq 0$, let $B^n$ be the linear interpolation of the $B$ on $D_n$, so that $B^n$ is a random continuous function on $[0, \infty)$. 
-* For $n\geq 1$, let  $E^n = B^n - B^{n-1}$.  Notice that $E^n_t = 0$ if $t \in D_{n-1}$.  For $t \in D_n$, we have that
+* For $n\geq 1$, let  $E^n = B^n - B^{n-1}$.  Notice that $E^n_t = 0$ if $t \in D_{n-1}$.  For $t \in D_n \setminus D_{n-1}$, we have that
 $$E^n_t = Z_t.$$
 * Note that 
 $$B^n_t = E^1_t + \cdots +E^n_t.$$
@@ -90,14 +90,14 @@ $$T = \inf\{t\geq 0: B_T = X\}?$$
 Brownian motion has enough (strong Markov) independence properties so that it can be decomposed just as the way we did for Markov chains.
 
 
-**Skorokhood embedding theorem (corollary):**   
+**Skorokhood embedding theorem (Corollary):**   
 
  Let $B$ be Brownian motion.  Let $X$ be a random variable with mean zero and unit variance.   There exist a stopping time $T$ such that $B_T   \stackrel{d}{=} X$ and $\mathbb{E}T = 1 = \mathbb{E} X^2$.  Furthermore, if $X_1, \ldots, X_n$ are iid all with the same distribution as $X$, then there exists a sequence of stopping times $T_0=0,T_1, \ldots, T_n$ with independent increments $T_k - T_{k-1}  \stackrel{d}{=} T$ and $S_n  \stackrel{d}{=} B(T_n)$.    
  
 *Proof of CLT:*  Set $$W_n(t) = B(nt)/\sqrt{n}  \stackrel{d}{=} B(t).$$  
-Then by the Skorokhood corollary, we have
-$$S_n/\sqrt{n}  \stackrel{d}{=} B(T_n)\sqrt{n} = W(T_n/n).$$
-By the law of large numbers, we that $T_n/n \to 1$;  we just need convergence in probability.  By standard [(weak convergence)](https://tsoo-math.github.io/lttc/renewal-clt.html) arguments, we obtain that $S_n/\sqrt{n} \xrightarrow{  \text{dist} } W(1) \sim N(0,1)$     
+Then by the Skorokhood Corollary, we have
+$$S_n/\sqrt{n}  \stackrel{d}{=} B(T_n)\sqrt{n} = W_n(T_n/n).$$
+By the law of large numbers, we that $T_n/n \to 1$;  we just need convergence in probability.  By standard [(weak convergence)](https://tsoo-math.github.io/lttc/renewal-clt.html) arguments, we obtain that $$S_n/\sqrt{n} \xrightarrow{  \text{dist} } W(1) \sim N(0,1).$$     
 
 
 ### Endnotes
