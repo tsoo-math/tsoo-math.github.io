@@ -55,6 +55,20 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 * [ICA 1 2025](https://tsoo-math.github.io/ucl6/2025-ica1-stat9-release.html)
 
+
+# Week 11 (Reading week)
+
+
+# Week 12
+
+* We discussed the feedback given in the poll
+* We introduced renewal type arguments and applied them to Markov chains
+* We discussed continuous-time Markov chains
+
+#  Week 13
+
+
+
 <br>
 <br>
 
