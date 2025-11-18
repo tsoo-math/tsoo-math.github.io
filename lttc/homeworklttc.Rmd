@@ -14,6 +14,16 @@ This document contains a running list of recommended homework exercises.
 
 # 2025
 
+## Brownian motion
+
+* Let $X_1, \ldots, X_n$ be iid standard normals; set $M = \max(Z_1, \ldots, Z_n)$.  Prove that 
+$$\mathbb{E} M \leq \sqrt{2\log n}.$$  
+Hint: Consider $\exp(t \mathbb{E}(M))$ and  use Jensen's inequality and optimize over $t$.  You can also lookup the Laplace transform (moment generating function) for a standard normal.
+  *  Find a similar upper bound for the case of $|X_i|$.  
+
+* Consider a proof of the Skorokhood embedding theorem (with extra randomization) in the case that the distribution of $X$ is symmetric.  
+
+
 ## Poisson processes
 
 * Using the general definition, the one given in the notes in the section *Other spaces and spatial Poisson point processes* in the case of a Poisson point process on $[0, \infty)$, show that if there is exactly one point in $[0,1]$, then it is uniformly distributed.
