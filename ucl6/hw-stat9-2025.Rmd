@@ -72,6 +72,38 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
       * [sols](https://tsoo-math.github.io/ucl3/2021-ica3-stat9.html)
   
 
+##  Worksheets 
+
+*To be completed at your leisure*
+
+* [Warm up](https://tsoo-math.github.io/ucl2/class1sol.html)
+
+* [Gambler's ruin](https://tsoo-math.github.io/ucl/gambler-sol.html)
+
+* [Random triangles](https://tsoo-math.github.io/ucl3/week7-2022-inclass-sols.html)
+
+* [Reinforced random walk](https://tsoo-math.github.io/ucl3/week10-2022-inclass-sols.html)
+
+* [Random walk on a clock](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.html)
+
+* [Coupling and transition matrices](https://tsoo-math.github.io/ucl2/class3-sol.html)
+
+* [Metropolis Algorithm](https://tsoo-math.github.io/ucl4/week11-2023-inclass-sols.html)
+
+* [Poisson process on a sphere](https://nbviewer.org/url/tsoo-math.github.io/ucl2/sphere-sol.ipynb)
+
+* [Non-homogeneous Poisson processes](https://tsoo-math.github.io/ucl2/nonhomo-sols.html)
+
+* [Symbolic computing](https://tsoo-math.github.io/ucl2/returntime-sol.html)
+
+* [Return time arguments](https://tsoo-math.github.io/ucl5/week12-2024-inclass-Sols.html)
+
+* [Excess lifetime](https://tsoo-math.github.io/ucl5/week13-2024-inclass.html)
+
+* [Tilings](https://tsoo-math.github.io/ucl3/week14-2022-inclass-sols.html)
+
+* [Shiny apps](https://tsoo-math.github.io/ucl5/live-stat9-2024.html)
+  * [Source](https://tsoo-math.github.io/ucl/app.R)
 
 # Other notes
 
