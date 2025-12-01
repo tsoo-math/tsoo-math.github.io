@@ -14,7 +14,7 @@ Please do the homework as posted weekly! Only the ICAs will be formally assessed
 # By [UCL week](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2025_26v1.pdf)
 
 * [ICA1:](https://tsoo-math.github.io/ucl6/2025-ica1-stat9-release.html) Released 31 Oct 2025; Due 14 Nov 2025
-* ICA2: Released 5 Dec 2025; Due 6 March 2026
+* [ICA2:](https://tsoo-math.github.io/ucl6/2025-ica2-project-release.html) Released 5 Dec 2025; Due 6 March 2026
 * ICA3: Released 12 Dec 2025; Due 6 Feb 2026
 
 
