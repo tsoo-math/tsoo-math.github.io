@@ -85,7 +85,14 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 #  Week 15
 
+
+* We discussed ICA2
+
+* We discussed M/M/1 queues; in particular, we found the stationary distribution and used this to compute the distribution of the time in the system of an item which joins at stationarity.  
+
 * [Poll](https://www.menti.com/altnpc27vrq4)
+
+
 
 <br>
 <br>
