@@ -1,0 +1,190 @@
+---
+title: "Stat0009 ICA3 (2025)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# library(reticulate)
+# py_install("matplotlib")
+```
+
+<hr>
+
+# General rules
+
+
+* This assessment is classified as Coursework as defined in UCL’s [Student Policies for Exams and Assessments.](https://www.ucl.ac.uk/academic-manual/chapters/chapter-4-assessment-framework-taught-programmes/student-policies-exams-and-assessments) It contributes 30% to the overall mark for this module.
+
+* The release date for this assessment  12 Dec 2025.
+
+* The submission deadline is 13:00 (UK time) on  6 Feb 2026
+
+* Individual extensions to the submission deadline can only be granted where a student has been provided Reasonable Academic Adjustments or has made a valid claim for Extenuating Circumstances. The standard extension length for this assessment type is 5 working days. 
+  - This assessment is *not* eligible  for a  Delayed Assessment Permit.
+  - If you have a [Reasonable Academic Adjustments](https://www.ucl.ac.uk/students/support-and-wellbeing-services/disability-and-neurodiversity/your-reasonable-academic-adjustments), your extension should be setup automatically and you *may not see it* reflected in the deadline displayed in the submission portal. If you do not think that the correct adjustment has been applied, please contact the module lead at the earliest opportunity. 
+    - Typically Reasonable Academic Adjustments will *not* apply to this group work assessment.
+      - This assessment is meant to be group work. You are advised to form a group and this your responsibility; although groups of *one* are not forbidden, this does not change the nature of the assessment.
+
+    
+    – [Delayed Assessment Permits](https://www.ucl.ac.uk/academic-manual/chapters/chapter-2-student-support-framework/section-2-delayed-assessment-scheme) and [Extenuating Circumstances](https://www.ucl.ac.uk/academic-manual/chapters/chapter-2-student-support-framework/section-3-short-term-illness-and-other-extenuating) claims should be submitted through Portico. The module lead will be notified and will act on extensions approved via these routes, but the deadline displayed in the submission portal *may not* update.
+
+* In preparation for this assessment, please ensure that you are familiar with the Department of Statistical Science’s guidance on [academic integrity](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf). When submitting your work, you will be required to make a declaration that you have read and understood this guidance.
+
+* Parts of your submission may be scanned using similarity detection software. If any breach of the assessment regulations is suspected, it will be investigated in accordance with UCL’s [Student Academic Misconduct Procedure.](https://www.ucl.ac.uk/academic-manual/chapters/chapter-6-student-casework-framework/section-9-student-academic-misconduct-procedure)
+
+* To facilitate anonymous marking, you should not write your name anywhere on your work, including in file names or file descriptions requested as part of the submission process.
+
+* You must only submit your work via the designated portal in Moodle. If you try to submit via email or any other channel this will not count as a submission and will not be marked.
+
+* There are strict, non-negotiable penalties for late submission, which for coursework are as follows.
+
+    – Up to 2 working days late: deduction of 10 percentage points, but no lower than the pass mark.
+
+    – 2-5 working days late: capped at the pass mark.
+
+    – More than 5 working days late: mark of 1.00%.
+
+* If the module lead becomes aware of a significant technical issue or outage affecting Moodle during the assessment, a message will be circulated to explain what has happened and the steps being taken to mitigate the issue. If you do not receive notification of a more widespread issue and you experience technical difficulties, you should refer to the [Help & Support](https://www.ucl.ac.uk/isd/help-support) resources provided by UCL’s central IT service. However, last-minute technical issues will not be considered as valid grounds for missing the deadline, so ensure that you leave plenty of time to prepare, upload and check your submission.
+
+* Non-submission (in the absence of any valid Extenuating Circumstances) will mean that your mark for this component is recorded as 0.00% and you will be deemed to have made an attempt.
+
+* You should expect to receive feedback on this assessment within 20 working days of the submission deadline.  For this ICA, most likely, you will have to wait until the new year for it to be graded. In the event of a delay, the module lead will contact students directly with details of the revised timeline.
+
+* © (2025) UCL. This assessment paper is the intellectual property of UCL and subject to copyright. It must not be reproduced or shared with any third party without prior permission of UCL.
+
+
+# Additional rules
+
+
+- This ICA is group work.
+  - You must form and register your own groups of at most 4.
+  - Each member of the group will receive the same grade.
+  - Your group-mates must be disjoint from that of ICA2, so that if Sam is in your ICA2 group, they can not be in your ICA3 group. 
+  
+
+* To facilitate anonymous marking, you should not write your name anywhere on your work, including in file names or file descriptions requested as part of the submission process.
+
+
+-   This ICA consists of 5 questions, worth 56 points.
+
+    -   Another 5 points will be given based on presentation, so that the total available points is **61**.
+    -   You **must** hand in the html file **and** the Rmd/Qmd/ipynb source file.
+
+-   Some parts of the questions will require you to write and run R/Python code.
+
+-   The ICA must be completed in R Markdown/Quarto/Juptyer Notebook and typeset using Markdown with Latex code, just like the way our module content is generated. You can choose to use either R or Python.
+    - Do not hide your code.  I should be able to grade the ICA *without* running the code or explicitly looking into the source files; in particular, I *should* be able to grade your ICA by just reading the html file.   Sometimes for various reasons, I will need to run things, and thus you still need to submit the source file, as well.
+
+-   As usual, part of the grading will depend on the clarity and presentation of your solutions.
+
+-   You are to do this assignment by yourselves, in your group,  without any help from others.
+
+-   You are allowed to use any materials and code that was presented so far.
+
+-   Do not search the internet for answers to the ICA.
+
+-   Do not use ChatGPT or similar AI type assistance.
+
+-   Do not use any fancy code or packages imported from elsewhere.
+
+-   Conduct yourselves honorably.
+
+
+### Anonymous Marking
+
+Please do **not** write your name anywhere on the submission. You may include your **student number** as a backup identifier, but this is not necessary.
+
+### Plagiarism and collusion
+
+
+As this is a group project, collusion and academic misconduct cases will apply to all members in the group. All group members bear full responsibility. If a student suspects any potential misconduct cases from other groupmates, they should inform [me](https://www.ucl.ac.uk/statistics/people/dr-terry-soo) immediately.
+
+Please familarize yourself with UCL's guidance on [academic integrity and plagiarism and collusion](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf) 
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I have read the Department of Statistical Science’s guidance on [academic integrity](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf) and understand what constitutes academic misconduct. I hereby affirm that the work I am submitting for this assessment is entirely my own, except where indicated by referencing.
+
+<hr>
+
+# Questions
+
+##  Question 1 [10 points]
+
+* (a) [2 points]  Let $n\geq1$ be an integer. Consider the Markov chain on the integers states $\{-n, \ldots, 0 \ldots, n\}$ with the transitions given by $P(n,n-1)=1=P(-n,-n+1)$ and for the interior $|i| <n$, we have $P(i, i+1) = P(i, i-1) = 1/2$.  Compute the stationary distribution for the case $n=5$.
+
+* (b) [3 points]   Find the stationary distribution for the case of general $n$.  
+
+* (c) [2 points]  Consider the two-dimensional case of a Markov chain on the integer lattice points $(x,y)$ with $|x|, |y| \leq n$, excluding the corners where both $|x|=|y|=n$.   For an interior point, we move left, right, up or down with equal probability; if we reach a boundary point, we step back to the interior with probability $1$.  Make an educated case as to what the stationary distribution must be.  
+
+* (d) [3 points]  Verify your guess in part (c) for the case $n=5$, by running simulations.   
+
+ 
+## Question 2 [13 points]
+
+You are given $\Gamma$--a Poisson point process of intensity $3$ on the interval $[0, \pi]$.  Consider the function $g(t) = \sin(t) +2$ and the following thinning procedure to produce another point process $\Gamma'$.  Suppose the points of $\Gamma$ are given by  $\{t_1, \ldots, t_n\}$.   We consider independent $\mathrm{Bern}(p_i)$ random variables, $X_1, \ldots, X_n$,  with 
+$$p_i = g(t_i)/3.$$
+We let $\Gamma' \subseteq \Gamma$, where $t_i$ is a point of $\Gamma'$ if and only if $X_i =1$.   Let $M(t) = \Gamma'[0,t)$ be the number of points of $\Gamma'$ in the interval $[0, t)$.
+
+* (a) [2 points] Let $0<t< \pi$.  Prove that $$\lim_{h \to 0 } \frac{1}{h}\mathbb{P}[M(t+h) - M(t) \geq  2] = 0.$$ 
+* (b) [4 points] Let $0<t< \pi$. Prove that $$\lim_{h \to 0} \frac{1}{h}\mathbb{P}[M(t+h) - M(t) = 1] = g(t).$$ 
+* (c) [4 points] Demonstrate by simulations, that 
+$$\mathbb{E}M(\pi) = \int_0 ^{\pi} g(t) dt=2\pi +2.$$
+*  (d) [3 points] Identity the distribution of the random variable $M(\pi)$ via simulations.
+
+
+## Question 3 [15 points]
+
+Suppose items arrive at an exponential rate $\lambda$ to a queue with two independent servers, each of  which serve at the same rate $\mu > \lambda$. Items will go to the first available server and if both servers are available, we can designate one to be the default choice; this is known as a $M/M/2$ queue.    
+
+* (a) [7 points] Following a similar analysis as in [notes](https://tsoo-math.github.io/ucl/intro-queuestwo.html), calculate the stationary distribution of this queuing system.       
+
+*  (b) [3 points] What is the average time an item spends in this (stationary) system?
+
+* (c) [5 points] Verify your answers via simulations with $\lambda =3$ and $\mu=5$.  
+
+
+
+
+
+## Question 4 [13 points]
+
+Consider a Poisson arrival process on $[0, \infty)$ of intensity $\lambda$.  Suppose we colour the first arrival blue, and then next arrival red, and continue colouring the points in this alternating fashion. Consider the arrival process formed by considering only the red points.   Let $N(t)$ be the number of arrivals by time $t >0$.
+
+  * (a) [2 points] Is $N$ a renewal process?  Explain
+  * (b) [3 points] Manually compute 
+  $$\lim_{t \to \infty} \mathbb{E}[N(t+1) - N(t)].$$
+  * (c) [4 points] For $k=0,1,2$, manually compute,  
+  $$\lim_{t \to \infty} \mathbb{P}[N(t+1) - N(t)=k].$$
+   Here, you maybe able to do the calculation without writing down an integral.
+  * (d) [1 points]  Referring back to part (c), write down a formula for the case of general $k$.
+  * (e) [3 points] Verify both limits above in parts (b) and (c) via simulations, taking $\lambda =2$.
+
+
+## Question 5 [5 points]
+
+Consider a queue with exponential arrival rate $\lambda =1$ and exponential service rate $\mu=2$; this would be a $M/M/1$ first come first serve queue, except for the following proviso.   Suppose that each item is independently assigned a colour red or blue, with probability $3/4$ and $1/4$, respectively.  The red points get  priority over the blue item in the line up; in particular, if there is one blue item being served and there is one blue item waiting to be served and a red item arrives, the red item moves ahead of the blue item and will be served next.   Argue that the blue items do eventually get served in finite time.   
+
+
+
+
+# Endnotes
+
+-   [source](https://tsoo-math.github.io/ucl6/2025-ica3-stat9-release.Rmd)
+-   Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
+
+
+<hr>
+<br>
+<br>
+
+
+
+
+
