@@ -107,6 +107,7 @@ By the law of large numbers, we that $T_n/n \to 1$;  we just need convergence in
   * Norris [(1997)](https://zbmath.org/0938.60058)
   * Peres and Morters [(2010)](https://zbmath.org/1243.60002)
   * Obloj [(2004)](https://projecteuclid.org/journals/probability-surveys/volume-1/issue-none/The-Skorokhod-embedding-problem-and-its-offspring/10.1214/154957804100000060.full)
+    * See also the blog post [Yeo](https://eventuallyalmosteverywhere.wordpress.com/2016/12/12/skorohod-embedding/)
 
 * Version: `r format(Sys.time(), '%d %B %Y')`
   * [Source code](https://tsoo-math.github.io/lttc/branch.Rmd)
