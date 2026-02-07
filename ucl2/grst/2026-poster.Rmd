@@ -1,0 +1,74 @@
+---
+title: ''
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+
+\pagenumbering{gobble}
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, echo = TRUE)
+```
+
+```{r, echo=FALSE, results= 'hide', warning = FALSE}
+library(latex2exp)
+```
+
+
+
+<img src="poster2026.png" alt="Flyer image">
+
+<hr>
+
+<hr>
+
+<hr>
+
+
+
+# Statistics & Probability 
+## Poster session at UCL
+### *Fourth edition*
+
+* 4 June 2025. 1-5PM
+
+*   3.30 - 5.00 PM, at [1-19 Torrington Place](https://www.ucl.ac.uk/maps/1-19-torrington-place),  UCL Stats Department (116,117,146)
+
+* Guest Judge:  Professor [Heather Battey](https://www.ma.imperial.ac.uk/~hbattey/), Imperial 
+  * Special seminar at 2 PM, 115 (1-19 Torrington Place).
+  
+* £ 1000 in prizes, we welcome posters from all universities 
+  
+<hr>
+
+* contact: [Terry Soo: t.soo@ucl.ac.uk](mailto: t.soo@ucl.ac.uk)
+
+
+
+<hr>
+
+
+
+
+
+* [Flyer](https://tsoo-math.github.io/ucl2/grst/poster2026.png)
+
+  * [QR code](https://tsoo-math.github.io/ucl2/grst/qr-poster2026.png)
+
+* [2025, 3rd edition](https://tsoo-math.github.io/ucl2/grst/2025-poster.html)
+
+<hr>
+
+*  Last updated: `r format(Sys.time(), '%d %B %Y')`
+
+
+```{r, echo=FALSE, results='hide'}
+dev.off()
+```
+
+
+
+
