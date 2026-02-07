@@ -41,6 +41,7 @@ library(latex2exp)
   * Special seminar at 2 PM, 115 (1-19 Torrington Place).
   
 * £ 1000 in prizes, we welcome posters from all universities 
+  * With partial support from the [Heilronn Instiute](https://heilbronn.ac.uk/)
   
 <hr>
 
