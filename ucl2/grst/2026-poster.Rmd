@@ -33,15 +33,15 @@ library(latex2exp)
 ## Poster session at UCL
 ### *Fourth edition*
 
-* 4 June 2025. 1-5PM
+* 4 June 2026;  1-5PM
 
-*   3.30 - 5.00 PM, at [1-19 Torrington Place](https://www.ucl.ac.uk/maps/1-19-torrington-place),  UCL Stats Department (116,117,146)
+*   3.30 - 5.00 PM, at [1-19 Torrington Place](https://www.ucl.ac.uk/maps/1-19-torrington-place),  UCL [Department of Statistical Science](https://www.ucl.ac.uk/mathematical-physical-sciences/statistics) (116,117,146)
 
 * Guest Judge:  Professor [Heather Battey](https://www.ma.imperial.ac.uk/~hbattey/), Imperial 
   * Special seminar at 2 PM, 115 (1-19 Torrington Place).
   
 * £ 1000 in prizes, we welcome posters from all universities 
-  * With partial support from the [Heilronn Instiute](https://heilbronn.ac.uk/)
+  * With partial support from the [Heilbronn Instiute](https://heilbronn.ac.uk/)
   
 <hr>
 
