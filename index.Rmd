@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 <br>
 
-* [Poster session, 4th edition,  2026](https://tsoo-math.github.io/ucl2/grst/2026-poster.html)
+* [Poster session, 4th edition, June  2026](https://tsoo-math.github.io/ucl2/grst/2026-poster.html)
 
 
 <br>
