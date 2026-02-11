@@ -63,6 +63,47 @@ library(latex2exp)
 
 <hr>
 
+
+<hr>
+
+### Notes on equations
+
+
+
+
+* [Sufficiency and Factorization](https://royalsocietypublishing.org/rsta/article/222/594-604/309/44085/On-the-mathematical-foundations-of-theoretical)
+
+* [Harris' inequality](https://doi.org/10.1017%2FS0305004100034241)
+
+* [Cramer-Rao lower bound](https://www.ias.ac.in/article/fulltext/reso/020/01/0076-0090)
+
+* [Ordinary least squares](https://www.jstor.org/stable/2332682?origin=crossref&seq=1)
+
+* [Solution to the Dirchlet problem vian Brownian motion](https://projecteuclid.org/journals/proceedings-of-the-japan-academy-series-a-mathematical-sciences/volume-20/issue-10/Two-dimensional-Brownian-motion-and-harmonic-functions/10.3792/pia/1195572706.full)
+
+* [The Poisson distribution](https://www.sciencedirect.com/science/article/abs/pii/0167715282900104?via%3Dihub)
+
+
+* [Conditional probability notation](https://www.bayesianspectacles.org/the-man-who-rewrote-conditional-probability/) 
+
+
+* [Metropolis-Hastings](https://academic.oup.com/biomet/article-abstract/107/1/1/5686745?redirectedFrom=fulltext)
+
+* [Jackknife](https://www.jstor.org/stable/2334280)
+
+* [Law of large numbers](https://www.ams.org/journals/bull/2013-50-03/S0273-0979-2013-01411-3/)
+
+* [Ito isometry](https://en.wikipedia.org/wiki/It%C3%B4_isometry)
+
+
+<hr>
+
+<hr>
+
+
+
+
+
 *  Last updated: `r format(Sys.time(), '%d %B %Y')`
 
 
