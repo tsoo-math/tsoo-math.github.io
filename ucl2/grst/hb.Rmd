@@ -1,6 +1,7 @@
 ---
 title: "Induced replication and the assessment of models"
 author: "Heather Battey"
+date: "4 June, 2 PM;  Room 115, 1-19 Torrington Place)."
 output: html_document
 ---
 
