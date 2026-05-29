@@ -1,0 +1,11 @@
+---
+title: "Induced replication and the assessment of models"
+author: "Heather Battey"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I will highlight some principles of information partition for the assessment of parametric statistical models, before attempting a foundation of inference for the assessment of semiparametric and other highly-parametrised models. I will highlight the possibility, in some contexts, of avoiding the usual semiparametric considerations, which typically require estimation of nuisance components through kernel smoothing or basis expansion, with the associated difficulties of tuning-parameter choice that blur the distinction between estimation and model assessment. A key aspect of the present work is the inducement of replication under the postulated model. This can be cast in terms of some non-standard inferential separations, in the vein of ancillarity/co-ancillarity and sufficiency/co-sufficiency separations, allowing the replacement of out-of-sample prediction error as a criterion for semiparametric model assessment by a type of within-sample prediction error. Framed in this light are new formulations in example settings.
