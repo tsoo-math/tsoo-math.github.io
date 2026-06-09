@@ -41,7 +41,10 @@ library(latex2exp)
   * [Special seminar](https://tsoo-math.github.io/ucl2/grst/hb.html) at 2 PM, 115 (1-19 Torrington Place).
   
 * £ 1000 in prizes, we welcome posters from all universities 
-  * With partial support from the [Heilbronn Instiute](https://heilbronn.ac.uk/)
+  * Yuxin Liu; Arina Odnoblyudova; Kai Teh 
+  * Sinyoung Park (Bath)
+
+* With partial travel support from the [Heilbronn Instiute](https://heilbronn.ac.uk/)
   
 <hr>
 
