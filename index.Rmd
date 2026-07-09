@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 <br>
 
-* [Poster session, 4th edition, June  2026](https://tsoo-math.github.io/ucl2/grst/2026-poster.html)
+
 
 
 <br>
@@ -37,13 +37,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
+
+
+
+*  [LTCC Stochastic processes, Fall 2026](https://tsoo-math.github.io/lttc/skeleton-LTTC-2026.html)
+
+
+* [Poster session, 4th edition, June  2026](https://tsoo-math.github.io/ucl2/grst/2026-poster.html)
+
 *  [Stat 0009, Fall 2025](https://tsoo-math.github.io/ucl6/skeleton-stat9-2025.html)
-
-
-*  [LTCC Stochastic processes, Fall 2025](https://tsoo-math.github.io/lttc/skeleton-LTTC-2025.html)
-
-
-
 
 * [Fitzrovia Forum](https://tsoo-math.github.io/Fitzrovia.html)
 <br>
