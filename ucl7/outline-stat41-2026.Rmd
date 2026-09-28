@@ -1,0 +1,60 @@
+---
+title: "Outline"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# STAT0041 Algorithms and Data Structures module outline 
+ [Terry Soo](https://terrysoo.com) 
+
+ [Fall 2026, on Moodle](https://moodle.ucl.ac.uk/course/view.php?id=62144) 
+ 
+ [UCL Module Catalogue](https://www.ucl.ac.uk/module-catalogue/modules/algorithms-and-data-structures-STAT0041)
+
+
+# Where and when
+
+This module is meets in-person [Tuesday 16:00 - 17:00 and Thursday 16:00 - 18:00](https://timetable.ucl.ac.uk/modules/STAT0041?year=2026-2027)
+
+
+# Course content
+
+- Introduction to algorithms and asymptotic analysis
+- Sorting
+- Introduction to data structures
+- Search algorithms
+- Dijkstra's algorithm
+- Combinatorial optimization
+- Computational linear algebra
+- Additional topics
+
+Some unifying concepts include: divide and conquer, dynamical programming, greedy algorithms, and randomization.
+
+
+# Formal assessments 
+
+* Summer exam: 3/4
+* ICA group work: 1/4 (Due in 2027)
+  
+
+
+#  Additional resources
+
+* Course notes will be provided on Moodle
+
+* [UCL library reading list](https://rl.talis.com/3/ucl/lists/834f2976-038d-4ea5-a40f-bd33dcc8aec6.html?lang=en-GB)
+
+
+### Endnotes
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+<br>
+<br>
+<br>
+
