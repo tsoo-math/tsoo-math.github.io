@@ -38,7 +38,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-
+*  [Stat 0041, Fall 2026](https://tsoo-math.github.io/ucl7/outline-stat41-2026.html)
 
 *  [LTCC Stochastic processes, Fall 2026](https://tsoo-math.github.io/lttc/skeleton-LTTC-2026.html)
 
