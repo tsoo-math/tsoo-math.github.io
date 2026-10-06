@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # General information
 
-We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed.  The recording links will be available on Moodle.
+We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed.  The recording [link](https://moodle.ucl.ac.uk/mod/url/view.php?id=9436609) is password protected, with the password available on Moodle.
 
 
 # By [UCL week](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2026_27v2.pdf)
@@ -20,6 +20,13 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 - Read the first two chapters of the notes
 
 ## Week 6a
+
+- We introduced divide-and-conquer type arguments
+ - Binary search
+ - A version of the King's salary [see Peter Winkler's book, page 18](https://math.dartmouth.edu/news-resources/electronic/puzzlebook/book/book.pdf)
+
+- We introduced a version of [selection sort](https://en.wikipedia.org/wiki/Selection_sort)
+
 
 
 
