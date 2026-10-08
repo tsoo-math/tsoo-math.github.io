@@ -33,7 +33,13 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 ##  Week 6b
 
-
+- We introduced faster than $O(n^2)$ multiplication, where $n=2^k$ is the number of digits,  due to [Karatsuba ](https://en.wikipedia.org/wikiiKaratsuba_algorithm); we got $O(n^{\log_2 3})$; this is $3^k$, which  corresponds to the number of single digit multiplications at the end of the divide and conquer.
+  -  Although the final answer is correct, in my haste, I think I did not properly estimate the number of additions/subtractions required.     I should of said that each level $j$, we basically have $3^j$ additions with numbers that  which are of length $2^{k-j}$, this gives the summation,
+  $$\sum_{j=1}^k 2^{k-j}3^j \leq 3\cdot3^{k}.$$
+- We formally introduced the big $O$ notation and gave a sufficient condition in terms of limits
+- We analysed more carefully the selection sort algorithm.
+  - We introduced the concept of a loop-invariant
+  - We wrote some R code for this sorting algorithm 
 
 
 

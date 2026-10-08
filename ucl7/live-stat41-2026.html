@@ -383,8 +383,30 @@ sort</a></p></li>
 </div>
 <div id="week-6b" class="section level2">
 <h2>Week 6b</h2>
+<ul>
+<li>We introduced faster than <span class="math inline">\(O(n^2)\)</span> multiplication, where <span class="math inline">\(n=2^k\)</span> is the number of digits, due to <a href="https://en.wikipedia.org/wikiiKaratsuba_algorithm">Karatsuba</a>;
+we got <span class="math inline">\(O(n^{\log_2 3})\)</span>; this is
+<span class="math inline">\(3^k\)</span>, which corresponds to the
+number of single digit multiplications at the end of the divide and
+conquer.
+<ul>
+<li>Although the final answer is correct, in my haste, I think I did not
+properly estimate the number of additions/subtractions required. I
+should of said that each level <span class="math inline">\(j\)</span>,
+we basically have <span class="math inline">\(3^j\)</span> additions
+with numbers that which are of length <span class="math inline">\(2^{k-j}\)</span>, this gives the summation, <span class="math display">\[\sum_{j=1}^k 2^{k-j}3^j \leq
+3\cdot3^{k}.\]</span></li>
+</ul></li>
+<li>We formally introduced the big <span class="math inline">\(O\)</span> notation and gave a sufficient
+condition in terms of limits</li>
+<li>We analysed more carefully the selection sort algorithm.
+<ul>
+<li>We introduced the concept of a loop-invariant</li>
+<li>We wrote some R code for this sorting algorithm</li>
+</ul></li>
+</ul>
 <p><br> <br></p>
-<p>Version: 06 October 2026</p>
+<p>Version: 09 October 2026</p>
 <p><br> <br> <br></p>
 </div>
 </div>
