@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 We may  *attempt* to live stream, the live in-person sessions.  Please note that it is UCL's expectation that students attend in-person.  The Zoom link is available [here](https://ucl.zoom.us/my/terrysoo).  Not all sessions will be recorded or streamed.  The recording [link](https://moodle.ucl.ac.uk/mod/url/view.php?id=9436609) is password protected, with the password available on Moodle.
 
 
-# [Homework](https://tsoo-math.github.io/ucl7/live-stat41-2026.html)
+# [Homework](https://tsoo-math.github.io/ucl7/hw-stat41-2026.html)
 
 # By [UCL week](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2026_27v2.pdf)
 
