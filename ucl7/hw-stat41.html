@@ -11,7 +11,7 @@
 
 
 
-<title>Session diary 2026</title>
+<title>Rolling homework</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,21 +348,14 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Session diary 2026</h1>
+<h1 class="title toc-ignore">Rolling homework</h1>
 
 </div>
 
 
 <div id="general-information" class="section level1">
 <h1>General information</h1>
-<p>We may <em>attempt</em> to live stream, the live in-person sessions.
-Please note that it is UCL’s expectation that students attend in-person.
-The Zoom link is available <a href="https://ucl.zoom.us/my/terrysoo">here</a>. Not all sessions will
-be recorded or streamed. The recording <a href="https://moodle.ucl.ac.uk/mod/url/view.php?id=9436609">link</a> is
-password protected, with the password available on Moodle.</p>
-</div>
-<div id="homework" class="section level1">
-<h1><a href="https://tsoo-math.github.io/ucl7/live-stat41-2026.html">Homework</a></h1>
+<p>This does not need to be handed in.</p>
 </div>
 <div id="by-ucl-week" class="section level1">
 <h1>By <a href="https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2026_27v2.pdf">UCL
@@ -371,47 +364,26 @@ week</a></h1>
 <div id="week-6" class="section level1">
 <h1>Week 6</h1>
 <ul>
-<li>Read the first two chapters of the notes</li>
-</ul>
-<div id="week-6a" class="section level2">
-<h2>Week 6a</h2>
+<li>Analyze <a href="https://en.wikipedia.org/wiki/Bubble_sort">bubble
+sort</a>, as defined in Wikipedia; this is not a great algorithm, as
+Obama has <a href="https://www.youtube.com/watch?v=koMpGeZpu4Q">said</a>.
 <ul>
-<li><p>We introduced divide-and-conquer type arguments</p></li>
-<li><p>Binary search</p></li>
-<li><p>A version of the King’s salary <a href="https://math.dartmouth.edu/news-resources/electronic/puzzlebook/book/book.pdf">see
-Peter Winkler’s book, page 18</a></p></li>
-<li><p>We introduced a version of <a href="https://en.wikipedia.org/wiki/Selection_sort">selection
-sort</a></p></li>
-</ul>
-</div>
-<div id="week-6b" class="section level2">
-<h2>Week 6b</h2>
+<li>Argue that worst case complexity is <span class="math inline">\(O(n^2)\)</span>, where <span class="math inline">\(n\)</span> is the length of the array.</li>
+<li>Use the notion of a loop invariant <a href="https://ebookcentral.proquest.com/lib/UCL/detail.action?docID=3339142&amp;pq-origsite=primo">(see
+page 19 of the Algorithms book)</a> to demonstrate correctness; in
+particular, find a loop invariant(s), that satisfies:
 <ul>
-<li>We introduced faster than <span class="math inline">\(O(n^2)\)</span> multiplication, where <span class="math inline">\(n=2^k\)</span> is the number of digits, due to <a href="https://en.wikipedia.org/wikiiKaratsuba_algorithm">Karatsuba</a>;
-we got <span class="math inline">\(O(n^{\log_2 3})\)</span>; this is
-<span class="math inline">\(3^k\)</span>, which corresponds to the
-number of single digit multiplications at the end of the divide and
-conquer.
-<ul>
-<li>Although the final answer is correct, in my haste, I think I did not
-properly estimate the number of additions/subtractions required. I
-should of said that each level <span class="math inline">\(j\)</span>,
-we basically have <span class="math inline">\(3^j\)</span> additions
-with numbers that which are of length <span class="math inline">\(2^{k-j}\)</span>, this gives the summation, <span class="math display">\[\sum_{j=1}^k 2^{k-j}3^j \leq
-3\cdot3^{k}.\]</span></li>
+<li>Initialization</li>
+<li>Maintenance</li>
+<li>Termination</li>
 </ul></li>
-<li>We formally introduced the big <span class="math inline">\(O\)</span> notation and gave a sufficient
-condition in terms of limits</li>
-<li>We analysed more carefully the selection sort algorithm.
-<ul>
-<li>We introduced the concept of a loop-invariant</li>
-<li>We wrote some R code for this sorting algorithm</li>
 </ul></li>
+<li>Show that multiplying two <span class="math inline">\(nxn\)</span>
+matrices can be accomplished in <span class="math inline">\(O(n^3)\)</span> steps.</li>
 </ul>
 <p><br> <br></p>
 <p>Version: 09 October 2026</p>
 <p><br> <br> <br></p>
-</div>
 </div>
 
 

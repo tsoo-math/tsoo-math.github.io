@@ -1,0 +1,36 @@
+---
+title: "Rolling homework"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# General information
+
+This does not need to be handed in.   
+
+
+# By [UCL week](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2026_27v2.pdf)
+
+
+# Week 6
+
+- Analyze [bubble sort](https://en.wikipedia.org/wiki/Bubble_sort), as defined in Wikipedia; this is not a great algorithm, as Obama has [said](https://www.youtube.com/watch?v=koMpGeZpu4Q).
+  - Argue that worst case complexity is $O(n^2)$, where $n$ is the length of the array.
+  - Use the notion of a loop invariant [(see page 19 of the Algorithms book)](https://ebookcentral.proquest.com/lib/UCL/detail.action?docID=3339142&pq-origsite=primo) to demonstrate  correctness; in particular, find a loop invariant(s), that satisfies:
+    - Initialization
+    - Maintenance 
+    - Termination 
+- Show that multiplying two $nxn$ matrices can be accomplished in $O(n^3)$ steps.
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>
