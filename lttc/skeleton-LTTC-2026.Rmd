@@ -37,6 +37,12 @@ LTCC [site](http://www.ltcc.ac.uk/timetable/)
 
 # Classes
 
+## First class
+
+* [Law of large numbers](https://tsoo-math.github.io/ucl/prob-viaR.html)
+* [Strong law of large numbers](https://tsoo-math.github.io/ucl/borel.html)
+
+
 
 ### Endnotes
 
