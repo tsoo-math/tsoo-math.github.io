@@ -44,6 +44,14 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - We wrote some R code for this sorting algorithm 
 
 
+# Week 7
+
+
+## Week 7a
+
+- We introduced merge sort and discussed why it is $O(n\log n)$
+  - We coded it, but it had a bug; the bug was that v, the second half the split of x, was wrongly defined. The version done in class will be posted along with the videos, and a working version is available [here](https://tsoo-math.github.io/ucl7/mergesort.txt).
+
 
 
 <br>

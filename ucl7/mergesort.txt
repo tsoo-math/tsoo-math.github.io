@@ -1,0 +1,51 @@
+```{r}
+mergea <- function(x,y){
+n = length(x)
+m= length(y)
+z = rep(NULL,n+m)
+i=1
+j=1
+x = c(x, Inf)
+y = c(y, Inf)
+for (k in 1:(n+m)){
+  if (x[i] < y[j]){
+    z[k] = x[i]
+    i =i+1
+  } 
+  else {
+    z[k] = y[j]
+    j =j+1
+  }
+  
+}
+z  
+  
+}
+
+x = c(1,3,5)
+y = c(2,8,10)
+
+mergea(x,y)
+
+
+
+mergesort <- function(x){
+  n=length(x)
+  if (n==1){result =x}
+  else {
+    a = floor(n/2)
+    b = ceiling(n/2)
+    xl = x[1:a]
+    xr = x[a+1:b]
+    result=mergea(mergesort(xl), mergesort(xr))
+  
+    }
+return(result)  
+  
+}
+
+
+y =c(5,4,3,2,1,0,10)
+
+mergesort(y)
+```
