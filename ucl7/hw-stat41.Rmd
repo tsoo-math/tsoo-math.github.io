@@ -26,6 +26,12 @@ This does not need to be handed in.
 - Show that multiplying two $nxn$ matrices can be accomplished in $O(n^3)$ steps.
 
 
+# Week 7
+
+- Consider [Horner's](https://en.wikipedia.org/wiki/Horner%27s_method) method for evaluating polynomials.  Derive the stated complexities in the article.        
+- Code a bottom up version of merge sort
+
+
 <br>
 <br>
 
