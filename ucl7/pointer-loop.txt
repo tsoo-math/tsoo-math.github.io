@@ -1,0 +1,55 @@
+// Example program
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+struct node {
+    int data;
+    node* next=nullptr;
+    };
+
+
+
+
+
+
+int main(){
+
+int x[10];
+x[0]=1;
+x[2]=2;
+x[3]=3;
+x[4]=11;
+x[5]=16;
+x[6]=17;
+x[7]=18;
+x[8]=89;
+x[9]=99;
+x[1]=11;    
+    
+
+node list[11];
+list[0].data = x[0];
+    
+node head;
+head.next = &list[0];
+list[0]=head;
+for (int i = 1; i < 10; ++i){
+    list[i].data = x[i];
+    list[i-1].next = &list[i];
+    
+
+}
+
+
+
+cout << (*((*(head.next)).next)).data;
+    
+
+
+
+
+return 0;
+}

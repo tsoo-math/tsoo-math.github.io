@@ -1,0 +1,50 @@
+// Example program
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+// we are defining a node, which is a structure, which is a way for us to group two different data types; here we need the actual data and the pointer, which will point to the next node
+
+struct node {
+    int data;
+    node* next=nullptr;
+    };
+
+
+int main(){        
+
+
+
+node N;
+
+node M;
+
+node Q;
+
+N.data= 1;
+
+M.data= 2;
+
+Q.data= 3;
+
+N.next = &M;
+
+M.next = &Q;
+
+node H; // we will use this as the header
+
+H.next = &N;
+
+cout << (*(*(H.next)).next).data;
+
+
+    
+    
+
+
+
+
+return 0;
+}

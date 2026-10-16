@@ -30,8 +30,7 @@ This does not need to be handed in.
 
 - Consider [Horner's](https://en.wikipedia.org/wiki/Horner%27s_method) method for evaluating polynomials.  Derive the stated complexities in the article.        
 - Code a bottom up version of merge sort
-
-
+- Suppose you have a linked list of say $10$ nodes, how would you add/insert data into a new node at position $5$ say?.  To be concrete you can use this linked [list](pointer-loop.txt).  Your method should only assume you have access to header; that is, it should start from the header.
 <br>
 <br>
 

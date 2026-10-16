@@ -1,0 +1,57 @@
+// Example program
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(){        
+int z;             // declare data type
+z =12;
+cout << z;
+cout << "\n";   
+int* addz;          // declare type pointer for integer type
+addz = &z;          // gives the address for z  
+
+cout << addz;       // displays the address
+cout << "\n";      // adds a line
+cout << *addz;    // the * gives what's in the address
+cout << "\n"; 
+
+int vector[3];         //array of size 3
+vector[0] = 2;
+vector[1] = 4;
+vector[2] = 6;
+
+cout << &vector;   //address of vector
+cout << "\n";
+cout << vector;    
+cout << "\n";  
+cout << "These are the same";
+
+cout << "\n";  
+cout << vector[0];
+cout << "\n";
+
+
+cout << &vector[0];
+cout << "\n";
+
+cout << "Same as address of vector";
+
+cout << "\n";
+cout << &vector[0];
+cout << "\n"; 
+cout << &vector[1];
+cout << "\n"; 
+cout << &vector[2];
+cout << "\n"; 
+cout << "Notice sequential address, continuous memory blocks";
+
+  
+
+
+
+
+return 0;
+}

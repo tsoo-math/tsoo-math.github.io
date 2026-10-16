@@ -54,6 +54,15 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - We coded it, but it had a bug; the bug was that v, the second half the split of x, was wrongly defined. The version done in class will be posted along with the videos, and a working version is available [here](https://tsoo-math.github.io/ucl7/mergesort.txt).
 
 
+##  Week 7b
+
+- We discussed the recurrence: $T(n) = 2T(n/2) +O(n)$ and some ways of solving it.  
+
+- We manifested arrays and linked lists in C++ and discussed the pros/cons.
+  - [A very brief introduction to C++, originally written for Stat9](https://tsoo-math.github.io/ucl4/C.html) 
+  - [Code for illustrating pointers and arrays in C++](https://tsoo-math.github.io/ucl7/c-pointers.txt)
+  - [Code for making a short linked list in C++](https://tsoo-math.github.io/ucl7/linked-list.txt)
+
 
 <br>
 <br>
