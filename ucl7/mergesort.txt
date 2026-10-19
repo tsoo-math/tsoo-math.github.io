@@ -36,7 +36,7 @@ mergesort <- function(x){
     a = floor(n/2)
     b = ceiling(n/2)
     xl = x[1:a]
-    xr = x[a+1:b]
+    xr = x[(a+1):n]
     result=mergea(mergesort(xl), mergesort(xr))
   
     }
