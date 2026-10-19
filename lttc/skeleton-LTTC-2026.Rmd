@@ -50,6 +50,12 @@ LTCC [site](http://www.ltcc.ac.uk/timetable/)
   * [A simple MC example](https://tsoo-math.github.io/ucl4/week8-2023-inclass-sol.html)
 
 
+## Third class
+
+* [Doeblin coupling and convergence](https://tsoo-math.github.io/ucl/markov-c.html)
+* [Renewal type arguments and convergence](https://tsoo-math.github.io/lttc/renewal-clt.html)
+
+
 ### Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`
