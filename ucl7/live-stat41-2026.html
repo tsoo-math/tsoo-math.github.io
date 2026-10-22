@@ -453,13 +453,24 @@ making a short linked list in C++</a></li>
 <h2>Week 8b</h2>
 <ul>
 <li>We sketched a proof of the <a href="https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)">Master
-theorem</a>, where I fumbled on the third case.</li>
+theorem</a>, where I fumbled on the third case. I should of wrote:
+<ul>
+<li>The regularity assumption implies that <span class="math inline">\(f(b^{\ell}) \leq (c/a)^{k-\ell}
+f(b^k)\)</span>.</li>
+<li>Then <span class="math inline">\(T(n) = T(b^k) = \Theta(a^k) +
+\sum_{\ell=0} ^{k-1} + \Theta(a^k) + a^{k-1-\ell}f(b^\ell) \leq
+a^{-1}f(b^k)\sum_{\ell=0} ^{k-1} c^{k-\ell} \leq \Theta(a^k) +
+\frac{a^{-1}f(b^k)}{1-c}.\)</span></li>
+<li>The result that <span class="math inline">\(T(n) = T(b^k)
+=O(f(n))\)</span> now follows, since by assumption <span class="math inline">\(f(n) = \Omega(n^{\log_b a + \epsilon})\)</span>;
+it is not much harder to get that it is actually <span class="math inline">\(\Theta(f(n))\)</span>.</li>
+</ul></li>
 <li>We discussed simple uniform hashing.</li>
 <li>We introduced the adjacency matrix for counting walks on
 graphs.</li>
 </ul>
 <p><br> <br></p>
-<p>Version: 22 October 2026</p>
+<p>Version: 23 October 2026</p>
 <p><br> <br> <br></p>
 </div>
 </div>

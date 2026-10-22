@@ -70,7 +70,10 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 ## Week 8b
 
-- We sketched a proof of the [Master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)), where I fumbled on the third case.
+- We sketched a proof of the [Master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)), where I fumbled on the third case.  I should of wrote:
+  * The regularity assumption implies that $f(b^{\ell}) \leq (c/a)^{k-\ell} f(b^k)$.
+  * Then $T(n) = T(b^k) = \Theta(a^k) + \sum_{\ell=0} ^{k-1} + \Theta(a^k) + a^{k-1-\ell}f(b^\ell) \leq a^{-1}f(b^k)\sum_{\ell=0} ^{k-1} c^{k-\ell} \leq \Theta(a^k) + \frac{a^{-1}f(b^k)}{1-c}.$
+  * The result that $T(n) = T(b^k) =O(f(n))$ now follows, since by assumption $f(n) = \Omega(n^{\log_b a + \epsilon})$; it is not much harder to get that it is actually $\Theta(f(n))$.
 - We discussed simple uniform hashing.
 - We introduced the adjacency  matrix for counting walks on graphs.
 
