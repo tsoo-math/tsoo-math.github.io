@@ -41,7 +41,9 @@ Some unifying concepts include: divide and conquer, dynamical programming, greed
 # Formal assessments 
 
 * Summer exam: 3/4
-* ICA group work: 1/4 (Due in 2027)
+* ICA group work: 1/4 
+  * To be released: Week 15
+  * Due: 5 Feb 2027
   
 
 
@@ -51,6 +53,7 @@ Some unifying concepts include: divide and conquer, dynamical programming, greed
 
 * [UCL library reading list](https://rl.talis.com/3/ucl/lists/834f2976-038d-4ea5-a40f-bd33dcc8aec6.html?lang=en-GB)
 
+* UCL [calendar](https://www.ucl.ac.uk/srs/sites/srs/files/ucl_calendar_2026_27v2.pdf) by week
 
 ### Endnotes
 
