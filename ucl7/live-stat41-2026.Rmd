@@ -64,6 +64,17 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - [Code for making a short linked list in C++](https://tsoo-math.github.io/ucl7/linked-list.txt)
 
 
+## Week 8a
+
+- We discussed stacks, queues, and trees
+
+## Week 8b
+
+- We sketched a proof of the [Master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)), where I fumbled on the third case.
+- We discussed simple uniform hashing.
+- We introduced the adjacency  matrix for counting walks on graphs.
+
+
 <br>
 <br>
 
