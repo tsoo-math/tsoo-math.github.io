@@ -19,7 +19,7 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 # Week 6
 
-- Read the first two chapters of the notes
+- Read the first two chapters of the notes.
 
 ## Week 6a
 
@@ -46,7 +46,7 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 # Week 7
 
-- Starting looking at Chapter 3
+- Starting looking at Chapter 3 of the notes.
 
 ## Week 7a
 
@@ -64,6 +64,9 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - [Code for making a short linked list in C++](https://tsoo-math.github.io/ucl7/linked-list.txt)
 
 
+
+# Week 8
+
 ## Week 8a
 
 - We discussed stacks, queues, and trees
@@ -74,8 +77,14 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   * The regularity assumption implies that $f(b^{\ell}) \leq (c/a)^{k-\ell} f(b^k)$.
   * Then $T(n) = T(b^k) = \Theta(a^k) + \sum_{\ell=0} ^{k-1} + \Theta(a^k) + a^{k-1-\ell}f(b^\ell) \leq a^{-1}f(b^k)\sum_{\ell=0} ^{k-1} c^{k-\ell} \leq \Theta(a^k) + \frac{a^{-1}f(b^k)}{1-c}.$
   * The result that $T(n) = T(b^k) =O(f(n))$ now follows, since by assumption $f(n) = \Omega(n^{\log_b a + \epsilon})$; it is not much harder to get that it is actually $\Theta(f(n))$.
+  * More details in Section 4.6 of the Algorithms book.
 - We discussed simple uniform hashing.
 - We introduced the adjacency  matrix for counting walks on graphs.
+
+#  Week 9
+
+- Start looking at Chapter 4 of the notes.
+
 
 
 <br>

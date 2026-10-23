@@ -36,7 +36,8 @@ This does not need to be handed in.
 # Week 8
 
 - What would the complexity be for a merge sort where you did a $(1/3, 2/3)$ split?
-
+- Use the Master theorem to analyze Karatsuba's multiplication algorithm.
+- In simple uniform hashing, with $n$ keys and an array of length $m$, what is the expected number of collisions?  Hint: consider the indicator random variable $X_{ij} = 1$ if the keys $k_i$ and $k_j$ collide, then bust through it by the [power](https://www.youtube.com/watch?v=4zIoElk3r2c) of linearity of expecation.
 
 
 
