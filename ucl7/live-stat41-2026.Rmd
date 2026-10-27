@@ -94,8 +94,8 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
   - [DFS Python code](https://tsoo-math.github.io/ucl7/depth.python.txt)
 - We had some A/V issues
 - We introduced spanning trees
-  - [board1](https://tsoo-math.github.io/ucl7/board1.jpg)
-  - [board2](https://tsoo-math.github.io/ucl7/board2.jpg)
+  - [board1](https://tsoo-math.github.io/ucl7/span1.jpeg)
+  - [board2](https://tsoo-math.github.io/ucl7/span2.jpeg)
 
 <br>
 <br>
