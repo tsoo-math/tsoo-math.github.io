@@ -85,7 +85,17 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 - Start looking at Chapter 4 of the notes.
 
+## Week 9a
 
+- We started a discussion about dynamic programming
+  - [Fibonacci numbers, python code](https://tsoo-math.github.io/ucl7/fib.txt)
+- We introduced breadth and depth first search
+  - [BFS Python code](https://tsoo-math.github.io/ucl7/breadth-python.txt)
+  - [DFS Python code](https://tsoo-math.github.io/ucl7/depth.python.txt)
+- We had some A/V issues
+- We introduced spanning trees
+  - [board1](https://tsoo-math.github.io/ucl7/board1.jpg)
+  - [board2](https://tsoo-math.github.io/ucl7/board2.jpg)
 
 <br>
 <br>

@@ -1,0 +1,38 @@
+import numpy as np
+
+
+
+A = np.array( [np.array([0, 1, 1, 0,0]),
+np.array([1, 0, 1,0,0]),
+np.array([0,0,0,1,0]),
+np.array([0,1,0,0, 1]),
+np.array([0,0,0,0,1] ) ]  )
+
+
+
+
+print(A)
+print(A[1])
+print(A[4])
+
+def brfs(source,dest,Ad):
+    result="yes"
+    L=len(Ad)
+    colour = [0 for k in range(L)]
+    q = [source]
+    colour[source]==0.5
+    while (len(q) >0):
+        u = q.pop(0)
+        for v in range(L):
+            if (A[u][v]==1):
+                if (v==dest):
+                    return result
+                if (colour[v]==0):
+                    colour[v]=0.5
+                    q.append(v)
+        colour[u]=1
+    return colour
+
+print(brfs(1,4,A))
+
+        

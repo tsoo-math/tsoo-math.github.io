@@ -1,0 +1,45 @@
+import numpy as np
+
+
+
+A = np.array( [np.array([0, 0, 0, 0,0,0]),
+np.array([1, 0, 1,0,0,0]),
+np.array([0,0,0,1,0,0]),
+np.array([0,1,0,0, 1,0]),
+np.array([0,0,0,0,0,0]),
+np.array([0,0,0,0,1,0]) ]  )
+
+
+def add1(x):
+    x=x.append(2)
+
+x=[6]
+add1(x)
+print(x)
+
+
+print(A)
+print(A[1])
+print(A[3])
+
+
+def dfs(source,dest,Ad,colour):
+    result=False
+    L=len(Ad)
+    colour[source]=0.5
+    if (A[source][dest]==1):
+        result = True
+        return result
+    for v in range(L):
+        if (A[source][v]==1 and colour[v]==0):
+            result=dfs(v,dest,Ad,colour)
+            if (result):
+                return result
+    return result
+                
+    
+    
+
+print(dfs(3,4,A,[0,0,0,0,0,0]))
+    
+    

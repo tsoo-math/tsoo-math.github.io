@@ -1,0 +1,33 @@
+
+# Online Python - IDE, Editor, Compiler, Interpreter
+
+import numpy as np
+
+
+def fib(n):
+    ans=0
+    if (n==0):
+        return ans
+    if (n==1):
+        ans =1
+        return ans
+    ans=fib(n-1) + fib(n-2)
+    return ans
+
+
+    
+
+
+        
+    
+def fibbot(n):
+    ans=np.array([0,1])
+    if (n==0):
+        return ans[0]
+    if (n==1):
+        ans[1]
+    for i in range(2,(n+1)):
+        ans= np.append(ans, (ans[i-1] +ans[i-2]))
+    return ans[n]
+    
+print(fib(40))
