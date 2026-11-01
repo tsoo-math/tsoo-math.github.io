@@ -461,7 +461,7 @@ Q</code></pre>
 ## [5,] 0.1704036 0.1345291 0.1434978 0.2600897 0.2914798</code></pre>
 <pre class="r"><code>x = replicate(1000, london()[1])
 mean(x==5)</code></pre>
-<pre><code>## [1] 0.692</code></pre>
+<pre><code>## [1] 0.723</code></pre>
 </div>
 <div id="what-about-going-backwards-all-roads-lead-to-rome" class="section level1">
 <h1>What about going backwards! All roads lead to Rome</h1>
@@ -532,8 +532,20 @@ x
 z=c(mean(italy==1),mean(italy==2),
     mean(italy==3),mean(italy==4),mean(italy==5))
 z</code></pre>
-<pre><code>## [1] 0.1684 0.1306 0.1426 0.2596 0.2988</code></pre>
+<pre><code>## [1] 0.1672 0.1242 0.1505 0.2598 0.2983</code></pre>
 <p>Compare with the previous forward result.</p>
+<div id="more-on-randomization" class="section level2">
+<h2>More on randomization</h2>
+<p>We could/should of started independent chains for each <span class="math inline">\(i\)</span>, at the first instance; that is, if
+there are <span class="math inline">\(N\)</span> states, then we could
+of defined: <span class="math display">\[\psi(i, U) = \phi(i,
+U^i),\]</span> where <span class="math inline">\(U= (U^1, \ldots,
+U^N)\)</span>; by using <span class="math inline">\(\psi\)</span>
+instead of <span class="math inline">\(\phi\)</span>, we have the
+advantage that if we assume that <span class="math inline">\(P\)</span>
+is irreducible and aperiodic, then we know that <span class="math inline">\(T &lt; \infty\)</span>. We still have to use the
+randomness each time.</p>
+</div>
 </div>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
@@ -547,7 +559,7 @@ randomization had to be reused carefully.</li>
 <div id="endnotes" class="section level2">
 <h2>Endnotes</h2>
 <ul>
-<li>Version: 20 April 2024</li>
+<li>Version: 01 November 2026</li>
 <li><a href="https://tsoo-math.github.io/ucl/coupling-from-past-lec.Rmd">Rmd
 Source</a></li>
 </ul>

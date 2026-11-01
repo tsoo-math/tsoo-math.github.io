@@ -182,6 +182,13 @@ z
 ```
 Compare with the previous forward result.
 
+
+## More on randomization
+
+We could/should of started independent chains for each $i$, at the first instance; that is, if there are $N$ states, then we could of defined:
+$$\psi(i, U) = \phi(i, U^i),$$
+where $U= (U^1, \ldots, U^N)$; by using $\psi$ instead of $\phi$, we have the advantage that if we assume that $P$ is irreducible and aperiodic, then we know that $T < \infty$.  We still have to use the randomness each time.  
+
 # Summary
 
 *  We discussed an *exact* sample procedure 
