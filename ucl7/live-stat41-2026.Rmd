@@ -96,6 +96,23 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 - We introduced spanning trees
   - [board1](https://tsoo-math.github.io/ucl7/span1.jpeg)
   - [board2](https://tsoo-math.github.io/ucl7/span2.jpeg)
+  
+  
+##  Week 9b
+
+- We discussed the notion of a predecessor subgraph in the BFS algorithm.
+- We introduced the notion of a light edge.
+  - We discussed Prim's and Kruskal's algorithms
+- We introduced the notation of relaxation
+  - We discussed the Bellman-Ford Algorithm
+  
+# Week 10
+
+- Read chapter 5 of the notes
+
+## Week 10a
+
+## Week 10b
 
 <br>
 <br>

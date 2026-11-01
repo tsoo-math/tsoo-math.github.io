@@ -40,7 +40,15 @@ This does not need to be handed in.
 - In simple uniform hashing, with $n$ keys and an array of length $m$, what is the expected number of collisions?  Hint: consider the indicator random variable $X_{ij} = 1$ if the keys $k_i$ and $k_j$ collide, then bust through it by the [power](https://www.youtube.com/watch?v=4zIoElk3r2c) of linearity of expecation.
 
 
+# Week 9
 
+- Code to BFS algorithm to generated the predecessor subgraph.
+
+- Is a path in a minimum  weight spanning tree, also a minimum weight path?
+
+- What happens if I try to use Prim's algorithm in the case where the edges are directed?
+
+-  Let $e_1, \ldots, e_n$ are the edges of a minimum weight path between two vertices $s$ and $t$,  in a directed and nonegatively weighted graph.  Suppose I relax the edges, starting from $e_n$ and going back to $e_1$. Is it possible that $d.t \not = \delta(s,t)$.
 
 <br>
 <br>
