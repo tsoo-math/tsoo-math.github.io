@@ -58,7 +58,7 @@ This does not need to be handed in.
 - Consider a finite set of integers $S$ of size $n$  Let $z$ be a given integer. 
   - Find a brute-force algorithm that gives whether $z$ is the sum of two (distinct) elements of $S$.
   - Write pseudocode for your algorithm.
-  - What is the big-O complexity of your algorithm?
+  - What is the big-$O$ complexity of your algorithm?
   - Find a $O(n \log n )$ algorithm for this task.  Hint: consider the case that $S$ is ordered.
 
 -  Consider Dijkstra's algorithm applied to a graph $G = (V, E, w)$.  Let $S$ be the initial set that is set to be empty and eventually should be all of $V$.  Show that when we decide to add a node $v$ to the set $S$, at this instance, we must have that $v$ is adjacent to $S$.  
@@ -73,6 +73,7 @@ This does not need to be handed in.
 
 - Let $A$ be an ordered array of integers of size $n$   Write pseudocode for searching for an integer $k$ in the array, that does better than $O(n)$. 
 
+- What is merge sort? Use the Master theorem to the complexity of merge sort.
 
 
 
