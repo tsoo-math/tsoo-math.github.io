@@ -50,6 +50,27 @@ This does not need to be handed in.
 
 -  Let $e_1, \ldots, e_n$ are the edges of a minimum weight path between two vertices $s$ and $t$,  in a directed and nonegatively weighted graph.  Suppose I relax the edges, starting from $e_n$ and going back to $e_1$. Is it possible that $d.t \not = \delta(s,t)$.
 
+# Week 10
+
+
+# More questions for summer exam study
+
+- Consider a finite set of integers $S$ of size $n$  Let $z$ be a given integer. 
+  - Find a brute-force algorithm that gives whether $z$ is the sum of two (distinct) elements of $S$.
+  - Write pseudocode for your algorithm.
+  - What is the big-O complexity of your algorithm?
+  - Find a $O(n \log n )$ algorithm for this task.  Hint: consider the case that $S$ is ordered.
+
+-  Consider Dijkstra's algorithm applied to a graph $G = (V, E, w)$.  Let $S$ be the initial set that is set to be empty and eventually should be all of $V$.  Show that when we decide to add a node $v$ to the set $S$, at this instance, we must have that $v$ is adjacent to $S$.  
+
+-  Manually carry out Dijkstra's algorithm in concrete example. 
+
+- Consider the case of simple uniform hashing, with a hash function $h$ mapping into the $m$ slots of a hash table $T$.  On average, how many keys do I need, before every slot of the hash table is filled.  Hint:    Let $W_i$ be the number of keys that are needed, after $i-1$ slots have been filled; notice that $W_1=1$.
+
+-  Consider a hash function $h$ with $m$ slot and a hash table $T[0, \ldots, m-1]$ that resolves collisions by chaining.  Suppose that we have random keys $K_1, \ldots, K_n$, and we do not have uniform hashing, but instead have $h(K_1), \ldots, h(K_n)$ are iid random variables such that $\mathbb{P}(h(K_1)=i) = p_i$.   For each fixed key $k$, find the average-case time of resolving an unsuccessful search.  
+
+- Use the Master theorem to get the complexity of $T$ where, $T(n) = 7T(n/2) + \Theta(n^2)$.
+
 <br>
 <br>
 

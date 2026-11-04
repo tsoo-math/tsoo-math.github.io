@@ -411,6 +411,8 @@ linearity of expecation.</li>
 <div id="week-9" class="section level1">
 <h1>Week 9</h1>
 <ul>
+<li><p>Code to BFS algorithm to generated the predecessor
+subgraph.</p></li>
 <li><p>Is a path in a minimum weight spanning tree, also a minimum
 weight path?</p></li>
 <li><p>What happens if I try to use Prim’s algorithm in the case where
@@ -419,8 +421,45 @@ the edges are directed?</p></li>
 edges of a minimum weight path between two vertices <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span>, in a directed and nonegatively
 weighted graph. Suppose I relax the edges, starting from <span class="math inline">\(e_n\)</span> and going back to <span class="math inline">\(e_1\)</span>. Is it possible that <span class="math inline">\(d.t \not = \delta(s,t)\)</span>.</p></li>
 </ul>
+</div>
+<div id="week-10" class="section level1">
+<h1>Week 10</h1>
+</div>
+<div id="more-questions-for-summer-exam-study" class="section level1">
+<h1>More questions for summer exam study</h1>
+<ul>
+<li><p>Consider a finite set of integers <span class="math inline">\(S\)</span> of size <span class="math inline">\(n\)</span> Let <span class="math inline">\(z\)</span> be a given integer.</p>
+<ul>
+<li>Find a brute-force algorithm that gives whether <span class="math inline">\(z\)</span> is the sum of two (distinct) elements
+of <span class="math inline">\(S\)</span>.</li>
+<li>Write pseudocode for your algorithm.</li>
+<li>What is the big-O complexity of your algorithm?</li>
+<li>Find a <span class="math inline">\(O(n \log n )\)</span> algorithm
+for this task. Hint: consider the case that <span class="math inline">\(S\)</span> is ordered.</li>
+</ul></li>
+<li><p>Consider Dijkstra’s algorithm applied to a graph <span class="math inline">\(G = (V, E, w)\)</span>. Let <span class="math inline">\(S\)</span> be the initial set that is set to be
+empty and eventually should be all of <span class="math inline">\(V\)</span>. Show that when we decide to add a node
+<span class="math inline">\(v\)</span> to the set <span class="math inline">\(S\)</span>, at this instance, we must have that
+<span class="math inline">\(v\)</span> is adjacent to <span class="math inline">\(S\)</span>.</p></li>
+<li><p>Manually carry out Dijkstra’s algorithm in concrete
+example.</p></li>
+<li><p>Consider the case of simple uniform hashing, with a hash function
+<span class="math inline">\(h\)</span> mapping into the <span class="math inline">\(m\)</span> slots of a hash table <span class="math inline">\(T\)</span>. On average, how many keys do I need,
+before every slot of the hash table is filled. Hint: Let <span class="math inline">\(W_i\)</span> be the number of keys that are
+needed, after <span class="math inline">\(i-1\)</span> slots have been
+filled; notice that <span class="math inline">\(W_1=1\)</span>.</p></li>
+<li><p>Consider a hash function <span class="math inline">\(h\)</span>
+with <span class="math inline">\(m\)</span> slot and a hash table <span class="math inline">\(T[0, \ldots, m-1]\)</span> that resolves
+collisions by chaining. Suppose that we have random keys <span class="math inline">\(K_1, \ldots, K_n\)</span>, and we do not have
+uniform hashing, but instead have <span class="math inline">\(h(K_1),
+\ldots, h(K_n)\)</span> are iid random variables such that <span class="math inline">\(\mathbb{P}(h(K_1)=i) = p_i\)</span>. For each
+fixed key <span class="math inline">\(k\)</span>, find the average-case
+time of resolving an unsuccessful search.</p></li>
+<li><p>Use the Master theorem to get the complexity of <span class="math inline">\(T\)</span> where, <span class="math inline">\(T(n)
+= 7T(n/2) + \Theta(n^2)\)</span>.</p></li>
+</ul>
 <p><br> <br></p>
-<p>Version: 01 November 2026</p>
+<p>Version: 04 November 2026</p>
 <p><br> <br> <br></p>
 </div>
 
