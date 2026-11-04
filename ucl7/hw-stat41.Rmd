@@ -53,7 +53,7 @@ This does not need to be handed in.
 # Week 10
 
 
-# More questions for summer exam study
+# More questions for summer exam study (rolling)
 
 - Consider a finite set of integers $S$ of size $n$  Let $z$ be a given integer. 
   - Find a brute-force algorithm that gives whether $z$ is the sum of two (distinct) elements of $S$.
@@ -69,7 +69,12 @@ This does not need to be handed in.
 
 -  Consider a hash function $h$ with $m$ slot and a hash table $T[0, \ldots, m-1]$ that resolves collisions by chaining.  Suppose that we have random keys $K_1, \ldots, K_n$, and we do not have uniform hashing, but instead have $h(K_1), \ldots, h(K_n)$ are iid random variables such that $\mathbb{P}(h(K_1)=i) = p_i$.   For each fixed key $k$, find the average-case time of resolving an unsuccessful search.  
 
-- Use the Master theorem to get the complexity of $T$ where, $T(n) = 7T(n/2) + \Theta(n^2)$.
+- Use the Master theorem to get  the complexity of $T$ where, $T(n) = 7T(n/2) + \Theta(n^2)$.
+
+- Let $A$ be an ordered array of integers of size $n$   Write pseudocode for searching for an integer $k$ in the array, that does better than $O(n)$. 
+
+
+
 
 <br>
 <br>
