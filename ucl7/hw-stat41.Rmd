@@ -73,7 +73,7 @@ This does not need to be handed in.
 
 - Let $A$ be an ordered array of integers of size $n$   Write pseudocode for searching for an integer $k$ in the array, that does better than $O(n)$. 
 
-- What is merge sort? Use the Master theorem to the complexity of merge sort.
+- What is merge sort? Use the Master theorem to get the complexity of merge sort. 
 
 
 
