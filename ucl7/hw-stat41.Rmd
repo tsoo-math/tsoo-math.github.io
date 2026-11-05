@@ -62,6 +62,7 @@ This does not need to be handed in.
 
 # More questions for summer exam study (rolling)
 
+
 - What is:
   - The min-heap property?
 
