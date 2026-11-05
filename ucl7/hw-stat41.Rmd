@@ -52,8 +52,20 @@ This does not need to be handed in.
 
 # Week 10
 
+- Use memoization in a top-down coding of the Fibonacci sequence
+
+
+# Week 12
+
+
+
 
 # More questions for summer exam study (rolling)
+
+- What is:
+  - The min-heap property?
+
+
 
 - Consider a finite set of integers $S$ of size $n$  Let $z$ be a given integer. 
   - Find a brute-force algorithm that gives whether $z$ is the sum of two (distinct) elements of $S$.

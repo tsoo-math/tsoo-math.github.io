@@ -117,6 +117,20 @@ We may  *attempt* to live stream, the live in-person sessions.  Please note that
 
 ## Week 10b
 
+- We continued our discussion of heaps and priority queues and their role in Dijkstra's algorithm
+- We continued our discussion on dynamics programming and the role of bottom up coding and  [memoization](https://en.wikipedia.org/wiki/Memoization)
+
+# Week 11
+
+Reading break
+
+# Week 12
+
+Week 12a
+
+- Hidden Markov chains and the filtering problem (forward algorithm)
+
+
 <br>
 <br>
 
