@@ -1,0 +1,26 @@
+---
+title: "Rolling homework"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Week 8
+
+
+* In Karatsuba’s multiplication algorithm, we have $T(n)= 3T(n/2) + O(n)$.  Thus this is the first case of the Master theorem, with $a=3$ and $b=2$ and $c=1$, the exponent on $n$.    We have $1 < c_r=\log_2 3$, so this is the first case of the Master theorem, which gives us the required $O(n^{c_r})$ complexity.
+
+* With the given notation, the number of collisions is given by
+$$Y= \sum_{i=1} ^n \sum_{j=1, j>i}^n X_{ij}.$$
+We have that $\mathbb{E}X_{12} = 1/m$ and the random variables $X_{ij}$ have the same disttribution, even if they are not independent; this as a matter of counting, we have that $\mathbb{E}Y = {n \choose 2}m$ 
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>

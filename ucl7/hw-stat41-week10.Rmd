@@ -1,0 +1,51 @@
+---
+title: "Rolling homework"
+output: html_document
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+
+# Week 10
+
+```{python}
+
+
+
+def fibMem(n,mem):
+    if (mem[n] > -1):
+        return mem[n]
+    if (mem[n-1] >-1 and mem[n-2] >-1 ):
+        mem[n] = mem[n-1] + mem[n-2]
+        return mem[n]
+    else:
+        mem[n]=fibMem(n-1, mem) + fibMem(n-2, mem)
+        return mem[n]
+    
+
+def fib(n):
+    FF= [-2]*(n+1)
+    FF[0] = 0
+    if (n==0):
+        return FF[0]
+    FF[1] = 1
+    return fibMem(n, FF)
+    
+
+
+print(fib(500))
+```
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>

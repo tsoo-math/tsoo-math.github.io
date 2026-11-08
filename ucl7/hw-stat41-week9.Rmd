@@ -1,0 +1,24 @@
+---
+title: "Rolling homework"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Week 9
+
+*  No.  A path in a minimum weight spanning tree, may not be a minimum weight path.  Consider a graph with three nodes, $\{1,2,3\}$ and edges/weights $w(1,2) = 10, w(2,3)= 2$, and $w(1,3) = 10$, with the spanning tree, given by $(1,2)$ and $(2,3)$.   
+
+
+*  Even in the simple case of the graph the simply consists of the directed path $(s, u, v)$, upon initialization we have $s.d=0$ and $u.d = \infty$ and $v.d = \infty$.  If we first relax the edge $(u,v)$, then nothing is updated, since $v.d = u.d + w(u,v) = \infty$.  When we relax the the edge $(s,u)$, then we do get the update $u.d = w(s,u)$ and $u.\pi = s$; we would have to relax $(u,v)$ again to update $v.d$.  If you think back to the Bellman–Ford algorithm, then you might see that this is why it relaxes all the edges, in some fixed order, $n-1$ times, for a total of $O(|V||E|)$ relaxations.       
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>

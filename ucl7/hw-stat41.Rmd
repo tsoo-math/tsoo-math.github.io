@@ -43,9 +43,11 @@ This does not need to be handed in.
 - In simple uniform hashing, with $n$ keys and an array of length $m$, what is the expected number of collisions?  Hint: consider the indicator random variable $X_{ij} = 1$ if the keys $k_i$ and $k_j$ collide, then bust through it by the [power](https://www.youtube.com/watch?v=4zIoElk3r2c) of linearity of expectation.
 
 
+- [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-week8.html)
+
 # Week 9
 
-- Code to BFS algorithm to generated the predecessor subgraph.
+- Code the BFS algorithm to generated the predecessor subgraph.
 
 - Is a path in a minimum  weight spanning tree, also a minimum weight path?
 
@@ -53,9 +55,16 @@ This does not need to be handed in.
 
 -  Let $e_1, \ldots, e_n$ are the edges of a minimum weight path between two vertices $s$ and $t$,  in a directed and nonegatively weighted graph.  Suppose I relax the edges, starting from $e_n$ and going back to $e_1$. Is it possible that $d.t \not = \delta(s,t)$.
 
+
+- [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-week9.html)
+
+
 # Week 10
 
 - Use memoization in a top-down coding of the Fibonacci sequence
+
+
+- [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-week10.html)
 
 
 # Week 12
