@@ -1,0 +1,28 @@
+---
+title: "Rolling homework"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Week 6
+
+- In a basic bubble sort, we do a pass of the indexes, checking if a swap with its neighbour needs to be done and swapping if necessary, requiring $n-1$ checks; at the end of this, if something is swapped, we are obliged to go though all the indexes again!   
+  - At end of the first pass of indexes, we have that a maximum  element is now *bubbled* at the end of the array, thus the worst case is that we must do $n-1$ passes of the indexes, so that the complexity of bubble sort is $O(n^2)$.
+  - We propose the invariant that the last bit of the array $A[1,n]$ is sorted and every element in the last bit is no smaller than an element in the first bit of the array;  that is, *before* the $k$th pass of the indexes, the array $A[n-k+2, n]$ is sorted and no element of it is smaller than a element of the first bit $A[1, n-k+1]$; here when $k=1$, this is the empty array.
+    - Initialization: This is trivially true for $k=1$, as this last bit is empty.
+    - Maintenance:  After the $k$th pass, we observe that the last bit of the array is unchanged, since it was already ordered and its elements are no smaller that the elements in the beginning.  We already observed that a maximum element of the first  bit of the array, $A[1,n-k+1]$, would have bubbled up to the end of it, to the $(n-k+1)$th position, so that the array $A[n-k+1, n]$ is ordered and does not contain an element that is smaller than an element in the first bit of the array.
+    - Termination:  After the $k-1$ pass, we are at $k=n$,  we already have that the array $A[2, n]$ is sorted and that $A[1]$ is no bigger than any element of $A[2,n]$, so that we have that $A$ is sorted. 
+
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>
