@@ -62,6 +62,11 @@ LTCC [site](http://www.ltcc.ac.uk/timetable/)
 * [Poisson process](https://tsoo-math.github.io/ucl/poisson.html)
   * [Some basic worked examples](https://tsoo-math.github.io/ucl/poisson-ex.worked.html)
 
+## Last class
+
+* [Deterministic thinning](https://projecteuclid.org/journals/electronic-communications-in-probability/volume-10/issue-none/Poisson-Thinning-by-Monotone-Factors/10.1214/ECP.v10-1134.full)
+  
+
 ### Endnotes
 
 Version: `r format(Sys.time(), '%d %B %Y')`
