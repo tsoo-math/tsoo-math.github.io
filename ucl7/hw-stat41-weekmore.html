@@ -412,11 +412,21 @@ find(A, 5)</code></pre>
 <pre class="r"><code>find(A, 8)</code></pre>
 <pre><code>## [1] 1</code></pre>
 <ul>
-<li>Merge sort begins with assuming two separate decks are already
+<li><p>Merge sort begins with assuming two separate decks are already
 sorted. It is easily to see that these sorted decks can be merged with
 <span class="math inline">\(O(n)\)</span> complexity. Thus when we apply
 divide and conquer, the master theorem with <span class="math inline">\(T(n) = 2T(n/2) +O(n)\)</span>, <span class="math inline">\(a=2\)</span>, <span class="math inline">\(b=2\)</span>, and <span class="math inline">\(c=1\)</span>, gives <span class="math inline">\(c=
-c_r = log_2 2\)</span>, so that we are in Case 2, so that <span class="math inline">\(T(n) = O(n\log n)\)</span>.</li>
+c_r = log_2 2\)</span>, so that we are in Case 2, so that <span class="math inline">\(T(n) = O(n\log n)\)</span>.</p></li>
+<li><p>Suppose your graph was the given by <span class="math inline">\(1
+\to 2 \to 3 \to 4\)</span>, with all weights equal to <span class="math inline">\(1\)</span>. Notice that an iteration of
+Bellman-Ford algorithm simple involves relaxing all the edges, and this
+is done <span class="math inline">\(n-1\)</span> times. If we are
+presented with the ordering <span class="math inline">\((3,4), (2,3),
+(1,2)\)</span>, the first pass of the algorithm, will leave <span class="math inline">\(3.d=4.d = \infty\)</span>, the second pass will
+still have <span class="math inline">\(4.d=\infty\)</span>, and it is
+not until that third pass, <span class="math inline">\(n-1=3\)</span>,
+that we actually finally update <span class="math inline">\(4.d =
+3\)</span>.</p></li>
 </ul>
 <p><br> <br></p>
 <p>Version: 08 November 2026</p>

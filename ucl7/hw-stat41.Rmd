@@ -63,6 +63,8 @@ This does not need to be handed in.
 
 - Use memoization in a top-down coding of the Fibonacci sequence
 
+- How would you implement a ternary heap?
+
 
 - [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-week10.html)
 
@@ -100,6 +102,9 @@ This does not need to be handed in.
 - Let $A$ be an ordered array of integers of size $n$.   Write pseudocode for determining for an integer $k$ in the array, that does better than $O(n)$. 
 
 - What is merge sort? Use the Master theorem to get the complexity of merge sort. 
+
+- Give a simple example on four vertices to show that you really might need every relaxation performed by the Bellman-Ford algorithm.
+
 
 - [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-weekmore.html)
 

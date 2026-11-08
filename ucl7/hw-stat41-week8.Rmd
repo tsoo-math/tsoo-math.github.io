@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 * With the given notation, the number of collisions is given by
 $$Y= \sum_{i=1} ^n \sum_{j=1, j>i}^n X_{ij}.$$
-We have that $\mathbb{E}X_{12} = 1/m$ and the random variables $X_{ij}$ have the same disttribution, even if they are not independent; this as a matter of counting, we have that $\mathbb{E}Y = {n \choose 2}m$ 
+We have that $\mathbb{E}X_{12} = 1/m$ and the random variables $X_{ij}$ have the same disttribution, even if they are not independent; this as a matter of counting, we have that $\mathbb{E}Y = {n \choose 2}m^{-1}$ 
 
 <br>
 <br>
