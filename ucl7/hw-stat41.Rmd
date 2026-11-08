@@ -33,6 +33,8 @@ This does not need to be handed in.
 - Code a bottom up version of merge sort
 - Suppose you have a linked list of say $10$ nodes, how would you add/insert data into a new node at position $5$ say?.  To be concrete you can use this linked [list](pointer-loop.txt).  Your method should only assume you have access to header; that is, it should start from the header.
 
+- [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-week7.html)
+
 
 # Week 8
 
@@ -62,6 +64,8 @@ This does not need to be handed in.
 
 
 # More questions for summer exam study (rolling)
+
+- Describe in detail, how one deletes a node from a linked list.
 
 
 - What is:
