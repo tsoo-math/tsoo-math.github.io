@@ -1,0 +1,63 @@
+---
+title: "Rolling homework"
+output: html_document
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(reticulate)
+```
+
+# More
+
+
+* Suppose $G$ is connected.  Note that  $v \not = s$ and we have that initially $v.d = \infty$.  Note that $v.d$ only gets updated if $v$ is adjacent to an element of $S$, since it only gets updated on relaxation, and relaxation happens only when a new node is added to $S$, and all its edges are relaxed.  
+Towards a contradiction, suppose that $v$ is not adjacent to $S$.  Then a minimum path from $s$ to $v$ has a first node, $u$ that is not in $S$ so that the edge $(\ell, u)$ is on the path, and $\ell \in S$.  Then $(\ell, u)$ was relaxed and we certainly have that $u.d <\infty$.  But if $v$ is at the top of priority queue, waiting to be added to $S$, we should have $v.d \leq u.d$, so that $v.d$ is finite, which would imply that it is adjacent to $S$.
+
+
+*  Imagine the keys are ordered as $K_1, \ldots, K_n,\ldots$.   The assumption is that $h(K_i)$ give iid random variables that are uniformly distributed in $m$ slots. So, we immediately fill a new slot, with the first key.  The second key fills a new slot, with probability $(m-1)/m$, and similarly, the third key fills a new slot with $(m-2)/m$.   Thus $W_i$ is a geometric random variable with parameter $(m-i+1)/m$.  Recall that for a fair coin, you expect to need two flips before seeing the first head.  We have
+$$\mathbb{E}(W_1 + \cdots+ W_m) =\sum_{i=1} ^m \frac{m}{m-i+1} = m\sum_{i=1}^m \frac{1}{i}$$ 
+
+
+* The master theorem with $a=7$ and $b=2$ and $c=2$ gives that $c = \log_2 4 < c_r = \log_2 7 <3$; thus the first case of the master theorem applies to give that $T(n) = \Theta(c)$.
+
+
+* Since the array is ordered, if we apply a binary-type search this will be $O(\log n)$ corresponding the number of times $n$ needs to be divided by $2$ to reach $1$.
+
+```{r}
+
+find <-function(A,x){
+  ans = 0
+  L=length(A)
+  H=1
+  if( L==1){ 
+    if(A[H]==x){ans=1} 
+    return(ans)}
+  if (L >1){H=floor(L/2)}
+  if (x==A[H]){
+    ans =1
+    return(ans)}
+  if (x > A[H]){return(find(A[(H+1):L],x))}
+  if (x < A[H]){return(find(A[1: (H-1)],x))}}
+
+A = c(1,2,3,8,11,15,17,25)
+
+find(A, 5)
+find(A, 25)
+find(A, 8)
+```
+
+
+* Merge sort begins with assuming two separate decks are already sorted.  It is easily to see that these sorted decks can be merged with $O(n)$ complexity.  Thus when we apply divide and conquer, the master theorem with $T(n) = 2T(n/2) +O(n)$, $a=2$, $b=2$, and $c=1$, gives $c= c_r = log_2 2$, so that we are in Case 2, so that $T(n) = O(n\log n)$.
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>

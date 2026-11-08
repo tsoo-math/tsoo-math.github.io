@@ -81,7 +81,6 @@ This does not need to be handed in.
   - The min-heap property?
 
 
-
 - Consider a finite set of integers $S$ of size $n$  Let $z$ be a given integer. 
   - Find a brute-force algorithm that gives whether $z$ is the sum of two (distinct) elements of $S$.
   - Write pseudocode for your algorithm.
@@ -98,9 +97,11 @@ This does not need to be handed in.
 
 - Use the Master theorem to get  the complexity of $T$ where, $T(n) = 7T(n/2) + \Theta(n^2)$.
 
-- Let $A$ be an ordered array of integers of size $n$   Write pseudocode for searching for an integer $k$ in the array, that does better than $O(n)$. 
+- Let $A$ be an ordered array of integers of size $n$.   Write pseudocode for determining for an integer $k$ in the array, that does better than $O(n)$. 
 
 - What is merge sort? Use the Master theorem to get the complexity of merge sort. 
+
+- [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-weekmore.html)
 
 
 
