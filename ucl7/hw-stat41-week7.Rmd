@@ -1,0 +1,23 @@
+---
+title: "Rolling homework"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Week 7
+
+- Moving from the head, we have that the *current* node 5 is v=((((head.next).next).next).next).next.  We are asked to insert new data at this point, let us assume that is represented by newdata.  We create a new node, say newv to hold the stuff formally stored in v.  Set newv.data = v.data and newv.next = v.next; now the next node after newv is what was node 6.  Now we set v.data = newdata and we want its next node to be newv, so we set v.data = &newv, the address of the newly created node newv.
+
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>
