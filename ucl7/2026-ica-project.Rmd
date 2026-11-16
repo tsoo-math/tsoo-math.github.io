@@ -1,0 +1,277 @@
+---
+title: "Stat0041 ICA (2026)"
+output: html_document
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<hr>
+
+# General rules
+
+
+* This assessment is classified as Coursework as defined in UCL’s [Student Policies for Exams and Assessments.](https://www.ucl.ac.uk/academic-manual/chapters/chapter-4-assessment-framework-taught-programmes/student-policies-exams-and-assessments) It contributes **25%** to the overall mark for this module.
+
+
+
+* The release date for this assessment Week 15.
+
+* The submission deadline is 13:00:00 (UK time) 5 February 2027.
+
+* Individual extensions to the submission deadline can only be granted where a student has been provided Reasonable Academic Adjustments or has made a valid claim for Extenuating Circumstances. The standard extension length for this assessment type is 5 working days. 
+  - This assessment is *not* eligible  for a  Delayed Assessment Permit.
+  - If you have a [Reasonable Academic Adjustments](https://www.ucl.ac.uk/students/support-and-wellbeing-services/disability-and-neurodiversity/your-reasonable-academic-adjustments), your extension should be setup automatically and you *may not see it* reflected in the deadline displayed in the submission portal. If you do not think that the correct adjustment has been applied, please contact the module lead at the earliest opportunity. 
+    - Typically Reasonable Academic Adjustments will *not* apply to this group work assessment.
+      - This assessment is meant to be group work. You are advised to form a group and this your responsibility; although groups of *one* are not forbidden, this does not change the nature of the assessment.
+    
+  - [Delayed Assessment Permits](https://www.ucl.ac.uk/academic-manual/chapters/chapter-2-student-support-framework/section-2-delayed-assessment-scheme) and [Extenuating Circumstances](https://www.ucl.ac.uk/academic-manual/chapters/chapter-2-student-support-framework/section-3-short-term-illness-and-other-extenuating) claims should be submitted through Portico. The module lead will be notified and will act on extensions approved via these routes, but the deadline displayed in the submission portal *may not* update.
+
+* In preparation for this assessment, please ensure that you are familiar with the Department of Statistical Science’s guidance on [academic integrity](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf). When submitting your work, you will be required to make a declaration that you have read and understood this guidance.
+
+* Parts of your submission may be scanned using similarity detection software. If any breach of the assessment regulations is suspected, it will be investigated in accordance with UCL’s [Student Academic Misconduct Procedure.](https://www.ucl.ac.uk/academic-manual/chapters/chapter-6-student-casework-framework/section-9-student-academic-misconduct-procedure)
+
+* To facilitate anonymous marking, you should not write your name anywhere on your work, including in file names or file descriptions requested as part of the submission process.
+
+* You must only submit your work via the designated portal in Moodle. If you try to submit via email or any other channel this will not count as a submission and will not be marked.
+
+* There are strict, non-negotiable penalties for late submission, which for coursework are as follows.
+
+    – Up to 2 working days late: deduction of 10 percentage points, but no lower than the pass mark.
+
+    – 2-5 working days late: capped at the pass mark.
+
+    – More than 5 working days late: mark of 1.00%.
+
+* If the module lead becomes aware of a significant technical issue or outage affecting Moodle during the assessment, a message will be circulated to explain what has happened and the steps being taken to mitigate the issue. If you do not receive notification of a more widespread issue and you experience technical difficulties, you should refer to the [Help & Support](https://www.ucl.ac.uk/isd/help-support) resources provided by UCL’s central IT service. However, last-minute technical issues will not be considered as valid grounds for missing the deadline, so ensure that you leave plenty of time to prepare, upload and check your submission.
+
+* Non-submission (in the absence of any valid Extenuating Circumstances) will mean that your mark for this component is recorded as 0.00% and you will be deemed to have made an attempt.
+
+* You should expect to receive feedback on this assessment within 20 working days of the submission deadline.  In the event of a delay, the module lead will contact students directly with details of the revised timeline.      See the Assessment section of the Department of Statistical Science’s [undergraduate](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2026-09/ughb%2026-27.pdf) student handbook for information on the marking and moderation of assessments. 
+
+
+* © (2026) UCL. This assessment paper is the intellectual property of UCL and subject to copyright. It must not be reproduced or shared with any third party without prior permission of UCL.
+
+
+# Additional rules
+
+- This ICA is group work.
+  - You must form and register your own groups of at most 4.
+    - It is not advisable that you work on your own, but this is allowed.
+    - The number of people in a group is not a consideration with regards to grading.
+  - Each member of the group will receive the same grade.
+
+
+* To facilitate anonymous marking, you should not write your name anywhere on your work, including in file names or file descriptions requested as part of the submission process.
+
+* A grading scheme is available below.
+  * The project consists of both written and presentation elements, including:  
+    * Two 5 minute recorded presentations.
+    * A written report **and** a 10 min recorded presentation.
+    * The presentations would typically consists of a slide-talk presentation, where your identities are not revealed--do not show your face.  Do not use AI to generate or alter your talk.
+
+* The ICA (written report) must be completed in R/Quarto/Python and typeset using Markdown with Latex code.
+
+* Please hand in the html (or pdf file) **and** the Rmd/Jupyter notebook source files for your written report.
+* As usual, part of the grading will depend on the clarity and presentation of your project.
+*  You are to do this assignment, within your groups, without any help from others who are not in your ICA group.
+* The use of ChatGPT and related tools in *assisting* in the project ICA2 is permitted, in accordance with UCL’s policy--[Category 2](https://www.ucl.ac.uk/teaching-learning/generative-ai-hub/three-categories-genai-use-assessment#:~:text=Category%202.&text=Students%20may%20not%20use%20GenAI,the%20development%20of%20specific%20skills).
+  * Do not use these tools to generate your essay or entire paragraphs.
+  * Do not use these tools to generate large blocks of code, and to avoid the exercise of understanding and implementing algorithms.
+  * The use of these tools often results in generic business like writing and presentation which is not appropriate  for this sort of academic work.  
+  * You do not need AI to do this assessment. 
+
+ 
+
+### Anonymous Marking
+
+Please do **not** write your name anywhere on the submission. You may include your **student number** as a backup identifier, but this is not necessary.
+
+### Plagiarism and collusion
+
+As this is a group project, collusion and academic misconduct cases will apply to all members in the group. All group members bear full responsibility. If a student suspects any potential misconduct cases from other groupmates, they should inform [me](https://www.ucl.ac.uk/statistics/people/dr-terry-soo) immediately.
+
+
+Please familarize yourself with UCL's guidance on [academic integrity and plagiarism and collusion](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf) 
+
+By ticking the submission declaration box in Moodle you are agreeing to the following declaration:
+
+<br>
+
+**Declaration:** I have read the Department of Statistical Science’s guidance on [academic integrity](https://www.ucl.ac.uk/mathematical-physical-sciences/sites/mathematical_physical_sciences/files/2025-09/Academic%20integrity%20and%20misconduct.pdf) and understand what constitutes academic misconduct. I hereby affirm that the work I am submitting for this assessment is entirely our own, except where indicated by referencing.
+
+<hr>
+
+# Two 5 minute presentations
+
+ **30% of the total marks of this assessment**
+
+These will involve material that we already mostly covered in class.  The target audience is someone who is *just about* to take Stat0041.  In making your presentations, you will want to consider the following questions:
+
+  * Why is this topic important?
+  * Why is this interesting?
+  * What are the key ideas or innovations?
+  * How can I make this understandable to someone in 5 minutes?
+  * How can I convey the ideas with sufficient and appropriate technical detail?
+  * How can I keep the viewer interested?
+
+You are to make two 5 minute presentations/videos on the following topics:
+
+  * Sorting
+  * Merge sort
+  * Hashing
+  * Binary heaps
+  * Linked lists
+  * Dynamic programming 
+  * The Master theorem
+  * Greedy algorithms
+  * Bellman Ford algorithm
+  * Dijkstra's algorithm
+  * *More topics to be added*
+  
+Pick two topics from the above list; for each of your selections, record a 5 minute presentation.  
+
+# One report and a 10 minute presentation
+
+ **70% of the total marks  of this assessment**
+
+Here, the target audience is someone who *just finished* Stat0041.   You are to do a written report of no more than 1500 words and a 10 minute presentation on one of the following topics:
+
+  * Fast Fourier transform
+  * Quantum computing
+  * RSA cryptosystems 
+  * Cryptographic hash
+  * Kalman filtering
+  * Turing machines
+  * The Halting problem and Gödel's incompleteness theorems
+  * Computation of $\pi$
+  * Integer factorization
+  * The PC algorithm in structure learning
+  * Wang and Penrose tilings
+  * Conway's game of life
+  * Matroids and greedy algorithms 
+  * Max-Flow and Min-Cut theorem and Strassen's monotone coupling theorem
+  * Sampling a uniform spanning tree
+  * Analog computers
+  *  *Possibly more topics to be added*
+
+
+The written report along with all the recorded presentations will be submitted on Moodle.  
+  
+  
+  
+
+<br>
+<br>
+
+
+
+# Grading scheme
+
+
+### Oral-recorded presentation
+
+The oral presentations (short and long) will be graded using the following criteria:
+
+
+
+#### Clarity, Interest and Structure 
+
+* Clarity of aims (Was it clear what the project was trying to achieve?)
+* Selection of material--did the presentation focus on features of the work required to understand: 
+  * How the aims were addressed? 
+  * What were the *headline messages*?
+* Clarity of argument / logical flow (Was there a coherent narrative?)
+* Clarity of conclusions (Were there clear conclusions? Did they relate to the project aims?)
+* Accessibility to intended audience (Was the material presented at a level comprehensible to the speaker’s peers? )
+
+
+**Weighting**: $1/2$
+
+#### Presentation Skills
+
+* Audience engagement:  Was the speaking audible and confident? Was the inflexion varied and interesting? 
+
+* Visual aids:  Were the slides clearly readable and uncluttered? Were the key messages easy to see? Were graphics and tables appropriately labelled and presented so as to convey at a glance the underlying message?
+* Appropriate length: Did the speaker fill the time available, comfortably and without rushing?
+
+**Weighting**: $1/2$
+
+
+## Short presentations
+
+The two shorter oral presentations will be worth 30% of the total mark.   
+
+
+## Report and longer oral presentation
+
+
+The longer oral presentation is worth  30% of the total mark.  The written report, worth 40% of the total mark, will be graded as follows:
+
+### Written report
+
+#### Content of written report
+
+* Amount of work done
+* Extent to which the student has demonstrated understanding
+* Quality & accuracy of reasoning, validity of interpretation, relevance of conclusions
+* Critical appraisal, discussion of limitations & further work
+* Clarity of objectives
+* Quality of the literature review and background information
+* Quality of data organisation & collection (if applicable)
+* Quality of programming / use of software (if applicable)
+
+**Weighting**: $3/5$
+
+
+
+
+#### Presentation of written report
+
+* Layout of the report and care in its presentation
+* Structure of the report
+* Standard of judgement shown in selection of material
+* Clarity of expression, readability and coherence
+  * Correctness of grammar and spelling
+* Adequacy of diagrams, tables and graphs (if applicable)
+* Quality of presentation of mathematical material (if applicable)
+
+**Weighting**: $2/5$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+Version: `r format(Sys.time(), '%d %B %Y')`
+
+
+
+<br>
+<br>
+<br>

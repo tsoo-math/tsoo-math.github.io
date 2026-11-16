@@ -41,7 +41,7 @@ Some unifying concepts include: divide and conquer, dynamical programming, greed
 # Formal assessments 
 
 * Summer exam: 3/4
-* ICA group work: 1/4 
+* [ICA](https://tsoo-math.github.io/ucl7/2026-ica-project.html) group work: 1/4 
   * To be released: Week 15
   * Due: 5 Feb 2027
   
