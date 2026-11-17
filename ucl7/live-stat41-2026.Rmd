@@ -126,6 +126,8 @@ Reading break
 
 # Week 12
 
+Start looking at Chapter 6 of the notes
+
 Week 12a
 
 - Hidden Markov chains and the filtering problem (forward algorithm)
