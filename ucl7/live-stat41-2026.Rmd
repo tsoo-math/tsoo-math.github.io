@@ -128,9 +128,20 @@ Reading break
 
 Start looking at Chapter 6 of the notes
 
-Week 12a
+## Week 12a
 
+- We discussed the [ICA](https://tsoo-math.github.io/ucl7/2026-ica-project.html) which will have a finalized release in Week 15.
 - Hidden Markov chains and the filtering problem (forward algorithm)
+
+# The priority queue
+
+- Longest subsequence problem
+- Knapsack and travelling salesman problems
+- Huffman codes
+- Gale-Shapely stable matching
+- Matrix multiplication
+- P vs NP
+
 
 
 <br>
