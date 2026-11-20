@@ -133,9 +133,15 @@ Start looking at Chapter 6 of the notes
 - We discussed the [ICA](https://tsoo-math.github.io/ucl7/2026-ica-project.html) which will have a finalized release in Week 15.
 - Hidden Markov chains and the filtering problem (forward algorithm)
 
+## Week 12b
+
+- Hidden MC continued
+- Longest common subsequence problem
+- We introduced the Knapsack problem
+
+
 # The priority queue
 
-- Longest subsequence problem
 - Knapsack and travelling salesman problems
 - Huffman codes
 - Gale-Shapely stable matching
