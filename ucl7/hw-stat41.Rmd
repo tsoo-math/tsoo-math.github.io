@@ -81,6 +81,26 @@ The exercises given here do not need to be handed in for grading. For the ICA, s
 - [Supplementary material on Markov chains](https://tsoo-math.github.io/ucl/reviewMC.html)
   - Sample code in [Python](https://nbviewer.org/url/tsoo-math.github.io/ucl2/2021-hw-week8.ipynb/%3Fflush_cache%3Dtrue)
 
+-  Consider a hidden Markov model on a finite state space $S$, with initial distribution $\pi(i) = \mathbb{P}(X_1=i)$, transition probabilities $p_{ij}$, and emission probabilities $e_{xy}$.  Suppose we observe $y[1,t]=(y_1,\ldots,y_t)$.   Let 
+$$M(t; j) = \max_{x[1,t-1] \in S^{n-1}} \mathbb{P}(X_t=j, X[1,t-1]=x[1,n-1], Y=y[1,n])$$
+  - Using dynamic programming, write down a simple expression $M(t; j)$, where the complexity for its computation is not exponential. Hint:
+$M(1; j) = \pi_j e_{jy_1}.$
+  - Modify your idea to output the Viterbi path; that is, a path, $x[1,t-1], x_t=j$ that witnesses $M(t; j).$
+
+  
+- Consider the change making problem, where you have $n$ types, with integer values $0< v_1 < \cdots < v_n$.  You are to make a given integer amount $t$, so that $t = \sum_{i=1} ^n c_iv_i$, where $c_i$ are non-negative integers and we want to minimize the number of coins we use: $\sum_{i=1} ^n c_i$.
+  - Show that you can do this in $O(tn)$ time.  How can you take the of the case where it may not be possible?
+  - Give an example to show that greedy does not always work.
+    - For more information see this [article](https://ieeexplore.ieee.org/document/5254395)
+
+# Week 13
+
+# Week 14
+
+# Week 15
+
+# Week 16
+
 
 # More questions for summer exam study (rolling)
 

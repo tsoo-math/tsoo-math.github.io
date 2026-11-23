@@ -139,6 +139,17 @@ Start looking at Chapter 6 of the notes
 - Longest common subsequence problem
 - We introduced the Knapsack problem
 
+# Week 13
+
+# Week 14
+
+# Week 15
+
+# Week 16
+
+
+
+
 
 # The priority queue
 
