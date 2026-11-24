@@ -141,6 +141,14 @@ Start looking at Chapter 6 of the notes
 
 # Week 13
 
+-  We continued our discussion of the $0-1$-knapsack problem
+- We introduced the travelling salesman problem
+- We discussed the greedy vacuum cleaner problem for Poisson point processes
+  - More info [here](https://link.springer.com/article/10.1007/s11134-011-9246-x)
+- We discussed prefix-free codes
+  - [Notes](https://tsoo-math.github.io/ucl7/shannon.html)
+
+
 # Week 14
 
 # Week 15
@@ -153,7 +161,6 @@ Start looking at Chapter 6 of the notes
 
 # The priority queue
 
-- Knapsack and travelling salesman problems
 - Huffman codes
 - Gale-Shapely stable matching
 - Matrix multiplication

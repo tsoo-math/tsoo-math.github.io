@@ -1,0 +1,133 @@
+---
+title: "Preamble to Huffman coding"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Will discuss some coding basics that will be useful for our discussion of Huffman coding.
+
+
+# Some coding terminology
+
+For what follows it may be helpful to imagine that you are trying to encode a page of  text written in English into a binary sequence for digital transmission or storage.  Also make the unrealistic assumption that letters of the alphabet occur independent with some probability distribution.
+
+
+For a set $A$, let $A^{*}$ denote the set of all finite sequences of $A$.   Sometimes it will be convenient to think of elements of $A^{*}$ as *words*.  A *prefix* of a word $\mathbf{a}=(a_1, \ldots, a_n) \in A^{*}$ is a word of the form $(a_1, \ldots, a_k)$ for some $1 \leq k \leq n$.
+
+ Let $\mathcal{S}$ be a finite set, and $p$ be a probability measure on $\mathcal{S}$.  We think of $\mathcal{S}$ as a *source alphabet*.     A map  $c: \mathcal{S} \to \{0,1\}^{*}$ is called a *(source) code*.   The *extension* of $c$ is the mapping $c^{*}: S^{*} \to   \{0,1\}^{*}$ given by the concatenation 
+$$c^*(\mathbf{s}) = c(s_1)c(s_2) \ldots c(s_n).$$
+
+
+
+   We call the image $c(\mathcal{S}^{*})$ the *code words*.  We say that $c$ is *non-singular* if it is an injective mapping.  We will only consider non-singular codes.  We say that a non-singular code  is *uniquely decodable* if its extension is non-singular.   We say that $c$ is a *prefix-(free) code* or *instananeous code* if no code word is a prefix of another code word.    Note that a prefix code is uniquely decodable.  
+   
+   
+   For each $s \in S$, let $\ell(s)$ be the length of the binary sequence $c(s)$.   We say the *expected length* of $c$ is 
+$$L(c):= \sum_{s \in S} p(s)\ell(s).$$
+We want to find a code $c$ that is uniquely decodable and has small expected length.  
+
+*Exercise*:
+Define a uniquely decodable code that is not a prefix code.
+
+
+
+# Kraft's inequality
+
+
+**Theorem** (Kraft): Let $c:\mathcal{S} \to \{0,1\}^{*}$ be an prefix code with lengths $\ell(s)$.  
+
+$$\sum_{s \in \mathcal{S}} 2^{-\ell(s)} \leq 1.$$
+
+The inequality above is referred to as *Kraft's inequality*.
+
+**Theorem** (Kraft-converse):
+	Conversely, if $\mathcal{S} = \{s_1, \ldots, s_n\}$ and we are given integer lengths $\ell_1, \ldots, \ell_n$, such that Kraft's inequality is satisfied, that is, 
+	$$ \sum_{i =1}^n 2^{-\ell_i} \leq 1,$$
+	then there exists a prefix code $c:\mathcal{S} \to \{0,1\}^{*}$ such that $\ell(s_i) = \ell_i$ 
+
+
+
+**Theorem** (McMillan)
+Kraft's ineqality is still true under the more general assumption that $c$ is uniquely decodable.
+
+
+The usual proof of McMillan's theorem is not hard, but involves a difficult calculation, that we will not give here. The proof of Kraft's theorem is quite nice.
+
+*Proof of Kraft's inequality*:
+Let  $N := \max_{s \in \mathcal{S}}{\ell(s)}$, and $X$ be a random variable that is uniformly distributed in $\{0, 1\}^N$.  For each $s \in \mathcal{S}$, let $E_s$ be the event that $c(s)$ is a prefix of $X$.   Since $c$ is a prefix code the events $E_s$ and $E_t$ are disjoint if $s \not =t$.  Let $E$ be the event that there exists $s \in \mathcal{S}$ such that $c(s)$ is a prefix of $X$.  Since the $E_s$ are disjoint, and $X$ was uniformly chosen, we have that 
+$$1 \geq \mathbb{P}(E) = \sum_{s \in \mathcal{S}}\mathbb{P}(E_s) = \sum_{s \in \mathcal{S}}2^{-\ell(s)}.$$
+	
+
+*Proof of Kraft's converse*: 
+Suppose $\ell_1 \leq \cdots \leq  \ell_n$.   Consider a binary tree with depth $\ell_n$, where the root resides at level $0$.  The two vertices at level one are labeled $0$ and $1$, the two immediate descendants of $0$ are labeled $00$ and $01$, and the two immediate descendants of $1$ are labeled $10$ and $11$; continuing in this way each vertex is assigned a binary sequence.  Clearly, if we are able to find a code that corresponds to a subset of vertices on the tree where each vertex does not have any descendants, then the code is a prefix code. 
+
+Consider the following procedure.  Start with $s_1$, and let $c(s_1)$ be a vertex on level $\ell_1$.  Remove all the descendants (here, we can imagine Abbess Miejue, of the novel [Heavenly Sword and Dragon Slaying Sabre](https://en.wikipedia.org/wiki/List_of_The_Heaven_Sword_and_Dragon_Saber_characters),  eliminating those descendants),  of the chosen vertex from consideration, and continue in this manner with $s_2$, and so on.   We know that we will not run out of vertices, since at each stage $k<n$, there are 
+$$2^{\ell_n}-\sum_{i=1}^k 2^{\ell_n- \ell_i} = 2^{\ell_n}-2^{\ell_n} \sum_{i=1}^k 2^{-\ell_i} > 0 $$ vertices on the last level $n$.        
+
+
+# Entropy and Shannon's source coding theorem
+
+Here we will use $\log_2$ in the definition of entropy so that
+
+$$H(p) = -\sum_{s \in \mathcal{S}}  p(s) \log_2 p(s).$$
+
+**Theorem** (Shannon lower bound): Let $\mathcal{S}$ be a source endowed with a probability measure $p$.  If $c$ uniquely decodable, then the expected length of the code satisfies $L(c) \geq H(p)$.   
+
+
+
+
+*Proof*:
+Set $q(s) :=  2^{-\ell(S)}$.  Since  $c$ is uniquely decodable by  McMillan's theorem, we have Kraft's inequality:
+
+$$\sum_{s \in \mathcal{S}} q(s) \leq 1.$$
+We compute:
+$$
+\begin{eqnarray}
+L(c) &=& \sum_{s \in \mathcal{S} }  p(s)\ell(s) \nonumber \\
+&=&  \sum_{s \in \mathcal{S}}  p(s) \log_2 2^{\ell(s)}    \nonumber  \\
+&=&    - \sum_{s \in \mathcal{S}} p(s)\log_2q(s)  \nonumber \\
+\label{gibbs}
+& \geq& -\sum_{s \in \mathcal{S}} p(s) \log_2 p(s)  \\
+&=& H(p) \nonumber
+\end{eqnarray}
+$$
+Here the inequality follows from a version of [Gibbs' inequality](https://en.wikipedia.org/wiki/Gibbs%27_inequality) and Kraft's inequality.
+
+
+**Theorem** (Shannon Upper bound):
+Let $\mathcal{S}$ be a source endowed with a probability measure $p$.  There exists a prefix code $c$ such that 
+$$L(c)  \leq H(p) +1.$$
+
+
+*Proof*
+For each $s \in \mathcal{S}$, set  $\ell(s) = \lceil \log_2 \frac{1}{p(s)} \rceil$.  Here, this is the ceiling function so that $\lceil 6.9 \rceil = 7$.    Apply the Kraft-converse theorem, to obtain a  corresponding prefix code with lengths given by $\ell$.  Then
+$$
+\begin{eqnarray*}
+L(c) &=& \sum_{s \in \mathcal{S}} p(s)\ell(s)  \\ 
+&\leq&  \sum_{s \in \mathcal{S}} p(s)\big( \log_2 \tfrac{1}{p(s)} +1 \big) \\
+&=&  H(p) + 1.
+\end{eqnarray*}
+$$
+
+#  Endnotes
+
+For more information, see
+
+* Shannon and Weaver, [The mathematical theory of communication](https://zbmath.org/0126.35701)
+* Cover and Thomas, [Elements of information theory](https://zbmath.org/1140.94001)
+* van Lint, [Introduction to coding theory](https://zbmath.org/0485.94015)
+
+
+<br>
+<br>
+
+ Version:  `r format(Sys.time(), '%d %B %Y')`
+
+<br>
+<br>
+<br>
