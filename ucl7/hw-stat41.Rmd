@@ -95,6 +95,11 @@ $M(1; j) = \pi_j e_{jy_1}.$
 
 # Week 13
 
+
+- Give an example to show that greedy does not always work for the TSP.
+
+
+
 # Week 14
 
 # Week 15
@@ -109,6 +114,9 @@ $M(1; j) = \pi_j e_{jy_1}.$
 
 - What is:
   - The min-heap property?
+  - Prim's algorithm?
+  - $0-1$-knapsack problem?
+  - The Filtering problem?
 
 
 - Consider a finite set of integers $S$ of size $n$  Let $z$ be a given integer. 
@@ -133,6 +141,9 @@ $M(1; j) = \pi_j e_{jy_1}.$
 
 - Give a simple example on four vertices to show that you really might need every relaxation performed by the Bellman-Ford algorithm.
 
+- Consider Prim's algorithm.  
+  - Show that if we are given the adjacency matrix representation   of a graph, then one can easily argue that the complexity is $O(|V|^2)$.
+  - Show that that shrewdly using a priority queue, you can get this down to $O(|E| \log|V|)$. 
 
 - [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-weekmore.html)
 
