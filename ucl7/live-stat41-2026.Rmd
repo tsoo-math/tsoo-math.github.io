@@ -141,6 +141,9 @@ Start looking at Chapter 6 of the notes
 
 # Week 13
 
+
+##  Week 13a
+
 -  We continued our discussion of the $0-1$-knapsack problem
 - We introduced the travelling salesman problem
 - We discussed the greedy vacuum cleaner problem for Poisson point processes
@@ -148,8 +151,24 @@ Start looking at Chapter 6 of the notes
 - We discussed prefix-free codes
   - [Notes](https://tsoo-math.github.io/ucl7/shannon.html)
 
+## Week 13b
+
+- We discussed Huffman codes; see also Chapter 16.3 in the Algorithms book.
+- We introduced the stable matching; see the OG [paper](https://www.jstor.org/stable/37ee0948-e9f0-3123-b607-2888da363a56?seq=2).
+  - I over defined an unstable matching.  All we need for a matching to be unstable, is for the matching to assign $\alpha$ to $A$ and $\beta$ to $B$, but $\beta$ would rather be matched to $A$ and $A$ would rather be matched to $\beta$; in particular, we do not have to worry that $\alpha$ would rather be matched to $B$ and not everyone needs to be more happy.
+
+
 
 # Week 14
+
+Start looking at Chapter 7 of the notes
+
+
+##  Week 14a
+
+- Gale-Shapely stable matching continued
+
+
 
 # Week 15
 
@@ -161,8 +180,6 @@ Start looking at Chapter 6 of the notes
 
 # The priority queue
 
-- Huffman codes
-- Gale-Shapely stable matching
 - Matrix multiplication
 - P vs NP
 

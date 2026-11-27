@@ -492,8 +492,19 @@ case where it may not be possible?</li>
 <div id="week-13" class="section level1">
 <h1>Week 13</h1>
 <ul>
-<li>Give an example to show that greedy does not always work for the
-TSP.</li>
+<li><p>Give an example to show that greedy does not always work for the
+TSP.</p></li>
+<li><p>Let <span class="math inline">\(T\)</span> be an optimal tree
+representing a prefix code for the source alphabet <span class="math inline">\(S\)</span>, which includes an element <span class="math inline">\(z\)</span>, with probability <span class="math inline">\(p_z\)</span>. Suppose that <span class="math inline">\(x,y \not \in S\)</span> and that for some numbers
+<span class="math inline">\(0 \leq p_x,p_y\)</span>, we have <span class="math inline">\(p_x + p_y = p_z\)</span>. Consider the modified
+source alphabet <span class="math inline">\(S&#39;\)</span> with <span class="math inline">\(z\)</span> removed and <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> added. Consider the tree <span class="math inline">\(T&#39;\)</span> defined from <span class="math inline">\(T\)</span>, where we give <span class="math inline">\(z\)</span> the two children <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Here, we have split <span class="math inline">\(z\)</span>. Now <span class="math inline">\(T&#39;\)</span> gives a code for <span class="math inline">\(S&#39;\)</span>.</p>
+<ul>
+<li>Show by example, that for <span class="math inline">\(T&#39;\)</span> may not be optimal for <span class="math inline">\(S&#39;\)</span>.</li>
+<li>When is <span class="math inline">\(T&#39;\)</span> optimal for
+<span class="math inline">\(S&#39;\)</span>?</li>
+</ul></li>
+<li><p>Show that you can generate the Huffman code in <span class="math inline">\((n \log n)\)</span> time, by using a priority
+queue.</p></li>
 </ul>
 </div>
 <div id="week-14" class="section level1">
@@ -516,6 +527,7 @@ list.</p></li>
 <li>Prim’s algorithm?</li>
 <li><span class="math inline">\(0-1\)</span>-knapsack problem?</li>
 <li>The Filtering problem?</li>
+<li>the Hoffman coding?</li>
 </ul></li>
 <li><p>Consider a finite set of integers <span class="math inline">\(S\)</span> of size <span class="math inline">\(n\)</span> Let <span class="math inline">\(z\)</span> be a given integer.</p>
 <ul>
@@ -563,11 +575,17 @@ graph, then one can easily argue that the complexity is <span class="math inline
 <li>Show that that shrewdly using a priority queue, you can get this
 down to <span class="math inline">\(O(|E| \log|V|)\)</span>.</li>
 </ul></li>
+<li><p>Let <span class="math inline">\(T\)</span> be a tree representing
+a prefix code for a source alphabet with distribution <span class="math inline">\(p\)</span>, containing the elements <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Suppose that <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are siblings and we create the merged
+tree <span class="math inline">\(T&#39;\)</span>, with <span class="math inline">\(p_z:= p_x + p_y\)</span>, for new source alphabet
+with <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> removed and <span class="math inline">\(z = (x,y)\)</span> added. Show that <span class="math display">\[L(T&#39;) = L(T) - p_z.\]</span></p></li>
+<li><p>Show by example that the Shannon code can be strictly worse than
+the Huffman code.</p></li>
 <li><p><a href="https://tsoo-math.github.io/ucl7/hw-stat41-weekmore.html">Partial
 solutions</a></p></li>
 </ul>
 <p><br> <br></p>
-<p>Version: 25 November 2026</p>
+<p>Version: 27 November 2026</p>
 <p><br> <br> <br></p>
 </div>
 

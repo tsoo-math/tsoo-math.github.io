@@ -98,6 +98,12 @@ $M(1; j) = \pi_j e_{jy_1}.$
 
 - Give an example to show that greedy does not always work for the TSP.
 
+- Let $T$ be an optimal tree representing a prefix code for the source alphabet $S$, which includes an element $z$, with probability $p_z$.  Suppose that $x,y \not \in S$ and   that for some numbers $0 \leq p_x,p_y$, we have $p_x + p_y = p_z$.  Consider the modified source alphabet $S'$ with $z$ removed and $x$ and $y$ added.  Consider the tree $T'$ defined from $T$, where we give $z$ the two children $x$ and $y$.  Here, we have split $z$.    Now $T'$ gives a code for $S'$.  
+  - Show by example, that for $T'$ may not be optimal for $S'$.
+  - When is $T'$ optimal for $S'$?
+  
+- Show that you can generate the Huffman code in $(n \log n)$ time, by using a priority queue.
+
 
 
 # Week 14
@@ -117,6 +123,7 @@ $M(1; j) = \pi_j e_{jy_1}.$
   - Prim's algorithm?
   - $0-1$-knapsack problem?
   - The Filtering problem?
+  - the Hoffman coding?
 
 
 - Consider a finite set of integers $S$ of size $n$  Let $z$ be a given integer. 
@@ -144,6 +151,13 @@ $M(1; j) = \pi_j e_{jy_1}.$
 - Consider Prim's algorithm.  
   - Show that if we are given the adjacency matrix representation   of a graph, then one can easily argue that the complexity is $O(|V|^2)$.
   - Show that that shrewdly using a priority queue, you can get this down to $O(|E| \log|V|)$. 
+
+
+- Let $T$ be a tree representing a prefix code for a source alphabet with distribution $p$,  containing the elements $x$ and $y$.  Suppose that $x$ and $y$ are siblings and we create the merged tree $T'$, with $p_z:= p_x + p_y$, for new source alphabet with $x$ and $y$ removed and $z = (x,y)$ added.  Show that 
+$$L(T') = L(T) - p_z.$$
+
+- Show by example that the Shannon code can be strictly worse than the Huffman code.
+
 
 - [Partial solutions](https://tsoo-math.github.io/ucl7/hw-stat41-weekmore.html)
 
