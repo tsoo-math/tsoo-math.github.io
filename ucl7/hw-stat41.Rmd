@@ -102,7 +102,7 @@ $M(1; j) = \pi_j e_{jy_1}.$
   - Show by example, that for $T'$ may not be optimal for $S'$.
   - When is $T'$ optimal for $S'$?
   
-- Show that you can generate the Huffman code in $(n \log n)$ time, by using a priority queue.
+- Show that you can generate the Huffman code in $O(n \log n)$ time, by using a priority queue.
 
 
 
